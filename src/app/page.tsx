@@ -1,24 +1,12 @@
 import Chat from "@/components/Chat";
 import Image from "next/image";
+import Nav from "@/components/Nav";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-lg border-b border-[#262626]">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="font-bold text-lg">Dico Angelo</span>
-          <div className="flex gap-6 text-sm text-[#737373]">
-            <a href="#proof" className="hover:text-white transition-colors">Proof</a>
-            <a href="#systems" className="hover:text-white transition-colors">Systems</a>
-            <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-            <a href="#experience" className="hover:text-white transition-colors">Experience</a>
-            <a href="#arena" className="hover:text-white transition-colors">Arena</a>
-            <a href="#ask" className="hover:text-white transition-colors">Ask</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Hero */}
       <section className="pt-32 pb-20 px-6">
@@ -229,7 +217,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-[#0f0f0f]">
+      <section id="projects" className="py-20 px-6 section-alt">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Technical Projects</h2>
@@ -386,7 +374,7 @@ export default function Home() {
       </section>
 
       {/* In The Arena - Human Side */}
-      <section id="arena" className="py-20 px-6 bg-[#0f0f0f]">
+      <section id="arena" className="py-20 px-6 section-alt">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">In The Arena</h2>

@@ -88,7 +88,7 @@ export default function Chat() {
           </div>
           <div>
             <h3 className="font-bold">Ask Me Anything</h3>
-            <p className="text-sm text-[#737373]">AI-powered by Claude · Knows everything about Dico</p>
+            <p className="text-sm text-[#737373]">The AI-powered D-icosystem · Knows everything about Dico</p>
           </div>
         </div>
       </div>
