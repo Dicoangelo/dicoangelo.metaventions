@@ -1,4 +1,5 @@
 import Chat from "@/components/Chat";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -21,6 +22,19 @@ export default function Home() {
       {/* Hero */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Headshot */}
+          <div className="mb-8">
+            <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-[#6366f1] glow">
+              <Image
+                src="/headshot.png"
+                alt="Dico Angelo"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+
           <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#141414] border border-[#262626] text-sm">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
             <span className="text-[#737373]">Canadian Citizen · TN Visa Eligible</span>

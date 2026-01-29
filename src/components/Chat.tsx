@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 interface Message {
   role: "user" | "assistant";
@@ -82,8 +83,8 @@ export default function Chat() {
       {/* Header */}
       <div className="p-4 border-b border-[#262626] bg-gradient-to-r from-[#6366f1]/10 to-transparent">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-[#6366f1] flex items-center justify-center text-lg font-bold">
-            D
+          <div className="relative w-10 h-10 rounded-full overflow-hidden">
+            <Image src="/headshot.png" alt="Dico Angelo" fill className="object-cover" />
           </div>
           <div>
             <h3 className="font-bold">Ask Me Anything</h3>
