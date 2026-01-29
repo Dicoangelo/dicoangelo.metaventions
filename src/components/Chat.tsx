@@ -128,7 +128,7 @@ export default function Chat() {
       }`}>
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-[#6366f1]/20">
-            <Image src="/headshot.jpg" alt="Dico Angelo" fill className="object-cover" />
+            <Image src="/headshot-ama.jpg" alt="Dico Angelo" fill className="object-cover" />
           </div>
           <div>
             <h3 className="font-bold">Ask Me Anything</h3>
