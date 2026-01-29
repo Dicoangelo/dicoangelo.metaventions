@@ -26,7 +26,17 @@ export default function Chat() {
   const [input, setInput] = useState("");
   const [isTextLoading, setIsTextLoading] = useState(false);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const { theme } = useTheme();
+
+  // Prevent page scroll when input is focused (browser tries to scroll it into view)
+  const handleInputFocus = () => {
+    // Save current scroll position and restore it to prevent page jump
+    const scrollY = window.scrollY;
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: scrollY, behavior: "instant" });
+    });
+  };
 
   // Smooth scroll to bottom (within container only, not the whole page)
   const scrollToBottom = () => {
@@ -224,9 +234,11 @@ export default function Chat() {
           >
             <div className="flex gap-2">
               <input
+                ref={inputRef}
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
+                onFocus={handleInputFocus}
                 placeholder="Type your question..."
                 className={`flex-1 px-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366f1]/50 text-sm transition-all duration-200 ${
                   isLight
