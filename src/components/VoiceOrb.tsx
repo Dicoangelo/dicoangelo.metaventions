@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
+import { useDeepgramSTT } from "@/hooks/useDeepgramSTT";
 
 // Web Speech API types
 interface SpeechRecognitionEvent {
@@ -78,11 +79,33 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
   const [isProcessing, setIsProcessing] = useState(false);
   const [supported, setSupported] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [useDeepgram, setUseDeepgram] = useState(true);
 
   // Live transcription
   const [liveTranscript, setLiveTranscript] = useState("");
   const [lastResponse, setLastResponse] = useState("");
   const [showResponse, setShowResponse] = useState(false);
+
+  // Deepgram STT hook
+  const {
+    isListening: deepgramListening,
+    transcript: deepgramTranscript,
+    error: deepgramError,
+    start: startDeepgram,
+    stop: stopDeepgram,
+    isAvailable: deepgramAvailable,
+  } = useDeepgramSTT(
+    (text, isFinal) => {
+      setLiveTranscript(text);
+    },
+    (finalTranscript) => {
+      // Auto-process when Deepgram detects end of speech
+      if (finalTranscript.trim() && !isProcessing && !isSpeaking) {
+        processVoice(finalTranscript.trim());
+      }
+    },
+    1200
+  );
 
   // Visual states
   const [dicoFrequencies, setDicoFrequencies] = useState<number[]>(new Array(48).fill(0));
@@ -106,8 +129,30 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
   // Check browser support
   useEffect(() => {
     const SpeechAPI = getSpeechRecognition();
-    setSupported(!!SpeechAPI);
-  }, []);
+    setSupported(!!SpeechAPI || deepgramAvailable);
+  }, [deepgramAvailable]);
+
+  // Sync Deepgram listening state
+  useEffect(() => {
+    if (deepgramListening) {
+      setIsListening(true);
+    }
+  }, [deepgramListening]);
+
+  // Sync Deepgram transcript
+  useEffect(() => {
+    if (deepgramTranscript && useDeepgram) {
+      setLiveTranscript(deepgramTranscript);
+    }
+  }, [deepgramTranscript, useDeepgram]);
+
+  // Handle Deepgram errors
+  useEffect(() => {
+    if (deepgramError) {
+      console.log("[VoiceOrb] Deepgram error, falling back to Web Speech");
+      setUseDeepgram(false);
+    }
+  }, [deepgramError]);
 
   // Main canvas animation
   useEffect(() => {
@@ -325,15 +370,31 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     setUserAmplitude(0);
   }, []);
 
-  // Start listening
+  // Start listening (Deepgram with Web Speech API fallback)
   const startListening = useCallback(async () => {
-    const SpeechRecognitionAPI = getSpeechRecognition();
-    if (!SpeechRecognitionAPI) return;
-
     setError(null);
     setLiveTranscript("");
     setShowResponse(false);
     await initMicAnalyser();
+
+    // Try Deepgram first
+    if (useDeepgram && deepgramAvailable) {
+      try {
+        await startDeepgram();
+        setIsListening(true);
+        return;
+      } catch (e) {
+        console.log("[VoiceOrb] Deepgram failed, falling back to Web Speech API");
+        setUseDeepgram(false);
+      }
+    }
+
+    // Fallback to Web Speech API
+    const SpeechRecognitionAPI = getSpeechRecognition();
+    if (!SpeechRecognitionAPI) {
+      setError("Voice not supported");
+      return;
+    }
 
     const recognition = new SpeechRecognitionAPI();
     recognition.continuous = true;
@@ -386,11 +447,18 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     } catch {
       setError("Failed to start");
     }
-  }, [initMicAnalyser, cleanupMic, isListening, isProcessing, isSpeaking]);
+  }, [initMicAnalyser, cleanupMic, isListening, isProcessing, isSpeaking, useDeepgram, deepgramAvailable, startDeepgram]);
 
   // Process voice input
   const processVoice = useCallback(async (text: string) => {
     if (silenceTimeoutRef.current) clearTimeout(silenceTimeoutRef.current);
+
+    // Stop Deepgram
+    if (deepgramListening) {
+      await stopDeepgram();
+    }
+
+    // Stop Web Speech API
     if (recognitionRef.current) {
       recognitionRef.current.onend = null;
       recognitionRef.current.stop();
@@ -444,7 +512,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       setIsProcessing(false);
       setError("Failed to respond");
     }
-  }, [cleanupMic, startListening, isListening, isSpeaking, conversationHistory, onAddToHistory]);
+  }, [cleanupMic, startListening, isListening, isSpeaking, conversationHistory, onAddToHistory, deepgramListening, stopDeepgram]);
 
   // Speak with TTS
   const speakResponse = async (text: string) => {
@@ -502,6 +570,13 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
   // Stop/Interrupt everything
   const stopAll = useCallback(() => {
     if (silenceTimeoutRef.current) clearTimeout(silenceTimeoutRef.current);
+
+    // Stop Deepgram
+    if (deepgramListening) {
+      stopDeepgram();
+    }
+
+    // Stop Web Speech API
     if (recognitionRef.current) {
       recognitionRef.current.onend = null;
       recognitionRef.current.abort();
@@ -523,7 +598,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     setIsProcessing(false);
     setLiveTranscript("");
     particlesRef.current = [];
-  }, [cleanupMic]);
+  }, [cleanupMic, deepgramListening, stopDeepgram]);
 
   // Handle click
   const handleClick = () => {
@@ -658,6 +733,13 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
         <span className={`text-[10px] transition-colors ${isLight ? 'text-gray-400' : 'text-gray-600'}`}>
           {isActive ? (isSpeaking ? 'Speaking' : isProcessing ? 'Thinking' : 'Listening') : 'Ready'}
         </span>
+        {isListening && (
+          <span className={`text-[8px] px-1.5 py-0.5 rounded ${
+            useDeepgram && deepgramAvailable ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'
+          }`}>
+            {useDeepgram && deepgramAvailable ? 'Deepgram' : 'Browser'}
+          </span>
+        )}
       </div>
     </div>
   );
