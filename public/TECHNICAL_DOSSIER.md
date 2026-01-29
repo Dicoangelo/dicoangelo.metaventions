@@ -654,6 +654,7 @@ Personal methodology applied across all workstreams:
 - Suger thought leader — public recognition
 - 2x Microsoft Partner of the Year contributor
 - **Catalyst 2026 Speaker** — Featured testimonial: *"Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience."* ([source](https://www.joincatalyst.com/catalyst26))
+- **1159.ai Innovation Workshop** — Featured testimonial on rapid prototyping and iterative design: *"This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment... The iterative process we followed enabled us to test and refine our ideas rapidly, collaboratively engaging with previous iterations to find the best solution."* ([source](https://blog.1159.ai/the-art-and-science-of-innovation))
 
 ### Rocket Mortgage Canada (Jun 2020 - May 2023)
 **Product Success Specialist**
