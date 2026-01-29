@@ -20,6 +20,20 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 - **$222,750** annual cost savings at Rocket Mortgage
 - **2x Microsoft Partner of the Year** awards
 
+### 2024 Highlights (Contentsquare)
+- **$30M+ ACV growth** (AWS + Microsoft partnerships)
+- **$19M marketplace milestone** achieved
+- **3,000+ co-sell registrations** processed
+- **300+ partners** enabled with tiered frameworks
+- **60% reduction** in manual effort (automation)
+- **50+ dynamic reports** powering partner insights
+
+### Systems & Platform Ownership
+- Led **6 iteration workstreams**: AWS CRM, SCA PM, Product Innovation, Cloud Intelligence, Reveal, R&D
+- Built **Cloud Intelligence Layer**: propensity models, pipeline scoring, executive dashboards
+- **Platform Admin**: Reveal, Suger, PartnerStack, Salesforce, AWS ACE, Crossbeam, Skilljar
+- Designed **3-tier ecosystem** and **PLG/SLG commission models** for 3,000+ partners
+
 ### Systems Built
 - **ACE** (Adaptive Consensus Engine) - 1,462 LOC
 - **ARCHON** (Meta-Orchestrator) - 1,280 LOC
@@ -43,9 +57,10 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 - Built 297K+ LOC in 3 months
 - Published 2 npm packages
 
-**Contentsquare** (May 2023 - Nov 2025)
-- Cloud Alliance Manager
-- $800M+ TCV, 40% attachment
+**Contentsquare** (Jan 2022 - Nov 2025)
+- Cloud Alliances | Systems Integration | Partner Intelligence | Platform Admin
+- 4 concurrent tracks: alliance strategy, systems architecture, reporting infrastructure, tool administration
+- $800M+ TCV, $30M+ ACV (2024), 3,000+ partners, 8+ platforms administered
 - 2x Microsoft Partner of the Year
 
 **Rocket Mortgage** (Jun 2020 - May 2023)
@@ -62,6 +77,9 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 - AWS Partner: Business Accreditation
 - AWS Partner: Generative AI on AWS Essentials
 - Microsoft Copilot for Security Sales Training
+- Azure Development Learning Certifications
+- Artificial Intelligence Strategies for Business
+- Project Management Professional Development
 
 ## 🔗 PORTFOLIO
 

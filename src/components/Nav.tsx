@@ -22,6 +22,9 @@ export default function Nav() {
           <a href="#projects" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Projects</a>
           <a href="#experience" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Experience</a>
           <a href="#arena" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Arena</a>
+          <a href="#analyze" className="px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black font-medium hover:from-amber-400 hover:to-yellow-400 transition-all">
+            Analyze (Recruiters)
+          </a>
           <a href="#contact" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Contact</a>
           <ThemeToggle />
         </div>

@@ -434,12 +434,18 @@ A multi-agent hiring panel simulation that generates role-specific feedback from
 - ✅ Browser Speech APIs
 - ✅ face-api.js (biometrics)
 
-### Enterprise Tools (from Contentsquare)
+### Enterprise Partner Tools (from Contentsquare)
 - ✅ Salesforce (CRM automation)
-- ✅ AWS Partner Central
-- ✅ Microsoft Partner Center
-- ✅ Crossbeam (partner data)
+- ✅ AWS Partner Central / AWS ACE
+- ✅ Microsoft Partner Center (MPN)
 - ✅ PartnerStack (affiliate management)
+- ✅ Reveal (partner data, MACC reporting admin)
+- ✅ Suger (AI marketplace automation - admin, thought leader)
+- ✅ SuperGlue (AI workflow automation)
+- ✅ Skilljar (training/LMS integration)
+- ✅ Tableau (data visualization)
+- ✅ Monday.com (project management)
+- ✅ Miro (lifecycle mapping, process design)
 
 ---
 
@@ -461,28 +467,127 @@ A multi-agent hiring panel simulation that generates role-specific feedback from
 - Implemented DQ scoring for quality gates
 - Built meta-orchestrator for autonomy
 
-### Contentsquare (May 2023 - Nov 2025)
-**Cloud Alliance Manager & Partner Programs Lead**
+### Contentsquare (Jan 2022 - Nov 2025)
+**Cloud Alliances | Systems Integration | Partner Intelligence | Platform Administration**
 
-**Quantified Impact:**
+**Scope of Work:**
+Operated across four concurrent tracks: (1) cloud alliance strategy with AWS and Microsoft, (2) systems integration architecture across CRM, PRM, and data platforms, (3) partner intelligence and reporting infrastructure, and (4) platform administration for GTM tools. Led multiple iteration workstreams while managing program consolidation across 3 acquired companies (Contentsquare, Hotjar, Heap).
+
+---
+
+#### Track 1: Alliance Strategy & Revenue Impact
+
+**2024 Metrics:**
+- **$30M+ ACV growth** via AWS and Microsoft partnerships (single year)
+- **$19M marketplace milestone** achieved
+- **3,000+ co-sell registrations** processed
+- **300+ partners onboarded** with tiered governance frameworks
+- **2x Microsoft Partner of the Year** awards
+
+**Career-Span Metrics:**
 - **$800M+ TCV** in registered deals
 - **40%** cloud attachment rate
 - **10%** of company revenue via cloud channel
-- **50%** reduction in deal registration time (CRM automation)
-- **2x Microsoft Partner of the Year** awards
 
-**Systems Built:**
-- OneCRM integration (Salesforce + AWS + PartnerStack)
-- Deal registration automation
-- Pipeline reporting dashboards
-- Co-marketing campaign orchestration
+**Partner Program Impact:**
+- Partners contributed to **50%+ of new business** (new logos)
+- Partner-involved deals are **31% larger** on average
+- **5.4x more likely to convert** with 2+ partners involved
+- **2.5x less churn** with 1 integration → **5.2x less** with 2+
 
-**Skills Demonstrated:**
-- Enterprise sales operations
-- CRM automation (Salesforce)
-- Cloud partnerships (AWS, Azure)
-- Cross-functional coordination
-- Program management
+---
+
+#### Track 2: Systems Integration Architecture
+
+**Work Stream Leadership:**
+Led the **Systems & Admins work stream** with weekly cross-functional coordination across engineering, product, data architecture, legal, privacy, and finance.
+
+**Integration Layer Owned:**
+- **Salesforce ↔ AWS ACE**: Co-sell data sync, deal attribution, partner lifecycle traceability
+- **Salesforce ↔ PartnerStack**: Lead routing, deal registration, commission calculation
+- **Crossbeam Integration**: Account mapping, co-sell overlays, strategic account activation
+- **Data Warehouse Integration**: Event tracking for ACV/TCV-based commission models
+- Built internal bridging solutions where automated integrations weren't production-ready
+
+**Iteration Workstreams Delivered:**
+| Iteration | Objective | Outputs |
+|-----------|-----------|---------|
+| **V1 – AWS CRM** | Salesforce ↔ AWS Partner Central alignment | Automation, accuracy, co-sell data sync |
+| **V1 – SCA AWS PM** | Structured execution on AWS workstreams | Roadmap management, escalation handling |
+| **V1 – Product Innovation** | Co-sell/market enhancements via partner integrations | GTM accelerators, revenue innovation |
+| **V1 – Cloud Intelligence** | Scalable intelligence layer for partnerships | Dashboards, propensity models, pipeline scoring |
+| **V1 – Reveal** | Operationalize Reveal for Microsoft/AWS GTM | MACC reporting, co-sell overlays |
+| **Infinite – R&D** | Vision-casting and future tooling | AI forecasting, Fabric/PRM design thinking |
+
+---
+
+#### Track 3: Partner Intelligence & Reporting
+
+**Cloud Intelligence Layer Built:**
+- **Executive Dashboards**: Microsoft, AWS, NA, Global rollups
+- **Propensity Frameworks**: Scoring models for partner-led pipeline
+- **Pipeline Scoring Systems**: Real-time deal health and conversion probability
+- **QBR/MBO Reporting**: Quarterly business reviews, objective tracking
+- **50+ dynamic reports** powering partner insights across teams
+
+**Reporting Cadence:**
+- Deal-level breakdowns with partner-aligned KPIs
+- Quarterly review packages (MSFT Q4, AWS QPR)
+- Executive-level summaries for leadership consumption
+
+---
+
+#### Track 4: Platform Administration
+
+**Full Admin Ownership:**
+| Platform | Role | Scope |
+|----------|------|-------|
+| **Reveal** | Platform Administrator | MACC reporting, co-sell overlays, strategic account activation |
+| **Suger** | Admin + Thought Leader | AI marketplace automation, public recognition |
+| **PartnerStack** | Core PRM Admin | 3,000+ partner ecosystem management |
+| **Salesforce** | CRM Workflows | Deal registration, lead routing, attribution |
+| **AWS ACE** | Partner Central | Co-sell registration, opportunity tracking |
+| **MSFT MPN** | Partner Center | Benefits, co-sell, marketplace |
+| **Skilljar** | Partner University | Training/LMS integration |
+| **Crossbeam** | Account Mapping | Partner overlap analysis |
+
+**Additional Tools:** Tableau, Monday.com, Miro, SuperGlue
+
+---
+
+#### Program Design & Governance
+
+**Tiered Partner Ecosystem (3-program consolidation):**
+- **Premier Tier** (~50 partners): Dedicated PSMs, MDF, joint business planning, beta access
+- **Select Tier** (~200 partners): Monthly check-ins, directory listing, moderate support
+- **Member Tier** (~3,000 partners): Scalable automation via PartnerStack + Skilljar
+
+**Commission Models Designed:**
+- **PLG (Product-Led Growth)**: Flat 15% on paid ACV (first 12 months)
+- **SLG (Sales-Led Growth)**: 10-15% on committed TCV
+  - Sourcing: 10% (15% for Premier)
+  - Co-sell + Fulfill: 15%
+  - Standalone Fulfill: 10%
+
+**Automation Impact:**
+- **60% reduction** in manual effort through deal registration automation
+- **10% pipeline boost** via Suger + Salesforce integration
+
+---
+
+#### Operational Framework: "Laws of Organization"
+Personal methodology applied across all workstreams:
+1. **Automation** - Eliminate repetitive manual work
+2. **Data** - Evidence-based decision making
+3. **Synergy** - Cross-functional alignment
+4. **Velocity** - Optimize for speed-to-value
+
+---
+
+#### Recognition
+- "Best-in-class" reporting — executive praise
+- Suger thought leader — public recognition
+- 2x Microsoft Partner of the Year contributor
 
 ### Rocket Mortgage Canada (Jun 2020 - May 2023)
 **Product Success Specialist**
@@ -518,6 +623,14 @@ A multi-agent hiring panel simulation that generates role-specific feedback from
 
 **Microsoft (2024)**
 - Microsoft Copilot for Security Sales Training
+
+**Cloud & AI Development**
+- Azure Development Learning Certifications
+- Artificial Intelligence Strategies for Business
+- Mastering Cloud Marketplaces: Partner Insight
+
+**Professional Development**
+- Project Management Professional Development (Coursera)
 
 ---
 
@@ -597,7 +710,7 @@ Scale AI, Databricks, Cohere, Mistral, Hugging Face, Notion, Figma, Vercel, Stri
 **Live Demos:**
 - OS-App: https://os-app-woad.vercel.app
 - Portfolio: https://dicoangelo.vercel.app
-- Company: https://metaventions.com
+- Company: https://metaventionsai.com
 
 **Code:**
 - GitHub: https://github.com/Dicoangelo
@@ -605,7 +718,7 @@ Scale AI, Databricks, Cohere, Mistral, Hugging Face, Notion, Figma, Vercel, Stri
 
 **Professional:**
 - LinkedIn: https://linkedin.com/in/dicoangelo
-- Twitter: https://twitter.com/dicoangelo
+- Twitter: https://x.com/dicoangelo
 - Email: dico.angelo97@gmail.com
 - Phone: 519-999-6099
 
