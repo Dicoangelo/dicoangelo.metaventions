@@ -192,12 +192,12 @@ async function generateEmbeddings(chunks: DossierChunk[]): Promise<number[][]> {
 async function uploadChunks(chunks: DossierChunk[], embeddings: number[][]): Promise<void> {
   console.log(`Uploading ${chunks.length} chunks to Supabase...`);
 
-  // Clear existing chunks first
+  // Clear existing chunks first using neq on a column that exists
   console.log("   Clearing existing chunks...");
   const { error: deleteError } = await supabase
     .from("career_dossier_chunks")
     .delete()
-    .gte("id", 0); // Delete all rows
+    .neq("content", "___IMPOSSIBLE_VALUE___"); // Match all rows
 
   if (deleteError) {
     console.error("Failed to clear existing chunks:", deleteError);
@@ -261,6 +261,7 @@ async function main() {
     { path: join(process.cwd(), "scripts", "repo-data", "github-stats.md"), category: "github_stats" },
     { path: join(process.cwd(), "scripts", "repo-data", "tests-configs.md"), category: "configs" },
     { path: join(process.cwd(), "scripts", "repo-data", "source-code.md"), category: "source_code" },
+    { path: join(process.cwd(), "scripts", "repo-data", "research-findings.md"), category: "research" },
   ];
 
   for (const { path, category } of repoDataFiles) {

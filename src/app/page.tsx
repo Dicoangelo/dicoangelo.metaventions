@@ -2,6 +2,7 @@
 
 import Chat from "@/components/Chat";
 import Image from "next/image";
+import Script from "next/script";
 import Nav from "@/components/Nav";
 import JDAnalyzer from "@/components/JDAnalyzer";
 import { useTheme } from "@/components/ThemeProvider";
@@ -624,7 +625,7 @@ export default function Home() {
 
       {/* Contact / CTA */}
       <section id="contact" className="py-20 px-6">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Let&apos;s Build</h2>
           <p className={`mb-8 ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
             Looking for roles at the intersection of AI systems and enterprise operations.
@@ -648,6 +649,22 @@ export default function Home() {
             >
               519-999-6099
             </a>
+          </div>
+
+          {/* Calendly Scheduling */}
+          <div className="mb-8">
+            <h3 className={`text-xl font-medium mb-4 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
+              Schedule a Call
+            </h3>
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/dicoangelo-metaventionsai/30min?primary_color=8314da"
+              style={{ minWidth: '320px', height: '700px' }}
+            />
+            <Script
+              src="https://assets.calendly.com/assets/external/widget.js"
+              strategy="lazyOnload"
+            />
           </div>
 
           <div className="flex gap-6 justify-center">

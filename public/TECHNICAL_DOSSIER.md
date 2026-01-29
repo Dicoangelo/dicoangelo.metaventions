@@ -394,6 +394,53 @@ A multi-agent hiring panel simulation that generates role-specific feedback from
 
 ---
 
+## GITHUB REPOSITORIES - COMPLETE LIST
+
+### Core AI Systems
+| Repository | Language | Description |
+|------------|----------|-------------|
+| **OS-App** | TypeScript | Sovereign AI Operating System — Voice-native, multi-agent interface powered by Gemini Live & ElevenLabs |
+| **meta-vengine** | Python | THE CLOSED LOOP — The system that improves itself. Bidirectional Co-Evolution, HSRGS Routing, D-Ecosystem |
+| **ResearchGravity** | Python | Metaventions AI Research Framework — Multi-tier signal capture for frontier intelligence |
+| **agent-core** | Python | Unified research orchestration for CLI, Antigravity, and web — Innovation Scout, URL logging, cross-environment sync |
+
+### Career & Professional Tools
+| Repository | Language | Description |
+|------------|----------|-------------|
+| **CareerCoachAntigravity** | TypeScript | Sovereign Career Intelligence — AI-powered positioning, skill graphs, and multi-agent hiring simulation |
+| **career-coach-mvp** | TypeScript | AI Hiring Panel Verdict - Multi-agent resume analysis with Nexus Engine |
+| **dicoangelo.com** | TypeScript | Personal portfolio site - Builder-Operator Hybrid showcasing AI systems and enterprise GTM experience |
+
+### Published npm Packages
+| Repository | Language | Description |
+|------------|----------|-------------|
+| **cpb-core** | TypeScript | Cognitive Precision Bridge - AI orchestration with precision-aware routing through RLM, ACE, and DQ scoring |
+| **voice-nexus** | TypeScript | Universal multi-provider voice architecture - seamless routing between STT, reasoning, and TTS providers |
+
+### Investor & Enterprise Materials
+| Repository | Language | Description |
+|------------|----------|-------------|
+| **enterprise-deck** | HTML | Metaventions Enterprise Pitch Deck |
+| **sovereign-deck** | HTML | Metaventions AI — Investor presentation and pitch deck materials |
+| **metaventions-pitch-deck-2026** | HTML | Metaventions AI Enterprise Pitch Deck - Protocol substrate ownership, 94% margin model |
+| **Metaventions-AI-Landing** | TypeScript | Official landing page for Metaventions AI — Architected Intelligence |
+
+### Productivity & Utilities
+| Repository | Language | Description |
+|------------|----------|-------------|
+| **FlowDesk** | Lua | Multi-monitor workspace automation for macOS — 5 layouts, auto-launch, smart hide, numpad controls |
+| **chrome-history-export** | Python | Transform Chrome browsing history into AI-ready insights. Multi-platform export optimized for NotebookLM, Gemini, Grok, Cursor |
+
+### Brand & Identity
+| Repository | Language | Description |
+|------------|----------|-------------|
+| **Dicoangelo** | Markdown | Profile README — Architecting Sovereign AI Infrastructure |
+| **The-Decosystem** | Markdown | Uncovering Untapped Value, Synthesizing Data Streams, Building Sovereign Outputs |
+
+**Note:** 14 repositories are private (proprietary code). 7 are public for demonstration and open-source contribution.
+
+---
+
 ## TECHNICAL SKILLS - VERIFIED
 
 ### AI/ML & Agentic Systems
