@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { useTheme } from "./ThemeProvider";
 
 interface Message {
   role: "user" | "assistant";
@@ -20,6 +21,7 @@ export default function Chat() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -78,17 +80,19 @@ export default function Chat() {
     sendMessage(input);
   };
 
+  const isLight = theme === "light";
+
   return (
     <div className="card max-w-2xl mx-auto overflow-hidden">
       {/* Header */}
-      <div className="p-4 border-b border-[#262626] bg-gradient-to-r from-[#6366f1]/10 to-transparent">
+      <div className={`p-4 border-b ${isLight ? 'border-gray-200 bg-gradient-to-r from-indigo-50 to-transparent' : 'border-[#262626] bg-gradient-to-r from-[#6366f1]/10 to-transparent'}`}>
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-full overflow-hidden">
             <Image src="/headshot.png" alt="Dico Angelo" fill className="object-cover" />
           </div>
           <div>
             <h3 className="font-bold">Ask Me Anything</h3>
-            <p className="text-sm text-[#737373]">The AI-powered D-icosystem · Knows everything about Dico</p>
+            <p className={`text-sm ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>The AI-powered D-icosystem · Knows everything about Dico</p>
           </div>
         </div>
       </div>
@@ -97,13 +101,17 @@ export default function Chat() {
       <div className="h-80 overflow-y-auto p-4 space-y-4">
         {messages.length === 0 ? (
           <div className="text-center py-8">
-            <p className="text-[#737373] mb-4">Ask anything about my background, projects, or experience.</p>
+            <p className={`mb-4 ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>Ask anything about my background, projects, or experience.</p>
             <div className="flex flex-wrap gap-2 justify-center">
               {SUGGESTED_QUESTIONS.map((q) => (
                 <button
                   key={q}
                   onClick={() => sendMessage(q)}
-                  className="px-3 py-2 text-sm bg-[#1f1f1f] hover:bg-[#2a2a2a] border border-[#262626] rounded-lg transition-colors"
+                  className={`px-3 py-2 text-sm rounded-lg transition-colors ${
+                    isLight
+                      ? 'bg-gray-100 hover:bg-gray-200 border border-gray-200 text-gray-700'
+                      : 'bg-[#1f1f1f] hover:bg-[#2a2a2a] border border-[#262626]'
+                  }`}
                 >
                   {q}
                 </button>
@@ -120,7 +128,9 @@ export default function Chat() {
                 className={`max-w-[80%] px-4 py-2 rounded-2xl ${
                   message.role === "user"
                     ? "bg-[#6366f1] text-white"
-                    : "bg-[#1f1f1f] text-[#ededed]"
+                    : isLight
+                      ? "bg-gray-100 text-gray-800"
+                      : "bg-[#1f1f1f] text-[#ededed]"
                 }`}
               >
                 <p className="text-sm whitespace-pre-wrap">{message.content}</p>
@@ -130,7 +140,7 @@ export default function Chat() {
         )}
         {isLoading && messages[messages.length - 1]?.role === "user" && (
           <div className="flex justify-start">
-            <div className="bg-[#1f1f1f] px-4 py-2 rounded-2xl">
+            <div className={`px-4 py-2 rounded-2xl ${isLight ? 'bg-gray-100' : 'bg-[#1f1f1f]'}`}>
               <div className="flex gap-1">
                 <span className="w-2 h-2 bg-[#6366f1] rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></span>
                 <span className="w-2 h-2 bg-[#6366f1] rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></span>
@@ -143,20 +153,24 @@ export default function Chat() {
       </div>
 
       {/* Input */}
-      <form onSubmit={handleSubmit} className="p-4 border-t border-[#262626]">
+      <form onSubmit={handleSubmit} className={`p-4 border-t ${isLight ? 'border-gray-200' : 'border-[#262626]'}`}>
         <div className="flex gap-2">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask about projects, experience, skills..."
-            className="flex-1 px-4 py-2 bg-[#1f1f1f] border border-[#262626] rounded-lg focus:outline-none focus:border-[#6366f1] text-sm"
+            className={`flex-1 px-4 py-2 rounded-lg focus:outline-none focus:border-[#6366f1] text-sm ${
+              isLight
+                ? 'bg-gray-100 border border-gray-200 text-gray-800 placeholder-gray-400'
+                : 'bg-[#1f1f1f] border border-[#262626] text-white'
+            }`}
             disabled={isLoading}
           />
           <button
             type="submit"
             disabled={isLoading || !input.trim()}
-            className="px-4 py-2 bg-[#6366f1] hover:bg-[#5558e3] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-medium transition-colors"
+            className="px-4 py-2 bg-[#6366f1] hover:bg-[#5558e3] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-medium transition-colors text-white"
           >
             Send
           </button>

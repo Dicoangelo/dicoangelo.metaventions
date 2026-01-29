@@ -7,37 +7,44 @@
   --foreground: #ededed;
   --accent: #6366f1;
   --accent-light: #818cf8;
-  --muted: #737373;
-  --muted-light: #a3a3a3;
+  --muted: #a3a3a3;
+  --muted-dark: #737373;
+  --subtle: #525252;
   --card: #141414;
   --card-hover: #1f1f1f;
   --border: #262626;
   --code-bg: #1a1a2e;
   --section-alt: #0f0f0f;
+  --tag-bg: #1f1f1f;
+  --input-bg: #1f1f1f;
 }
 
 /* Light theme */
 [data-theme="light"] {
-  --background: #fafafa;
+  --background: #ffffff;
   --foreground: #171717;
   --accent: #4f46e5;
   --accent-light: #6366f1;
-  --muted: #737373;
-  --muted-light: #525252;
+  --muted: #525252;
+  --muted-dark: #737373;
+  --subtle: #a3a3a3;
   --card: #ffffff;
   --card-hover: #f5f5f5;
   --border: #e5e5e5;
   --code-bg: #f0f0ff;
-  --section-alt: #f5f5f5;
+  --section-alt: #f9fafb;
+  --tag-bg: #f3f4f6;
+  --input-bg: #f3f4f6;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: system-ui, -apple-system, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 50%, #a855f7 100%);
   -webkit-background-clip: text;
@@ -45,31 +52,39 @@ body {
   background-clip: text;
 }
 
+/* Cards */
 .card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
+[data-theme="light"] .card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Metric cards */
 .metric-card {
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
   border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
 [data-theme="light"] .metric-card {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(139, 92, 246, 0.04) 100%);
-  border: 1px solid rgba(79, 70, 229, 0.15);
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.06) 0%, rgba(139, 92, 246, 0.03) 100%);
+  border: 1px solid rgba(79, 70, 229, 0.2);
 }
 
+/* Glow effect */
 .glow {
   box-shadow: 0 0 60px rgba(99, 102, 241, 0.15);
 }
 
 [data-theme="light"] .glow {
-  box-shadow: 0 0 60px rgba(79, 70, 229, 0.1);
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.12);
 }
 
+/* Section alternating background */
 .section-alt {
   background-color: var(--section-alt);
 }
@@ -82,4 +97,82 @@ html {
 /* Section styling */
 section {
   scroll-margin-top: 80px;
+}
+
+/* Fix all text colors for light mode */
+[data-theme="light"] .text-\[#737373\],
+[data-theme="light"] .text-\[#a3a3a3\],
+[data-theme="light"] .text-\[#525252\] {
+  color: var(--muted);
+}
+
+[data-theme="light"] .text-white {
+  color: white;
+}
+
+/* Fix background colors for light mode */
+[data-theme="light"] .bg-\[#141414\],
+[data-theme="light"] .bg-\[#1f1f1f\] {
+  background-color: var(--tag-bg);
+}
+
+[data-theme="light"] .bg-\[#1a1a2e\] {
+  background-color: var(--code-bg);
+}
+
+[data-theme="light"] .bg-\[#0a0a0a\]\/80 {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Fix border colors for light mode */
+[data-theme="light"] .border-\[#262626\] {
+  border-color: var(--border);
+}
+
+/* Fix hover states for light mode */
+[data-theme="light"] .hover\:bg-\[#141414\]:hover,
+[data-theme="light"] .hover\:bg-\[#1f1f1f\]:hover,
+[data-theme="light"] .hover\:bg-\[#2a2a2a\]:hover {
+  background-color: #e5e7eb;
+}
+
+/* Fix text hover for light mode */
+[data-theme="light"] .hover\:text-white:hover {
+  color: var(--foreground);
+}
+
+/* Chat specific fixes */
+[data-theme="light"] .bg-\[#6366f1\] {
+  background-color: var(--accent);
+}
+
+/* Timeline line */
+[data-theme="light"] .border-l-2.border-\[#262626\] {
+  border-color: var(--border);
+}
+
+/* Code blocks */
+[data-theme="light"] code {
+  background-color: var(--code-bg);
+  color: var(--accent);
+}
+
+/* Accent backgrounds with transparency */
+[data-theme="light"] .bg-\[#6366f1\]\/10 {
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+[data-theme="light"] .border-\[#6366f1\]\/20,
+[data-theme="light"] .border-\[#6366f1\]\/30 {
+  border-color: rgba(79, 70, 229, 0.2);
+}
+
+/* Green pulse indicator */
+.bg-green-500 {
+  background-color: #22c55e;
+}
+
+/* Button styles for light mode */
+[data-theme="light"] .bg-\[#6366f1\]:hover {
+  background-color: #4338ca;
 }
