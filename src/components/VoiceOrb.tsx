@@ -451,6 +451,12 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
 
   // Process voice input
   const processVoice = useCallback(async (text: string) => {
+    // Guard: Don't process if already processing or speaking
+    if (isProcessing || isSpeaking) {
+      console.log("[VoiceOrb] Skipping - already processing or speaking");
+      return;
+    }
+
     if (silenceTimeoutRef.current) clearTimeout(silenceTimeoutRef.current);
 
     // Stop Deepgram
@@ -516,6 +522,19 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
 
   // Speak with TTS
   const speakResponse = async (text: string) => {
+    // Stop any currently playing audio first
+    if (currentAudioRef.current) {
+      try { currentAudioRef.current.stop(); } catch {}
+      currentAudioRef.current = null;
+    }
+    if (ttsAnimationRef.current) {
+      cancelAnimationFrame(ttsAnimationRef.current);
+      ttsAnimationRef.current = null;
+    }
+    if ("speechSynthesis" in window) {
+      speechSynthesis.cancel();
+    }
+
     setIsSpeaking(true);
 
     try {
