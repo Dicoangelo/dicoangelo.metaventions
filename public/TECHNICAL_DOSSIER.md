@@ -653,6 +653,7 @@ Personal methodology applied across all workstreams:
 - "Best-in-class" reporting — executive praise
 - Suger thought leader — public recognition
 - 2x Microsoft Partner of the Year contributor
+- **Catalyst 2026 Speaker** — Featured testimonial: *"Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience."* ([source](https://www.joincatalyst.com/catalyst26))
 
 ### Rocket Mortgage Canada (Jun 2020 - May 2023)
 **Product Success Specialist**

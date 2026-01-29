@@ -19,6 +19,7 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 - **10%** of company revenue via cloud channel
 - **$222,750** annual cost savings at Rocket Mortgage
 - **2x Microsoft Partner of the Year** awards
+- **Catalyst 2026 Speaker** — Partner ecosystem conference testimonial
 
 ### 2024 Highlights (Contentsquare)
 - **$30M+ ACV growth** (AWS + Microsoft partnerships)
