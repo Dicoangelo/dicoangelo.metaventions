@@ -5,18 +5,32 @@
  * Uses Cohere for query embeddings and Supabase pgvector for similarity search.
  */
 
-import { createClient } from "@supabase/supabase-js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { CohereClient } from "cohere-ai";
 
-// Initialize clients
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-);
+// Initialize clients lazily to avoid build-time errors
+let supabase: SupabaseClient | null = null;
+let cohere: CohereClient | null = null;
 
-const cohere = new CohereClient({
-  token: process.env.COHERE_API_KEY!,
-});
+function getSupabase(): SupabaseClient | null {
+  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_KEY) {
+    return null;
+  }
+  if (!supabase) {
+    supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+  }
+  return supabase;
+}
+
+function getCohere(): CohereClient | null {
+  if (!process.env.COHERE_API_KEY) {
+    return null;
+  }
+  if (!cohere) {
+    cohere = new CohereClient({ token: process.env.COHERE_API_KEY });
+  }
+  return cohere;
+}
 
 interface DossierChunk {
   id: string;
@@ -45,9 +59,17 @@ export async function searchDossier(
 ): Promise<DossierChunk[]> {
   const { threshold = 0.3, limit = 8, category } = options;
 
+  const supabaseClient = getSupabase();
+  const cohereClient = getCohere();
+
+  if (!supabaseClient || !cohereClient) {
+    console.warn("Dossier search unavailable: missing SUPABASE or COHERE credentials");
+    return [];
+  }
+
   try {
     // Generate query embedding with Cohere
-    const embedResponse = await cohere.embed({
+    const embedResponse = await cohereClient.embed({
       texts: [query],
       model: "embed-english-v3.0",
       inputType: "search_query",
@@ -61,7 +83,7 @@ export async function searchDossier(
       : (embeddings as { float?: number[][] }).float?.[0] || [];
 
     // Search Supabase using the match_dossier_chunks RPC function
-    const { data, error } = await supabase.rpc("match_dossier_chunks", {
+    const { data, error } = await supabaseClient.rpc("match_dossier_chunks", {
       query_embedding: queryEmbedding,
       match_threshold: threshold,
       match_count: limit,
