@@ -721,3 +721,370 @@ https://dicoangelo.vercel.app
 ---
 
 *This dossier is maintained at `/Users/dicoangelo/dicoangelo.com/public/TECHNICAL_DOSSIER.md` and updated with each significant milestone. All metrics are verifiable through code, Git history, or professional documentation.*
+
+---
+
+## THE D-ECOSYSTEM - DEEP ARCHITECTURE
+
+### Core Thesis: Systems That Evolve Themselves
+
+Every project implements one recursive pattern:
+
+```
+OBSERVE → SYNTHESIZE → BUILD → COMPOUND
+     ↑__________________________|
+```
+
+| Project | Observe | Synthesize | Build | Compound |
+|---------|---------|------------|-------|----------|
+| **OS-App** | Biometric sensors + friction signals | Multi-agent consensus | Self-evolution protocol | Convergence memory |
+| **CareerCoach** | Resume text + job descriptions | Nexus Engine (NSRG) | Chameleon narratives | Skill graph propagation |
+| **ResearchGravity** | Multi-tier sources | Thesis-Gap-Direction | Session archives | Cross-project lineage |
+
+---
+
+### META-VENGINE: The 9 Systems
+
+META-VENGINE is a **bidirectional co-evolution engine** — a sophisticated self-improving AI productivity system containing 9 integrated systems across 2,051 code artifacts.
+
+#### System 1: Cognitive OS — Energy-Aware Routing
+**Purpose:** Time-aware cognitive modeling that predicts session outcomes and protects flow states.
+
+**Implementation:** Python (`~/.claude/kernel/cognitive-os.py` — 1,901 LOC)
+
+**Features:**
+- 5 cognitive modes (morning, peak, dip, evening, deep_night)
+- SessionFate Predictor for completion probability
+- FlowState Protector (defers alerts when flow >0.75)
+- PersonalRouter for energy-aware model selection
+- Peak hours tracked: 20:00, 12:00, 02:00
+
+#### System 2: DQ Routing System — Decision Quality Model Selection
+**Purpose:** Intelligent multi-model routing (Haiku/Sonnet/Opus) using DQ scoring.
+
+**Implementation:** JavaScript/Python (`~/.claude/kernel/dq-scorer.js` — 21,910 LOC)
+
+**Algorithm:**
+```
+DQ Score = Validity (40%) + Specificity (30%) + Correctness (30%)
+
+Route to:
+- Haiku (0.0-0.30): Simple queries
+- Sonnet (0.30-0.70): Code generation
+- Opus (0.70-1.00): Complex reasoning
+```
+
+**Metrics:**
+- 428 routing decisions tracked
+- 0.889 average DQ score
+- 93% cache efficiency
+
+#### System 3: Recovery Engine — Self-Healing Infrastructure
+**Purpose:** Automatic error detection and remediation.
+
+**Implementation:** Python (`~/.claude/kernel/recovery-engine.py`)
+
+**Coverage:** 94% (655/700 historical patterns)
+
+**Categories:** Git errors, concurrency, permissions, quota, crash, recursion, syntax
+
+**Auto-Fix Actions:**
+- `fix_username_case` — Correct GitHub username
+- `clear_git_locks` — Remove stale locks
+- `reset_permissions` — Fix file access
+- `rebuild_cache` — Clear corrupted state
+
+#### System 4: Supermemory — Cross-Session Intelligence
+**Purpose:** Transform telemetry into compounding cross-session knowledge.
+
+**Implementation:** Python/SQLite (`~/.claude/kernel/supermemory.py` — 1,051 LOC)
+
+**Components:**
+- Session Synthesis — Post-session learning extraction
+- Context Linking — Connect orphaned data
+- Weekly Synthesis — Cross-domain correlation
+- Knowledge Graph — Semantic relationships
+- Briefing Generator — Pre-session context
+- Spaced Repetition — Error pattern learning
+
+#### System 5: Multi-Agent Coordinator — Parallel Orchestration
+**Purpose:** Orchestrate multiple Claude agents for parallel research, building, and review.
+
+**Strategies:**
+
+| Strategy | Agents | Use Case |
+|----------|--------|----------|
+| `coord research` | 3 explore (parallel) | Understanding, investigation |
+| `coord implement` | N builders (locked) | Multi-file changes |
+| `coord review` | builder + reviewer | Quality-assured implementation |
+| `coord full` | research → build → review | Complete feature development |
+
+**Architecture:**
+```
+USER REQUEST
+     │
+     ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    ORCHESTRATOR                              │
+│  1. Decompose task into subtasks                            │
+│  2. Detect dependencies (parallel vs sequential)            │
+│  3. Check file conflicts                                    │
+│  4. Select strategy (research/implement/review/full)        │
+└─────────────────────────────────────────────────────────────┘
+     │
+     ├──────────────┬──────────────┬──────────────┐
+     ▼              ▼              ▼              ▼
+┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────┐
+│ Agent 1 │   │ Agent 2 │   │ Agent 3 │   │ Agent N │
+│ haiku   │   │ sonnet  │   │ haiku   │   │ opus    │
+│ research│   │ implement│  │ review  │   │ arch    │
+└────┬────┘   └────┬────┘   └────┬────┘   └────┬────┘
+     │              │              │              │
+     └──────────────┴──────────────┴──────────────┘
+                          │
+                          ▼
+              ┌───────────────────────┐
+              │    ACE CONSENSUS      │
+              │  DQ-weighted voting   │
+              │  Synthesize results   │
+              └───────────────────────┘
+```
+
+#### System 6: ACE — Adaptive Consensus Engine
+**Purpose:** Synthesize results from multiple agents using DQ-weighted voting.
+
+**Architecture:**
+```
+Agent Results (7 agents)
+    ↓
+DQ Weight Calculation
+    ↓
+Weighted Voting → Outcome consensus
+                → Quality consensus
+                → Confidence score
+                → Contrarian insights
+```
+
+**Contrarian Agent (7th agent):**
+- Challenges consensus when all agree
+- Identifies hidden assumptions
+- Prevents groupthink
+
+#### System 7: Observatory — Unified Analytics
+**Purpose:** Comprehensive metrics across all Claude Code operations.
+
+**Metrics Tracked:**
+- Cost: $6,040.55 across 285 sessions
+- Productivity: 9,821 LOC, 441.4 LOC/day
+- Routing: 158 decisions, 0.889 avg DQ
+- Sessions: 120 sessions with quality ratings
+- Git: 216 commits backfilled
+- Tools: 26,000+ tool calls
+
+**Data Authenticity:** 97% real, 3% calculated, 0% simulated
+
+#### System 8: Context Packs V2 — 7-Layer Semantic Selection
+**Purpose:** Intelligent context selection using embeddings and layered scoring.
+
+**Layers:**
+1. Semantic embedding similarity
+2. Project relevance
+3. Recency weighting
+4. Topic clustering
+5. Dependency analysis
+6. Historical utility
+7. Token budget optimization
+
+#### System 9: Learning Hub — Cross-Domain Correlation
+**Purpose:** Unified aggregation of all learning systems.
+
+**Features:**
+- Weekly sync identifies cross-domain patterns
+- Connects learnings across projects
+- Generates improvement suggestions
+- Tracks expertise evolution
+
+---
+
+### The 5 Hidden Inventions
+
+#### 1. Self-Evolution Protocol (OS-App)
+```
+Friction Signal → Hypothesis → Code Generation → Sandbox Test → User Approval → Hot Reload
+```
+The OS watches for repeated errors, long pauses, dead ends — then **writes its own improvements**.
+
+#### 2. Dream Protocol (OS-App)
+When idle 5+ minutes:
+- Processes queued research queries
+- Analyzes system logs for patterns
+- Generates predictive insights
+- Compiles "morning briefing"
+
+**An OS that thinks while you sleep.**
+
+#### 3. Convergence Memory (OS-App)
+IndexedDB learning system:
+- Stores optimal thresholds from each consensus
+- After 20 runs: knows "code review" takes 7 rounds, gap=3
+- **The system gets faster at its own decision-making.**
+
+#### 4. NSRG (Neuro-Symbolic Resume Graph) (CareerCoach)
+Pure symbolic reasoning, no LLM needed:
+- 5-level verb depth scoring ("architected" > "managed" > "built" > "used" > "familiar")
+- 229 trigger patterns → inferred skills with confidence
+- Evidence chains traceable to source text
+- **Anti-bullshit resume design** — claims are structurally verifiable
+
+#### 5. Research → Implementation Lineage (ResearchGravity)
+```
+arXiv:2511.15755 (Decision Quality Paper)
+    ↓
+backfill-multi-agent-orchestr-20260113 (Research Session)
+    ↓
+OS-App (Project)
+    ↓
+ACE Feature (Adaptive Consensus Engine)
+    ↓
+projects.json lineage.features_implemented
+```
+**Can trace any feature back to the research that enabled it.**
+
+---
+
+### OS-App Deep Architecture
+
+#### Agentic Kernel (/services/kernel/)
+- **AgentKernel.ts** — Central dispatcher with state machine: BOOTING → IDLE → PROCESSING → PAGING → SUSPENDED
+- **KernelScheduler.ts** — Priority queue: CRITICAL(100) → HIGH(75) → NORMAL(50) → LOW(25) → BACKGROUND(10)
+- **IntentResolver.ts** — 8 intent categories: NAVIGATION, QUERY, MUTATION, CREATION, ANALYSIS, ORCHESTRATION, BIOMETRIC, UI_REGENERATION
+- **SemanticPager.ts** — Context management with LRU/LFU/RELEVANCE eviction policies
+
+#### The 5-Agent Hive
+| Agent | Role | Skepticism | Logic | Creativity |
+|-------|------|------------|-------|------------|
+| **Mike** | Implementation Architect | 0.15 | 0.50 | 0.95 |
+| **Dr. Ira** | Audit Sentinel | 0.95 | 0.90 | 0.20 |
+| **Caleb** | Execution Lead | 0.40 | 0.95 | 0.30 |
+| **Paramdeep** | Systems Strategist | 0.60 | 0.85 | 0.50 |
+| **Bilal** | Kinetic Operator | 0.20 | 0.60 | 0.70 |
+
+---
+
+### CareerCoach Deep Architecture
+
+#### Chameleon Engine v2
+4 archetypes with semantic transformation:
+- **Speed** (startups): "Managed" → "Accelerated", focus on velocity
+- **Safety** (enterprise): "fast" → "reliable", focus on compliance
+- **Ecosystem** (platforms): Individual → Network metrics
+- **Creative** (agencies): "optimized" → "invented", focus on novelty
+
+#### Multi-Agent Hiring Committee
+- **Hiring Manager** (Claude): Business impact, revenue, strategy
+- **Tech Lead** (Grok/Gemini): Technical depth, architecture
+- **HR Partner** (OpenAI): Culture fit, collaboration, growth
+
+#### Skill Graph Navigator
+- 70+ skill nodes with demand scores and growth rates
+- 86+ edges: prerequisite, complement, substitute, evolution, adjacent
+- BFS path finding for skill transitions
+- Agglomerative clustering for skill groups
+
+---
+
+### The Sovereignty Stack
+
+Every layer implements **user ownership**:
+
+| Layer | Sovereignty Implementation |
+|-------|---------------------------|
+| **Data** | Local JSON files, no cloud lock-in |
+| **Reasoning** | Symbolic algorithms, no black-box ML |
+| **LLMs** | Optional enhancement, not dependency |
+| **Memory** | User-accessible ~/.agent-core/ |
+| **Evolution** | User approval required for self-modifications |
+
+---
+
+### Brand Philosophy: D-Ecosystem
+
+**D-Ecosystem** = **D**(ico) + **ECO**(system) = The architect embedded in the architecture itself.
+
+The name contains multiple layers:
+- **Layer 1**: Decentralized Ecosystem (the philosophy)
+- **Layer 2**: D-ICO-SYSTEM (phonetic encoding)
+- **Layer 3**: Dico's System (ownership signature)
+- **Layer 4**: System within system (intentional redundancy)
+
+**Core Tagline:** *"Let the invention be hidden in your vision"*
+- The invention (Dico) IS hidden in the vision (D-Ecosystem)
+
+---
+
+### Integration Flow
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     THE COMPOUNDING LOOP                        │
+└─────────────────────────────────────────────────────────────────┘
+
+     ┌──────────────┐
+     │  RESEARCH    │ ← ResearchGravity captures frontier signals
+     │  GRAVITY     │ ← Auto-archive to ~/.agent-core/sessions/
+     └──────┬───────┘
+            │ Lineage link
+            ↓
+     ┌──────────────┐
+     │   AGENT      │ ← Unified orchestration across CLI/Web/IDE
+     │   CORE       │ ← Innovation Scout finds viral + groundbreaker
+     └──────┬───────┘
+            │ Implementation
+            ↓
+     ┌──────────────┐
+     │   OS-APP     │ ← Multi-agent consensus (ACE)
+     │              │ ← Self-evolution from friction
+     │              │ ← Dream Protocol background cognition
+     │              │ ← Biometric-adaptive UI
+     └──────┬───────┘
+            │ Career application
+            ↓
+     ┌──────────────┐
+     │  CAREER      │ ← Chameleon Engine adapts narratives
+     │  COACH       │ ← NSRG analyzes skill depth
+     │              │ ← Hiring Committee simulates interviews
+     └──────┬───────┘
+            │ Learnings
+            ↓
+     ┌──────────────┐
+     │   MEMORY     │ ← ~/.agent-core/memory/learnings.md
+     │   LAYER      │ ← projects.json tracks features implemented
+     └──────┬───────┘
+            │
+            └──────────→ LOOP (next research session compounds)
+```
+
+---
+
+### Key File Paths
+
+```
+Configuration:
+  ~/.agent-core/config.json
+  ~/.agent-core/projects.json
+  ~/.agent-core/session_tracker.json
+
+Research:
+  ~/.agent-core/research/INDEX.md
+  ~/.agent-core/research/os-app/os_app_master_proposal.md
+  ~/.agent-core/brand/D-ECOSYSTEM-BRAND.md
+
+Projects:
+  ~/OS-App/
+  ~/CareerCoachAntigravity/
+  ~/researchgravity/
+
+Ecosystem Guidance:
+  ~/CLAUDE.md (master)
+  ~/.claude/CLAUDE.md (user preferences)
+```

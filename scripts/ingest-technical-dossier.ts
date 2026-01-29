@@ -61,8 +61,8 @@ function chunkMarkdown(content: string, filePath: string, category: string): Dos
   const flushChunk = () => {
     if (currentContent.length > 0) {
       const content = currentContent.join("\n").trim();
-      if (content.length > 50) {
-        // Only add chunks with substantial content
+      if (content.length > 30) {
+        // Only add chunks with some content
         chunks.push({
           content,
           heading: currentHeading,
@@ -77,8 +77,8 @@ function chunkMarkdown(content: string, filePath: string, category: string): Dos
   };
 
   for (const line of lines) {
-    // Detect headings (# or ##)
-    const headingMatch = line.match(/^##?\s+(.+)$/);
+    // Detect headings (# or ## or ###)
+    const headingMatch = line.match(/^#{1,3}\s+(.+)$/);
     if (headingMatch) {
       // Flush previous chunk
       flushChunk();
