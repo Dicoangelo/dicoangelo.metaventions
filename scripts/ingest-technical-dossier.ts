@@ -136,11 +136,13 @@ async function generateEmbeddings(chunks: DossierChunk[]): Promise<number[][]> {
 
   const BATCH_SIZE = 96;
   const allEmbeddings: number[][] = [];
+  const totalBatches = Math.ceil(texts.length / BATCH_SIZE);
 
-  for (let i = 0; i < texts.length; i += BATCH_SIZE) {
-    const batch = texts.slice(i, i + BATCH_SIZE);
-    const batchNum = Math.floor(i / BATCH_SIZE) + 1;
-    const totalBatches = Math.ceil(texts.length / BATCH_SIZE);
+  let batchIndex = 0;
+  while (batchIndex < totalBatches) {
+    const start = batchIndex * BATCH_SIZE;
+    const batch = texts.slice(start, start + BATCH_SIZE);
+    const batchNum = batchIndex + 1;
     console.log(`   Processing batch ${batchNum}/${totalBatches} (${batch.length} texts)...`);
 
     try {
@@ -161,11 +163,21 @@ async function generateEmbeddings(chunks: DossierChunk[]): Promise<number[][]> {
         throw new Error("Unexpected embedding format from Cohere");
       }
 
-      // Small delay to avoid rate limiting
-      if (i + BATCH_SIZE < texts.length) {
-        await new Promise(resolve => setTimeout(resolve, 200));
+      batchIndex++; // Move to next batch only on success
+
+      // Longer delay to avoid rate limiting (Cohere trial: 100k tokens/min)
+      if (batchIndex < totalBatches) {
+        console.log(`   Waiting 5s to avoid rate limits...`);
+        await new Promise(resolve => setTimeout(resolve, 5000));
       }
-    } catch (error) {
+    } catch (error: any) {
+      // Retry on rate limit with exponential backoff
+      if (error?.statusCode === 429) {
+        console.log(`   Rate limited! Waiting 65s before retry...`);
+        await new Promise(resolve => setTimeout(resolve, 65000));
+        // Don't increment batchIndex - retry same batch
+        continue;
+      }
       console.error(`Failed to generate embeddings for batch ${batchNum}:`, error);
       throw error;
     }
@@ -245,6 +257,10 @@ async function main() {
     { path: join(process.cwd(), "scripts", "repo-data", "deep-scan.md"), category: "github_tech_stack" },
     { path: join(process.cwd(), "scripts", "repo-data", "docs-scan.md"), category: "github_docs" },
     { path: join(process.cwd(), "scripts", "repo-data", "key-files.md"), category: "github_source" },
+    { path: join(process.cwd(), "scripts", "repo-data", "architecture-deep.md"), category: "architecture" },
+    { path: join(process.cwd(), "scripts", "repo-data", "github-stats.md"), category: "github_stats" },
+    { path: join(process.cwd(), "scripts", "repo-data", "tests-configs.md"), category: "configs" },
+    { path: join(process.cwd(), "scripts", "repo-data", "source-code.md"), category: "source_code" },
   ];
 
   for (const { path, category } of repoDataFiles) {
