@@ -1,65 +1,597 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-lg border-b border-[#262626]">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <span className="font-bold text-lg">Dico Angelo</span>
+          <div className="flex gap-6 text-sm text-[#737373]">
+            <a href="#proof" className="hover:text-white transition-colors">Proof</a>
+            <a href="#systems" className="hover:text-white transition-colors">Systems</a>
+            <a href="#projects" className="hover:text-white transition-colors">Projects</a>
+            <a href="#experience" className="hover:text-white transition-colors">Experience</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="pt-32 pb-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#141414] border border-[#262626] text-sm">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span className="text-[#737373]">Canadian Citizen · TN Visa Eligible</span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Builder-Operator<br />
+            <span className="gradient-text">Hybrid</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+
+          <p className="text-xl text-[#a3a3a3] mb-8 max-w-2xl mx-auto">
+            $800M+ in cloud partnerships managed. 85K+ lines of production AI systems built.
+            I combine enterprise GTM execution with hands-on agentic infrastructure development.
+          </p>
+
+          <div className="flex gap-4 justify-center mb-12">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://os-app-woad.vercel.app"
+              target="_blank"
+              className="px-6 py-3 bg-[#6366f1] hover:bg-[#5558e3] rounded-lg font-medium transition-colors"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              Live Demo: OS-App
+            </a>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://github.com/Dicoangelo"
+              target="_blank"
+              className="px-6 py-3 bg-[#141414] hover:bg-[#1f1f1f] border border-[#262626] rounded-lg font-medium transition-colors"
             >
-              Learning
-            </a>{" "}
-            center.
+              GitHub (20 repos)
+            </a>
+          </div>
+
+          <p className="text-sm text-[#525252] italic">
+            &quot;I write 0 code. I orchestrate AI to write 100% of it. English is my programming language.&quot;
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      {/* Proof Section - Verifiable Metrics */}
+      <section id="proof" className="py-20 px-6 bg-gradient-to-b from-transparent to-[#0f0f0f]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Verifiable Proof</h2>
+            <p className="text-[#737373]">Every metric below has documentation. Click to see the evidence.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Row 1 - Enterprise Metrics */}
+            <MetricCard
+              value="$800M+"
+              label="TCV Managed"
+              context="Cloud alliances at Contentsquare"
+              proof="Salesforce deal registration records"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <MetricCard
+              value="40%"
+              label="Cloud Attachment"
+              context="Microsoft Azure & AWS deals"
+              proof="Quarterly reports, 2x Microsoft POY"
+            />
+            <MetricCard
+              value="10%"
+              label="Revenue Contribution"
+              context="Via cloud alliance channel"
+              proof="Company revenue attribution"
+            />
+
+            {/* Row 2 - Operational Metrics */}
+            <MetricCard
+              value="$222,750"
+              label="Annual Savings"
+              context="Rocket Mortgage Canada"
+              proof="Process optimization documentation"
+            />
+            <MetricCard
+              value="45"
+              label="Team Size Led"
+              context="90% satisfaction score"
+              proof="Team management records"
+            />
+            <MetricCard
+              value="98%"
+              label="Accuracy Rate"
+              context="Quality control metrics"
+              proof="Performance reviews"
+            />
+
+            {/* Row 3 - Technical Metrics */}
+            <MetricCard
+              value="85K+"
+              label="Lines of Code"
+              context="Across 20 repositories"
+              proof="GitHub commit history"
+            />
+            <MetricCard
+              value="40+"
+              label="Papers Implemented"
+              context="arXiv research → production"
+              proof="Code references with paper IDs"
+            />
+            <MetricCard
+              value="2"
+              label="npm Packages"
+              context="Published & maintained"
+              proof="npmjs.com/@metaventionsai"
+            />
+          </div>
+
+          {/* Verification CTA */}
+          <div className="text-center">
+            <p className="text-sm text-[#525252] mb-4">
+              Skeptical? Good. Verify everything.
+            </p>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <a href="https://github.com/Dicoangelo" target="_blank" className="text-sm px-4 py-2 border border-[#262626] rounded-lg hover:bg-[#141414] transition-colors">
+                GitHub Commits →
+              </a>
+              <a href="https://www.npmjs.com/org/metaventionsai" target="_blank" className="text-sm px-4 py-2 border border-[#262626] rounded-lg hover:bg-[#141414] transition-colors">
+                npm Packages →
+              </a>
+              <a href="https://os-app-woad.vercel.app" target="_blank" className="text-sm px-4 py-2 border border-[#262626] rounded-lg hover:bg-[#141414] transition-colors">
+                Live Demo →
+              </a>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Systems Section - META-VENGINE */}
+      <section id="systems" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">META-VENGINE</h2>
+            <p className="text-[#737373]">9-system self-improving AI infrastructure. The system that improves itself.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            <SystemCard
+              name="Cognitive OS"
+              description="Energy-aware task routing based on 34K+ activity events"
+              metric="Circadian-adaptive"
+            />
+            <SystemCard
+              name="DQ Routing"
+              description="Decision Quality scoring: Validity (40%) + Specificity (30%) + Correctness (30%)"
+              metric="0.889 avg score"
+            />
+            <SystemCard
+              name="Recovery Engine"
+              description="Autonomous error detection and self-healing"
+              metric="70% auto-fix rate"
+            />
+            <SystemCard
+              name="Supermemory"
+              description="Cross-session learning with spaced repetition"
+              metric="700+ patterns"
+            />
+            <SystemCard
+              name="Multi-Agent Coordinator"
+              description="Parallel agent orchestration with file locking"
+              metric="3+ concurrent"
+            />
+            <SystemCard
+              name="ACE Consensus"
+              description="Adaptive Consensus Engine with DQ-weighted voting"
+              metric="50% faster consensus"
+            />
+            <SystemCard
+              name="Observatory"
+              description="Unified analytics across all systems"
+              metric="Real-time metrics"
+            />
+            <SystemCard
+              name="Context Packs V2"
+              description="7-layer semantic context selection"
+              metric="Smart prefetch"
+            />
+            <SystemCard
+              name="Learning Hub"
+              description="Cross-domain correlation and improvement suggestions"
+              metric="Weekly sync"
+            />
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-[#525252]">
+              428K routing decisions logged · 94% error pattern coverage · Production since Nov 2025
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 px-6 bg-[#0f0f0f]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Technical Projects</h2>
+            <p className="text-[#737373]">Open source. Live demos. Verifiable code.</p>
+          </div>
+
+          <div className="space-y-6">
+            <ProjectCard
+              name="OS-App"
+              tagline="Sovereign AI Operating System"
+              description="Voice-native interface with Gemini 2.0 Live, ElevenLabs TTS, biometric stress detection. Adaptive Consensus Engine (ACE) reducing consensus rounds by 50%. Recursive Language Model (RLM) for 100x context extension."
+              tech={["React 19", "TypeScript", "Gemini API", "ElevenLabs"]}
+              stats={{ loc: "33K+", components: 71, services: 62, coverage: "95%" }}
+              github="https://github.com/Dicoangelo/OS-App"
+              demo="https://os-app-woad.vercel.app"
+            />
+
+            <ProjectCard
+              name="ResearchGravity"
+              tagline="Research Orchestration Platform"
+              description="FastAPI backend with Qdrant vector search (2,530 embeddings). Meta-Learning Engine with 87% error prevention accuracy. Cognitive Precision Bridge with 5-agent ensemble and complexity-based routing."
+              tech={["Python", "FastAPI", "Qdrant", "SQLite"]}
+              stats={{ sessions: 114, findings: "2,530", urls: "8,935", accuracy: "87%" }}
+              github="https://github.com/Dicoangelo/ResearchGravity"
+            />
+
+            <ProjectCard
+              name="CareerCoachAntigravity"
+              tagline="AI Career Governance System"
+              description="Multi-agent hiring panel simulation. Generates role-specific feedback from AI personas representing different interview perspectives."
+              tech={["Next.js 14", "TypeScript", "Zustand", "Claude API"]}
+              stats={{ loc: "15K+", agents: 5, panels: "N/A" }}
+              github="https://github.com/Dicoangelo/CareerCoachAntigravity"
+            />
+          </div>
+
+          {/* npm Packages */}
+          <div className="mt-12">
+            <h3 className="text-xl font-bold mb-6 text-center">Published npm Packages</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="card p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">📦</span>
+                  <div>
+                    <h4 className="font-bold">@metaventionsai/cpb-core</h4>
+                    <span className="text-sm text-[#737373]">v1.1.0</span>
+                  </div>
+                </div>
+                <p className="text-sm text-[#a3a3a3] mb-4">
+                  Cognitive Precision Bridge — AI orchestration with precision-aware routing.
+                  Multi-provider LLM support, DQ scoring, adaptive model selection.
+                </p>
+                <code className="text-sm text-[#6366f1] bg-[#1a1a2e] px-3 py-2 rounded block">
+                  npm install @metaventionsai/cpb-core
+                </code>
+              </div>
+
+              <div className="card p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">📦</span>
+                  <div>
+                    <h4 className="font-bold">@metaventionsai/voice-nexus</h4>
+                    <span className="text-sm text-[#737373]">v1.1.0</span>
+                  </div>
+                </div>
+                <p className="text-sm text-[#a3a3a3] mb-4">
+                  Universal multi-provider voice architecture. STT, reasoning, TTS pipeline.
+                  Echo elimination, sovereignty personality injection.
+                </p>
+                <code className="text-sm text-[#6366f1] bg-[#1a1a2e] px-3 py-2 rounded block">
+                  npm install @metaventionsai/voice-nexus
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Timeline */}
+      <section id="experience" className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Experience</h2>
+            <p className="text-[#737373]">Enterprise operations → AI systems builder</p>
+          </div>
+
+          <div className="space-y-8">
+            <TimelineItem
+              period="Nov 2025 — Present"
+              title="Founder & Systems Architect"
+              company="Metaventions AI"
+              location="Remote"
+              highlights={[
+                "Built OS-App: voice-native AI operating system (33K LOC)",
+                "Published 2 npm packages for AI orchestration",
+                "Created META-VENGINE: 9-system self-improving infrastructure",
+                "Implemented 40+ arXiv papers into production systems"
+              ]}
+            />
+
+            <TimelineItem
+              period="May 2023 — Nov 2025"
+              title="Cloud Alliance Manager & Partner Programs Lead"
+              company="Contentsquare"
+              location="Paris / Remote"
+              highlights={[
+                "Managed $800M+ TCV in registered deals (Microsoft Azure, AWS)",
+                "Achieved 40% cloud attachment rate, 10% of company revenue",
+                "Reduced deal registration time by 50% via CRM automation",
+                "Contributed to 2x Microsoft Partner of the Year awards"
+              ]}
+            />
+
+            <TimelineItem
+              period="Jun 2020 — May 2023"
+              title="Product Success Specialist"
+              company="Rocket Mortgage Canada"
+              location="Windsor, ON"
+              highlights={[
+                "Led team of 45 agents with 90% satisfaction score",
+                "Delivered $222,750 annual cost savings via process optimization",
+                "Achieved 98% accuracy in quality control",
+                "Saved 7,425 hours/year through automation"
+              ]}
+            />
+
+            <TimelineItem
+              period="Mar 2019 — 2022"
+              title="Director"
+              company="Up2Youth"
+              location="Windsor, ON"
+              highlights={[
+                "Secured $255,000 in funding over 3 years",
+                "Directed 15 workshops annually serving 45 youth",
+                "Increased program visibility 30% YoY"
+              ]}
+            />
+          </div>
+
+          {/* Education */}
+          <div className="mt-12 card p-6">
+            <div className="flex items-start gap-4">
+              <span className="text-2xl">🎓</span>
+              <div>
+                <h4 className="font-bold">University of Windsor — Odette School of Business</h4>
+                <p className="text-[#737373]">Bachelor of Business Administration, Marketing · 2019</p>
+                <p className="text-sm text-[#6366f1] mt-2">
+                  SpaceX Hyperloop 2019 Competition Finalist — Business & Marketing Lead
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills & Certifications */}
+      <section className="py-20 px-6 bg-[#0f0f0f]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Skills & Certifications</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-bold mb-4 text-[#6366f1]">AI / Agentic</h3>
+              <div className="flex flex-wrap gap-2">
+                {["Multi-agent orchestration", "Prompt engineering", "MCP", "Tool-using agents", "RLHF", "DQ scoring", "ACE consensus"].map(skill => (
+                  <span key={skill} className="px-3 py-1 bg-[#141414] border border-[#262626] rounded-full text-sm">{skill}</span>
+                ))}
+              </div>
+
+              <h3 className="font-bold mb-4 mt-6 text-[#6366f1]">Technical</h3>
+              <div className="flex flex-wrap gap-2">
+                {["TypeScript", "Python", "React 19", "Next.js", "FastAPI", "SQLite", "Qdrant", "Supabase", "Gemini API", "Claude API", "ElevenLabs"].map(skill => (
+                  <span key={skill} className="px-3 py-1 bg-[#141414] border border-[#262626] rounded-full text-sm">{skill}</span>
+                ))}
+              </div>
+
+              <h3 className="font-bold mb-4 mt-6 text-[#6366f1]">GTM / Operations</h3>
+              <div className="flex flex-wrap gap-2">
+                {["Salesforce", "AWS Partner Central", "Crossbeam", "PartnerStack", "Deal registration", "Pipeline management", "CRM automation"].map(skill => (
+                  <span key={skill} className="px-3 py-1 bg-[#141414] border border-[#262626] rounded-full text-sm">{skill}</span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-bold mb-4 text-[#6366f1]">Certifications</h3>
+              <div className="space-y-3">
+                <CertBadge name="AWS Partner: Business Accreditation" year="2024" />
+                <CertBadge name="AWS Partner: Generative AI on AWS Essentials" year="2023" />
+                <CertBadge name="AWS Knowledge: Cloud Essentials" year="2024" />
+                <CertBadge name="Microsoft Copilot for Security Sales Training" year="2024" />
+              </div>
+
+              <h3 className="font-bold mb-4 mt-6 text-[#6366f1]">Events & Community</h3>
+              <p className="text-sm text-[#a3a3a3] mb-3">150+ events attended (2019-2026)</p>
+              <div className="flex flex-wrap gap-2">
+                {["NeurIPS 2025", "AWS Summit LA 2024", "AWS Summit Toronto 2024", "Partnership Leaders Catalyst", "Blockchain Futurist", "Art Basel Miami", "F1 Grand Prix"].map(event => (
+                  <span key={event} className="px-3 py-1 bg-[#1a1a2e] border border-[#6366f1]/20 rounded-full text-sm text-[#a3a3a3]">{event}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact / CTA */}
+      <section id="contact" className="py-20 px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Let&apos;s Build</h2>
+          <p className="text-[#737373] mb-8">
+            Looking for roles at the intersection of AI systems and enterprise operations.
+            TN Visa eligible. Open to SF, NYC, Austin, Boston, Toronto.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a
+              href="mailto:dico.angelo97@gmail.com"
+              className="px-6 py-3 bg-[#6366f1] hover:bg-[#5558e3] rounded-lg font-medium transition-colors"
+            >
+              dico.angelo97@gmail.com
+            </a>
+            <a
+              href="tel:+15199996099"
+              className="px-6 py-3 bg-[#141414] hover:bg-[#1f1f1f] border border-[#262626] rounded-lg font-medium transition-colors"
+            >
+              519-999-6099
+            </a>
+          </div>
+
+          <div className="flex gap-6 justify-center">
+            <a href="https://linkedin.com/in/dicoangelo" target="_blank" className="text-[#737373] hover:text-white transition-colors">
+              LinkedIn
+            </a>
+            <a href="https://github.com/Dicoangelo" target="_blank" className="text-[#737373] hover:text-white transition-colors">
+              GitHub
+            </a>
+            <a href="https://twitter.com/dicoangelo" target="_blank" className="text-[#737373] hover:text-white transition-colors">
+              Twitter
+            </a>
+            <a href="https://metaventions.com" target="_blank" className="text-[#737373] hover:text-white transition-colors">
+              Metaventions
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-6 border-t border-[#262626]">
+        <div className="max-w-6xl mx-auto flex justify-between items-center text-sm text-[#525252]">
+          <span>&copy; 2026 Dico Angelo</span>
+          <span>Built with AI orchestration · 0 lines written manually</span>
+        </div>
+      </footer>
+    </main>
+  );
+}
+
+// Components
+
+function MetricCard({ value, label, context, proof }: { value: string; label: string; context: string; proof: string }) {
+  return (
+    <div className="metric-card p-6 rounded-xl">
+      <div className="text-3xl font-bold gradient-text mb-1">{value}</div>
+      <div className="font-medium mb-2">{label}</div>
+      <div className="text-sm text-[#737373] mb-2">{context}</div>
+      <div className="text-xs text-[#525252] italic">Proof: {proof}</div>
+    </div>
+  );
+}
+
+function SystemCard({ name, description, metric }: { name: string; description: string; metric: string }) {
+  return (
+    <div className="card p-5 hover:border-[#6366f1]/30 transition-colors">
+      <div className="flex justify-between items-start mb-2">
+        <h4 className="font-bold">{name}</h4>
+        <span className="text-xs px-2 py-1 bg-[#6366f1]/10 text-[#6366f1] rounded">{metric}</span>
+      </div>
+      <p className="text-sm text-[#737373]">{description}</p>
+    </div>
+  );
+}
+
+function ProjectCard({
+  name,
+  tagline,
+  description,
+  tech,
+  stats,
+  github,
+  demo
+}: {
+  name: string;
+  tagline: string;
+  description: string;
+  tech: string[];
+  stats: Record<string, string | number>;
+  github: string;
+  demo?: string;
+}) {
+  return (
+    <div className="card p-6 glow">
+      <div className="flex justify-between items-start mb-4">
+        <div>
+          <h3 className="text-xl font-bold">{name}</h3>
+          <p className="text-[#6366f1]">{tagline}</p>
+        </div>
+        <div className="flex gap-2">
+          <a href={github} target="_blank" className="px-3 py-1 text-sm border border-[#262626] rounded hover:bg-[#1f1f1f] transition-colors">
+            GitHub
+          </a>
+          {demo && (
+            <a href={demo} target="_blank" className="px-3 py-1 text-sm bg-[#6366f1] rounded hover:bg-[#5558e3] transition-colors">
+              Live Demo
+            </a>
+          )}
+        </div>
+      </div>
+
+      <p className="text-[#a3a3a3] mb-4">{description}</p>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        {tech.map(t => (
+          <span key={t} className="px-2 py-1 bg-[#1f1f1f] rounded text-xs">{t}</span>
+        ))}
+      </div>
+
+      <div className="flex gap-6 text-sm">
+        {Object.entries(stats).map(([key, val]) => (
+          <div key={key}>
+            <span className="text-[#737373]">{key}: </span>
+            <span className="font-medium">{val}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TimelineItem({
+  period,
+  title,
+  company,
+  location,
+  highlights
+}: {
+  period: string;
+  title: string;
+  company: string;
+  location: string;
+  highlights: string[];
+}) {
+  return (
+    <div className="relative pl-6 border-l-2 border-[#262626]">
+      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#6366f1]"></div>
+      <div className="text-sm text-[#6366f1] mb-1">{period}</div>
+      <h4 className="text-lg font-bold">{title}</h4>
+      <div className="text-[#737373] mb-3">{company} · {location}</div>
+      <ul className="space-y-1">
+        {highlights.map((h, i) => (
+          <li key={i} className="text-sm text-[#a3a3a3] flex gap-2">
+            <span className="text-[#6366f1]">→</span> {h}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function CertBadge({ name, year }: { name: string; year: string }) {
+  return (
+    <div className="flex items-center gap-3 p-3 bg-[#141414] rounded-lg">
+      <span className="text-lg">🏆</span>
+      <div className="flex-1">
+        <div className="text-sm font-medium">{name}</div>
+      </div>
+      <span className="text-xs text-[#737373]">{year}</span>
     </div>
   );
 }
