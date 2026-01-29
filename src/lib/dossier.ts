@@ -143,8 +143,8 @@ export function formatDossierContext(chunks: DossierChunk[]): string {
  */
 export async function getDossierContext(query: string): Promise<string> {
   const chunks = await searchDossier(query, {
-    threshold: 0.25,
-    limit: 6,
+    threshold: 0.15,  // Lower threshold to catch more relevant content
+    limit: 10,        // More chunks for richer context
   });
 
   return formatDossierContext(chunks);
