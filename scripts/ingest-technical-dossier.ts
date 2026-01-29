@@ -238,13 +238,24 @@ async function main() {
   const quickFactsChunks = chunkMarkdown(quickFacts, "RECRUITER_QUICK_FACTS.md", "overview");
   console.log(`   → ${quickFactsChunks.length} chunks created\n`);
 
-  // Chunk GitHub repos if available
+  // Chunk GitHub repos and scanned content
   let repoChunks: DossierChunk[] = [];
-  if (existsSync(repoDataPath)) {
-    console.log("📄 Chunking GitHub repositories (all-repos.md)...");
-    const repoData = readFileSync(repoDataPath, "utf-8");
-    repoChunks = chunkMarkdown(repoData, "all-repos.md", "github_repos");
-    console.log(`   → ${repoChunks.length} chunks created\n`);
+  const repoDataFiles = [
+    { path: join(process.cwd(), "scripts", "repo-data", "all-repos.md"), category: "github_repos" },
+    { path: join(process.cwd(), "scripts", "repo-data", "deep-scan.md"), category: "github_tech_stack" },
+    { path: join(process.cwd(), "scripts", "repo-data", "docs-scan.md"), category: "github_docs" },
+    { path: join(process.cwd(), "scripts", "repo-data", "key-files.md"), category: "github_source" },
+  ];
+
+  for (const { path, category } of repoDataFiles) {
+    if (existsSync(path)) {
+      const filename = path.split("/").pop() || path;
+      console.log(`📄 Chunking ${filename}...`);
+      const data = readFileSync(path, "utf-8");
+      const chunks = chunkMarkdown(data, filename, category);
+      console.log(`   → ${chunks.length} chunks created\n`);
+      repoChunks.push(...chunks);
+    }
   }
 
   const allChunks = [...technicalChunks, ...quickFactsChunks, ...repoChunks];
@@ -260,7 +271,8 @@ async function main() {
   console.log("\n📊 Summary:");
   console.log(`   Technical Dossier chunks: ${technicalChunks.length}`);
   console.log(`   Quick Facts chunks: ${quickFactsChunks.length}`);
-  console.log(`   GitHub Repos chunks: ${repoChunks.length}`);
+  console.log(`   GitHub content chunks: ${repoChunks.length}`);
+  console.log(`   ─────────────────────────`);
   console.log(`   Total chunks uploaded: ${allChunks.length}`);
 }
 
