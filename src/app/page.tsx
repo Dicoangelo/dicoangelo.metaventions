@@ -44,8 +44,7 @@ export default function Home() {
           </h1>
 
           <p className={`text-xl mb-8 max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-            $800M+ in cloud partnerships managed. 85K+ lines of production AI systems built.
-            I combine enterprise GTM execution with hands-on agentic infrastructure development.
+            Orchestrated an operational engine that pushed over $800M+ TCV in Cloud partnerships to AWS/MSFT. 85K+ lines of production AI systems built. I combine enterprise GTM execution with hands-on agentic infrastructure development.
           </p>
 
           <div className="flex gap-4 justify-center mb-12">
@@ -674,8 +673,8 @@ export default function Home() {
             <a href="https://github.com/Dicoangelo" target="_blank" className={`transition-colors ${isLight ? 'text-gray-500 hover:text-gray-900' : 'text-[#737373] hover:text-white'}`}>
               GitHub
             </a>
-            <a href="https://twitter.com/dicoangelo" target="_blank" className={`transition-colors ${isLight ? 'text-gray-500 hover:text-gray-900' : 'text-[#737373] hover:text-white'}`}>
-              Twitter
+            <a href="https://x.com/dicoangelo" target="_blank" className={`transition-colors ${isLight ? 'text-gray-500 hover:text-gray-900' : 'text-[#737373] hover:text-white'}`}>
+              X
             </a>
             <a href="https://metaventionsai.com" target="_blank" className={`transition-colors ${isLight ? 'text-gray-500 hover:text-gray-900' : 'text-[#737373] hover:text-white'}`}>
               Metaventions AI
