@@ -68,9 +68,12 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
 
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
+  const analyserRef = useRef<AnalyserNode | null>(null);
   const animationRef = useRef<number | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const streamRef = useRef<MediaStream | null>(null);
   const currentAudioRef = useRef<AudioBufferSourceNode | null>(null);
+  const micAnimationRef = useRef<number | null>(null);
 
   // Check browser support
   useEffect(() => {
@@ -201,21 +204,64 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     };
   }, [frequencies, isListening, isSpeaking, isLight]);
 
-  // Animate frequencies based on state
+  // Update frequencies from real mic input
+  const updateMicFrequencies = useCallback(() => {
+    if (!analyserRef.current) return;
+
+    const dataArray = new Uint8Array(analyserRef.current.frequencyBinCount);
+    analyserRef.current.getByteFrequencyData(dataArray);
+    setFrequencies(Array.from(dataArray));
+
+    micAnimationRef.current = requestAnimationFrame(updateMicFrequencies);
+  }, []);
+
+  // Initialize audio context and analyzer for real mic visualization
+  const initAudioAnalyser = useCallback(async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      streamRef.current = stream;
+
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+      if (!audioContextRef.current) {
+        audioContextRef.current = new AudioCtx();
+      }
+
+      if (audioContextRef.current.state === "suspended") {
+        await audioContextRef.current.resume();
+      }
+
+      analyserRef.current = audioContextRef.current.createAnalyser();
+      analyserRef.current.fftSize = 128;
+
+      const source = audioContextRef.current.createMediaStreamSource(stream);
+      source.connect(analyserRef.current);
+
+      // Start the animation loop for real frequencies
+      updateMicFrequencies();
+    } catch (e) {
+      console.error("Failed to init audio analyser:", e);
+      // Fall back to simulated frequencies if mic access fails
+    }
+  }, [updateMicFrequencies]);
+
+  // Stop mic stream and analyzer
+  const stopAudioAnalyser = useCallback(() => {
+    if (micAnimationRef.current) {
+      cancelAnimationFrame(micAnimationRef.current);
+      micAnimationRef.current = null;
+    }
+    if (streamRef.current) {
+      streamRef.current.getTracks().forEach(track => track.stop());
+      streamRef.current = null;
+    }
+    analyserRef.current = null;
+  }, []);
+
+  // Animate frequencies based on state (fallback for speaking/idle)
   useEffect(() => {
     let interval: NodeJS.Timeout;
 
-    if (isListening) {
-      // Reactive pattern for listening - cyan dominant
-      interval = setInterval(() => {
-        setFrequencies(prev =>
-          prev.map((_, i) => {
-            const base = Math.sin(Date.now() / 100 + i * 0.5) * 40 + 80;
-            return Math.min(255, Math.max(0, base + Math.random() * 120));
-          })
-        );
-      }, 50);
-    } else if (isSpeaking) {
+    if (isSpeaking) {
       // Smoother pattern for speaking - purple dominant
       interval = setInterval(() => {
         setFrequencies(prev =>
@@ -225,8 +271,8 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
           })
         );
       }, 50);
-    } else {
-      // Gentle idle animation
+    } else if (!isListening) {
+      // Gentle idle animation (only when not listening - real mic handles listening)
       interval = setInterval(() => {
         setFrequencies(prev =>
           prev.map((_, i) => Math.sin(Date.now() / 1000 + i * 0.2) * 10 + 15)
@@ -234,7 +280,9 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
       }, 100);
     }
 
-    return () => clearInterval(interval);
+    return () => {
+      if (interval) clearInterval(interval);
+    };
   }, [isListening, isSpeaking]);
 
   // Start listening
@@ -246,6 +294,9 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     }
 
     setError(null);
+
+    // Initialize real mic visualization
+    await initAudioAnalyser();
 
     const recognition = new SpeechRecognitionAPI();
     recognition.continuous = true;
@@ -278,6 +329,7 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     };
 
     recognition.onend = () => {
+      stopAudioAnalyser();
       setIsListening(false);
     };
 
@@ -295,7 +347,7 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
       console.error("Failed to start recognition:", e);
       setError("Failed to start speech recognition");
     }
-  }, []);
+  }, [initAudioAnalyser, stopAudioAnalyser]);
 
   // Stop listening and process
   const stopListening = useCallback(() => {
@@ -304,13 +356,14 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
       recognitionRef.current = null;
     }
 
+    stopAudioAnalyser();
     setIsListening(false);
 
     if (transcript.trim()) {
       onTranscript(transcript);
       processAndSpeak(transcript);
     }
-  }, [transcript, onTranscript]);
+  }, [transcript, onTranscript, stopAudioAnalyser]);
 
   // Process transcript and get response
   const processAndSpeak = async (text: string) => {
