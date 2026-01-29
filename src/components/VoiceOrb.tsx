@@ -705,7 +705,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
             border: `2px solid ${isSpeaking ? COLORS.purple : isListening ? COLORS.cyan : isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)'}`,
           }}
         >
-          <Image src="/headshot.png" alt="Dico" fill className="object-cover" priority />
+          <Image src="/headshot.jpg" alt="Dico" fill className="object-cover" priority />
         </button>
       </div>
 

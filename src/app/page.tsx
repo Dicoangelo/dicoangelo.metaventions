@@ -22,7 +22,7 @@ export default function Home() {
           <div className="mb-8">
             <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-[#6366f1] glow">
               <Image
-                src="/headshot.png"
+                src="/headshot.jpg"
                 alt="Dico Angelo"
                 fill
                 className="object-cover"
