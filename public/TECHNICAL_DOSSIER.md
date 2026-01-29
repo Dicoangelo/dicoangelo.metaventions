@@ -558,6 +558,22 @@ Led the **Systems & Admins work stream** with weekly cross-functional coordinati
 - **Data Warehouse Integration**: Event tracking for ACV/TCV-based commission models
 - Built internal bridging solutions where automated integrations weren't production-ready
 
+**PartnerStack ↔ Salesforce UAT Leadership:**
+Led end-to-end User Acceptance Testing for the PartnerStack-Salesforce bidirectional sync, ensuring data integrity across partner operations.
+
+*Test Coverage Designed & Executed:*
+- **Partner Registration Flow**: Application submission → account verification → T&S acceptance → Salesforce sync validation
+- **Bidirectional Data Sync**: Partner profile updates, group transfers, manager assignments syncing between PRM ↔ CRM
+- **Deal Registration Pipeline**: Referral partner deal submissions → lead creation in Salesforce with proper attribution (source, partner key, deal key)
+- **Contract Lifecycle**: Agreement creation, status transitions (Target → Active), signee tracking
+- **Hotjar/Contentsquare Migration**: Partner consolidation planning across acquired entities
+
+*UAT Outcomes:*
+- Validated 10+ integration test cases across registration, sync, and deal flows
+- Identified critical sync gaps (owner/manager bidirectional sync failures) for engineering remediation
+- Documented field mapping requirements: billing address, partner key, employee count, sessions, referral source
+- Enabled 3,000+ partner ecosystem to operate on unified PRM-CRM infrastructure
+
 **Iteration Workstreams Delivered:**
 | Iteration | Objective | Outputs |
 |-----------|-----------|---------|

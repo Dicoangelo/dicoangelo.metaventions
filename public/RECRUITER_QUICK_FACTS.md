@@ -62,6 +62,7 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 - Cloud Alliances | Systems Integration | Partner Intelligence | Platform Admin
 - 4 concurrent tracks: alliance strategy, systems architecture, reporting infrastructure, tool administration
 - $800M+ TCV, $30M+ ACV (2024), 3,000+ partners, 8+ platforms administered
+- Led PartnerStack ↔ Salesforce UAT: 10+ test cases, identified sync gaps, enabled 3K+ partner ecosystem
 - 2x Microsoft Partner of the Year
 
 **Rocket Mortgage** (Jun 2020 - May 2023)
