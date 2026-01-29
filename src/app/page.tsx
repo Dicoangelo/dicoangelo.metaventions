@@ -375,6 +375,7 @@ export default function Home() {
               company="Contentsquare"
               location="Paris / Remote"
               highlights={[
+                "Co-Market, Co-Sell, Co-Innovate — drove cloud partnership strategy",
                 "Managed $800M+ TCV in registered deals (Microsoft Azure, AWS)",
                 "Achieved 40% cloud attachment rate, 10% of company revenue",
                 "Reduced deal registration time by 50% via CRM automation",
