@@ -96,6 +96,11 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
   const userCanvasRef = useRef<HTMLCanvasElement>(null);
   const silenceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const particlesRef = useRef<Particle[]>([]);
+  const ttsAnalyserRef = useRef<AnalyserNode | null>(null);
+  const ttsAnimationRef = useRef<number | null>(null);
+  const orbRef = useRef<HTMLButtonElement>(null);
+  const [tiltX, setTiltX] = useState(0);
+  const [tiltY, setTiltY] = useState(0);
 
   // Check browser support
   useEffect(() => {
@@ -380,11 +385,18 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     return () => cancelAnimationFrame(animationId);
   }, [userFrequencies, isListening, isLight]);
 
-  // Animate Dico's frequencies
+  // Animate Dico's frequencies (only when not using real TTS audio)
   useEffect(() => {
     let interval: NodeJS.Timeout;
 
+    // When speaking with TTS analyser, frequencies come from updateTtsFrequencies
+    if (isSpeaking && ttsAnalyserRef.current) {
+      // Real audio analysis is active, don't animate
+      return;
+    }
+
     if (isSpeaking) {
+      // Fallback animation when TTS analyser not available
       interval = setInterval(() => {
         setDicoFrequencies(prev =>
           prev.map((_, i) => {
@@ -613,7 +625,21 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     }
   }, [onTranscript, onResponse, cleanupMic, startListening, isListening, isSpeaking]);
 
-  // Speak response with ElevenLabs
+  // Update Dico frequencies from TTS audio
+  const updateTtsFrequencies = useCallback(() => {
+    if (!ttsAnalyserRef.current) return;
+
+    const dataArray = new Uint8Array(ttsAnalyserRef.current.frequencyBinCount);
+    ttsAnalyserRef.current.getByteFrequencyData(dataArray);
+
+    // Map the frequency data to our visualizer
+    const freqs = Array.from(dataArray.slice(0, 64));
+    setDicoFrequencies(freqs);
+
+    ttsAnimationRef.current = requestAnimationFrame(updateTtsFrequencies);
+  }, []);
+
+  // Speak response with ElevenLabs + real-time audio analysis
   const speakResponse = async (text: string) => {
     setIsSpeaking(true);
 
@@ -639,13 +665,31 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
       const audioBuffer = await audioContextRef.current.decodeAudioData(arrayBuffer.slice(0));
       const source = audioContextRef.current.createBufferSource();
       source.buffer = audioBuffer;
-      source.connect(audioContextRef.current.destination);
+
+      // Create analyser for real-time frequency visualization
+      ttsAnalyserRef.current = audioContextRef.current.createAnalyser();
+      ttsAnalyserRef.current.fftSize = 128;
+
+      // Connect: source -> analyser -> destination
+      source.connect(ttsAnalyserRef.current);
+      ttsAnalyserRef.current.connect(audioContextRef.current.destination);
 
       currentAudioRef.current = source;
 
+      // Start real-time frequency updates
+      updateTtsFrequencies();
+
       source.onended = () => {
+        // Stop frequency updates
+        if (ttsAnimationRef.current) {
+          cancelAnimationFrame(ttsAnimationRef.current);
+          ttsAnimationRef.current = null;
+        }
+        ttsAnalyserRef.current = null;
         setIsSpeaking(false);
         currentAudioRef.current = null;
+        // Reset to idle frequencies
+        setDicoFrequencies(new Array(64).fill(15));
       };
 
       source.start(0);
@@ -676,6 +720,11 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
       try { currentAudioRef.current.stop(); } catch {}
       currentAudioRef.current = null;
     }
+    if (ttsAnimationRef.current) {
+      cancelAnimationFrame(ttsAnimationRef.current);
+      ttsAnimationRef.current = null;
+    }
+    ttsAnalyserRef.current = null;
     if ("speechSynthesis" in window) {
       speechSynthesis.cancel();
     }
@@ -696,6 +745,21 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
       startListening();
     }
   };
+
+  // 3D tilt effect on mouse move
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    const maxTilt = 15;
+    setTiltX((-y / (rect.height / 2)) * maxTilt);
+    setTiltY((x / (rect.width / 2)) * maxTilt);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setTiltX(0);
+    setTiltY(0);
+  }, []);
 
   if (!supported) {
     return (
@@ -758,14 +822,19 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
           }}
         />
 
-        {/* Clickable orb with Dico's face */}
+        {/* Clickable orb with Dico's face - 3D tilt effect */}
         <button
+          ref={orbRef}
           onClick={handleOrbClick}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
           disabled={isProcessing}
-          className={`relative w-28 h-28 rounded-full overflow-hidden transition-all duration-300 z-10 ${
-            isProcessing ? "opacity-50" : "hover:scale-105 cursor-pointer active:scale-95"
+          className={`relative w-28 h-28 rounded-full overflow-hidden z-10 ${
+            isProcessing ? "opacity-50" : "cursor-pointer active:scale-95"
           }`}
           style={{
+            transform: `perspective(500px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${isActive ? 1.02 : 1})`,
+            transition: "transform 0.15s ease-out, box-shadow 0.3s ease, border 0.3s ease",
             boxShadow: isSpeaking
               ? `0 0 60px ${COLORS.purpleGlow}, 0 0 100px ${COLORS.purpleGlow}, inset 0 0 20px rgba(157, 78, 221, 0.3)`
               : isListening
