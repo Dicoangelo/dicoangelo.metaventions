@@ -123,7 +123,7 @@ function chunkMarkdown(content: string, filePath: string, category: string): Dos
 }
 
 /**
- * Generate embeddings for chunks
+ * Generate embeddings for chunks (batched to respect Cohere's 96 text limit)
  */
 async function generateEmbeddings(chunks: DossierChunk[]): Promise<number[][]> {
   console.log(`Generating embeddings for ${chunks.length} chunks...`);
@@ -134,34 +134,63 @@ async function generateEmbeddings(chunks: DossierChunk[]): Promise<number[][]> {
     return `${heading}\n\n${content}`;
   });
 
-  try {
-    const response = await cohere.embed({
-      texts,
-      model: "embed-english-v3.0",
-      inputType: "search_document",
-      truncate: "END",
-    });
+  const BATCH_SIZE = 96;
+  const allEmbeddings: number[][] = [];
 
-    // Handle both array and object response types from Cohere
-    const embeddings = response.embeddings;
-    if (Array.isArray(embeddings)) {
-      return embeddings;
-    } else if ((embeddings as { float?: number[][] }).float) {
-      return (embeddings as { float?: number[][] }).float!;
+  for (let i = 0; i < texts.length; i += BATCH_SIZE) {
+    const batch = texts.slice(i, i + BATCH_SIZE);
+    const batchNum = Math.floor(i / BATCH_SIZE) + 1;
+    const totalBatches = Math.ceil(texts.length / BATCH_SIZE);
+    console.log(`   Processing batch ${batchNum}/${totalBatches} (${batch.length} texts)...`);
+
+    try {
+      const response = await cohere.embed({
+        texts: batch,
+        model: "embed-english-v3.0",
+        inputType: "search_document",
+        truncate: "END",
+      });
+
+      // Handle both array and object response types from Cohere
+      const embeddings = response.embeddings;
+      if (Array.isArray(embeddings)) {
+        allEmbeddings.push(...embeddings);
+      } else if ((embeddings as { float?: number[][] }).float) {
+        allEmbeddings.push(...(embeddings as { float?: number[][] }).float!);
+      } else {
+        throw new Error("Unexpected embedding format from Cohere");
+      }
+
+      // Small delay to avoid rate limiting
+      if (i + BATCH_SIZE < texts.length) {
+        await new Promise(resolve => setTimeout(resolve, 200));
+      }
+    } catch (error) {
+      console.error(`Failed to generate embeddings for batch ${batchNum}:`, error);
+      throw error;
     }
-
-    throw new Error("Unexpected embedding format from Cohere");
-  } catch (error) {
-    console.error("Failed to generate embeddings:", error);
-    throw error;
   }
+
+  return allEmbeddings;
 }
 
 /**
- * Upload chunks to Supabase
+ * Upload chunks to Supabase (clears existing data first)
  */
 async function uploadChunks(chunks: DossierChunk[], embeddings: number[][]): Promise<void> {
   console.log(`Uploading ${chunks.length} chunks to Supabase...`);
+
+  // Clear existing chunks first
+  console.log("   Clearing existing chunks...");
+  const { error: deleteError } = await supabase
+    .from("career_dossier_chunks")
+    .delete()
+    .gte("id", 0); // Delete all rows
+
+  if (deleteError) {
+    console.error("Failed to clear existing chunks:", deleteError);
+    // Continue anyway - might be empty table
+  }
 
   const rows = chunks.map((chunk, i) => ({
     content: chunk.content,
@@ -195,6 +224,7 @@ async function main() {
   // Read files
   const technicalDossierPath = join(process.cwd(), "public", "TECHNICAL_DOSSIER.md");
   const quickFactsPath = join(process.cwd(), "public", "RECRUITER_QUICK_FACTS.md");
+  const repoDataPath = join(process.cwd(), "scripts", "repo-data", "all-repos.md");
 
   const technicalDossier = readFileSync(technicalDossierPath, "utf-8");
   const quickFacts = readFileSync(quickFactsPath, "utf-8");
@@ -208,7 +238,16 @@ async function main() {
   const quickFactsChunks = chunkMarkdown(quickFacts, "RECRUITER_QUICK_FACTS.md", "overview");
   console.log(`   → ${quickFactsChunks.length} chunks created\n`);
 
-  const allChunks = [...technicalChunks, ...quickFactsChunks];
+  // Chunk GitHub repos if available
+  let repoChunks: DossierChunk[] = [];
+  if (existsSync(repoDataPath)) {
+    console.log("📄 Chunking GitHub repositories (all-repos.md)...");
+    const repoData = readFileSync(repoDataPath, "utf-8");
+    repoChunks = chunkMarkdown(repoData, "all-repos.md", "github_repos");
+    console.log(`   → ${repoChunks.length} chunks created\n`);
+  }
+
+  const allChunks = [...technicalChunks, ...quickFactsChunks, ...repoChunks];
 
   // Generate embeddings
   const embeddings = await generateEmbeddings(allChunks);
@@ -221,6 +260,7 @@ async function main() {
   console.log("\n📊 Summary:");
   console.log(`   Technical Dossier chunks: ${technicalChunks.length}`);
   console.log(`   Quick Facts chunks: ${quickFactsChunks.length}`);
+  console.log(`   GitHub Repos chunks: ${repoChunks.length}`);
   console.log(`   Total chunks uploaded: ${allChunks.length}`);
 }
 
