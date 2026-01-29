@@ -25,13 +25,17 @@ export default function Chat() {
   const [textMessages, setTextMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isTextLoading, setIsTextLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
 
-  // Smooth scroll to bottom
+  // Smooth scroll to bottom (within container only, not the whole page)
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTo({
+        top: messagesContainerRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
   };
 
   useEffect(() => {
@@ -209,7 +213,6 @@ export default function Chat() {
                     </div>
                   </div>
                 )}
-                <div ref={messagesEndRef} />
               </>
             )}
           </div>
