@@ -45,12 +45,26 @@ function getSpeechRecognition(): (new () => SpeechRecognition) | undefined {
   return (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
 }
 
+// Particle type
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  radius: number;
+  life: number;
+  maxLife: number;
+  hue: number;
+}
+
 // Color palette
 const COLORS = {
   cyan: "#18E6FF",
   purple: "#9d4edd",
-  cyanGlow: "rgba(24, 230, 255, 0.4)",
-  purpleGlow: "rgba(157, 78, 221, 0.4)",
+  magenta: "#ff006e",
+  gold: "#ffd60a",
+  cyanGlow: "rgba(24, 230, 255, 0.5)",
+  purpleGlow: "rgba(157, 78, 221, 0.5)",
 };
 
 export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: VoiceOrbProps) {
@@ -61,12 +75,16 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isThinking, setIsThinking] = useState(false);
   const [transcript, setTranscript] = useState("");
+  const [displayedTranscript, setDisplayedTranscript] = useState("");
   const [supported, setSupported] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [ripples, setRipples] = useState<number[]>([]);
+  const [conversationCount, setConversationCount] = useState(0);
 
   // Frequency data for visualizers
   const [userFrequencies, setUserFrequencies] = useState<number[]>(new Array(32).fill(0));
   const [dicoFrequencies, setDicoFrequencies] = useState<number[]>(new Array(64).fill(0));
+  const [avgAmplitude, setAvgAmplitude] = useState(0);
 
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -74,9 +92,10 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
   const streamRef = useRef<MediaStream | null>(null);
   const micAnimationRef = useRef<number | null>(null);
   const currentAudioRef = useRef<AudioBufferSourceNode | null>(null);
-  const dicoCanvasRef = useRef<HTMLCanvasElement>(null);
+  const mainCanvasRef = useRef<HTMLCanvasElement>(null);
   const userCanvasRef = useRef<HTMLCanvasElement>(null);
   const silenceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const particlesRef = useRef<Particle[]>([]);
 
   // Check browser support
   useEffect(() => {
@@ -87,79 +106,211 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     }
   }, []);
 
-  // Draw Dico's visualizer (circular around headshot)
+  // Typewriter effect for transcript
   useEffect(() => {
-    const canvas = dicoCanvasRef.current;
+    if (!transcript) {
+      setDisplayedTranscript("");
+      return;
+    }
+
+    let index = displayedTranscript.length;
+    if (index >= transcript.length) return;
+
+    const timer = setTimeout(() => {
+      setDisplayedTranscript(transcript.slice(0, index + 1));
+    }, 30);
+
+    return () => clearTimeout(timer);
+  }, [transcript, displayedTranscript]);
+
+  // Ripple effect generator
+  useEffect(() => {
+    if (!isSpeaking && !isListening) return;
+
+    const interval = setInterval(() => {
+      setRipples(prev => {
+        const newRipples = [...prev, Date.now()].filter(t => Date.now() - t < 2000);
+        return newRipples.slice(-5);
+      });
+    }, isSpeaking ? 400 : 600);
+
+    return () => clearInterval(interval);
+  }, [isSpeaking, isListening]);
+
+  // Main canvas - visualizer, particles, and effects
+  useEffect(() => {
+    const canvas = mainCanvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const dpr = window.devicePixelRatio || 1;
-    const size = 200;
+    const size = 280;
     canvas.width = size * dpr;
     canvas.height = size * dpr;
     canvas.style.width = `${size}px`;
     canvas.style.height = `${size}px`;
     ctx.scale(dpr, dpr);
 
+    let animationId: number;
     let time = 0;
 
     const draw = () => {
-      time += 0.03;
+      time += 0.016;
       ctx.clearRect(0, 0, size, size);
       const cx = size / 2;
       const cy = size / 2;
-      const barCount = 64;
-      const innerRadius = size * 0.38;
-      const maxBarHeight = size * 0.12;
 
-      // Draw frequency bars
+      // Calculate average amplitude
+      const avg = dicoFrequencies.reduce((a, b) => a + b, 0) / dicoFrequencies.length;
+
+      // Draw ripples
+      ripples.forEach(startTime => {
+        const age = (Date.now() - startTime) / 2000;
+        const radius = 60 + age * 80;
+        const alpha = (1 - age) * 0.3;
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.strokeStyle = isSpeaking
+          ? `rgba(157, 78, 221, ${alpha})`
+          : `rgba(24, 230, 255, ${alpha})`;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      });
+
+      // Update and draw particles
+      if (isSpeaking || isListening) {
+        // Spawn new particles
+        if (Math.random() < (isSpeaking ? 0.3 : 0.15)) {
+          const angle = Math.random() * Math.PI * 2;
+          const dist = 50 + Math.random() * 20;
+          particlesRef.current.push({
+            x: cx + Math.cos(angle) * dist,
+            y: cy + Math.sin(angle) * dist,
+            vx: (Math.random() - 0.5) * 2,
+            vy: (Math.random() - 0.5) * 2 - 0.5,
+            radius: 1 + Math.random() * 2,
+            life: 1,
+            maxLife: 60 + Math.random() * 60,
+            hue: isSpeaking ? 280 : 185,
+          });
+        }
+      }
+
+      // Update particles
+      particlesRef.current = particlesRef.current.filter(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy -= 0.02; // Float upward
+        p.life -= 1;
+
+        if (p.life <= 0) return false;
+
+        const alpha = Math.min(1, p.life / 30);
+        const sat = isSpeaking ? "70%" : "100%";
+        const light = isSpeaking ? "65%" : "60%";
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius * alpha, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${p.hue}, ${sat}, ${light}, ${alpha * 0.8})`;
+        ctx.fill();
+
+        return true;
+      });
+
+      // Keep particle count manageable
+      if (particlesRef.current.length > 100) {
+        particlesRef.current = particlesRef.current.slice(-100);
+      }
+
+      // Draw frequency bars (circular)
+      const barCount = 64;
+      const innerRadius = 52;
+      const maxBarHeight = 35;
+
       for (let i = 0; i < barCount; i++) {
         const freqIndex = Math.floor((i / barCount) * dicoFrequencies.length);
         const value = dicoFrequencies[freqIndex] / 255;
         const angle = (i / barCount) * Math.PI * 2 - Math.PI / 2;
-        const barHeight = value * maxBarHeight + 2;
+        const barHeight = value * maxBarHeight + 3;
 
         const x1 = cx + Math.cos(angle) * innerRadius;
         const y1 = cy + Math.sin(angle) * innerRadius;
         const x2 = cx + Math.cos(angle) * (innerRadius + barHeight);
         const y2 = cy + Math.sin(angle) * (innerRadius + barHeight);
 
-        // Gradient from cyan to purple
-        const colorProgress = i / barCount;
-        const r = Math.round(24 + (157 - 24) * colorProgress);
-        const g = Math.round(230 + (78 - 230) * colorProgress);
-        const b = Math.round(255 + (221 - 255) * colorProgress);
-        const alpha = isSpeaking ? 0.5 + value * 0.5 : 0.15 + value * 0.2;
+        // Dynamic color based on state
+        const hue = isSpeaking
+          ? 280 + (i / barCount) * 40
+          : isListening
+            ? 180 + (i / barCount) * 20
+            : 220;
+        const sat = isSpeaking || isListening ? "80%" : "20%";
+        const light = isSpeaking || isListening ? "60%" : "40%";
+        const alpha = isSpeaking || isListening ? 0.4 + value * 0.6 : 0.1 + value * 0.15;
 
         ctx.beginPath();
         ctx.moveTo(x1, y1);
         ctx.lineTo(x2, y2);
-        ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = `hsla(${hue}, ${sat}, ${light}, ${alpha})`;
+        ctx.lineWidth = 3;
         ctx.lineCap = "round";
         ctx.stroke();
       }
 
-      // Inner glow ring
-      ctx.beginPath();
-      ctx.arc(cx, cy, innerRadius - 4, 0, Math.PI * 2);
-      ctx.strokeStyle = isSpeaking
-        ? `rgba(157, 78, 221, ${0.3 + Math.sin(time * 3) * 0.1})`
-        : isListening
-          ? `rgba(24, 230, 255, ${0.2 + Math.sin(time * 2) * 0.1})`
-          : isLight ? "rgba(0,0,0,0.05)" : "rgba(255,255,255,0.05)";
-      ctx.lineWidth = 2;
-      ctx.stroke();
+      // Inner breathing glow ring
+      const breathe = Math.sin(time * 2) * 0.15 + 0.85;
+      const glowRadius = innerRadius - 4;
 
-      requestAnimationFrame(draw);
+      if (isSpeaking || isListening || isThinking) {
+        const gradient = ctx.createRadialGradient(cx, cy, glowRadius - 5, cx, cy, glowRadius + 5);
+        const baseColor = isSpeaking ? "157, 78, 221" : isThinking ? "255, 0, 110" : "24, 230, 255";
+        gradient.addColorStop(0, `rgba(${baseColor}, 0)`);
+        gradient.addColorStop(0.5, `rgba(${baseColor}, ${0.3 * breathe})`);
+        gradient.addColorStop(1, `rgba(${baseColor}, 0)`);
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, glowRadius, 0, Math.PI * 2);
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 10;
+        ctx.stroke();
+      }
+
+      // Orbiting dots when thinking
+      if (isThinking) {
+        for (let i = 0; i < 3; i++) {
+          const orbitAngle = time * 3 + (i * Math.PI * 2) / 3;
+          const orbitRadius = 70;
+          const dotX = cx + Math.cos(orbitAngle) * orbitRadius;
+          const dotY = cy + Math.sin(orbitAngle) * orbitRadius;
+
+          ctx.beginPath();
+          ctx.arc(dotX, dotY, 4, 0, Math.PI * 2);
+          ctx.fillStyle = `hsla(${300 + i * 30}, 80%, 60%, 0.8)`;
+          ctx.fill();
+
+          // Trail
+          for (let j = 1; j <= 5; j++) {
+            const trailAngle = orbitAngle - j * 0.1;
+            const trailX = cx + Math.cos(trailAngle) * orbitRadius;
+            const trailY = cy + Math.sin(trailAngle) * orbitRadius;
+            ctx.beginPath();
+            ctx.arc(trailX, trailY, 4 - j * 0.6, 0, Math.PI * 2);
+            ctx.fillStyle = `hsla(${300 + i * 30}, 80%, 60%, ${0.5 - j * 0.09})`;
+            ctx.fill();
+          }
+        }
+      }
+
+      animationId = requestAnimationFrame(draw);
     };
 
     draw();
-  }, [dicoFrequencies, isSpeaking, isListening, isLight]);
+    return () => cancelAnimationFrame(animationId);
+  }, [dicoFrequencies, isSpeaking, isListening, isThinking, ripples, isLight]);
 
-  // Draw user's small visualizer (horizontal bars)
+  // Draw user's small visualizer (waveform style)
   useEffect(() => {
     const canvas = userCanvasRef.current;
     if (!canvas) return;
@@ -168,45 +319,66 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     if (!ctx) return;
 
     const dpr = window.devicePixelRatio || 1;
-    const width = 120;
-    const height = 40;
+    const width = 160;
+    const height = 50;
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
     ctx.scale(dpr, dpr);
 
+    let animationId: number;
+
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
 
       if (!isListening) {
-        requestAnimationFrame(draw);
+        // Flatline when not listening
+        ctx.beginPath();
+        ctx.moveTo(0, height / 2);
+        ctx.lineTo(width, height / 2);
+        ctx.strokeStyle = isLight ? "rgba(0,0,0,0.1)" : "rgba(255,255,255,0.1)";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        animationId = requestAnimationFrame(draw);
         return;
       }
 
-      const barCount = 16;
-      const barWidth = width / barCount - 2;
-      const centerY = height / 2;
+      // Draw waveform
+      ctx.beginPath();
+      ctx.moveTo(0, height / 2);
 
+      const barCount = 32;
       for (let i = 0; i < barCount; i++) {
-        const freqIndex = Math.floor((i / barCount) * userFrequencies.length);
-        const value = userFrequencies[freqIndex] / 255;
-        const barHeight = Math.max(4, value * (height * 0.8));
-
-        const x = i * (barWidth + 2) + 1;
-        const y = centerY - barHeight / 2;
-
-        // Cyan gradient
-        const alpha = 0.4 + value * 0.6;
-        ctx.fillStyle = `rgba(24, 230, 255, ${alpha})`;
-        ctx.fillRect(x, y, barWidth, barHeight);
+        const value = userFrequencies[i] / 255;
+        const x = (i / barCount) * width;
+        const amplitude = value * (height * 0.4);
+        const y = height / 2 + (i % 2 === 0 ? -amplitude : amplitude);
+        ctx.lineTo(x, y);
       }
 
-      requestAnimationFrame(draw);
+      const gradient = ctx.createLinearGradient(0, 0, width, 0);
+      gradient.addColorStop(0, COLORS.cyan);
+      gradient.addColorStop(1, "rgba(24, 230, 255, 0.3)");
+
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = 2;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.stroke();
+
+      // Glow effect
+      ctx.shadowColor = COLORS.cyan;
+      ctx.shadowBlur = 10;
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      animationId = requestAnimationFrame(draw);
     };
 
     draw();
-  }, [userFrequencies, isListening]);
+    return () => cancelAnimationFrame(animationId);
+  }, [userFrequencies, isListening, isLight]);
 
   // Animate Dico's frequencies
   useEffect(() => {
@@ -216,31 +388,38 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
       interval = setInterval(() => {
         setDicoFrequencies(prev =>
           prev.map((_, i) => {
-            const base = Math.sin(Date.now() / 150 + i * 0.4) * 60 + 120;
-            return Math.min(255, Math.max(0, base + Math.random() * 100));
+            const base = Math.sin(Date.now() / 120 + i * 0.5) * 70 + 130;
+            const variance = Math.random() * 80;
+            return Math.min(255, Math.max(0, base + variance));
           })
         );
-      }, 40);
+      }, 33);
     } else if (isThinking) {
       interval = setInterval(() => {
         setDicoFrequencies(prev =>
           prev.map((_, i) => {
-            const wave = Math.sin(Date.now() / 300 + i * 0.2) * 30 + 50;
+            const wave = Math.sin(Date.now() / 200 + i * 0.3) * 40 + 60;
             return Math.min(255, Math.max(0, wave));
           })
         );
-      }, 60);
+      }, 50);
+    } else if (isListening) {
+      interval = setInterval(() => {
+        setDicoFrequencies(prev =>
+          prev.map((_, i) => Math.sin(Date.now() / 800 + i * 0.2) * 20 + 30)
+        );
+      }, 80);
     } else {
       // Gentle idle pulse
       interval = setInterval(() => {
         setDicoFrequencies(prev =>
-          prev.map((_, i) => Math.sin(Date.now() / 1500 + i * 0.15) * 8 + 12)
+          prev.map((_, i) => Math.sin(Date.now() / 2000 + i * 0.1) * 10 + 15)
         );
-      }, 100);
+      }, 120);
     }
 
     return () => clearInterval(interval);
-  }, [isSpeaking, isThinking]);
+  }, [isSpeaking, isThinking, isListening]);
 
   // Update user frequencies from mic
   const updateMicFrequencies = useCallback(() => {
@@ -248,7 +427,9 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
 
     const dataArray = new Uint8Array(analyserRef.current.frequencyBinCount);
     analyserRef.current.getByteFrequencyData(dataArray);
-    setUserFrequencies(Array.from(dataArray.slice(0, 32)));
+    const freqs = Array.from(dataArray.slice(0, 32));
+    setUserFrequencies(freqs);
+    setAvgAmplitude(freqs.reduce((a, b) => a + b, 0) / freqs.length);
 
     micAnimationRef.current = requestAnimationFrame(updateMicFrequencies);
   }, [isListening]);
@@ -291,6 +472,7 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     }
     analyserRef.current = null;
     setUserFrequencies(new Array(32).fill(0));
+    setAvgAmplitude(0);
   }, []);
 
   // Start listening
@@ -299,6 +481,8 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     if (!SpeechRecognitionAPI) return;
 
     setError(null);
+    setTranscript("");
+    setDisplayedTranscript("");
     await initMicAnalyser();
 
     const recognition = new SpeechRecognitionAPI();
@@ -343,10 +527,9 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
 
     recognition.onend = () => {
       if (isListening && !isThinking && !isSpeaking) {
-        // Restart if we're still supposed to be listening
         try {
           recognition.start();
-        } catch (e) {
+        } catch {
           cleanupMic();
           setIsListening(false);
         }
@@ -355,7 +538,6 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
 
     recognition.onstart = () => {
       setIsListening(true);
-      setTranscript("");
     };
 
     recognitionRef.current = recognition;
@@ -388,7 +570,6 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     setIsThinking(true);
 
     try {
-      // Get response from chat API
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -413,6 +594,7 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
 
       setIsThinking(false);
       onResponse(fullResponse);
+      setConversationCount(c => c + 1);
 
       // Speak with ElevenLabs
       await speakResponse(fullResponse);
@@ -469,7 +651,6 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
       source.start(0);
     } catch (e) {
       console.error("TTS error:", e);
-      // Fallback to browser TTS
       if ("speechSynthesis" in window) {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.onend = () => setIsSpeaking(false);
@@ -503,6 +684,8 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     setIsSpeaking(false);
     setIsThinking(false);
     setTranscript("");
+    setDisplayedTranscript("");
+    particlesRef.current = [];
   }, [cleanupMic]);
 
   // Handle orb click
@@ -523,62 +706,80 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
     );
   }
 
+  const isActive = isListening || isSpeaking || isThinking;
+
   return (
-    <div className="flex flex-col items-center gap-4">
-      {/* Main Orb with Dico's face always visible */}
+    <div className="flex flex-col items-center gap-3">
+      {/* Ambient background glow */}
+      <div
+        className="absolute inset-0 pointer-events-none transition-opacity duration-1000"
+        style={{
+          background: isActive
+            ? isSpeaking
+              ? `radial-gradient(ellipse at center, rgba(157, 78, 221, 0.08) 0%, transparent 60%)`
+              : isThinking
+                ? `radial-gradient(ellipse at center, rgba(255, 0, 110, 0.06) 0%, transparent 60%)`
+                : `radial-gradient(ellipse at center, rgba(24, 230, 255, 0.06) 0%, transparent 60%)`
+            : "transparent",
+          opacity: isActive ? 1 : 0,
+        }}
+      />
+
+      {/* Main Orb with Dico's face */}
       <div className="relative">
-        {/* Dico visualizer canvas */}
+        {/* Main canvas for visualizer, particles, ripples */}
         <canvas
-          ref={dicoCanvasRef}
+          ref={mainCanvasRef}
           className="absolute inset-0 pointer-events-none"
           style={{
             left: '50%',
             top: '50%',
             transform: 'translate(-50%, -50%)',
-            width: 200,
-            height: 200
+            width: 280,
+            height: 280
           }}
         />
 
-        {/* Glow effect */}
-        {(isListening || isSpeaking || isThinking) && (
-          <div
-            className="absolute inset-0 rounded-full blur-xl transition-opacity duration-500"
-            style={{
-              background: isSpeaking
-                ? `radial-gradient(circle, ${COLORS.purpleGlow} 0%, transparent 70%)`
+        {/* Outer glow effect */}
+        <div
+          className={`absolute rounded-full transition-all duration-500 ${isActive ? 'opacity-100' : 'opacity-0'}`}
+          style={{
+            width: 160,
+            height: 160,
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            background: isSpeaking
+              ? `radial-gradient(circle, ${COLORS.purpleGlow} 0%, transparent 70%)`
+              : isThinking
+                ? `radial-gradient(circle, rgba(255, 0, 110, 0.4) 0%, transparent 70%)`
                 : `radial-gradient(circle, ${COLORS.cyanGlow} 0%, transparent 70%)`,
-              width: 200,
-              height: 200,
-              left: '50%',
-              top: '50%',
-              transform: 'translate(-50%, -50%)',
-            }}
-          />
-        )}
+            filter: 'blur(20px)',
+          }}
+        />
 
         {/* Clickable orb with Dico's face */}
         <button
           onClick={handleOrbClick}
           disabled={isProcessing}
-          className={`relative w-32 h-32 rounded-full overflow-hidden transition-all duration-300 ${
-            isProcessing ? "opacity-50" : "hover:scale-105 cursor-pointer"
+          className={`relative w-28 h-28 rounded-full overflow-hidden transition-all duration-300 z-10 ${
+            isProcessing ? "opacity-50" : "hover:scale-105 cursor-pointer active:scale-95"
           }`}
           style={{
             boxShadow: isSpeaking
-              ? `0 0 40px ${COLORS.purpleGlow}, 0 0 80px ${COLORS.purpleGlow}`
+              ? `0 0 60px ${COLORS.purpleGlow}, 0 0 100px ${COLORS.purpleGlow}, inset 0 0 20px rgba(157, 78, 221, 0.3)`
               : isListening
-                ? `0 0 40px ${COLORS.cyanGlow}, 0 0 80px ${COLORS.cyanGlow}`
+                ? `0 0 60px ${COLORS.cyanGlow}, 0 0 100px ${COLORS.cyanGlow}, inset 0 0 20px rgba(24, 230, 255, 0.3)`
                 : isThinking
-                  ? `0 0 30px rgba(157, 78, 221, 0.3)`
-                  : "0 0 20px rgba(0,0,0,0.2)",
+                  ? `0 0 50px rgba(255, 0, 110, 0.4), 0 0 80px rgba(255, 0, 110, 0.3)`
+                  : isLight ? "0 0 30px rgba(0,0,0,0.15)" : "0 0 30px rgba(255,255,255,0.1)",
             border: isSpeaking
               ? `3px solid ${COLORS.purple}`
               : isListening
                 ? `3px solid ${COLORS.cyan}`
                 : isThinking
-                  ? `3px solid rgba(157, 78, 221, 0.5)`
-                  : isLight ? "3px solid rgba(0,0,0,0.1)" : "3px solid rgba(255,255,255,0.1)",
+                  ? `3px solid ${COLORS.magenta}`
+                  : isLight ? "3px solid rgba(0,0,0,0.08)" : "3px solid rgba(255,255,255,0.08)",
           }}
         >
           <Image
@@ -586,62 +787,75 @@ export default function VoiceOrb({ onTranscript, onResponse, isProcessing }: Voi
             alt="Dico"
             fill
             className="object-cover"
+            priority
           />
-
-          {/* Thinking overlay */}
-          {isThinking && (
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-              <div className="w-8 h-8 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />
-            </div>
-          )}
         </button>
       </div>
 
       {/* User's voice visualizer */}
-      <div className={`h-12 flex flex-col items-center justify-center transition-opacity duration-300 ${isListening ? 'opacity-100' : 'opacity-30'}`}>
+      <div className={`flex flex-col items-center transition-all duration-300 ${isListening ? 'opacity-100 translate-y-0' : 'opacity-40 translate-y-1'}`}>
         <canvas
           ref={userCanvasRef}
-          style={{ width: 120, height: 40 }}
+          style={{ width: 160, height: 50 }}
         />
-        {isListening && (
-          <span className="text-[10px] mt-1" style={{ color: COLORS.cyan }}>
-            YOU
+        <div className="flex items-center gap-2 mt-1">
+          {isListening && (
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: COLORS.cyan }} />
+          )}
+          <span
+            className="text-[10px] font-medium tracking-wider"
+            style={{ color: isListening ? COLORS.cyan : (isLight ? "#aaa" : "#666") }}
+          >
+            {isListening ? "LISTENING" : "YOUR MIC"}
           </span>
-        )}
+        </div>
       </div>
 
-      {/* Status */}
-      <div className={`text-center min-h-[50px] ${isLight ? 'text-gray-600' : 'text-gray-400'}`}>
+      {/* Status and transcript */}
+      <div className={`text-center min-h-[70px] max-w-[250px] ${isLight ? 'text-gray-600' : 'text-gray-400'}`}>
         {error ? (
           <p className="text-red-400 text-sm">{error}</p>
         ) : isSpeaking ? (
-          <p style={{ color: COLORS.purple }} className="text-sm font-medium">
-            Dico is speaking...
-          </p>
-        ) : isThinking ? (
-          <p style={{ color: COLORS.purple }} className="text-sm font-medium animate-pulse">
-            Thinking...
-          </p>
-        ) : isListening ? (
-          <div>
-            <p style={{ color: COLORS.cyan }} className="text-sm font-medium">
-              Listening...
+          <div className="space-y-1">
+            <p style={{ color: COLORS.purple }} className="text-sm font-medium flex items-center justify-center gap-2">
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: COLORS.purple }} />
+              Dico is speaking
             </p>
-            {transcript && (
-              <p className="text-xs mt-1 max-w-[200px] opacity-70 truncate">
-                "{transcript}"
+            <p className="text-[10px] opacity-50">Tap to interrupt</p>
+          </div>
+        ) : isThinking ? (
+          <div className="space-y-1">
+            <p style={{ color: COLORS.magenta }} className="text-sm font-medium">
+              Processing...
+            </p>
+          </div>
+        ) : isListening ? (
+          <div className="space-y-2">
+            <p style={{ color: COLORS.cyan }} className="text-sm font-medium">
+              {displayedTranscript ? "Heard:" : "Listening..."}
+            </p>
+            {displayedTranscript && (
+              <p className="text-xs opacity-80 leading-relaxed">
+                &ldquo;{displayedTranscript}
+                <span className="animate-pulse">|</span>&rdquo;
               </p>
             )}
           </div>
         ) : (
-          <p className="text-sm opacity-60">Tap to start conversation</p>
+          <div className="space-y-1">
+            <p className="text-sm">Tap to start</p>
+            {conversationCount > 0 && (
+              <p className="text-[10px] opacity-40">{conversationCount} exchange{conversationCount !== 1 ? 's' : ''} so far</p>
+            )}
+          </div>
         )}
       </div>
 
-      {/* Instructions */}
-      <p className={`text-[10px] ${isLight ? 'text-gray-400' : 'text-gray-600'}`}>
-        {isListening || isSpeaking || isThinking ? "Tap to stop" : "Continuous voice mode"}
-      </p>
+      {/* Mode indicator */}
+      <div className={`flex items-center gap-1.5 text-[10px] ${isLight ? 'text-gray-400' : 'text-gray-600'}`}>
+        <span className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-green-400' : (isLight ? 'bg-gray-300' : 'bg-gray-700')}`} />
+        <span>Continuous voice mode</span>
+      </div>
     </div>
   );
 }
