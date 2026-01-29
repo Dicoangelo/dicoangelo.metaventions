@@ -96,11 +96,15 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     isAvailable: deepgramAvailable,
   } = useDeepgramSTT(
     (text, isFinal) => {
-      setLiveTranscript(text);
+      // Only update transcript if Deepgram is the active STT
+      if (activeSTTRef.current === "deepgram") {
+        setLiveTranscript(text);
+      }
     },
     (finalTranscript) => {
       // Auto-process when Deepgram detects end of speech
-      if (finalTranscript.trim() && !isProcessing && !isSpeaking) {
+      // Only process if Deepgram is active and not already processing
+      if (activeSTTRef.current === "deepgram" && finalTranscript.trim() && !isProcessingRef.current) {
         processVoice(finalTranscript.trim());
       }
     },
@@ -125,6 +129,8 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
   const mainCanvasRef = useRef<HTMLCanvasElement>(null);
   const silenceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const particlesRef = useRef<Particle[]>([]);
+  const isProcessingRef = useRef(false); // Sync guard to prevent double-processing
+  const activeSTTRef = useRef<"deepgram" | "webspeech" | null>(null); // Track which STT is active
 
   // Check browser support
   useEffect(() => {
@@ -380,11 +386,13 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     // Try Deepgram first
     if (useDeepgram && deepgramAvailable) {
       try {
+        activeSTTRef.current = "deepgram";
         await startDeepgram();
         setIsListening(true);
         return;
       } catch (e) {
         console.log("[VoiceOrb] Deepgram failed, falling back to Web Speech API");
+        activeSTTRef.current = null;
         setUseDeepgram(false);
       }
     }
@@ -396,6 +404,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       return;
     }
 
+    activeSTTRef.current = "webspeech";
     const recognition = new SpeechRecognitionAPI();
     recognition.continuous = true;
     recognition.interimResults = true;
@@ -418,10 +427,10 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       }
       setLiveTranscript(finalTranscript + interim);
 
-      // Auto-send after silence
+      // Auto-send after silence (only if Web Speech API is the active STT)
       if (silenceTimeoutRef.current) clearTimeout(silenceTimeoutRef.current);
       silenceTimeoutRef.current = setTimeout(() => {
-        if (finalTranscript.trim() && Date.now() - lastSpeechTime >= 1200) {
+        if (activeSTTRef.current === "webspeech" && finalTranscript.trim() && Date.now() - lastSpeechTime >= 1200 && !isProcessingRef.current) {
           processVoice(finalTranscript.trim());
         }
       }, 1200);
@@ -451,13 +460,15 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
 
   // Process voice input
   const processVoice = useCallback(async (text: string) => {
-    // Guard: Don't process if already processing or speaking
-    if (isProcessing || isSpeaking) {
+    // Guard: Use ref for synchronous check to prevent double-processing
+    if (isProcessingRef.current || isSpeaking) {
       console.log("[VoiceOrb] Skipping - already processing or speaking");
       return;
     }
+    isProcessingRef.current = true; // Set immediately to block concurrent calls
 
     if (silenceTimeoutRef.current) clearTimeout(silenceTimeoutRef.current);
+    activeSTTRef.current = null; // Clear active STT
 
     // Stop Deepgram
     if (deepgramListening) {
@@ -473,6 +484,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     cleanupMic();
     setIsListening(false);
     setIsProcessing(true);
+    // isProcessingRef.current already set above
 
     // Add user message to shared history
     const userMessage: Message = { role: "user", content: text };
@@ -506,6 +518,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       onAddToHistory({ role: "assistant", content: fullResponse });
 
       setIsProcessing(false);
+      isProcessingRef.current = false;
       setLastResponse(fullResponse);
       setShowResponse(true);
       await speakResponse(fullResponse);
@@ -516,6 +529,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       }, 600);
     } catch {
       setIsProcessing(false);
+      isProcessingRef.current = false;
       setError("Failed to respond");
     }
   }, [cleanupMic, startListening, isListening, isSpeaking, conversationHistory, onAddToHistory, deepgramListening, stopDeepgram]);
@@ -615,6 +629,8 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     setIsListening(false);
     setIsSpeaking(false);
     setIsProcessing(false);
+    isProcessingRef.current = false;
+    activeSTTRef.current = null;
     setLiveTranscript("");
     particlesRef.current = [];
   }, [cleanupMic, deepgramListening, stopDeepgram]);

@@ -37,7 +37,8 @@ export function useDeepgramSTT(
   const resetSilenceTimer = useCallback(() => {
     clearSilenceTimer();
     silenceTimerRef.current = setTimeout(() => {
-      if (transcriptRef.current.trim()) {
+      // Only fire if still listening and no error
+      if (transcriptRef.current.trim() && socketRef.current?.readyState === WebSocket.OPEN) {
         onSilenceDetected?.(transcriptRef.current.trim());
       }
     }, silenceTimeout);
@@ -107,7 +108,8 @@ export function useDeepgramSTT(
           }
 
           // Deepgram's speech_final indicates end of utterance
-          if (speechFinal && transcriptRef.current.trim()) {
+          // Only fire if socket is still open (not errored/closed)
+          if (speechFinal && transcriptRef.current.trim() && socketRef.current?.readyState === WebSocket.OPEN) {
             clearSilenceTimer();
             onSilenceDetected?.(transcriptRef.current.trim());
           }
