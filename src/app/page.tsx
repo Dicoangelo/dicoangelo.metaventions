@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Chat from "@/components/Chat";
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
             <a href="#systems" className="hover:text-white transition-colors">Systems</a>
             <a href="#projects" className="hover:text-white transition-colors">Projects</a>
             <a href="#experience" className="hover:text-white transition-colors">Experience</a>
+            <a href="#ask" className="hover:text-white transition-colors">Ask</a>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
           </div>
         </div>
@@ -418,6 +419,17 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Ask Me Anything */}
+      <section id="ask" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Ask Me Anything</h2>
+            <p className="text-[#737373]">AI-powered chat that knows my entire portfolio. Go ahead, interrogate.</p>
+          </div>
+          <Chat />
         </div>
       </section>
 
