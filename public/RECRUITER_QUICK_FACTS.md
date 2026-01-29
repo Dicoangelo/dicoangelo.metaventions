@@ -58,6 +58,7 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 - Published 2 npm packages
 
 **Contentsquare** (Jan 2022 - Nov 2025)
+- Co-Market, Co-Sell, Co-Innovate — cloud partnership strategy
 - Cloud Alliances | Systems Integration | Partner Intelligence | Platform Admin
 - 4 concurrent tracks: alliance strategy, systems architecture, reporting infrastructure, tool administration
 - $800M+ TCV, $30M+ ACV (2024), 3,000+ partners, 8+ platforms administered
