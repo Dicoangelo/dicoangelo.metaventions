@@ -16,12 +16,12 @@ export default function Nav() {
         <div className={`flex items-center gap-6 text-sm ${
           theme === 'light' ? 'text-gray-600' : 'text-[#a3a3a3]'
         }`}>
+          <a href="#ask" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Ask</a>
           <a href="#proof" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Proof</a>
           <a href="#systems" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Systems</a>
           <a href="#projects" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Projects</a>
           <a href="#experience" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Experience</a>
           <a href="#arena" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Arena</a>
-          <a href="#ask" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Ask</a>
           <a href="#contact" className={`hover:${theme === 'light' ? 'text-gray-900' : 'text-white'} transition-colors`}>Contact</a>
           <ThemeToggle />
         </div>

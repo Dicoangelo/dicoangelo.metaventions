@@ -73,6 +73,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ask Me Anything */}
+      <section id="ask" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Ask Me Anything</h2>
+            <p className={isLight ? 'text-gray-600' : 'text-[#737373]'}>AI-powered chat that knows my entire portfolio. Go ahead, interrogate.</p>
+          </div>
+          <Chat />
+        </div>
+      </section>
+
       {/* Proof Section - Verifiable Metrics */}
       <section id="proof" className={`py-20 px-6 bg-gradient-to-b ${isLight ? 'from-transparent to-gray-50' : 'from-transparent to-[#0f0f0f]'}`}>
         <div className="max-w-6xl mx-auto">
@@ -580,17 +591,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Ask Me Anything */}
-      <section id="ask" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Ask Me Anything</h2>
-            <p className={isLight ? 'text-gray-600' : 'text-[#737373]'}>AI-powered chat that knows my entire portfolio. Go ahead, interrogate.</p>
-          </div>
-          <Chat />
         </div>
       </section>
 
