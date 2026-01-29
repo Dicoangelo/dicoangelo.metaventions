@@ -44,7 +44,7 @@ export default function Home() {
           </h1>
 
           <p className={`text-xl mb-8 max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-            Orchestrated an operational engine that pushed over $800M+ TCV in deal volume in Cloud partnerships to AWS/MSFT. 85K+ lines of production AI systems built. I combine enterprise GTM execution with hands-on agentic infrastructure development.
+            Orchestrated an operational engine that pushed over $800M+ TCV in Cloud partnership deal volume with AWS/MSFT. 85K+ lines of production AI systems built. I combine enterprise GTM execution with hands-on agentic infrastructure development.
           </p>
 
           <div className="flex gap-4 justify-center mb-12">
