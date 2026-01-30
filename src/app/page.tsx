@@ -611,7 +611,7 @@ export default function Home() {
             isLight ? 'bg-gray-50 border-gray-200' : 'bg-[#141414] border-[#262626]'
           }`}>
             <p className={`text-sm leading-relaxed ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-              This analyzer searches my comprehensive career dossier (66 indexed chunks covering skills,
+              This analyzer searches my comprehensive career dossier (700+ indexed chunks covering skills,
               projects, metrics, and experience) and provides evidence-based matching.
               <strong className={isLight ? 'text-gray-900' : 'text-white'}> No flattery, no sugarcoating</strong> —
               just the facts.
