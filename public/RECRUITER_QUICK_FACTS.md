@@ -71,12 +71,29 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 **Rocket Mortgage** (Jun 2020 - May 2023)
 - Product Success Specialist
 - Led 45 agents, $222K savings
+- System Administrator for multiple platforms (Finmo, Lendesk, Floify, DocuSign)
+- Product owner, user stories, agile methodology
+
+**Edison Financial** (Jul 2021 - Apr 2022)
+- Document Review Specialist (concurrent with Rocket)
+- Process optimization, reduced documents needed while maintaining pipeline quality
+
+**Bridge Training Services - Up2Youth** (Mar 2019 - Present)
+- Director & Project Administrator
+- Partnerships: Ontario Trillium Foundation, United Way
+- Youth mentorship through sports and personal development
 
 ## 🎓 CREDENTIALS
 
 **Education:**
 - BBA Marketing, University of Windsor (2019)
-- SpaceX Hyperloop 2019 Competition Finalist
+- SpaceX Hyperloop 2019 Competition Finalist — Engineering Business Marketing Lead
+
+**University Leadership (2015-2019):**
+- UWindsor Hyperloop — Engineering Business Marketing Lead
+- Odette High School Leadership Initiative — VP of Marketing
+- Enactus Windsor — Lead Mentor
+- AIESEC Windsor — Lead
 
 **Certifications:**
 - AWS Partner: Business Accreditation

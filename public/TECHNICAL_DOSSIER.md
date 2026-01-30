@@ -493,6 +493,17 @@ A multi-agent hiring panel simulation that generates role-specific feedback from
 - ✅ Tableau (data visualization)
 - ✅ Monday.com (project management)
 - ✅ Miro (lifecycle mapping, process design)
+- ✅ Crossbeam (account mapping)
+- ✅ AirTable (database/project management)
+
+### Mortgage & Financial Tools (from Rocket Mortgage / Edison)
+- ✅ Finmo (mortgage origination)
+- ✅ Lendesk (mortgage platform)
+- ✅ Floify (loan origination)
+- ✅ DocuSign (e-signatures)
+- ✅ Lender Portals (multi-lender integrations)
+- ✅ Product Board (product management)
+- ✅ Wrike (project management)
 
 ---
 
@@ -673,12 +684,53 @@ Personal methodology applied across all workstreams:
 - Agent training programs
 - SOP standardization
 
+**Product & Systems Ownership:**
+- **System Administrator** for multiple platforms (Finmo, Lendesk, Floify, DocuSign)
+- Product owner prioritization of backlog features
+- Wrote user stories for tech product development
+- Agile methodology implementation
+- Conducted market research and scheduled product demos with external companies
+- Created and maintained onboarding processes and product maintenance documentation
+
 **Skills Demonstrated:**
 - Team leadership (45 agents)
 - Process optimization
 - Quality assurance
 - Automation implementation
 - Stakeholder management
+- Product ownership & backlog management
+
+---
+
+### Edison Financial (Jul 2021 - Apr 2022)
+**Document Review Specialist** *(Concurrent with Rocket Mortgage)*
+
+**Impact:**
+- Processed and analyzed technology documents for operations at high speed
+- Provided technical support for operations team, clients, and agents
+- Successfully reduced the number of documents needed to process while maintaining pipeline quality
+- Improved financial opportunity throughput from application start to funding
+
+---
+
+### Bridge Training Services - Up2Youth (Mar 2019 - Present)
+**Director & Project Administrator**
+
+**Leadership Scope:**
+- Serve as Director of Bridge Training Services and project administrator
+- Operate workshops focused on educating, employing, and developing general skills in youth
+- Oversee organizational functions including financing, marketing, and accounting
+
+**Partnerships:**
+- **Ontario Trillium Foundation** — Grant partnership
+- **United Way** — Community partnership
+
+**Community Impact:**
+- Train and mentor at-risk youth through sports and personal development
+- Seek sponsorships and maintain program website and social media
+- Marketing coordinator for outreach initiatives
+
+*This role demonstrates non-profit leadership, community engagement, and youth mentorship outside of corporate experience.*
 
 ---
 
@@ -707,7 +759,26 @@ Personal methodology applied across all workstreams:
 **University of Windsor - Odette School of Business**
 - Bachelor of Business Administration (BBA), Marketing
 - Graduated: 2019
-- **SpaceX Hyperloop 2019 Competition Finalist** - Business & Marketing Lead
+- **SpaceX Hyperloop 2019 Competition Finalist** — Engineering Business Marketing Lead for UWindsor Loop team
+
+---
+
+## LEADERSHIP & EXTRACURRICULARS
+
+**University of Windsor (2015-2019)**
+
+| Role | Organization | Duration |
+|------|--------------|----------|
+| **Engineering Business Marketing Lead** | UWindsor Hyperloop (SpaceX Competition) | Sept 2018 - Aug 2019 |
+| **VP of Marketing** | Odette High School Leadership Initiative | Sept 2015 - 2019 |
+| **Lead Mentor** | Enactus Windsor | Jan 2016 - May 2017 |
+| **Lead** | AIESEC Windsor | Sept 2015 - 2018 |
+
+**What This Demonstrates:**
+- Early leadership pattern (4 concurrent leadership roles)
+- Marketing expertise across technical and non-profit contexts
+- Mentorship and community building
+- International exposure (AIESEC is global organization)
 
 ---
 
@@ -726,6 +797,12 @@ Personal methodology applied across all workstreams:
 - Detroit Blockchain (15+ events)
 - Tavern Cohorts (application-only)
 - Web3 Toronto
+
+**Web3 & Blockchain Conferences:**
+- **Capital Factory** — Austin
+- **Miami Art Basel / Miami Hack Week** — Miami
+- **NFT NYC** — New York
+- **Blockchain Futurist / EthToronto** — Toronto
 
 **Investor Access:**
 - CoinFund (monthly attendee)
