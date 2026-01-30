@@ -1,7 +1,7 @@
 # RECRUITER QUICK FACTS - DICO ANGELO
 
 ## 🎯 ONE-SENTENCE PITCH
-Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of production AI systems while managing $800M+ in enterprise cloud deals.
+Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of production AI systems while building operational infrastructure that processed $800M+ in cloud marketplace deal registrations.
 
 ## 📊 KEY METRICS (Verified)
 
@@ -14,9 +14,10 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 - **21 GitHub repositories**
 
 ### Business
-- **$800M+ TCV** managed at Contentsquare
-- **40%** cloud attachment rate
-- **10%** of company revenue via cloud channel
+- **$800M+ TCV** registered/processed through cloud marketplace infrastructure at Contentsquare
+- **2,500+ deal registrations** with 97% approval rate (operations lead)
+- **Operations lead (team of 3)** supporting $30M+ ACV growth
+- **40%** cloud attachment rate on enterprise deals
 - **$222,750** annual cost savings at Rocket Mortgage
 - **2x Microsoft Partner of the Year** awards
 - **Catalyst 2026 Speaker** — Partner ecosystem conference testimonial
@@ -61,11 +62,13 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 - Published 2 npm packages
 
 **Contentsquare** (Jan 2022 - Nov 2025)
-- Co-Market, Co-Sell, Co-Innovate — cloud partnership strategy
-- Cloud Alliances | Systems Integration | Partner Intelligence | Platform Admin
-- 4 concurrent tracks: alliance strategy, systems architecture, reporting infrastructure, tool administration
-- $800M+ TCV, $30M+ ACV (2024), 3,000+ partners, 8+ platforms administered
+- Cloud Alliance Operations Lead — infrastructure, automation, marketplace operations
+- Registered/processed $800M+ TCV through AWS and Microsoft marketplace systems
+- Operations lead (team of 3) supporting $30M+ ACV growth in 2024
+- Built operational infrastructure: 50+ dynamic reports, 6 platform integrations, 90% automation improvement
+- 2,500+ deal registrations with 97% approval rate, 600+ deals/quarter capacity
 - Led PartnerStack ↔ Salesforce UAT: 10+ test cases, identified sync gaps, enabled 3K+ partner ecosystem
+- Platform admin: Salesforce, AWS ACE, Microsoft Partner Center, PartnerStack, Reveal, Suger
 - 2x Microsoft Partner of the Year
 
 **Rocket Mortgage** (Jun 2020 - May 2023)

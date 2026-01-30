@@ -7,9 +7,9 @@
 
 ## EXECUTIVE SUMMARY
 
-**Architect-Operator Hybrid** with proven track record managing $800M+ in enterprise cloud deals while building production AI systems. Published 2 npm packages, implemented 8+ arXiv papers into 297K+ lines of production code, and delivered measurable business impact at scale.
+**Architect-Operator Hybrid** with proven track record building operational infrastructure that processed $800M+ in cloud marketplace deal registrations while shipping production AI systems. Published 2 npm packages, implemented 8+ arXiv papers into 297K+ lines of production code, and delivered measurable business impact at scale.
 
-**Unique Value Proposition:** I bridge the gap between cutting-edge AI research and enterprise execution. I don't just read papers—I implement them into production systems. I don't just manage deals—I build the automation to close them.
+**Unique Value Proposition:** I bridge the gap between cutting-edge AI research and enterprise operations. I don't just read papers—I implement them into production systems. I don't just register deals—I build the automation infrastructure that makes them flow at scale.
 
 ---
 
@@ -526,12 +526,19 @@ A multi-agent hiring panel simulation that generates role-specific feedback from
 - Built meta-orchestrator for autonomy
 
 ### Contentsquare (Jan 2022 - Nov 2025)
-**Cloud Alliances | Systems Integration | Partner Intelligence | Platform Administration**
+**Cloud Alliance Operations Lead | Systems Integration | Partner Intelligence | Platform Administration**
 
-**Partnership Philosophy:** Co-Market, Co-Sell, Co-Innovate — drove cloud partnership strategy with AWS and Microsoft.
+**Role:** Operations lead (team of 3) building infrastructure that enabled $30M+ ACV growth through AWS and Microsoft partnerships.
 
 **Scope of Work:**
-Operated across four concurrent tracks: (1) cloud alliance strategy with AWS and Microsoft, (2) systems integration architecture across CRM, PRM, and data platforms, (3) partner intelligence and reporting infrastructure, and (4) platform administration for GTM tools. Led multiple iteration workstreams while managing program consolidation across 3 acquired companies (Contentsquare, Hotjar, Heap).
+Operated across four concurrent tracks: (1) cloud alliance operations with AWS and Microsoft (deal registration, marketplace operations, PRACR reporting), (2) systems integration architecture across CRM, PRM, and data platforms, (3) partner intelligence and reporting infrastructure (50+ dynamic reports), and (4) platform administration for GTM tools. Led multiple iteration workstreams while managing program consolidation across 3 acquired companies (Contentsquare, Hotjar, Heap).
+
+**Key Metrics:**
+- Registered/processed **$800M+ TCV** through cloud marketplace systems
+- **2,500+ deal registrations** with 97% approval rate
+- Built automation reducing manual work by 90% (registration time: 8 min → 30 sec)
+- 600+ deals/quarter processing capacity
+- Platform admin: Salesforce, AWS ACE, Microsoft Partner Center, PartnerStack, Reveal, Suger
 
 ---
 
@@ -928,7 +935,7 @@ I chose implementation over academia. While others were writing papers, I was im
 4. I'm self-taught. I learn fast and don't need hand-holding.
 
 ### "Can you handle enterprise scale?"
-At Contentsquare, I managed $800M+ in deals across Microsoft and AWS partnerships. I understand enterprise sales cycles, procurement, security reviews, and multi-stakeholder coordination. I've built systems that handle real business complexity.
+At Contentsquare, I built operational infrastructure that processed $800M+ in cloud marketplace deal registrations across Microsoft and AWS partnerships. I understand enterprise sales cycles, procurement, security reviews, and multi-stakeholder coordination. I've built systems that handle real business complexity at scale (2,500+ registrations, 600+ deals/quarter capacity).
 
 ### "Are you a researcher or engineer?"
 Both. I read arXiv papers and implement them. I write tests and deployment pipelines. I understand theory and can ship production code. Most people are one or the other. I'm both.
