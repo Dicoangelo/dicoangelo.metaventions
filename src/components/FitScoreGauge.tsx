@@ -55,7 +55,6 @@ export default function FitScoreGauge({
       return;
     }
 
-    let start = 0;
     const duration = 1500;
     const startTime = performance.now();
 

@@ -1,10 +1,27 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import { useTheme } from "./ThemeProvider";
 import FitScoreGauge from "./FitScoreGauge";
 import StrengthCard from "./StrengthCard";
 import GapCard from "./GapCard";
+
+/**
+ * Clean markdown code blocks from LLM response
+ */
+function cleanJsonResponse(response: string): string {
+  let cleaned = response.trim();
+  if (cleaned.startsWith("```json")) {
+    cleaned = cleaned.slice(7);
+  }
+  if (cleaned.startsWith("```")) {
+    cleaned = cleaned.slice(3);
+  }
+  if (cleaned.endsWith("```")) {
+    cleaned = cleaned.slice(0, -3);
+  }
+  return cleaned.trim();
+}
 
 interface Assessment {
   summary: string;
@@ -34,7 +51,9 @@ export default function JDAnalyzer() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { theme } = useTheme();
 
-  const analyzeJD = async () => {
+  const canSubmit = jdText.trim().length >= 50;
+
+  const analyzeJD = useCallback(async () => {
     if (jdText.trim().length < 50) {
       setErrorMessage("Please paste a complete job description (at least 50 characters)");
       return;
@@ -75,19 +94,7 @@ export default function JDAnalyzer() {
       }
 
       // Parse the completed response
-      let cleanedResponse = fullText.trim();
-      if (cleanedResponse.startsWith("```json")) {
-        cleanedResponse = cleanedResponse.slice(7);
-      }
-      if (cleanedResponse.startsWith("```")) {
-        cleanedResponse = cleanedResponse.slice(3);
-      }
-      if (cleanedResponse.endsWith("```")) {
-        cleanedResponse = cleanedResponse.slice(0, -3);
-      }
-      cleanedResponse = cleanedResponse.trim();
-
-      const parsed = JSON.parse(cleanedResponse);
+      const parsed = JSON.parse(cleanJsonResponse(fullText));
       setAssessment(parsed);
       setState("complete");
     } catch (error) {
@@ -95,7 +102,18 @@ export default function JDAnalyzer() {
       setErrorMessage(error instanceof Error ? error.message : "Analysis failed");
       setState("error");
     }
-  };
+  }, [jdText]);
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      // Cmd/Ctrl + Enter to submit
+      if ((e.metaKey || e.ctrlKey) && e.key === "Enter" && canSubmit && state === "idle") {
+        e.preventDefault();
+        analyzeJD();
+      }
+    },
+    [canSubmit, state, analyzeJD]
+  );
 
   const reset = () => {
     setJdText("");
@@ -125,8 +143,10 @@ export default function JDAnalyzer() {
               id="jd-input"
               value={jdText}
               onChange={(e) => setJdText(e.target.value)}
+              onKeyDown={handleKeyDown}
               placeholder="Paste the full job description here..."
               rows={12}
+              aria-describedby="jd-hint"
               className={`
                 w-full px-4 py-3 rounded-lg border resize-y
                 focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -137,8 +157,9 @@ export default function JDAnalyzer() {
                 }
               `}
             />
-            <p className={`text-xs mt-1 ${theme === "light" ? "text-gray-500" : "text-gray-500"}`}>
+            <p id="jd-hint" className={`text-xs mt-1 ${theme === "light" ? "text-gray-500" : "text-gray-500"}`}>
               {jdText.length} characters {jdText.length < 50 && jdText.length > 0 && "(minimum 50)"}
+              {canSubmit && <span className="ml-2">Press Cmd+Enter to analyze</span>}
             </p>
           </div>
 
@@ -167,9 +188,9 @@ export default function JDAnalyzer() {
 
       {/* Loading/Streaming State */}
       {state === "analyzing" && (
-        <div className="space-y-6">
+        <div className="space-y-6" role="status" aria-live="polite">
           <div className="flex items-center gap-3">
-            <div className="animate-spin rounded-full h-5 w-5 border-2 border-indigo-500 border-t-transparent" />
+            <div className="animate-spin rounded-full h-5 w-5 border-2 border-indigo-500 border-t-transparent" aria-hidden="true" />
             <span className={theme === "light" ? "text-gray-600" : "text-gray-400"}>
               Analyzing job description...
             </span>

@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@supabase/supabase-js";
-import { getDossierContextForJD, type DossierChunk } from "@/lib/dossier";
+import { getDossierContextForJD } from "@/lib/dossier";
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -26,6 +26,23 @@ interface JDAnalysisAssessment {
   recommendations: string[];
   fit_score: number;
   fit_tier: "strong" | "moderate" | "weak" | "poor";
+}
+
+/**
+ * Clean markdown code blocks from LLM response
+ */
+function cleanJsonResponse(response: string): string {
+  let cleaned = response.trim();
+  if (cleaned.startsWith("```json")) {
+    cleaned = cleaned.slice(7);
+  }
+  if (cleaned.startsWith("```")) {
+    cleaned = cleaned.slice(3);
+  }
+  if (cleaned.endsWith("```")) {
+    cleaned = cleaned.slice(0, -3);
+  }
+  return cleaned.trim();
 }
 
 const BRUTALLY_HONEST_PROMPT = `You are a BRUTALLY HONEST career fit analyzer. Your job is to assess how well Dico Angelo matches a job description.
@@ -135,19 +152,7 @@ Based on the job description and dossier context above, provide your brutally ho
 
           // After streaming completes, parse and store the result
           try {
-            // Clean the response (remove any markdown code blocks if present)
-            let cleanedResponse = fullResponse.trim();
-            if (cleanedResponse.startsWith("```json")) {
-              cleanedResponse = cleanedResponse.slice(7);
-            }
-            if (cleanedResponse.startsWith("```")) {
-              cleanedResponse = cleanedResponse.slice(3);
-            }
-            if (cleanedResponse.endsWith("```")) {
-              cleanedResponse = cleanedResponse.slice(0, -3);
-            }
-            cleanedResponse = cleanedResponse.trim();
-
+            const cleanedResponse = cleanJsonResponse(fullResponse);
             const assessment: JDAnalysisAssessment = JSON.parse(cleanedResponse);
 
             // Store in database

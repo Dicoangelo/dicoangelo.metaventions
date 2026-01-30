@@ -151,35 +151,6 @@ export async function getDossierContext(query: string): Promise<string> {
 }
 
 /**
- * Search dossier for JD analysis - uses higher limits for comprehensive matching
- * Returns more chunks with lower threshold to capture all potential evidence
- */
-export async function searchDossierForJD(
-  requirements: string[]
-): Promise<{ requirement: string; chunks: DossierChunk[] }[]> {
-  const supabaseClient = getSupabase();
-  const cohereClient = getCohere();
-
-  if (!supabaseClient || !cohereClient) {
-    console.warn("Dossier search unavailable: missing SUPABASE or COHERE credentials");
-    return requirements.map(req => ({ requirement: req, chunks: [] }));
-  }
-
-  const results: { requirement: string; chunks: DossierChunk[] }[] = [];
-
-  // Search for each requirement separately for better matching
-  for (const requirement of requirements) {
-    const chunks = await searchDossier(requirement, {
-      threshold: 0.12,  // Very low threshold to capture all potential evidence
-      limit: 6,         // More chunks per requirement
-    });
-    results.push({ requirement, chunks });
-  }
-
-  return results;
-}
-
-/**
  * Get comprehensive dossier context for JD analysis
  * Returns more chunks than chat to ensure thorough assessment
  */
