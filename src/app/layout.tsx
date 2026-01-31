@@ -68,13 +68,15 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredData = {
+const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Dico Angelo",
   jobTitle: "Operations Infrastructure Builder & AI Systems Engineer",
   description: "Operations infrastructure builder who processed $800M+ in cloud marketplace deal registrations while shipping 297K+ lines of production AI systems",
   url: "https://dicoangelo.vercel.app",
+  email: "hello@dicoangelo.com",
+  nationality: "Canadian",
   sameAs: [
     "https://github.com/Dicoangelo",
     "https://www.linkedin.com/in/dicoangelo",
@@ -89,34 +91,60 @@ const structuredData = {
     "TypeScript",
     "Python",
     "React",
+    "Next.js",
+    "Agentic Architectures",
     "Machine Learning",
-    "arXiv Implementation",
+    "Salesforce",
+    "AWS",
     "Partner Operations"
   ],
+  knowsLanguage: ["en-US", "en-CA"],
   alumniOf: {
     "@type": "EducationalOrganization",
-    name: "University of Windsor",
+    name: "University of Windsor - Odette School of Business",
     sameAs: "https://www.uwindsor.ca"
   },
-  worksFor: [
-    {
-      "@type": "Organization",
-      name: "Metaventions AI",
-      description: "Founder & Systems Architect"
-    }
-  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "Metaventions AI",
+    url: "https://dicoangelo.vercel.app"
+  },
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "certificate",
-      name: "AWS Partner: Business Accreditation"
+      name: "AWS Partner: Business Accreditation",
+      dateCreated: "2024"
     },
     {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "certificate",
-      name: "AWS Partner: Generative AI on AWS Essentials"
+      name: "AWS Partner: Generative AI on AWS Essentials",
+      dateCreated: "2023"
     }
   ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Dico Angelo - Portfolio",
+  url: "https://dicoangelo.vercel.app",
+  description: "Professional portfolio of Dico Angelo, Operations Infrastructure Builder and AI Systems Engineer",
+  author: {
+    "@type": "Person",
+    name: "Dico Angelo"
+  },
+  inLanguage: "en-US"
+};
+
+const professionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Dico Angelo - AI & Operations Consulting",
+  description: "Operations infrastructure and AI systems engineering services",
+  areaServed: ["US", "CA"],
+  availableLanguage: "English"
 };
 
 export default function RootLayout({
@@ -128,9 +156,19 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <Script
-          id="structured-data"
+          id="structured-data-person"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <Script
+          id="structured-data-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Script
+          id="structured-data-service"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
         />
       </head>
       <body className="antialiased">

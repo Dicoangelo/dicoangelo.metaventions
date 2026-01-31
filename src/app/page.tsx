@@ -8,6 +8,7 @@ import Hero from "@/components/Hero";
 import FloatingCTA from "@/components/FloatingCTA";
 import Footer from "@/components/Footer";
 import SkipToContent from "@/components/SkipToContent";
+import ScrollProgress from "@/components/ScrollProgress";
 import { ChatSkeleton, JDAnalyzerSkeleton } from "@/components/LoadingSkeletons";
 import { useTheme } from "@/components/ThemeProvider";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
@@ -49,6 +50,9 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Skip to content link for keyboard navigation */}
       <SkipToContent />
+
+      {/* Scroll progress indicator */}
+      <ScrollProgress />
 
       {/* Navigation */}
       <Nav />
