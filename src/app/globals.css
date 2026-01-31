@@ -40,9 +40,65 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   transition: background-color 0.2s ease, color 0.2s ease;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Typography scale with better hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+/* Improved paragraph spacing and readability */
+p {
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+/* Better link styles */
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* Code and monospace improvements */
+code, pre {
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  font-feature-settings: "liga" 0;
+}
+
+/* Lists */
+ul, ol {
+  line-height: 1.7;
+}
+
+/* Consistent spacing scale */
+.space-y-sm > * + * { margin-top: 0.5rem; }
+.space-y-md > * + * { margin-top: 1rem; }
+.space-y-lg > * + * { margin-top: 1.5rem; }
+.space-y-xl > * + * { margin-top: 2rem; }
 
 /* Gradient text */
 .gradient-text {
