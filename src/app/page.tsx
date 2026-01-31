@@ -11,10 +11,12 @@ import SkipToContent from "@/components/SkipToContent";
 import ScrollProgress from "@/components/ScrollProgress";
 import FilmStripGallery from "@/components/FilmStripGallery";
 import BackToTop from "@/components/BackToTop";
+import KeyboardShortcutsHelp from "@/components/KeyboardShortcutsHelp";
 import { ChatSkeleton, JDAnalyzerSkeleton } from "@/components/LoadingSkeletons";
 import { useTheme } from "@/components/ThemeProvider";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useNavigationShortcuts } from "@/hooks/useKeyboardShortcuts";
 
 // Lazy load heavy components below the fold
 const Chat = dynamic(() => import("@/components/Chat"), {
@@ -52,10 +54,17 @@ const CareerTimeline = dynamic(() => import("@/components/CareerTimeline"), {
 export default function Home() {
   const { theme } = useTheme();
   const isLight = theme === "light";
+
+  // Enable keyboard shortcuts
+  useNavigationShortcuts();
+
   return (
     <main className="min-h-screen">
       {/* Skip to content link for keyboard navigation */}
       <SkipToContent />
+
+      {/* Keyboard shortcuts help modal */}
+      <KeyboardShortcutsHelp isLight={isLight} />
 
       {/* Scroll progress indicator */}
       <ScrollProgress />
