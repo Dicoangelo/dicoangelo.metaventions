@@ -1,4 +1,6 @@
 import { NextRequest } from "next/server";
+import { ttsRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
+import { ttsSchema, validateRequest } from "@/lib/schemas";
 
 // ElevenLabs voice IDs
 const VOICES = {
@@ -8,11 +10,40 @@ const VOICES = {
 
 export async function POST(request: NextRequest) {
   try {
-    const { text } = await request.json();
+    // Rate limiting check
+    const identifier = getClientIdentifier(request.headers as any);
+    const { success, limit, remaining, reset } = await ttsRateLimit.limit(identifier);
 
-    if (!text || typeof text !== "string") {
-      return new Response("Missing text", { status: 400 });
+    if (!success) {
+      return new Response(
+        JSON.stringify({
+          error: "Rate limit exceeded. Please wait a moment before trying again."
+        }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            ...createRateLimitHeaders(limit, remaining, reset),
+          },
+        }
+      );
     }
+
+    const body = await request.json();
+
+    // Validate request body
+    const validation = validateRequest(ttsSchema, body);
+    if (!validation.success) {
+      return new Response(
+        JSON.stringify({ error: validation.error }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+
+    const { text } = validation.data;
 
     const apiKey = process.env.ELEVENLABS_API_KEY;
 

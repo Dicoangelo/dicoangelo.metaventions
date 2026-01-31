@@ -1,5 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { getDossierContext } from "@/lib/dossier";
+import { chatRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
+import { chatMessageSchema, validateRequest } from "@/lib/schemas";
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -33,7 +35,40 @@ const SYSTEM_PROMPT = `You are an AI assistant representing Dico Angelo on his p
 
 export async function POST(request: Request) {
   try {
-    const { messages } = await request.json();
+    // Rate limiting check
+    const identifier = getClientIdentifier(request.headers as any);
+    const { success, limit, remaining, reset } = await chatRateLimit.limit(identifier);
+
+    if (!success) {
+      return new Response(
+        JSON.stringify({
+          error: "Rate limit exceeded. Please wait a moment before trying again."
+        }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            ...createRateLimitHeaders(limit, remaining, reset),
+          },
+        }
+      );
+    }
+
+    const body = await request.json();
+
+    // Validate request body
+    const validation = validateRequest(chatMessageSchema, body);
+    if (!validation.success) {
+      return new Response(
+        JSON.stringify({ error: validation.error }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+
+    const { messages } = validation.data;
 
     // Get the latest user message for RAG query
     const latestUserMessage = messages

@@ -1,6 +1,8 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@supabase/supabase-js";
 import { getDossierContextForJD } from "@/lib/dossier";
+import { jdAnalyzerRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
+import { jdAnalyzerSchema, validateRequest } from "@/lib/schemas";
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -95,14 +97,40 @@ CRITICAL: Your response must be valid JSON only. No markdown, no explanation, ju
 
 export async function POST(request: Request) {
   try {
-    const { jd_text, session_id } = await request.json();
+    // Rate limiting check
+    const identifier = getClientIdentifier(request.headers as any);
+    const { success, limit, remaining, reset } = await jdAnalyzerRateLimit.limit(identifier);
 
-    if (!jd_text || typeof jd_text !== "string" || jd_text.trim().length < 50) {
+    if (!success) {
       return new Response(
-        JSON.stringify({ error: "Job description must be at least 50 characters" }),
-        { status: 400, headers: { "Content-Type": "application/json" } }
+        JSON.stringify({
+          error: "Rate limit exceeded. Please wait a moment before trying again."
+        }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            ...createRateLimitHeaders(limit, remaining, reset),
+          },
+        }
       );
     }
+
+    const body = await request.json();
+
+    // Validate request body
+    const validation = validateRequest(jdAnalyzerSchema, body);
+    if (!validation.success) {
+      return new Response(
+        JSON.stringify({ error: validation.error }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+
+    const { jd_text, session_id } = validation.data;
 
     // Get comprehensive dossier context
     const { context: dossierContext, chunks } = await getDossierContextForJD(jd_text);
