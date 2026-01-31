@@ -91,12 +91,12 @@ export default async function Image() {
               <div style={{ fontSize: 16, color: '#737373' }}>TCV Processed</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: 32, fontWeight: 700, color: '#6366f1' }}>85K+</div>
+              <div style={{ fontSize: 32, fontWeight: 700, color: '#6366f1' }}>297K+</div>
               <div style={{ fontSize: 16, color: '#737373' }}>Lines of Code</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: 32, fontWeight: 700, color: '#6366f1' }}>40+</div>
-              <div style={{ fontSize: 16, color: '#737373' }}>Papers → Prod</div>
+              <div style={{ fontSize: 32, fontWeight: 700, color: '#6366f1' }}>8+</div>
+              <div style={{ fontSize: 16, color: '#737373' }}>Research Papers</div>
             </div>
           </div>
 
