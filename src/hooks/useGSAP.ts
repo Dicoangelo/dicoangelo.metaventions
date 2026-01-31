@@ -1,46 +1,14 @@
 import { useEffect, useRef } from 'react';
 
-// Define minimal types to avoid GSAP import
-interface GSAPContext {
-  revert: () => void;
-}
-
 /**
  * Custom hook for using GSAP animations in React 19
- *
- * SIMPLIFIED VERSION - No actual GSAP, just CSS animations
- * This prevents SSR crashes while maintaining the API
- *
- * @example
- * ```tsx
- * function MyComponent() {
- *   const containerRef = useRef<HTMLDivElement>(null);
- *
- *   useGSAP(() => {
- *     // Animation code (ignored in this version)
- *   }, { scope: containerRef });
- *
- *   return <div ref={containerRef}>...</div>;
- * }
- * ```
+ * Client-side only - safe for Next.js SSR
  */
 export function useGSAP(
   callback: (context?: any) => void | (() => void),
   options?: {
-    /**
-     * Dependencies array (like useEffect)
-     * If not provided, runs only once on mount
-     */
     dependencies?: React.DependencyList;
-    /**
-     * Scope element for GSAP context
-     * All selectors will be scoped to this element
-     */
     scope?: React.RefObject<Element>;
-    /**
-     * Whether to respect prefers-reduced-motion
-     * Default: true
-     */
     respectReducedMotion?: boolean;
   }
 ) {
@@ -50,34 +18,41 @@ export function useGSAP(
     respectReducedMotion = true,
   } = options || {};
 
-  const contextRef = useRef<GSAPContext | undefined>(undefined);
+  const cleanupRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
-    // Skip on server
+    // Only run on client
     if (typeof window === 'undefined') return;
 
-    // Check for reduced motion preference
-    if (respectReducedMotion) {
-      const prefersReducedMotion = window.matchMedia(
-        '(prefers-reduced-motion: reduce)'
-      ).matches;
-
-      if (prefersReducedMotion) {
-        // Skip animations if user prefers reduced motion
-        return;
-      }
+    // Check reduced motion
+    if (respectReducedMotion && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
     }
 
-    // For now, just skip the callback to prevent GSAP crashes
-    // The CSS animations in globals.css will handle visual effects
+    // Dynamically import GSAP only on client
+    import('gsap').then(({ default: gsap }) => {
+      import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
+        gsap.registerPlugin(ScrollTrigger);
 
-    // Return empty cleanup
+        // Create context if scope provided, otherwise use global
+        if (scope?.current) {
+          const ctx = gsap.context(() => {
+            callback();
+          }, scope.current);
+
+          cleanupRef.current = () => ctx.revert();
+        } else {
+          callback();
+        }
+      });
+    });
+
     return () => {
-      // No cleanup needed
+      cleanupRef.current?.();
     };
   }, dependencies);
 
-  return contextRef;
+  return cleanupRef;
 }
 
 /**
