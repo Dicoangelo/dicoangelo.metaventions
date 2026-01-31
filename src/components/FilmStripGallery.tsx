@@ -23,32 +23,32 @@ export default function FilmStripGallery({ isLight }: FilmStripGalleryProps) {
     {
       id: "1",
       image: "/gallery-01-personal.jpg",
-      title: "Building in Public",
-      description: "Operations infrastructure architect"
+      title: "Professional Profile",
+      description: "Operations & infrastructure lead"
     },
     {
       id: "2",
-      image: "/gallery-02-bxcellence.jpg",
-      title: "Corporate Networking",
-      description: "BXcellence events & partnerships"
+      image: "/gallery-02-professional.jpg",
+      title: "Industry Experience",
+      description: "Tech & enterprise operations"
     },
     {
       id: "3",
-      image: "/gallery-03-swarm-ai.jpg",
-      title: "AI Agent Ecosystem",
-      description: "Swarm intelligence research"
+      image: "/gallery-03-professional.jpg",
+      title: "Building Systems",
+      description: "Infrastructure at scale"
     },
     {
       id: "4",
-      image: "/gallery-04-holographic.jpg",
-      title: "Metaventions Platform",
-      description: "3D visualization systems"
+      image: "/gallery-04-professional.jpg",
+      title: "Technical Leadership",
+      description: "$800M+ operations processed"
     },
     {
       id: "5",
-      image: "/gallery-05-command.jpg",
-      title: "Sovereign Architecture",
-      description: "Command center interfaces"
+      image: "/gallery-05-professional.jpg",
+      title: "Professional Network",
+      description: "Enterprise partnerships"
     },
   ];
 
