@@ -22,31 +22,31 @@ export default function FilmStripGallery({ isLight }: FilmStripGalleryProps) {
   const frames: FilmFrame[] = [
     {
       id: "1",
-      image: "/gallery-01-personal.jpg",
+      image: "/gallery-01.jpg",
       title: "Professional Profile",
       description: "Operations & infrastructure lead"
     },
     {
       id: "2",
-      image: "/gallery-02-professional.jpg",
+      image: "/gallery-02.jpg",
       title: "Industry Experience",
       description: "Tech & enterprise operations"
     },
     {
       id: "3",
-      image: "/gallery-03-professional.jpg",
+      image: "/gallery-03.jpg",
       title: "Building Systems",
       description: "Infrastructure at scale"
     },
     {
       id: "4",
-      image: "/gallery-04-professional.jpg",
+      image: "/gallery-04.jpg",
       title: "Technical Leadership",
       description: "$800M+ operations processed"
     },
     {
       id: "5",
-      image: "/gallery-05-professional.jpg",
+      image: "/gallery-05.jpg",
       title: "Professional Network",
       description: "Enterprise partnerships"
     },
