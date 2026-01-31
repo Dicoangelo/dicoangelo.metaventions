@@ -8,17 +8,18 @@ import Hero from "@/components/Hero";
 import FloatingCTA from "@/components/FloatingCTA";
 import Footer from "@/components/Footer";
 import SkipToContent from "@/components/SkipToContent";
+import { ChatSkeleton, JDAnalyzerSkeleton } from "@/components/LoadingSkeletons";
 import { useTheme } from "@/components/ThemeProvider";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 // Lazy load heavy components below the fold
 const Chat = dynamic(() => import("@/components/Chat"), {
-  loading: () => <div className="h-[500px] animate-pulse bg-[#141414] rounded-xl" />,
+  loading: () => <ChatSkeleton />,
 });
 
 const JDAnalyzer = dynamic(() => import("@/components/JDAnalyzer"), {
-  loading: () => <div className="h-[400px] animate-pulse bg-[#141414] rounded-xl" />,
+  loading: () => <JDAnalyzerSkeleton />,
 });
 
 const Testimonials = dynamic(() => import("@/components/Testimonials"), {
