@@ -22,33 +22,33 @@ export default function FilmStripGallery({ isLight }: FilmStripGalleryProps) {
   const frames: FilmFrame[] = [
     {
       id: "1",
-      image: "/headshot.jpg",
-      title: "Operations Infrastructure Builder",
-      description: "Building systems that scale"
+      image: "/gallery-01-personal.jpg",
+      title: "Building in Public",
+      description: "Operations infrastructure architect"
     },
     {
       id: "2",
-      image: "/headshot-ama.jpg",
-      title: "AI Systems Engineer",
-      description: "Shipping production AI"
+      image: "/gallery-02-bxcellence.jpg",
+      title: "Corporate Networking",
+      description: "BXcellence events & partnerships"
     },
     {
       id: "3",
-      image: "/headshot.jpg",
-      title: "Multi-Agent Architect",
-      description: "Orchestrating autonomous systems"
+      image: "/gallery-03-swarm-ai.jpg",
+      title: "AI Agent Ecosystem",
+      description: "Swarm intelligence research"
     },
     {
       id: "4",
-      image: "/headshot-ama.jpg",
-      title: "Technical Program Manager",
-      description: "$800M+ TCV processed"
+      image: "/gallery-04-holographic.jpg",
+      title: "Metaventions Platform",
+      description: "3D visualization systems"
     },
     {
       id: "5",
-      image: "/headshot.jpg",
-      title: "Research Implementation",
-      description: "8+ papers to production"
+      image: "/gallery-05-command.jpg",
+      title: "Sovereign Architecture",
+      description: "Command center interfaces"
     },
   ];
 
