@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import SkipToContent from "@/components/SkipToContent";
 import ScrollProgress from "@/components/ScrollProgress";
 import FilmStripGallery from "@/components/FilmStripGallery";
+import BackToTop from "@/components/BackToTop";
 import { ChatSkeleton, JDAnalyzerSkeleton } from "@/components/LoadingSkeletons";
 import { useTheme } from "@/components/ThemeProvider";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
@@ -585,6 +586,9 @@ export default function Home() {
 
       {/* Floating CTA */}
       <FloatingCTA isLight={isLight} />
+
+      {/* Back to Top */}
+      <BackToTop isLight={isLight} />
     </main>
   );
 }
