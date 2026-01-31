@@ -9,6 +9,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 import Footer from "@/components/Footer";
 import SkipToContent from "@/components/SkipToContent";
 import ScrollProgress from "@/components/ScrollProgress";
+import FilmStripGallery from "@/components/FilmStripGallery";
 import { ChatSkeleton, JDAnalyzerSkeleton } from "@/components/LoadingSkeletons";
 import { useTheme } from "@/components/ThemeProvider";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
@@ -71,6 +72,9 @@ export default function Home() {
           <Chat />
         </div>
       </section>
+
+      {/* Film Strip Gallery - Corporate Life, Travel, Networking */}
+      <FilmStripGallery isLight={isLight} />
 
       {/* Proof Section - Verifiable Metrics */}
       <section id="proof" className={`py-20 px-6 bg-gradient-to-b ${isLight ? 'from-transparent to-gray-50' : 'from-transparent to-[#0f0f0f]'}`}>
