@@ -88,7 +88,7 @@ export default async function Image() {
           >
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ fontSize: 32, fontWeight: 700, color: '#6366f1' }}>$800M+</div>
-              <div style={{ fontSize: 16, color: '#737373' }}>TCV Managed</div>
+              <div style={{ fontSize: 16, color: '#737373' }}>TCV Processed</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ fontSize: 32, fontWeight: 700, color: '#6366f1' }}>85K+</div>

@@ -7,6 +7,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import FloatingCTA from "@/components/FloatingCTA";
 import Footer from "@/components/Footer";
+import SkipToContent from "@/components/SkipToContent";
 import { useTheme } from "@/components/ThemeProvider";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -45,6 +46,9 @@ export default function Home() {
   const isLight = theme === "light";
   return (
     <main className="min-h-screen">
+      {/* Skip to content link for keyboard navigation */}
+      <SkipToContent />
+
       {/* Navigation */}
       <Nav />
 
@@ -53,6 +57,7 @@ export default function Home() {
 
       {/* Ask Me Anything */}
       <section id="ask" className="py-20 px-6">
+        <div id="main-content" className="sr-only" aria-hidden="true"></div>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Ask Me Anything</h2>

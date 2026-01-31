@@ -62,9 +62,9 @@ const BRUTALLY_HONEST_PROMPT = `You are a BRUTALLY HONEST career fit analyzer. Y
 
 ## Example Tone:
 - "Dico has 0 years of enterprise Kubernetes. The JD requires 3+ years."
-- "Strong match: $800M+ TCV managed aligns with the $500M quota requirement."
+- "Strong match: $800M+ TCV processed through cloud marketplace operations aligns with the deal flow requirement."
 - "No evidence of Rust experience. The JD lists it as required."
-- "8 years of Python matches the 5+ requirement."
+- "5+ years of Python experience matches the requirement."
 
 ## Your Output Format:
 Respond with a JSON object matching this exact structure:

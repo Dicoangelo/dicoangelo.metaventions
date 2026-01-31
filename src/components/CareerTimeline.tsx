@@ -61,8 +61,8 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       type: "work",
       description: "Coordinated partner ecosystems and go-to-market strategies.",
       highlights: [
-        "Managed partner relationships across technology ecosystem",
-        "Coordinated cross-functional teams for partnership launches",
+        "Coordinated partner relationships across technology ecosystem",
+        "Supported cross-functional teams for partnership launches",
         "Developed operational playbooks for partner onboarding",
       ],
       metrics: [],
