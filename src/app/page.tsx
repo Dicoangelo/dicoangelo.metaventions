@@ -5,8 +5,11 @@ import dynamic from "next/dynamic";
 import Script from "next/script";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import FloatingCTA from "@/components/FloatingCTA";
+import Footer from "@/components/Footer";
 import { useTheme } from "@/components/ThemeProvider";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 // Lazy load heavy components below the fold
 const Chat = dynamic(() => import("@/components/Chat"), {
@@ -564,12 +567,10 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className={`py-8 px-6 border-t ${isLight ? 'border-gray-200' : 'border-[#262626]'}`}>
-        <div className={`max-w-6xl mx-auto flex justify-between items-center text-sm ${isLight ? 'text-gray-500' : 'text-[#525252]'}`}>
-          <span>&copy; 2026 Dico Angelo</span>
-          <span>Built with AI orchestration · 0 lines written manually</span>
-        </div>
-      </footer>
+      <Footer isLight={isLight} />
+
+      {/* Floating CTA */}
+      <FloatingCTA isLight={isLight} />
     </main>
   );
 }
