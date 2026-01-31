@@ -5,6 +5,8 @@ import Image from "next/image";
 import Script from "next/script";
 import Nav from "@/components/Nav";
 import JDAnalyzer from "@/components/JDAnalyzer";
+import Testimonials from "@/components/Testimonials";
+import ProjectShowcase from "@/components/ProjectShowcase";
 import { useTheme } from "@/components/ThemeProvider";
 
 export default function Home() {
@@ -97,27 +99,50 @@ export default function Home() {
             {/* Row 1 - Enterprise Metrics */}
             <MetricCard
               value="$800M+"
-              label="TCV Managed"
-              context="Cloud alliances at Contentsquare"
-              proof="Salesforce deal registration records"
+              label="TCV Processed"
+              context="Registered through cloud marketplace infrastructure"
+              proof="Operations lead (team of 3), 97% approval rate"
+              isLight={isLight}
+            />
+            <MetricCard
+              value="2,500+"
+              label="Deal Registrations"
+              context="600+ deals/quarter capacity"
+              proof="97% approval rate, AWS ACE & Microsoft Partner Center"
+              isLight={isLight}
+            />
+            <MetricCard
+              value="90%"
+              label="Automation Improvement"
+              context="Registration time: 8 min → 30 sec"
+              proof="Process automation at Contentsquare"
+              isLight={isLight}
+            />
+
+            {/* Row 2 - Cloud Partnership Metrics */}
+            <MetricCard
+              value="$30M+"
+              label="ACV Growth Support"
+              context="Operations lead (team of 3) at Contentsquare"
+              proof="2024 AWS & Microsoft partnership results"
               isLight={isLight}
             />
             <MetricCard
               value="40%"
               label="Cloud Attachment"
-              context="Microsoft Azure & AWS deals"
+              context="Enterprise deals with cloud platforms"
               proof="Quarterly reports, 2x Microsoft POY"
               isLight={isLight}
             />
             <MetricCard
-              value="10%"
-              label="Revenue Contribution"
-              context="Via cloud alliance channel"
-              proof="Company revenue attribution"
+              value="50+"
+              label="Dynamic Reports"
+              context="6 platform integrations built"
+              proof="Salesforce, AWS ACE, PartnerStack, Reveal, Suger, Crossbeam"
               isLight={isLight}
             />
 
-            {/* Row 2 - Operational Metrics */}
+            {/* Row 3 - Operational Excellence */}
             <MetricCard
               value="$222,750"
               label="Annual Savings"
@@ -142,17 +167,17 @@ export default function Home() {
 
             {/* Row 3 - Technical Metrics */}
             <MetricCard
-              value="85K+"
+              value="297K+"
               label="Lines of Code"
-              context="Across 20 repositories"
-              proof="GitHub commit history"
+              context="Across production systems"
+              proof="GitHub: OS-App (33K), ResearchGravity (17K), CareerCoach (15K), META-VENGINE (51K+)"
               isLight={isLight}
             />
             <MetricCard
-              value="40+"
+              value="8+"
               label="Papers Implemented"
               context="arXiv research → production"
-              proof="Code references with paper IDs"
+              proof="ACE (2511.15755), ARCHON (2601.09742), agent auctions (2511.13193)"
               isLight={isLight}
             />
             <MetricCard
@@ -189,6 +214,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials isLight={isLight} />
+
+      {/* Project Showcase Section */}
+      <ProjectShowcase isLight={isLight} />
 
       {/* Systems Section - META-VENGINE */}
       <section id="systems" className="py-20 px-6">
