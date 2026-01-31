@@ -41,6 +41,10 @@ const SkillsVisualization = dynamic(() => import("@/components/SkillsVisualizati
   ssr: true,
 });
 
+const InteractiveCodeDemo = dynamic(() => import("@/components/InteractiveCodeDemo"), {
+  ssr: true,
+});
+
 const CareerTimeline = dynamic(() => import("@/components/CareerTimeline"), {
   ssr: true,
 });
@@ -492,6 +496,9 @@ export default function Home() {
 
       {/* Skills Visualization */}
       <SkillsVisualization isLight={isLight} />
+
+      {/* Interactive Code Examples */}
+      <InteractiveCodeDemo isLight={isLight} />
 
       {/* JD Fit Analyzer */}
       <section id="analyze" className="py-20 px-6">
