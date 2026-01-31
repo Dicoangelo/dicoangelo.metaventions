@@ -11,10 +11,14 @@ interface Message {
 }
 
 const SUGGESTED_QUESTIONS = [
-  "What projects has Dico built?",
-  "Tell me about his enterprise experience",
-  "What makes him unique?",
-  "Is he open to relocation?",
+  "What's the $800M+ TCV story?",
+  "Tell me about the META-VENGINE system",
+  "What multi-agent systems has he built?",
+  "What's his experience with cloud marketplace operations?",
+  "Is he open to relocation to the US?",
+  "What makes his approach to AI different?",
+  "Show me metrics from his Contentsquare role",
+  "What research papers has he published?",
 ];
 
 export default function Chat() {
@@ -164,31 +168,39 @@ export default function Chat() {
             style={{ scrollbarWidth: 'thin', scrollbarColor: isLight ? '#d1d5db #f3f4f6' : '#404040 #1f1f1f' }}
           >
             {textMessages.length === 0 ? (
-              <div className="h-full flex flex-col items-center justify-center">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${
-                  isLight ? 'bg-gray-100' : 'bg-[#1f1f1f]'
+              <div className="h-full flex flex-col items-center justify-center px-3">
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 ${
+                  isLight ? 'bg-gradient-to-br from-blue-100 to-purple-100' : 'bg-gradient-to-br from-[#6366f1]/20 to-[#8b5cf6]/20'
                 }`}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={isLight ? 'text-gray-400' : 'text-gray-600'}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[#6366f1]">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                   </svg>
                 </div>
-                <p className={`mb-4 text-sm text-center ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
-                  Type a question below
+                <h4 className={`mb-2 text-base font-semibold ${isLight ? 'text-gray-800' : 'text-white'}`}>
+                  Ask About Anything
+                </h4>
+                <p className={`mb-5 text-sm text-center max-w-[320px] ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
+                  700+ career dossier chunks indexed with semantic search. Start with a suggestion or ask your own question.
                 </p>
-                <div className="flex flex-wrap gap-2 justify-center max-w-[280px]">
-                  {SUGGESTED_QUESTIONS.map((q) => (
-                    <button
-                      key={q}
-                      onClick={() => sendTextMessage(q)}
-                      className={`px-3 py-1.5 text-xs rounded-full transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
-                        isLight
-                          ? 'bg-gray-100 hover:bg-gray-200 border border-gray-200 text-gray-700'
-                          : 'bg-[#1f1f1f] hover:bg-[#2a2a2a] border border-[#262626] text-gray-300'
-                      }`}
-                    >
-                      {q}
-                    </button>
-                  ))}
+                <div className="w-full max-w-[340px]">
+                  <p className={`text-xs font-semibold mb-3 text-center ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
+                    💡 Suggested Questions
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {SUGGESTED_QUESTIONS.map((q) => (
+                      <button
+                        key={q}
+                        onClick={() => sendTextMessage(q)}
+                        className={`px-3 py-2 text-xs rounded-lg transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] hover:shadow-md ${
+                          isLight
+                            ? 'bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700'
+                            : 'bg-[#1f1f1f] hover:bg-[#6366f1]/20 border border-[#262626] hover:border-[#6366f1]/50 text-gray-300'
+                        }`}
+                      >
+                        {q}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             ) : (

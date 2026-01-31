@@ -1,13 +1,41 @@
 "use client";
 
-import Chat from "@/components/Chat";
-import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 import Script from "next/script";
 import Nav from "@/components/Nav";
-import JDAnalyzer from "@/components/JDAnalyzer";
-import Testimonials from "@/components/Testimonials";
-import ProjectShowcase from "@/components/ProjectShowcase";
+import Hero from "@/components/Hero";
 import { useTheme } from "@/components/ThemeProvider";
+import { useCountAnimation } from "@/hooks/useCountAnimation";
+
+// Lazy load heavy components below the fold
+const Chat = dynamic(() => import("@/components/Chat"), {
+  loading: () => <div className="h-[500px] animate-pulse bg-[#141414] rounded-xl" />,
+});
+
+const JDAnalyzer = dynamic(() => import("@/components/JDAnalyzer"), {
+  loading: () => <div className="h-[400px] animate-pulse bg-[#141414] rounded-xl" />,
+});
+
+const Testimonials = dynamic(() => import("@/components/Testimonials"), {
+  ssr: true, // Keep SSR for SEO
+});
+
+const ProjectShowcase = dynamic(() => import("@/components/ProjectShowcase"), {
+  ssr: true,
+});
+
+const ResumeDownload = dynamic(() => import("@/components/ResumeDownload"), {
+  ssr: true,
+});
+
+const SkillsVisualization = dynamic(() => import("@/components/SkillsVisualization"), {
+  ssr: true,
+});
+
+const CareerTimeline = dynamic(() => import("@/components/CareerTimeline"), {
+  ssr: true,
+});
 
 export default function Home() {
   const { theme } = useTheme();
@@ -18,63 +46,7 @@ export default function Home() {
       <Nav />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Headshot */}
-          <div className="mb-8">
-            <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-[#6366f1] glow">
-              <Image
-                src="/headshot.jpg"
-                alt="Dico Angelo"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-
-          <div className={`mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm ${
-            isLight ? 'bg-gray-100 border-gray-200' : 'bg-[#141414] border-[#262626]'
-          }`}>
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span className={isLight ? 'text-gray-600' : 'text-[#737373]'}>Canadian Citizen · TN Visa Eligible</span>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Builder-Operator<br />
-            <span className="gradient-text">Hybrid</span>
-          </h1>
-
-          <p className={`text-xl mb-8 max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-            Built operational infrastructure that processed $800M+ in cloud marketplace deal registrations (97% approval rate, 600+ deals/quarter). 297K+ lines of production AI systems. I bridge enterprise GTM operations with hands-on agentic infrastructure development.
-          </p>
-
-          <div className="flex gap-4 justify-center mb-12">
-            <a
-              href="https://os-app-woad.vercel.app"
-              target="_blank"
-              className="px-6 py-3 bg-[#6366f1] hover:bg-[#5558e3] rounded-lg font-medium transition-colors"
-            >
-              Live Demo: OS-App
-            </a>
-            <a
-              href="https://github.com/Dicoangelo"
-              target="_blank"
-              className={`px-6 py-3 border rounded-lg font-medium transition-colors ${
-                isLight
-                  ? 'bg-gray-100 hover:bg-gray-200 border-gray-200 text-gray-800'
-                  : 'bg-[#141414] hover:bg-[#1f1f1f] border-[#262626]'
-              }`}
-            >
-              GitHub (20 repos)
-            </a>
-          </div>
-
-          <p className={`text-sm italic ${isLight ? 'text-gray-500' : 'text-[#525252]'}`}>
-            &quot;I write 0 code. I orchestrate AI to write 100% of it. English is my programming language.&quot;
-          </p>
-        </div>
-      </section>
+      <Hero />
 
       {/* Ask Me Anything */}
       <section id="ask" className="py-20 px-6">
@@ -220,6 +192,9 @@ export default function Home() {
 
       {/* Project Showcase Section */}
       <ProjectShowcase isLight={isLight} />
+
+      {/* Resume Download Section */}
+      <ResumeDownload isLight={isLight} />
 
       {/* Systems Section - META-VENGINE */}
       <section id="systems" className="py-20 px-6">
@@ -377,87 +352,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience Timeline */}
-      <section id="experience" className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Experience</h2>
-            <p className={isLight ? 'text-gray-600' : 'text-[#737373]'}>Enterprise operations → AI systems builder</p>
-          </div>
-
-          <div className="space-y-8">
-            <TimelineItem
-              period="Nov 2025 — Present"
-              title="Founder & Systems Architect"
-              company="Metaventions AI"
-              location="Remote"
-              highlights={[
-                "Built OS-App: voice-native AI operating system (33K LOC)",
-                "Published 2 npm packages for AI orchestration",
-                "Created META-VENGINE: 9-system self-improving infrastructure",
-                "Implemented 40+ arXiv papers into production systems"
-              ]}
-              isLight={isLight}
-            />
-
-            <TimelineItem
-              period="May 2023 — Nov 2025"
-              title="Cloud Alliance Manager & Partner Programs Lead"
-              company="Contentsquare"
-              location="Paris / Remote"
-              highlights={[
-                "Co-Market, Co-Sell, Co-Innovate — drove cloud partnership strategy",
-                "Managed $800M+ TCV in registered deals (Microsoft Azure, AWS)",
-                "Achieved 40% cloud attachment rate, 10% of company revenue",
-                "Reduced deal registration time by 50% via CRM automation",
-                "Contributed to 2x Microsoft Partner of the Year awards"
-              ]}
-              isLight={isLight}
-            />
-
-            <TimelineItem
-              period="Jun 2020 — May 2023"
-              title="Product Success Specialist"
-              company="Rocket Mortgage Canada"
-              location="Windsor, ON"
-              highlights={[
-                "Led team of 45 agents with 90% satisfaction score",
-                "Delivered $222,750 annual cost savings via process optimization",
-                "Achieved 98% accuracy in quality control",
-                "Saved 7,425 hours/year through automation"
-              ]}
-              isLight={isLight}
-            />
-
-            <TimelineItem
-              period="Mar 2019 — 2022"
-              title="Director"
-              company="Up2Youth"
-              location="Windsor, ON"
-              highlights={[
-                "Secured $255,000 in funding over 3 years",
-                "Directed 15 workshops annually serving 45 youth",
-                "Increased program visibility 30% YoY"
-              ]}
-              isLight={isLight}
-            />
-          </div>
-
-          {/* Education */}
-          <div className="mt-12 card p-6">
-            <div className="flex items-start gap-4">
-              <span className="text-2xl">🎓</span>
-              <div>
-                <h4 className="font-bold">University of Windsor — Odette School of Business</h4>
-                <p className={isLight ? 'text-gray-600' : 'text-[#737373]'}>Bachelor of Business Administration, Marketing · 2019</p>
-                <p className="text-sm text-[#6366f1] mt-2">
-                  SpaceX Hyperloop 2019 Competition Finalist — Business & Marketing Lead
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Interactive Career Timeline */}
+      <CareerTimeline isLight={isLight} />
 
       {/* In The Arena - Human Side */}
       <section id="arena" className="py-20 px-6 section-alt">
@@ -576,56 +472,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills & Certifications */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Skills & Certifications</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="font-bold mb-4 text-[#6366f1]">AI / Agentic</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Multi-agent orchestration", "Prompt engineering", "MCP", "Tool-using agents", "RLHF", "DQ scoring", "ACE consensus"].map(skill => (
-                  <span key={skill} className={`px-3 py-1 border rounded-full text-sm ${isLight ? 'bg-gray-100 border-gray-200 text-gray-700' : 'bg-[#141414] border-[#262626]'}`}>{skill}</span>
-                ))}
-              </div>
-
-              <h3 className="font-bold mb-4 mt-6 text-[#6366f1]">Technical</h3>
-              <div className="flex flex-wrap gap-2">
-                {["TypeScript", "Python", "React 19", "Next.js", "FastAPI", "SQLite", "Qdrant", "Supabase", "Gemini API", "Claude API", "ElevenLabs"].map(skill => (
-                  <span key={skill} className={`px-3 py-1 border rounded-full text-sm ${isLight ? 'bg-gray-100 border-gray-200 text-gray-700' : 'bg-[#141414] border-[#262626]'}`}>{skill}</span>
-                ))}
-              </div>
-
-              <h3 className="font-bold mb-4 mt-6 text-[#6366f1]">GTM / Operations</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Salesforce", "AWS Partner Central", "Crossbeam", "PartnerStack", "Deal registration", "Pipeline management", "CRM automation"].map(skill => (
-                  <span key={skill} className={`px-3 py-1 border rounded-full text-sm ${isLight ? 'bg-gray-100 border-gray-200 text-gray-700' : 'bg-[#141414] border-[#262626]'}`}>{skill}</span>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-bold mb-4 text-[#6366f1]">Certifications</h3>
-              <div className="space-y-3">
-                <CertBadge name="AWS Partner: Business Accreditation" year="2024" isLight={isLight} />
-                <CertBadge name="AWS Partner: Generative AI on AWS Essentials" year="2023" isLight={isLight} />
-                <CertBadge name="AWS Knowledge: Cloud Essentials" year="2024" isLight={isLight} />
-                <CertBadge name="Microsoft Copilot for Security Sales Training" year="2024" isLight={isLight} />
-              </div>
-
-              <h3 className="font-bold mb-4 mt-6 text-[#6366f1]">Cloud & Platforms</h3>
-              <div className="flex flex-wrap gap-2">
-                {["AWS (Partner Accredited)", "Azure (Conceptual)", "Vercel", "Supabase", "MongoDB"].map(platform => (
-                  <span key={platform} className={`px-3 py-1 border rounded-full text-sm ${isLight ? 'bg-gray-100 border-gray-200 text-gray-700' : 'bg-[#141414] border-[#262626]'}`}>{platform}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Skills Visualization */}
+      <SkillsVisualization isLight={isLight} />
 
       {/* JD Fit Analyzer */}
       <section id="analyze" className="py-20 px-6">
@@ -729,9 +577,66 @@ export default function Home() {
 // Components
 
 function MetricCard({ value, label, context, proof, isLight }: { value: string; label: string; context: string; proof: string; isLight: boolean }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Parse value to extract number and formatting
+  const parseValue = (val: string): { number: number; prefix: string; suffix: string; hasDecimal: boolean } => {
+    const match = val.match(/^([^\d]*)(\d+(?:,\d{3})*(?:\.\d+)?)(.*)$/);
+    if (!match) return { number: 0, prefix: '', suffix: val, hasDecimal: false };
+
+    const numberStr = match[2].replace(/,/g, '');
+    const hasDecimal = numberStr.includes('.');
+    return {
+      number: parseFloat(numberStr),
+      prefix: match[1],
+      suffix: match[3],
+      hasDecimal
+    };
+  };
+
+  const { number: targetNumber, prefix, suffix, hasDecimal } = parseValue(value);
+  const animatedValue = useCountAnimation(targetNumber, 2000, 0, isVisible);
+
+  // Format the animated number
+  const formatNumber = (num: number): string => {
+    if (hasDecimal) {
+      return num.toFixed(1);
+    }
+    // Add commas for thousands
+    if (num >= 1000) {
+      return num.toLocaleString('en-US');
+    }
+    return num.toString();
+  };
+
+  // Intersection observer for animation trigger
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+
+  const displayValue = isVisible ? `${prefix}${formatNumber(animatedValue)}${suffix}` : value;
+
   return (
-    <div className="metric-card p-6 rounded-xl">
-      <div className="text-3xl font-bold gradient-text mb-1">{value}</div>
+    <div ref={cardRef} className="metric-card p-6 rounded-xl">
+      <div className="text-3xl font-bold gradient-text mb-1">{displayValue}</div>
       <div className="font-medium mb-2">{label}</div>
       <div className={`text-sm mb-2 ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>{context}</div>
       <div className={`text-xs italic ${isLight ? 'text-gray-500' : 'text-[#525252]'}`}>Proof: {proof}</div>
