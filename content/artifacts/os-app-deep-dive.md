@@ -1,17 +1,17 @@
-# OS-App: Metaventions AI Platform
+# OS-App (Structura OS): Metaventions AI Platform
 
 ## Overview
 
-OS-App is a **voice-native, multi-agent AI operating system interface** representing 94,000+ lines of production-grade TypeScript/React code. It's not a prototype—it's a fully-functional AI platform integrating real-time voice AI, recursive language models, multi-agent consensus, and predictive session intelligence. The platform implements the **Precision Bridge Framework** to achieve Opus-quality decisions through Haiku-budget compute by compressing, pre-computing, parallel exploring, accumulating, reconstructing, and verifying decisions.
+**Structura OS** (codenamed OS-App) is a **voice-native, multi-agent AI operating system interface** representing 127,000+ lines of production-grade TypeScript/React code. It's not a prototype—it's a fully-functional AI platform integrating real-time voice AI, recursive language models, multi-agent consensus, and predictive session intelligence. The platform implements the **Precision Bridge Framework** to achieve Opus-quality decisions through Haiku-budget compute by compressing, pre-computing, parallel exploring, accumulating, reconstructing, and verifying decisions.
 
 ## Key Metrics
 
 | Metric | Value | Context |
 |--------|-------|---------|
-| **Total Lines of Code** | 94,153 | TypeScript/JavaScript (excluding dependencies) |
-| **Files** | 475 | Main application code |
-| **Components** | 123 | React UI components (TSX) |
-| **Services** | 194+ | Business logic modules |
+| **Total Lines of Code** | 127,692 | TypeScript/JavaScript (excluding dependencies) |
+| **Files** | 476+ | Main application code |
+| **Components** | 130+ | React UI components (TSX) |
+| **Services** | 200+ | Business logic modules |
 | **Hooks** | 27 | Custom React hooks |
 | **State Actions** | 65 | Zustand store actions |
 | **Research Sessions** | 351 | Knowledge base integration |

@@ -2,7 +2,7 @@
 
 ## Overview
 
-As Founder & Systems Architect at Metaventions AI, I'm building the Antigravity ecosystem—a comprehensive suite of interconnected AI systems that bridge cutting-edge research and production-ready software. My work spans autonomous multi-agent orchestration, self-evolving infrastructure, voice-native interfaces, and research-driven development. I've published 2 npm packages, implemented 8+ arXiv papers into production, and shipped 297K+ lines of code across 6 major projects—all while maintaining 95% test coverage and live production deployments.
+As Founder & Systems Architect at Metaventions AI, I'm building the Antigravity ecosystem—a comprehensive suite of interconnected AI systems that bridge cutting-edge research and production-ready software. My work spans autonomous multi-agent orchestration, self-evolving infrastructure, voice-native interfaces, and research-driven development. I've published 2 npm packages, implemented 8+ arXiv papers into production, and shipped 316K+ lines of code across 6 major projects—all while maintaining 95% test coverage and live production deployments.
 
 This role demonstrates my ability to translate frontier AI research into practical, scalable systems that solve real problems. I don't just read papers—I implement them. I don't just prototype—I ship production systems with comprehensive testing and documentation.
 
@@ -509,7 +509,7 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 ### Problem-Solving
 - **Autonomous Systems:** Building AI that improves itself (META-VENGINE)
 - **Error Recovery:** 700+ error patterns, 70% auto-fix rate
-- **Complexity Management:** 297K LOC, 9 interconnected systems, zero data loss
+- **Complexity Management:** 316K LOC, 9 interconnected systems, zero data loss
 - **Performance:** 93% cache efficiency, 2-3x parallel speedup
 - **Quality Assurance:** 95% test coverage, DQ scoring for reliability
 
@@ -527,7 +527,7 @@ This experience demonstrates I can:
    - Evidence-based development: benchmark vs paper baselines
 
 2. **Build at Scale**
-   - 297K LOC across 6 production systems
+   - 316K LOC across 6 production systems
    - 21 repositories, 1,500+ commits
    - Zero major incidents in production
 
@@ -555,7 +555,7 @@ This experience demonstrates I can:
 
 **I do both:**
 - Research → Production (8+ papers)
-- Prototype → Scale (297K LOC, 95% coverage)
+- Prototype → Scale (316K LOC, 95% coverage)
 - Theory → Practice (live demos, published packages)
 
 ### What Sets This Apart
@@ -591,7 +591,7 @@ This experience demonstrates I can:
 While this is a startup venture (not yet revenue), the work demonstrates capabilities that translate to enterprise:
 
 - **$800M+ TCV** at Contentsquare shows I understand business scale
-- **297K LOC** shows I can execute large technical projects
+- **316K LOC** shows I can execute large technical projects
 - **8+ papers** shows I stay at cutting edge
 - **2 npm packages** shows I can ship reusable artifacts
 - **95% coverage** shows I understand quality gates

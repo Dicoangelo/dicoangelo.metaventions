@@ -353,7 +353,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 **Dico's Path:**
 - BBA (2015-2019) → Business foundation
 - Self-taught coding (2020-2026) → Production systems
-- Total: Same timeline, but with **$800M+ deals managed** AND **297K+ LOC shipped**
+- Total: Same timeline, but with **$800M+ deals managed** AND **316K+ LOC shipped**
 
 **What This Means:**
 - Can talk to engineers AND executives
@@ -369,7 +369,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 |-----------|---------------------|-------------|
 | **Education** | BS/MS Computer Science | BBA Marketing + Self-Taught |
 | **Theoretical Knowledge** | Formal algorithms, data structures | Implemented from arXiv papers |
-| **Code Output** | 50K LOC (typical) | 297K+ LOC (6x more) |
+| **Code Output** | 50K LOC (typical) | 316K+ LOC (6x more) |
 | **Production Experience** | Internships, entry-level | $800M+ operational systems |
 | **Business Acumen** | Limited | Formal BBA + GTM experience |
 | **Research Ability** | Read papers in class | Implemented 8+ papers in production |
@@ -387,7 +387,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 **Response:**
 
 **1. Output > Credentials**
-- 297K+ LOC speaks louder than a diploma
+- 316K+ LOC speaks louder than a diploma
 - 2 published npm packages prove shipping ability
 - 95% test coverage proves engineering rigor
 
@@ -573,7 +573,7 @@ Education = Cumulative output × learning velocity × real-world impact
 
 **The Numbers:**
 - **Traditional CS Degree:** 4 years, ~50K LOC, $200K debt, 0 production systems
-- **Dico's Self-Directed Path:** 6 years (2020-2026), 297K+ LOC, $0 debt, 8+ production systems, $800M+ business impact
+- **Dico's Self-Directed Path:** 6 years (2020-2026), 316K+ LOC, $0 debt, 8+ production systems, $800M+ business impact
 
 **The Verdict:**
 If education is meant to prepare someone to build valuable systems, Dico's path has 6x the output, zero debt, and measurable real-world impact.

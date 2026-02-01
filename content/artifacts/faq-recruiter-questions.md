@@ -25,7 +25,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **I chose implementation over academia.** While others were writing papers, I was implementing them into production systems.
 
 **What I have instead:**
-- 297K+ LOC of production code
+- 316K+ LOC of production code
 - 2 published npm packages (anyone can use my code)
 - 8+ arXiv papers implemented with measurable results
 - $800M+ in enterprise deals managed
@@ -289,7 +289,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Remote work:**
 - Open to remote for right role
-- Experienced with distributed collaboration (built 297K LOC solo)
+- Experienced with distributed collaboration (built 316K LOC solo)
 - Strong async communication skills
 
 **Relocation:**
@@ -443,7 +443,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Do I write clean, tested, production-ready code? Yes.
 - Do I make sound architectural decisions? Yes.
 - Do I deliver business value? Yes.
-- Can I own end-to-end systems? Yes (297K LOC across ecosystem).
+- Can I own end-to-end systems? Yes (316K LOC across ecosystem).
 
 **Most 10-year engineers have narrow experience in one tech stack at one company. I've built:**
 - Multi-agent systems from arXiv papers
@@ -456,7 +456,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 ### "Your background is in marketing and operations. Why should we trust you as an engineer?"
 
-**Because I've shipped 297K+ LOC of production code with 95% test coverage, published 2 npm packages, and implemented 8+ arXiv papers.**
+**Because I've shipped 316K+ LOC of production code with 95% test coverage, published 2 npm packages, and implemented 8+ arXiv papers.**
 
 **The transition story:**
 
@@ -506,7 +506,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Most engineers can code. I can code AND understand the business. That's rare and valuable.**
 
-**Bottom line:** Judge me on what I've built, not where I started. 297K LOC, 2 npm packages, 8+ papers implemented, $800M deals managed. That's the resume.
+**Bottom line:** Judge me on what I've built, not where I started. 316K LOC, 2 npm packages, 8+ papers implemented, $800M deals managed. That's the resume.
 
 ### "Why did you leave Contentsquare?"
 
@@ -548,7 +548,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - I got enterprise credibility, systems expertise, and financial runway to build
 
 **Why I'm open to joining a company now:**
-- I've proven I can build (297K LOC, 2 npm packages)
+- I've proven I can build (316K LOC, 2 npm packages)
 - I want to work on frontier problems with world-class teams
 - Metaventions can continue as nights/weekends (stable, documented, deployed)
 - Right opportunity = access to cutting-edge research + equity upside
@@ -624,7 +624,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 2. **Contentsquare → Metaventions (2025):**
    - 4 years at Contentsquare (delivered $800M TCV, 2x awards)
    - Left on excellent terms to pursue entrepreneurship
-   - Built 297K LOC in 3 months (validated the bet)
+   - Built 316K LOC in 3 months (validated the bet)
 
 3. **Edison Financial (concurrent):**
    - Part-time concurrent role during Rocket tenure
@@ -847,7 +847,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 1. **Research-to-production capability**
    - I read arXiv papers and implement them (8+ in production)
-   - 297K+ LOC, 2 npm packages, 95% test coverage
+   - 316K+ LOC, 2 npm packages, 95% test coverage
    - Live demos at https://os-app-woad.vercel.app
 
 2. **Enterprise operations experience**

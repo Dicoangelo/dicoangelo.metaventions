@@ -4,7 +4,7 @@
 
 Comprehensive breakdown of technical capabilities with quantified evidence from production systems. This document provides measurable proof of expertise across programming, AI/ML systems, infrastructure, research implementation, and enterprise operations.
 
-**Core Value Proposition**: Builder who bridges cutting-edge research and enterprise-scale production. 297K+ lines of code implementing 8+ arXiv papers while managing $800M+ in operational infrastructure.
+**Core Value Proposition**: Builder who bridges cutting-edge research and enterprise-scale production. 316K+ lines of code implementing 8+ arXiv papers while managing $800M+ in operational infrastructure.
 
 ---
 
@@ -741,7 +741,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 
 **I do both**:
 1. ✅ Research → Production (8+ arXiv papers implemented with code)
-2. ✅ GTM + Technical ($800M deals + 297K LOC)
+2. ✅ GTM + Technical ($800M deals + 316K LOC)
 3. ✅ Academic rigor + Industry pragmatism
 
 **Proof Points**:
@@ -756,7 +756,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 ### Builder-Operator Hybrid
 
 **Builder Side**:
-- 297K+ lines of code across 4 major projects
+- 316K+ lines of code across 4 major projects
 - 2 published npm packages
 - 8+ arXiv papers implemented
 - 95% test coverage (production quality)
@@ -875,7 +875,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 
 | Category | Tools | Proficiency | Evidence |
 |----------|-------|-------------|----------|
-| **IDEs** | VS Code, Cursor | Expert | 297K+ LOC |
+| **IDEs** | VS Code, Cursor | Expert | 316K+ LOC |
 | **Version Control** | Git, GitHub | Expert | 1,500+ commits, 21 repos |
 | **Package Managers** | npm, pip | Expert | 2 published packages |
 | **Build Tools** | Vite, tsup, webpack | Expert | Production builds |
