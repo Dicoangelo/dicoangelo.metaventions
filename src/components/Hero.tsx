@@ -32,6 +32,17 @@ export default function Hero() {
 
   return (
     <section className="pt-32 pb-20 px-6 relative overflow-hidden min-h-[90vh] flex flex-col justify-center">
+      {/* Hero Background Image */}
+      <div
+        className="absolute inset-0 -z-30"
+        style={{
+          backgroundImage: 'url(/hero-bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: isLight ? 0.15 : 0.4,
+        }}
+      />
+
       {/* Animated 3D Background - slowest parallax layer */}
       <div
         className="absolute inset-0 -z-10 parallax-layer"
