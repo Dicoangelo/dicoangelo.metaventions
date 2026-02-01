@@ -47,7 +47,9 @@ export function StaggeredGrid({
     () => {
       if (!gridRef.current) return;
 
-      const items = gridRef.current.querySelectorAll(itemSelector);
+      const items = itemSelector === '> *'
+        ? Array.from(gridRef.current.children)
+        : gridRef.current.querySelectorAll(itemSelector);
 
       if (items.length === 0) return;
 
