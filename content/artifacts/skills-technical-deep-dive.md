@@ -6,6 +6,58 @@ Comprehensive breakdown of technical capabilities with quantified evidence from 
 
 **Core Value Proposition**: Builder who bridges cutting-edge research and enterprise-scale production. 316K+ lines of code implementing 8+ arXiv papers while managing $800M+ in operational infrastructure.
 
+**Positioning**: "I design and operationalize AI-native systems that transform complex professional knowledge into reliable, enterprise-grade intelligence."
+
+---
+
+## Cognitive & Strategic Makeup
+
+### Primary Cognitive Strengths
+
+| Strength | Description | Evidence |
+|----------|-------------|----------|
+| **Systems Thinking** | Naturally reasons in flows, feedback loops, dependencies, and architecture layers | ARCHON 7-subsystem orchestrator, META-VENGINE 9-system integration |
+| **Visual-Conceptual Intelligence** | Thinks spatially, structurally, and symbolically; strong mental modeling | Architecture diagrams, context pack selection algorithms |
+| **Pattern Recognition** | Detects structural inefficiencies and hidden rules early | 700+ error patterns in recovery engine, DQ scoring optimization |
+| **Future Orientation** | Energized by emerging systems rather than legacy maintenance | 8+ arXiv papers implemented, research-to-production pipeline |
+
+### Secondary Strengths
+- Research synthesis across domains (114 sessions, 32+ papers tracked)
+- Narrative abstraction (explaining complex systems clearly)
+- High tolerance for complexity and ambiguity
+- Strategic curiosity and rapid learning loops
+
+### Cognitive Risk Factors (Self-Aware)
+| Risk | Mitigation Strategy |
+|------|---------------------|
+| Over-abstraction without enforced execution loops | Ship MVPs first, time-box exploration to 20% |
+| Delayed momentum if vision not grounded in structure | Daily structure, explicit constraints |
+| Deprioritizing operational hygiene for conceptual work | Test coverage requirements, CI/CD enforcement |
+
+---
+
+## Execution & Operating Style
+
+### How Work Gets Done
+1. **Start with architecture and intent**, not tools
+2. **Define the system boundary** before selecting technology
+3. **Prioritize correctness, extensibility, and auditability**
+4. **Use iteration as validation**, not exploration
+
+### Strength Zones
+| Zone | Evidence |
+|------|----------|
+| Knowledge architecture & RAG systems | ResearchGravity, Context Packs V2, artifact system |
+| AI-augmented documentation intelligence | 114 research sessions, auto-capture, synthesis |
+| Partner ecosystems & cloud GTM systems | $800M TCV, 3,000+ partners, 8 platform admins |
+| Translating expertise into machine-retrievable structures | Semantic chunking, vector embeddings, lineage tracking |
+| Vision → system → operational validation | OS-App (127K LOC from concept to production in 3 months) |
+
+### Weak Zones (Honest Assessment)
+- Repetitive execution without system leverage
+- Cold outbound selling without narrative context
+- Highly fragmented task environments
+
 ---
 
 ## Programming Languages

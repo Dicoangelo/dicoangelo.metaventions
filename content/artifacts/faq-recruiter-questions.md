@@ -3,6 +3,27 @@
 ## Overview
 Direct, evidence-backed answers to the questions recruiters and hiring managers ask most frequently about Dico Angelo's candidacy. Every claim is verifiable through code, metrics, or professional documentation.
 
+**Positioning Statement**: "I design and operationalize AI-native systems that transform complex professional knowledge into reliable, enterprise-grade intelligence."
+
+---
+
+## Executive Identity
+
+### Primary Classification
+**AI Systems Architect** · Enterprise Intelligence & Systems Strategy
+
+### What Defines Dico
+- **Systems Integrator**: Operates upstream of implementation—architecture, orchestration, knowledge modeling, and leverage
+- **Ambiguity → Structure**: Converts complex, unstructured problems into queryable intelligence systems
+- **Infrastructure Mindset**: Treats documentation, knowledge, and process as infrastructure, not afterthoughts
+- **Audit-Ready Design**: Builds assuming scale, audit trails, and long-term maintainability
+- **Bridge Builder**: Connects technical depth with enterprise GTM and operational realities
+
+### Not Optimized For
+- Pure IC coding roles with minimal architectural influence
+- Politically driven environments with low signal-to-noise
+- Execution without ownership or systemic leverage
+
 ---
 
 ## Identity & Fit
@@ -834,6 +855,78 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - **Ownership:** I drive clarity, don't wait for it
 
 **Bottom line:** Ambiguity is normal in complex work. I navigate it by clarifying, assuming, documenting, and iterating.
+
+---
+
+## Professional Trajectory & Fit
+
+### Best-Fit Roles
+| Role Type | Why It Fits |
+|-----------|-------------|
+| **AI Systems Architect (Enterprise)** | Systems thinking + production code + business context |
+| **Knowledge Infrastructure Lead** | RAG expertise, documentation-as-infrastructure mindset |
+| **Platform / Intelligence Architecture Lead** | 316K LOC, multi-system integration experience |
+| **Advanced Partner Engineering** | $800M TCV, hyperscaler relationships, GTM depth |
+| **Applied AI Strategy & Systems Design** | Research-to-production pipeline, 8+ papers implemented |
+
+### Poor-Fit Roles
+- Narrow feature engineering roles (need architectural ownership)
+- Pure sales or quota-driven positions (builder, not seller)
+- Roles optimized for speed over correctness (quality matters)
+- Positions lacking systemic leverage (execution without ownership)
+
+### Career Trajectory Outlook
+
+**Short-Term (1-3 years)**:
+- Consolidation of capability-based identity
+- Transition from role execution to system ownership
+- Increasing leverage via AI-enabled intelligence systems
+
+**Mid-Term (3-7 years)**:
+- Recognized authority in AI-native knowledge systems
+- Platform or ecosystem leadership
+- Financial outcomes driven by leverage, not volume
+
+**Long-Term**:
+- Builder of enduring intelligence frameworks
+- Institutional or platform-level impact
+- Legacy defined by systems, not titles
+
+---
+
+## Motivation & Performance Drivers
+
+### What Energizes Me
+| Driver | Description |
+|--------|-------------|
+| **Meaningful Impact** | Work must matter beyond compensation |
+| **System Ownership** | Autonomy and architectural control |
+| **Future Relevance** | Operating ahead of the curve |
+| **Relational Depth** | Trust-based collaboration |
+
+### What De-Motivates Me
+- Shallow work disconnected from outcomes
+- Environments dominated by politics or optics
+- Excessive fragmentation and reactive workflows
+- Lack of clarity around purpose or direction
+
+---
+
+## Self-Awareness & Risk Factors
+
+### Identified Risks (Transparent)
+| Risk | Mitigation |
+|------|------------|
+| Vision outpacing operational discipline | High self-awareness, willingness to redesign personal systems |
+| Under-monetization of high-value thinking | Learning to price and position appropriately |
+| Trust friction slowing collaboration | Proven ability to adapt once constraints are explicit |
+| Energy volatility tied to environment | Strong reflective capacity, structured routines |
+
+### Why This Matters
+- **High self-awareness** demonstrates coachability
+- **Willingness to redesign** shows adaptability
+- **Explicit constraints** enable better collaboration
+- **Pattern: I fix what I know is broken**
 
 ---
 
