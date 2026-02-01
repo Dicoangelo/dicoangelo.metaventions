@@ -125,11 +125,12 @@ async function getRetrieval(retrievalId: string): Promise<RetrievalResponse | nu
 
 /**
  * Poll for retrieval completion with timeout
+ * Default 5s to stay within Vercel's serverless limit and allow time for Claude
  */
 async function waitForRetrieval(
   retrievalId: string,
-  maxWaitMs: number = 30000,
-  pollIntervalMs: number = 1000
+  maxWaitMs: number = 5000,
+  pollIntervalMs: number = 300
 ): Promise<RetrievalResponse | null> {
   const startTime = Date.now();
 
