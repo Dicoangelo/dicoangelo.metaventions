@@ -4,6 +4,12 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
+
+// Dynamic import at module level (not inside component)
+const ThreeOrb = dynamic(() => import("./ThreeVoiceOrb"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-full animate-pulse" />
+});
 import { useDeepgramSTT } from "@/hooks/useDeepgramSTT";
 
 // Web Speech API types
@@ -162,7 +168,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
             return Math.min(255, Math.max(0, base + Math.random() * 60));
           })
         );
-      }, 30);
+      }, 60); // Reduced from 30ms to 60ms (16 FPS instead of 33 FPS) - imperceptible to human eye, 50% CPU savings
     } else if (isProcessing) {
       interval = setInterval(() => {
         setDicoFrequencies(prev =>
@@ -544,16 +550,12 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     );
   }
 
-  // Lazy load the 3D component to avoid SSR issues with Three.js
-  const ThreeOrb = dynamic(() => import("./ThreeVoiceOrb"), { ssr: false });
-  // We need dynamic import for Three.js component
-
   const isActive = isListening || isSpeaking || isProcessing;
 
   return (
-    <div className="flex flex-col items-center gap-2 w-full max-w-[320px]">
+    <div className="flex flex-col items-center gap-2 w-full max-w-[320px] mx-auto">
       {/* 3D Orb Container */}
-      <div className="relative w-[300px] h-[300px] flex items-center justify-center">
+      <div className="relative w-full max-w-[300px] aspect-square flex items-center justify-center">
         <div className="absolute inset-0">
           <ThreeOrb
             amplitude={visualAmplitude}
@@ -580,18 +582,25 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
             floating inside the transparent sphere.
         */}
         <div className="pointer-events-none z-0 relative w-16 h-16 rounded-full overflow-hidden opacity-80 mix-blend-overlay">
-          <Image src="/headshot-ama.jpg" alt="Dico" fill className="object-cover" priority />
+          <Image
+            src="/headshot-ama.jpg"
+            alt="Dico"
+            fill
+            className="object-cover"
+            loading="lazy"
+            quality={60}
+          />
         </div>
       </div>
 
       {/* Live transcription area */}
-      <div className={`w-full min-h-[80px] rounded-xl p-3 transition-all duration-300 z-20 ${isLight ? 'bg-gray-100/80' : 'bg-white/5'
+      <div className={`w-full min-h-[80px] rounded-xl p-3 transition-all duration-300 z-20 backdrop-blur-sm ${isLight ? 'bg-gray-100/80 border border-gray-200' : 'bg-white/5 border border-white/10'
         }`}>
         {error ? (
           <p className="text-red-400 text-xs text-center">{error}</p>
         ) : isSpeaking ? (
           <div className="text-center">
-            <p className="text-xs font-medium mb-1" style={{ color: COLORS.purple }}>Dico is speaking</p>
+            <p className="text-xs font-medium mb-1 text-indigo-500 dark:text-indigo-400">Dico is speaking</p>
             <p className="text-[10px] opacity-60">Tap orb to interrupt</p>
             {showResponse && (
               <p className={`text-xs mt-2 leading-relaxed line-clamp-3 ${isLight ? 'text-gray-600' : 'text-gray-400'}`}>
@@ -601,11 +610,11 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
           </div>
         ) : isProcessing ? (
           <div className="text-center">
-            <p className="text-xs font-medium animate-pulse" style={{ color: COLORS.magenta }}>Processing...</p>
+            <p className="text-xs font-medium animate-pulse text-yellow-600 dark:text-yellow-500">Processing...</p>
           </div>
         ) : isListening ? (
           <div className="text-center">
-            <p className="text-xs font-medium mb-1" style={{ color: COLORS.cyan }}>Listening</p>
+            <p className="text-xs font-medium mb-1 text-green-600 dark:text-green-500">Listening</p>
             {liveTranscript ? (
               <p className={`text-xs leading-relaxed ${isLight ? 'text-gray-700' : 'text-gray-300'}`}>
                 &ldquo;{liveTranscript}<span className="animate-pulse">|</span>&rdquo;
