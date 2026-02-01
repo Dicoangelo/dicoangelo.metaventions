@@ -172,7 +172,11 @@ This explains the emphasis on:
 
 ### The Aesthetic
 
-A deliberate visual identity that reflects inner values — colors chosen not for trend but for meaning. The aesthetic embodies a core belief: *Pressure creates gems. Difficulty creates capability. The best things emerge from constraints.*
+A deliberate visual identity that reflects inner values — colors chosen not for trend but for meaning:
+- Stealth, depth, substance over flash
+- Wisdom, creativity, transformation through pressure
+
+The aesthetic embodies a core belief: *Pressure creates gems. Difficulty creates capability. The best things emerge from constraints.*
 
 ---
 
@@ -253,11 +257,14 @@ A synthesis of all ambitions points to one coherent identity: becoming a **Renai
 - **Present & Legacy**: Building today what matters in 50 years
 
 **Guiding Principles:**
-- Move with purpose, lead by example
-- Trust the process, build systematically
-- Find growth through adversity
-- Build strong foundations that support greater purpose
-- Transform chaos into clarity
+
+| Meaning | Application |
+|---------|-------------|
+| Courage, leadership, stealth power | Move with purpose, lead by example |
+| Alignment, foundation, protection | Trust the process, build systematically |
+| Growth through adversity, beauty from struggle | Pressure creates gems |
+| Strong foundation, ascending toward purpose | Base of skills supporting peak of vision |
+| Wisdom, clarity, transformation | Crystallize chaos into clarity |
 
 **Global Mindset:**
 - Connections spanning continents (Taiwan, Singapore, North America)
