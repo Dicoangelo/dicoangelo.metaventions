@@ -7,10 +7,10 @@ Direct, evidence-backed answers to the questions recruiters and hiring managers 
 
 ---
 
-## Executive Identity
+## Professional Identity
 
 ### Primary Classification
-**AI Systems Architect** · Enterprise Intelligence & Systems Strategy
+**AI Systems Engineer** · Multi-Agent Systems & Enterprise Infrastructure
 
 ### What Defines Dico
 - **Systems Integrator**: Operates upstream of implementation—architecture, orchestration, knowledge modeling, and leverage
@@ -54,9 +54,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 | Google Cloud Console | 354 | Infrastructure operations |
 | Vercel | High | Shipping products to production |
 
-**The signal:** Vercel + GitHub activity confirms I'm shipping products, not just researching. This is "builder" activity — moving from model testing to production deployment in the same session.
-
-**Career synthesis:** "Full-Stack Executive" — someone who navigates a cloud console as fluently as a corporate board deck. Code and capital as interchangeable levers.
+**The signal:** Vercel + GitHub activity confirms I'm shipping products, not just researching. This is builder activity — model testing to production deployment in the same session. The work speaks for itself.
 
 ### "Why no PhD?"
 **I chose implementation over academia.** While others were writing papers, I was implementing them into production systems.
