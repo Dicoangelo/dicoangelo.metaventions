@@ -77,6 +77,7 @@ export default function Nav() {
               {isMobileMenuOpen ? (
                 // Close icon
                 <svg
+                  aria-hidden="true"
                   className="w-6 h-6"
                   fill="none"
                   stroke="currentColor"
@@ -92,6 +93,7 @@ export default function Nav() {
               ) : (
                 // Hamburger icon
                 <svg
+                  aria-hidden="true"
                   className="w-6 h-6"
                   fill="none"
                   stroke="currentColor"

@@ -98,6 +98,7 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
         {isExpanded ? (
           // Close icon
           <svg
+            aria-hidden="true"
             className="w-6 h-6"
             fill="none"
             stroke="currentColor"
@@ -113,6 +114,7 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
         ) : (
           // Lightning bolt icon
           <svg
+            aria-hidden="true"
             className="w-6 h-6"
             fill="none"
             stroke="currentColor"

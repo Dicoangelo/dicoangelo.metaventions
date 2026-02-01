@@ -71,9 +71,9 @@ function OrbMesh({ amplitude, isListening, isSpeaking, isProcessing }: ThreeVoic
       <MeshDistortMaterial
         ref={materialRef}
         color={isLight ? "#22d3ee" : "#22d3ee"}
-        envMapIntensity={0.4}
-        clearcoat={0.9}
-        clearcoatRoughness={0.1}
+        distort={0.3}
+        speed={1.5}
+        roughness={0.2}
         metalness={0.1}
       />
     </Sphere>

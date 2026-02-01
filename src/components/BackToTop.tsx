@@ -46,6 +46,7 @@ export default function BackToTop({ isLight }: BackToTopProps) {
       }}
     >
       <svg
+        aria-hidden="true"
         className={`w-6 h-6 ${isLight ? "text-gray-700" : "text-white"}`}
         fill="none"
         stroke="currentColor"
