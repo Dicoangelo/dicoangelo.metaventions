@@ -150,6 +150,31 @@ Comprehensive breakdown of technical capabilities with quantified evidence from 
 
 ## AI/ML Expertise
 
+### Quantified AI Platform Engagement (Oct 2025 - Jan 2026)
+
+**Evidence from digital footprint analysis (89 days of active development):**
+
+| Platform | Interactions | Usage Pattern |
+|----------|--------------|---------------|
+| **xAI Grok** | 3,500+ | Primary LLM for development and iteration |
+| **Google Gemini** | 1,000+ | Multi-modal AI, production integration |
+| **Google AI Studio** | 348 | Model prototyping and testing |
+| **Google Cloud Console** | 354 | Infrastructure management |
+| **GitHub** | 840 | Code management, repository operations |
+| **Vercel** | High | Deployment pipeline, shipping products |
+| **NotebookLM** | Active | Research synthesis, intelligence extraction |
+| **LinkedIn** | 3,500+ | Professional networking, industry tracking |
+
+**What This Proves:**
+- **Builder, not browser**: Vercel + GitHub activity confirms shipping products, not just researching
+- **Multi-model fluency**: Deep engagement across Grok, Gemini, and Claude ecosystems
+- **Full-stack AI**: From model prototyping (AI Studio) → infrastructure (GCP) → deployment (Vercel)
+- **Research-to-production**: NotebookLM synthesis feeds directly into code repositories
+
+**Career Synthesis**: This profile represents a "Full-Stack Executive" — someone who treats code and capital as interchangeable levers of power. The ability to navigate a cloud console as fluently as a corporate board deck.
+
+---
+
 ### Multi-Agent Systems
 
 | Capability | Implementation | Evidence | Business Impact |

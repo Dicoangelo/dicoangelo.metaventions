@@ -42,6 +42,22 @@ Direct, evidence-backed answers to the questions recruiters and hiring managers 
 
 Most people are one or the other. I'm both. I understand the theory AND ship production code.
 
+### "How do I know you're actually hands-on?"
+
+**Digital footprint analysis (89 days, Oct 2025 - Jan 2026):**
+
+| Platform | Interactions | What It Proves |
+|----------|--------------|----------------|
+| xAI Grok | 3,500+ | Deep LLM development iteration |
+| Google Gemini | 1,000+ | Multi-modal AI integration |
+| GitHub | 840 | Active code management |
+| Google Cloud Console | 354 | Infrastructure operations |
+| Vercel | High | Shipping products to production |
+
+**The signal:** Vercel + GitHub activity confirms I'm shipping products, not just researching. This is "builder" activity — moving from model testing to production deployment in the same session.
+
+**Career synthesis:** "Full-Stack Executive" — someone who navigates a cloud console as fluently as a corporate board deck. Code and capital as interchangeable levers.
+
 ### "Why no PhD?"
 **I chose implementation over academia.** While others were writing papers, I was implementing them into production systems.
 
