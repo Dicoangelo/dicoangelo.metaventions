@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { getDossierContext } from "@/lib/dossier";
+import { createClient } from "@supabase/supabase-js";
+import { getDossierContext, getCombinedContext } from "@/lib/dossier";
 import { getPageIndexContext, isPageIndexAvailable, stripCitationsForVoice } from "@/lib/pageindex";
 import { chatRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
 import { chatMessageSchema, validateRequest } from "@/lib/schemas";
@@ -7,6 +8,15 @@ import { chatMessageSchema, validateRequest } from "@/lib/schemas";
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
+
+// Lazy init Supabase for logging
+let supabase: ReturnType<typeof createClient> | null = null;
+function getSupabase() {
+  if (!supabase && process.env.SUPABASE_URL && process.env.SUPABASE_KEY) {
+    supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+  }
+  return supabase;
+}
 
 /**
  * Speech-optimized system prompt
@@ -59,6 +69,13 @@ GOOD: "You can reach him by email at dico dot angelo 97 at gmail dot com, or by 
 `;
 
 export async function POST(request: Request) {
+  const startTime = Date.now();
+  let ragSource: 'pageindex' | 'cohere' | 'none' | 'fallback' = 'none';
+  let retrievalTimeMs = 0;
+  let contextLength = 0;
+  let query = '';
+  let isVoiceRequest = false;
+
   try {
     // Rate limiting check
     const identifier = getClientIdentifier(request.headers as unknown as Headers);
@@ -94,25 +111,40 @@ export async function POST(request: Request) {
     }
 
     const { messages, isVoice } = validation.data;
+    isVoiceRequest = isVoice || false;
 
     // Get the latest user message for RAG query
     const latestUserMessage = messages
       .filter((m: { role: string }) => m.role === "user")
       .pop();
 
+    query = latestUserMessage?.content || '';
+
     // Retrieve context using PageIndex (preferred) or Cohere/Supabase (fallback)
     let dossierContext = "";
+    const retrievalStart = Date.now();
+
     if (latestUserMessage?.content) {
       if (isPageIndexAvailable()) {
         // PageIndex: Tree-based reasoning RAG (98.7% accuracy)
         dossierContext = await getPageIndexContext(latestUserMessage.content);
+        if (dossierContext) {
+          ragSource = 'pageindex';
+        }
       }
 
-      // Fallback to Cohere/Supabase if PageIndex unavailable or returned empty
+      // Fallback to combined context (artifacts + dossier) if PageIndex unavailable or empty
       if (!dossierContext) {
-        dossierContext = await getDossierContext(latestUserMessage.content);
+        // Use combined context which searches both artifacts (new) and dossier (legacy)
+        dossierContext = await getCombinedContext(latestUserMessage.content);
+        if (dossierContext) {
+          ragSource = isPageIndexAvailable() ? 'fallback' : 'cohere';
+        }
       }
     }
+
+    retrievalTimeMs = Date.now() - retrievalStart;
+    contextLength = dossierContext.length;
 
     // Build the full system prompt with RAG context
     const fullSystemPrompt = dossierContext
@@ -130,10 +162,10 @@ export async function POST(request: Request) {
     });
 
     const encoder = new TextEncoder();
+    let fullResponse = "";
+
     const readable = new ReadableStream({
       async start(controller) {
-        let fullResponse = "";
-
         for await (const event of stream) {
           if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
             let text = event.delta.text;
@@ -147,6 +179,18 @@ export async function POST(request: Request) {
             controller.enqueue(encoder.encode(text));
           }
         }
+
+        // Log to Supabase after streaming completes (non-blocking)
+        logChatToSupabase({
+          query,
+          ragSource,
+          retrievalTimeMs,
+          contextLength,
+          responsePreview: fullResponse.substring(0, 200),
+          clientIp: identifier,
+          isVoice: isVoiceRequest,
+        }).catch(() => {}); // Ignore logging errors
+
         controller.close();
       },
     });
@@ -155,12 +199,12 @@ export async function POST(request: Request) {
       headers: {
         "Content-Type": "text/plain; charset=utf-8",
         "Transfer-Encoding": "chunked",
+        "X-RAG-Source": ragSource,
+        "X-Retrieval-Time-Ms": retrievalTimeMs.toString(),
       },
     });
   } catch (error) {
     // Log error for debugging (Sentry integration)
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
-
     if (process.env.NODE_ENV === "development") {
       console.error("Chat API error:", error);
     }
@@ -187,5 +231,40 @@ export async function POST(request: Request) {
         headers: { "Content-Type": "application/json" },
       }
     );
+  }
+}
+
+/**
+ * Log chat interaction to Supabase for analytics
+ */
+async function logChatToSupabase(data: {
+  query: string;
+  ragSource: string;
+  retrievalTimeMs: number;
+  contextLength: number;
+  responsePreview: string;
+  clientIp: string;
+  isVoice: boolean;
+}) {
+  const sb = getSupabase();
+  if (!sb) return;
+
+  try {
+    // Type assertion needed - chat_logs table not in generated types yet
+    await (sb.from('chat_logs') as ReturnType<typeof sb.from>).insert({
+      query: data.query.substring(0, 500), // Truncate long queries
+      rag_source: data.ragSource,
+      retrieval_time_ms: data.retrievalTimeMs,
+      context_length: data.contextLength,
+      response_preview: data.responsePreview,
+      client_ip: data.clientIp,
+      is_voice: data.isVoice,
+      metadata: {
+        pageindex_available: isPageIndexAvailable(),
+      },
+    } as Record<string, unknown>);
+  } catch (err) {
+    // Silent fail - don't break chat for logging errors
+    console.error('Failed to log chat:', err);
   }
 }

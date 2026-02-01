@@ -170,3 +170,84 @@ export async function getDossierContextForJD(jdText: string): Promise<{
 }
 
 export type { DossierChunk };
+
+// ==================== Combined Context ====================
+
+import { searchArtifacts, formatArtifactContext, ArtifactChunk } from "./artifacts";
+
+/**
+ * Get combined context from both artifacts and legacy dossier
+ * Artifacts are searched first (new system), then dossier (fallback)
+ */
+export async function getCombinedContext(query: string): Promise<string> {
+  // Search artifacts (new system with reranking)
+  const artifactChunks = await searchArtifacts(query, {
+    threshold: 0.15,
+    limit: 10,
+    rerank: true,
+    rerankTopK: 5,
+  });
+
+  // Search legacy dossier
+  const dossierChunks = await searchDossier(query, {
+    threshold: 0.15,
+    limit: 10,
+  });
+
+  // Format both contexts
+  const artifactContext = formatArtifactContext(artifactChunks);
+  const dossierContext = formatDossierContext(dossierChunks);
+
+  // Combine contexts
+  const contexts: string[] = [];
+  if (artifactContext) {
+    contexts.push(artifactContext);
+  }
+  if (dossierContext) {
+    contexts.push(dossierContext);
+  }
+
+  return contexts.join("\n\n");
+}
+
+/**
+ * Get combined context for JD analysis (more comprehensive)
+ */
+export async function getCombinedContextForJD(jdText: string): Promise<{
+  context: string;
+  artifactChunks: ArtifactChunk[];
+  dossierChunks: DossierChunk[];
+}> {
+  // Search artifacts with lower threshold for comprehensive matching
+  const artifactChunks = await searchArtifacts(jdText, {
+    threshold: 0.10,
+    limit: 15,
+    rerank: true,
+    rerankTopK: 10,
+  });
+
+  // Search legacy dossier
+  const dossierChunks = await searchDossier(jdText, {
+    threshold: 0.10,
+    limit: 15,
+  });
+
+  // Format contexts
+  const artifactContext = formatArtifactContext(artifactChunks);
+  const dossierContext = formatDossierContext(dossierChunks);
+
+  // Combine contexts
+  const contexts: string[] = [];
+  if (artifactContext) {
+    contexts.push(artifactContext);
+  }
+  if (dossierContext) {
+    contexts.push(dossierContext);
+  }
+
+  return {
+    context: contexts.join("\n\n"),
+    artifactChunks,
+    dossierChunks,
+  };
+}

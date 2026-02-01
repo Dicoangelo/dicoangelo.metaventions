@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@supabase/supabase-js";
-import { getDossierContextForJD } from "@/lib/dossier";
+import { getDossierContextForJD, getCombinedContextForJD } from "@/lib/dossier";
 import { jdAnalyzerRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
 import { jdAnalyzerSchema, validateRequest } from "@/lib/schemas";
 
@@ -132,10 +132,10 @@ export async function POST(request: Request) {
 
     const { jd_text, session_id } = validation.data;
 
-    // Get comprehensive dossier context
-    const { context: dossierContext, chunks } = await getDossierContextForJD(jd_text);
+    // Get comprehensive context from both artifacts and legacy dossier
+    const { context: dossierContext, artifactChunks, dossierChunks } = await getCombinedContextForJD(jd_text);
 
-    if (chunks.length === 0) {
+    if (artifactChunks.length === 0 && dossierChunks.length === 0) {
       return new Response(
         JSON.stringify({ error: "Unable to retrieve dossier context. Please try again." }),
         { status: 500, headers: { "Content-Type": "application/json" } }
