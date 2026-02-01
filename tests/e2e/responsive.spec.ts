@@ -16,7 +16,7 @@ test.describe('Responsive Design', () => {
       await expect(page).toHaveTitle(/Dico Angelo/);
 
       // Verify hero section is visible
-      await expect(page.locator('text=Full-Stack Engineer')).toBeVisible();
+      await expect(page.locator('text=Operations Infrastructure Builder').first()).toBeVisible();
 
       // Check for horizontal overflow
       const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
@@ -97,7 +97,7 @@ test.describe('Responsive Design', () => {
         const body = document.querySelector('p');
         if (!body) return 1.5;
         return parseFloat(window.getComputedStyle(body).lineHeight) /
-               parseFloat(window.getComputedStyle(body).fontSize);
+          parseFloat(window.getComputedStyle(body).fontSize);
       });
 
       expect(lineHeight).toBeGreaterThanOrEqual(1.4);

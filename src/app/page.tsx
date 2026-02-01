@@ -67,7 +67,7 @@ export default function Home() {
   useNavigationShortcuts();
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       {/* Skip to content link for keyboard navigation */}
       <SkipToContent />
 
@@ -123,9 +123,8 @@ export default function Home() {
           </div>
 
           {/* Intro */}
-          <div className={`mb-8 p-4 rounded-lg border ${
-            isLight ? 'bg-gray-50 border-gray-200' : 'bg-[#141414] border-[#262626]'
-          }`}>
+          <div className={`mb-8 p-4 rounded-lg border ${isLight ? 'bg-gray-50 border-gray-200' : 'bg-[#141414] border-[#262626]'
+            }`}>
             <p className={`text-sm leading-relaxed ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
               This analyzer searches my comprehensive career dossier (700+ indexed chunks covering skills,
               projects, metrics, and experience) and provides evidence-based matching.

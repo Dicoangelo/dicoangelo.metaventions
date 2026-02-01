@@ -192,80 +192,53 @@ section {
 }
 
 /* Fix all text colors for light mode */
-[data-theme="light"] .text-\[#737373\],
-[data-theme="light"] .text-\[#a3a3a3\],
-[data-theme="light"] .text-\[#525252\] {
+[data-theme="light"] .text-\[\#737373\],
+[data-theme="light"] .text-\[\#a3a3a3\],
+[data-theme="light"] .text-\[\#525252\] {
   color: var(--muted);
 }
 
-[data-theme="light"] .text-white {
-  color: white;
-}
-
-/* Fix background colors for light mode */
-[data-theme="light"] .bg-\[#141414\],
-[data-theme="light"] .bg-\[#1f1f1f\] {
+[data-theme="light"] .bg-\[\#141414\],
+[data-theme="light"] .bg-\[\#1f1f1f\] {
   background-color: var(--tag-bg);
 }
 
-[data-theme="light"] .bg-\[#1a1a2e\] {
+[data-theme="light"] .bg-\[\#1a1a2e\] {
   background-color: var(--code-bg);
 }
 
-[data-theme="light"] .bg-\[#0a0a0a\]\/80 {
+[data-theme="light"] .bg-\[\#0a0a0a\]\/80 {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* Fix border colors for light mode */
-[data-theme="light"] .border-\[#262626\] {
+[data-theme="light"] .border-\[\#262626\] {
   border-color: var(--border);
 }
 
-/* Fix hover states for light mode */
-[data-theme="light"] .hover\:bg-\[#141414\]:hover,
-[data-theme="light"] .hover\:bg-\[#1f1f1f\]:hover,
-[data-theme="light"] .hover\:bg-\[#2a2a2a\]:hover {
+[data-theme="light"] .hover\:bg-\[\#141414\]:hover,
+[data-theme="light"] .hover\:bg-\[\#1f1f1f\]:hover,
+[data-theme="light"] .hover\:bg-\[\#2a2a2a\]:hover {
   background-color: #e5e7eb;
 }
 
-/* Fix text hover for light mode */
-[data-theme="light"] .hover\:text-white:hover {
-  color: var(--foreground);
-}
-
-/* Chat specific fixes */
-[data-theme="light"] .bg-\[#6366f1\] {
+[data-theme="light"] .bg-\[\#6366f1\] {
   background-color: var(--accent);
 }
 
-/* Timeline line */
-[data-theme="light"] .border-l-2.border-\[#262626\] {
+[data-theme="light"] .border-l-2.border-\[\#262626\] {
   border-color: var(--border);
 }
 
-/* Code blocks */
-[data-theme="light"] code {
-  background-color: var(--code-bg);
-  color: var(--accent);
-}
-
-/* Accent backgrounds with transparency */
-[data-theme="light"] .bg-\[#6366f1\]\/10 {
+[data-theme="light"] .bg-\[\#6366f1\]\/10 {
   background-color: rgba(79, 70, 229, 0.1);
 }
 
-[data-theme="light"] .border-\[#6366f1\]\/20,
-[data-theme="light"] .border-\[#6366f1\]\/30 {
+[data-theme="light"] .border-\[\#6366f1\]\/20,
+[data-theme="light"] .border-\[\#6366f1\]\/30 {
   border-color: rgba(79, 70, 229, 0.2);
 }
 
-/* Green pulse indicator */
-.bg-green-500 {
-  background-color: #22c55e;
-}
-
-/* Button styles for light mode */
-[data-theme="light"] .bg-\[#6366f1\]:hover {
+[data-theme="light"] .bg-\[\#6366f1\]:hover {
   background-color: #4338ca;
 }
 

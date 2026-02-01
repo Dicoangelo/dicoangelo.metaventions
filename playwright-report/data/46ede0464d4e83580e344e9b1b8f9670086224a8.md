@@ -1,0 +1,907 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "1"
+          - generic [ref=e15]: "2"
+        - generic [ref=e16]:
+          - text: Issue
+          - generic [ref=e17]: s
+      - button "Collapse issues badge" [ref=e18]:
+        - img [ref=e19]
+  - alert [ref=e21]
+  - main [ref=e22]:
+    - link "Skip to main content" [ref=e23] [cursor=pointer]:
+      - /url: "#main-content"
+    - navigation [ref=e24]:
+      - generic [ref=e26]:
+        - link "Dico Angelo" [ref=e27] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e28]:
+          - link "Ask AI" [ref=e29] [cursor=pointer]:
+            - /url: "#ask"
+          - link "Resume" [ref=e30] [cursor=pointer]:
+            - /url: "#resume"
+          - link "Timeline" [ref=e31] [cursor=pointer]:
+            - /url: "#timeline"
+          - link "Skills" [ref=e32] [cursor=pointer]:
+            - /url: "#skills"
+          - link "Systems" [ref=e33] [cursor=pointer]:
+            - /url: "#systems"
+          - link "Projects" [ref=e34] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Analyze" [ref=e35] [cursor=pointer]:
+            - /url: "#analyze"
+          - link "Contact" [ref=e36] [cursor=pointer]:
+            - /url: "#contact"
+          - button "Toggle theme" [ref=e37]:
+            - img [ref=e39]
+    - generic [ref=e49]:
+      - img "Dico Angelo - Operations Infrastructure Builder & AI Systems Engineer" [ref=e52]
+      - status [ref=e53]:
+        - generic "Available for work" [ref=e54]
+        - generic [ref=e55]: Canadian Citizen · TN Visa Eligible
+      - heading "Builder-Operator Operat|" [level=1] [ref=e56]:
+        - generic [ref=e57]: Builder-Operator
+        - generic [ref=e58]: Operat|
+      - paragraph [ref=e59]:
+        - text: Built operational infrastructure that processed
+        - strong [ref=e60]: $800M+
+        - text: in cloud marketplace deal registrations (
+        - strong [ref=e61]: 97% approval
+        - text: ", 600+ deals/quarter). Shipped"
+        - strong [ref=e62]: 297K+ lines
+        - text: of production AI systems. Bridging enterprise GTM operations with hands-on agentic infrastructure development.
+      - generic [ref=e63]:
+        - link "View live demo of OS-App" [ref=e64] [cursor=pointer]:
+          - /url: https://os-app-woad.vercel.app
+          - img [ref=e65]
+          - generic [ref=e67]: "Live Demo: OS-App"
+        - link "View GitHub profile with 20 repositories" [ref=e68] [cursor=pointer]:
+          - /url: https://github.com/Dicoangelo
+          - img [ref=e69]
+          - generic [ref=e71]: GitHub (20 repos)
+        - link "Download resume" [ref=e72] [cursor=pointer]:
+          - /url: "#resume"
+          - img [ref=e73]
+          - generic [ref=e75]: Resume
+      - paragraph [ref=e76]: "\"I orchestrate AI to write code. English is my programming language.\""
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - heading "Ask Me Anything" [level=2] [ref=e81]
+        - paragraph [ref=e82]: AI-powered chat that knows my entire portfolio. Go ahead, interrogate.
+      - generic [ref=e83]:
+        - generic [ref=e85]:
+          - img "Dico Angelo" [ref=e87]
+          - generic [ref=e88]:
+            - heading "Ask Me Anything" [level=3] [ref=e89]
+            - paragraph [ref=e90]: Voice or text — context is shared
+        - generic [ref=e91]:
+          - generic [ref=e93]:
+            - generic [ref=e94]:
+              - button "Start voice chat" [ref=e96] [cursor=pointer]
+              - generic:
+                - img "Dico"
+            - generic [ref=e98]:
+              - paragraph [ref=e99]: Tap the orb to chat
+              - paragraph [ref=e100]: Ai Voice Interface
+            - generic [ref=e103]: Ready
+          - generic [ref=e104]:
+            - generic [ref=e106]:
+              - img [ref=e108]
+              - heading "Ask About Anything" [level=4] [ref=e110]
+              - paragraph [ref=e111]: 700+ career dossier chunks indexed with semantic search. Start with a suggestion or ask your own question.
+              - generic [ref=e112]:
+                - paragraph [ref=e113]: 💡 Suggested Questions
+                - generic [ref=e114]:
+                  - button "What's the $800M+ TCV story?" [ref=e115]
+                  - button "Tell me about the META-VENGINE system" [ref=e116]
+                  - button "What multi-agent systems has he built?" [ref=e117]
+                  - button "What's his experience with cloud marketplace operations?" [ref=e118]
+                  - button "Is he open to relocation to the US?" [ref=e119]
+                  - button "What makes his approach to AI different?" [ref=e120]
+                  - button "Show me metrics from his Contentsquare role" [ref=e121]
+                  - button "What research papers has he published?" [ref=e122]
+            - generic [ref=e124]:
+              - textbox "Type your question..." [ref=e125]
+              - button "Send" [disabled] [ref=e126]
+    - generic [ref=e128]:
+      - generic [ref=e129]:
+        - heading "Verifiable Proof" [level=2] [ref=e130]
+        - paragraph [ref=e131]: Every metric below has documentation. Click to see the evidence.
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - generic [ref=e134]: $800M+
+          - generic [ref=e135]: TCV Processed
+          - generic [ref=e136]: Registered through cloud marketplace infrastructure
+          - generic [ref=e137]: "Proof: Operations lead (team of 3), 97% approval rate"
+        - generic [ref=e138]:
+          - generic [ref=e139]: 2,500+
+          - generic [ref=e140]: Deal Registrations
+          - generic [ref=e141]: 600+ deals/quarter capacity
+          - generic [ref=e142]: "Proof: 97% approval rate, AWS ACE & Microsoft Partner Center"
+        - generic [ref=e143]:
+          - generic [ref=e144]: 90%
+          - generic [ref=e145]: Automation Improvement
+          - generic [ref=e146]: "Registration time: 8 min → 30 sec"
+          - generic [ref=e147]: "Proof: Process automation at Contentsquare"
+        - generic [ref=e148]:
+          - generic [ref=e149]: $30M+
+          - generic [ref=e150]: ACV Growth Support
+          - generic [ref=e151]: Operations lead (team of 3) at Contentsquare
+          - generic [ref=e152]: "Proof: 2024 AWS & Microsoft partnership results"
+        - generic [ref=e153]:
+          - generic [ref=e154]: 40%
+          - generic [ref=e155]: Cloud Attachment
+          - generic [ref=e156]: Enterprise deals with cloud platforms
+          - generic [ref=e157]: "Proof: Quarterly reports, 2x Microsoft POY"
+        - generic [ref=e158]:
+          - generic [ref=e159]: 50+
+          - generic [ref=e160]: Dynamic Reports
+          - generic [ref=e161]: 6 platform integrations built
+          - generic [ref=e162]: "Proof: Salesforce, AWS ACE, PartnerStack, Reveal, Suger, Crossbeam"
+        - generic [ref=e163]:
+          - generic [ref=e164]: $222,750
+          - generic [ref=e165]: Annual Savings
+          - generic [ref=e166]: Rocket Mortgage Canada
+          - generic [ref=e167]: "Proof: Process optimization documentation"
+        - generic [ref=e168]:
+          - generic [ref=e169]: "45"
+          - generic [ref=e170]: Team Size Led
+          - generic [ref=e171]: 90% satisfaction score
+          - generic [ref=e172]: "Proof: Team management records"
+        - generic [ref=e173]:
+          - generic [ref=e174]: 98%
+          - generic [ref=e175]: Accuracy Rate
+          - generic [ref=e176]: Quality control metrics
+          - generic [ref=e177]: "Proof: Performance reviews"
+        - generic [ref=e178]:
+          - generic [ref=e179]: 297K+
+          - generic [ref=e180]: Lines of Code
+          - generic [ref=e181]: Across production systems
+          - generic [ref=e182]: "Proof: GitHub: OS-App (33K), ResearchGravity (17K), CareerCoach (15K), META-VENGINE (51K+)"
+        - generic [ref=e183]:
+          - generic [ref=e184]: 8+
+          - generic [ref=e185]: Papers Implemented
+          - generic [ref=e186]: arXiv research → production
+          - generic [ref=e187]: "Proof: ACE (2511.15755), ARCHON (2601.09742), agent auctions (2511.13193)"
+        - generic [ref=e188]:
+          - generic [ref=e189]: "2"
+          - generic [ref=e190]: npm Packages
+          - generic [ref=e191]: Published & maintained
+          - generic [ref=e192]: "Proof: npmjs.com/@metaventionsai"
+      - generic [ref=e193]:
+        - paragraph [ref=e194]: Skeptical? Good. Verify everything.
+        - generic [ref=e195]:
+          - link "GitHub Commits →" [ref=e196] [cursor=pointer]:
+            - /url: https://github.com/Dicoangelo
+          - link "npm Packages →" [ref=e197] [cursor=pointer]:
+            - /url: https://www.npmjs.com/org/metaventionsai
+          - link "Live Demo →" [ref=e198] [cursor=pointer]:
+            - /url: https://os-app-woad.vercel.app
+    - generic [ref=e200]:
+      - generic [ref=e201]:
+        - heading "Testimonials & Recognition" [level=2] [ref=e202]
+        - paragraph [ref=e203]: Featured in industry case studies and conferences
+      - generic [ref=e204]:
+        - generic [ref=e205]:
+          - generic [ref=e206]:
+            - img [ref=e207]
+            - paragraph [ref=e209]: "\"Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience.\""
+          - generic [ref=e210]:
+            - paragraph [ref=e211]: Dico Angelo
+            - paragraph [ref=e212]: Speaker
+            - paragraph [ref=e213]: Catalyst 2026
+          - 'link "Source: Partner Ecosystem Conference" [ref=e214] [cursor=pointer]':
+            - /url: https://www.joincatalyst.com/catalyst26
+            - generic [ref=e215]: "Source: Partner Ecosystem Conference"
+            - img [ref=e216]
+        - generic [ref=e218]:
+          - generic [ref=e219]:
+            - img [ref=e220]
+            - paragraph [ref=e222]: "\"Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool—it's become an extension of our team.\""
+          - generic [ref=e223]:
+            - paragraph [ref=e224]: Dico Angelo
+            - paragraph [ref=e225]: Cloud Alliance Operations Lead
+            - paragraph [ref=e226]: Contentsquare
+          - 'link "Source: Suger.io Case Study" [ref=e227] [cursor=pointer]':
+            - /url: https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits
+            - generic [ref=e228]: "Source: Suger.io Case Study"
+            - img [ref=e229]
+        - generic [ref=e231]:
+          - generic [ref=e232]:
+            - img [ref=e233]
+            - paragraph [ref=e235]: "\"This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment... The iterative process we followed enabled us to test and refine our ideas rapidly, collaboratively engaging with previous iterations to find the best solution.\""
+          - generic [ref=e236]:
+            - paragraph [ref=e237]: Dico Angelo
+            - paragraph [ref=e238]: Participant
+            - paragraph [ref=e239]: 1159.ai Innovation Workshop
+          - 'link "Source: Rapid Prototyping & Iterative Design" [ref=e240] [cursor=pointer]':
+            - /url: https://blog.1159.ai/the-art-and-science-of-innovation
+            - generic [ref=e241]: "Source: Rapid Prototyping & Iterative Design"
+            - img [ref=e242]
+      - generic [ref=e245]:
+        - img [ref=e246]
+        - generic [ref=e248]: 2x Microsoft Partner of the Year Contributor
+    - generic [ref=e250]:
+      - generic [ref=e251]:
+        - heading "Major Projects" [level=2] [ref=e252]
+        - paragraph [ref=e253]: Research-driven AI systems implementing arXiv papers into production code
+      - generic [ref=e254]:
+        - generic [ref=e255]:
+          - generic [ref=e256]:
+            - generic [ref=e257]:
+              - heading "ACE" [level=3] [ref=e258]
+              - paragraph [ref=e259]: Adaptive Consensus Engine
+            - generic [ref=e260]:
+              - link "GitHub →" [ref=e261] [cursor=pointer]:
+                - /url: https://github.com/Dicoangelo/OS-App/blob/main/services/adaptiveConsensus.ts
+              - link "Live Demo →" [ref=e262] [cursor=pointer]:
+                - /url: https://os-app-woad.vercel.app
+          - paragraph [ref=e263]: Multi-agent voting system achieving consensus through adaptive thresholds, DQ-weighted voting, and auction-based agent selection.
+          - generic [ref=e264]:
+            - generic [ref=e265]:
+              - paragraph [ref=e266]: 100% vs 1.7% baseline
+              - paragraph [ref=e267]: Actionability
+            - generic [ref=e268]:
+              - paragraph [ref=e269]: 300x
+              - paragraph [ref=e270]: Token Reduction
+            - generic [ref=e271]:
+              - paragraph [ref=e272]: 50% faster
+              - paragraph [ref=e273]: Consensus Rounds
+            - generic [ref=e274]:
+              - paragraph [ref=e275]: 95%
+              - paragraph [ref=e276]: Test Coverage
+          - generic [ref=e277]:
+            - paragraph [ref=e278]: "Tech Stack:"
+            - generic [ref=e279]:
+              - generic [ref=e280]: TypeScript
+              - generic [ref=e281]: Vitest
+              - generic [ref=e282]: Multi-Agent Systems
+              - generic [ref=e283]: 1,462 LOC
+          - generic [ref=e284]:
+            - paragraph [ref=e285]: "Research Implemented:"
+            - list [ref=e286]:
+              - listitem [ref=e287]: • arXiv:2511.15755 - DQ Scoring Framework
+              - listitem [ref=e288]: • arXiv:2511.13193 - Agent Auctions (DALA)
+              - listitem [ref=e289]: • arXiv:2508.17536 - Voting vs Debate
+        - generic [ref=e290]:
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - heading "ARCHON" [level=3] [ref=e293]
+              - paragraph [ref=e294]: Meta-Orchestrator
+            - generic [ref=e295]:
+              - link "GitHub →" [ref=e296] [cursor=pointer]:
+                - /url: https://github.com/Dicoangelo/OS-App/blob/main/services/archon/index.ts
+              - link "Live Demo →" [ref=e297] [cursor=pointer]:
+                - /url: https://os-app-woad.vercel.app
+          - paragraph [ref=e298]: Autonomous AI coordinator that manages 7 subsystems to achieve user goals with minimal human intervention. Complexity-adaptive routing across 4 LLM providers.
+          - generic [ref=e299]:
+            - generic [ref=e300]:
+              - paragraph [ref=e301]: 7 integrated
+              - paragraph [ref=e302]: Subsystems
+            - generic [ref=e303]:
+              - paragraph [ref=e304]: 40% faster
+              - paragraph [ref=e305]: Time-to-Solution
+            - generic [ref=e306]:
+              - paragraph [ref=e307]: 4 LLMs
+              - paragraph [ref=e308]: Providers
+            - generic [ref=e309]:
+              - paragraph [ref=e310]: Token-aware
+              - paragraph [ref=e311]: Budget Management
+          - generic [ref=e312]:
+            - paragraph [ref=e313]: "Tech Stack:"
+            - generic [ref=e314]:
+              - generic [ref=e315]: TypeScript
+              - generic [ref=e316]: React 19
+              - generic [ref=e317]: Multi-Provider Routing
+              - generic [ref=e318]: 1,280 LOC
+          - generic [ref=e319]:
+            - paragraph [ref=e320]: "Research Implemented:"
+            - list [ref=e321]:
+              - listitem [ref=e322]: • arXiv:2601.09742 - Adaptive Orchestration
+              - listitem [ref=e323]: • arXiv:2506.12508 - AgentOrchestra
+              - listitem [ref=e324]: • arXiv:2508.07407 - Self-Evolving Agents
+        - generic [ref=e325]:
+          - generic [ref=e326]:
+            - generic [ref=e327]:
+              - heading "META-VENGINE" [level=3] [ref=e328]
+              - paragraph [ref=e329]: Self-Improving AI Infrastructure
+            - link "GitHub →" [ref=e331] [cursor=pointer]:
+              - /url: https://github.com/Dicoangelo
+          - paragraph [ref=e332]: 9-system bidirectional co-evolution framework. The infrastructure that improves itself through feedback loops and pattern recognition.
+          - generic [ref=e333]:
+            - generic [ref=e334]:
+              - paragraph [ref=e335]: 70%
+              - paragraph [ref=e336]: Auto-Fix Rate
+            - generic [ref=e337]:
+              - paragraph [ref=e338]: 700+
+              - paragraph [ref=e339]: Error Patterns
+            - generic [ref=e340]:
+              - paragraph [ref=e341]: "0.889"
+              - paragraph [ref=e342]: DQ Score Avg
+            - generic [ref=e343]:
+              - paragraph [ref=e344]: 9 integrated
+              - paragraph [ref=e345]: Systems
+          - generic [ref=e346]:
+            - paragraph [ref=e347]: "Tech Stack:"
+            - generic [ref=e348]:
+              - generic [ref=e349]: Python
+              - generic [ref=e350]: Bash
+              - generic [ref=e351]: SQLite
+              - generic [ref=e352]: Pattern Recognition
+              - generic [ref=e353]: 51K+ LOC
+          - generic [ref=e354]:
+            - paragraph [ref=e355]: "Research Implemented:"
+            - list [ref=e356]:
+              - listitem [ref=e357]: • Self-healing systems
+              - listitem [ref=e358]: • Feedback loop optimization
+              - listitem [ref=e359]: • Cognitive pattern learning
+      - generic [ref=e360]:
+        - paragraph [ref=e361]: All projects are open source on GitHub
+        - link "View All 20 Repositories →" [ref=e362] [cursor=pointer]:
+          - /url: https://github.com/Dicoangelo
+    - generic [ref=e365]:
+      - generic [ref=e366]:
+        - generic [ref=e367]:
+          - img [ref=e368]
+          - generic [ref=e371]: Resume Available
+        - heading "Download My Resume" [level=2] [ref=e372]
+        - paragraph [ref=e373]: Operations Infrastructure Builder | AI Systems Engineer
+        - paragraph [ref=e374]: Updated January 2026 · Accurate metrics · TN Visa eligible
+      - generic [ref=e375]:
+        - generic [ref=e376]:
+          - paragraph [ref=e377]: $800M+
+          - paragraph [ref=e378]: TCV Processed
+        - generic [ref=e379]:
+          - paragraph [ref=e380]: 297K+
+          - paragraph [ref=e381]: Lines of Code
+        - generic [ref=e382]:
+          - paragraph [ref=e383]: 97%
+          - paragraph [ref=e384]: Approval Rate
+      - generic [ref=e385]:
+        - button "Download resume as PDF" [ref=e386]:
+          - img [ref=e387]
+          - generic [ref=e389]: Download PDF
+        - button "Download resume as DOCX" [ref=e390]:
+          - img [ref=e391]
+          - generic [ref=e393]: Download DOCX
+      - generic [ref=e394]:
+        - paragraph [ref=e395]: "Or view my work directly:"
+        - generic [ref=e396]:
+          - link "GitHub →" [ref=e397] [cursor=pointer]:
+            - /url: https://github.com/Dicoangelo
+          - link "LinkedIn →" [ref=e398] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/dicoangelo
+          - link "npm Packages →" [ref=e399] [cursor=pointer]:
+            - /url: https://www.npmjs.com/org/metaventionsai
+    - generic [ref=e401]:
+      - generic [ref=e402]:
+        - heading "META-VENGINE" [level=2] [ref=e403]
+        - paragraph [ref=e404]: 9-system self-improving AI infrastructure. Transported to 3D Neural Architecture.
+      - paragraph [ref=e411]: 428K routing decisions logged · 94% error pattern coverage · Production since Nov 2025
+    - generic [ref=e413]:
+      - generic [ref=e414]:
+        - heading "Technical Projects" [level=2] [ref=e415]
+        - paragraph [ref=e416]: Open source. Live demos. Verifiable code.
+      - generic [ref=e417]:
+        - generic [ref=e418]:
+          - generic [ref=e419]:
+            - generic [ref=e420]:
+              - heading "OS-App" [level=3] [ref=e421]
+              - paragraph [ref=e422]: Sovereign AI Operating System
+            - generic [ref=e423]:
+              - link "GitHub" [ref=e424] [cursor=pointer]:
+                - /url: https://github.com/Dicoangelo/OS-App
+              - link "Live Demo" [ref=e425] [cursor=pointer]:
+                - /url: https://os-app-woad.vercel.app
+          - paragraph [ref=e426]: Voice-native interface with Gemini 2.0 Live, ElevenLabs TTS, biometric stress detection. Adaptive Consensus Engine (ACE) reducing consensus rounds by 50%. Recursive Language Model (RLM) for 100x context extension.
+          - generic [ref=e427]:
+            - generic [ref=e428]: React 19
+            - generic [ref=e429]: TypeScript
+            - generic [ref=e430]: Gemini API
+            - generic [ref=e431]: ElevenLabs
+          - generic [ref=e432]:
+            - generic [ref=e433]:
+              - generic [ref=e434]: "loc:"
+              - text: 33K+
+            - generic [ref=e435]:
+              - generic [ref=e436]: "components:"
+              - text: "71"
+            - generic [ref=e437]:
+              - generic [ref=e438]: "services:"
+              - text: "62"
+            - generic [ref=e439]:
+              - generic [ref=e440]: "coverage:"
+              - text: 95%
+        - generic [ref=e441]:
+          - generic [ref=e442]:
+            - generic [ref=e443]:
+              - heading "ResearchGravity" [level=3] [ref=e444]
+              - paragraph [ref=e445]: Research Orchestration Platform
+            - link "GitHub" [ref=e447] [cursor=pointer]:
+              - /url: https://github.com/Dicoangelo/ResearchGravity
+          - paragraph [ref=e448]: FastAPI backend with Qdrant vector search (2,530 embeddings). Meta-Learning Engine with 87% error prevention accuracy. Cognitive Precision Bridge with 5-agent ensemble and complexity-based routing.
+          - generic [ref=e449]:
+            - generic [ref=e450]: Python
+            - generic [ref=e451]: FastAPI
+            - generic [ref=e452]: Qdrant
+            - generic [ref=e453]: SQLite
+          - generic [ref=e454]:
+            - generic [ref=e455]:
+              - generic [ref=e456]: "sessions:"
+              - text: "114"
+            - generic [ref=e457]:
+              - generic [ref=e458]: "findings:"
+              - text: 2,530
+            - generic [ref=e459]:
+              - generic [ref=e460]: "urls:"
+              - text: 8,935
+            - generic [ref=e461]:
+              - generic [ref=e462]: "accuracy:"
+              - text: 87%
+        - generic [ref=e463]:
+          - generic [ref=e464]:
+            - generic [ref=e465]:
+              - heading "CareerCoachAntigravity" [level=3] [ref=e466]
+              - paragraph [ref=e467]: AI Career Governance System
+            - link "GitHub" [ref=e469] [cursor=pointer]:
+              - /url: https://github.com/Dicoangelo/CareerCoachAntigravity
+          - paragraph [ref=e470]: Multi-agent hiring panel simulation. Generates role-specific feedback from AI personas representing different interview perspectives.
+          - generic [ref=e471]:
+            - generic [ref=e472]: Next.js 14
+            - generic [ref=e473]: TypeScript
+            - generic [ref=e474]: Zustand
+            - generic [ref=e475]: Claude API
+          - generic [ref=e476]:
+            - generic [ref=e477]:
+              - generic [ref=e478]: "loc:"
+              - text: 15K+
+            - generic [ref=e479]:
+              - generic [ref=e480]: "agents:"
+              - text: "5"
+            - generic [ref=e481]:
+              - generic [ref=e482]: "panels:"
+              - text: N/A
+      - generic [ref=e483]:
+        - heading "Published npm Packages" [level=3] [ref=e484]
+        - generic [ref=e485]:
+          - generic [ref=e486]:
+            - generic [ref=e487]:
+              - generic [ref=e488]: 📦
+              - generic [ref=e489]:
+                - heading "@metaventionsai/cpb-core" [level=4] [ref=e490]
+                - text: v1.1.0
+            - paragraph [ref=e491]: Cognitive Precision Bridge — AI orchestration with precision-aware routing. Multi-provider LLM support, DQ scoring, adaptive model selection.
+            - code [ref=e492]: npm install @metaventionsai/cpb-core
+          - generic [ref=e493]:
+            - generic [ref=e494]:
+              - generic [ref=e495]: 📦
+              - generic [ref=e496]:
+                - heading "@metaventionsai/voice-nexus" [level=4] [ref=e497]
+                - text: v1.1.0
+            - paragraph [ref=e498]: Universal multi-provider voice architecture. STT, reasoning, TTS pipeline. Echo elimination, sovereignty personality injection.
+            - code [ref=e499]: npm install @metaventionsai/voice-nexus
+    - generic [ref=e501]:
+      - generic [ref=e502]:
+        - generic [ref=e503]:
+          - img [ref=e504]
+          - generic [ref=e506]: Career Journey
+        - heading "Professional Timeline" [level=2] [ref=e507]
+        - paragraph [ref=e508]: From operational infrastructure to autonomous AI systems. A journey of building at scale.
+      - generic [ref=e510]:
+        - generic [ref=e514] [cursor=pointer]:
+          - generic [ref=e516]:
+            - generic [ref=e517]: 💼
+            - generic [ref=e518]:
+              - heading "Founder & AI Systems Architect" [level=3] [ref=e519]
+              - paragraph [ref=e520]: Metaventions AI
+          - generic [ref=e521]: 2024 - Present • Remote
+          - paragraph [ref=e522]: "Building META-VENGINE: 9-system self-improving AI infrastructure for autonomous operations."
+          - generic [ref=e523]:
+            - generic [ref=e524]: 297K+ LOC
+            - generic [ref=e525]: 8+ Papers
+            - generic [ref=e526]: 9 Systems
+          - button "▼ Show more" [ref=e527]
+        - generic [ref=e532] [cursor=pointer]:
+          - generic [ref=e534]:
+            - generic [ref=e535]: 💼
+            - generic [ref=e536]:
+              - heading "Cloud Alliance Operations Lead" [level=3] [ref=e537]
+              - paragraph [ref=e538]: Contentsquare
+          - generic [ref=e539]: 2020 - 2024 • Remote
+          - paragraph [ref=e540]: Operations infrastructure builder for cloud marketplace deal registrations (team of 3).
+          - generic [ref=e541]:
+            - generic [ref=e542]: $800M+ TCV
+            - generic [ref=e543]: 97% Approval
+            - generic [ref=e544]: 2,500+ Deals
+          - button "▼ Show more" [ref=e545]
+        - generic [ref=e550] [cursor=pointer]:
+          - generic [ref=e552]:
+            - generic [ref=e553]: 💼
+            - generic [ref=e554]:
+              - heading "Strategic Partnerships Coordinator" [level=3] [ref=e555]
+              - paragraph [ref=e556]: Early Career
+          - generic [ref=e557]: 2019 • Toronto, ON
+          - paragraph [ref=e558]: Coordinated partner ecosystems and go-to-market strategies.
+          - button "▼ Show more" [ref=e559]
+        - generic [ref=e564] [cursor=pointer]:
+          - generic [ref=e566]:
+            - generic [ref=e567]: 🏆
+            - generic [ref=e568]:
+              - heading "Multi-Agent Systems Research" [level=3] [ref=e569]
+              - paragraph [ref=e570]: Independent Research
+          - generic [ref=e571]: 2026 • Remote
+          - paragraph [ref=e572]: Published research on consensus mechanisms, DQ scoring, and agentic architectures.
+          - generic [ref=e573]:
+            - generic [ref=e574]: 8+ Papers
+            - generic [ref=e575]: 4 Core Systems
+          - button "▼ Show more" [ref=e576]
+        - generic [ref=e581] [cursor=pointer]:
+          - generic [ref=e583]:
+            - generic [ref=e584]: 🏆
+            - generic [ref=e585]:
+              - heading "Catalyst 2026 Fellowship" [level=3] [ref=e586]
+              - paragraph [ref=e587]: Catalyst
+          - generic [ref=e588]: 2024 • Remote
+          - paragraph [ref=e589]: Selected for exclusive AI/tech community fellowship.
+          - button "▼ Show more" [ref=e590]
+    - generic [ref=e593]:
+      - generic [ref=e594]:
+        - heading "In The Arena" [level=2] [ref=e595]
+        - paragraph [ref=e596]: 150+ events across 8 cities over 7 years. Not just attending — building relationships, contributing to communities, and moving between worlds that rarely overlap.
+      - generic [ref=e597]:
+        - generic [ref=e598]:
+          - heading "Art & Culture" [level=4] [ref=e599]
+          - paragraph [ref=e600]: 3 consecutive Art Basel Miami
+          - paragraph [ref=e601]: Where collectors, artists, VCs, and visionaries collide. Understanding taste, aesthetics, and the creative economy.
+          - generic [ref=e602]:
+            - generic [ref=e603]: BitBasel
+            - generic [ref=e604]: Kaliner Gallery
+            - generic [ref=e605]: Superchief NFT
+        - generic [ref=e606]:
+          - heading "Global Finance" [level=4] [ref=e607]
+          - paragraph [ref=e608]: "F1: Miami, Monaco, Montreal"
+          - paragraph [ref=e609]: The paddock, not the grandstand. International mobility and comfort in high-context environments.
+          - generic [ref=e610]:
+            - generic [ref=e611]: Hamptons Legacy
+            - generic [ref=e612]: Family Office Forums
+            - generic [ref=e613]: Accredited Investor Roundtables
+        - generic [ref=e614]:
+          - heading "Founder Networks" [level=4] [ref=e615]
+          - paragraph [ref=e616]: Builder Series NYC (monthly)
+          - paragraph [ref=e617]: Not transactional networking. Consistent presence, real relationships, mutual support over years.
+          - generic [ref=e618]:
+            - generic [ref=e619]: Tavern Cohorts
+            - generic [ref=e620]: CoinFund Miami
+            - generic [ref=e621]: Startup Detroit
+        - generic [ref=e622]:
+          - heading "Frontier Research" [level=4] [ref=e623]
+          - paragraph [ref=e624]: NeurIPS 2025
+          - paragraph [ref=e625]: Where papers become products. Proximity to the researchers pushing boundaries.
+          - generic [ref=e626]:
+            - generic [ref=e627]: Thermo AI Meetup
+            - generic [ref=e628]: NVIDIA DGX Spark
+            - generic [ref=e629]: AWS Builder Loft
+      - generic [ref=e630]:
+        - heading "Circles & Access" [level=3] [ref=e631]
+        - generic [ref=e632]:
+          - generic [ref=e633]:
+            - heading "Investor Networks" [level=4] [ref=e634]
+            - list [ref=e635]:
+              - listitem [ref=e636]:
+                - text: •
+                - strong [ref=e637]: CoinFund
+                - text: — Monthly attendee, Jake Brukhman's events
+              - listitem [ref=e638]:
+                - text: •
+                - strong [ref=e639]: Pompliano
+                - text: — Invited to annual Christmas party
+              - listitem [ref=e640]:
+                - text: •
+                - strong [ref=e641]: BitAngels
+                - text: — Angel investor network access
+              - listitem [ref=e642]:
+                - text: •
+                - strong [ref=e643]: Maja Vujinovic
+                - text: — OGroup MD, FinTech/Digital Assets
+          - generic [ref=e644]:
+            - heading "Builder Communities" [level=4] [ref=e645]
+            - list [ref=e646]:
+              - listitem [ref=e647]:
+                - text: •
+                - strong [ref=e648]: Detroit Blockchain
+                - text: — 15+ events, community pillar
+              - listitem [ref=e649]:
+                - text: •
+                - strong [ref=e650]: AI Collective Detroit
+                - text: — Active builder participant
+              - listitem [ref=e651]:
+                - text: •
+                - strong [ref=e652]: Web3 Toronto
+                - text: — Conference, Builder's Week regular
+              - listitem [ref=e653]:
+                - text: •
+                - strong [ref=e654]: AI Friends Toronto
+                - text: — Research community
+          - generic [ref=e655]:
+            - heading "Exclusive Access" [level=4] [ref=e656]
+            - list [ref=e657]:
+              - listitem [ref=e658]:
+                - text: •
+                - strong [ref=e659]: Tavern Cohorts
+                - text: — Application-only founder programs
+              - listitem [ref=e660]:
+                - text: •
+                - strong [ref=e661]: Jeremy Piven events
+                - text: — Delmonico's, Legacy series
+              - listitem [ref=e662]:
+                - text: •
+                - strong [ref=e663]: Hamptons
+                - text: — Summer investor circuit
+              - listitem [ref=e664]:
+                - text: •
+                - strong [ref=e665]: Health Board Advisors
+                - text: — Mastermind member
+      - generic [ref=e666]:
+        - heading "Geographic Presence" [level=3] [ref=e667]
+        - generic [ref=e668]:
+          - generic [ref=e669]:
+            - generic [ref=e670]: Miami
+            - generic [ref=e671]: 40+ events
+            - generic [ref=e672]: Primary Hub
+          - generic [ref=e673]:
+            - generic [ref=e674]: Detroit
+            - generic [ref=e675]: 20+ events
+            - generic [ref=e676]: Community Leader
+          - generic [ref=e677]:
+            - generic [ref=e678]: NYC
+            - generic [ref=e679]: 15+ events
+            - generic [ref=e680]: Founder Network
+          - generic [ref=e681]:
+            - generic [ref=e682]: Toronto
+            - generic [ref=e683]: 15+ events
+            - generic [ref=e684]: Canadian Tech
+          - generic [ref=e685]:
+            - generic [ref=e686]: San Francisco
+            - generic [ref=e687]: 5+ events
+            - generic [ref=e688]: Enterprise AI
+          - generic [ref=e689]:
+            - generic [ref=e690]: Monaco
+            - generic [ref=e691]: F1 events
+            - generic [ref=e692]: International
+          - generic [ref=e693]:
+            - generic [ref=e694]: Hamptons
+            - generic [ref=e695]: 3+ events
+            - generic [ref=e696]: Investor Circuit
+          - generic [ref=e697]:
+            - generic [ref=e698]: Cannes
+            - generic [ref=e699]: 1 events
+            - generic [ref=e700]: Global Summit
+      - generic [ref=e701]:
+        - heading "What 150+ Events Actually Means" [level=3] [ref=e702]
+        - generic [ref=e703]:
+          - generic [ref=e704]:
+            - paragraph [ref=e705]: Cross-Cultural Fluency
+            - paragraph [ref=e706]: Comfortable with artists, researchers, executives, investors, and founders. Can translate between worlds.
+          - generic [ref=e707]:
+            - paragraph [ref=e708]: Early Adopter Pattern
+            - paragraph [ref=e709]: AI events in Feb 2023 — before the boom. Sees what's coming, positions early.
+          - generic [ref=e710]:
+            - paragraph [ref=e711]: Relationship Over Transaction
+            - paragraph [ref=e712]: Same communities for 3+ years. Builder Series, CoinFund, Detroit Blockchain — consistent presence.
+          - generic [ref=e713]:
+            - paragraph [ref=e714]: Community Builder
+            - paragraph [ref=e715]: Not just attending — contributing. Education workshops, local scene building, advocacy.
+    - generic [ref=e717]:
+      - generic [ref=e718]:
+        - generic [ref=e719]:
+          - img [ref=e720]
+          - generic [ref=e722]: Technical Expertise
+        - heading "Skills & Proficiencies" [level=2] [ref=e723]
+        - paragraph [ref=e724]: Bridging operational excellence with technical implementation. From infrastructure to AI systems.
+      - generic [ref=e725]:
+        - generic [ref=e726]:
+          - generic [ref=e727]:
+            - generic [ref=e728]: 🤖
+            - heading "AI & Agentic Systems" [level=3] [ref=e729]
+          - generic [ref=e730]:
+            - generic [ref=e732]:
+              - generic [ref=e733]: Multi-Agent Orchestration
+              - generic [ref=e734]: 3+ years
+            - generic [ref=e737]:
+              - generic [ref=e738]: LLM Operations & Integration
+              - generic [ref=e739]: 2+ years
+            - generic [ref=e742]:
+              - generic [ref=e743]: Agentic Architectures
+              - generic [ref=e744]: 2+ years
+            - generic [ref=e747]:
+              - generic [ref=e748]: Prompt Engineering
+              - generic [ref=e749]: 2+ years
+            - generic [ref=e752]:
+              - generic [ref=e753]: RAG Systems (pgvector)
+              - generic [ref=e754]: 1+ year
+        - generic [ref=e756]:
+          - generic [ref=e757]:
+            - generic [ref=e758]: ⚙️
+            - heading "Operations & Infrastructure" [level=3] [ref=e759]
+          - generic [ref=e760]:
+            - generic [ref=e762]:
+              - generic [ref=e763]: Cloud Marketplace Operations
+              - generic [ref=e764]: 4+ years
+            - generic [ref=e767]:
+              - generic [ref=e768]: GTM Automation & Workflow Design
+              - generic [ref=e769]: 4+ years
+            - generic [ref=e772]:
+              - generic [ref=e773]: Process Optimization
+              - generic [ref=e774]: 5+ years
+            - generic [ref=e777]:
+              - generic [ref=e778]: Technical Program Management
+              - generic [ref=e779]: 4+ years
+            - generic [ref=e782]:
+              - generic [ref=e783]: Data Operations
+              - generic [ref=e784]: 5+ years
+        - generic [ref=e786]:
+          - generic [ref=e787]:
+            - generic [ref=e788]: 💻
+            - heading "Technical Stack" [level=3] [ref=e789]
+          - generic [ref=e790]:
+            - generic [ref=e792]:
+              - generic [ref=e793]: TypeScript
+              - generic [ref=e794]: 4+ years
+            - generic [ref=e797]:
+              - generic [ref=e798]: Python
+              - generic [ref=e799]: 5+ years
+            - generic [ref=e802]:
+              - generic [ref=e803]: React/Next.js
+              - generic [ref=e804]: 3+ years
+            - generic [ref=e807]:
+              - generic [ref=e808]: Node.js
+              - generic [ref=e809]: 4+ years
+            - generic [ref=e812]:
+              - generic [ref=e813]: Supabase/PostgreSQL
+              - generic [ref=e814]: 2+ years
+        - generic [ref=e816]:
+          - generic [ref=e817]:
+            - generic [ref=e818]: 🏢
+            - heading "Enterprise Tools" [level=3] [ref=e819]
+          - generic [ref=e820]:
+            - generic [ref=e822]:
+              - generic [ref=e823]: Salesforce (APEX, SOQL)
+              - generic [ref=e824]: 4+ years
+            - generic [ref=e827]:
+              - generic [ref=e828]: Snowflake
+              - generic [ref=e829]: 3+ years
+            - generic [ref=e832]:
+              - generic [ref=e833]: AWS Cloud Marketplace
+              - generic [ref=e834]: 4+ years
+            - generic [ref=e837]:
+              - generic [ref=e838]: Git/GitHub
+              - generic [ref=e839]: 5+ years
+            - generic [ref=e842]:
+              - generic [ref=e843]: Miro, Lucidchart, Figma
+              - generic [ref=e844]: 4+ years
+      - generic [ref=e846]:
+        - heading "Certifications & Achievements" [level=3] [ref=e847]
+        - generic [ref=e848]:
+          - generic [ref=e849]: 🏆 AWS Cloud Marketplace Specialist
+          - generic [ref=e850]: 📊 Salesforce Platform Developer
+          - generic [ref=e851]: 🤖 Multi-Agent Systems Architect
+          - generic [ref=e852]: 📚 8+ Published Research Papers
+    - generic [ref=e854]:
+      - generic [ref=e855]:
+        - heading "Interactive Code Examples" [level=2] [ref=e856]
+        - paragraph [ref=e857]: Live demonstrations of technical skills
+      - generic [ref=e858]:
+        - generic [ref=e859]:
+          - generic [ref=e860]:
+            - button "React State Management" [ref=e861]
+            - button "TypeScript Type Safety" [ref=e862]
+            - button "Async/Await Patterns" [ref=e863]
+            - button "Utility-First CSS" [ref=e864]
+          - generic [ref=e865]:
+            - generic [ref=e866]:
+              - generic [ref=e872]: typescript
+              - generic [ref=e873]: Clean state management with React hooks
+            - code [ref=e875]: "const [count, setCount] = useState(0); return ( <button onClick={() => setCount(count + 1)}> Clicked {count} times </button> );"
+        - generic [ref=e876]:
+          - generic [ref=e877]:
+            - heading "Live Demo" [level=3] [ref=e878]
+            - paragraph [ref=e879]: Interactive example you can try
+          - generic [ref=e880]:
+            - button "Clicked 0 times" [ref=e881]
+            - paragraph [ref=e882]: Live demo using React hooks
+      - generic [ref=e883]:
+        - generic [ref=e884]: TypeScript
+        - generic [ref=e885]: React 19
+        - generic [ref=e886]: Next.js 16
+        - generic [ref=e887]: Tailwind CSS
+        - generic [ref=e888]: Zustand
+        - generic [ref=e889]: Node.js
+    - generic [ref=e891]:
+      - generic [ref=e892]:
+        - heading "JD Fit Analyzer" [level=2] [ref=e893]
+        - paragraph [ref=e894]: Paste a job description to get a brutally honest fit assessment against my career dossier.
+      - paragraph [ref=e896]:
+        - text: This analyzer searches my comprehensive career dossier (700+ indexed chunks covering skills, projects, metrics, and experience) and provides evidence-based matching.
+        - strong [ref=e897]: No flattery, no sugarcoating
+        - text: — just the facts.
+      - generic [ref=e899]:
+        - generic [ref=e900]:
+          - generic [ref=e901]: Paste Job Description
+          - textbox "Paste Job Description" [ref=e902]:
+            - /placeholder: Paste the full job description here...
+          - paragraph [ref=e903]: 0 characters
+        - button "Analyze Fit" [disabled] [ref=e904]
+    - generic [ref=e906]:
+      - heading "Let's Build" [level=2] [ref=e907]
+      - paragraph [ref=e908]: Looking for roles at the intersection of AI systems and enterprise operations. TN Visa eligible. Open to SF, NYC, Austin, Boston, Toronto.
+      - generic [ref=e909]:
+        - link "dico.angelo97@gmail.com" [ref=e910] [cursor=pointer]:
+          - /url: mailto:dico.angelo97@gmail.com
+        - link "519-999-6099" [ref=e911] [cursor=pointer]:
+          - /url: tel:+15199996099
+      - heading "Schedule a Call" [level=3] [ref=e913]
+      - generic [ref=e915]:
+        - link "LinkedIn" [ref=e916] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/dico-angelo/
+        - link "GitHub" [ref=e917] [cursor=pointer]:
+          - /url: https://github.com/Dicoangelo
+        - link "X" [ref=e918] [cursor=pointer]:
+          - /url: https://x.com/dicoangelo
+        - link "Metaventions AI" [ref=e919] [cursor=pointer]:
+          - /url: https://metaventionsai.com
+    - generic [ref=e921]:
+      - generic [ref=e922]:
+        - generic [ref=e923]:
+          - heading "Dico Angelo" [level=3] [ref=e924]
+          - paragraph [ref=e925]: Operations Infrastructure Builder & AI Systems Engineer. Bridging enterprise GTM operations with hands-on agentic infrastructure development.
+          - generic [ref=e926]:
+            - link "GitHub" [ref=e927] [cursor=pointer]:
+              - /url: https://github.com/Dicoangelo
+              - img [ref=e928]
+            - link "LinkedIn" [ref=e930] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/dicoangelo
+              - img [ref=e931]
+            - link "npm" [ref=e933] [cursor=pointer]:
+              - /url: https://www.npmjs.com/org/metaventionsai
+              - img [ref=e934]
+        - generic [ref=e936]:
+          - heading "Quick Links" [level=4] [ref=e937]
+          - list [ref=e938]:
+            - listitem [ref=e939]:
+              - link "Resume" [ref=e940] [cursor=pointer]:
+                - /url: "#resume"
+            - listitem [ref=e941]:
+              - link "Skills" [ref=e942] [cursor=pointer]:
+                - /url: "#skills"
+            - listitem [ref=e943]:
+              - link "Timeline" [ref=e944] [cursor=pointer]:
+                - /url: "#timeline"
+            - listitem [ref=e945]:
+              - link "Projects" [ref=e946] [cursor=pointer]:
+                - /url: "#projects"
+            - listitem [ref=e947]:
+              - link "Contact" [ref=e948] [cursor=pointer]:
+                - /url: "#contact"
+        - generic [ref=e949]:
+          - heading "At a Glance" [level=4] [ref=e950]
+          - list [ref=e951]:
+            - listitem [ref=e952]: $800M+TCV Processed
+            - listitem [ref=e953]: 297K+Lines of Code
+            - listitem [ref=e954]: 8+Research Papers
+      - generic [ref=e955]:
+        - generic [ref=e956]:
+          - generic [ref=e957]: © 2026 Dico Angelo. All rights reserved.
+          - generic [ref=e958]: •
+          - generic [ref=e959]: Canadian Citizen · TN Visa Eligible
+        - generic [ref=e960]:
+          - generic [ref=e961]: Built with AI orchestration
+          - generic [ref=e962]: 0 lines manually written
+```

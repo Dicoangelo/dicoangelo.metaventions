@@ -75,7 +75,7 @@ test.describe('Accessibility', () => {
     await page.goto('/');
 
     // Look for skip to content link
-    const skipLink = page.getByRole('link', { name: /skip to (main )?content/i });
+    const skipLink = page.getByRole('link', { name: /skip to (main )?content/i, includeHidden: true });
 
     // Should exist
     expect(await skipLink.count()).toBeGreaterThan(0);

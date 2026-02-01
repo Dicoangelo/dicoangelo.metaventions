@@ -9,7 +9,7 @@ test.describe('Navigation', () => {
     await expect(page).toHaveTitle(/Dico Angelo/);
 
     // Verify hero section is visible
-    await expect(page.locator('text=Full-Stack Engineer')).toBeVisible();
+    await expect(page.locator('text=Operations Infrastructure Builder').first()).toBeVisible();
   });
 
   test('should navigate to sections via nav links', async ({ page }) => {
