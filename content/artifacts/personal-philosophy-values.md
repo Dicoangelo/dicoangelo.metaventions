@@ -92,12 +92,12 @@ This background explains why I gravitate toward meta-systems: orchestrators that
 
 4. **Empathy for beginners**: I remember what it felt like to not understand. This informs how I write documentation and mentor others.
 
-**Timeline:**
-- 2020: First Python scripts (automation at work)
-- 2021: JavaScript for internal tools
-- 2022: TypeScript, React, building nights/weekends
-- 2023: Multi-agent systems, arXiv implementations
-- 2024: 127K LOC, 2 npm packages, production systems
+**The Reality:**
+- Operations background (2020-2024): $800M+ in enterprise deals, system administration, process automation
+- Intensive coding (Late 2024 - Present): 4 months, 316K+ LOC, AI-native development
+- No gradual ramp-up: learned WITH AI tools, shipped production systems immediately
+
+**New School Developer:** Traditional path takes years. AI-augmented learning compresses that timeline. The output is the credential.
 
 ---
 

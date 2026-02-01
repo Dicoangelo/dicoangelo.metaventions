@@ -56,31 +56,31 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **The signal:** Vercel + GitHub activity confirms I'm shipping products, not just researching. This is builder activity — model testing to production deployment in the same session. The work speaks for itself.
 
-### "Why no PhD?"
-**I chose implementation over academia.** While others were writing papers, I was implementing them into production systems.
+### "Why no PhD or CS degree?"
+**I'm new school.** 4 months of intensive coding. No CS degree, no bootcamp. Learned with AI tools, not before them.
 
 **What I have instead:**
-- 316K+ LOC of production code
+- 316K+ LOC shipped in months, not years
 - 2 published npm packages (anyone can use my code)
 - 8+ arXiv papers implemented with measurable results
-- $800M+ in enterprise deals managed
+- $800M+ in enterprise deals managed (operations background)
 - Live demos proving the systems work
 
-**The proof is in production, not publications.** PhD programs publish research. I publish code, packages, and products.
+**The proof is velocity.** Traditional path: 4 years CS → 2 years junior → maybe ship something. My path: operations foundation → AI-native development → shipped production systems in 4 months. The old prerequisites don't apply when you learn at this speed.
 
 ### "Why hire you over a Stanford CS grad?"
 
-**4 concrete differentiators:**
+**Different paths, same destination:**
 
-1. **I ship.** 152,503 LOC in 3 months (OS-App alone). Most candidates have course projects. I have production systems with live users.
+1. **Operations foundation first.** $800M+ TCV in cloud marketplace deals, 2,500+ registrations, system administration, cross-functional coordination. I understand how enterprise actually works before writing code for it.
 
-2. **I understand business.** $800M+ TCV in cloud marketplace deals, 2,500+ registrations, operations lead supporting $30M+ ACV growth. I know how enterprise sales cycles, procurement, and multi-stakeholder coordination work.
+2. **I ship fast.** 316K+ LOC in 4 months. No gradual ramp-up - learned with AI tools and shipped production systems immediately. New school velocity.
 
 3. **I bridge research and production.** 8+ arXiv papers implemented with test coverage. I don't just read papers—I implement them, measure results, and iterate.
 
-4. **I'm self-taught.** I learn fast and don't need hand-holding. Every system I've built required learning new technologies on the fly.
+4. **Self-directed learner.** No CS degree, no bootcamp. Built everything by doing. When corporate didn't promote me, I built my own path.
 
-**Bottom line:** Stanford CS grads have credentials. I have production systems, business metrics, and published packages. If you're hiring for execution, I'm the better bet.
+**Bottom line:** Stanford grads have credentials and 4 years of theory. I have 4 years of operations experience + 4 months of explosive output. If you're hiring for velocity and business understanding, I'm the bet.
 
 ---
 
