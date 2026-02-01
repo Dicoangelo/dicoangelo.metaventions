@@ -7,7 +7,7 @@ export function middleware(request: NextRequest) {
   // Define Content Security Policy
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' https: http: ${process.env.NODE_ENV === 'production' ? '' : "'unsafe-eval'"};
+    script-src 'self' 'unsafe-inline' https: http: ${process.env.NODE_ENV === 'production' ? '' : "'unsafe-eval'"};
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: https:;
     font-src 'self' data:;
