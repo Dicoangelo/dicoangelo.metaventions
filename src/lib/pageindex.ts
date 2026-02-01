@@ -11,55 +11,36 @@
  * - Transparent citations with page references
  */
 
-const PAGEINDEX_API_BASE = 'https://api.pageindex.ai/v1';
+const PAGEINDEX_API_BASE = 'https://api.pageindex.ai';
 
 interface PageIndexConfig {
   apiKey: string;
   documentId?: string;
 }
 
-interface ChatMessage {
-  role: 'user' | 'assistant' | 'system';
-  content: string;
+interface RelevantContent {
+  section_title: string;
+  physical_index: string;
+  relevant_content: string;
 }
 
-interface PageIndexResponse {
+interface RetrievedNode {
   id: string;
-  object: string;
-  created: number;
-  choices: Array<{
-    index: number;
-    message: {
-      role: string;
-      content: string;
-    };
-    finish_reason: string;
-  }>;
-  usage?: {
-    prompt_tokens: number;
-    completion_tokens: number;
-    total_tokens: number;
-  };
-  citations?: Array<{
-    doc: string;
-    page: number;
-    content: string;
-  }>;
+  title: string;
+  metadata: string[];
+  relevant_contents: RelevantContent[][];
 }
 
 interface RetrievalResponse {
   retrieval_id: string;
   doc_id: string;
-  status: string;
+  status: 'processing' | 'completed' | 'failed';
   query: string;
-  retrieved_nodes: Array<{
-    title: string;
-    node_id: string;
-    relevant_contents: Array<{
-      page_index: number;
-      relevant_content: string;
-    }>;
-  }>;
+  retrieved_nodes?: RetrievedNode[];
+}
+
+interface SubmitQueryResponse {
+  retrieval_id: string;
 }
 
 let pageIndexConfig: PageIndexConfig | null = null;
@@ -78,103 +59,136 @@ function getConfig(): PageIndexConfig | null {
 }
 
 /**
- * Query PageIndex for relevant context using reasoning-based retrieval
+ * Submit a retrieval query to PageIndex
  */
-export async function queryPageIndex(
+async function submitQuery(
+  query: string,
+  documentId: string,
+  thinking: boolean = true
+): Promise<string | null> {
+  const config = getConfig();
+  if (!config) return null;
+
+  try {
+    const response = await fetch(`${PAGEINDEX_API_BASE}/retrieval/`, {
+      method: 'POST',
+      headers: {
+        'api_key': config.apiKey,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        doc_id: documentId,
+        query,
+        thinking,
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('PageIndex submit query error:', response.status);
+      return null;
+    }
+
+    const data: SubmitQueryResponse = await response.json();
+    return data.retrieval_id;
+  } catch (error) {
+    console.error('PageIndex submit query failed:', error);
+    return null;
+  }
+}
+
+/**
+ * Get retrieval results from PageIndex
+ */
+async function getRetrieval(retrievalId: string): Promise<RetrievalResponse | null> {
+  const config = getConfig();
+  if (!config) return null;
+
+  try {
+    const response = await fetch(`${PAGEINDEX_API_BASE}/retrieval/${retrievalId}/`, {
+      method: 'GET',
+      headers: {
+        'api_key': config.apiKey,
+      },
+    });
+
+    if (!response.ok) {
+      console.error('PageIndex get retrieval error:', response.status);
+      return null;
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('PageIndex get retrieval failed:', error);
+    return null;
+  }
+}
+
+/**
+ * Poll for retrieval completion with timeout
+ */
+async function waitForRetrieval(
+  retrievalId: string,
+  maxWaitMs: number = 30000,
+  pollIntervalMs: number = 1000
+): Promise<RetrievalResponse | null> {
+  const startTime = Date.now();
+
+  while (Date.now() - startTime < maxWaitMs) {
+    const result = await getRetrieval(retrievalId);
+
+    if (!result) return null;
+
+    if (result.status === 'completed') {
+      return result;
+    }
+
+    if (result.status === 'failed') {
+      console.error('PageIndex retrieval failed');
+      return null;
+    }
+
+    // Wait before polling again
+    await new Promise(resolve => setTimeout(resolve, pollIntervalMs));
+  }
+
+  console.error('PageIndex retrieval timeout');
+  return null;
+}
+
+/**
+ * Retrieve relevant context from PageIndex using tree-based reasoning
+ */
+export async function retrieveFromPageIndex(
   query: string,
   options: {
     documentId?: string;
-    enableCitations?: boolean;
-    stream?: boolean;
+    thinking?: boolean;
+    maxWaitMs?: number;
   } = {}
-): Promise<string> {
+): Promise<RetrievalResponse | null> {
   const config = getConfig();
 
   if (!config) {
     console.warn('PageIndex unavailable: missing PAGEINDEX_API_KEY');
-    return '';
+    return null;
   }
 
   const docId = options.documentId || config.documentId;
 
   if (!docId) {
     console.warn('PageIndex: no document ID configured');
-    return '';
-  }
-
-  try {
-    const response = await fetch(`${PAGEINDEX_API_BASE}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${config.apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        messages: [{ role: 'user', content: query }],
-        doc_id: docId,
-        enable_citations: options.enableCitations ?? true,
-        stream: options.stream ?? false,
-      }),
-    });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('PageIndex API error:', response.status, errorText);
-      return '';
-    }
-
-    const data: PageIndexResponse = await response.json();
-    return data.choices[0]?.message?.content || '';
-  } catch (error) {
-    console.error('PageIndex query failed:', error);
-    return '';
-  }
-}
-
-/**
- * Retrieve relevant document nodes using PageIndex tree search
- */
-export async function retrieveFromPageIndex(
-  query: string,
-  options: {
-    documentId?: string;
-  } = {}
-): Promise<RetrievalResponse | null> {
-  const config = getConfig();
-
-  if (!config) {
     return null;
   }
 
-  const docId = options.documentId || config.documentId;
+  // Submit the query
+  const retrievalId = await submitQuery(query, docId, options.thinking ?? true);
 
-  if (!docId) {
+  if (!retrievalId) {
     return null;
   }
 
-  try {
-    const response = await fetch(`${PAGEINDEX_API_BASE}/retrieval`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${config.apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        doc_id: docId,
-        query,
-      }),
-    });
-
-    if (!response.ok) {
-      console.error('PageIndex retrieval error:', response.status);
-      return null;
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('PageIndex retrieval failed:', error);
-    return null;
-  }
+  // Wait for results
+  return await waitForRetrieval(retrievalId, options.maxWaitMs ?? 30000);
 }
 
 /**
@@ -187,13 +201,26 @@ export function formatPageIndexContext(retrieval: RetrievalResponse): string {
 
   const sections = retrieval.retrieved_nodes.map((node) => {
     const header = `### ${node.title}`;
+
+    // Extract all relevant content from nested arrays
     const contents = node.relevant_contents
-      .map((c) => `[Page ${c.page_index}] ${c.relevant_content}`)
+      .flat()
+      .map((content) => {
+        const pageMatch = content.physical_index.match(/<physical_index_(\d+)>/);
+        const pageNum = pageMatch ? parseInt(pageMatch[1]) + 1 : null;
+        const pageRef = pageNum ? `[Page ${pageNum}]` : '';
+        return `${pageRef} ${content.relevant_content}`;
+      })
       .join('\n\n');
+
     return `${header}\n${contents}`;
   });
 
-  return `## Retrieved Context from Career Dossier (PageIndex Reasoning RAG)\n\nThe following information was retrieved using tree-based reasoning from Dico Angelo's career dossier:\n\n${sections.join('\n\n---\n\n')}`;
+  return `## Retrieved Context from Career Dossier (PageIndex Reasoning RAG)
+
+The following information was retrieved using tree-based reasoning from Dico Angelo's career dossier:
+
+${sections.join('\n\n---\n\n')}`;
 }
 
 /**
@@ -203,15 +230,8 @@ export function formatPageIndexContext(retrieval: RetrievalResponse): string {
 export async function getPageIndexContext(query: string): Promise<string> {
   const retrieval = await retrieveFromPageIndex(query);
 
-  if (retrieval) {
+  if (retrieval && retrieval.retrieved_nodes?.length) {
     return formatPageIndexContext(retrieval);
-  }
-
-  // Alternative: Use chat completions to get a direct answer with context
-  const directAnswer = await queryPageIndex(query, { enableCitations: true });
-
-  if (directAnswer) {
-    return `## PageIndex Retrieved Context\n\n${directAnswer}`;
   }
 
   return '';
@@ -224,6 +244,8 @@ export async function getPageIndexContext(query: string): Promise<string> {
 export function stripCitationsForVoice(text: string): string {
   return text
     .replace(/<doc=[^>]+>/g, '')
+    .replace(/<physical_index_\d+>/g, '')
+    .replace(/\[Page \d+\]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -235,4 +257,4 @@ export function isPageIndexAvailable(): boolean {
   return !!(process.env.PAGEINDEX_API_KEY && process.env.PAGEINDEX_DOCUMENT_ID);
 }
 
-export type { PageIndexResponse, RetrievalResponse, ChatMessage };
+export type { RetrievalResponse, RetrievedNode, RelevantContent };
