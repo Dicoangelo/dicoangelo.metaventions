@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 import { useDeepgramSTT } from "@/hooks/useDeepgramSTT";
@@ -39,16 +40,7 @@ function getSpeechRecognition(): (new () => SpeechRecognition) | undefined {
   return (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
 }
 
-// Particle type
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  radius: number;
-  life: number;
-  hue: number;
-}
+
 
 // Color palette
 const COLORS = {
@@ -126,9 +118,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
   const currentAudioRef = useRef<AudioBufferSourceNode | null>(null);
   const ttsAnalyserRef = useRef<AnalyserNode | null>(null);
   const ttsAnimationRef = useRef<number | null>(null);
-  const mainCanvasRef = useRef<HTMLCanvasElement>(null);
   const silenceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const particlesRef = useRef<Particle[]>([]);
   const isProcessingRef = useRef(false); // Sync guard to prevent double-processing
   const activeSTTRef = useRef<"deepgram" | "webspeech" | null>(null); // Track which STT is active
 
@@ -159,127 +149,6 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       setUseDeepgram(false);
     }
   }, [deepgramError]);
-
-  // Main canvas animation
-  useEffect(() => {
-    const canvas = mainCanvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const dpr = window.devicePixelRatio || 1;
-    const size = 240;
-    canvas.width = size * dpr;
-    canvas.height = size * dpr;
-    canvas.style.width = `${size}px`;
-    canvas.style.height = `${size}px`;
-    ctx.scale(dpr, dpr);
-
-    let animationId: number;
-    let time = 0;
-
-    const draw = () => {
-      time += 0.02;
-      ctx.clearRect(0, 0, size, size);
-      const cx = size / 2;
-      const cy = size / 2;
-
-      // Spawn particles when active
-      if ((isSpeaking || isListening) && Math.random() < 0.2) {
-        const angle = Math.random() * Math.PI * 2;
-        const dist = 45 + Math.random() * 15;
-        particlesRef.current.push({
-          x: cx + Math.cos(angle) * dist,
-          y: cy + Math.sin(angle) * dist,
-          vx: (Math.random() - 0.5) * 1.5,
-          vy: -Math.random() * 1.5 - 0.5,
-          radius: 1.5 + Math.random() * 1.5,
-          life: 80 + Math.random() * 40,
-          hue: isSpeaking ? 270 : 185,
-        });
-      }
-
-      // Update and draw particles
-      particlesRef.current = particlesRef.current.filter(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.life -= 1;
-        if (p.life <= 0) return false;
-
-        const alpha = Math.min(1, p.life / 40) * 0.7;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius * (p.life / 120 + 0.5), 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 80%, 65%, ${alpha})`;
-        ctx.fill();
-        return true;
-      });
-
-      // Limit particles
-      if (particlesRef.current.length > 60) {
-        particlesRef.current = particlesRef.current.slice(-60);
-      }
-
-      // Draw frequency bars (circular)
-      const barCount = 48;
-      const innerRadius = 48;
-      const maxBarHeight = 28;
-
-      for (let i = 0; i < barCount; i++) {
-        const value = dicoFrequencies[i] / 255;
-        const angle = (i / barCount) * Math.PI * 2 - Math.PI / 2;
-        const barHeight = value * maxBarHeight + 2;
-
-        const x1 = cx + Math.cos(angle) * innerRadius;
-        const y1 = cy + Math.sin(angle) * innerRadius;
-        const x2 = cx + Math.cos(angle) * (innerRadius + barHeight);
-        const y2 = cy + Math.sin(angle) * (innerRadius + barHeight);
-
-        const hue = isSpeaking ? 270 + (i / barCount) * 30 : isListening ? 185 : 220;
-        const alpha = (isSpeaking || isListening) ? 0.4 + value * 0.6 : 0.1 + value * 0.1;
-
-        ctx.beginPath();
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
-        ctx.strokeStyle = `hsla(${hue}, 75%, 60%, ${alpha})`;
-        ctx.lineWidth = 2.5;
-        ctx.lineCap = "round";
-        ctx.stroke();
-      }
-
-      // Breathing glow ring
-      if (isSpeaking || isListening || isProcessing) {
-        const breathe = Math.sin(time * 3) * 0.2 + 0.8;
-        const baseHue = isSpeaking ? 270 : isProcessing ? 320 : 185;
-
-        ctx.beginPath();
-        ctx.arc(cx, cy, innerRadius - 3, 0, Math.PI * 2);
-        ctx.strokeStyle = `hsla(${baseHue}, 80%, 60%, ${0.25 * breathe})`;
-        ctx.lineWidth = 6;
-        ctx.stroke();
-      }
-
-      // Processing dots
-      if (isProcessing) {
-        for (let i = 0; i < 3; i++) {
-          const orbitAngle = time * 4 + (i * Math.PI * 2) / 3;
-          const orbitRadius = 60;
-          const dotX = cx + Math.cos(orbitAngle) * orbitRadius;
-          const dotY = cy + Math.sin(orbitAngle) * orbitRadius;
-
-          ctx.beginPath();
-          ctx.arc(dotX, dotY, 3.5, 0, Math.PI * 2);
-          ctx.fillStyle = `hsla(${320 + i * 20}, 80%, 65%, 0.9)`;
-          ctx.fill();
-        }
-      }
-
-      animationId = requestAnimationFrame(draw);
-    };
-
-    draw();
-    return () => cancelAnimationFrame(animationId);
-  }, [dicoFrequencies, isSpeaking, isListening, isProcessing]);
 
   // Animate Dico frequencies
   useEffect(() => {
@@ -538,7 +407,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
   const speakResponse = async (text: string) => {
     // Stop any currently playing audio first
     if (currentAudioRef.current) {
-      try { currentAudioRef.current.stop(); } catch {}
+      try { currentAudioRef.current.stop(); } catch { }
       currentAudioRef.current = null;
     }
     if (ttsAnimationRef.current) {
@@ -616,7 +485,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       recognitionRef.current = null;
     }
     if (currentAudioRef.current) {
-      try { currentAudioRef.current.stop(); } catch {}
+      try { currentAudioRef.current.stop(); } catch { }
       currentAudioRef.current = null;
     }
     if (ttsAnimationRef.current) {
@@ -632,7 +501,6 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     isProcessingRef.current = false;
     activeSTTRef.current = null;
     setLiveTranscript("");
-    particlesRef.current = [];
   }, [cleanupMic, deepgramListening, stopDeepgram]);
 
   // Handle click
@@ -658,6 +526,15 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     setTiltY(0);
   };
 
+  // Calculate visual amplitude for the 3D orb
+  const visualAmplitude = isSpeaking
+    ? dicoFrequencies.reduce((a, b) => a + b, 0) / dicoFrequencies.length
+    : isListening
+      ? userAmplitude
+      : isProcessing
+        ? 150 // fixed high amplitude for 'thinking' state
+        : 0;
+
   if (!supported) {
     return (
       <div className={`text-center p-4 ${isLight ? 'text-gray-500' : 'text-gray-400'}`}>
@@ -667,70 +544,55 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     );
   }
 
+  // Lazy load the 3D component to avoid SSR issues with Three.js
+  const ThreeOrb = dynamic(() => import("./ThreeVoiceOrb"), { ssr: false });
+  // We need dynamic import for Three.js component
+
   const isActive = isListening || isSpeaking || isProcessing;
 
   return (
     <div className="flex flex-col items-center gap-2 w-full max-w-[320px]">
-      {/* Orb */}
-      <div className="relative">
-        <canvas
-          ref={mainCanvasRef}
-          className="absolute inset-0 pointer-events-none"
-          style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: 240, height: 240 }}
-        />
+      {/* 3D Orb Container */}
+      <div className="relative w-[300px] h-[300px] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <ThreeOrb
+            amplitude={visualAmplitude}
+            isListening={isListening}
+            isSpeaking={isSpeaking}
+            isProcessing={isProcessing}
+          />
+        </div>
 
-        {/* Glow */}
-        <div
-          className={`absolute rounded-full transition-all duration-500 ${isActive ? 'opacity-100' : 'opacity-0'}`}
-          style={{
-            width: 140, height: 140, left: '50%', top: '50%', transform: 'translate(-50%, -50%)',
-            background: isSpeaking
-              ? `radial-gradient(circle, ${COLORS.purpleGlow} 0%, transparent 70%)`
-              : `radial-gradient(circle, ${COLORS.cyanGlow} 0%, transparent 70%)`,
-            filter: 'blur(25px)',
-          }}
-        />
-
-        {/* Button */}
+        {/* Center Image (Optional: floating inside or in front) 
+            For this 3D design, we might want to remove the image or float it differently.
+            Let's keep the button interaction but make it invisible/overlaid on the orb 
+            so clicking the orb triggers the action. 
+        */}
         <button
           onClick={handleClick}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          className="relative w-24 h-24 rounded-full overflow-hidden z-10 transition-transform duration-150"
-          style={{
-            transform: `perspective(400px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${isActive ? 1.03 : 1})`,
-            boxShadow: isActive
-              ? `0 0 50px ${isSpeaking ? COLORS.purpleGlow : COLORS.cyanGlow}`
-              : isLight ? '0 4px 20px rgba(0,0,0,0.1)' : '0 4px 20px rgba(0,0,0,0.4)',
-            border: `2px solid ${isSpeaking ? COLORS.purple : isListening ? COLORS.cyan : isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)'}`,
-          }}
-        >
-          <Image src="/headshot-ama.jpg" alt="Dico" fill className="object-cover" priority />
-        </button>
-      </div>
-
-      {/* User amplitude indicator */}
-      <div className="h-2 w-32 rounded-full overflow-hidden bg-black/10 dark:bg-white/5">
-        <div
-          className="h-full rounded-full transition-all duration-75"
-          style={{
-            width: `${Math.min(100, (userAmplitude / 128) * 100)}%`,
-            backgroundColor: COLORS.cyan,
-            opacity: isListening ? 1 : 0.3,
-          }}
+          className="absolute inset-0 z-10 w-full h-full cursor-pointer focus:outline-none"
+          aria-label={isActive ? "Stop voice chat" : "Start voice chat"}
         />
+
+        {/* Floating Headshot (Small, centered, maybe?) 
+            Actually, let's keep the headshot inside the orb or remove it for a pure sci-fi look.
+            The user "Dico" is the orb. let's put the headshot in the center, smaller,
+            floating inside the transparent sphere.
+        */}
+        <div className="pointer-events-none z-0 relative w-16 h-16 rounded-full overflow-hidden opacity-80 mix-blend-overlay">
+          <Image src="/headshot-ama.jpg" alt="Dico" fill className="object-cover" priority />
+        </div>
       </div>
 
       {/* Live transcription area */}
-      <div className={`w-full min-h-[80px] rounded-xl p-3 transition-all duration-300 ${
-        isLight ? 'bg-gray-100/80' : 'bg-white/5'
-      }`}>
+      <div className={`w-full min-h-[80px] rounded-xl p-3 transition-all duration-300 z-20 ${isLight ? 'bg-gray-100/80' : 'bg-white/5'
+        }`}>
         {error ? (
           <p className="text-red-400 text-xs text-center">{error}</p>
         ) : isSpeaking ? (
           <div className="text-center">
             <p className="text-xs font-medium mb-1" style={{ color: COLORS.purple }}>Dico is speaking</p>
-            <p className="text-[10px] opacity-60">Tap to interrupt</p>
+            <p className="text-[10px] opacity-60">Tap orb to interrupt</p>
             {showResponse && (
               <p className={`text-xs mt-2 leading-relaxed line-clamp-3 ${isLight ? 'text-gray-600' : 'text-gray-400'}`}>
                 {lastResponse.slice(0, 150)}{lastResponse.length > 150 ? '...' : ''}
@@ -754,24 +616,22 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
           </div>
         ) : (
           <div className="text-center">
-            <p className={`text-xs ${isLight ? 'text-gray-500' : 'text-gray-500'}`}>Tap to start voice chat</p>
-            <p className="text-[10px] opacity-40 mt-1">Continuous conversation mode</p>
+            <p className={`text-xs ${isLight ? 'text-gray-500' : 'text-gray-500'}`}>Tap the orb to chat</p>
+            <p className="text-[10px] opacity-40 mt-1">Ai Voice Interface</p>
           </div>
         )}
       </div>
 
       {/* Status indicator */}
       <div className="flex items-center gap-1.5">
-        <span className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
-          isActive ? 'bg-green-400' : isLight ? 'bg-gray-300' : 'bg-gray-700'
-        }`} />
+        <span className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${isActive ? 'bg-green-400' : isLight ? 'bg-gray-300' : 'bg-gray-700'
+          }`} />
         <span className={`text-[10px] transition-colors ${isLight ? 'text-gray-400' : 'text-gray-600'}`}>
           {isActive ? (isSpeaking ? 'Speaking' : isProcessing ? 'Thinking' : 'Listening') : 'Ready'}
         </span>
         {isListening && (
-          <span className={`text-[8px] px-1.5 py-0.5 rounded ${
-            useDeepgram && deepgramAvailable ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'
-          }`}>
+          <span className={`text-[8px] px-1.5 py-0.5 rounded ${useDeepgram && deepgramAvailable ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'
+            }`}>
             {useDeepgram && deepgramAvailable ? 'Deepgram' : 'Browser'}
           </span>
         )}
