@@ -3,13 +3,8 @@ import { getDossierContext } from "@/lib/dossier";
 import { chatRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
 import { chatMessageSchema, validateRequest } from "@/lib/schemas";
 
-// Validate API key exists
-if (!process.env.ANTHROPIC_API_KEY) {
-  console.error("ANTHROPIC_API_KEY is not set");
-}
-
 const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY || "",
+  apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
 const SYSTEM_PROMPT = `You are an AI assistant representing Dico Angelo on his portfolio website. You have access to his comprehensive career dossier through semantic search.
@@ -40,15 +35,6 @@ const SYSTEM_PROMPT = `You are an AI assistant representing Dico Angelo on his p
 
 export async function POST(request: Request) {
   try {
-    // Check for required API key
-    if (!process.env.ANTHROPIC_API_KEY) {
-      console.error("Chat API: ANTHROPIC_API_KEY is not configured");
-      return new Response(
-        JSON.stringify({ error: "Chat service is temporarily unavailable. Please try again later." }),
-        { status: 503, headers: { "Content-Type": "application/json" } }
-      );
-    }
-
     // Rate limiting check
     const identifier = getClientIdentifier(request.headers as any);
     const { success, limit, remaining, reset } = await chatRateLimit.limit(identifier);
