@@ -268,7 +268,7 @@ export default function Chat() {
               <button
                 type="submit"
                 disabled={isTextLoading || !input.trim()}
-                className="px-6 py-3 min-h-[44px] min-w-[44px] bg-[#6366f1] hover:bg-[#5558e3] disabled:opacity-50 disabled:cursor-not-allowed rounded-xl font-medium transition-all duration-200 text-white text-sm hover:scale-[1.02] active:scale-[0.98] disabled:hover:scale-100"
+                className="btn-primary min-h-[44px] min-w-[44px]"
               >
                 Send
               </button>

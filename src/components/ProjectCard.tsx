@@ -22,7 +22,7 @@ export function ProjectCard({
   isLight,
 }: ProjectCardProps) {
   return (
-    <div className="card p-6 glow">
+    <div className="card card-glow p-6">
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-xl font-bold">{name}</h3>

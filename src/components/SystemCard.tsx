@@ -9,7 +9,7 @@ interface SystemCardProps {
 
 export function SystemCard({ name, description, metric, isLight }: SystemCardProps) {
   return (
-    <div className="card p-5 hover:border-[#6366f1]/30 transition-colors">
+    <div className="card p-6 hover:border-[#6366f1]/30">
       <div className="flex justify-between items-start mb-2">
         <h4 className="font-bold">{name}</h4>
         <span

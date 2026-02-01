@@ -51,9 +51,9 @@ export default function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`hover:${
+                className={`hover-underline hover:${
                   theme === "light" ? "text-gray-900" : "text-white"
-                } transition-colors`}
+                } transition-colors pb-1`}
               >
                 {link.label}
               </a>
@@ -111,31 +111,31 @@ export default function Nav() {
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
-        {isMobileMenuOpen && (
-          <div
-            className={`md:hidden mt-4 pt-4 border-t ${
-              theme === "light" ? "border-gray-200" : "border-[#262626]"
-            }`}
-          >
-            <div className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={handleLinkClick}
-                  className={`px-3 py-2 rounded-lg text-sm transition-colors ${
-                    theme === "light"
-                      ? "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      : "text-[#a3a3a3] hover:bg-[#1a1a1a] hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
+        {/* Mobile Menu Dropdown with slide animation */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+            isMobileMenuOpen ? "max-h-96 opacity-100 mt-4 pt-4" : "max-h-0 opacity-0"
+          } ${theme === "light" ? "border-gray-200" : "border-[#262626]"} ${
+            isMobileMenuOpen ? "border-t" : ""
+          }`}
+        >
+          <div className="flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={handleLinkClick}
+                className={`px-3 py-2 rounded-lg text-sm transition-colors ${
+                  theme === "light"
+                    ? "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    : "text-[#a3a3a3] hover:bg-[#1a1a1a] hover:text-white"
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

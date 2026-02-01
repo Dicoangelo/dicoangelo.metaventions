@@ -46,7 +46,7 @@ export default function GapCard({
   return (
     <div
       className={`
-        p-4 rounded-lg border
+        p-4 rounded-xl border
         ${theme === "light"
           ? `bg-white ${config.borderColor} hover:border-opacity-50`
           : `bg-[#141414] ${config.borderColor} hover:border-opacity-50`

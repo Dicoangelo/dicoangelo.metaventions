@@ -82,8 +82,9 @@ describe('BackToTop', () => {
     fireEvent.scroll(window);
 
     const button = screen.getByLabelText('Back to top');
-    expect(button).toHaveClass('bg-[#1f1f1f]');
-    expect(button).toHaveClass('border-[#2a2a2a]');
+    expect(button).toHaveClass('btn-icon');
+    expect(button).toHaveClass('w-12');
+    expect(button).toHaveClass('h-12');
   });
 
   it('should have proper accessibility attributes', () => {

@@ -48,10 +48,11 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
         >
           <button
             onClick={scrollToResume}
-            className={`px-4 py-2 rounded-lg shadow-lg transition-all hover:scale-105 text-sm font-medium ${isLight
-                ? "bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50"
-                : "bg-[#1f1f1f] border border-[#262626] hover:border-[#6366f1] hover:bg-[#2a2a2a]"
+            className={`btn-ghost shadow-lg text-sm ${isLight
+                ? "bg-white border border-gray-200 hover:border-blue-300"
+                : "bg-[#1f1f1f] border border-[#262626] hover:border-[#6366f1]"
               }`}
+            style={{ animationDelay: '0ms' }}
             role="menuitem"
             aria-label="Download resume - Opens resume section"
           >
@@ -59,10 +60,11 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
           </button>
           <button
             onClick={scrollToContact}
-            className={`px-4 py-2 rounded-lg shadow-lg transition-all hover:scale-105 text-sm font-medium ${isLight
-                ? "bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50"
-                : "bg-[#1f1f1f] border border-[#262626] hover:border-[#6366f1] hover:bg-[#2a2a2a]"
+            className={`btn-ghost shadow-lg text-sm ${isLight
+                ? "bg-white border border-gray-200 hover:border-blue-300"
+                : "bg-[#1f1f1f] border border-[#262626] hover:border-[#6366f1]"
               }`}
+            style={{ animationDelay: '50ms' }}
             role="menuitem"
             aria-label="Schedule interview - Opens contact section"
           >
@@ -72,10 +74,11 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
             href="https://www.linkedin.com/in/dicoangelo"
             target="_blank"
             rel="noopener noreferrer"
-            className={`px-4 py-2 rounded-lg shadow-lg transition-all hover:scale-105 text-sm font-medium ${isLight
-                ? "bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50"
-                : "bg-[#1f1f1f] border border-[#262626] hover:border-[#6366f1] hover:bg-[#2a2a2a]"
+            className={`btn-ghost shadow-lg text-sm ${isLight
+                ? "bg-white border border-gray-200 hover:border-blue-300"
+                : "bg-[#1f1f1f] border border-[#262626] hover:border-[#6366f1]"
               }`}
+            style={{ animationDelay: '100ms' }}
             role="menuitem"
             aria-label="Visit LinkedIn profile - Opens in new window"
           >
@@ -87,11 +90,7 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
       {/* Main button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className={`w-14 h-14 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center hover:scale-110 active:scale-95 ${isExpanded ? "rotate-45" : ""
-          } ${isLight
-            ? "bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] text-white"
-            : "bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] text-white"
-          }`}
+        className={`btn-icon w-14 h-14 transition-transform duration-300 ${isExpanded ? "rotate-45" : ""}`}
         aria-label={isExpanded ? "Close menu" : "Open quick actions"}
         aria-expanded={isExpanded}
       >

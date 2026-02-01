@@ -32,7 +32,7 @@ export default function StrengthCard({
   return (
     <div
       className={`
-        p-4 rounded-lg border
+        p-4 rounded-xl border
         ${theme === "light"
           ? "bg-white border-gray-200 hover:border-green-300"
           : "bg-[#141414] border-[#262626] hover:border-green-500/30"

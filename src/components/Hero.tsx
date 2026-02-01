@@ -100,7 +100,7 @@ export default function Hero() {
             href="https://os-app-woad.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="group px-8 py-4 bg-[#6366f1] hover:bg-[#5558e3] rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
+            className="btn-primary btn-lg group"
             aria-label="View live demo of OS-App"
           >
             <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,10 +112,7 @@ export default function Hero() {
             href="https://github.com/Dicoangelo"
             target="_blank"
             rel="noopener noreferrer"
-            className={`group px-8 py-4 border-2 rounded-xl font-semibold transition-all hover:scale-105 flex items-center gap-2 ${isLight
-                ? 'bg-white hover:bg-gray-50 border-gray-300 text-gray-800 shadow-md'
-                : 'bg-[#141414] hover:bg-[#1f1f1f] border-[#262626] shadow-lg'
-              }`}
+            className="btn-secondary btn-lg group"
             aria-label="View GitHub profile with 20 repositories"
           >
             <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -125,10 +122,7 @@ export default function Hero() {
           </a>
           <a
             href="#resume"
-            className={`group px-8 py-4 border-2 rounded-xl font-semibold transition-all hover:scale-105 flex items-center gap-2 ${isLight
-                ? 'bg-white hover:bg-gray-50 border-gray-300 text-gray-800 shadow-md'
-                : 'bg-[#141414] hover:bg-[#1f1f1f] border-[#262626] shadow-lg'
-              }`}
+            className="btn-secondary btn-lg group"
             aria-label="Download resume"
           >
             <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -35,10 +35,8 @@ export default function BackToTop({ isLight }: BackToTopProps) {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 ${
-        isLight
-          ? "bg-white shadow-lg hover:shadow-xl border border-gray-200"
-          : "bg-[#1f1f1f] shadow-2xl hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] border border-[#2a2a2a]"
+      className={`fixed bottom-6 left-6 z-40 btn-icon w-12 h-12 ${
+        isLight ? "bg-white text-gray-700 border border-gray-200" : ""
       }`}
       aria-label="Back to top"
       style={{
