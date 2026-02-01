@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface KeyboardShortcutsHelpProps {
   isLight: boolean;
@@ -8,12 +8,15 @@ interface KeyboardShortcutsHelpProps {
 
 export default function KeyboardShortcutsHelp({ isLight }: KeyboardShortcutsHelpProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       // Show shortcuts with '?' key
       if (event.key === "?" && !isOpen) {
         event.preventDefault();
+        previousFocusRef.current = document.activeElement as HTMLElement;
         setIsOpen(true);
       }
       // Close with Escape
@@ -24,6 +27,17 @@ export default function KeyboardShortcutsHelp({ isLight }: KeyboardShortcutsHelp
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
+  // Focus management - trap focus in modal and restore when closed
+  useEffect(() => {
+    if (isOpen) {
+      // Focus close button when modal opens
+      closeButtonRef.current?.focus();
+    } else if (previousFocusRef.current) {
+      // Restore focus when modal closes
+      previousFocusRef.current.focus();
+    }
   }, [isOpen]);
 
   if (!isOpen) return null;
@@ -48,6 +62,9 @@ export default function KeyboardShortcutsHelp({ isLight }: KeyboardShortcutsHelp
 
       {/* Modal */}
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="shortcuts-title"
         className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md p-6 rounded-2xl shadow-2xl animate-scale-in ${
           isLight
             ? "bg-white border border-gray-200"
@@ -55,15 +72,16 @@ export default function KeyboardShortcutsHelp({ isLight }: KeyboardShortcutsHelp
         }`}
       >
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-xl font-bold">Keyboard Shortcuts</h3>
+          <h3 id="shortcuts-title" className="text-xl font-bold">Keyboard Shortcuts</h3>
           <button
+            ref={closeButtonRef}
             onClick={() => setIsOpen(false)}
             className={`p-2 rounded-lg transition-colors ${
               isLight
                 ? "hover:bg-gray-100 text-gray-600"
                 : "hover:bg-[#2a2a2a] text-[#a3a3a3]"
             }`}
-            aria-label="Close"
+            aria-label="Close keyboard shortcuts dialog"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path

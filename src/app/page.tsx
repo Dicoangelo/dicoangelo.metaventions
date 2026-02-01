@@ -16,6 +16,7 @@ import { useNavigationShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
 
 // Section components
+import TLDRBanner from "@/components/TLDRBanner";
 import { AskSection } from "@/components/sections/AskSection";
 import { ProofSection } from "@/components/sections/ProofSection";
 import { SystemsSection } from "@/components/sections/SystemsSection";
@@ -83,6 +84,9 @@ export default function Home() {
       {/* Hero */}
       <Hero />
 
+      {/* TLDR Banner - Quick summary for recruiters */}
+      <TLDRBanner />
+
       {/* Ask Me Anything */}
       <AskSection isLight={isLight} />
 
@@ -125,6 +129,9 @@ export default function Home() {
           {/* Intro */}
           <div className={`mb-8 p-4 rounded-lg border ${isLight ? 'bg-gray-50 border-gray-200' : 'bg-[#141414] border-[#262626]'
             }`}>
+            <h3 className={`text-sm font-semibold mb-2 ${isLight ? 'text-gray-900' : 'text-white'}`}>
+              How It Works
+            </h3>
             <p className={`text-sm leading-relaxed ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
               This analyzer searches my comprehensive career dossier (700+ indexed chunks covering skills,
               projects, metrics, and experience) and provides evidence-based matching.

@@ -118,14 +118,14 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
           {skillCategories.map((category, catIndex) => (
             <div
               key={category.category}
-              className={`p-6 rounded-xl border-2 ${
+              className={`p-6 rounded-xl border-2 transition-opacity duration-600 ${
                 isLight
                   ? 'bg-white border-gray-200 shadow-lg'
                   : 'bg-[#0f0f1f] border-[#6366f1]/20 shadow-2xl'
-              }`}
+              } ${isVisible ? 'opacity-100' : 'opacity-0'}`}
               style={{
-                animation: isVisible ? `fadeInUp 0.6s ease-out ${catIndex * 0.1}s forwards` : 'none',
-                opacity: isVisible ? 1 : 0,
+                animationDelay: isVisible ? `${catIndex * 0.1}s` : '0s',
+                animation: isVisible ? 'fadeInUp 0.6s ease-out forwards' : 'none',
               }}
             >
               <div className="flex items-center gap-3 mb-6">

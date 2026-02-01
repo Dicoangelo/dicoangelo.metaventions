@@ -43,6 +43,8 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
         <div
           className={`flex flex-col gap-2 mb-2 animate-in slide-in-from-bottom-2 fade-in duration-200 ${isLight ? "text-gray-700" : "text-white"
             }`}
+          role="menu"
+          aria-label="Quick actions menu"
         >
           <button
             onClick={scrollToResume}
@@ -50,6 +52,8 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
                 ? "bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50"
                 : "bg-[#1f1f1f] border border-[#262626] hover:border-[#6366f1] hover:bg-[#2a2a2a]"
               }`}
+            role="menuitem"
+            aria-label="Download resume - Opens resume section"
           >
             📄 Download Resume
           </button>
@@ -59,6 +63,8 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
                 ? "bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50"
                 : "bg-[#1f1f1f] border border-[#262626] hover:border-[#6366f1] hover:bg-[#2a2a2a]"
               }`}
+            role="menuitem"
+            aria-label="Schedule interview - Opens contact section"
           >
             📅 Schedule Interview
           </button>
@@ -70,6 +76,8 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
                 ? "bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50"
                 : "bg-[#1f1f1f] border border-[#262626] hover:border-[#6366f1] hover:bg-[#2a2a2a]"
               }`}
+            role="menuitem"
+            aria-label="Visit LinkedIn profile - Opens in new window"
           >
             💼 LinkedIn
           </a>
@@ -85,6 +93,7 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
             : "bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] text-white"
           }`}
         aria-label={isExpanded ? "Close menu" : "Open quick actions"}
+        aria-expanded={isExpanded}
       >
         {isExpanded ? (
           // Close icon
