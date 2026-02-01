@@ -53,9 +53,8 @@ export default function Footer({ isLight }: FooterProps) {
 
   return (
     <footer
-      className={`border-t ${
-        isLight ? "border-gray-200 bg-gray-50" : "border-[#262626] bg-[#0a0a0a]"
-      }`}
+      className={`border-t ${isLight ? "border-gray-200 bg-gray-50" : "border-[#262626] bg-[#0a0a0a]"
+        }`}
     >
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-6 py-12">
@@ -64,9 +63,8 @@ export default function Footer({ isLight }: FooterProps) {
           <div className="md:col-span-2">
             <h3 className="text-xl font-bold mb-3">Dico Angelo</h3>
             <p
-              className={`text-sm mb-4 max-w-md ${
-                isLight ? "text-gray-600" : "text-[#a3a3a3]"
-              }`}
+              className={`text-sm mb-4 max-w-md ${isLight ? "text-gray-600" : "text-[#a3a3a3]"
+                }`}
             >
               Operations Infrastructure Builder & AI Systems Engineer. Bridging
               enterprise GTM operations with hands-on agentic infrastructure
@@ -79,9 +77,8 @@ export default function Footer({ isLight }: FooterProps) {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`transition-colors hover:text-[#6366f1] ${
-                    isLight ? "text-gray-600" : "text-[#a3a3a3]"
-                  }`}
+                  className={`transition-colors hover:text-[#6366f1] ${isLight ? "text-gray-600" : "text-[#a3a3a3]"
+                    }`}
                   aria-label={link.label}
                 >
                   {link.icon}
@@ -93,9 +90,8 @@ export default function Footer({ isLight }: FooterProps) {
           {/* Quick Links */}
           <div>
             <h4
-              className={`text-sm font-semibold mb-3 ${
-                isLight ? "text-gray-900" : "text-white"
-              }`}
+              className={`text-sm font-semibold mb-3 ${isLight ? "text-gray-900" : "text-white"
+                }`}
             >
               Quick Links
             </h4>
@@ -104,9 +100,8 @@ export default function Footer({ isLight }: FooterProps) {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className={`text-sm transition-colors hover:text-[#6366f1] ${
-                      isLight ? "text-gray-600" : "text-[#a3a3a3]"
-                    }`}
+                    className={`text-sm transition-colors hover:text-[#6366f1] ${isLight ? "text-gray-600" : "text-[#a3a3a3]"
+                      }`}
                   >
                     {link.label}
                   </a>
@@ -118,20 +113,18 @@ export default function Footer({ isLight }: FooterProps) {
           {/* Quick Stats */}
           <div>
             <h4
-              className={`text-sm font-semibold mb-3 ${
-                isLight ? "text-gray-900" : "text-white"
-              }`}
+              className={`text-sm font-semibold mb-3 ${isLight ? "text-gray-900" : "text-white"
+                }`}
             >
               At a Glance
             </h4>
             <ul className="space-y-2">
               {stats.map((stat) => (
                 <li key={stat.label} className="text-sm">
-                  <span className="font-bold text-[#6366f1]">{stat.value}</span>
+                  <span className={`font-bold ${isLight ? "text-[#4f46e5]" : "text-[#6366f1]"}`}>{stat.value}</span>
                   <span
-                    className={`ml-2 ${
-                      isLight ? "text-gray-600" : "text-[#a3a3a3]"
-                    }`}
+                    className={`ml-2 ${isLight ? "text-gray-600" : "text-[#a3a3a3]"
+                      }`}
                   >
                     {stat.label}
                   </span>
@@ -143,18 +136,16 @@ export default function Footer({ isLight }: FooterProps) {
 
         {/* Bottom Bar */}
         <div
-          className={`pt-6 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-sm ${
-            isLight
+          className={`pt-6 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-sm ${isLight
               ? "border-gray-200 text-gray-500"
               : "border-[#262626] text-[#525252]"
-          }`}
+            }`}
         >
           <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
             <span>&copy; {currentYear} Dico Angelo. All rights reserved.</span>
             <span
-              className={`hidden md:inline ${
-                isLight ? "text-gray-300" : "text-[#404040]"
-              }`}
+              className={`hidden md:inline ${isLight ? "text-gray-300" : "text-[#404040]"
+                }`}
             >
               •
             </span>
@@ -163,11 +154,10 @@ export default function Footer({ isLight }: FooterProps) {
           <div className="flex items-center gap-2">
             <span className="text-xs">Built with AI orchestration</span>
             <span
-              className={`px-2 py-1 rounded text-xs ${
-                isLight
+              className={`px-2 py-1 rounded text-xs ${isLight
                   ? "bg-blue-100 text-blue-700"
                   : "bg-[#6366f1]/10 text-[#6366f1]"
-              }`}
+                }`}
             >
               0 lines manually written
             </span>
