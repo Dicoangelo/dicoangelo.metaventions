@@ -5,8 +5,13 @@ import dynamic from "next/dynamic";
 import { useTypingAnimation } from "@/hooks/useTypingAnimation";
 import { useTheme } from "@/components/ThemeProvider";
 
-// Lazy load 3D background
-const ThreeBackground = dynamic(() => import("./ThreeHeroBackground"), { ssr: false });
+// Lazy load 3D background with fallback gradient
+const ThreeBackground = dynamic(() => import("./ThreeHeroBackground"), {
+  ssr: false,
+  loading: () => (
+    <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a1a] via-[#0f0a1a] to-[#1a0a1a]" />
+  ),
+});
 
 const roles = [
   "Operations Infrastructure Builder",

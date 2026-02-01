@@ -23,6 +23,13 @@ export const ttsRateLimit = new Ratelimit({
   prefix: '@upstash/ratelimit:tts',
 });
 
+export const adminAuthRateLimit = new Ratelimit({
+  redis: kv,
+  limiter: Ratelimit.slidingWindow(3, '1 m'), // 3 attempts per minute (strict to prevent brute force)
+  analytics: true,
+  prefix: '@upstash/ratelimit:admin-auth',
+});
+
 /**
  * Helper function to get client identifier (IP or fallback to 'anonymous')
  */

@@ -115,10 +115,34 @@ export async function POST(request: Request) {
       },
     });
   } catch (error) {
-    console.error("Chat API error:", error);
-    return new Response(JSON.stringify({ error: "Failed to process request" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    // Log error for debugging (Sentry integration)
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+
+    if (process.env.NODE_ENV === "development") {
+      console.error("Chat API error:", error);
+    }
+
+    // Import Sentry at top of file if not already imported
+    try {
+      const Sentry = await import("@sentry/nextjs");
+      Sentry.captureException(error, {
+        tags: {
+          action: "process_message",
+        },
+      });
+    } catch {
+      // Sentry import failed, continue
+    }
+
+    // Return generic error message to client (don't expose stack traces)
+    return new Response(
+      JSON.stringify({
+        error: "Unable to process your message. Please try again or contact support if the issue persists.",
+      }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 }

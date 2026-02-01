@@ -16,15 +16,15 @@ interface SystemNode {
 }
 
 const SYSTEMS: SystemNode[] = [
-    { id: "cog", name: "Cognitive OS", description: "Energy-aware task routing", metric: "Circadian-adaptive", position: [0, 2, 0], connections: ["dq", "mac", "obs"] },
-    { id: "dq", name: "DQ Routing", description: "Decision Quality scoring", metric: "0.889 score", position: [-2, 0.5, 0], connections: ["rec", "ace"] },
-    { id: "rec", name: "Recovery Engine", description: "Self-healing & detection", metric: "70% auto-fix", position: [-2, -1.5, 0], connections: ["obs"] },
-    { id: "mem", name: "Supermemory", description: "Cross-session learning", metric: "700+ patterns", position: [2, 0.5, 0], connections: ["lh", "ctx"] },
-    { id: "mac", name: "Multi-Agent", description: "Parallel orchestration", metric: "3+ concurrent", position: [0, 0, 0], connections: ["dq", "mem", "ace"] },
-    { id: "ace", name: "ACE Consensus", description: "Adaptive Consensus", metric: "50% faster", position: [0, -2, 0], connections: ["mac"] },
-    { id: "obs", name: "Observatory", description: "Unified analytics", metric: "Real-time", position: [-3, 1.5, 1], connections: [] },
-    { id: "ctx", name: "Context Packs", description: "Semantic selection", metric: "Smart prefetch", position: [3, 1.5, 1], connections: ["mac"] },
-    { id: "lh", name: "Learning Hub", description: "Cross-domain correlation", metric: "Weekly sync", position: [2, -1.5, 0], connections: [] },
+    { id: "cog", name: "Cognitive OS", description: "Intelligent task scheduling based on performance patterns", metric: "Optimizes timing", position: [0, 2, 0], connections: ["dq", "mac", "obs"] },
+    { id: "dq", name: "Quality Engine", description: "Automated quality control & decision validation", metric: "89% accuracy", position: [-2, 0.5, 0], connections: ["rec", "ace"] },
+    { id: "rec", name: "Recovery System", description: "Self-healing architecture prevents downtime", metric: "70% auto-fix", position: [-2, -1.5, 0], connections: ["obs"] },
+    { id: "mem", name: "Memory Layer", description: "Pattern recognition across all operations", metric: "700+ scenarios", position: [2, 0.5, 0], connections: ["lh", "ctx"] },
+    { id: "mac", name: "Multi-Agent", description: "Parallel processing for 3x faster delivery", metric: "Concurrent ops", position: [0, 0, 0], connections: ["dq", "mem", "ace"] },
+    { id: "ace", name: "Consensus Engine", description: "Collaborative decision-making framework", metric: "50% faster", position: [0, -2, 0], connections: ["mac"] },
+    { id: "obs", name: "Analytics Hub", description: "Real-time performance monitoring & insights", metric: "Live dashboards", position: [-3, 1.5, 1], connections: [] },
+    { id: "ctx", name: "Smart Context", description: "Intelligent resource allocation & caching", metric: "85% efficiency", position: [3, 1.5, 1], connections: ["mac"] },
+    { id: "lh", name: "Learning Core", description: "Continuous improvement & adaptation", metric: "Always learning", position: [2, -1.5, 0], connections: [] },
 ];
 
 function Node({ data, hoveredNode, setHoveredNode }: { data: SystemNode; hoveredNode: string | null; setHoveredNode: (id: string | null) => void }) {
@@ -134,8 +134,8 @@ export default function ThreeSystemsNetwork() {
     const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
     return (
-        <div className="w-full h-[600px] relative rounded-2xl overflow-hidden touch-none cursor-move">
-            <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
+        <div className="w-full h-[600px] relative rounded-2xl overflow-hidden touch-none cursor-move max-w-full">
+            <Canvas camera={{ position: [0, 0, 6], fov: 50 }} style={{ width: '100%', height: '100%' }}>
                 <ambientLight intensity={0.5} />
                 <pointLight position={[10, 10, 10]} intensity={1} />
                 <group rotation={[0, 0, 0]}>

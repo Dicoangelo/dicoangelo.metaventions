@@ -19,10 +19,10 @@ import { useCountAnimation } from "@/hooks/useCountAnimation";
 import TLDRBanner from "@/components/TLDRBanner";
 import { AskSection } from "@/components/sections/AskSection";
 import { ProofSection } from "@/components/sections/ProofSection";
-import { SystemsSection } from "@/components/sections/SystemsSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ArenaSection } from "@/components/sections/ArenaSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import Link from "next/link";
 
 // Loading skeletons
 import { ChatSkeleton, JDAnalyzerSkeleton } from "@/components/LoadingSkeletons";
@@ -49,10 +49,6 @@ const ResumeDownload = dynamic(() => import("@/components/ResumeDownload"), {
 });
 
 const SkillsVisualization = dynamic(() => import("@/components/SkillsVisualization"), {
-  ssr: true,
-});
-
-const InteractiveCodeDemo = dynamic(() => import("@/components/InteractiveCodeDemo"), {
   ssr: true,
 });
 
@@ -101,8 +97,6 @@ export default function Home() {
       {/* Resume Download Section */}
       <ResumeDownload isLight={isLight} />
 
-      <SystemsSection isLight={isLight} />
-
       <ProjectsSection isLight={isLight} />
 
       {/* Interactive Career Timeline */}
@@ -113,8 +107,38 @@ export default function Home() {
       {/* Skills Visualization */}
       <SkillsVisualization isLight={isLight} />
 
-      {/* Interactive Code Examples */}
-      <InteractiveCodeDemo isLight={isLight} />
+      {/* See More Banner - Links to Technical Deep Dive */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className={`p-8 rounded-2xl border text-center ${
+            isLight
+              ? 'bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 border-indigo-200'
+              : 'bg-gradient-to-br from-indigo-950/30 via-purple-950/30 to-pink-950/30 border-indigo-500/30'
+          }`}>
+            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border mb-4 ${
+              isLight ? 'bg-white border-indigo-200 text-indigo-600' : 'bg-black/30 border-indigo-500/30 text-indigo-400'
+            }`}>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+              <span className="text-xs font-semibold uppercase tracking-wider">Deep Dive</span>
+            </div>
+            <h3 className="text-2xl font-bold mb-3">Want to See the Technical Infrastructure?</h3>
+            <p className={`mb-6 max-w-xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
+              Explore the 9-system self-improving AI architecture, interactive code examples, and 3D neural network visualizations.
+            </p>
+            <Link
+              href="/see-more"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-semibold transition-all hover:scale-105 shadow-lg"
+            >
+              <span>See More</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* JD Fit Analyzer */}
       <section id="analyze" className="py-20 px-6">

@@ -37,6 +37,14 @@ const testimonials: Testimonial[] = [
     company: "1159.ai Innovation Workshop",
     source: "Rapid Prototyping & Iterative Design",
     sourceUrl: "https://blog.1159.ai/the-art-and-science-of-innovation"
+  },
+  {
+    quote: "While most companies think about marketplace ops last, Contentsquare invested in marketplace operations from early on in the journey. Their operations lead, Dico Angelo, transformed processes that took days into minutes.",
+    author: "Partner Insight Newsletter",
+    role: "Feature Article",
+    company: "0 to $30M in 30 Months Case Study",
+    source: "Operations Before Everything",
+    sourceUrl: "https://newsletter.partnerinsight.io/p/0-to-30m-in-30-months-how-a-marketing"
   }
 ];
 

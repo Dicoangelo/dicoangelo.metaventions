@@ -244,14 +244,20 @@ export default function Chat() {
             onSubmit={handleSubmit}
             className={`p-3 border-t transition-colors duration-300 ${isLight ? 'border-gray-200 bg-gray-50/50' : 'border-[#262626] bg-[#0d0d0d]'}`}
           >
+            <label htmlFor="chat-input" className="sr-only">
+              Ask a question about my background and experience
+            </label>
             <div className="flex gap-2">
               <input
+                id="chat-input"
                 ref={inputRef}
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onFocus={handleInputFocus}
                 placeholder="Type your question..."
+                aria-label="Ask a question"
+                aria-describedby="chat-help"
                 className={`flex-1 px-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366f1]/50 text-sm transition-all duration-200 ${
                   isLight
                     ? 'bg-white border border-gray-200 text-gray-800 placeholder-gray-400'
@@ -262,7 +268,7 @@ export default function Chat() {
               <button
                 type="submit"
                 disabled={isTextLoading || !input.trim()}
-                className="px-5 py-2.5 bg-[#6366f1] hover:bg-[#5558e3] disabled:opacity-50 disabled:cursor-not-allowed rounded-xl font-medium transition-all duration-200 text-white text-sm hover:scale-[1.02] active:scale-[0.98] disabled:hover:scale-100"
+                className="px-6 py-3 min-h-[44px] min-w-[44px] bg-[#6366f1] hover:bg-[#5558e3] disabled:opacity-50 disabled:cursor-not-allowed rounded-xl font-medium transition-all duration-200 text-white text-sm hover:scale-[1.02] active:scale-[0.98] disabled:hover:scale-100"
               >
                 Send
               </button>

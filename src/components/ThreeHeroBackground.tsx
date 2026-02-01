@@ -70,15 +70,15 @@ export default function ThreeHeroBackground() {
     const isLight = theme === "light";
 
     return (
-        <div className="absolute inset-0 -z-0 opacity-40 mix-blend-screen pointer-events-none">
+        <div className={`absolute inset-0 -z-0 pointer-events-none ${isLight ? 'opacity-30 mix-blend-multiply' : 'opacity-40 mix-blend-screen'}`}>
             <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
                 {/* Lighting doesn't affect Basic Points material much but good to have */}
                 <ambientLight intensity={0.5} />
                 <ParticleField />
             </Canvas>
             {/* Gradient Overlay to fade edges */}
-            <div className={`absolute inset-0 bg-gradient-to-t ${isLight ? 'from-white via-transparent to-white' : 'from-[#0a0a0a] via-transparent to-[#0a0a0a]'}`} />
-            <div className={`absolute inset-0 bg-gradient-to-r ${isLight ? 'from-white via-transparent to-white' : 'from-[#0a0a0a] via-transparent to-[#0a0a0a]'}`} />
+            <div className={`absolute inset-0 bg-gradient-to-t ${isLight ? 'from-white/80 via-transparent to-white/80' : 'from-[#0a0a0a] via-transparent to-[#0a0a0a]'}`} />
+            <div className={`absolute inset-0 bg-gradient-to-r ${isLight ? 'from-white/60 via-transparent to-white/60' : 'from-[#0a0a0a] via-transparent to-[#0a0a0a]'}`} />
         </div>
     );
 }
