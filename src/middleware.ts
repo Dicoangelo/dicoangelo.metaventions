@@ -7,15 +7,17 @@ export function middleware(request: NextRequest) {
   // Define Content Security Policy
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-inline' https: http: ${process.env.NODE_ENV === 'production' ? '' : "'unsafe-eval'"};
-    style-src 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https: http:;
+    style-src 'self' 'unsafe-inline' https:;
     img-src 'self' blob: data: https:;
-    font-src 'self' data:;
+    font-src 'self' data: https:;
     object-src 'none';
     base-uri 'self';
     form-action 'self';
+    frame-src 'self' https://calendly.com https://*.calendly.com;
     frame-ancestors 'none';
-    connect-src 'self' https://api.anthropic.com https://api.cohere.ai https://api.deepgram.com https://*.supabase.co wss://api.deepgram.com https://api.elevenlabs.io;
+    connect-src 'self' https: wss:;
+    worker-src 'self' blob:;
     upgrade-insecure-requests;
   `.replace(/\s{2,}/g, ' ').trim();
 
