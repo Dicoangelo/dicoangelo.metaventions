@@ -384,6 +384,53 @@ export async function publishArtifact(id: string): Promise<Artifact> {
 }
 
 /**
+ * Force re-chunk and re-embed an artifact
+ * Useful when chunks are missing or embeddings need regeneration
+ */
+export async function rechunkArtifact(id: string): Promise<number> {
+  const supabaseClient = getSupabase();
+
+  if (!supabaseClient) {
+    throw new Error("Supabase client unavailable");
+  }
+
+  console.log(`[Artifacts] Force re-chunking artifact ${id}`);
+
+  // Get artifact content
+  const { data: artifact, error: fetchError } = await supabaseClient
+    .from("artifacts")
+    .select("content")
+    .eq("id", id)
+    .single();
+
+  if (fetchError || !artifact) {
+    throw new Error(`Artifact not found: ${id}`);
+  }
+
+  // Delete existing chunks
+  await deleteChunks(id);
+
+  // Generate new chunks
+  const chunks = chunkMarkdown(artifact.content, {
+    maxTokens: 350,
+    minTokens: 50,
+    preserveHeading: true,
+    extractMetadata: true,
+  });
+
+  console.log(`[Artifacts] Generated ${chunks.length} chunks`);
+
+  // Insert chunks with embeddings
+  if (chunks.length > 0) {
+    await insertChunks(id, chunks);
+  }
+
+  console.log(`[Artifacts] Successfully re-chunked artifact ${id}`);
+
+  return chunks.length;
+}
+
+/**
  * Delete an artifact (cascades to chunks)
  */
 export async function deleteArtifact(id: string): Promise<void> {
