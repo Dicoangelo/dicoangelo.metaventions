@@ -11,11 +11,20 @@ export function ContactSection({ isLight }: ContactSectionProps) {
   return (
     <AnimatedSection id="contact" className="py-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4">Let&apos;s Build</h2>
-        <p className={`mb-8 ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-          Looking for roles at the intersection of AI systems and enterprise operations.
-          TN Visa eligible. Open to SF, NYC, Austin, Boston, Toronto.
-        </p>
+        <h2 className="text-3xl font-bold mb-4">Deployment Ready</h2>
+        <div className={`mb-8 max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
+          <p className="mb-4 text-lg">
+            I am currently open to new opportunities at the intersection of <strong>AI Systems Engineering</strong> and <strong>Enterprise Operations</strong>.
+          </p>
+          <div className="flex flex-wrap justify-center gap-2 text-sm">
+            <span className={`px-3 py-1 rounded-full border font-medium ${isLight ? 'bg-green-100 text-green-700 border-green-200' : 'bg-green-500/10 text-green-400 border-green-500/20'}`}>
+              ✅ TN Visa Eligible
+            </span>
+            <span className={`px-3 py-1 rounded-full border font-medium ${isLight ? 'bg-blue-100 text-blue-700 border-blue-200' : 'bg-blue-500/10 text-blue-400 border-blue-500/20'}`}>
+              📍 Open to Relocation (SF, NYC, Austin)
+            </span>
+          </div>
+        </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <a
@@ -26,11 +35,10 @@ export function ContactSection({ isLight }: ContactSectionProps) {
           </a>
           <a
             href="tel:+15199996099"
-            className={`px-6 py-3 border rounded-lg font-medium transition-colors ${
-              isLight
+            className={`px-6 py-3 border rounded-lg font-medium transition-colors ${isLight
                 ? 'bg-gray-100 hover:bg-gray-200 border-gray-200 text-gray-800'
                 : 'bg-[#141414] hover:bg-[#1f1f1f] border-[#262626]'
-            }`}
+              }`}
           >
             519-999-6099
           </a>
