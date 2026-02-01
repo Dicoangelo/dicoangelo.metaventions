@@ -1,0 +1,145 @@
+{
+  "prd": {
+    "id": "phase-6-ui-ux",
+    "title": "Phase 6: Advanced UI/UX Enhancements",
+    "version": "1.0.0",
+    "created": "2026-02-01",
+    "status": "draft",
+    "description": "Advanced UI/UX improvements including animations, accessibility enhancements, and user feedback components for dicoangelo.com"
+  },
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Page Transition Animations",
+      "description": "As a user, I want smooth fade transitions when navigating between pages so that the browsing experience feels polished and professional.",
+      "acceptanceCriteria": [
+        "Page content fades out when navigating away from current route",
+        "New page content fades in after route change completes",
+        "Transition duration is 200-300ms for optimal feel",
+        "No layout shift occurs during transitions"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Scroll-Triggered Reveal Animations",
+      "description": "As a user, I want content sections to animate into view as I scroll so that the page feels dynamic and engaging.",
+      "acceptanceCriteria": [
+        "Sections fade in and slide up when entering viewport",
+        "Animation triggers at 20% visibility threshold",
+        "Each section animates independently with staggered timing",
+        "Animations only play once per page load"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Hero Section Parallax Effects",
+      "description": "As a user, I want the hero section to have subtle parallax depth effects so that it creates visual interest and modern appeal.",
+      "acceptanceCriteria": [
+        "Background elements move at different speeds during scroll",
+        "Parallax effect is subtle (10-20% speed differential)",
+        "Effect is smooth and performant (60fps target)",
+        "Parallax disabled on touch devices for better UX"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Toast Notification Component",
+      "description": "As a user, I want to receive toast notifications for form submissions and other actions so that I have clear feedback on my interactions.",
+      "acceptanceCriteria": [
+        "Toast appears in bottom-right corner with slide animation",
+        "Supports success, error, warning, and info variants",
+        "Auto-dismisses after 5 seconds with progress indicator",
+        "Includes close button for manual dismissal"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Metric Count-Up Animations",
+      "description": "As a user, I want numerical metrics to animate from zero to their final value when they come into view so that statistics feel impactful.",
+      "acceptanceCriteria": [
+        "Numbers animate from 0 to target value over 2 seconds",
+        "Animation uses easing function for natural feel",
+        "Animation triggers when element is 50% visible",
+        "Supports integers, decimals, and percentage formats"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": ["US-002"],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Loading Spinner Component Variants",
+      "description": "As a user, I want consistent loading indicators throughout the site so that I know when content is being fetched or processed.",
+      "acceptanceCriteria": [
+        "Spinner component supports small, medium, and large sizes",
+        "Includes pulse, spin, and dots animation variants",
+        "Colors match site theme (primary, secondary, white)",
+        "Includes optional loading text with aria-live announcement"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Keyboard Navigation Focus Trap",
+      "description": "As a user who navigates with keyboard, I want focus to be trapped within modals and dialogs so that I can navigate these components without getting lost.",
+      "acceptanceCriteria": [
+        "Tab key cycles through focusable elements within modal",
+        "Shift+Tab cycles backwards through focusable elements",
+        "Escape key closes the modal and returns focus to trigger",
+        "Focus moves to first focusable element when modal opens"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Reduced Motion Mode Toggle",
+      "description": "As a user with motion sensitivity, I want a toggle to disable all animations so that I can browse comfortably without triggering vestibular issues.",
+      "acceptanceCriteria": [
+        "Toggle appears in site settings or footer",
+        "Respects prefers-reduced-motion system preference by default",
+        "Disables all CSS and JavaScript animations when enabled",
+        "Preference persists in localStorage across sessions"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": ["US-001", "US-002", "US-003", "US-005"],
+      "completionNotes": ""
+    }
+  ],
+  "metadata": {
+    "totalStories": 8,
+    "priorities": {
+      "critical": 3,
+      "high": 3,
+      "medium": 2
+    },
+    "estimatedEffort": "2-3 sprints",
+    "dependencies": {
+      "external": [],
+      "internal": ["React/Next.js routing", "Existing component library"]
+    }
+  }
+}

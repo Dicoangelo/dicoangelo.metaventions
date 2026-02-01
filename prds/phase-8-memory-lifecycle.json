@@ -1,0 +1,155 @@
+{
+  "name": "Phase 8: Adaptive Memory Lifecycle",
+  "branchName": "feature/phase-8-adaptive-memory-lifecycle",
+  "version": "1.0.0",
+  "generatedAt": "2026-02-01T08:00:00Z",
+  "summary": "Three-dimensional memory taxonomy with lifecycle phases and intelligent forgetting. Extends Supermemory with factual, experiential, and working memory types, decay functions, relevance-based retention, and memory health monitoring.",
+  "researchBasis": "Three-dimensional memory taxonomy (factual, experiential, working) with lifecycle phases (Formation, Evolution, Retrieval). Forgetting as feature engineering with decay functions and relevance-based retention.",
+  "extendsSystem": "Supermemory (~/.claude/memory/supermemory.db)",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Define memory type enums",
+      "description": "As a user, I want memories categorized by type (factual, experiential, working) so that the system can apply appropriate retention strategies to different kinds of knowledge.",
+      "acceptanceCriteria": [
+        "MemoryType enum defined with FACTUAL, EXPERIENTIAL, WORKING values",
+        "Each memory record in Supermemory has a type field",
+        "Migration adds type column to existing memories table with default value",
+        "Type detection heuristics classify new memories automatically"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Add memory decay functions with configurable half-lives",
+      "description": "As a user, I want memories to decay over time with configurable half-lives so that outdated information naturally fades while important memories persist.",
+      "acceptanceCriteria": [
+        "Decay function implemented with exponential decay curve",
+        "Configurable half-life per memory type (factual: 90 days, experiential: 30 days, working: 7 days)",
+        "Decay score stored and updated on each memory access",
+        "Half-life configuration exposed via settings"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [
+        "US-001"
+      ],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Implement relevance scoring for memory retention",
+      "description": "As a user, I want memories scored by relevance so that frequently accessed and contextually important memories are retained while less relevant ones decay faster.",
+      "acceptanceCriteria": [
+        "Relevance score calculated from access frequency, recency, and context match",
+        "Score range 0.0-1.0 with configurable thresholds",
+        "Relevance boost applied when memory is accessed or referenced",
+        "Low-relevance memories flagged for potential pruning"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [
+        "US-002"
+      ],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Create memory consolidation pipeline",
+      "description": "As a user, I want a consolidation pipeline that processes memories through Formation, Evolution, and Retrieval phases so that memories mature and strengthen over time.",
+      "acceptanceCriteria": [
+        "MemoryPhase enum with FORMATION, EVOLUTION, RETRIEVAL states",
+        "Formation phase: new memories created with initial decay and relevance",
+        "Evolution phase: memories strengthened by repeated access, consolidated with related memories",
+        "Retrieval phase: mature memories optimized for fast recall"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-003"
+      ],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Add forgetting mechanism with time-based pruning",
+      "description": "As a user, I want an intelligent forgetting mechanism that prunes low-value memories so that the memory system stays lean and relevant without manual cleanup.",
+      "acceptanceCriteria": [
+        "Scheduled pruning job runs daily/weekly",
+        "Prune threshold configurable (default: decay < 0.1 AND relevance < 0.2)",
+        "Pruned memories archived before deletion (soft delete with 30-day recovery)",
+        "Pruning summary logged with count and categories removed"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-003"
+      ],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Implement memory replay for high-value items",
+      "description": "As a user, I want high-value memories to be replayed periodically so that important knowledge is reinforced and doesn't decay unnecessarily.",
+      "acceptanceCriteria": [
+        "Replay mechanism triggers for memories with high relevance but declining decay",
+        "Spaced repetition algorithm determines replay intervals",
+        "Replay events boost decay score back toward 1.0",
+        "Integration with existing sm review command"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-004"
+      ],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Create memory lifecycle dashboard",
+      "description": "As a user, I want a dashboard showing memory lifecycle statistics so that I can understand how my knowledge base is evolving and make informed decisions about retention policies.",
+      "acceptanceCriteria": [
+        "Dashboard shows memory count by type and phase",
+        "Visualization of decay distribution across memories",
+        "List of memories approaching prune threshold",
+        "CLI command: sm lifecycle or sm-dash"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-005"
+      ],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Add memory health metrics and alerts",
+      "description": "As a user, I want health metrics and alerts for my memory system so that I'm notified of issues like excessive pruning, memory bloat, or consolidation failures.",
+      "acceptanceCriteria": [
+        "Health metrics: total memories, average decay, prune rate, consolidation success rate",
+        "Alert thresholds configurable in settings",
+        "Alerts for: >10% pruned in single run, <50 total memories, consolidation failures",
+        "Health check command: sm health with pass/warn/fail status"
+      ],
+      "priority": 4,
+      "passes": false,
+      "dependsOn": [
+        "US-007"
+      ],
+      "completionNotes": ""
+    }
+  ],
+  "metadata": {
+    "updatedAt": "2026-02-01T08:00:00Z",
+    "totalStories": 8,
+    "priorityBreakdown": {
+      "P1": 3,
+      "P2": 2,
+      "P3": 2,
+      "P4": 1
+    }
+  }
+}

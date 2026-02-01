@@ -1,0 +1,142 @@
+{
+  "name": "Phase 7: Metacognitive State Vector Integration",
+  "branchName": "feature/phase-7-metacognitive-state-vector",
+  "description": "Implements Metacognitive State Vector architecture that converts LLM qualitative self-assessments into quantitative signals. When confidence drops below threshold, the system shifts from System 1 (fast) to System 2 (slow) reasoning, enabling dynamic model escalation.",
+  "researchBasis": "Metacognitive State Vector architecture converts LLM qualitative self-assessments into quantitative signals. When confidence drops below threshold -> shift from System 1 (fast) to System 2 (slow) reasoning.",
+  "buildsOn": ["DQ Scoring System", "Autonomous Routing System", "Expertise-Aware Routing"],
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Add confidence tracking to DQ score calculations",
+      "description": "As a user, I want the routing system to track confidence levels alongside DQ scores so that the system can detect when it is uncertain about its responses and take appropriate action.",
+      "acceptanceCriteria": [
+        "DQ score calculation includes a confidence dimension (0.0-1.0)",
+        "Confidence is derived from response certainty signals (hedging language, qualifiers)",
+        "Confidence is logged alongside DQ scores in dq-scores.jsonl",
+        "Existing DQ scoring backwards compatible with new confidence field"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Create metacognitive state type definitions",
+      "description": "As a developer, I want well-defined TypeScript types for metacognitive state so that the system has a consistent interface for tracking cognitive states across components.",
+      "acceptanceCriteria": [
+        "MetacognitiveState interface defines confidence, mode, timestamp, and trigger fields",
+        "System1Mode and System2Mode enums define reasoning modes",
+        "ConfidenceLevel type with granular levels (high, medium, low, very_low)",
+        "Types exported from a shared types module for reuse"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Implement confidence threshold detection",
+      "description": "As a user, I want the system to automatically detect when confidence drops below a configurable threshold so that it can trigger appropriate responses like model escalation.",
+      "acceptanceCriteria": [
+        "Configurable confidence threshold (default: 0.6)",
+        "Real-time confidence monitoring during response generation",
+        "Threshold breach triggers callback/event for downstream handling",
+        "Threshold can be adjusted via config file or environment variable"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": ["US-001", "US-002"],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Add model escalation logic (low confidence -> Opus)",
+      "description": "As a user, I want the system to automatically escalate to a more capable model (Opus) when confidence is low so that complex or uncertain queries get the reasoning power they need.",
+      "acceptanceCriteria": [
+        "Low confidence (< 0.6) on Haiku triggers escalation to Sonnet",
+        "Low confidence (< 0.5) on Sonnet triggers escalation to Opus",
+        "Escalation is logged with reason and original confidence score",
+        "User can disable auto-escalation via configuration"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": ["US-003"],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Create metacognitive dashboard component",
+      "description": "As a user, I want a dashboard view of metacognitive state so that I can monitor confidence levels, mode switches, and escalation events over time.",
+      "acceptanceCriteria": [
+        "Dashboard shows current confidence level with visual indicator",
+        "Historical confidence trend chart (last 24 hours)",
+        "List of recent escalation events with timestamps and reasons",
+        "System 1/System 2 mode distribution pie chart"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": ["US-002", "US-003"],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Add confidence history tracking to session state",
+      "description": "As a user, I want confidence history persisted in session state so that I can analyze patterns and the system can learn from historical confidence data.",
+      "acceptanceCriteria": [
+        "Confidence readings stored in session-state.json with timestamps",
+        "Rolling window of last 100 confidence readings maintained",
+        "Historical data includes query context, model used, and outcome",
+        "Export functionality for confidence history analysis"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": ["US-001", "US-002"],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Implement System 1/System 2 mode indicator",
+      "description": "As a user, I want to see which reasoning mode the system is using so that I understand whether it is operating in fast (System 1) or slow (System 2) mode.",
+      "acceptanceCriteria": [
+        "CLI output shows current mode indicator [S1] or [S2]",
+        "Mode displayed alongside existing [DQ:X.XX C:X.XX] routing output",
+        "Mode transitions logged with timestamp and trigger reason",
+        "API endpoint returns current mode state"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": ["US-002", "US-004"],
+      "completionNotes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Add metacognitive alerts when mode switches",
+      "description": "As a user, I want to be notified when the system switches between reasoning modes so that I am aware of significant cognitive state changes.",
+      "acceptanceCriteria": [
+        "Alert triggered on System 1 -> System 2 transition",
+        "Alert includes reason for switch (low confidence, complex query, etc.)",
+        "Alerts can be configured: silent, console, or notification",
+        "Alert history accessible via dashboard or CLI command"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": ["US-003", "US-007"],
+      "completionNotes": ""
+    }
+  ],
+  "metadata": {
+    "createdAt": "2026-02-01T07:50:00.000Z",
+    "updatedAt": "2026-02-01T07:50:00.000Z",
+    "phase": 7,
+    "totalStories": 8,
+    "completedStories": 0,
+    "estimatedEffort": "Medium",
+    "dependencies": [
+      "DQ Scoring System (existing)",
+      "Autonomous Routing System (existing)",
+      "Session State Management (existing)"
+    ]
+  }
+}
