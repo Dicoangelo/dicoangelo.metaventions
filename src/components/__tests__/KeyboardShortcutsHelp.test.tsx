@@ -45,7 +45,7 @@ describe('KeyboardShortcutsHelp', () => {
     fireEvent.keyDown(window, { key: '?' });
 
     // Click close button
-    const closeButton = screen.getByLabelText('Close');
+    const closeButton = screen.getByLabelText('Close keyboard shortcuts dialog');
     fireEvent.click(closeButton);
 
     // Modal should be closed
@@ -113,7 +113,7 @@ describe('KeyboardShortcutsHelp', () => {
     fireEvent.keyDown(window, { key: '?' });
 
     // Check close button has aria-label
-    const closeButton = screen.getByLabelText('Close');
+    const closeButton = screen.getByLabelText('Close keyboard shortcuts dialog');
     expect(closeButton).toBeInTheDocument();
     expect(closeButton.tagName).toBe('BUTTON');
 

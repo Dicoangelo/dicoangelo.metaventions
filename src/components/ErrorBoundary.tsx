@@ -37,6 +37,7 @@ export class ErrorBoundary extends Component<Props, State> {
           <div className="max-w-md text-center">
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 flex items-center justify-center">
               <svg
+                aria-hidden="true"
                 className="w-8 h-8 text-red-600"
                 fill="none"
                 stroke="currentColor"
@@ -82,6 +83,7 @@ export function ErrorFallback({
       <div className="max-w-md text-center">
         <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-red-100 flex items-center justify-center">
           <svg
+            aria-hidden="true"
             className="w-6 h-6 text-red-600"
             fill="none"
             stroke="currentColor"

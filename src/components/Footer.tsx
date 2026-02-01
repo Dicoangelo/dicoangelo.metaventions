@@ -61,7 +61,7 @@ export default function Footer({ isLight }: FooterProps) {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand Column */}
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-3">Dico Angelo</h3>
+            <p className="text-xl font-bold mb-3">Dico Angelo</p>
             <p
               className={`text-sm mb-4 max-w-md ${isLight ? "text-gray-600" : "text-[#a3a3a3]"
                 }`}
@@ -89,12 +89,12 @@ export default function Footer({ isLight }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h4
+            <h3
               className={`text-sm font-semibold mb-3 ${isLight ? "text-gray-900" : "text-white"
                 }`}
             >
               Quick Links
-            </h4>
+            </h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -112,12 +112,12 @@ export default function Footer({ isLight }: FooterProps) {
 
           {/* Quick Stats */}
           <div>
-            <h4
+            <h3
               className={`text-sm font-semibold mb-3 ${isLight ? "text-gray-900" : "text-white"
                 }`}
             >
               At a Glance
-            </h4>
+            </h3>
             <ul className="space-y-2">
               {stats.map((stat) => (
                 <li key={stat.label} className="text-sm">

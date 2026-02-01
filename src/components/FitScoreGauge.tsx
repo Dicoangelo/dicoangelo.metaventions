@@ -83,7 +83,7 @@ export default function FitScoreGauge({
     <div className="flex flex-col items-center gap-4">
       {/* Circular gauge */}
       <div className="relative">
-        <svg width="180" height="180" className="transform -rotate-90">
+        <svg aria-hidden="true" width="180" height="180" className="transform -rotate-90">
           {/* Background circle */}
           <circle
             cx="90"

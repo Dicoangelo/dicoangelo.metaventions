@@ -64,7 +64,7 @@ export default function Home() {
   useNavigationShortcuts();
 
   return (
-    <main id="main-content" className="min-h-screen">
+    <main id="main-content" role="main" className="min-h-screen">
       {/* Skip to content link for keyboard navigation */}
       <SkipToContent />
 

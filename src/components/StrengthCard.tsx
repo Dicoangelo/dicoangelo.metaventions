@@ -44,6 +44,7 @@ export default function StrengthCard({
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
             <svg
+              aria-hidden="true"
               className="w-5 h-5 text-green-500 flex-shrink-0"
               fill="none"
               stroke="currentColor"

@@ -30,6 +30,7 @@ export function AIErrorBoundary({ children, feature }: AIErrorBoundaryProps) {
       <div className="max-w-md w-full bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6">
         <div className="flex items-center mb-4">
           <svg
+            aria-hidden="true"
             className="w-6 h-6 text-yellow-600 dark:text-yellow-400 mr-3"
             fill="none"
             stroke="currentColor"

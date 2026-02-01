@@ -195,6 +195,7 @@ export default function FilmStripGallery({ isLight }: FilmStripGalleryProps) {
               aria-label="Scroll left"
             >
               <svg
+                aria-hidden="true"
                 className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
@@ -221,6 +222,7 @@ export default function FilmStripGallery({ isLight }: FilmStripGalleryProps) {
               aria-label="Scroll right"
             >
               <svg
+                aria-hidden="true"
                 className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
