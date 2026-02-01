@@ -172,11 +172,7 @@ This explains the emphasis on:
 
 ### The Aesthetic
 
-**Black and purple** — not random colors, but a deliberate aesthetic:
-- Black: Stealth, depth, substance over flash
-- Purple (Amethyst): Wisdom, creativity, the gem that emerges from pressure
-
-The "Black Amethyst" brand represents: *Pressure creates gems. Difficulty creates capability. The best things emerge from constraints.*
+A deliberate visual identity that reflects inner values — colors chosen not for trend but for meaning. The aesthetic embodies a core belief: *Pressure creates gems. Difficulty creates capability. The best things emerge from constraints.*
 
 ---
 
@@ -256,15 +252,12 @@ A synthesis of all ambitions points to one coherent identity: becoming a **Renai
 - **Individual & Community**: Personal excellence that lifts others
 - **Present & Legacy**: Building today what matters in 50 years
 
-**The Symbols That Guide:**
-
-| Symbol | Meaning | Application |
-|--------|---------|-------------|
-| **Black Panther** | Courage, leadership, stealth power | Move with purpose, lead by example |
-| **444** | Alignment, foundation, protection | Trust the process, build systematically |
-| **Rose** | Growth through adversity, beauty from struggle | Pressure creates gems |
-| **Pyramid** | Strong foundation, ascending toward purpose | Base of skills supporting peak of vision |
-| **Amethyst** | Wisdom, clarity, transformation | Crystallize chaos into clarity |
+**Guiding Principles:**
+- Move with purpose, lead by example
+- Trust the process, build systematically
+- Find growth through adversity
+- Build strong foundations that support greater purpose
+- Transform chaos into clarity
 
 **Global Mindset:**
 - Connections spanning continents (Taiwan, Singapore, North America)
@@ -310,7 +303,7 @@ I'm not looking for a job. I'm looking for a mission worth dedicating years to.
 
 Beyond the immediate career, there's a larger vision being built:
 
-**The Black Amethyst Empire:**
+**Building Something Lasting:**
 - Technology ventures that compound (AI, automation, enterprise systems)
 - Investments that multiply (strategic positioning in emerging markets)
 - A legacy that endures (systems, frameworks, and people developed)
