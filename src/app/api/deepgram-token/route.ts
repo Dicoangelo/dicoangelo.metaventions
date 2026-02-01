@@ -1,45 +1,53 @@
 /**
  * Deepgram Token API Route
- * Returns the Deepgram API key for authenticated clients.
- * Requires valid admin session cookie.
+ * Returns the Deepgram API key for voice interactions.
+ * Rate limited to prevent abuse.
  */
 
-import { cookies } from "next/headers";
+import { NextRequest } from "next/server";
 
-const SESSION_COOKIE_NAME = "jd_admin_session";
+// Simple in-memory rate limiter (resets on deploy)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
-async function verifyAdminSession(): Promise<boolean> {
-  try {
-    const cookieStore = await cookies();
-    const sessionToken = cookieStore.get(SESSION_COOKIE_NAME);
+const RATE_LIMIT = 20; // requests per window
+const RATE_WINDOW = 60 * 1000; // 1 minute
 
-    if (!sessionToken) {
-      return false;
-    }
-
-    const decoded = Buffer.from(sessionToken.value, "base64").toString();
-    const [prefix, timestamp] = decoded.split(":");
-
-    if (prefix !== "admin") {
-      return false;
-    }
-
-    const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 hours
-    const sessionAge = Date.now() - parseInt(timestamp, 10);
-
-    return sessionAge <= SESSION_DURATION;
-  } catch {
-    return false;
-  }
+function getRateLimitKey(request: NextRequest): string {
+  const forwarded = request.headers.get("x-forwarded-for");
+  const ip = forwarded ? forwarded.split(",")[0].trim() : "unknown";
+  return ip;
 }
 
-export async function GET() {
-  // Verify admin authentication
-  const isAuthenticated = await verifyAdminSession();
-  if (!isAuthenticated) {
-    return new Response(JSON.stringify({ error: "Unauthorized - admin session required" }), {
-      status: 401,
-      headers: { "Content-Type": "application/json" },
+function checkRateLimit(key: string): { allowed: boolean; remaining: number } {
+  const now = Date.now();
+  const record = rateLimitMap.get(key);
+
+  if (!record || now > record.resetTime) {
+    rateLimitMap.set(key, { count: 1, resetTime: now + RATE_WINDOW });
+    return { allowed: true, remaining: RATE_LIMIT - 1 };
+  }
+
+  if (record.count >= RATE_LIMIT) {
+    return { allowed: false, remaining: 0 };
+  }
+
+  record.count++;
+  return { allowed: true, remaining: RATE_LIMIT - record.count };
+}
+
+export async function GET(request: NextRequest) {
+  // Rate limiting
+  const key = getRateLimitKey(request);
+  const { allowed, remaining } = checkRateLimit(key);
+
+  if (!allowed) {
+    return new Response(JSON.stringify({ error: "Rate limit exceeded. Try again in a minute." }), {
+      status: 429,
+      headers: {
+        "Content-Type": "application/json",
+        "X-RateLimit-Remaining": "0",
+        "Retry-After": "60",
+      },
     });
   }
 
@@ -54,6 +62,10 @@ export async function GET() {
 
   return new Response(JSON.stringify({ key: apiKey }), {
     status: 200,
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "X-RateLimit-Remaining": remaining.toString(),
+      "Cache-Control": "no-store",
+    },
   });
 }
