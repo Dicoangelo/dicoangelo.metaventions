@@ -1,5 +1,7 @@
 "use client";
 
+import ReducedMotionToggle from "./ReducedMotionToggle";
+
 interface FooterProps {
   isLight: boolean;
 }
@@ -151,7 +153,14 @@ export default function Footer({ isLight }: FooterProps) {
             </span>
             <span className="text-xs">Canadian Citizen · TN Visa Eligible</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
+            {/* Reduced Motion Toggle for accessibility */}
+            <ReducedMotionToggle isLight={isLight} />
+            <span
+              className={`hidden md:inline ${isLight ? "text-gray-300" : "text-[#404040]"}`}
+            >
+              •
+            </span>
             <span className="text-xs">Built with AI orchestration</span>
             <span
               className={`px-2 py-1 rounded text-xs ${isLight

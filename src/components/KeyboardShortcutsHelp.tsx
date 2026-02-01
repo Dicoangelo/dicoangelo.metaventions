@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 
 interface KeyboardShortcutsHelpProps {
   isLight: boolean;
@@ -8,39 +9,23 @@ interface KeyboardShortcutsHelpProps {
 
 export default function KeyboardShortcutsHelp({ isLight }: KeyboardShortcutsHelpProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const previousFocusRef = useRef<HTMLElement | null>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  const handleClose = useCallback(() => {
+    setIsOpen(false);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       // Show shortcuts with '?' key
       if (event.key === "?" && !isOpen) {
         event.preventDefault();
-        previousFocusRef.current = document.activeElement as HTMLElement;
         setIsOpen(true);
-      }
-      // Close with Escape
-      if (event.key === "Escape" && isOpen) {
-        setIsOpen(false);
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
-
-  // Focus management - trap focus in modal and restore when closed
-  useEffect(() => {
-    if (isOpen) {
-      // Focus close button when modal opens
-      closeButtonRef.current?.focus();
-    } else if (previousFocusRef.current) {
-      // Restore focus when modal closes
-      previousFocusRef.current.focus();
-    }
-  }, [isOpen]);
-
-  if (!isOpen) return null;
 
   const shortcuts = [
     { key: "?", description: "Show keyboard shortcuts" },
@@ -52,16 +37,47 @@ export default function KeyboardShortcutsHelp({ isLight }: KeyboardShortcutsHelp
     { key: "Esc", description: "Close dialog" },
   ];
 
+  if (!isOpen) return null;
+
+  return (
+    <FocusTrapModal
+      isLight={isLight}
+      shortcuts={shortcuts}
+      onClose={handleClose}
+    />
+  );
+}
+
+// Separate component to use the focus trap hook
+function FocusTrapModal({
+  isLight,
+  shortcuts,
+  onClose,
+}: {
+  isLight: boolean;
+  shortcuts: Array<{ key: string; description: string }>;
+  onClose: () => void;
+}) {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  // Use focus trap hook - handles Tab, Shift+Tab cycling and Escape key
+  useFocusTrap(modalRef, {
+    onEscape: onClose,
+    initialFocus: "first",
+    returnFocus: true,
+  });
+
   return (
     <>
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 animate-fade-in"
-        onClick={() => setIsOpen(false)}
+        onClick={onClose}
       />
 
       {/* Modal */}
       <div
+        ref={modalRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="shortcuts-title"
@@ -74,8 +90,7 @@ export default function KeyboardShortcutsHelp({ isLight }: KeyboardShortcutsHelp
         <div className="flex items-center justify-between mb-6">
           <h3 id="shortcuts-title" className="text-xl font-bold">Keyboard Shortcuts</h3>
           <button
-            ref={closeButtonRef}
-            onClick={() => setIsOpen(false)}
+            onClick={onClose}
             className={`p-2 rounded-lg transition-colors ${
               isLight
                 ? "hover:bg-gray-100 text-gray-600"

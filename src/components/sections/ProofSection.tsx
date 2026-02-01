@@ -3,6 +3,7 @@
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { StaggeredGrid } from "@/components/StaggeredGrid";
 import { MetricCard } from "@/components/MetricCard";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 interface ProofSectionProps {
   isLight: boolean;
@@ -17,12 +18,14 @@ export function ProofSection({ isLight }: ProofSectionProps) {
       }`}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Verifiable Proof</h2>
-          <p className={isLight ? "text-gray-600" : "text-[#737373]"}>
-            Every metric below has documentation. Click to see the evidence.
-          </p>
-        </div>
+        <RevealOnScroll direction="up" threshold={0.2}>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Verifiable Proof</h2>
+            <p className={isLight ? "text-gray-600" : "text-[#737373]"}>
+              Every metric below has documentation. Click to see the evidence.
+            </p>
+          </div>
+        </RevealOnScroll>
 
         <StaggeredGrid className="grid md:grid-cols-3 gap-6 mb-12">
           {/* Row 1 - Enterprise Metrics */}
