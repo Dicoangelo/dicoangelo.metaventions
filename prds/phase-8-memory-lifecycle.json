@@ -18,9 +18,9 @@
         "Type detection heuristics classify new memories automatically"
       ],
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "dependsOn": [],
-      "completionNotes": ""
+      "completionNotes": "Implemented in src/lib/memory/ module"
     },
     {
       "id": "US-002",
@@ -33,11 +33,11 @@
         "Half-life configuration exposed via settings"
       ],
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-001"
       ],
-      "completionNotes": ""
+      "completionNotes": "Implemented in src/lib/memory/ module"
     },
     {
       "id": "US-003",
@@ -50,11 +50,11 @@
         "Low-relevance memories flagged for potential pruning"
       ],
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-002"
       ],
-      "completionNotes": ""
+      "completionNotes": "Implemented in src/lib/memory/ module"
     },
     {
       "id": "US-004",
@@ -67,11 +67,11 @@
         "Retrieval phase: mature memories optimized for fast recall"
       ],
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-003"
       ],
-      "completionNotes": ""
+      "completionNotes": "Implemented in src/lib/memory/ module"
     },
     {
       "id": "US-005",
@@ -84,11 +84,11 @@
         "Pruning summary logged with count and categories removed"
       ],
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-003"
       ],
-      "completionNotes": ""
+      "completionNotes": "Implemented in src/lib/memory/ module"
     },
     {
       "id": "US-006",
@@ -101,11 +101,11 @@
         "Integration with existing sm review command"
       ],
       "priority": 3,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-004"
       ],
-      "completionNotes": ""
+      "completionNotes": "Implemented in src/lib/memory/ module"
     },
     {
       "id": "US-007",
@@ -118,11 +118,11 @@
         "CLI command: sm lifecycle or sm-dash"
       ],
       "priority": 3,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-005"
       ],
-      "completionNotes": ""
+      "completionNotes": "Implemented in src/lib/memory/ module"
     },
     {
       "id": "US-008",
@@ -135,11 +135,11 @@
         "Health check command: sm health with pass/warn/fail status"
       ],
       "priority": 4,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-007"
       ],
-      "completionNotes": ""
+      "completionNotes": "Implemented in src/lib/memory/ module"
     }
   ],
   "metadata": {
@@ -150,6 +150,9 @@
       "P2": 2,
       "P3": 2,
       "P4": 1
-    }
-  }
+    },
+    "completedAt": "2026-02-01T09:00:00Z",
+    "completedStories": 8
+  },
+  "status": "complete"
 }
