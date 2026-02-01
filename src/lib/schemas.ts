@@ -12,6 +12,7 @@ export const chatMessageSchema = z.object({
         .max(4000, 'Message content too long (max 4000 characters)'),
     })
   ).min(1, 'At least one message is required'),
+  isVoice: z.boolean().optional().default(false),
 });
 
 export type ChatMessage = z.infer<typeof chatMessageSchema>;
