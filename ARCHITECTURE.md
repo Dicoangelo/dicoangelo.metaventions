@@ -99,7 +99,8 @@ dicoangelo.com/
 │   │   │   ├── analyze-jd/     # Resume fit analyzer
 │   │   │   ├── tts/            # Text-to-speech
 │   │   │   ├── deepgram-token/ # Voice auth
-│   │   │   └── admin/          # Analytics dashboard
+│   │   │   ├── admin/          # Analytics dashboard
+│   │   │   └── metacognitive/  # Phase 7: /mode, /alerts endpoints
 │   │   ├── page.tsx            # Homepage (373 LOC)
 │   │   ├── layout.tsx          # Root layout
 │   │   └── analyze/            # JD analyzer page
@@ -113,24 +114,44 @@ dicoangelo.com/
 │   │   │   ├── ArenaSection.tsx # Event attendance
 │   │   │   └── ContactSection.tsx # CTA + Calendly
 │   │   ├── errors/             # Error boundaries
+│   │   ├── metacognitive/      # Phase 7: Dashboard visualizations
 │   │   ├── __tests__/          # Unit tests (Vitest)
 │   │   ├── Chat.tsx            # AI chat interface
 │   │   ├── VoiceOrb.tsx        # Voice UI (3D)
 │   │   ├── ThreeSystemsNetwork.tsx # 3D systems viz
 │   │   ├── ThreeHeroBackground.tsx # Particle animation
+│   │   ├── Toast.tsx           # Phase 6: Notifications
+│   │   ├── Spinner.tsx         # Phase 6: Loading states
+│   │   ├── PageTransition.tsx  # Phase 6: Route animations
+│   │   ├── RevealOnScroll.tsx  # Phase 6: Scroll animations
 │   │   └── [40+ components]
 │   │
 │   ├── hooks/                  # Custom React hooks
 │   │   ├── useVoice.ts         # Voice state management
 │   │   ├── useDeepgramSTT.ts   # Deepgram integration
 │   │   ├── useKeyboardShortcuts.ts # Keyboard nav
-│   │   └── useGSAP.ts          # Animation helpers
+│   │   ├── useGSAP.ts          # Animation helpers
+│   │   ├── useScrollReveal.ts  # Phase 6: Intersection observer
+│   │   ├── useParallax.ts      # Phase 6: GPU-accelerated parallax
+│   │   ├── useFocusTrap.ts     # Phase 6: Modal accessibility
+│   │   └── useReducedMotion.ts # Phase 6: Motion preferences
 │   │
 │   ├── lib/                    # Utilities & configs
 │   │   ├── ratelimit.ts        # Upstash rate limiting
 │   │   ├── schemas.ts          # Zod validation
 │   │   ├── sentry-utils.ts     # Error tracking
-│   │   └── supabase.ts         # DB client
+│   │   ├── supabase.ts         # DB client
+│   │   ├── metacognitive/      # Phase 7: Confidence & model routing
+│   │   │   ├── confidence.ts   # Confidence tracking
+│   │   │   ├── escalation.ts   # Model escalation logic
+│   │   │   └── alerts.ts       # Mode switch alerts
+│   │   └── memory/             # Phase 8: Adaptive memory lifecycle
+│   │       ├── types.ts        # FACTUAL, EXPERIENTIAL, WORKING
+│   │       ├── decay.ts        # Exponential decay
+│   │       ├── consolidation.ts # Phase transitions
+│   │       ├── forgetting.ts   # Soft/hard delete
+│   │       ├── replay.ts       # Spaced repetition
+│   │       └── health.ts       # Health monitoring
 │   │
 │   └── middleware.ts           # Security headers (CSP, HSTS)
 │
@@ -402,6 +423,90 @@ ratelimit.sliding(10, "1 m")
    - Added Partner Insight Newsletter feature (4th testimonial)
    - Emphasizes operations transformation impact
    - Links to "0 to $30M in 30 Months" case study
+
+6. **Phase 5: UI/UX Polish & Design System**
+   - Consistent spacing and typography
+   - Enhanced visual hierarchy
+   - Design tokens implementation
+
+7. **Phase 6: Advanced UI/UX Enhancements**
+   - Page transition animations (400ms fade)
+   - Scroll-triggered reveal animations (IntersectionObserver)
+   - Hero parallax effects (GPU-accelerated)
+   - Toast notification system (4 variants)
+   - Metric count-up animations (easeOutExpo)
+   - Loading spinner variants (3 sizes, 3 styles)
+   - Focus trap for modals (a11y)
+   - Reduced motion mode toggle (localStorage)
+
+8. **Phase 7: Metacognitive State Vector**
+   - Confidence tracking (0.0-1.0) from text uncertainty signals
+   - System 1/System 2 mode switching based on confidence
+   - Model escalation: Haiku → Sonnet → Opus on low confidence
+   - Metacognitive dashboard with gauge, trend chart, escalation list
+   - Mode switch alerts (configurable)
+
+9. **Phase 8: Adaptive Memory Lifecycle**
+   - Memory types: FACTUAL (90d), EXPERIENTIAL (30d), WORKING (7d)
+   - Memory phases: FORMATION → EVOLUTION → RETRIEVAL
+   - Exponential decay with configurable half-lives
+   - Relevance scoring (access frequency, recency, context)
+   - Consolidation pipeline for phase transitions
+   - Forgetting mechanism with soft/hard delete
+   - Spaced repetition replay (Leitner boxes)
+   - Lifecycle dashboard with CLI output
+   - Health monitoring (pass/warn/fail alerts)
+
+---
+
+## Cognitive AI Architecture (Phase 7-8)
+
+### Metacognitive State Vector
+
+```
+User Query
+    │
+    ▼
+Confidence Extraction
+    │ (uncertainty words, hedging phrases)
+    ▼
+Calculate Confidence Score (0.0-1.0)
+    │
+    ├── High (≥0.7) → System 1 (Fast/Haiku)
+    ├── Medium (0.3-0.7) → System 2 (Analytical/Sonnet)
+    └── Low (<0.3) → Deep Analysis (Opus)
+```
+
+### Memory Lifecycle
+
+```
+New Memory
+    │
+    ▼
+FORMATION Phase
+    │ (accessCount < 3)
+    ▼
+EVOLUTION Phase
+    │ (3 ≤ accessCount < 10)
+    │ Consolidation with related memories
+    ▼
+RETRIEVAL Phase
+    │ (accessCount ≥ 10, relevance ≥ 0.8)
+    │ Optimized for fast recall
+    ▼
+Decay / Forgetting
+    │ (decay < 0.1 AND relevance < 0.2)
+    ▼
+Archive (30-day recovery) → Hard Delete
+```
+
+### Memory Types & Half-Lives
+
+| Type | Half-Life | Use Case |
+|------|-----------|----------|
+| FACTUAL | 90 days | Facts, definitions, concepts |
+| EXPERIENTIAL | 30 days | Events, episodes, experiences |
+| WORKING | 7 days | Temporary, task-specific |
 
 ---
 
