@@ -47,9 +47,14 @@ export function StaggeredGrid({
     () => {
       if (!gridRef.current) return;
 
-      const items = itemSelector === '> *'
+      // Handle child selectors that start with ">" by prepending :scope
+      const selector = itemSelector.trim().startsWith('>')
+        ? `:scope ${itemSelector}`
+        : itemSelector;
+
+      const items = selector === ':scope > *'
         ? Array.from(gridRef.current.children)
-        : gridRef.current.querySelectorAll(itemSelector);
+        : gridRef.current.querySelectorAll(selector);
 
       if (items.length === 0) return;
 

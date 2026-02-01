@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 
-// Dynamic import at module level (not inside component)
+// Dynamic import for 3D orb
 const ThreeOrb = dynamic(() => import("./ThreeVoiceOrb"), {
   ssr: false,
   loading: () => <div className="w-full h-full bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-full animate-pulse" />
@@ -48,14 +48,6 @@ function getSpeechRecognition(): (new () => SpeechRecognition) | undefined {
 
 
 
-// Color palette
-const COLORS = {
-  cyan: "#22d3ee",
-  purple: "#a855f7",
-  magenta: "#ec4899",
-  cyanGlow: "rgba(34, 211, 238, 0.4)",
-  purpleGlow: "rgba(168, 85, 247, 0.4)",
-};
 
 interface Message {
   role: "user" | "assistant";
@@ -565,31 +557,29 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
           />
         </div>
 
-        {/* Center Image (Optional: floating inside or in front) 
-            For this 3D design, we might want to remove the image or float it differently.
-            Let's keep the button interaction but make it invisible/overlaid on the orb 
-            so clicking the orb triggers the action. 
-        */}
+        {/* Clickable overlay */}
         <button
           onClick={handleClick}
           className="absolute inset-0 z-10 w-full h-full cursor-pointer focus:outline-none"
           aria-label={isActive ? "Stop voice chat" : "Start voice chat"}
         />
 
-        {/* Floating Headshot (Small, centered, maybe?) 
-            Actually, let's keep the headshot inside the orb or remove it for a pure sci-fi look.
-            The user "Dico" is the orb. let's put the headshot in the center, smaller,
-            floating inside the transparent sphere.
-        */}
-        <div className="pointer-events-none z-0 relative w-16 h-16 rounded-full overflow-hidden opacity-80 mix-blend-overlay">
+        {/* Center headshot - overlay on orb */}
+        <div className="pointer-events-none z-20 relative w-20 h-20 rounded-full overflow-hidden ring-2 ring-white/20 shadow-xl">
           <Image
             src="/headshot-ama.jpg"
             alt="Dico"
             fill
             className="object-cover"
             loading="lazy"
-            quality={60}
+            quality={75}
           />
+          {/* Overlay gradient for blend effect */}
+          <div className={`absolute inset-0 transition-opacity duration-300 ${
+            isActive
+              ? 'bg-gradient-to-t from-[#6366f1]/30 to-transparent'
+              : 'bg-gradient-to-t from-black/20 to-transparent'
+          }`} />
         </div>
       </div>
 

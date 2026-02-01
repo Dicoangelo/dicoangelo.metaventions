@@ -4,14 +4,23 @@ import { getDossierContextForJD } from "@/lib/dossier";
 import { jdAnalyzerRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
 import { jdAnalyzerSchema, validateRequest } from "@/lib/schemas";
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+// Lazy initialization to avoid build-time errors
+let anthropic: Anthropic | null = null;
+let supabase: ReturnType<typeof createClient> | null = null;
 
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-);
+function getAnthropic() {
+  if (!anthropic && process.env.ANTHROPIC_API_KEY) {
+    anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  }
+  return anthropic;
+}
+
+function getSupabase() {
+  if (!supabase && process.env.SUPABASE_URL && process.env.SUPABASE_KEY) {
+    supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+  }
+  return supabase;
+}
 
 interface JDAnalysisAssessment {
   summary: string;
@@ -97,6 +106,18 @@ CRITICAL: Your response must be valid JSON only. No markdown, no explanation, ju
 
 export async function POST(request: Request) {
   try {
+    // Check for required services
+    const anthropicClient = getAnthropic();
+    const supabaseClient = getSupabase();
+
+    if (!anthropicClient) {
+      console.error("JD Analyzer: ANTHROPIC_API_KEY is not configured");
+      return new Response(
+        JSON.stringify({ error: "Analysis service is temporarily unavailable. Please try again later." }),
+        { status: 503, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
     // Rate limiting check
     const identifier = getClientIdentifier(request.headers as any);
     const { success, limit, remaining, reset } = await jdAnalyzerRateLimit.limit(identifier);
