@@ -96,8 +96,13 @@ Each role built on the previous:
 | **NFT NYC** | New York | Digital asset innovation, creator economy |
 | **Miami Hack Week** | Miami | Blockchain development, startup ecosystem |
 | **Art Basel Miami** | Miami | Intersection of art, technology, and culture |
+| **F1 Miami** | Miami | High-net-worth networking, founder circles |
 | **Eth Toronto** | Toronto | Ethereum ecosystem, smart contracts |
-| **150+ community events** | Various | AI research, blockchain, entrepreneur networks |
+| **Builder Series NYC** | New York | Founder networks, startup building |
+| **Detroit Blockchain Week** | Detroit | Regional blockchain community |
+| **CoinFund Events** | Various | Investor circles, crypto venture |
+| **BitAngels Meetups** | Various | Angel investing, blockchain startups |
+| **150+ community events** | 8 cities | AI research, blockchain, entrepreneur networks |
 
 ### Networking Philosophy
 
