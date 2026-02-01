@@ -3,6 +3,7 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useTypingAnimation } from "@/hooks/useTypingAnimation";
+import { useParallax } from "@/hooks/useParallax";
 import { useTheme } from "@/components/ThemeProvider";
 
 // Lazy load 3D background with fallback gradient
@@ -25,15 +26,25 @@ export default function Hero() {
   const isLight = theme === "light";
   const typedRole = useTypingAnimation(roles, 80, 40, 2000);
 
+  // Parallax for background elements (10-20% speed differential)
+  const backgroundParallax = useParallax({ speed: 0.1 });
+  const overlayParallax = useParallax({ speed: 0.15 });
+
   return (
     <section className="pt-32 pb-20 px-6 relative overflow-hidden min-h-[90vh] flex flex-col justify-center">
-      {/* Animated 3D Background */}
-      <div className="absolute inset-0 -z-10">
+      {/* Animated 3D Background - slowest parallax layer */}
+      <div
+        className="absolute inset-0 -z-10 parallax-layer"
+        style={backgroundParallax.style}
+      >
         <ThreeBackground />
       </div>
 
-      {/* Animated Background Gradient (Fallback/Overlay) */}
-      <div className="absolute inset-0 -z-20">
+      {/* Animated Background Gradient (Fallback/Overlay) - medium parallax layer */}
+      <div
+        className="absolute inset-0 -z-20 parallax-layer"
+        style={overlayParallax.style}
+      >
         <div className={`absolute inset-0 bg-gradient-to-br ${isLight
             ? 'from-blue-50 via-purple-50 to-pink-50'
             : 'from-[#0a0a1a] via-[#0f0a1a] to-[#1a0a1a]'

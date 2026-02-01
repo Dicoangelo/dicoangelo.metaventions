@@ -31,8 +31,8 @@ describe('KeyboardShortcutsHelp', () => {
     fireEvent.keyDown(window, { key: '?' });
     expect(screen.getByText('Keyboard Shortcuts')).toBeInTheDocument();
 
-    // Press Escape
-    fireEvent.keyDown(window, { key: 'Escape' });
+    // Press Escape (focus trap listens on document)
+    fireEvent.keyDown(document, { key: 'Escape' });
 
     // Modal should be closed
     expect(screen.queryByText('Keyboard Shortcuts')).not.toBeInTheDocument();

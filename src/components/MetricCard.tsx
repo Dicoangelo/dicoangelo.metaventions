@@ -39,7 +39,9 @@ export function MetricCard({
   };
 
   const { number: targetNumber, prefix, suffix, hasDecimal } = parseValue(value);
-  const animatedValue = useCountAnimation(targetNumber, 2000, 0, isVisible);
+  // Pass decimal places to hook for proper decimal animation
+  const decimals = hasDecimal ? 1 : 0;
+  const animatedValue = useCountAnimation(targetNumber, 2000, 0, isVisible, decimals);
 
   // Format the animated number
   const formatNumber = (num: number): string => {
@@ -54,6 +56,7 @@ export function MetricCard({
   };
 
   // Intersection observer for animation trigger
+  // Triggers when element is 50% visible (US-005 requirement)
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -61,7 +64,7 @@ export function MetricCard({
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.5 }
     );
 
     if (cardRef.current) {
