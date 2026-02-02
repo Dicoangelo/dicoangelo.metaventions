@@ -9,7 +9,6 @@ export { useGSAP } from "./useGSAP";
 export { useKeyboardShortcuts, useNavigationShortcuts } from "./useKeyboardShortcuts";
 
 // Voice hooks
-export { useVoice } from "./useVoice";
 export { useDeepgramSTT } from "./useDeepgramSTT";
 
 // UI hooks

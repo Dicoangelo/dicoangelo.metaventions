@@ -385,15 +385,17 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       onAddToHistory({ role: "assistant", content: fullResponse });
 
       setIsProcessing(false);
-      isProcessingRef.current = false;
       setLastResponse(fullResponse);
       setShowResponse(true);
-      await speakResponse(fullResponse);
 
-      // Auto-restart
+      // Speak THEN clear guard (prevents race condition)
+      await speakResponse(fullResponse);
+      isProcessingRef.current = false;
+
+      // Auto-restart listening after TTS completes (1.5s delay to avoid echo feedback)
       setTimeout(() => {
         if (!isListening && !isSpeaking) startListening();
-      }, 600);
+      }, 1500);
     } catch {
       setIsProcessing(false);
       isProcessingRef.current = false;
