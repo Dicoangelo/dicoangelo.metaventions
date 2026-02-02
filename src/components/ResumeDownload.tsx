@@ -23,10 +23,12 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
     // Simulate download delay for UX
     await new Promise(resolve => setTimeout(resolve, 500));
 
-    // In production, this would trigger actual file download
-    // For now, we'll show the link
+    // Download the resume file
     const link = document.createElement('a');
-    link.href = `/DICO_ANGELO_MASTER_RESUME_CORRECTED_2026.${format}`;
+    const filename = format === 'pdf'
+      ? '/DICO_ANGELO_RESUME_2026.pdf'
+      : '/DICO_ANGELO_MASTER_RESUME_CORRECTED_2026.docx';
+    link.href = filename;
     link.download = `Dico_Angelo_Resume_2026.${format}`;
     document.body.appendChild(link);
     link.click();
