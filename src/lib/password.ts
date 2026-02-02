@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs';
 
 /**
  * Password hashing utility for secure password management
- * Supports both plaintext (for transition) and hashed passwords
+ * Only bcrypt-hashed passwords are supported
  */
 
 const BCRYPT_ROUNDS = 12;
@@ -32,12 +32,10 @@ export async function comparePassword(plaintext: string, hash: string): Promise<
 }
 
 /**
- * Verify admin password - supports both plaintext and hashed
- * TRANSITION: Currently supports plaintext for backward compatibility
- * TODO: Migrate to hashed-only after all admins have updated their passwords
+ * Verify admin password using bcrypt
  *
  * @param submittedPassword - The password submitted by user
- * @param storedPassword - The password from environment (plaintext or hash)
+ * @param storedPassword - The bcrypt-hashed password from environment
  * @returns Promise<boolean> - Whether the password matches
  */
 export async function verifyAdminPassword(
@@ -48,18 +46,15 @@ export async function verifyAdminPassword(
     return false;
   }
 
-  // Check if stored password is a bcrypt hash (starts with $2a$, $2b$, or $2y$)
+  // Require bcrypt hashed passwords (must start with $2a$, $2b$, or $2y$)
   const isBcryptHash = /^\$2[aby]\$/.test(storedPassword);
 
-  if (isBcryptHash) {
-    // Use bcrypt comparison for hashed passwords
-    return await comparePassword(submittedPassword, storedPassword);
-  } else {
-    // TEMPORARY: Support plaintext comparison for transition period
-    // This should be removed once all passwords are migrated to bcrypt
-    console.warn('[SECURITY] Plaintext password comparison in use. Migrate to bcrypt immediately.');
-    return submittedPassword === storedPassword;
+  if (!isBcryptHash) {
+    console.error('[SECURITY] Plaintext passwords are not supported. Hash the password using generatePasswordHash().');
+    return false;
   }
+
+  return await comparePassword(submittedPassword, storedPassword);
 }
 
 /**

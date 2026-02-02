@@ -3,6 +3,9 @@ import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
+// Site URL configuration - can be overridden via NEXT_PUBLIC_SITE_URL env var
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dicoangelo.vercel.app";
+
 export const metadata: Metadata = {
   title: "Dico Angelo — Operations Infrastructure Builder | AI Systems Engineer",
   description: "Operations infrastructure builder who processed $800M+ in cloud marketplace deal registrations (97% approval) while shipping 297K+ lines of production AI systems. Implemented 8+ arXiv papers. Published 2 npm packages. Building agentic infrastructure at scale.",
@@ -27,13 +30,13 @@ export const metadata: Metadata = {
     "OpenAI",
     "DeepMind"
   ],
-  authors: [{ name: "Dico Angelo", url: "https://dicoangelo.vercel.app" }],
+  authors: [{ name: "Dico Angelo", url: SITE_URL }],
   creator: "Dico Angelo",
   openGraph: {
     title: "Dico Angelo — Operations Infrastructure Builder & AI Systems Engineer",
     description: "Processed $800M+ in cloud marketplace deals (97% approval). Built 297K+ LOC implementing 8+ arXiv papers. Published npm packages. Operations infrastructure meets AI engineering.",
     type: "website",
-    url: "https://dicoangelo.vercel.app",
+    url: SITE_URL,
     siteName: "Dico Angelo Portfolio",
     locale: "en_US",
     images: [
@@ -74,7 +77,7 @@ const personSchema = {
   name: "Dico Angelo",
   jobTitle: "Operations Infrastructure Builder & AI Systems Engineer",
   description: "Operations infrastructure builder who processed $800M+ in cloud marketplace deal registrations while shipping 297K+ lines of production AI systems",
-  url: "https://dicoangelo.vercel.app",
+  url: SITE_URL,
   email: "hello@dicoangelo.com",
   nationality: "Canadian",
   sameAs: [
@@ -107,7 +110,7 @@ const personSchema = {
   worksFor: {
     "@type": "Organization",
     name: "Metaventions AI",
-    url: "https://dicoangelo.vercel.app"
+    url: SITE_URL
   },
   hasCredential: [
     {
@@ -129,7 +132,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Dico Angelo - Portfolio",
-  url: "https://dicoangelo.vercel.app",
+  url: SITE_URL,
   description: "Professional portfolio of Dico Angelo, Operations Infrastructure Builder and AI Systems Engineer",
   author: {
     "@type": "Person",

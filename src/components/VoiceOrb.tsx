@@ -311,7 +311,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
 
     recognition.onend = () => {
       if (isListening && !isProcessing && !isSpeaking) {
-        try { recognition.start(); } catch { cleanupMic(); setIsListening(false); }
+        try { recognition.start(); } catch (e) { console.warn('[VoiceOrb] Recognition restart failed:', e); cleanupMic(); setIsListening(false); }
       }
     };
 
@@ -407,7 +407,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
   const speakResponse = async (text: string) => {
     // Stop any currently playing audio first
     if (currentAudioRef.current) {
-      try { currentAudioRef.current.stop(); } catch { }
+      try { currentAudioRef.current.stop(); } catch (e) { /* Audio already stopped */ }
       currentAudioRef.current = null;
     }
     if (ttsAnimationRef.current) {
@@ -474,7 +474,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       recognitionRef.current = null;
     }
     if (currentAudioRef.current) {
-      try { currentAudioRef.current.stop(); } catch { }
+      try { currentAudioRef.current.stop(); } catch (e) { /* Audio already stopped */ }
       currentAudioRef.current = null;
     }
     if (ttsAnimationRef.current) {

@@ -6,7 +6,6 @@ import {
   Sphere,
   MeshDistortMaterial,
   Float,
-  Environment,
   Stars,
 } from "@react-three/drei";
 import {
@@ -235,8 +234,7 @@ function Scene(props: ThreeVoiceOrbProps) {
 
   return (
     <>
-      {/* Environment for reflections */}
-      <Environment preset="night" />
+      {/* Ambient environment lighting (no external HDRI) */}
 
       {/* Ambient lighting */}
       <ambientLight intensity={0.2} />
