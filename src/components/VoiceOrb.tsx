@@ -412,10 +412,6 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       cancelAnimationFrame(ttsAnimationRef.current);
       ttsAnimationRef.current = null;
     }
-    if ("speechSynthesis" in window) {
-      speechSynthesis.cancel();
-    }
-
     setIsSpeaking(true);
 
     try {
@@ -453,17 +449,10 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       };
 
       source.start(0);
-    } catch {
-      // Fallback to browser TTS
-      if ("speechSynthesis" in window) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = 1.0;
-        utterance.onend = () => setIsSpeaking(false);
-        utterance.onerror = () => setIsSpeaking(false);
-        speechSynthesis.speak(utterance);
-      } else {
-        setIsSpeaking(false);
-      }
+    } catch (err) {
+      // ElevenLabs failed - no fallback, just stop speaking
+      console.error("[VoiceOrb] ElevenLabs TTS failed:", err);
+      setIsSpeaking(false);
     }
   };
 
@@ -491,7 +480,6 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       ttsAnimationRef.current = null;
     }
     ttsAnalyserRef.current = null;
-    if ("speechSynthesis" in window) speechSynthesis.cancel();
     cleanupMic();
     setIsListening(false);
     setIsSpeaking(false);
