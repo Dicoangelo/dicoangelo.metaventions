@@ -71,7 +71,7 @@ export default function FloatingCTA({ isLight }: FloatingCTAProps) {
             📅 Schedule Interview
           </button>
           <a
-            href="https://www.linkedin.com/in/dicoangelo"
+            href="https://www.linkedin.com/in/dico-angelo/"
             target="_blank"
             rel="noopener noreferrer"
             className={`btn-ghost shadow-lg text-sm ${isLight

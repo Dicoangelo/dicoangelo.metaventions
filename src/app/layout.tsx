@@ -79,7 +79,7 @@ const personSchema = {
   nationality: "Canadian",
   sameAs: [
     "https://github.com/Dicoangelo",
-    "https://www.linkedin.com/in/dicoangelo",
+    "https://www.linkedin.com/in/dico-angelo/",
     "https://twitter.com/dicoangelo",
     "https://www.npmjs.com/org/metaventionsai"
   ],

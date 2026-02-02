@@ -156,7 +156,7 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
                 GitHub →
               </a>
               <a
-                href="https://www.linkedin.com/in/dicoangelo"
+                href="https://www.linkedin.com/in/dico-angelo/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`text-sm px-4 py-2 rounded-lg border transition-colors ${
