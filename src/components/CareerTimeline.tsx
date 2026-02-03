@@ -24,6 +24,20 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
 
   const events: TimelineEvent[] = [
     {
+      date: "Feb 2026 - Present",
+      title: "Volunteer Mentor",
+      company: "Mass Fintech Hub",
+      location: "Remote",
+      type: "achievement",
+      description: "Volunteer leadership role mentoring 3 students through the Mass Fintech Hub Mentoring Program.",
+      highlights: [
+        "Providing 1:1 mentorship to 3 aspiring fintech professionals",
+        "Guiding career development in AI systems and operations infrastructure",
+        "Contributing to Massachusetts fintech ecosystem talent pipeline",
+      ],
+      metrics: ["3 Mentees", "Volunteer Leadership"],
+    },
+    {
       date: "2024 - Present",
       title: "Founder & AI Systems Architect",
       company: "Metaventions AI",
