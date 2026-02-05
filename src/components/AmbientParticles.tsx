@@ -57,11 +57,21 @@ export default function AmbientParticles({
     };
     motionQuery.addEventListener("change", handleMotionChange);
 
-    // Check for mobile
-    setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
+    // Check for mobile - use screen width and pointer capability, NOT touch support
+    // Many desktop browsers report ontouchstart for trackpad support
+    const checkMobile = () => {
+      const isNarrow = window.innerWidth < 768;
+      const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+      const hasNoHover = window.matchMedia("(hover: none)").matches;
+      return isNarrow && (hasCoarsePointer || hasNoHover);
+    };
+    setIsMobile(checkMobile());
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
+      const isNarrow = window.innerWidth < 768;
+      const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+      const hasNoHover = window.matchMedia("(hover: none)").matches;
+      setIsMobile(isNarrow && (hasCoarsePointer || hasNoHover));
     };
     window.addEventListener("resize", handleResize);
 
@@ -77,15 +87,15 @@ export default function AmbientParticles({
       return {
         particle: "99, 102, 241", // Indigo RGB
         connection: "99, 102, 241",
-        particleOpacity: 0.4,
-        connectionOpacity: 0.08,
+        particleOpacity: 0.5, // Increased from 0.4
+        connectionOpacity: 0.12, // Increased from 0.08
       };
     }
     return {
       particle: "99, 102, 241", // Indigo RGB
       connection: "139, 92, 246", // Purple RGB
-      particleOpacity: 0.6,
-      connectionOpacity: 0.12,
+      particleOpacity: 0.7, // Increased from 0.6
+      connectionOpacity: 0.15, // Increased from 0.12
     };
   }, [theme]);
 

@@ -199,8 +199,16 @@ export default function ThreeHeroBackground() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
-    // Check for mobile and reduced motion
-    setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
+    // Check for mobile - use screen width and pointer capability, NOT touch support
+    // Many desktop browsers report ontouchstart for trackpad support
+    const checkMobile = () => {
+      const isNarrow = window.innerWidth < 768;
+      const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+      const hasNoHover = window.matchMedia("(hover: none)").matches;
+      // Only consider mobile if narrow AND has coarse pointer (actual touch device)
+      return isNarrow && (hasCoarsePointer || hasNoHover);
+    };
+    setIsMobile(checkMobile());
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPrefersReducedMotion(motionQuery.matches);
 
@@ -210,7 +218,10 @@ export default function ThreeHeroBackground() {
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
+      const isNarrow = window.innerWidth < 768;
+      const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+      const hasNoHover = window.matchMedia("(hover: none)").matches;
+      setIsMobile(isNarrow && (hasCoarsePointer || hasNoHover));
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -252,7 +263,7 @@ export default function ThreeHeroBackground() {
   return (
     <div
       className={`absolute inset-0 -z-0 pointer-events-none ${
-        isLight ? "opacity-40 mix-blend-multiply" : "opacity-60 mix-blend-screen"
+        isLight ? "opacity-60" : "opacity-80"
       }`}
     >
       <Canvas

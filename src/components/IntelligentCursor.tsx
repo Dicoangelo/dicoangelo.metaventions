@@ -44,9 +44,13 @@ export default function IntelligentCursor({
   // Check for mobile and reduced motion
   useEffect(() => {
     const checkDevice = () => {
-      const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      // Use pointer and hover media queries instead of touch detection
+      // Many desktop browsers report touch support for trackpads
+      const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+      const hasNoHover = window.matchMedia("(hover: none)").matches;
       const isSmallScreen = window.innerWidth < 1024;
-      setIsMobile(isTouchDevice || isSmallScreen);
+      // Consider mobile only if small screen AND has touch-primary input
+      setIsMobile(isSmallScreen && (hasCoarsePointer || hasNoHover));
     };
 
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
