@@ -87,15 +87,15 @@ export default function AmbientParticles({
       return {
         particle: "99, 102, 241", // Indigo RGB
         connection: "99, 102, 241",
-        particleOpacity: 0.5, // Increased from 0.4
-        connectionOpacity: 0.12, // Increased from 0.08
+        particleOpacity: 0.7,
+        connectionOpacity: 0.15,
       };
     }
     return {
       particle: "99, 102, 241", // Indigo RGB
       connection: "139, 92, 246", // Purple RGB
-      particleOpacity: 0.7, // Increased from 0.6
-      connectionOpacity: 0.15, // Increased from 0.12
+      particleOpacity: 0.85,
+      connectionOpacity: 0.2,
     };
   }, [theme]);
 
@@ -107,13 +107,13 @@ export default function AmbientParticles({
       const particles: Particle[] = [];
 
       for (let i = 0; i < actualCount; i++) {
-        const baseOpacity = Math.random() * 0.5 + 0.3;
+        const baseOpacity = Math.random() * 0.4 + 0.6; // Range: 0.6-1.0 (was 0.3-0.8)
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
           vx: (Math.random() - 0.5) * maxSpeed * 2,
           vy: (Math.random() - 0.5) * maxSpeed * 2,
-          radius: Math.random() * 1.5 + 0.5,
+          radius: Math.random() * 2 + 1, // Range: 1-3px (was 0.5-2px)
           opacity: baseOpacity,
           baseOpacity,
         });
@@ -144,7 +144,7 @@ export default function AmbientParticles({
     // Calculate scroll-based modifiers
     const scrollProgress = Math.min(scrollRef.current / (window.innerHeight * 2), 1);
     const speedMultiplier = 1 - scrollProgress * 0.5; // Slow down as user scrolls
-    const opacityMultiplier = 1 - scrollProgress * 0.3; // Fade slightly as user scrolls
+    const opacityMultiplier = 1 - scrollProgress * 0.15; // Gentle fade as user scrolls
 
     // Clear canvas
     ctx.clearRect(0, 0, width, height);
