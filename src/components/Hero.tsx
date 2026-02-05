@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { useTypingAnimation } from "@/hooks/useTypingAnimation";
 import { useParallax } from "@/hooks/useParallax";
 import { useTheme } from "@/components/ThemeProvider";
+import { useVisitorContext, getWelcomeMessage } from "@/hooks/useVisitorContext";
 
 // Lazy load 3D background with fallback gradient
 const ThreeBackground = dynamic(() => import("./ThreeHeroBackground"), {
@@ -25,13 +26,15 @@ export default function Hero() {
   const { theme } = useTheme();
   const isLight = theme === "light";
   const typedRole = useTypingAnimation(roles, 80, 40, 2000);
+  const visitorContext = useVisitorContext();
+  const welcomeMessage = getWelcomeMessage(visitorContext);
 
   // Parallax for background elements (10-20% speed differential)
   const backgroundParallax = useParallax({ speed: 0.1 });
   const overlayParallax = useParallax({ speed: 0.15 });
 
   return (
-    <section className="pt-32 pb-20 px-6 relative overflow-hidden min-h-[90vh] flex flex-col justify-center">
+    <section id="hero" className="pt-32 pb-20 px-6 relative overflow-hidden min-h-[90vh] flex flex-col justify-center">
       {/* Hero Background Image */}
       <div
         className="absolute inset-0 -z-30"
@@ -78,6 +81,15 @@ export default function Hero() {
             />
           </div>
         </div>
+
+        {/* Personalized Greeting */}
+        <p
+          className={`mb-4 text-sm font-medium animate-fade-in ${
+            isLight ? 'text-gray-500' : 'text-gray-400'
+          }`}
+        >
+          {welcomeMessage}
+        </p>
 
         {/* Status Badge */}
         <div

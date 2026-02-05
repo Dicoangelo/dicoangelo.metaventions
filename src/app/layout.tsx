@@ -1,10 +1,21 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 // Site URL configuration - can be overridden via NEXT_PUBLIC_SITE_URL env var
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dicoangelo.vercel.app";
+
+// Viewport configuration for optimal mobile experience
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Dico Angelo — Operations Infrastructure Builder | AI Systems Engineer",
@@ -158,6 +169,54 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* ===== PROGRESSIVE LOADING OPTIMIZATIONS ===== */}
+
+        {/* Preconnect to critical origins for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* DNS prefetch for third-party services */}
+        <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
+
+        {/* Preload critical above-fold image */}
+        <link
+          rel="preload"
+          href="/headshot.jpg"
+          as="image"
+          type="image/jpeg"
+          fetchPriority="high"
+        />
+
+        {/* Font display swap for system fonts fallback */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              /* Critical CSS for above-fold content */
+              :root {
+                --background: #0a0a0a;
+                --foreground: #ededed;
+                --accent: #6366f1;
+              }
+              [data-theme="light"] {
+                --background: #ffffff;
+                --foreground: #171717;
+                --accent: #4f46e5;
+              }
+              body {
+                background: var(--background);
+                color: var(--foreground);
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+              }
+              /* Prevent layout shift from nav */
+              nav { min-height: 64px; }
+              /* Prevent FOUC */
+              .no-fouc { opacity: 0; }
+              .fouc-ready { opacity: 1; transition: opacity 0.1s; }
+            `,
+          }}
+        />
+
+        {/* Structured Data */}
         <Script
           id="structured-data-person"
           type="application/ld+json"

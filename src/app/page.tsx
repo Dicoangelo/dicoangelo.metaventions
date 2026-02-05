@@ -56,6 +56,36 @@ const CareerTimeline = dynamic(() => import("@/components/CareerTimeline"), {
   ssr: true,
 });
 
+const AnimatedMetrics = dynamic(() => import("@/components/AnimatedMetrics"), {
+  ssr: true,
+});
+
+const LogoWall = dynamic(() => import("@/components/LogoWall"), {
+  ssr: true,
+});
+
+const AIAugmentedSection = dynamic(() => import("@/components/AIAugmentedSection"), {
+  ssr: true,
+});
+
+const CommandPalette = dynamic(() => import("@/components/CommandPalette"), {
+  ssr: false, // Client-side only for keyboard events
+});
+
+const SectionNav = dynamic(() => import("@/components/SectionNav"), {
+  ssr: false, // Client-side only
+});
+
+// Lazy load ambient particles (heavy animation component)
+const AmbientParticles = dynamic(() => import("@/components/AmbientParticles"), {
+  ssr: false, // Client-side only
+});
+
+// Lazy load intelligent cursor (desktop only)
+const IntelligentCursor = dynamic(() => import("@/components/IntelligentCursor"), {
+  ssr: false, // Client-side only
+});
+
 export default function Home() {
   const { theme } = useTheme();
   const isLight = theme === "light";
@@ -74,6 +104,29 @@ export default function Home() {
       {/* Scroll progress indicator */}
       <ScrollProgress />
 
+      {/* Intelligent cursor (desktop only) */}
+      <IntelligentCursor
+        enableTrail={true}
+        trailLength={6}
+        lerpFactor={0.12}
+      />
+
+      {/* Command Palette (⌘K) */}
+      <CommandPalette />
+
+      {/* Section Side Navigation */}
+      <SectionNav />
+
+      {/* Ambient particle background */}
+      <AmbientParticles
+        count={60}
+        maxSpeed={0.25}
+        connectionDistance={100}
+        mouseAttraction={0.0001}
+        showConnections={true}
+        zIndex={-1}
+      />
+
       {/* Navigation */}
       <Nav />
 
@@ -83,10 +136,19 @@ export default function Home() {
       {/* TLDR Banner - Quick summary for recruiters */}
       <TLDRBanner />
 
+      {/* AI-Augmented Operator Positioning */}
+      <AIAugmentedSection />
+
       {/* Ask Me Anything */}
       <AskSection isLight={isLight} />
 
       <ProofSection isLight={isLight} />
+
+      {/* Animated Metrics */}
+      <AnimatedMetrics />
+
+      {/* Logo Wall */}
+      <LogoWall animated={true} />
 
       {/* Testimonials Section */}
       <Testimonials isLight={isLight} />

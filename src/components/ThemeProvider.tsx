@@ -1,12 +1,13 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useRef, useCallback } from "react";
 
 type Theme = "light" | "dark";
 
 interface ThemeContextType {
   theme: Theme;
-  toggleTheme: () => void;
+  toggleTheme: (e?: React.MouseEvent) => void;
+  isTransitioning: boolean;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -14,6 +15,9 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
   const [mounted, setMounted] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [transitionOrigin, setTransitionOrigin] = useState({ x: 0, y: 0 });
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -23,6 +27,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
       setTheme("light");
     }
+
+    // Check for reduced motion preference
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(motionQuery.matches);
+    const handleMotionChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+    };
+    motionQuery.addEventListener("change", handleMotionChange);
+    return () => motionQuery.removeEventListener("change", handleMotionChange);
   }, []);
 
   useEffect(() => {
@@ -32,17 +45,59 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, [theme, mounted]);
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-  };
+  const toggleTheme = useCallback((e?: React.MouseEvent) => {
+    // Get click origin for radial transition
+    if (e) {
+      const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+      setTransitionOrigin({
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2,
+      });
+    } else {
+      // Default to center if no event
+      setTransitionOrigin({
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2,
+      });
+    }
+
+    // Start transition
+    if (!prefersReducedMotion) {
+      setIsTransitioning(true);
+    }
+
+    // Change theme after a short delay for the visual effect
+    setTimeout(() => {
+      setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    }, prefersReducedMotion ? 0 : 150);
+
+    // End transition
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, prefersReducedMotion ? 0 : 600);
+  }, [prefersReducedMotion]);
 
   if (!mounted) {
     return <>{children}</>;
   }
 
+  const nextTheme = theme === "dark" ? "light" : "dark";
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, isTransitioning }}>
       {children}
+
+      {/* Cinematic Theme Transition Overlay */}
+      {isTransitioning && !prefersReducedMotion && (
+        <div
+          className="fixed inset-0 z-[9999] pointer-events-none"
+          style={{
+            background: nextTheme === "light" ? "#ffffff" : "#0a0a0a",
+            clipPath: `circle(${isTransitioning ? "150%" : "0%"} at ${transitionOrigin.x}px ${transitionOrigin.y}px)`,
+            transition: "clip-path 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
+          }}
+        />
+      )}
     </ThemeContext.Provider>
   );
 }
@@ -51,75 +106,122 @@ export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
     // Return a default during SSR
-    return { theme: "dark" as const, toggleTheme: () => {} };
+    return { theme: "dark" as const, toggleTheme: () => {}, isTransitioning: false };
   }
   return context;
 }
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
-  const [isRotating, setIsRotating] = useState(false);
+  const { theme, toggleTheme, isTransitioning } = useTheme();
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const handleToggle = () => {
-    setIsRotating(true);
-    toggleTheme();
-    setTimeout(() => setIsRotating(false), 500);
+  const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    toggleTheme(e);
   };
 
   return (
     <button
+      ref={buttonRef}
       onClick={handleToggle}
-      className="relative p-2 rounded-lg hover:bg-[var(--card)] transition-all hover:scale-110 active:scale-95 group"
-      aria-label="Toggle theme"
-      style={{
-        transform: isRotating ? "rotate(180deg)" : "rotate(0deg)",
-        transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-      }}
+      disabled={isTransitioning}
+      className="relative p-2.5 rounded-xl hover:bg-[var(--card)] transition-all group overflow-hidden"
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
-      {/* Glow effect on hover */}
-      <div className="absolute inset-0 rounded-lg bg-[#6366f1]/0 group-hover:bg-[#6366f1]/10 transition-colors" />
+      {/* Background glow on hover */}
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[var(--accent)]/0 to-[var(--accent)]/0 group-hover:from-[var(--accent)]/10 group-hover:to-[var(--accent)]/5 transition-all duration-300" />
 
-      {theme === "dark" ? (
-        <svg
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="relative z-10 transition-colors"
-        >
-          <circle cx="12" cy="12" r="5"/>
-          <line x1="12" y1="1" x2="12" y2="3"/>
-          <line x1="12" y1="21" x2="12" y2="23"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="1" y1="12" x2="3" y2="12"/>
-          <line x1="21" y1="12" x2="23" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
-      ) : (
-        <svg
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="relative z-10 transition-colors"
-        >
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
+      {/* Rotating ring effect during transition */}
+      {isTransitioning && (
+        <div className="absolute inset-0 rounded-xl">
+          <div
+            className="absolute inset-0 rounded-xl border-2 border-[var(--accent)] animate-ping"
+            style={{ animationDuration: "0.6s" }}
+          />
+        </div>
       )}
+
+      {/* Icon container with smooth morph */}
+      <div
+        className="relative z-10 w-5 h-5"
+        style={{
+          transform: isTransitioning ? "scale(1.2) rotate(180deg)" : "scale(1) rotate(0deg)",
+          transition: "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        }}
+      >
+        {/* Sun icon (visible in dark mode) */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="absolute inset-0 transition-all duration-300"
+          style={{
+            opacity: theme === "dark" ? 1 : 0,
+            transform: theme === "dark" ? "rotate(0deg) scale(1)" : "rotate(-90deg) scale(0.5)",
+          }}
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+
+        {/* Moon icon (visible in light mode) */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="absolute inset-0 transition-all duration-300"
+          style={{
+            opacity: theme === "light" ? 1 : 0,
+            transform: theme === "light" ? "rotate(0deg) scale(1)" : "rotate(90deg) scale(0.5)",
+          }}
+        >
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>
+      </div>
+
+      {/* Ripple effect on click */}
+      <span className="absolute inset-0 rounded-xl overflow-hidden">
+        <span
+          className="absolute inset-0 rounded-xl"
+          style={{
+            background: `radial-gradient(circle at center, var(--accent) 0%, transparent 70%)`,
+            opacity: isTransitioning ? 0.2 : 0,
+            transform: isTransitioning ? "scale(2)" : "scale(0)",
+            transition: "transform 0.5s ease-out, opacity 0.5s ease-out",
+          }}
+        />
+      </span>
+    </button>
+  );
+}
+
+/**
+ * Alternative minimal theme toggle for use in other contexts
+ */
+export function ThemeToggleMinimal() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <button
+      onClick={(e) => toggleTheme(e)}
+      className="p-1.5 rounded-lg hover:bg-[var(--card)] transition-colors"
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+    >
+      {theme === "dark" ? "☀️" : "🌙"}
     </button>
   );
 }
