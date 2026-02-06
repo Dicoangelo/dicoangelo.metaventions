@@ -4,7 +4,7 @@
 
 Comprehensive breakdown of technical capabilities with quantified evidence from production systems. This document provides measurable proof of expertise across programming, AI/ML systems, infrastructure, research implementation, and enterprise operations.
 
-**Core Value Proposition**: Builder who bridges cutting-edge research and enterprise-scale production. 316K+ lines of code implementing 8+ arXiv papers while managing $800M+ in operational infrastructure.
+**Core Value Proposition**: Builder who bridges cutting-edge research and enterprise-scale production. 297K+ lines of code implementing 8+ arXiv papers in <1 year of coding (Nov 2025 - present), built on 5+ years of prompt engineering (since 2020, 0.01% early OpenAI user) and 3 years managing $800M+ in operational infrastructure at Contentsquare.
 
 **Positioning**: "I design and operationalize AI-native systems that transform complex professional knowledge into reliable, enterprise-grade intelligence."
 
@@ -66,7 +66,7 @@ Comprehensive breakdown of technical capabilities with quantified evidence from 
 
 | Metric | Value | Evidence Source |
 |--------|-------|-----------------|
-| Experience | 3+ years production | OS-App, CareerCoach, published packages |
+| Experience | <1 year (Nov 2025 - present) | OS-App, CareerCoach, published packages |
 | Lines of Code | 150,000+ | 79,947 LOC (OS-App) + 22,939 LOC (CareerCoach) + npm packages |
 | Primary Frameworks | React 19, Next.js 14, Vite, Node.js | Production deployments on Vercel |
 | Build Tools | tsup, Vitest, ESLint, TypeScript 5.x | Published package configurations |
@@ -100,7 +100,7 @@ Comprehensive breakdown of technical capabilities with quantified evidence from 
 
 | Metric | Value | Evidence Source |
 |--------|-------|-----------------|
-| Experience | 2+ years production | ResearchGravity, META-VENGINE |
+| Experience | <1 year (Nov 2025 - present) | ResearchGravity, META-VENGINE |
 | Lines of Code | 50,000+ | 14K LOC (META-VENGINE) + 17K LOC (ResearchGravity) + 31K total |
 | Primary Frameworks | FastAPI, SQLite, Qdrant | Backend services |
 | ML Libraries | Cohere (embeddings), scikit-learn (clustering) | Vector search, semantic analysis |
@@ -297,6 +297,8 @@ Primary: Gemini → Fallback: Claude → Fallback: GPT-4 → Fallback: Grok
 ---
 
 ### Prompt Engineering & Tool-Using Agents
+
+**Experience: 5+ years (2020 - present)** — 0.01% early OpenAI user since GPT-2/GPT-3 era. Prompt engineering predates the coding work by 5 years.
 
 **Systematic Patterns Developed**:
 1. **Intent Classification** (8 categories): Navigation, Query, Mutation, Creation, Analysis, Orchestration, Biometric, UI Regeneration
@@ -548,7 +550,7 @@ projects.json → lineage.features_implemented
 
 ### Cross-Functional Leadership
 
-**Rocket Mortgage (2020-2023)**:
+**Rocket Mortgage (2020-2023, 3 years)**:
 - Led team of **45 agents** (Product Success Specialist)
 - **$222,750 annual cost savings** through automation
 - **7,425 hours/year** time savings
@@ -570,7 +572,7 @@ projects.json → lineage.features_implemented
 
 ### Systems Integration Architecture
 
-**Contentsquare (2022-2025)** - Cloud Alliance Operations Lead:
+**Contentsquare (2022-2025, 3 years)** - Cloud Alliance Operations Lead:
 
 **Integration Layer Owned**:
 | System A | System B | Data Flow | Business Impact |
@@ -734,17 +736,19 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 
 ### Learning & Adaptability
 
-**Self-Taught Technical Skills**:
+**Self-Taught Technical Skills (all <1 year, starting Nov 2025)**:
 - TypeScript/React ecosystem (150K+ LOC without formal training)
 - Python data engineering (50K+ LOC)
 - Multi-agent AI systems (8+ arXiv papers implemented)
 - Vector search and embeddings
 - Voice integration pipelines
 
+**Foundation**: 5+ years of prompt engineering since 2020 (0.01% early OpenAI user) provided deep understanding of AI systems before writing code.
+
 **Rapid Skill Acquisition**:
 - **3 months**: OS-App (152K LOC from zero to production)
+- **3 months**: 297K+ total LOC shipped across 6 projects
 - **2 months**: Published 2 npm packages
-- **1 year**: Contentsquare role expansion from alliance ops to systems architect
 
 **Continuous Learning**:
 - **150+ events** attended (2019-2026)
