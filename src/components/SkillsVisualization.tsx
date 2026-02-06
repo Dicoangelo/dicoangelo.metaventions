@@ -183,23 +183,62 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
           ))}
         </div>
 
-        {/* Certification/Achievement Badges */}
+        {/* Certifications */}
         <div className="mt-12 text-center">
-          <h3 className={`text-lg font-semibold mb-6 ${isLight ? 'text-gray-700' : 'text-[#ededed]'}`}>
-            Certifications & Achievements
+          <h3 className={`text-lg font-semibold mb-4 ${isLight ? 'text-gray-700' : 'text-[#ededed]'}`}>
+            Certifications
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">🏆 AWS Cloud Marketplace Specialist</span>
+              <span className="text-sm">☁️ AWS Partner: Business Accreditation</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">📊 Salesforce Platform Developer</span>
+              <span className="text-sm">🤖 AWS Partner: GenAI on AWS Essentials</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">🤖 Multi-Agent Systems Architect</span>
+              <span className="text-sm">☁️ AWS Knowledge: Cloud Essentials</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">📚 8+ Published Research Papers</span>
+              <span className="text-sm">🔒 Microsoft Copilot for Security</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">🔷 Azure Development Certifications</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">📋 Project Management (Coursera)</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Achievements & Recognition */}
+        <div className="mt-8 text-center">
+          <h3 className={`text-lg font-semibold mb-4 ${isLight ? 'text-gray-700' : 'text-[#ededed]'}`}>
+            Achievements & Recognition
+          </h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">🏆 2x Microsoft Partner of the Year (2023, 2024)</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">🎤 Catalyst 2026 Fellowship & Speaker</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">📰 Suger.io Case Study Feature</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">🧠 NeurIPS 2025 Attendee</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">🚀 SpaceX Hyperloop 2019 Finalist</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">📦 2 Published npm Packages</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">📚 8+ arXiv Papers Implemented</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">🎓 BBA Marketing, University of Windsor</span>
             </div>
           </div>
         </div>
