@@ -217,7 +217,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">🏆 2x Microsoft Partner of the Year (2023, 2024)</span>
+              <span className="text-sm">🏆 2x Microsoft Partner of the Year (2024, 2025)</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
               <span className="text-sm">🎤 Catalyst 2026 Fellowship & Speaker</span>
