@@ -67,6 +67,28 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
         { name: "Miro, Lucidchart, Figma", level: 80, years: "3+ years" },
       ],
     },
+    {
+      category: "Research & Knowledge Systems",
+      icon: "🔬",
+      skills: [
+        { name: "Research Synthesis & Methodology", level: 95, years: "5+ years" },
+        { name: "Self-Directed Learning & Meta-Learning", level: 95, years: "5+ years" },
+        { name: "Technical Writing & Documentation", level: 90, years: "3+ years" },
+        { name: "Rapid Prototyping & Iterative Shipping", level: 88, years: "<1 year" },
+        { name: "Open Source Publishing", level: 82, years: "<1 year" },
+      ],
+    },
+    {
+      category: "Leadership & Community",
+      icon: "🌐",
+      skills: [
+        { name: "Community Building & Networking", level: 92, years: "7+ years" },
+        { name: "Youth & Professional Mentorship", level: 90, years: "7+ years" },
+        { name: "Cross-Functional Coordination", level: 90, years: "3 years" },
+        { name: "Systems Thinking & Architecture", level: 92, years: "5+ years" },
+        { name: "Thought Leadership & Public Speaking", level: 85, years: "3+ years" },
+      ],
+    },
   ];
 
   // Intersection observer for animation trigger
