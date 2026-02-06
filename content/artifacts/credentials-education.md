@@ -80,7 +80,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 
 | Recognition | Context | Year |
 |-------------|---------|------|
-| **2x Microsoft Partner of the Year Contributor** | Cloud marketplace operations excellence | 2023, 2024 |
+| **2x Microsoft Partner of the Year Contributor** | Cloud marketplace operations excellence | 2024, 2025 |
 | **Catalyst 2026 Fellowship** | Selected for emerging technology leadership program | 2026 |
 | **Suger.io Case Study Feature** | Cloud marketplace automation best practices | 2024 |
 | **NeurIPS 2025 Attendee** | Neural Information Processing Systems conference | 2025 |

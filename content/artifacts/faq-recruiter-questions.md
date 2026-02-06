@@ -110,7 +110,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Partner program consolidation (3 acquired companies: Contentsquare, Hotjar, Heap)
 
 **Recognition:**
-- 2x Microsoft Partner of the Year awards
+- 2x Microsoft Partner of the Year awards (2024, 2025)
 - Catalyst 2026 Speaker
 - Suger.io Case Study (featured as Cloud Alliance Operations Lead)
 - "Best-in-class" reporting—executive praise
@@ -470,7 +470,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
    - $800M+ deals managed (not just code for code's sake)
    - 60% reduction in manual effort (automation at Contentsquare)
    - $222K annual savings (Rocket Mortgage)
-   - 2x Microsoft Partner of the Year awards
+   - 2x Microsoft Partner of the Year awards (2024, 2025)
 
 **Years of experience ≠ quality of experience.**
 
@@ -600,7 +600,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Registered/processed $800M+ TCV
 - Operations lead supporting $30M+ ACV growth
 - Built 50+ reports, 6 platform integrations
-- 2x Microsoft Partner of the Year awards
+- 2x Microsoft Partner of the Year awards (2024, 2025)
 - "Best-in-class" reporting—executive praise
 
 **At Rocket Mortgage (2020-2023) while learning to code:**

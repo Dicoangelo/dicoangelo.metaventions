@@ -886,7 +886,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 - $800M+ TCV across 2,500+ deal registrations
 - 97% approval rate (operational excellence)
 - 40% cloud attachment rate
-- 2x Microsoft Partner of the Year contributor
+- 2x Microsoft Partner of the Year contributor (2024, 2025)
 
 **Systems Thinking**:
 - Ask about PartnerStack ↔ Salesforce integration design

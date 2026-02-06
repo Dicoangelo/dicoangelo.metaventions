@@ -212,7 +212,7 @@ These insights powered strategic decision-making across Sales, Marketing, and Pr
 ### Awards & Recognition
 
 **Industry Recognition:**
-- **2x Microsoft Partner of the Year** awards (team contributor)
+- **2x Microsoft Partner of the Year** awards (team contributor, 2024, 2025)
 - **Catalyst 2026 Speaker** — Featured testimonial: *"Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience."* ([source](https://www.joincatalyst.com/catalyst26))
 - **1159.ai Innovation Workshop** — Featured testimonial on rapid prototyping and iterative design: *"This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment... The iterative process we followed enabled us to test and refine our ideas rapidly, collaboratively engaging with previous iterations to find the best solution."* ([source](https://blog.1159.ai/the-art-and-science-of-innovation))
 - **Suger.io Case Study** — Featured as Cloud Alliance Operations Lead: *"Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool—it's become an extension of our team."* ([source](https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits))

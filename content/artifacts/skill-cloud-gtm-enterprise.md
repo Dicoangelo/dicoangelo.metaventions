@@ -48,7 +48,7 @@ Combines technical cloud platform knowledge with strategic partner management, r
   - MACC (Microsoft Azure Consumption Commitment) deal structures
 
 - **Partner Recognition**
-  - 2x Microsoft Partner of the Year recipient (at Contentsquare)
+  - 2x Microsoft Partner of the Year recipient (2024, 2025, at Contentsquare)
   - Co-sell with Microsoft field organization
   - Strategic alliance management
 
