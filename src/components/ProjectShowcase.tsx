@@ -34,7 +34,7 @@ const projects: Project[] = [
       "arXiv:2508.17536 - Voting vs Debate"
     ],
     github: "https://github.com/Dicoangelo/OS-App/blob/main/services/adaptiveConsensus.ts",
-    demo: "https://os-app-woad.vercel.app",
+    demo: "https://app.metaventionsai.com",
     loc: "1,462 LOC"
   },
   {
@@ -54,7 +54,7 @@ const projects: Project[] = [
       "arXiv:2508.07407 - Self-Evolving Agents"
     ],
     github: "https://github.com/Dicoangelo/OS-App/blob/main/services/archon/index.ts",
-    demo: "https://os-app-woad.vercel.app",
+    demo: "https://app.metaventionsai.com",
     loc: "1,280 LOC"
   },
   {

@@ -150,7 +150,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
               npm Packages →
             </a>
             <a
-              href="https://os-app-woad.vercel.app"
+              href="https://app.metaventionsai.com"
               target="_blank"
               className={`text-sm px-4 py-2 border rounded-lg transition-colors ${
                 isLight

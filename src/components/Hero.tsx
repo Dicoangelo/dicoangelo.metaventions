@@ -131,7 +131,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex gap-4 justify-center mb-8 flex-wrap animate-fade-in animate-delay-400">
           <a
-            href="https://os-app-woad.vercel.app"
+            href="https://app.metaventionsai.com"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary btn-lg group"
