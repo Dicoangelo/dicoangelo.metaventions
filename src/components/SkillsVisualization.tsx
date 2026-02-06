@@ -60,11 +60,12 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
       category: "Enterprise Tools",
       icon: "🏢",
       skills: [
+        { name: "Google Workspace", level: 95, years: "10+ years" },
+        { name: "Microsoft 365 / Office Suite", level: 95, years: "10+ years" },
         { name: "AWS Cloud Marketplace", level: 95, years: "3 years" },
         { name: "Salesforce Administration", level: 88, years: "3 years" },
-        { name: "Snowflake & Tableau", level: 82, years: "3 years" },
-        { name: "PRM (PartnerStack, Crossbeam)", level: 85, years: "3 years" },
-        { name: "Miro, Lucidchart, Figma", level: 80, years: "3+ years" },
+        { name: "PRM (PartnerStack, Crossbeam, Reveal)", level: 85, years: "3 years" },
+        { name: "Snowflake, Tableau, Miro, Figma", level: 82, years: "3 years" },
       ],
     },
     {
