@@ -529,7 +529,7 @@ Dico Angelo
 dicoangelo@metaventionsai.com
 
 <p align="center">
-  <a href="https://metaventions-ai-architected-intelligence-1061986917838.us-west1.run.app/">
+  <a href="https://metaventionsai.com">
     <img src="https://img.shields.io/badge/Metaventions_AI-Website-00d9ff?style=for-the-badge" alt="Website" />
   </a>
   <a href="https://github.com/Dicoangelo">
@@ -1998,7 +1998,7 @@ Dico Angelo
 dicoangelo@metaventionsai.com
 
 <p align="center">
-  <a href="https://metaventions-ai-architected-intelligence-1061986917838.us-west1.run.app/">
+  <a href="https://metaventionsai.com">
     <img src="https://img.shields.io/badge/Metaventions_AI-Website-00d9ff?style=for-the-badge" alt="Website" />
   </a>
   <a href="https://github.com/Dicoangelo">
@@ -2238,7 +2238,7 @@ Dico Angelo
 dicoangelo@metaventionsai.com
 
 <p align="center">
-  <a href="https://metaventions-ai-architected-intelligence-1061986917838.us-west1.run.app/">
+  <a href="https://metaventionsai.com">
     <img src="https://img.shields.io/badge/Metaventions_AI-Website-00d9ff?style=for-the-badge" alt="Website" />
   </a>
   <a href="https://github.com/Dicoangelo">
@@ -2290,7 +2290,7 @@ dicoangelo@metaventionsai.com
 </p>
 
 <p align="center">
-  <a href="https://metaventions-ai-architected-intelligence-1061986917838.us-west1.run.app/">
+  <a href="https://metaventionsai.com">
     <img src="https://img.shields.io/badge/Live_System-Deployed-00d9ff?style=for-the-badge" alt="Live" />
   </a>
 </p>
@@ -2466,7 +2466,7 @@ GEMINI_API_KEY=...       # Optional: Analysis
 npm run dev
 ```
 
-**Live Demo**: [metaventions-ai-architected-intelligence](https://metaventions-ai-architected-intelligence-1061986917838.us-west1.run.app/)
+**Live Demo**: [metaventions-ai-architected-intelligence](https://metaventionsai.com)
 
 ---
 

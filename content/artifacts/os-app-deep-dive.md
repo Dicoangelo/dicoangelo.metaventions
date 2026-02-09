@@ -543,7 +543,7 @@ OS-App is part of the **Antigravity ecosystem**:
 Dico Angelo
 dicoangelo@metaventionsai.com
 
-- **Website:** [metaventions-ai-architected-intelligence.us-west1.run.app](https://metaventions-ai-architected-intelligence-1061986917838.us-west1.run.app/)
+- **Website:** [metaventions-ai-architected-intelligence.us-west1.run.app](https://metaventionsai.com)
 - **GitHub:** [github.com/Dicoangelo](https://github.com/Dicoangelo)
 - **Repository:** [github.com/Dicoangelo/OS-App](https://github.com/Dicoangelo/OS-App)
 
