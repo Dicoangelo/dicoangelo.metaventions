@@ -1,0 +1,540 @@
+{
+  "epic": {
+    "id": "frontier-polish",
+    "title": "Frontier-Level Portfolio Polish",
+    "description": "Transform dicoangelo.com into an undeniably impressive portfolio that communicates AI-Augmented Operator + Systems Thinker positioning. Quality bar: Linear × Stripe × Vercel × Raycast.",
+    "source": "./docs/PRD-FRONTIER-POLISH.md"
+  },
+  "quality_gates": {
+    "universal": "npm run typecheck && npm run lint && npm run test",
+    "ui": "Verify with dev-browser skill before marking complete"
+  },
+  "stories": [
+    {
+      "id": "US-1.4",
+      "title": "Premium Color System",
+      "phase": 1,
+      "type": "foundation",
+      "description": "As a visitor, I want a sophisticated color palette with dynamic gradients so that the visual identity feels elevated and intentional.",
+      "acceptance_criteria": [
+        "Define CSS custom properties for full palette",
+        "Animated gradient backgrounds (subtle movement, not distracting)",
+        "Accent color that shifts based on section/context",
+        "Gradient text for key headlines (with solid fallback)",
+        "Glow effects on interactive elements",
+        "Consistent across dark and light modes",
+        "npm run typecheck && npm run lint && npm run test passes"
+      ],
+      "dependencies": [],
+      "priority": 1
+    },
+    {
+      "id": "US-7.1",
+      "title": "Progressive Loading Strategy",
+      "phase": 1,
+      "type": "performance",
+      "description": "As a visitor, I want fast initial load with progressive enhancement so that I see content immediately and features enhance over time.",
+      "acceptance_criteria": [
+        "Critical CSS inlined",
+        "Above-fold content renders < 1s",
+        "3D/heavy animations lazy loaded",
+        "Images: next/image with blur placeholder",
+        "Fonts: display swap, preload critical",
+        "Code splitting by route",
+        "npm run typecheck && npm run lint && npm run test passes"
+      ],
+      "dependencies": [],
+      "priority": 1
+    },
+    {
+      "id": "US-1.5",
+      "title": "Scroll-Triggered Animations",
+      "phase": 1,
+      "type": "ui",
+      "description": "As a visitor, I want content to reveal elegantly as I scroll so that the experience feels crafted and intentional.",
+      "acceptance_criteria": [
+        "Intersection Observer-based triggers (not scroll listeners)",
+        "Staggered reveals for lists/grids",
+        "Parallax effects on key visual elements (subtle, not nauseating)",
+        "Progress indicator showing scroll position",
+        "Animations only trigger once (not on every scroll pass)",
+        "All animations respect prefers-reduced-motion",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.4"],
+      "priority": 2
+    },
+    {
+      "id": "US-2.3",
+      "title": "Cinematic Dark/Light Toggle",
+      "phase": 1,
+      "type": "ui",
+      "description": "As a visitor, I want a beautiful theme transition so that even utility actions feel premium.",
+      "acceptance_criteria": [
+        "Toggle with cinematic transition (not instant swap)",
+        "Options: radial wipe from toggle, full-screen fade, or clip-path reveal",
+        "Respects system preference on first visit",
+        "Persists choice in localStorage",
+        "Smooth color interpolation (not jarring)",
+        "All components properly themed",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.4"],
+      "priority": 2
+    },
+    {
+      "id": "US-3.1",
+      "title": "Adaptive Navigation",
+      "phase": 1,
+      "type": "ui",
+      "description": "As a visitor, I want navigation that adapts to my scroll behavior so that it's always accessible but never intrusive.",
+      "acceptance_criteria": [
+        "Initially visible, hides on scroll down",
+        "Reappears on scroll up or hover at top",
+        "Becomes translucent/blur backdrop when over content",
+        "Shrinks/simplifies after scrolling past hero",
+        "Current section indicator",
+        "Smooth transitions between states",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.5"],
+      "priority": 2
+    },
+    {
+      "id": "US-1.1",
+      "title": "Ambient Particle System",
+      "phase": 2,
+      "type": "ui",
+      "description": "As a visitor, I want subtle, intelligent particle animations in the background so that the site feels alive and premium without being distracting.",
+      "acceptance_criteria": [
+        "Particles respond to scroll position (density/speed changes)",
+        "Particles subtly attract toward cursor on hover",
+        "Performance: < 5% GPU usage, requestAnimationFrame optimized",
+        "Respects prefers-reduced-motion",
+        "Graceful degradation on mobile (fewer particles)",
+        "Colors adapt to dark/light mode",
+        "Use canvas or WebGL (not DOM elements)",
+        "Lazy load after LCP",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.4", "US-7.1"],
+      "priority": 3
+    },
+    {
+      "id": "US-1.2",
+      "title": "3D Hero Element",
+      "phase": 2,
+      "type": "ui",
+      "description": "As a visitor, I want an interactive 3D element in the hero section so that I immediately understand this person operates at a different level.",
+      "acceptance_criteria": [
+        "3D geometric form (abstract, not literal) using Three.js/React Three Fiber",
+        "Responds to mouse movement (subtle rotation/distortion)",
+        "Morphs on scroll (transforms as user scrolls down)",
+        "Mobile: static or simplified animation (touch to interact)",
+        "Loads progressively (placeholder → low-poly → full detail)",
+        "< 200KB total asset size for 3D",
+        "Abstract crystalline/network structure representing systems thinking",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-7.1", "US-1.1"],
+      "priority": 3
+    },
+    {
+      "id": "US-1.3",
+      "title": "Kinetic Typography",
+      "phase": 2,
+      "type": "ui",
+      "description": "As a visitor, I want headline text that animates with purpose so that the messaging lands with impact.",
+      "acceptance_criteria": [
+        "Hero headline reveals with staggered character/word animation",
+        "Scroll-triggered text animations for section headers",
+        "At least one signature text effect (split, blur-in, or magnetic)",
+        "Animations complete within 800ms (not sluggish)",
+        "Text remains accessible (not hidden until animation)",
+        "Works with variable fonts for weight transitions",
+        "Use Framer Motion or GSAP for orchestration",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.5"],
+      "priority": 3
+    },
+    {
+      "id": "US-2.2",
+      "title": "Intelligent Cursor",
+      "phase": 2,
+      "type": "ui",
+      "description": "As a visitor, I want the cursor to respond intelligently to page elements so that interactions feel premium and intentional.",
+      "acceptance_criteria": [
+        "Custom cursor that follows mouse with slight delay (lerp)",
+        "Cursor morphs on interactive elements (grows, changes shape)",
+        "Magnetic effect on buttons (cursor + button attract)",
+        "Text cursor mode over paragraphs",
+        "Hide on mobile (touch devices)",
+        "Respects system cursor preference",
+        "Doesn't interfere with actual clicking",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.4"],
+      "priority": 3
+    },
+    {
+      "id": "US-2.5",
+      "title": "Micro-interactions",
+      "phase": 2,
+      "type": "ui",
+      "description": "As a visitor, I want subtle feedback on every interaction so that the site feels responsive and alive.",
+      "acceptance_criteria": [
+        "Button hover states with scale/glow",
+        "Link underline animations",
+        "Form input focus states with animation",
+        "Copy-to-clipboard confirmations",
+        "Loading states with skeleton screens",
+        "Success/error states with motion",
+        "Sound effects option (off by default, toggle in settings)",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.4", "US-2.2"],
+      "priority": 3
+    },
+    {
+      "id": "US-2.1",
+      "title": "Command Palette",
+      "phase": 3,
+      "type": "ui",
+      "description": "As a power user, I want a command palette for quick navigation so that I can explore the site efficiently and be impressed by the attention to detail.",
+      "acceptance_criteria": [
+        "Opens with Cmd+K (Mac) / Ctrl+K (Windows)",
+        "Fuzzy search across all pages/sections",
+        "Quick actions: toggle theme, contact, view resume, external links",
+        "Recent searches remembered (localStorage)",
+        "Keyboard navigation (arrows, enter, escape)",
+        "Smooth open/close animation",
+        "Mobile: accessible via floating button",
+        "Commands: Navigation (Home, About, Projects, Contact), Actions (Toggle Dark Mode, Download Resume, Copy Email), External (GitHub, LinkedIn, Twitter), Easter eggs (terminal, matrix, hire me)",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-2.3", "US-2.5"],
+      "priority": 4
+    },
+    {
+      "id": "US-2.4",
+      "title": "Terminal Easter Egg",
+      "phase": 3,
+      "type": "ui",
+      "description": "As a curious visitor, I want to discover a hidden terminal mode so that I'm delighted and see the technical depth.",
+      "acceptance_criteria": [
+        "Activated via command palette (terminal) or keyboard sequence",
+        "Full-screen terminal aesthetic overlay",
+        "Type commands to navigate: cd projects, cat about.txt, ls skills",
+        "Fun responses to commands like sudo hire-me, whoami, help",
+        "ASCII art welcome message",
+        "Exit with exit or Escape key",
+        "Mobile-friendly with on-screen keyboard consideration",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-2.1"],
+      "priority": 4
+    },
+    {
+      "id": "US-3.2",
+      "title": "Section Side Navigation",
+      "phase": 3,
+      "type": "ui",
+      "description": "As a visitor, I want a side indicator showing my position so that I can quickly jump between sections.",
+      "acceptance_criteria": [
+        "Vertical dots/lines on right edge",
+        "Active section highlighted",
+        "Click to jump to section (smooth scroll)",
+        "Tooltip on hover showing section name",
+        "Only visible on long pages",
+        "Fades out on mobile or becomes swipe indicator",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-3.1", "US-1.5"],
+      "priority": 4
+    },
+    {
+      "id": "US-4.1",
+      "title": "Testimonial System",
+      "phase": 3,
+      "type": "ui",
+      "description": "As a visitor, I want to see credible testimonials so that I trust this person's capabilities.",
+      "acceptance_criteria": [
+        "Carousel or staggered grid layout",
+        "Photos with subtle parallax or hover effect",
+        "Name, title, company for each",
+        "Quote with highlight animation on key phrases",
+        "Link to LinkedIn profile where possible",
+        "Mobile: swipeable cards",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.5", "US-2.5"],
+      "priority": 4
+    },
+    {
+      "id": "US-4.2",
+      "title": "Logo Wall",
+      "phase": 3,
+      "type": "ui",
+      "description": "As a visitor, I want to see companies/projects associated so that I understand the caliber of work.",
+      "acceptance_criteria": [
+        "Grid of logos (grayscale default, color on hover)",
+        "Infinite scroll animation option",
+        "Click to filter projects by that company",
+        "Tooltip with brief context",
+        "Responsive grid (adapts to screen size)",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.5", "US-2.5"],
+      "priority": 4
+    },
+    {
+      "id": "US-4.3",
+      "title": "Animated Metrics",
+      "phase": 3,
+      "type": "ui",
+      "description": "As a visitor, I want to see impressive numbers so that achievements feel tangible.",
+      "acceptance_criteria": [
+        "Count-up animation when scrolled into view",
+        "Key metrics: projects, years, technologies, impact numbers",
+        "Subtle pulse/glow when animation completes",
+        "Context labels (not just numbers)",
+        "Only animate once per session",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.5"],
+      "priority": 4
+    },
+    {
+      "id": "US-4.4",
+      "title": "Case Study Presentation",
+      "phase": 3,
+      "type": "ui",
+      "description": "As a visitor, I want deep-dive case studies so that I understand the depth of work.",
+      "acceptance_criteria": [
+        "Each case study as a mini-journey (scroll-driven)",
+        "Before/after comparisons where applicable",
+        "Tech stack badges",
+        "Outcome metrics highlighted",
+        "View Live and View Code CTAs where applicable",
+        "Related projects suggestion",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.5", "US-4.3"],
+      "priority": 4
+    },
+    {
+      "id": "US-4.5",
+      "title": "AI-Augmentation Narrative",
+      "phase": 3,
+      "type": "content",
+      "description": "As a visitor, I want to understand the AI-augmented approach so that I see this as a differentiator, not a limitation.",
+      "acceptance_criteria": [
+        "Dedicated section or woven into About",
+        "Framing: Orchestration mastery not AI does my work",
+        "Visual showing human judgment + AI capability",
+        "Examples of complex systems orchestrated",
+        "Badge/identifier: AI-Augmented Operator (subtle, premium)",
+        "Links to methodology or philosophy",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-1.4", "US-1.3"],
+      "priority": 4
+    },
+    {
+      "id": "US-6.1",
+      "title": "Visitor Context Detection",
+      "phase": 4,
+      "type": "feature",
+      "description": "As the site owner, I want to understand visitor context so that I can tailor the experience.",
+      "acceptance_criteria": [
+        "Detect: time of day, referrer, device, return visitor",
+        "Store preferences anonymously (no PII)",
+        "Adjust greeting based on time (Good evening)",
+        "Highlight relevant content based on referrer (GitHub → projects)",
+        "Privacy-first: all detection client-side",
+        "npm run typecheck && npm run lint && npm run test passes"
+      ],
+      "dependencies": [],
+      "priority": 5
+    },
+    {
+      "id": "US-6.2",
+      "title": "Return Visitor Experience",
+      "phase": 4,
+      "type": "feature",
+      "description": "As a return visitor, I want the site to remember me so that I feel recognized.",
+      "acceptance_criteria": [
+        "Welcome back messaging",
+        "Remember theme preference",
+        "Show New since your last visit for updated content",
+        "Skip intro animations on repeat visits",
+        "Clear way to reset/clear data",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-6.1", "US-2.3"],
+      "priority": 5
+    },
+    {
+      "id": "US-6.3",
+      "title": "Dynamic Content Adaptation",
+      "phase": 4,
+      "type": "feature",
+      "description": "As a visitor, I want content that adapts to my interests so that I see the most relevant information.",
+      "acceptance_criteria": [
+        "Track section engagement (time spent, clicks)",
+        "Surface related content based on behavior",
+        "A/B test headlines/CTAs",
+        "Smart project ordering based on interest signals",
+        "All tracking anonymous and transparent",
+        "npm run typecheck && npm run lint && npm run test passes"
+      ],
+      "dependencies": ["US-6.1", "US-6.2"],
+      "priority": 5
+    },
+    {
+      "id": "US-5.1",
+      "title": "Touch-Optimized Interactions",
+      "phase": 4,
+      "type": "mobile",
+      "description": "As a mobile visitor, I want interactions designed for touch so that the experience feels native, not adapted.",
+      "acceptance_criteria": [
+        "All tap targets minimum 44x44px",
+        "Swipe gestures where appropriate",
+        "No hover-dependent information",
+        "Touch feedback (scale, ripple)",
+        "Optimized for one-handed use",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill on mobile viewport"
+      ],
+      "dependencies": ["US-2.5"],
+      "priority": 5
+    },
+    {
+      "id": "US-5.2",
+      "title": "App-Like Transitions",
+      "phase": 4,
+      "type": "mobile",
+      "description": "As a mobile visitor, I want smooth page transitions so that the site feels like a native app.",
+      "acceptance_criteria": [
+        "Shared element transitions between pages",
+        "Slide/fade transitions based on navigation direction",
+        "Loading states that don't flash",
+        "Back gesture support (swipe from edge)",
+        "Bottom navigation option for key sections",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill on mobile viewport"
+      ],
+      "dependencies": ["US-5.1", "US-3.1"],
+      "priority": 5
+    },
+    {
+      "id": "US-5.3",
+      "title": "Offline Capability (PWA)",
+      "phase": 4,
+      "type": "mobile",
+      "description": "As a mobile visitor, I want basic offline access so that I can view content without connection.",
+      "acceptance_criteria": [
+        "Service worker caches critical assets",
+        "Offline page with cached content",
+        "Clear indication when offline",
+        "Resume sync when back online",
+        "PWA installable (manifest.json complete)",
+        "npm run typecheck && npm run lint && npm run test passes"
+      ],
+      "dependencies": ["US-7.1"],
+      "priority": 5
+    },
+    {
+      "id": "US-3.3",
+      "title": "Mobile Gesture Navigation",
+      "phase": 4,
+      "type": "mobile",
+      "description": "As a mobile visitor, I want intuitive gesture controls so that navigation feels native.",
+      "acceptance_criteria": [
+        "Swipe between major sections",
+        "Pull-to-refresh style interaction for easter eggs",
+        "Bottom sheet for navigation menu",
+        "Haptic feedback on supported devices",
+        "Thumb-zone optimized tap targets",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill on mobile viewport"
+      ],
+      "dependencies": ["US-5.1", "US-5.2"],
+      "priority": 5
+    },
+    {
+      "id": "US-7.2",
+      "title": "Core Web Vitals Excellence",
+      "phase": 4,
+      "type": "performance",
+      "description": "As the site owner, I want perfect CWV scores so that the site ranks well and feels fast.",
+      "acceptance_criteria": [
+        "LCP < 1.5s",
+        "CLS < 0.1",
+        "INP < 100ms",
+        "Lighthouse score > 95 all categories",
+        "Real User Monitoring setup (Vercel Analytics)",
+        "Performance budget enforced in CI",
+        "npm run typecheck && npm run lint && npm run test passes"
+      ],
+      "dependencies": ["US-7.1", "US-1.1", "US-1.2"],
+      "priority": 5
+    },
+    {
+      "id": "US-7.3",
+      "title": "Graceful Degradation",
+      "phase": 4,
+      "type": "performance",
+      "description": "As a visitor on a low-end device, I want a functional experience so that I can still access content.",
+      "acceptance_criteria": [
+        "Detect device capability (GPU, memory)",
+        "Disable heavy animations on low-end",
+        "Serve lighter assets when appropriate",
+        "Error boundaries prevent full crashes",
+        "Fallback UI for unsupported features",
+        "npm run typecheck && npm run lint && npm run test passes"
+      ],
+      "dependencies": ["US-7.2", "US-1.1", "US-1.2"],
+      "priority": 5
+    },
+    {
+      "id": "US-7.4",
+      "title": "Final Polish Pass",
+      "phase": 4,
+      "type": "polish",
+      "description": "As the site owner, I want obsessive attention to detail so that nothing feels unfinished.",
+      "acceptance_criteria": [
+        "Consistent spacing system throughout",
+        "All focus states visible and styled",
+        "No layout shift on any interaction",
+        "Favicon set (all sizes, dark/light)",
+        "OG images generated for all pages",
+        "404 page with personality",
+        "Print stylesheet",
+        "RSS feed for blog/updates",
+        "npm run typecheck && npm run lint && npm run test passes",
+        "Verify with dev-browser skill"
+      ],
+      "dependencies": ["US-7.2", "US-7.3"],
+      "priority": 6
+    }
+  ]
+}
