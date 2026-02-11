@@ -22,9 +22,11 @@ export function useKeyboardShortcuts(shortcuts: ShortcutConfig[]) {
 
         if (matchesKey && matchesCtrl && matchesMeta && matchesShift) {
           // Don't trigger if user is typing in an input
+          const target = event.target as HTMLElement;
           if (
-            event.target instanceof HTMLInputElement ||
-            event.target instanceof HTMLTextAreaElement
+            target instanceof HTMLInputElement ||
+            target instanceof HTMLTextAreaElement ||
+            target.isContentEditable
           ) {
             return;
           }

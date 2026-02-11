@@ -16,6 +16,16 @@ export default function KeyboardShortcutsHelp({ isLight }: KeyboardShortcutsHelp
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      // Don't trigger when typing in inputs, textareas, or contenteditable
+      const target = event.target as HTMLElement;
+      if (
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement ||
+        target.isContentEditable
+      ) {
+        return;
+      }
+
       // Show shortcuts with '?' key
       if (event.key === "?" && !isOpen) {
         event.preventDefault();
