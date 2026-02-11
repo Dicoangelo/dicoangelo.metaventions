@@ -148,31 +148,35 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     }
   }, [deepgramError]);
 
-  // Animate Dico frequencies
+  // Animate Dico frequencies — smooth sine waves, no random noise
   useEffect(() => {
     let interval: NodeJS.Timeout;
 
     if (isSpeaking && !ttsAnalyserRef.current) {
+      // Smooth layered sine waves for speaking (no Math.random)
       interval = setInterval(() => {
         setDicoFrequencies(prev =>
           prev.map((_, i) => {
-            const base = Math.sin(Date.now() / 100 + i * 0.6) * 80 + 140;
-            return Math.min(255, Math.max(0, base + Math.random() * 60));
+            const t = Date.now() / 150;
+            const wave1 = Math.sin(t + i * 0.5) * 60;
+            const wave2 = Math.sin(t * 1.3 + i * 0.3) * 30;
+            const wave3 = Math.sin(t * 0.7 + i * 0.8) * 20;
+            return Math.min(255, Math.max(0, 130 + wave1 + wave2 + wave3));
           })
         );
-      }, 60); // Reduced from 30ms to 60ms (16 FPS instead of 33 FPS) - imperceptible to human eye, 50% CPU savings
+      }, 60);
     } else if (isProcessing) {
       interval = setInterval(() => {
         setDicoFrequencies(prev =>
           prev.map((_, i) => Math.sin(Date.now() / 200 + i * 0.3) * 35 + 50)
         );
-      }, 50);
+      }, 60);
     } else if (isListening) {
       interval = setInterval(() => {
         setDicoFrequencies(prev =>
           prev.map((_, i) => Math.sin(Date.now() / 600 + i * 0.2) * 20 + 25)
         );
-      }, 60);
+      }, 80);
     } else {
       interval = setInterval(() => {
         setDicoFrequencies(prev =>
