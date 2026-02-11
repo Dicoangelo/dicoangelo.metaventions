@@ -35,7 +35,7 @@ export default function BackToTop({ isLight }: BackToTopProps) {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-6 left-6 z-40 btn-icon w-12 h-12 ${
+      className={`fixed bottom-6 left-6 z-40 btn-icon w-12 h-12 hidden md:inline-flex ${
         isLight ? "bg-white text-gray-700 border border-gray-200" : ""
       }`}
       aria-label="Back to top"

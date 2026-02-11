@@ -44,44 +44,45 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       company: "Metaventions AI",
       location: "Remote",
       type: "work",
-      description: "Building META-VENGINE: 9-system self-improving AI infrastructure for autonomous operations. Shipped 297K+ LOC in 3 months.",
+      description: "Shipped 410,000+ lines of production code across 4 deployed AI systems: Structura, CareerCoach, ResearchGravity, and Claude Infrastructure.",
       highlights: [
-        "Shipped 297K+ lines of production agentic code in 3 months",
-        "Implemented 8+ arXiv papers into production systems",
-        "Created ACE (Adaptive Consensus Engine) - 6-agent autonomous analysis system",
-        "Published 2 npm packages (@metaventionsai/cpb-core, @metaventionsai/voice-nexus)",
+        "Built Structura: 85,500+ line voice-native OS with multi-agent orchestration",
+        "Created CareerCoach: 26,600+ line career intelligence platform",
+        "Developed ResearchGravity: 35,200+ line research-to-production pipeline",
+        "Built Claude Infrastructure: 262,400+ lines of custom developer tooling",
       ],
-      metrics: ["297K+ LOC", "8+ Papers", "2 npm Packages"],
+      metrics: ["410K+ LOC", "4 Systems", "Deployed"],
     },
     {
       date: "2022 - 2025",
-      title: "Cloud Alliance Operations Lead",
+      title: "Cloud Alliance Operations & Partner Systems",
       company: "Contentsquare",
-      location: "Remote",
+      location: "Paris / Remote",
       type: "work",
-      description: "Operations infrastructure builder for cloud marketplace deal registrations (team of 3). 3-year tenure spanning AWS & Microsoft partnerships.",
+      description: "Operations leader enabling $30M+ cloud marketplace revenue growth in 30 months (0 to scale). Managed strategic vendor relationships with AWS & Microsoft.",
       highlights: [
-        "Processed $800M+ in cloud marketplace deal registrations",
-        "Achieved 97% approval rate across 2,500+ registrations",
-        "Built automated workflows supporting 600+ deals/quarter capacity",
-        "Reduced registration turnaround from 8 min to 30 sec (90% improvement)",
+        "Scaled cloud marketplace from $0 to $30M+ in 30 months",
+        "Managed $800M+ TCV with 40% cloud attachment rate",
+        "Automated 90% of deal registrations, reducing manual inputs by 60%",
+        "Contributed to 2x Microsoft Partner of the Year (2024, 2025)",
+        "14x AWS YoY growth, 81% larger ACV, 26-day shorter sales cycles",
       ],
-      metrics: ["$800M+ TCV", "97% Approval", "2,500+ Deals"],
+      metrics: ["$30M+ Revenue", "$800M+ TCV", "2x MSFT POTY"],
     },
     {
       date: "2020 - 2023",
-      title: "Product Success Specialist",
-      company: "Rocket Mortgage",
-      location: "Remote",
+      title: "Product Operations Manager",
+      company: "Rocket Mortgage Canada",
+      location: "Windsor, ON",
       type: "work",
-      description: "Led team of 45 agents in product adoption and success measurement. Built automation saving $222K annually.",
+      description: "Led data operations for team of 45 agents with quality control systems. Built evaluation frameworks delivering $222K annual savings.",
       highlights: [
         "Led team of 45 agents with 90% satisfaction score",
-        "Delivered $222,750 annual cost savings through automation",
-        "Achieved 98% accuracy rate across quality control metrics",
-        "30% faster document verification via process automation",
+        "Built evaluation frameworks: $222,750 annual cost savings, 7,425 hours/year",
+        "Improved onboarding pipeline efficiency by 91.67%",
+        "Achieved 20% increase in customer satisfaction through product improvements",
       ],
-      metrics: ["$222K Savings", "45 Team", "98% Accuracy"],
+      metrics: ["$222K Savings", "45 Agents", "91% Efficiency"],
     },
     {
       date: "2026",
@@ -185,7 +186,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
           />
 
           {/* Events */}
-          <div className="space-y-12">
+          <div className="space-y-6 md:space-y-12">
             {events.map((event, index) => {
               const isExpanded = selectedEvent === index;
               const isLeft = index % 2 === 0;

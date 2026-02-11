@@ -1,6 +1,6 @@
 "use client";
 
-import Script from "next/script";
+import { useState } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
 interface ContactSectionProps {
@@ -8,20 +8,50 @@ interface ContactSectionProps {
 }
 
 export function ContactSection({ isLight }: ContactSectionProps) {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const canSubmit = form.name.trim() && form.email.trim() && form.message.trim().length >= 10;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!canSubmit || status === "sending") return;
+
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  const inputClass = `w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${
+    isLight
+      ? "bg-white border-gray-300 text-gray-900 placeholder-gray-400"
+      : "bg-[#0a0a0a] border-[#262626] text-white placeholder-gray-500"
+  }`;
+
   return (
     <AnimatedSection id="contact" className="py-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">Deployment Ready</h2>
         <div className={`mb-8 max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
           <p className="mb-4 text-lg">
-            I am currently open to new opportunities at the intersection of <strong>AI Systems Engineering</strong> and <strong>Enterprise Operations</strong>.
+            I am currently open to new opportunities at the intersection of <strong>AI systems</strong> and <strong>operations leadership</strong>.
           </p>
           <div className="flex flex-wrap justify-center gap-2 text-sm">
             <span className={`px-3 py-1 rounded-full border font-medium ${isLight ? 'bg-green-100 text-green-700 border-green-200' : 'bg-green-500/10 text-green-400 border-green-500/20'}`}>
-              ✅ TN Visa Eligible
+              TN Visa Eligible
             </span>
             <span className={`px-3 py-1 rounded-full border font-medium ${isLight ? 'bg-blue-100 text-blue-700 border-blue-200' : 'bg-blue-500/10 text-blue-400 border-blue-500/20'}`}>
-              📍 Open to Relocation (SF, NYC, Austin)
+              Open to Relocation (SF, NYC, Austin)
             </span>
           </div>
         </div>
@@ -44,20 +74,73 @@ export function ContactSection({ isLight }: ContactSectionProps) {
           </a>
         </div>
 
-        {/* Calendly Scheduling */}
-        <div className="mb-8">
+        {/* Contact Form */}
+        <div className="max-w-lg mx-auto mb-8">
           <h3 className={`text-xl font-medium mb-4 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
-            Schedule a Call
+            Send a Message
           </h3>
-          <div
-            className="calendly-inline-widget"
-            data-url="https://calendly.com/dicoangelo-metaventionsai/30min?primary_color=8314da"
-            style={{ minWidth: '320px', height: '700px' }}
-          />
-          <Script
-            src="https://assets.calendly.com/assets/external/widget.js"
-            strategy="lazyOnload"
-          />
+
+          {status === "sent" ? (
+            <div className={`p-6 rounded-xl border text-center ${
+              isLight ? 'bg-green-50 border-green-200' : 'bg-green-500/10 border-green-500/20'
+            }`}>
+              <p className={`text-lg font-medium mb-1 ${isLight ? 'text-green-800' : 'text-green-400'}`}>
+                Message sent!
+              </p>
+              <p className={`text-sm ${isLight ? 'text-green-600' : 'text-green-500/80'}`}>
+                I&apos;ll get back to you shortly.
+              </p>
+              <button
+                onClick={() => setStatus("idle")}
+                className={`mt-4 text-sm underline ${isLight ? 'text-green-700' : 'text-green-400'}`}
+              >
+                Send another
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-3 text-left">
+              <input
+                type="text"
+                placeholder="Name"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className={inputClass}
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className={inputClass}
+                required
+              />
+              <textarea
+                placeholder="Your message..."
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                rows={4}
+                className={`${inputClass} resize-y`}
+                required
+              />
+              {status === "error" && (
+                <p className="text-red-500 text-sm">Failed to send. Please try again or email directly.</p>
+              )}
+              <button
+                type="submit"
+                disabled={!canSubmit || status === "sending"}
+                className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
+                  canSubmit && status !== "sending"
+                    ? "bg-[#6366f1] hover:bg-[#5558e3] text-white cursor-pointer"
+                    : isLight
+                      ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                      : "bg-[#262626] text-gray-500 cursor-not-allowed"
+                }`}
+              >
+                {status === "sending" ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          )}
         </div>
 
         <div className="flex gap-6 justify-center">

@@ -107,7 +107,7 @@ export default function ScrollProgress() {
 
       {/* Percentage indicator (optional - appears on hover near top) */}
       <div
-        className="fixed top-3 right-4 z-50 px-2 py-1 text-xs font-medium rounded-full bg-[var(--card)] border border-[var(--border)] text-[var(--muted)] pointer-events-none"
+        className="fixed top-3 right-4 z-50 px-2 py-1 text-xs font-medium rounded-full bg-[var(--card)] border border-[var(--border)] text-[var(--muted)] pointer-events-none hidden md:block"
         style={{
           opacity: isVisible && scrollProgress > 5 && scrollProgress < 95 ? 0.8 : 0,
           transform: `translateY(${isVisible ? 0 : -10}px)`,

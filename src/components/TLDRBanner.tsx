@@ -13,7 +13,7 @@ export default function TLDRBanner() {
         : 'bg-gradient-to-r from-indigo-950/30 to-purple-950/30 border-indigo-500/20'
     }`}>
       <div className="max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-8">
           {/* Left: Main TLDR */}
           <div className="md:col-span-2">
             <h2 className={`text-sm font-bold uppercase tracking-widest mb-3 ${
@@ -26,7 +26,7 @@ export default function TLDRBanner() {
             }`}>
               Built <span className="text-indigo-600 font-bold">$800M+</span> cloud marketplace infrastructure at Contentsquare.
               Now shipping <span className="text-indigo-600 font-bold">autonomous AI systems</span> and building production frameworks for agentic development.
-              <span className="block mt-2">Open to founding technical roles, CTO positions, or deep technical partnerships.</span>
+              <span className="block mt-2">Open to operations leadership, AI systems, and partnership roles where execution meets technical depth.</span>
             </p>
           </div>
 

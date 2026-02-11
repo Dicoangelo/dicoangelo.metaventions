@@ -119,7 +119,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
         {/* Main Visual: Human + AI = Outcome */}
         <div
           className={`
-            grid md:grid-cols-3 gap-6 mb-16 transition-all duration-700 delay-200
+            grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-16 transition-all duration-700 delay-200
             ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
           `}
         >
@@ -222,7 +222,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
             The Augmentation Effect
           </h3>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-3 md:gap-4">
             {capabilities.map((cap, index) => (
               <div
                 key={cap.outcome}

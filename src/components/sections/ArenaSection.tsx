@@ -21,7 +21,7 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
         </div>
 
         {/* Worlds I Move In */}
-        <div className="grid md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-12">
           <WorldCard
             title="Art & Culture"
             events="3 consecutive Art Basel Miami"
@@ -55,7 +55,7 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
         {/* Key Relationships */}
         <div className="mb-12">
           <h3 className="text-xl font-bold mb-6 text-center">Circles & Access</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
             <div className="card p-5">
               <h4 className="font-bold text-[#6366f1] mb-3">Investor Networks</h4>
               <ul className={`text-sm space-y-2 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>

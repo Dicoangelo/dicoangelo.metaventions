@@ -609,6 +609,13 @@ ul, ol {
   border-radius: 1rem;
 }
 
+@media (max-width: 640px) {
+  .btn-lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+}
+
 /* Metric cards */
 .metric-card {
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);

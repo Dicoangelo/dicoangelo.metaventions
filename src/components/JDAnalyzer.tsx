@@ -145,10 +145,10 @@ export default function JDAnalyzer() {
               onChange={(e) => setJdText(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Paste the full job description here..."
-              rows={12}
+              rows={6}
               aria-describedby="jd-hint"
               className={`
-                w-full px-4 py-3 rounded-lg border resize-y
+                w-full px-4 py-3 rounded-lg border resize-y md:min-h-[300px]
                 focus:outline-none focus:ring-2 focus:ring-indigo-500
                 transition-colors duration-200
                 ${theme === "light"

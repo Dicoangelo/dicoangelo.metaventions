@@ -197,7 +197,7 @@ export default function Nav() {
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-lg transition-all duration-200 ${
+              className={`p-2.5 rounded-lg transition-all duration-200 ${
                 theme === "light"
                   ? "hover:bg-gray-100 text-gray-600"
                   : "hover:bg-white/10 text-[#a3a3a3]"

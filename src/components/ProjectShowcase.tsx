@@ -89,11 +89,11 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-6 md:space-y-12">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`p-8 rounded-2xl border ${
+              className={`p-5 md:p-8 rounded-2xl border ${
                 isLight
                   ? 'bg-gradient-to-br from-white to-gray-50 border-gray-200'
                   : 'bg-gradient-to-br from-[#0a0a0a] to-[#141414] border-[#262626]'

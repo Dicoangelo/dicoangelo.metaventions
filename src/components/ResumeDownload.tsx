@@ -26,10 +26,10 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
     // Download the resume file
     const link = document.createElement('a');
     const filename = format === 'pdf'
-      ? '/DICO_ANGELO_RESUME_2026.pdf'
-      : '/DICO_ANGELO_MASTER_RESUME_CORRECTED_2026.docx';
+      ? '/Dico_Angelo_Resume.pdf'
+      : '/Dico_Angelo_Resume.docx';
     link.href = filename;
-    link.download = `Dico_Angelo_Resume_2026.${format}`;
+    link.download = `Dico_Angelo_Resume.${format}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -61,15 +61,15 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
               Download My Resume
             </h2>
             <p className={`text-lg mb-6 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-              Operations Infrastructure Builder | AI Systems Engineer
+              Operations Leader | AI Systems Builder
             </p>
             <p className={`text-sm ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
-              Updated January 2026 · Accurate metrics · TN Visa eligible
+              Updated February 2026 · Accurate metrics · TN Visa eligible
             </p>
           </div>
 
           {/* Key Highlights */}
-          <div className="grid md:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-3 gap-2 md:gap-4 mb-8">
             <div className={`p-4 rounded-lg text-center ${
               isLight ? 'bg-gray-50' : 'bg-[#1a1a1a]'
             }`}>
@@ -81,7 +81,7 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
             <div className={`p-4 rounded-lg text-center ${
               isLight ? 'bg-gray-50' : 'bg-[#1a1a1a]'
             }`}>
-              <p className="text-2xl font-bold text-[#6366f1] mb-1">297K+</p>
+              <p className="text-2xl font-bold text-[#6366f1] mb-1">410K+</p>
               <p className={`text-xs ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
                 Lines of Code
               </p>

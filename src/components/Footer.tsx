@@ -58,7 +58,7 @@ export default function Footer({ isLight }: FooterProps) {
 
   const stats = [
     { value: "$800M+", label: "TCV Processed" },
-    { value: "297K+", label: "Lines of Code" },
+    { value: "410K+", label: "Lines of Code" },
     { value: "8+", label: "Research Papers" },
   ];
 
@@ -77,9 +77,8 @@ export default function Footer({ isLight }: FooterProps) {
               className={`text-sm mb-4 max-w-md ${isLight ? "text-gray-600" : "text-[#a3a3a3]"
                 }`}
             >
-              Operations Infrastructure Builder & AI Systems Engineer. Bridging
-              enterprise GTM operations with hands-on agentic infrastructure
-              development.
+              Operations Leader & AI Systems Builder. Combining enterprise-scale
+              execution with hands-on technical depth in AI and automation.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link) => (

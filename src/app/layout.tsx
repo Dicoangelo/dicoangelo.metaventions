@@ -18,8 +18,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Dico Angelo — Operations Infrastructure Builder | AI Systems Engineer",
-  description: "Operations infrastructure builder who processed $800M+ in cloud marketplace deal registrations (97% approval) while shipping 297K+ lines of production AI systems. Implemented 8+ arXiv papers. Published 2 npm packages. Building agentic infrastructure at scale.",
+  title: "Dico Angelo — Operations Leader | AI Systems Builder",
+  description: "Operations leader who scaled Contentsquare cloud marketplace from $0 to $30M+ in 30 months, managing $800M+ TCV with 2x Microsoft Partner of the Year. Now shipping 410K+ lines of production AI systems across 4 deployed platforms.",
   keywords: [
     "AI Engineer",
     "Data Operations Manager",
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Dico Angelo", url: SITE_URL }],
   creator: "Dico Angelo",
   openGraph: {
-    title: "Dico Angelo — Operations Infrastructure Builder & AI Systems Engineer",
-    description: "Processed $800M+ in cloud marketplace deals (97% approval). Built 297K+ LOC implementing 8+ arXiv papers. Published npm packages. Operations infrastructure meets AI engineering.",
+    title: "Dico Angelo — Operations Leader & AI Systems Builder",
+    description: "Scaled cloud marketplace $0 to $30M+ in 30 months. $800M+ TCV managed. 2x Microsoft Partner of the Year. 410K+ lines of production AI systems shipped.",
     type: "website",
     url: SITE_URL,
     siteName: "Dico Angelo Portfolio",
@@ -61,8 +61,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dico Angelo — Operations Infrastructure Builder",
-    description: "Processed $800M+ cloud marketplace deals. Built 297K+ LOC. Implemented 8+ arXiv papers. Published 2 npm packages.",
+    title: "Dico Angelo — Operations Leader & AI Systems Builder",
+    description: "Scaled cloud marketplace $0 to $30M+. $800M+ TCV. 2x Microsoft POTY. 410K+ LOC across 4 deployed AI systems.",
     creator: "@dicoangelo",
     images: ["/headshot.jpg"],
   },
@@ -86,8 +86,8 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Dico Angelo",
-  jobTitle: "Operations Infrastructure Builder & AI Systems Engineer",
-  description: "Operations infrastructure builder who processed $800M+ in cloud marketplace deal registrations while shipping 297K+ lines of production AI systems",
+  jobTitle: "Operations Leader & AI Systems Builder",
+  description: "Operations leader who scaled cloud marketplace from $0 to $30M+ managing $800M+ TCV while shipping 410K+ lines of production AI systems",
   url: SITE_URL,
   email: "hello@dicoangelo.com",
   nationality: "Canadian",
@@ -144,7 +144,7 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "Dico Angelo - Portfolio",
   url: SITE_URL,
-  description: "Professional portfolio of Dico Angelo, Operations Infrastructure Builder and AI Systems Engineer",
+  description: "Professional portfolio of Dico Angelo, Operations Leader and AI Systems Builder",
   author: {
     "@type": "Person",
     name: "Dico Angelo"

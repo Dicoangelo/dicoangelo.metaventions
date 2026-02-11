@@ -385,7 +385,7 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
               className={`
-                p-2 rounded-full transition-all
+                p-3 rounded-full transition-all
                 ${canScrollLeft
                   ? isLight
                     ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
@@ -403,7 +403,7 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
               className={`
-                p-2 rounded-full transition-all
+                p-3 rounded-full transition-all
                 ${canScrollRight
                   ? isLight
                     ? "bg-gray-100 hover:bg-gray-200 text-gray-700"

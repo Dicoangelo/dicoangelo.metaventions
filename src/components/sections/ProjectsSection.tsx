@@ -118,7 +118,7 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
           <p className={`text-sm text-center mb-6 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
             Live products across the metaventionsai.com platform
           </p>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {[
               {
                 name: "Metaventions AI",

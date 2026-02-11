@@ -26,8 +26,8 @@ export function useParallax(options: UseParallaxOptions = {}): UseParallaxReturn
 
   // Detect touch device and reduced motion preference on mount
   useEffect(() => {
-    // Detect touch device
-    const touchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    // Detect touch device using pointer capability (more reliable than ontouchstart)
+    const touchDevice = window.matchMedia('(pointer: coarse)').matches;
     setIsTouchDevice(touchDevice);
 
     // Check for prefers-reduced-motion

@@ -137,7 +137,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-8">
           {skillCategories.map((category, catIndex) => (
             <div
               key={category.category}

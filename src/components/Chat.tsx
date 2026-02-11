@@ -164,7 +164,7 @@ export default function Chat() {
           {/* Fixed height messages container with scroll */}
           <div
             ref={messagesContainerRef}
-            className="h-[350px] overflow-y-auto p-4 space-y-3 scroll-smooth"
+            className="h-[280px] md:h-[350px] overflow-y-auto p-4 space-y-3 scroll-smooth"
             style={{ scrollbarWidth: 'thin', scrollbarColor: isLight ? '#d1d5db #f3f4f6' : '#404040 #1f1f1f' }}
           >
             {textMessages.length === 0 ? (

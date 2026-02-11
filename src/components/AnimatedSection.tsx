@@ -46,6 +46,11 @@ export function AnimatedSection({
     () => {
       if (!sectionRef.current) return;
 
+      // Skip GSAP animations when user prefers reduced motion
+      if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+
       const animations = {
         'fade-up': { y: 60, opacity: 0 },
         'fade-in': { opacity: 0 },

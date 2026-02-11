@@ -27,7 +27,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
           </div>
         </RevealOnScroll>
 
-        <StaggeredGrid className="grid md:grid-cols-3 gap-6 mb-12">
+        <StaggeredGrid className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-12">
           {/* Row 1 - Enterprise Metrics */}
           <MetricCard
             value="$800M+"
@@ -99,10 +99,10 @@ export function ProofSection({ isLight }: ProofSectionProps) {
 
           {/* Row 4 - Technical Metrics */}
           <MetricCard
-            value="297K+"
+            value="410K+"
             label="Lines of Code"
-            context="Across production systems"
-            proof="GitHub: OS-App (33K), ResearchGravity (17K), CareerCoach (15K), META-VENGINE (51K+)"
+            context="Across 4 deployed systems"
+            proof="Structura (85.5K), CareerCoach (26.6K), ResearchGravity (35.2K), Claude Infrastructure (262.4K)"
             isLight={isLight}
           />
           <MetricCard

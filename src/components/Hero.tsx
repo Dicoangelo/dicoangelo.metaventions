@@ -17,9 +17,9 @@ const ThreeBackground = dynamic(() => import("./ThreeHeroBackground"), {
 
 const roles = [
   "Operations Infrastructure Builder",
-  "AI Systems Engineer",
-  "Multi-Agent Architect",
-  "Technical Program Manager"
+  "AI Systems Builder",
+  "Cloud Alliance Strategist",
+  "Data Operations Leader"
 ];
 
 export default function Hero() {
@@ -72,7 +72,7 @@ export default function Hero() {
           <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-[#6366f1] glow shadow-2xl">
             <Image
               src="/headshot.jpg"
-              alt="Dico Angelo - Operations Infrastructure Builder & AI Systems Engineer"
+              alt="Dico Angelo - Operations Leader & AI Systems Builder"
               fill
               className="object-cover"
               priority
@@ -124,12 +124,12 @@ export default function Hero() {
           Built operational infrastructure that processed{" "}
           <strong className="text-[#6366f1] font-bold">$800M+</strong> in cloud marketplace deal registrations
           (<strong>97% approval</strong>, 600+ deals/quarter).
-          Shipped <strong className="text-[#6366f1] font-bold">297K+ lines</strong> of production AI systems.
-          Bridging enterprise GTM operations with hands-on agentic infrastructure development.
+          Shipped <strong className="text-[#6366f1] font-bold">410K+ lines</strong> of production AI systems.
+          Combines enterprise-scale execution with hands-on technical depth in AI and automation.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex gap-4 justify-center mb-8 flex-wrap animate-fade-in animate-delay-400">
+        <div className="flex gap-3 md:gap-4 justify-center mb-8 flex-wrap animate-fade-in animate-delay-400">
           <a
             href="https://app.metaventionsai.com"
             target="_blank"
