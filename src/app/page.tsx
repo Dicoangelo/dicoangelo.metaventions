@@ -19,9 +19,9 @@ import { useCountAnimation } from "@/hooks/useCountAnimation";
 import TLDRBanner from "@/components/TLDRBanner";
 import { AskSection } from "@/components/sections/AskSection";
 import { ProofSection } from "@/components/sections/ProofSection";
-import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ArenaSection } from "@/components/sections/ArenaSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { UCWInsightsSection } from "@/components/sections/UCWInsightsSection";
 import Link from "next/link";
 
 // Loading skeletons
@@ -144,6 +144,9 @@ export default function Home() {
 
       <ProofSection isLight={isLight} />
 
+      {/* UCW Cognitive Insights */}
+      <UCWInsightsSection isLight={isLight} />
+
       {/* Animated Metrics */}
       <AnimatedMetrics />
 
@@ -158,8 +161,6 @@ export default function Home() {
 
       {/* Resume Download Section */}
       <ResumeDownload isLight={isLight} />
-
-      <ProjectsSection isLight={isLight} />
 
       {/* Interactive Career Timeline */}
       <CareerTimeline isLight={isLight} />
