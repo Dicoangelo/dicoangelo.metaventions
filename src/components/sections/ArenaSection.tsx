@@ -59,7 +59,7 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
             <div className="card p-5">
               <h4 className="font-bold text-[#6366f1] mb-3">Investor Networks</h4>
               <ul className={`text-sm space-y-2 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-                <li>• <strong>CoinFund</strong> — Monthly attendee, Jake Brukhman&apos;s events</li>
+                <li>• <strong>CoinFund</strong> — Attended several events, Jake Brukhman&apos;s network</li>
                 <li>• <strong>Pompliano</strong> — Invited to annual Christmas party</li>
                 <li>• <strong>BitAngels</strong> — Angel investor network access</li>
                 <li>• <strong>Maja Vujinovic</strong> — OGroup MD, FinTech/Digital Assets</li>
@@ -68,9 +68,9 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
             <div className="card p-5">
               <h4 className="font-bold text-[#6366f1] mb-3">Builder Communities</h4>
               <ul className={`text-sm space-y-2 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-                <li>• <strong>Detroit Blockchain</strong> — 15+ events, community pillar</li>
+                <li>• <strong>Detroit Blockchain</strong> — 15+ events, community leader</li>
                 <li>• <strong>AI Collective Detroit</strong> — Active builder participant</li>
-                <li>• <strong>Web3 Toronto</strong> — Conference, Builder&apos;s Week regular</li>
+                <li>• <strong>Web3 Toronto</strong> — Conference, every few months</li>
                 <li>• <strong>AI Friends Toronto</strong> — Research community</li>
               </ul>
             </div>
@@ -115,7 +115,7 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
             </div>
             <div>
               <p className="text-[#6366f1] font-medium mb-2">Relationship Over Transaction</p>
-              <p className={isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}>Same communities for 3+ years. Builder Series, CoinFund, Detroit Blockchain — consistent presence.</p>
+              <p className={isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}>Same communities for 3+ years. Builder Series, Detroit Blockchain, Blockchain Collective — consistent presence.</p>
             </div>
             <div>
               <p className="text-[#6366f1] font-medium mb-2">Community Builder</p>

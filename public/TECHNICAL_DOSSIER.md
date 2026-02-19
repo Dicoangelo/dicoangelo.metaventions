@@ -801,9 +801,9 @@ Personal methodology applied across all workstreams:
 
 **Builder Communities:**
 - Builder Series NYC (monthly)
-- Detroit Blockchain (15+ events)
+- Detroit Blockchain (15+ events, community leader)
 - Tavern Cohorts (application-only)
-- Web3 Toronto
+- Web3 Toronto (every few months)
 
 **Web3 & Blockchain Conferences:**
 - **Capital Factory** — Austin
@@ -812,7 +812,7 @@ Personal methodology applied across all workstreams:
 - **Blockchain Futurist / EthToronto** — Toronto
 
 **Investor Access:**
-- CoinFund (monthly attendee)
+- CoinFund (attended several events)
 - Pompliano Christmas Party (invited)
 - BitAngels network
 - Family Office Forums

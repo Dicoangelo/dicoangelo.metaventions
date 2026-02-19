@@ -12,13 +12,13 @@ interface Message {
 
 const SUGGESTED_QUESTIONS = [
   "What's the $800M+ TCV story?",
-  "Tell me about the META-VENGINE system",
+  "What did the UCW figure out about him?",
   "What multi-agent systems has he built?",
-  "What's his experience with cloud marketplace operations?",
+  "What's his cognitive fingerprint?",
   "Is he open to relocation to the US?",
-  "What makes his approach to AI different?",
+  "What are his 72 coherence moments?",
   "Show me metrics from his Contentsquare role",
-  "What research papers has he published?",
+  "Why does he work at 3 AM?",
 ];
 
 export default function Chat() {

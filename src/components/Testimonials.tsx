@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 interface Testimonial {
@@ -274,13 +274,22 @@ function TestimonialCard({
   );
 }
 
+// Duplicate testimonials for seamless infinite loop
+const marqueeTestimonials = [...testimonials, ...testimonials];
+
 export default function Testimonials({ isLight }: TestimonialsProps) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1, once: true });
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Check scroll position for mobile navigation
+  // Pause marquee on hover (desktop)
+  const handleMarqueeEnter = useCallback(() => setIsPaused(true), []);
+  const handleMarqueeLeave = useCallback(() => setIsPaused(false), []);
+
+  // Mobile scroll position tracking
   const updateScrollButtons = () => {
     if (!scrollContainerRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
@@ -291,18 +300,15 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
-
     container.addEventListener("scroll", updateScrollButtons);
     updateScrollButtons();
-
     return () => container.removeEventListener("scroll", updateScrollButtons);
   }, []);
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollContainerRef.current) return;
-    const scrollAmount = 320;
     scrollContainerRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
+      left: direction === "left" ? -320 : 320,
       behavior: "smooth",
     });
   };
@@ -311,10 +317,10 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
     <section
       ref={ref}
       id="testimonials"
-      className={`py-20 px-6 ${isLight ? "bg-gray-50/50" : "bg-black/20"}`}
+      className={`py-20 overflow-hidden ${isLight ? "bg-gray-50/50" : "bg-black/20"}`}
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
+      {/* Header */}
+      <div className="px-6">
         <div
           className={`
             text-center mb-12 transition-all duration-700
@@ -340,87 +346,110 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
             Featured in industry case studies and partner ecosystem conferences
           </p>
         </div>
+      </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-2 gap-6">
+      {/* Desktop Marquee — continuous right-to-left scroll */}
+      <div
+        className="hidden md:block relative"
+        onMouseEnter={handleMarqueeEnter}
+        onMouseLeave={handleMarqueeLeave}
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+        }}
+      >
+        <div
+          ref={marqueeRef}
+          className="flex gap-6 testimonial-marquee"
+          style={{
+            width: "max-content",
+            animationPlayState: isPaused ? "paused" : "running",
+          }}
+        >
+          {marqueeTestimonials.map((testimonial, index) => (
+            <div
+              key={`${testimonial.company}-${index}`}
+              className="flex-shrink-0 w-[420px]"
+            >
+              <TestimonialCard
+                testimonial={testimonial}
+                isLight={isLight}
+                index={0}
+                isVisible={isVisible}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Swipeable Cards */}
+      <div className="md:hidden relative px-6">
+        <div
+          ref={scrollContainerRef}
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+        >
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard
+            <div
               key={index}
-              testimonial={testimonial}
-              isLight={isLight}
-              index={index}
-              isVisible={isVisible}
-            />
+              className="flex-shrink-0 w-[85vw] max-w-sm snap-center"
+            >
+              <TestimonialCard
+                testimonial={testimonial}
+                isLight={isLight}
+                index={index}
+                isVisible={isVisible}
+              />
+            </div>
           ))}
         </div>
 
-        {/* Mobile Swipeable Cards */}
-        <div className="md:hidden relative">
-          <div
-            ref={scrollContainerRef}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
+        {/* Mobile Navigation Arrows */}
+        <div className="flex justify-center gap-2 mt-4">
+          <button
+            onClick={() => scroll("left")}
+            disabled={!canScrollLeft}
+            className={`
+              p-3 rounded-full transition-all
+              ${canScrollLeft
+                ? isLight
+                  ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                  : "bg-white/10 hover:bg-white/20 text-white"
+                : "opacity-30 cursor-not-allowed"
+              }
+            `}
+            aria-label="Previous testimonial"
           >
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-[85vw] max-w-sm snap-center"
-              >
-                <TestimonialCard
-                  testimonial={testimonial}
-                  isLight={isLight}
-                  index={index}
-                  isVisible={isVisible}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile Navigation Arrows */}
-          <div className="flex justify-center gap-2 mt-4">
-            <button
-              onClick={() => scroll("left")}
-              disabled={!canScrollLeft}
-              className={`
-                p-3 rounded-full transition-all
-                ${canScrollLeft
-                  ? isLight
-                    ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                    : "bg-white/10 hover:bg-white/20 text-white"
-                  : "opacity-30 cursor-not-allowed"
-                }
-              `}
-              aria-label="Previous testimonial"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              disabled={!canScrollRight}
-              className={`
-                p-3 rounded-full transition-all
-                ${canScrollRight
-                  ? isLight
-                    ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                    : "bg-white/10 hover:bg-white/20 text-white"
-                  : "opacity-30 cursor-not-allowed"
-                }
-              `}
-              aria-label="Next testimonial"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            disabled={!canScrollRight}
+            className={`
+              p-3 rounded-full transition-all
+              ${canScrollRight
+                ? isLight
+                  ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                  : "bg-white/10 hover:bg-white/20 text-white"
+                : "opacity-30 cursor-not-allowed"
+              }
+            `}
+            aria-label="Next testimonial"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
+      </div>
 
-        {/* Additional Recognition Badge */}
+      {/* Additional Recognition Badge */}
+      <div className="px-6">
         <div
           className={`
             mt-12 text-center transition-all duration-700 delay-500
@@ -454,6 +483,21 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
           </div>
         </div>
       </div>
+
+      {/* Marquee animation */}
+      <style jsx>{`
+        @keyframes testimonial-scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .testimonial-marquee {
+          animation: testimonial-scroll 40s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }

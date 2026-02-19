@@ -189,27 +189,28 @@ export default function JDAnalyzer() {
       {/* Loading/Streaming State */}
       {state === "analyzing" && (
         <div className="space-y-6" role="status" aria-live="polite">
-          <div className="flex items-center gap-3">
-            <div className="animate-spin rounded-full h-5 w-5 border-2 border-indigo-500 border-t-transparent" aria-hidden="true" />
-            <span className={theme === "light" ? "text-gray-600" : "text-gray-400"}>
-              Analyzing job description...
-            </span>
-          </div>
-
-          {streamedText && (
-            <div
-              className={`
-                p-4 rounded-lg border font-mono text-sm
-                overflow-auto max-h-96
-                ${theme === "light"
-                  ? "bg-gray-50 border-gray-200 text-gray-700"
-                  : "bg-[#0a0a0a] border-[#262626] text-gray-300"
-                }
-              `}
-            >
-              <pre className="whitespace-pre-wrap">{streamedText}</pre>
+          <div className={`p-8 rounded-xl border text-center ${
+            theme === "light" ? "bg-gray-50 border-gray-200" : "bg-[#141414] border-[#262626]"
+          }`}>
+            <div className="animate-spin rounded-full h-10 w-10 border-3 border-indigo-500 border-t-transparent mx-auto mb-4" aria-hidden="true" />
+            <p className={`text-lg font-semibold mb-2 ${theme === "light" ? "text-gray-800" : "text-white"}`}>
+              Analyzing Fit
+            </p>
+            <p className={`text-sm ${theme === "light" ? "text-gray-500" : "text-gray-400"}`}>
+              Cross-referencing job requirements against career dossier, deployed systems, and UCW cognitive data...
+            </p>
+            <div className="flex justify-center gap-6 mt-6">
+              {["Scanning JD", "Matching skills", "Scoring fit"].map((step, i) => (
+                <div key={step} className="flex items-center gap-2">
+                  <span
+                    className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"
+                    style={{ animationDelay: `${i * 300}ms` }}
+                  />
+                  <span className={`text-xs ${theme === "light" ? "text-gray-500" : "text-gray-500"}`}>{step}</span>
+                </div>
+              ))}
             </div>
-          )}
+          </div>
         </div>
       )}
 

@@ -550,7 +550,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 - Builder Series NYC (monthly)
 - Detroit Blockchain (15+ events, community leader)
 - Tavern Cohorts (application-only)
-- Web3 Toronto
+- Web3 Toronto (every few months)
 
 ### Conferences
 - Capital Factory (Austin)
@@ -559,7 +559,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 - Blockchain Futurist / EthToronto
 
 ### Investor Access
-- CoinFund (monthly attendee)
+- CoinFund (attended several events)
 - Pompliano Christmas Party (invited)
 - BitAngels network
 - Family Office Forums

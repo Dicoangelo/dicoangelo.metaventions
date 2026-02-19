@@ -93,6 +93,25 @@ Respond with a JSON object matching this exact structure:
   "fit_tier": "moderate"
 }
 
+## UCW-Derived Skills (treat these as verified, demonstrated capabilities):
+Dico built the Universal Cognitive Wallet (UCW) — a production system that captures, embeds, and analyzes cognitive events across 6 AI platforms. This demonstrates:
+
+- **Data Pipeline Engineering**: Built ETL pipeline processing 163,113 events from 6 platforms into PostgreSQL with pgvector
+- **Vector Embeddings / Semantic Search**: Generated 150,742 SBERT embeddings, implemented cosine similarity search at scale
+- **Cross-Platform Data Integration**: Unified Claude CLI, ChatGPT, Grok, Claude Code, Claude Desktop into single cognitive view
+- **Real-Time Data Capture**: LaunchAgent daemon architecture polling every 5 minutes, always-on capture
+- **MCP Protocol Implementation**: Raw MCP transport (no SDK) for cognitive event capture with 3-layer semantic enrichment
+- **PostgreSQL + pgvector**: Production database with vector similarity search, 11 tables, complex JSONB queries
+- **Quality Scoring / Evaluation**: Automated quality assessment across 163K events with multi-tier scoring
+- **Coherence Detection Algorithms**: Semantic echo (cosine similarity), synchronicity (temporal alignment), signature matching
+- **Daemon / Service Architecture**: LaunchAgent-based services, background processing, stall detection
+- **Python Automation**: 35K+ lines in ResearchGravity, importers, scorers, embedding pipelines
+- **Multi-Agent Orchestration**: 6-agent ACE consensus engine, DQ scoring for autonomous model routing
+- **RAG Pipelines**: Vector embeddings for knowledge retrieval across multiple production systems
+- **Event-Driven Architecture**: Real-time event processing with PostgreSQL triggers and notification channels
+
+When a JD mentions data engineering, data pipelines, ETL, embeddings, vector search, semantic search, NLP, AI infrastructure, platform engineering, data operations, cognitive computing, real-time systems, or ML ops — these UCW skills are STRONG matches. Score them accordingly.
+
 CRITICAL: Your response must be valid JSON only. No markdown, no explanation, just the JSON object.`;
 
 export async function POST(request: Request) {
