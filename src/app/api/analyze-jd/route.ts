@@ -176,77 +176,74 @@ ${dossierContext}
 
 Based on the job description and dossier context above, provide your brutally honest fit assessment.`;
 
-    // Stream the analysis
-    const encoder = new TextEncoder();
+    // Collect the full response before sending to avoid partial/empty stream errors
     let fullResponse = "";
 
-    const readable = new ReadableStream({
-      async start(controller) {
-        try {
-          const stream = await anthropic.messages.stream({
-            model: "claude-sonnet-4-20250514",
-            max_tokens: 2048,
-            system: BRUTALLY_HONEST_PROMPT,
-            messages: [{ role: "user", content: analysisPrompt }],
-          });
+    try {
+      const stream = await anthropic.messages.stream({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 2048,
+        system: BRUTALLY_HONEST_PROMPT,
+        messages: [{ role: "user", content: analysisPrompt }],
+      });
 
-          for await (const event of stream) {
-            if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-              fullResponse += event.delta.text;
-              controller.enqueue(encoder.encode(event.delta.text));
-            }
-          }
-
-          // After streaming completes, parse and store the result
-          try {
-            const cleanedResponse = cleanJsonResponse(fullResponse);
-            const assessment: JDAnalysisAssessment = JSON.parse(cleanedResponse);
-
-            // Store in database
-            const { error: dbError } = await supabase.from("jd_analyses").insert({
-              jd_raw_text: jd_text,
-              jd_title,
-              company_name,
-              fit_score: assessment.fit_score,
-              fit_tier: assessment.fit_tier,
-              assessment,
-              model_used: "claude-sonnet-4-20250514",
-              session_id: session_id || null,
-            });
-
-            if (dbError) {
-              console.error("Failed to store analysis:", dbError);
-            }
-
-            // Update skill gap analytics
-            await updateSkillGapAnalytics(assessment.gaps);
-          } catch (parseError) {
-            console.error("Failed to parse analysis response:", parseError);
-            // Still store the raw response even if parsing fails
-            await supabase.from("jd_analyses").insert({
-              jd_raw_text: jd_text,
-              jd_title,
-              company_name,
-              assessment: { raw_response: fullResponse, parse_error: true },
-              model_used: "claude-sonnet-4-20250514",
-              session_id: session_id || null,
-            });
-          }
-
-          controller.close();
-        } catch (streamError) {
-          console.error("Stream error:", streamError);
-          controller.error(streamError);
+      for await (const event of stream) {
+        if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
+          fullResponse += event.delta.text;
         }
-      },
+      }
+    } catch (apiError) {
+      console.error("Anthropic API error:", apiError);
+      return new Response(
+        JSON.stringify({ error: "AI analysis service temporarily unavailable. Please try again." }),
+        { status: 502, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    // Parse the completed response
+    let assessment: JDAnalysisAssessment;
+    try {
+      const cleanedResponse = cleanJsonResponse(fullResponse);
+      assessment = JSON.parse(cleanedResponse);
+    } catch (parseError) {
+      console.error("Failed to parse analysis response:", parseError);
+      await supabase.from("jd_analyses").insert({
+        jd_raw_text: jd_text,
+        jd_title,
+        company_name,
+        assessment: { raw_response: fullResponse, parse_error: true },
+        model_used: "claude-sonnet-4-20250514",
+        session_id: session_id || null,
+      });
+      return new Response(
+        JSON.stringify({ error: "Failed to parse analysis. Please try again." }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    // Store in database
+    const { error: dbError } = await supabase.from("jd_analyses").insert({
+      jd_raw_text: jd_text,
+      jd_title,
+      company_name,
+      fit_score: assessment.fit_score,
+      fit_tier: assessment.fit_tier,
+      assessment,
+      model_used: "claude-sonnet-4-20250514",
+      session_id: session_id || null,
     });
 
-    return new Response(readable, {
-      headers: {
-        "Content-Type": "text/plain; charset=utf-8",
-        "Transfer-Encoding": "chunked",
-      },
-    });
+    if (dbError) {
+      console.error("Failed to store analysis:", dbError);
+    }
+
+    // Update skill gap analytics
+    await updateSkillGapAnalytics(assessment.gaps);
+
+    return new Response(
+      JSON.stringify(assessment),
+      { headers: { "Content-Type": "application/json" } }
+    );
   } catch (error) {
     console.error("JD Analysis API error:", error);
     return new Response(

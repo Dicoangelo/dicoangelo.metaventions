@@ -6,22 +6,6 @@ import FitScoreGauge from "./FitScoreGauge";
 import StrengthCard from "./StrengthCard";
 import GapCard from "./GapCard";
 
-/**
- * Clean markdown code blocks from LLM response
- */
-function cleanJsonResponse(response: string): string {
-  let cleaned = response.trim();
-  if (cleaned.startsWith("```json")) {
-    cleaned = cleaned.slice(7);
-  }
-  if (cleaned.startsWith("```")) {
-    cleaned = cleaned.slice(3);
-  }
-  if (cleaned.endsWith("```")) {
-    cleaned = cleaned.slice(0, -3);
-  }
-  return cleaned.trim();
-}
 
 interface Assessment {
   summary: string;
@@ -45,7 +29,6 @@ type AnalysisState = "idle" | "analyzing" | "complete" | "error";
 export default function JDAnalyzer() {
   const [jdText, setJdText] = useState("");
   const [state, setState] = useState<AnalysisState>("idle");
-  const [streamedText, setStreamedText] = useState("");
   const [assessment, setAssessment] = useState<Assessment | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -60,7 +43,6 @@ export default function JDAnalyzer() {
     }
 
     setState("analyzing");
-    setStreamedText("");
     setAssessment(null);
     setErrorMessage("");
 
@@ -75,27 +57,21 @@ export default function JDAnalyzer() {
       });
 
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || "Analysis failed");
+        let errorMsg = "Analysis failed";
+        try {
+          const error = await response.json();
+          errorMsg = error.error || errorMsg;
+        } catch {
+          errorMsg = `Analysis failed (${response.status})`;
+        }
+        throw new Error(errorMsg);
       }
 
-      const reader = response.body?.getReader();
-      if (!reader) throw new Error("No reader");
-
-      const decoder = new TextDecoder();
-      let fullText = "";
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        fullText += decoder.decode(value, { stream: true });
-        setStreamedText(fullText);
+      const data = await response.json();
+      if (data.error) {
+        throw new Error(data.error || "Analysis failed");
       }
-
-      // Parse the completed response
-      const parsed = JSON.parse(cleanJsonResponse(fullText));
-      setAssessment(parsed);
+      setAssessment(data);
       setState("complete");
     } catch (error) {
       console.error("Analysis error:", error);
@@ -118,7 +94,6 @@ export default function JDAnalyzer() {
   const reset = () => {
     setJdText("");
     setState("idle");
-    setStreamedText("");
     setAssessment(null);
     setErrorMessage("");
     textareaRef.current?.focus();
