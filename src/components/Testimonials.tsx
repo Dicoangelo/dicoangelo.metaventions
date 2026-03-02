@@ -319,8 +319,8 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
       id="testimonials"
       className={`py-20 overflow-hidden ${isLight ? "bg-gray-50/50" : "bg-black/20"}`}
     >
-      {/* Header */}
-      <div className="px-6">
+      {/* Header — stays in grid */}
+      <div className="max-w-6xl mx-auto px-6">
         <div
           className={`
             text-center mb-12 transition-all duration-700
@@ -354,8 +354,8 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
         onMouseEnter={handleMarqueeEnter}
         onMouseLeave={handleMarqueeLeave}
         style={{
-          maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-          WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          maskImage: "linear-gradient(to right, transparent, black 25%, black 75%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 25%, black 75%, transparent)",
         }}
       >
         <div
@@ -449,7 +449,7 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
       </div>
 
       {/* Additional Recognition Badge */}
-      <div className="px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div
           className={`
             mt-12 text-center transition-all duration-700 delay-500

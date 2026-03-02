@@ -100,18 +100,19 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       metrics: ["8+ Papers", "4 Core Systems"],
     },
     {
-      date: "2024",
-      title: "Catalyst 2026 Fellowship",
-      company: "Catalyst",
-      location: "Remote",
+      date: "2026",
+      title: "Roundtable Lead Speaker, AI & Partnerships",
+      company: "Catalyst 2026 — NYC & Toronto",
+      location: "NYC & Toronto",
       type: "achievement",
-      description: "Selected for exclusive AI/tech community fellowship.",
+      description: "Selected as Roundtable Lead Speaker for AI & Partnerships at Catalyst 2026, connecting founders, operators, and investors across NYC and Toronto.",
       highlights: [
+        "Led roundtable discussions on AI partnerships and enterprise adoption",
         "Networked with 200+ AI founders and builders",
-        "Contributed insights on multi-agent orchestration",
-        "Presented work on autonomous AI systems",
+        "Contributed insights on multi-agent orchestration and sovereign AI systems",
+        "Presented work on autonomous AI systems and cognitive infrastructure",
       ],
-      metrics: [],
+      metrics: ["Lead Speaker", "NYC & Toronto"],
     },
   ];
 

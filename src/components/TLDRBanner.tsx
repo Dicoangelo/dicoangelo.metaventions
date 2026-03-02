@@ -24,9 +24,12 @@ export default function TLDRBanner() {
             <p className={`text-lg leading-relaxed font-medium ${
               isLight ? 'text-gray-900' : 'text-white'
             }`}>
-              Built <span className="text-indigo-600 font-bold">$800M+</span> cloud marketplace infrastructure at Contentsquare.
-              Now shipping <span className="text-indigo-600 font-bold">autonomous AI systems</span> and building production frameworks for agentic development.
-              <span className="block mt-2">Open to operations leadership, AI systems, and partnership roles where execution meets technical depth.</span>
+              Ran the cloud alliance operations engine at Contentsquare — <span className="text-indigo-600 font-bold">$0 to $30M+</span> across AWS and Microsoft, $800M+ in registered deals, 2x MSFT Partner of the Year. At the same time: built 58 MCP tools, production multi-agent systems, and AI infrastructure processing 163K+ events on Claude. Not sequentially — <em>simultaneously</em>.
+            </p>
+            <p className={`text-lg leading-relaxed font-medium mt-2 ${
+              isLight ? 'text-gray-900' : 'text-white'
+            }`}>
+              I&rsquo;m the operations expert who is also literally at the frontier, building. Partner SA is exactly where those two things collide.
             </p>
           </div>
 

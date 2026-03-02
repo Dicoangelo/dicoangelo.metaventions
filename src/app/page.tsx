@@ -22,6 +22,9 @@ import { ProofSection } from "@/components/sections/ProofSection";
 import { ArenaSection } from "@/components/sections/ArenaSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { UCWInsightsSection } from "@/components/sections/UCWInsightsSection";
+import { BridgeSection } from "@/components/sections/BridgeSection";
+import { FrontierOpsScore } from "@/components/sections/FrontierOpsScore";
+import { GoMotionSection } from "@/components/sections/GoMotionSection";
 import Link from "next/link";
 
 // Loading skeletons
@@ -89,7 +92,6 @@ const IntelligentCursor = dynamic(() => import("@/components/IntelligentCursor")
 export default function Home() {
   const { theme } = useTheme();
   const isLight = theme === "light";
-
   // Enable keyboard shortcuts
   useNavigationShortcuts();
 
@@ -138,6 +140,15 @@ export default function Home() {
 
       {/* AI-Augmented Operator Positioning */}
       <AIAugmentedSection />
+
+      {/* Bridge Section - Partner + AI dual language positioning */}
+      <BridgeSection isLight={isLight} />
+
+      {/* Frontier Operations Score */}
+      <FrontierOpsScore isLight={isLight} />
+
+      {/* GoMotion Case Study */}
+      <GoMotionSection isLight={isLight} />
 
       {/* Ask Me Anything */}
       <AskSection isLight={isLight} />

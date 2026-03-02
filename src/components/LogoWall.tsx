@@ -118,6 +118,19 @@ const logos: Logo[] = [
       </svg>
     ),
   },
+  {
+    name: "Partnership Leaders",
+    description: "Catalyst 2026 Speaker",
+    color: "#8b5cf6",
+    svg: (
+      <svg viewBox="0 0 64 64" className="w-full h-full">
+        <path
+          fill="currentColor"
+          d="M20 28c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm24 0c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zM20 34c-6.6 0-20 3.3-20 10v6h40v-6c0-6.7-13.4-10-20-10zm24 0c-.8 0-1.7.1-2.7.2C44.4 36.4 47 39.5 47 44v6h17v-6c0-6.7-13.4-10-20-10z"
+        />
+      </svg>
+    ),
+  },
 ];
 
 // Duplicate for infinite scroll effect
@@ -153,8 +166,8 @@ export default function LogoWall({ className = "", animated = true }: LogoWallPr
       ref={sectionRef}
       className={`py-16 px-6 overflow-hidden ${className}`}
     >
+      {/* Header — stays in grid */}
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <div
           className={`
             text-center mb-10 transition-all duration-700
@@ -170,16 +183,17 @@ export default function LogoWall({ className = "", animated = true }: LogoWallPr
             Enterprise partnerships and cutting-edge technology stack
           </p>
         </div>
+      </div>
 
-        {/* Scrolling Logo Container */}
-        <div
-          ref={scrollRef}
-          className="relative"
-          style={{
-            maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-            WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-          }}
-        >
+      {/* Scrolling Logo Container — full viewport width */}
+      <div
+        ref={scrollRef}
+        className="relative"
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 25%, black 75%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 25%, black 75%, transparent)",
+        }}
+      >
           <div
             className={`
               flex gap-8 md:gap-12
@@ -261,7 +275,6 @@ export default function LogoWall({ className = "", animated = true }: LogoWallPr
             ))}
           </div>
         </div>
-      </div>
 
       {/* CSS for infinite scroll animation */}
       <style jsx>{`
