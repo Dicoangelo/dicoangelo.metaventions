@@ -181,7 +181,7 @@ Based on the job description and dossier context above, provide your brutally ho
 
     try {
       const stream = await anthropic.messages.stream({
-        model: "claude-sonnet-4-5-20251001",
+        model: "claude-sonnet-4-6",
         max_tokens: 2048,
         system: BRUTALLY_HONEST_PROMPT,
         messages: [{ role: "user", content: analysisPrompt }],
@@ -212,7 +212,7 @@ Based on the job description and dossier context above, provide your brutally ho
         jd_title,
         company_name,
         assessment: { raw_response: fullResponse, parse_error: true },
-        model_used: "claude-sonnet-4-5-20251001",
+        model_used: "claude-sonnet-4-6",
         session_id: session_id || null,
       });
       return new Response(
@@ -229,7 +229,7 @@ Based on the job description and dossier context above, provide your brutally ho
       fit_score: assessment.fit_score,
       fit_tier: assessment.fit_tier,
       assessment,
-      model_used: "claude-sonnet-4-5-20251001",
+      model_used: "claude-sonnet-4-6",
       session_id: session_id || null,
     });
 
