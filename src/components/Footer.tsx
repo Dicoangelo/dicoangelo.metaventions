@@ -10,11 +10,11 @@ export default function Footer({ isLight }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: "Resume", href: "#resume" },
-    { label: "Skills", href: "#skills" },
-    { label: "Timeline", href: "#timeline" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "Resume", href: "/#resume" },
+    { label: "Skills", href: "/#skills" },
+    { label: "Timeline", href: "/#timeline" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   const socialLinks = [
