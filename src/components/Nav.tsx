@@ -109,9 +109,15 @@ export default function Nav() {
     // Route links (e.g., /showcase) — use normal navigation
     if (href.startsWith("/")) {
       setIsMobileMenuOpen(false);
-      return; // let the browser navigate normally
+      return;
     }
-    // Anchor links — smooth scroll
+    // Anchor links on non-home pages — navigate to home with hash
+    if (pathname !== "/") {
+      setIsMobileMenuOpen(false);
+      window.location.href = "/" + href;
+      return;
+    }
+    // Anchor links on home page — smooth scroll
     e.preventDefault();
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
