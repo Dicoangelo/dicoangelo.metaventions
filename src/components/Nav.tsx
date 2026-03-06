@@ -106,6 +106,12 @@ export default function Nav() {
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Route links (e.g., /showcase) — use normal navigation
+    if (href.startsWith("/")) {
+      setIsMobileMenuOpen(false);
+      return; // let the browser navigate normally
+    }
+    // Anchor links — smooth scroll
     e.preventDefault();
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
@@ -117,6 +123,11 @@ export default function Nav() {
   };
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname !== "/") {
+      // On sub-pages, navigate home
+      setIsMobileMenuOpen(false);
+      return; // let the browser navigate to href="/"
+    }
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
     setActiveSection("");
@@ -155,7 +166,7 @@ export default function Nav() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             onClick={handleLogoClick}
             className={`font-bold transition-all duration-300 hover:text-[var(--accent)] ${
               isCompact ? "text-base" : "text-lg"
