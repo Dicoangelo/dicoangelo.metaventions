@@ -1,10 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { ThemeToggle, useTheme } from "./ThemeProvider";
 
 export default function Nav() {
   const { theme } = useTheme();
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Adaptive navigation state
@@ -16,6 +19,8 @@ export default function Nav() {
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
 
+  const isShowcasePage = pathname === "/showcase";
+
   const navLinks = [
     { href: "#ask", label: "Ask AI", id: "ask" },
     { href: "#resume", label: "Resume", id: "resume" },
@@ -25,6 +30,7 @@ export default function Nav() {
     { href: "#projects", label: "Projects", id: "projects" },
     { href: "#analyze", label: "Analyze", id: "analyze" },
     { href: "#contact", label: "Contact", id: "contact" },
+    { href: "/showcase", label: "Showcase", id: "showcase" },
   ];
 
   // Handle scroll behavior

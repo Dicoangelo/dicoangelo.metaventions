@@ -424,7 +424,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 - Dico does both
 
 **5. Proof in Production**
-- Live demos: https://os-app-woad.vercel.app
+- Live demos: https://app.metaventionsai.com
 - GitHub: 21 repositories
 - npm: 2 packages with 100+ downloads
 

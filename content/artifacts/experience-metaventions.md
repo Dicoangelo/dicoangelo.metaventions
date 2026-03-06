@@ -160,7 +160,7 @@ A production-grade voice-first AI interface with agentic workflows, biometric se
 - ElevenLabs (voice synthesis)
 - Vercel (hosting + CI/CD)
 
-**Live Demo:** https://os-app-woad.vercel.app
+**Live Demo:** https://app.metaventionsai.com
 
 **Code:** `~/OS-App/` (152K LOC)
 
@@ -614,7 +614,7 @@ For deeper technical dives, see:
 ## Portfolio Links
 
 **Live Demos:**
-- OS-App: https://os-app-woad.vercel.app
+- OS-App: https://app.metaventionsai.com
 - Portfolio: https://dicoangelo.vercel.app
 - Company: https://metaventionsai.com
 

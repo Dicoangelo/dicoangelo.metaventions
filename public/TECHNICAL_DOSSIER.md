@@ -56,7 +56,7 @@ Performance Metrics:
 #### Code Evidence
 - **File:** `OS-App/services/adaptiveConsensus.ts` (839 lines)
 - **Tests:** `OS-App/services/__tests__/adaptiveConsensus.test.ts` (623 lines)
-- **Live Demo:** https://os-app-woad.vercel.app
+- **Live Demo:** https://app.metaventionsai.com
 
 ---
 
@@ -113,7 +113,7 @@ Subsystem Routing Logic:
 #### Code Evidence
 - **File:** `OS-App/services/archon/index.ts` (1,280 lines)
 - **Module Count:** 7 integrated subsystems
-- **Live Demo:** https://os-app-woad.vercel.app
+- **Live Demo:** https://app.metaventionsai.com
 
 ---
 
@@ -308,7 +308,7 @@ Test Coverage:    95%
 
 #### Code Evidence
 - **Location:** `~/OS-App/` (152K LOC)
-- **Live Demo:** https://os-app-woad.vercel.app
+- **Live Demo:** https://app.metaventionsai.com
 - **Repository:** https://github.com/Dicoangelo/OS-App (private)
 
 ---
@@ -860,7 +860,7 @@ Scale AI, Databricks, Cohere, Mistral, Hugging Face, Notion, Figma, Vercel, Stri
 ## PORTFOLIO LINKS
 
 **Live Demos:**
-- OS-App: https://os-app-woad.vercel.app
+- OS-App: https://app.metaventionsai.com
 - Portfolio: https://dicoangelo.vercel.app
 - Company: https://metaventionsai.com
 
@@ -902,7 +902,7 @@ Scale AI, Databricks, Cohere, Mistral, Hugging Face, Notion, Figma, Vercel, Stri
 ### For Technical Roles
 1. **Review the code:** OS-App/services/adaptiveConsensus.ts
 2. **Check the tests:** 95% coverage, Vitest
-3. **Try the demo:** https://os-app-woad.vercel.app
+3. **Try the demo:** https://app.metaventionsai.com
 4. **Read the papers:** arXiv:2511.15755, arXiv:2511.13193
 5. **Ask me to implement:** Give me a paper, I'll build it
 

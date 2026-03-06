@@ -385,7 +385,7 @@ git push → GitHub → Vercel Build → Preview Deploy → Production (on merge
 - **Edge function execution** for API routes
 
 **Evidence**:
-- https://os-app-woad.vercel.app (live demo)
+- https://app.metaventionsai.com (live demo)
 - https://dicoangelo.vercel.app (portfolio)
 - https://metaventionsai.com (company site)
 
@@ -866,7 +866,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 3. Published packages: `@metaventionsai/cpb-core`, `@metaventionsai/voice-nexus`
 
 **Live Demos**:
-- https://os-app-woad.vercel.app (voice-native AI interface)
+- https://app.metaventionsai.com (voice-native AI interface)
 - https://dicoangelo.vercel.app (portfolio)
 
 **Research Understanding**:
@@ -934,7 +934,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 ## Contact & Portfolio
 
 **Live Demos**:
-- OS-App: https://os-app-woad.vercel.app
+- OS-App: https://app.metaventionsai.com
 - Portfolio: https://dicoangelo.vercel.app
 - Company: https://metaventionsai.com
 

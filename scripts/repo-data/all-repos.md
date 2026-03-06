@@ -51,7 +51,7 @@ Generated: Thu 29 Jan 2026 10:24:13 EST
 </p>
 
 <p align="center">
-  <a href="https://os-app-woad.vercel.app">
+  <a href="https://app.metaventionsai.com">
     <img src="https://img.shields.io/badge/Live_Demo-os--app--woad.vercel.app-00d9ff?style=for-the-badge" alt="Live Demo" />
   </a>
 </p>
@@ -160,7 +160,7 @@ VITE_ELEVENLABS_API_KEY=your_key
 npm run dev
 ```
 
-**Live Demo**: [os-app-woad.vercel.app](https://os-app-woad.vercel.app)
+**Live Demo**: [app.metaventionsai.com](https://app.metaventionsai.com)
 
 ---
 
@@ -3092,7 +3092,7 @@ const claudeProvider: CPBProvider = {
     isConfigured: () => !!process.env.ANTHROPIC_API_KEY,
     generate: async (prompt, options) => {
         const response = await anthropic.messages.create({
-            model: options?.model || 'claude-sonnet-4-20250514',
+            model: options?.model || 'claude-sonnet-4-6',
             messages: [{ role: 'user', content: prompt }],
             max_tokens: options?.maxTokens || 4096
         });
@@ -3478,7 +3478,7 @@ import { createVoiceNexus, type ReasoningProvider } from '@metaventionsai/voice-
 const claudeProvider: ReasoningProvider = {
     name: 'claude',
     models: {
-        fast: 'claude-sonnet-4-20250514',      // ELITE: Sonnet even for fast
+        fast: 'claude-sonnet-4-6',      // ELITE: Sonnet even for fast
         balanced: 'claude-opus-4-20250514',    // ELITE: Opus for balanced
         deep: 'claude-opus-4-20250514'         // ELITE: Opus for deep
     },

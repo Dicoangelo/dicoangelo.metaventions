@@ -109,7 +109,7 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 ## 🔗 PORTFOLIO
 
 **Live Demos:**
-- https://os-app-woad.vercel.app (OS-App)
+- https://app.metaventionsai.com (OS-App)
 - https://dicoangelo.vercel.app (Portfolio)
 
 **Code:**
@@ -171,7 +171,7 @@ Canadian Citizen - TN Visa Eligible (No sponsorship needed)
 
 **Want to verify?**
 1. Check the code: github.com/Dicoangelo
-2. Try the demo: os-app-woad.vercel.app
+2. Try the demo: app.metaventionsai.com
 3. Read the papers: arXiv:2511.15755, 2511.13193
 4. View the packages: npmjs.com/org/metaventionsai
 5. Ask specific questions (this AI knows everything)

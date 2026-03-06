@@ -36,7 +36,7 @@ Direct, evidence-backed answers to the questions recruiters and hiring managers 
 - 297,480+ lines of code across ecosystem
 - 2 published npm packages
 - 95% test coverage (Vitest)
-- Live demos at https://os-app-woad.vercel.app
+- Live demos at https://app.metaventionsai.com
 
 **Example:** arXiv:2511.15755 (DQ Scoring) → implemented in `adaptiveConsensus.ts` → achieved 100% actionability vs 1.7% single-agent baseline.
 
@@ -150,7 +150,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
    - Voice-native AI interface with Gemini 2.0 & ElevenLabs
    - 75 UI components, 156 services, 20 custom hooks
    - 95% test coverage (Vitest)
-   - Live demo: https://os-app-woad.vercel.app
+   - Live demo: https://app.metaventionsai.com
    - Deployed on Vercel with real users
 
 2. **Published npm packages** (2 packages, public)
@@ -955,7 +955,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 1. **Research-to-production capability**
    - I read arXiv papers and implement them (8+ in production)
    - 316K+ LOC, 2 npm packages, 95% test coverage
-   - Live demos at https://os-app-woad.vercel.app
+   - Live demos at https://app.metaventionsai.com
 
 2. **Enterprise operations experience**
    - $800M+ TCV processed, 2,500+ registrations
@@ -989,7 +989,7 @@ I do **both**. I'm a builder who understands business. An operator who ships cod
 **Proof, not promises:**
 - GitHub: https://github.com/Dicoangelo
 - npm: https://www.npmjs.com/org/metaventionsai
-- Live demo: https://os-app-woad.vercel.app
+- Live demo: https://app.metaventionsai.com
 - LinkedIn: https://linkedin.com/in/dicoangelo
 
 **If you're looking for traditional credentials, I'm not your candidate.**
@@ -1007,7 +1007,7 @@ I do **both**. I'm a builder who understands business. An operator who ships cod
 - **GitHub:** https://github.com/Dicoangelo
 - **LinkedIn:** https://linkedin.com/in/dicoangelo
 - **Portfolio:** https://dicoangelo.vercel.app
-- **Live Demo:** https://os-app-woad.vercel.app
+- **Live Demo:** https://app.metaventionsai.com
 
 **Response time:** Within 24 hours (usually within 4 hours during business hours)
 

@@ -406,7 +406,7 @@ npm run api          # Start Express API server (tsx watch)
 
 ### Live Demo
 
-**Production URL:** [os-app-woad.vercel.app](https://os-app-woad.vercel.app)
+**Production URL:** [app.metaventionsai.com](https://app.metaventionsai.com)
 
 ### Demo Modes
 

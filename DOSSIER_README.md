@@ -205,7 +205,7 @@ Key features:
 Performance: 50% reduction in consensus rounds with 95% test coverage.
 
 Code: OS-App/services/adaptiveConsensus.ts
-Live demo: https://os-app-woad.vercel.app"
+Live demo: https://app.metaventionsai.com"
 ```
 
 ### Business Impact
