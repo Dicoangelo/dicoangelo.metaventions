@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ThemeToggle, useTheme } from "./ThemeProvider";
 
 export default function Nav() {
   const { theme } = useTheme();
   const pathname = usePathname();
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Adaptive navigation state
@@ -19,7 +20,7 @@ export default function Nav() {
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
 
-  const isShowcasePage = pathname === "/showcase";
+  const isHomePage = pathname === "/";
 
   const navLinks = [
     { href: "#ask", label: "Ask AI", id: "ask" },
@@ -36,24 +37,17 @@ export default function Nav() {
   // Handle scroll behavior
   const handleScroll = useCallback(() => {
     const currentScrollY = window.scrollY;
-    const heroHeight = window.innerHeight * 0.8; // 80% of viewport
+    const heroHeight = window.innerHeight * 0.8;
 
-    // Determine if at top
     setIsAtTop(currentScrollY < 50);
-
-    // Determine compact mode (after scrolling past hero)
     setIsCompact(currentScrollY > heroHeight);
 
-    // Determine visibility (hide on scroll down, show on scroll up)
     if (currentScrollY < 100) {
-      // Always show near top
       setIsVisible(true);
     } else if (currentScrollY > lastScrollY.current && currentScrollY > 200) {
-      // Scrolling down - hide
       setIsVisible(false);
-      setIsMobileMenuOpen(false); // Close mobile menu when hiding
+      setIsMobileMenuOpen(false);
     } else if (currentScrollY < lastScrollY.current) {
-      // Scrolling up - show
       setIsVisible(true);
     }
 
@@ -65,22 +59,33 @@ export default function Nav() {
   useEffect(() => {
     const onScroll = () => {
       if (!ticking.current) {
-        window.requestAnimationFrame(() => {
-          handleScroll();
-        });
+        window.requestAnimationFrame(handleScroll);
         ticking.current = true;
       }
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener("scroll", onScroll);
   }, [handleScroll]);
 
-  // Track active section using IntersectionObserver
+  // Set active section for route-based pages (e.g., /showcase)
   useEffect(() => {
-    const sections = navLinks.map((link) => document.getElementById(link.id)).filter(Boolean) as HTMLElement[];
+    if (!isHomePage) {
+      const routeId = pathname.replace("/", "");
+      setActiveSection(routeId);
+    }
+  }, [pathname, isHomePage]);
+
+  // Track active section using IntersectionObserver (home page only)
+  useEffect(() => {
+    if (!isHomePage) return;
+
+    const sections = navLinks
+      .filter((link) => link.href.startsWith("#"))
+      .map((link) => document.getElementById(link.id))
+      .filter(Boolean) as HTMLElement[];
 
     if (sections.length === 0) return;
 
@@ -103,41 +108,57 @@ export default function Nav() {
     return () => {
       sections.forEach((section) => observer.unobserve(section));
     };
-  }, []);
+  }, [isHomePage]);
+
+  // Smooth scroll to hash on page load (for /#section navigation)
+  useEffect(() => {
+    if (!isHomePage) return;
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace("#", "");
+      // Small delay to let the page render before scrolling
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          setActiveSection(id);
+        }
+      });
+    }
+  }, [isHomePage]);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // Route links (e.g., /showcase) — use normal navigation
-    if (href.startsWith("/")) {
-      setIsMobileMenuOpen(false);
-      return;
-    }
-    // Anchor links on non-home pages — navigate to home with hash
-    if (pathname !== "/") {
-      setIsMobileMenuOpen(false);
-      window.location.href = "/" + href;
-      return;
-    }
-    // Anchor links on home page — smooth scroll
+    setIsMobileMenuOpen(false);
+
+    // Route links (e.g., /showcase) — let Next.js Link handle it
+    if (href.startsWith("/")) return;
+
     e.preventDefault();
+
+    // Anchor links on non-home pages — client-side navigate, then scroll
+    if (!isHomePage) {
+      router.push("/" + href);
+      return;
+    }
+
+    // Anchor links on home page — smooth scroll
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setActiveSection(targetId);
+      // Update URL without reload
+      window.history.replaceState(null, "", href);
     }
-    setIsMobileMenuOpen(false);
   };
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname !== "/") {
-      // On sub-pages, navigate home
-      setIsMobileMenuOpen(false);
-      return; // let the browser navigate to href="/"
-    }
+    setIsMobileMenuOpen(false);
+    if (!isHomePage) return; // let Next.js Link navigate to "/"
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
     setActiveSection("");
-    setIsMobileMenuOpen(false);
+    window.history.replaceState(null, "", "/");
   };
 
   return (
@@ -171,7 +192,7 @@ export default function Nav() {
       >
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <a
+          <Link
             href="/"
             onClick={handleLogoClick}
             className={`font-bold transition-all duration-300 hover:text-[var(--accent)] ${
@@ -180,7 +201,7 @@ export default function Nav() {
           >
             <span className="hidden sm:inline">Dico Angelo</span>
             <span className="sm:hidden">DA</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div
@@ -188,28 +209,39 @@ export default function Nav() {
               theme === "light" ? "text-gray-600" : "text-[#a3a3a3]"
             }`}
           >
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className={`relative px-3 py-1.5 rounded-lg transition-all duration-200 ${
-                  activeSection === link.id
-                    ? theme === "light"
-                      ? "text-[var(--accent)] bg-[var(--accent)]/10"
-                      : "text-white bg-[var(--accent)]/20"
-                    : theme === "light"
-                    ? "hover:text-gray-900 hover:bg-gray-100"
-                    : "hover:text-white hover:bg-white/5"
-                }`}
-              >
-                {link.label}
-                {/* Active indicator dot */}
-                {activeSection === link.id && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[var(--accent)]" />
-                )}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isRoute = link.href.startsWith("/");
+              const isActive = activeSection === link.id;
+              const className = `relative px-3 py-1.5 rounded-lg transition-all duration-200 ${
+                isActive
+                  ? theme === "light"
+                    ? "text-[var(--accent)] bg-[var(--accent)]/10"
+                    : "text-white bg-[var(--accent)]/20"
+                  : theme === "light"
+                  ? "hover:text-gray-900 hover:bg-gray-100"
+                  : "hover:text-white hover:bg-white/5"
+              }`;
+              const dot = isActive && (
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[var(--accent)]" />
+              );
+
+              return isRoute ? (
+                <Link key={link.href} href={link.href} className={className}>
+                  {link.label}
+                  {dot}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className={className}
+                >
+                  {link.label}
+                  {dot}
+                </a>
+              );
+            })}
             <div className="ml-2 pl-2 border-l border-[var(--border)]">
               <ThemeToggle />
             </div>
@@ -259,35 +291,54 @@ export default function Nav() {
           }`}
         >
           <div className="flex flex-col gap-1 pb-2">
-            {navLinks.map((link, index) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className={`px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
-                  activeSection === link.id
-                    ? theme === "light"
-                      ? "bg-[var(--accent)]/10 text-[var(--accent)] font-medium"
-                      : "bg-[var(--accent)]/20 text-white font-medium"
-                    : theme === "light"
-                    ? "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                    : "text-[#a3a3a3] hover:bg-white/5 hover:text-white"
-                }`}
-                style={{
-                  // Staggered animation
-                  transitionDelay: isMobileMenuOpen ? `${index * 30}ms` : "0ms",
-                  transform: isMobileMenuOpen ? "translateX(0)" : "translateX(-10px)",
-                  opacity: isMobileMenuOpen ? 1 : 0,
-                }}
-              >
+            {navLinks.map((link, index) => {
+              const isRoute = link.href.startsWith("/");
+              const isActive = activeSection === link.id;
+              const className = `px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
+                isActive
+                  ? theme === "light"
+                    ? "bg-[var(--accent)]/10 text-[var(--accent)] font-medium"
+                    : "bg-[var(--accent)]/20 text-white font-medium"
+                  : theme === "light"
+                  ? "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                  : "text-[#a3a3a3] hover:bg-white/5 hover:text-white"
+              }`;
+              const style = {
+                transitionDelay: isMobileMenuOpen ? `${index * 30}ms` : "0ms",
+                transform: isMobileMenuOpen ? "translateX(0)" : "translateX(-10px)",
+                opacity: isMobileMenuOpen ? 1 : 0,
+              };
+              const content = (
                 <span className="flex items-center gap-2">
-                  {activeSection === link.id && (
+                  {isActive && (
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
                   )}
                   {link.label}
                 </span>
-              </a>
-            ))}
+              );
+
+              return isRoute ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={className}
+                  style={style}
+                >
+                  {content}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className={className}
+                  style={style}
+                >
+                  {content}
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
