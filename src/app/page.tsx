@@ -84,10 +84,6 @@ const AmbientParticles = dynamic(() => import("@/components/AmbientParticles"), 
   ssr: false, // Client-side only
 });
 
-// Lazy load intelligent cursor (desktop only)
-const IntelligentCursor = dynamic(() => import("@/components/IntelligentCursor"), {
-  ssr: false, // Client-side only
-});
 
 export default function Home() {
   const { theme } = useTheme();
@@ -105,13 +101,6 @@ export default function Home() {
 
       {/* Scroll progress indicator */}
       <ScrollProgress />
-
-      {/* Intelligent cursor (desktop only) */}
-      <IntelligentCursor
-        enableTrail={true}
-        trailLength={6}
-        lerpFactor={0.12}
-      />
 
       {/* Command Palette (⌘K) */}
       <CommandPalette />
