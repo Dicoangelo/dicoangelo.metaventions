@@ -28,6 +28,7 @@ export default function Nav() {
     { href: "#timeline", label: "Timeline", id: "timeline" },
     { href: "#skills", label: "Skills", id: "skills" },
     { href: "#systems", label: "Systems", id: "systems" },
+    { href: "#clients", label: "Clients", id: "clients" },
     { href: "#projects", label: "Projects", id: "projects" },
     { href: "#analyze", label: "Analyze", id: "analyze" },
     { href: "#contact", label: "Contact", id: "contact" },
@@ -42,14 +43,8 @@ export default function Nav() {
     setIsAtTop(currentScrollY < 50);
     setIsCompact(currentScrollY > heroHeight);
 
-    if (currentScrollY < 100) {
-      setIsVisible(true);
-    } else if (currentScrollY > lastScrollY.current && currentScrollY > 200) {
-      setIsVisible(false);
-      setIsMobileMenuOpen(false);
-    } else if (currentScrollY < lastScrollY.current) {
-      setIsVisible(true);
-    }
+    // Always keep nav visible — no hide-on-scroll
+    setIsVisible(true);
 
     lastScrollY.current = currentScrollY;
     ticking.current = false;
