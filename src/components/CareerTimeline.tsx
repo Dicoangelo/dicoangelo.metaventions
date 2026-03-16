@@ -51,7 +51,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
         "Developed ResearchGravity: 35,200+ line research-to-production pipeline",
         "Built Claude Infrastructure: 262,400+ lines of custom developer tooling",
       ],
-      metrics: ["410K+ LOC", "4 Systems", "Deployed"],
+      metrics: ["900K+ LOC", "20+ Systems", "Deployed"],
     },
     {
       date: "2022 - 2025",

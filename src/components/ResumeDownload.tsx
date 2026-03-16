@@ -81,7 +81,7 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
             <div className={`p-4 rounded-lg text-center ${
               isLight ? 'bg-gray-50' : 'bg-[#1a1a1a]'
             }`}>
-              <p className="text-2xl font-bold text-[#6366f1] mb-1">410K+</p>
+              <p className="text-2xl font-bold text-[#6366f1] mb-1">900K+</p>
               <p className={`text-xs ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
                 Lines of Code
               </p>

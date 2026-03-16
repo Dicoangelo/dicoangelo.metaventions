@@ -51,7 +51,7 @@ Comprehensive breakdown of technical capabilities with quantified evidence from 
 | AI-augmented documentation intelligence | 114 research sessions, auto-capture, synthesis |
 | Partner ecosystems & cloud GTM systems | $800M TCV, 3,000+ partners, 8 platform admins |
 | Translating expertise into machine-retrievable structures | Semantic chunking, vector embeddings, lineage tracking |
-| Vision → system → operational validation | OS-App (127K LOC from concept to production in 3 months) |
+| Vision → system → operational validation | OS-App (152K LOC from concept to production) |
 
 ### Weak Zones (Honest Assessment)
 - Repetitive execution without system leverage
@@ -172,6 +172,26 @@ Comprehensive breakdown of technical capabilities with quantified evidence from 
 - **Research-to-production**: NotebookLM synthesis feeds directly into code repositories
 
 **What This Demonstrates**: Builder who ships — not just researches. The combination of infrastructure management (GCP), code operations (GitHub), and deployment (Vercel) shows end-to-end technical ownership across the full stack.
+
+### Google Ecosystem Depth
+
+Active subscriber and builder across the Google Cloud and AI ecosystem:
+
+| Platform | Usage | Evidence |
+|----------|-------|----------|
+| **Google Cloud Platform** | Active subscriber | Infrastructure management, 354+ console interactions |
+| **Google Cloud Run** | Production deployments | Serverless container deployment for AI services |
+| **Google AI Studio** | Model prototyping | 348+ sessions prototyping and testing Gemini models |
+| **Gemini 2.0 / Gemini Live** | Production integration | Primary reasoning engine in OS-App, real-time voice pipeline (STT → Reasoning → TTS) |
+| **Google NotebookLM** | Research synthesis | Active research tool for intelligence extraction, Audio Overviews, grounded Q&A |
+| **Google Drive** | Document management | Career archives, meeting artifacts, project documentation, 2GB+ architecture files |
+| **Google Chrome DevTools** | Development tooling | Visual QA, performance auditing, screenshot automation |
+
+**Google-adjacent competencies:**
+- Multi-provider AI routing (Gemini → Claude → GPT-4 → Grok fallback chain)
+- Gemini API integration in production with streaming, function calling, and multi-modal inputs
+- Google Workspace proficiency (Docs, Sheets, Slides, Drive) for enterprise collaboration
+- Understanding of Google's AI product landscape: Vertex AI, AI Studio, Gemini API, NotebookLM
 
 ---
 
@@ -379,7 +399,7 @@ git push → GitHub → Vercel Build → Preview Deploy → Production (on merge
 ```
 
 **Deployment Metrics**:
-- **3 production sites** on Vercel
+- **8+ production sites** on Vercel
 - **Sub-200ms TTFB** (Time to First Byte)
 - **99.9% uptime** SLA
 - **Edge function execution** for API routes
@@ -672,7 +692,7 @@ projects.json → lineage.features_implemented
 **Documentation Created**:
 - `TECHNICAL_DOSSIER.md` (990 lines) - Comprehensive portfolio
 - `D-ECOSYSTEM-BRAND.md` - Brand philosophy and architecture
-- `README.md` files for 21 GitHub repositories
+- `README.md` files for 38 GitHub repositories
 - npm package documentation (cpb-core, voice-nexus)
 - Research session synthesis reports (114 archived)
 
@@ -837,7 +857,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 ### Builder-Operator Hybrid
 
 **Builder Side**:
-- 316K+ lines of code across 4 major projects
+- 900K+ lines of code across 20+ projects
 - 2 published npm packages
 - 8+ arXiv papers implemented
 - 95% test coverage (production quality)
@@ -957,7 +977,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 | Category | Tools | Proficiency | Evidence |
 |----------|-------|-------------|----------|
 | **IDEs** | VS Code, Cursor | Expert | 900K+ LOC |
-| **Version Control** | Git, GitHub | Expert | 1,500+ commits, 21 repos |
+| **Version Control** | Git, GitHub | Expert | 3,000+ commits, 38 repos |
 | **Package Managers** | npm, pip | Expert | 2 published packages |
 | **Build Tools** | Vite, tsup, webpack | Expert | Production builds |
 | **Testing** | Vitest, Jest | Advanced | 95% coverage |

@@ -33,7 +33,7 @@ Direct, evidence-backed answers to the questions recruiters and hiring managers 
 
 **Evidence:**
 - 8+ arXiv papers implemented with production code
-- 297,480+ lines of code across ecosystem
+- 900,000+ lines of code across ecosystem
 - 2 published npm packages
 - 95% test coverage (Vitest)
 - Live demos at https://app.metaventionsai.com
@@ -57,16 +57,16 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **The signal:** Vercel + GitHub activity confirms I'm shipping products, not just researching. This is builder activity — model testing to production deployment in the same session. The work speaks for itself.
 
 ### "Why no PhD or CS degree?"
-**I'm new school.** 4 months of intensive coding. No CS degree, no bootcamp. Learned with AI tools, not before them.
+**I'm new school.** 5 months of intensive coding. No CS degree, no bootcamp. Learned with AI tools, not before them.
 
 **What I have instead:**
-- 316K+ LOC shipped in months, not years
+- 900K+ LOC shipped in months, not years
 - 2 published npm packages (anyone can use my code)
 - 8+ arXiv papers implemented with measurable results
 - $800M+ in enterprise deals managed (operations background)
 - Live demos proving the systems work
 
-**The proof is velocity.** Traditional path: 4 years CS → 2 years junior → maybe ship something. My path: operations foundation → AI-native development → shipped production systems in 4 months. The old prerequisites don't apply when you learn at this speed.
+**The proof is velocity.** Traditional path: 4 years CS → 2 years junior → maybe ship something. My path: operations foundation → AI-native development → shipped production systems in 5 months. The old prerequisites don't apply when you learn at this speed.
 
 ### "Why hire you over a Stanford CS grad?"
 
@@ -74,13 +74,13 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 1. **Operations foundation first.** $800M+ TCV in cloud marketplace deals, 2,500+ registrations, system administration, cross-functional coordination. I understand how enterprise actually works before writing code for it.
 
-2. **I ship fast.** 316K+ LOC in 4 months. No gradual ramp-up - learned with AI tools and shipped production systems immediately. New school velocity.
+2. **I ship fast.** 900K+ LOC in 5 months. No gradual ramp-up - learned with AI tools and shipped production systems immediately. New school velocity.
 
 3. **I bridge research and production.** 8+ arXiv papers implemented with test coverage. I don't just read papers—I implement them, measure results, and iterate.
 
 4. **Self-directed learner.** No CS degree, no bootcamp. Built everything by doing. When corporate didn't promote me, I built my own path.
 
-**Bottom line:** Stanford grads have credentials and 4 years of theory. I have 4 years of operations experience + 4 months of explosive output. If you're hiring for velocity and business understanding, I'm the bet.
+**Bottom line:** Stanford grads have credentials and 4 years of theory. I have 4 years of operations experience + 5 months of explosive output. If you're hiring for velocity and business understanding, I'm the bet.
 
 ---
 
@@ -142,7 +142,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 ### "Do you have production experience?"
 
-**Yes. 297,480+ LOC in production systems with live users.**
+**Yes. 900,000+ LOC in production systems with live users.**
 
 **Production systems built:**
 
@@ -172,8 +172,8 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
    - SQLite persistence
 
 **Production metrics:**
-- 1,500+ commits across ecosystem
-- 21 GitHub repositories (7 public, 14 private)
+- 3,000+ commits across ecosystem
+- 38 GitHub repositories (17 public, 19 private)
 - 95% test coverage (OS-App)
 - Live demos with real users
 - Published packages on npm
@@ -223,11 +223,11 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **Yes. Statistics prove it.**
 
 **Codebase metrics:**
-- **Total LOC:** 297,480+ across ecosystem
+- **Total LOC:** 900,000+ across ecosystem
 - **Largest single project:** 152,503 LOC (OS-App)
 - **Published packages:** 2 on npm (public, versioned, documented)
 - **Test coverage:** 95% (Vitest)
-- **Commits:** 1,500+ across 21 repositories
+- **Commits:** 3,000+ across 38 repositories
 - **Languages:** TypeScript (79K LOC), Python (31K LOC), Shell (5.6K), JavaScript, HTML, Markdown
 
 **Architectural complexity:**
@@ -247,9 +247,9 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 ### "What's your GitHub like?"
 
-**21 repositories, 1,500+ commits, 2 published packages.**
+**38 repositories, 3,000+ commits, 2 published packages.**
 
-**Public repositories (7):**
+**Public repositories (17):**
 - **cpb-core** (TypeScript)—Cognitive Precision Bridge npm package
 - **voice-nexus** (TypeScript)—Multi-provider voice architecture npm package
 - **chrome-history-export** (Python)—AI-ready browsing history export
@@ -258,7 +258,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - **Metaventions-AI-Landing** (TypeScript)—Company landing page
 - Others available on request
 
-**Private repositories (14):**
+**Private repositories (19):**
 - **OS-App** (152K LOC)—Proprietary AI operating system
 - **CareerCoachAntigravity** (76K LOC)—Career governance system
 - **meta-vengine** (51K LOC)—Self-improving infrastructure
@@ -273,7 +273,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Can provide access upon request for verification
 
 **GitHub stats:**
-- 1,500+ commits across ecosystem
+- 3,000+ commits across ecosystem
 - Consistent commit history (daily coding)
 - Semantic commit messages
 - Branch management and version tagging
@@ -324,7 +324,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Remote work:**
 - Open to remote for right role
-- Experienced with distributed collaboration (built 316K LOC solo)
+- Experienced with distributed collaboration (built 900K+ LOC solo)
 - Strong async communication skills
 
 **Relocation:**
@@ -478,7 +478,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Do I write clean, tested, production-ready code? Yes.
 - Do I make sound architectural decisions? Yes.
 - Do I deliver business value? Yes.
-- Can I own end-to-end systems? Yes (316K LOC across ecosystem).
+- Can I own end-to-end systems? Yes (900K+ LOC across ecosystem).
 
 **Most 10-year engineers have narrow experience in one tech stack at one company. I've built:**
 - Multi-agent systems from arXiv papers
@@ -491,7 +491,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 ### "Your background is in marketing and operations. Why should we trust you as an engineer?"
 
-**Because I've shipped 316K+ LOC of production code with 95% test coverage, published 2 npm packages, and implemented 8+ arXiv papers.**
+**Because I've shipped 900K+ LOC of production code with 95% test coverage, published 2 npm packages, and implemented 8+ arXiv papers.**
 
 **The transition story:**
 
@@ -514,7 +514,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **2025-Present (Full Technical):**
 - Founded Metaventions AI (Nov 2025)
-- Built OS-App (152K LOC in 3 months)
+- Built OS-App (152K LOC)
 - Published 2 npm packages
 - Implemented 8+ arXiv papers
 - Created META-VENGINE (51K LOC self-improving infrastructure)
@@ -541,7 +541,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Most engineers can code. I can code AND understand the business. That's rare and valuable.**
 
-**Bottom line:** Judge me on what I've built, not where I started. 316K LOC, 2 npm packages, 8+ papers implemented, $800M deals managed. That's the resume.
+**Bottom line:** Judge me on what I've built, not where I started. 900K+ LOC, 2 npm packages, 8+ papers implemented, $800M deals managed. That's the resume.
 
 ### "Why did you leave Contentsquare?"
 
@@ -562,7 +562,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **Nov 2025:**
 - Left on excellent terms (no performance issues)
 - Founded Metaventions AI
-- Built OS-App (152K LOC in 3 months)
+- Built OS-App (152K LOC)
 - Published 2 npm packages
 
 **What I learned at Contentsquare (invaluable):**
@@ -583,7 +583,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - I got enterprise credibility, systems expertise, and financial runway to build
 
 **Why I'm open to joining a company now:**
-- I've proven I can build (316K LOC, 2 npm packages)
+- I've proven I can build (900K+ LOC, 2 npm packages)
 - I want to work on frontier problems with world-class teams
 - Metaventions can continue as nights/weekends (stable, documented, deployed)
 - Right opportunity = access to cutting-edge research + equity upside
@@ -638,7 +638,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 | Company | Role | Duration | Reason for Leaving |
 |---------|------|----------|-------------------|
 | **Bridge Training Services** | Director | Mar 2019 - Present (6 years) | Non-profit side role (ongoing) |
-| **Metaventions AI** | Founder | Nov 2025 - Present (3 months) | Current role |
+| **Metaventions AI** | Founder | Nov 2025 - Present (5 months) | Current role |
 | **Contentsquare** | Cloud Alliance Ops Lead | Jan 2022 - Nov 2025 (4 years) | Left to build startup full-time |
 | **Edison Financial** | Document Review Specialist | Jul 2021 - Apr 2022 (9 months) | Concurrent with Rocket, left to focus |
 | **Rocket Mortgage** | Product Success Specialist | Jun 2020 - May 2023 (3 years) | Left for Contentsquare (career growth) |
@@ -659,7 +659,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 2. **Contentsquare → Metaventions (2025):**
    - 4 years at Contentsquare (delivered $800M TCV, 2x awards)
    - Left on excellent terms to pursue entrepreneurship
-   - Built 316K LOC in 3 months (validated the bet)
+   - Built 900K+ LOC in 5 months (validated the bet)
 
 3. **Edison Financial (concurrent):**
    - Part-time concurrent role during Rocket tenure
@@ -879,7 +879,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 |-----------|-------------|
 | **AI Systems Architect (Enterprise)** | Systems thinking + production code + business context |
 | **Knowledge Infrastructure Lead** | RAG expertise, documentation-as-infrastructure mindset |
-| **Platform / Intelligence Architecture Lead** | 316K LOC, multi-system integration experience |
+| **Platform / Intelligence Architecture Lead** | 900K+ LOC, multi-system integration experience |
 | **Advanced Partner Engineering** | $800M TCV, hyperscaler relationships, GTM depth |
 | **Applied AI Strategy & Systems Design** | Research-to-production pipeline, 8+ papers implemented |
 
@@ -954,7 +954,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 1. **Research-to-production capability**
    - I read arXiv papers and implement them (8+ in production)
-   - 316K+ LOC, 2 npm packages, 95% test coverage
+   - 900K+ LOC, 2 npm packages, 95% test coverage
    - Live demos at https://app.metaventionsai.com
 
 2. **Enterprise operations experience**
@@ -963,7 +963,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
    - Cross-functional leadership (Sales, Marketing, Product, Finance, Legal)
 
 3. **Proven execution velocity**
-   - 152K LOC in 3 months (OS-App)
+   - 152K LOC (OS-App)
    - 2 npm packages published in 2 months
    - $30M+ ACV growth supported in 1 year (Contentsquare)
 

@@ -99,7 +99,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
 
           {/* Row 4 - Technical Metrics */}
           <MetricCard
-            value="410K+"
+            value="900K+"
             label="Lines of Code"
             context="Across 4 deployed systems"
             proof="Structura (85.5K), CareerCoach (26.6K), ResearchGravity (35.2K), Claude Infrastructure (262.4K)"

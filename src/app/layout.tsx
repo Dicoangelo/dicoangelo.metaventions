@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Dico Angelo — Operations Leader | AI Systems Builder",
-  description: "Operations leader who scaled Contentsquare cloud marketplace from $0 to $30M+ in 30 months, managing $800M+ TCV with 2x Microsoft Partner of the Year. Now shipping 410K+ lines of production AI systems across 4 deployed platforms.",
+  description: "Operations leader who scaled Contentsquare cloud marketplace from $0 to $30M+ in 30 months, managing $800M+ TCV with 2x Microsoft Partner of the Year. Now shipping 900K+ lines of production AI systems across 20+ deployed systems.",
   keywords: [
     "AI Engineer",
     "Data Operations Manager",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   creator: "Dico Angelo",
   openGraph: {
     title: "Dico Angelo — Operations Leader & AI Systems Builder",
-    description: "Scaled cloud marketplace $0 to $30M+ in 30 months. $800M+ TCV managed. 2x Microsoft Partner of the Year. 410K+ lines of production AI systems shipped.",
+    description: "Scaled cloud marketplace $0 to $30M+ in 30 months. $800M+ TCV managed. 2x Microsoft Partner of the Year. 900K+ lines of production AI systems shipped.",
     type: "website",
     url: SITE_URL,
     siteName: "Dico Angelo Portfolio",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Dico Angelo — Operations Leader & AI Systems Builder",
-    description: "Scaled cloud marketplace $0 to $30M+. $800M+ TCV. 2x Microsoft POTY. 410K+ LOC across 4 deployed AI systems.",
+    description: "Scaled cloud marketplace $0 to $30M+. $800M+ TCV. 2x Microsoft POTY. 900K+ LOC across 20+ deployed AI systems.",
     creator: "@dicoangelo",
     images: ["/headshot.jpg"],
   },
@@ -87,7 +87,7 @@ const personSchema = {
   "@type": "Person",
   name: "Dico Angelo",
   jobTitle: "Operations Leader & AI Systems Builder",
-  description: "Operations leader who scaled cloud marketplace from $0 to $30M+ managing $800M+ TCV while shipping 410K+ lines of production AI systems",
+  description: "Operations leader who scaled cloud marketplace from $0 to $30M+ managing $800M+ TCV while shipping 900K+ lines of production AI systems",
   url: SITE_URL,
   email: "hello@dicoangelo.com",
   nationality: "Canadian",

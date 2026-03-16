@@ -58,7 +58,7 @@ export default function Footer({ isLight }: FooterProps) {
 
   const stats = [
     { value: "$800M+", label: "TCV Processed" },
-    { value: "410K+", label: "Lines of Code" },
+    { value: "900K+", label: "Lines of Code" },
     { value: "8+", label: "Research Papers" },
   ];
 

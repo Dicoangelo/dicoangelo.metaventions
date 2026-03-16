@@ -2,7 +2,7 @@
 
 ## Overview
 
-Beyond the 316K lines of code and $800M in enterprise deals lies a person shaped by athletics, systems thinking, creative expression, and a deep drive for meaningful impact. This artifact reveals the values, philosophy, and formative experiences that inform how Dico approaches work, relationships, and life.
+Beyond the 900K+ lines of code and $800M in enterprise deals lies a person shaped by athletics, systems thinking, creative expression, and a deep drive for meaningful impact. This artifact reveals the values, philosophy, and formative experiences that inform how Dico approaches work, relationships, and life.
 
 ---
 
@@ -94,7 +94,7 @@ This background explains why I gravitate toward meta-systems: orchestrators that
 
 **The Reality:**
 - Operations background (2020-2024): $800M+ in enterprise deals, system administration, process automation
-- Intensive coding (Late 2024 - Present): 4 months, 316K+ LOC, AI-native development
+- Intensive coding (Late 2024 - Present): 5 months, 900K+ LOC, AI-native development
 - No gradual ramp-up: learned WITH AI tools, shipped production systems immediately
 
 **New School Developer:** Traditional path takes years. AI-augmented learning compresses that timeline. The output is the credential.

@@ -14,15 +14,29 @@ Before enterprise cloud operations at Contentsquare, Dico built foundational ski
 
 ### Core Responsibilities
 
+**Release Management & Feature Launches**
+- Managed end-to-end feature release processes: requirements gathering, UAT coordination, go/no-go decisions, staged rollout, and post-launch adoption tracking
+- Coordinated release communication across engineering, operations, and client-facing teams — bridging the gap between what was being built and who needed to know
+- Ran go/no-go checkpoints for new feature releases, gathering sign-off from operations leads before rollout to 45+ agents
+- Documented release notes, how-to guides, and training materials for each feature update
+- Tracked feature adoption metrics post-release and reported back to product development
+
 **Product Adoption & Success**
 - Facilitated and measured adoption of new product features across operations teams
 - Gathered and compiled feedback on product processing bugs, issues, and best practices
 - Developed business insights on product strategy and drove ideas for the business
+- Led a team of 45 agents through product transitions, system changes, and workflow updates
 
-**System Administration**
+**System Administration & Process Design**
 - Acted as System Administrator for multiple platforms, managing product lifecycles
+- Designed and maintained system workflows and operational processes — defining how teams used tools, what the handoff points were, and where automation could replace manual steps
 - Managed onboarding processes and product maintenance workflows
 - Provided customer success support for agents and operations users
+
+**Working at the Intersection of Technology, Process, and People**
+- **Technology:** Worked directly with software developers on bug reports, feature requests, and system behavior — translating operational reality into technical requirements
+- **Process:** Built, directed, and refined system workflows and tools that governed how the operations team functioned day-to-day
+- **People:** Got new features, process changes, and system updates in front of both client-facing teams and internal stakeholders — driving adoption through communication, not mandate
 
 **Product Development**
 - Product owner prioritization of backlog features
@@ -31,17 +45,20 @@ Before enterprise cloud operations at Contentsquare, Dico built foundational ski
 
 ### Skills Developed
 
-| Skill | Application |
-|-------|-------------|
-| Product backlog management | Prioritization frameworks for feature development |
-| User story writing | Translating business needs to technical requirements |
-| System administration | Multi-platform lifecycle management |
-| Feedback synthesis | Converting user input into actionable improvements |
-| Cross-functional communication | Bridge between operations, tech, and business teams |
+| Skill | Application | TPM Relevance |
+|-------|-------------|---------------|
+| Release management | Feature go/no-go, staged rollouts, adoption tracking | Direct: product launch lifecycle |
+| Product backlog management | Prioritization frameworks for feature development | Direct: roadmap ownership |
+| User story writing | Translating business needs to technical requirements | Direct: PRD writing |
+| System administration | Multi-platform lifecycle management | Direct: platform operations |
+| Go/no-go decision facilitation | Cross-team sign-off before feature releases | Direct: launch review process |
+| Feedback synthesis | Converting user input into actionable improvements | Direct: user research |
+| Cross-functional communication | Bridge between engineering, ops, and business teams | Direct: stakeholder management |
+| Team leadership | Led 45 agents through product and process transitions | Direct: leading without authority |
 
 ### Why This Matters
 
-This role was the **first intersection of operations and product** — the same pattern that would later manifest in designing partner systems and AI infrastructure. The skills learned here (backlog management, user stories, system administration) directly translate to current technical product work.
+This role was the **first intersection of technology, process, and people** — the exact TPM triad. Dico wasn't just "using products" — he was managing the release process, coordinating across technical and non-technical teams, running go/no-go gates, and tracking adoption. The same pattern that would later manifest in designing partner systems, AI infrastructure, and multi-agent orchestration at enterprise scale.
 
 ---
 
