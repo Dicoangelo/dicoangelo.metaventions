@@ -25,10 +25,10 @@ if (existsSync(envPath)) {
   }
 }
 
-// Initialize clients
+// Initialize clients — use service role key for ingest (bypasses RLS)
 const supabase = createClient(
   process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
+  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_KEY!
 );
 
 const cohere = new CohereClient({
@@ -45,6 +45,57 @@ interface DossierChunk {
     metrics?: string[];
     companies?: string[];
   };
+}
+
+/**
+ * Sanitize content before ingestion — strip PII, secrets, internal paths
+ */
+function sanitizeContent(content: string): string {
+  let sanitized = content;
+
+  // Strip phone numbers (xxx-xxx-xxxx, (xxx) xxx-xxxx, etc.)
+  sanitized = sanitized.replace(/\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g, "[phone redacted]");
+
+  // Strip personal emails (keep @metaventionsai.com)
+  sanitized = sanitized.replace(/[a-zA-Z0-9._%+-]+@(?!metaventionsai\.com)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g, "[email redacted]");
+
+  // Strip API key patterns and env variable values
+  sanitized = sanitized.replace(/(?:sk-ant-api|sk-|xai-|AIza)[A-Za-z0-9_-]{10,}/g, "[key redacted]");
+  sanitized = sanitized.replace(/(?:API_KEY|SECRET|PASSWORD|TOKEN)\s*=\s*\S+/gi, "$&".replace(/=\s*\S+/, "=[redacted]"));
+  sanitized = sanitized.replace(/(API_KEY|SECRET|PASSWORD|TOKEN)\s*=\s*[^\s\n]+/gi, "$1=[redacted]");
+
+  // Strip .env configuration blocks (multi-line)
+  sanitized = sanitized.replace(/^(?:VITE_|NEXT_PUBLIC_|ANTHROPIC_|OPENAI_|XAI_|GEMINI_|COHERE_|SUPABASE_|ADMIN_)\w+=.*$/gm, "[env var redacted]");
+
+  // Strip salary/compensation/offer details
+  sanitized = sanitized.replace(/\b(?:salary|compensation|offer letter|pay range|base pay)\b.*$/gim, "[compensation details redacted]");
+
+  // Strip internal absolute file paths
+  sanitized = sanitized.replace(/\/Users\/\w+\/[^\s\n]+/g, "[path redacted]");
+
+  return sanitized;
+}
+
+/**
+ * Check if a chunk should be excluded entirely
+ */
+function shouldExcludeChunk(chunk: DossierChunk): boolean {
+  const heading = (chunk.heading || "").toLowerCase();
+  const content = chunk.content.toLowerCase();
+
+  // Exclude chunks that are primarily env/config setup instructions
+  if (heading.includes("environment setup") || heading.includes("configure api")) {
+    return true;
+  }
+
+  // Exclude chunks that are mostly redacted
+  const redactedCount = (chunk.content.match(/\[.*redacted\]/g) || []).length;
+  const lineCount = chunk.content.split("\n").length;
+  if (redactedCount > lineCount * 0.5) {
+    return true;
+  }
+
+  return false;
 }
 
 /**
@@ -275,7 +326,17 @@ async function main() {
     }
   }
 
-  const allChunks = [...technicalChunks, ...quickFactsChunks, ...repoChunks];
+  // Sanitize and filter all chunks
+  const rawChunks = [...technicalChunks, ...quickFactsChunks, ...repoChunks];
+  console.log(`\n🔒 Sanitizing ${rawChunks.length} chunks...`);
+  const allChunks = rawChunks
+    .map((chunk) => ({ ...chunk, content: sanitizeContent(chunk.content) }))
+    .filter((chunk) => !shouldExcludeChunk(chunk));
+  const excluded = rawChunks.length - allChunks.length;
+  if (excluded > 0) {
+    console.log(`   Excluded ${excluded} chunks (env configs, heavily redacted)`);
+  }
+  console.log(`   ${allChunks.length} chunks passed sanitization\n`);
 
   // Generate embeddings
   const embeddings = await generateEmbeddings(allChunks);

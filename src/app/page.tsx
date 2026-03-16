@@ -25,6 +25,7 @@ import { UCWInsightsSection } from "@/components/sections/UCWInsightsSection";
 import { BridgeSection } from "@/components/sections/BridgeSection";
 import { FrontierOpsScore } from "@/components/sections/FrontierOpsScore";
 import { GoMotionSection } from "@/components/sections/GoMotionSection";
+import { ClientShowcase } from "@/components/sections/ClientShowcase";
 import Link from "next/link";
 
 // Loading skeletons
@@ -155,6 +156,9 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials isLight={isLight} />
+
+      {/* Client Projects */}
+      <ClientShowcase isLight={isLight} />
 
       {/* Project Showcase Section */}
       <ProjectShowcase isLight={isLight} />
