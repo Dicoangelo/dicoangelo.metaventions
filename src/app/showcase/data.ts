@@ -571,22 +571,28 @@ export const liveSites: LiveSite[] = [
     url: "https://thesignatureevent.metaventionsai.com",
   },
   {
-    name: "Signature Event",
-    tech: "Next.js",
-    description: "Event marketing & RSVP platform for Cooper Swanson Ventures",
-    url: "https://thesignatureevent.metaventionsai.com",
-  },
-  {
     name: "BXL Hospitality",
-    tech: "Next.js",
-    description: "Luxury hospitality membership platform",
+    tech: "NEXT.JS 16 / SUPABASE / STRIPE / CLIENT PROJECT",
+    description: "Luxury hospitality membership platform — 3-tier membership, event packages",
     url: "https://bxl.metaventionsai.com",
   },
   {
     name: "FriendlyFace",
-    tech: "Next.js",
+    tech: "NEXT.JS / AI COMPLIANCE",
     description: "AI compliance proxy & forensic evidence system",
     url: "https://friendlyface.metaventionsai.com",
+  },
+  {
+    name: "Paper to Production",
+    tech: "HTML / ARCHITECTURE REPORTS",
+    description: "arXiv papers translated into deployed systems — technical architecture reports",
+    url: "https://paper-to-production.vercel.app",
+  },
+  {
+    name: "DQ Scoring Collaboration",
+    tech: "HTML / RESEARCH PRESENTATION",
+    description: "Philip Drammeh x D'Angelo — DQ scoring production validation (arXiv:2511.15755)",
+    url: "https://dqscoring.vercel.app",
   },
 ];
 

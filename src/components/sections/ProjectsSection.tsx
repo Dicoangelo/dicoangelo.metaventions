@@ -174,6 +174,18 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
                 description: "AI compliance proxy & forensic evidence",
                 subdomain: "friendlyface.",
               },
+              {
+                name: "Paper to Production",
+                url: "https://paper-to-production.vercel.app",
+                description: "arXiv papers → deployed systems architecture reports",
+                subdomain: "paper-to-production.",
+              },
+              {
+                name: "DQ Scoring",
+                url: "https://dqscoring.vercel.app",
+                description: "DQ scoring collaboration — Drammeh x D'Angelo",
+                subdomain: "dqscoring.",
+              },
             ].map((item) => (
               <a
                 key={item.name}
