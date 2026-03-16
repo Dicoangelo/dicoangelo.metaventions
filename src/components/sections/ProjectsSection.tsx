@@ -156,6 +156,24 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
                 description: "This site — career dossier & live chat",
                 subdomain: "dicoangelo.",
               },
+              {
+                name: "Signature Event",
+                url: "https://thesignatureevent.metaventionsai.com",
+                description: "Event marketing & RSVP platform",
+                subdomain: "thesignatureevent.",
+              },
+              {
+                name: "BXL Hospitality",
+                url: "https://bxl.metaventionsai.com",
+                description: "Luxury hospitality membership platform",
+                subdomain: "bxl.",
+              },
+              {
+                name: "FriendlyFace",
+                url: "https://friendlyface.metaventionsai.com",
+                description: "AI compliance proxy & forensic evidence",
+                subdomain: "friendlyface.",
+              },
             ].map((item) => (
               <a
                 key={item.name}

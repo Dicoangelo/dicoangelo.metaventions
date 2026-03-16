@@ -1,8 +1,8 @@
 # ResearchGravity - Technical Research & Development Data
 
-Generated: 2026-01-29T15:55:33.967Z
+Generated: Mon 16 Mar 2026
 
-This file contains research findings, innovations, and development patterns from Dico Angelo's ResearchGravity system - a comprehensive research tracking framework.
+This file contains research findings, innovations, and development patterns from Dico Angelo's ResearchGravity system -- a comprehensive research tracking framework.
 
 ## About ResearchGravity
 
@@ -11,328 +11,192 @@ ResearchGravity is a custom-built research session tracking framework with:
 - **Cohere Embeddings**: embed-english-v3.0 (1024 dimensions)
 - **Semantic Search**: Full-text + vector similarity + reranking
 - **Auto-Capture**: Automatic session tracking and lineage
+- **MCP Server**: 37 tools exposed via Model Context Protocol
+- **Multi-Platform Capture**: Claude Code, ChatGPT, Cursor, Grok, Command Center
+- **Knowledge Graph**: Concept graph, lineage tracking, persona generation, ontology construction
+- **Webhook System**: GitHub, Slack, generic handlers with security and audit
+- **MiroFish Integration**: Temporal graph, ReACT synthesis, ontology, personas, oracle (latest)
 
 **Current Stats**:
-- 114+ research sessions archived
-- 2,530+ findings captured
-- 8,935+ URLs catalogued and tiered
+- 138+ session archives in ~/.agent-core/
+- 120+ commits in ResearchGravity repo
+- 15+ modules across capture, graph, coherence, delegation, webhook, critic, methods
+- Context packs system with 7-layer semantic selection
 
 ---
 
-## Research Innovations & Findings
+## Research Index (from ~/.agent-core/)
 
-### Thesis Statements
+### Data Infrastructure
+- `context-packs/` -- Semantic context packs with domain, pattern, project, paper registries
+- `oracle/` -- Oracle system (people, productions, streams, human-in-loop targets)
+- `research/` -- Research references and proposals
+- `memory/` -- Long-term memory store
+- `career/` -- Career intelligence data
+- `brand/` -- Brand assets and guidelines
+- `case-studies/` -- Case study materials
+- `guardian/` -- Guardian safety system
+- `precision/` -- Precision metrics
+- `principles/` -- Operating principles
+- `playbooks/` -- Operational playbooks
+- `schemas/` -- Data schemas
+- `config/` -- Configuration registry
+- `qdrant_storage/` -- Vector storage
 
-sessions\n- CareerCoach security audit\n- Package architecture analysis\n\n### Phase 3 (Jan 15-16): Knowledge Consolidation\n- Context pack v2 development\n- Large session recovery (backfill-large-session...)\n- Research summary compilation\n- Learnings archive formalization\n\n### Phase 4 (Jan 17-19): Strategic Execution\n- Pitch deck development\n- Investor outreach strategy\n- Direct relationship building (Emily Friend call)\n- Job hunt campaign tracking\n\n---\n\n## KEY THEMES & PATTERNS\n\n
-
----
-
-- **Balanced tier** (0.2-0.5 complexity): Claude Opus with ElevenLabs
-
----
-
-(20m)* — Group findings thematically, identify knowledge gaps, formulate thesis
-
----
-
-frameworks, and quality-assured output—currently at version 3.5.0 with the new CPB (Cognitive Precision Bridge) module in development.
-
----
-
-across multiple projects. The user appears focused on developing frameworks for intelligent systems and sovereign AI applications.
-
----
-
-format: Thesis (what we know), Gap (what's missing), Innovation Direction (our approach)"
+### Key Documents
+- `INVENTION.md`, `INVENTION_v2.md`, `INVENTION_FINAL.md` -- Invention documentation
+- `100M_SPRINT.md` -- Strategic sprint plan
+- `INTEGRATION_STATUS.md` -- System integration tracking
 
 ---
-
-**We didn't break anything.** The refactoring moved components to separate files - they render identically. The empty center is how it always looked before generating content.
-
----
-
-derived from ${file.name}. Synchronizing existing Vault intelligence with new artifact constraints.`,
-
----
-
-855→          const manifest = await generateStructuredWorkflow(
-
----
-
-A Local-First "Thick Client" (Sovereign OS) built on React 19 + Vite. It rejects the traditional Client/Server model in favor of a browser-based "God Mode" where the frontend holds the DB (IndexedDB) and the Logic (Gemini Flash).
-
----
-
-Bridge" (WebAssembly sandboxing) and expand the "Peer Mesh" (P2P Swarm Logic).
-
----
-
-Bridge** | SEEKING CONTRIBUTORS | WebAssembly sandboxing layer |
-
----
-
-A Local-First "Thick Client" (Sovereign OS) built on React 19 + Vite. It rejects the traditional Client/Server model in favor of a browser-based "God Mode" where the frontend holds the DB (IndexedDB) and the Logic (Gemini Flash).
-
----
-
-Bridge" (WebAssembly sandboxing) and expand the "Peer Mesh" (P2P Swarm Logic).
-
----
-
-of this data constructs the profile of a goal-oriented individual whose digital rituals and artifacts are aligned with a singular professional identity. The central characteristic revealed is that of a highly disciplined individual whose personal pursuits are often extensions of, or support systems for, an all-consuming professional focus on Artificial Intelligence. This profile is not one of balanced, separate spheres, but of an integrated life where career, intellectual curiosity, and personal
-
----
-
-### Technical Research Findings
-
-## High-Quality Development Sessions
-
-These represent successful research and development sessions rated 4+ quality:
-
-### how do i stack unhinged full comparison 
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 172}
-
-### cd /path/to/your-repo
-claude
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 270}
-
-### Implement the following plan:
-
-# Career Coach MVP - Implementation Plan
-
-## Over
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 231}
-
-### what day did we make drastic changes for token efficiency for claude
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"sonnet": 509}
-
-### Implement the following plan:
-
-# OS-App Comprehensive Refactoring Plan
-
-**Goal:*
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 453}
-
-### I need a major overhaul, i need to change my github from blackamethyst-ai to Dic
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 323}
-
-### <local-command-caveat>Caveat: The messages below were generated by the user whil
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 590}
-
-### we want to open up the git career resume builder i have a deep instruction set t
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 432}
-
-### are you able to find past pdfs artifacts and locate and open folderS?
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 228}
-
-### <local-command-caveat>Caveat: The messages below were generated by the user whil
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 535}
-
-### <local-command-caveat>Caveat: The messages below were generated by the user whil
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 473}
-
-### Implement the following plan:
-
-# Plan: Supermemory Automations
-
-Set up automated
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 235}
-
-### pull up the resume creation process same one used for sierra
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 447}
-
-### where are all of my resumes located
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 308}
-
-### install the mcp from my latest downlaod/Users/dicoangelo/pageindex-mcp-1.6.3.mcp
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"sonnet": 212}
-
-### Implement the following plan:
-
-# Personal Cognitive OS - Implementation Plan
-
-##
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 361}
-
-### Implement the following plan:
-
-# Plan: Multi-Agent Coordination System
-
-Orchestr
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 887}
-
-### Implement the following plan:
-
-# CPB v2.5 — Comprehensive Hardening Plan
-
-**Stat
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 293}
-
-### cd ~/chrome-history-export-guide/scripts
-python3 export_for_notebooklm.py
-# Uplo
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 297}
-
-###  continue from plan              
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 165}
-
-### <local-command-caveat>Caveat: The messages below were generated by the user whil
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 189}
-
-### i just got done with a massive update
-obs n
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 591}
-
-### Implement the following plan:
-
-# CPB Precision Mode v2.4 — Pioneer Mode & Trust 
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 258}
-
-### Okay so i want to createa linkedin mcp to my account but its basically to improv
-- **Outcome**: success
-- **Quality**: 5/5
-- **Models**: {"opus": 218}
-
-## Development Tool Proficiency
-
-Tool usage patterns from 100+ development sessions:
-
-| Tool | Usage Count | Success Rate |
-|------|-------------|-------------|
-| Bash | 5065 | 100% |
-| Read | 2519 | 100% |
-| Edit | 1101 | 100% |
-| TodoWrite | 807 | 100% |
-| Write | 582 | 100% |
-| WebSearch | 413 | 100% |
-| Glob | 346 | 100% |
-| Grep | 299 | 100% |
-| WebFetch | 298 | 100% |
-| mcp__chrome-devtools__click | 112 | 100% |
-| Task | 98 | 100% |
-| mcp__chrome-devtools__take_snapshot | 88 | 100% |
-| mcp__chrome-devtools__take_screenshot | 79 | 100% |
-| mcp__chrome-devtools__evaluate_script | 57 | 100% |
-| mcp__chrome-devtools__press_key | 42 | 100% |
-| mcp__chrome-devtools__navigate_page | 41 | 100% |
-| mcp__chrome-devtools__fill | 34 | 100% |
-| mcp__chrome-devtools__list_pages | 27 | 100% |
-| AskUserQuestion | 21 | 100% |
-| mcp__chrome-devtools__new_page | 16 | 100% |
-
-## Project Development Tracking
-
-### OS-App
-- **Type**: vite
-- **Status**: active
-- **Stack**: React 19, Vite, Zustand, TypeScript
-- **Focus**: agentic-os, biometric-ui, multi-agent-orchestration
-
-### CareerCoachAntigravity
-- **Type**: nextjs
-- **Status**: active
-- **Stack**: Next.js 14, React 18, Zustand, TypeScript
-- **Focus**: career-intelligence, ai-agents, resume-builder
-
-### ResearchGravity
-- **Type**: python
-- **Status**: active
-- **Stack**: Python 3.8+
-- **Focus**: research-tracking, auto-capture, session-management
-
-### Metaventions-AI-Landing
-- **Type**: vite
-- **Status**: active
-- **Stack**: React, Vite, Three.js
-- **Focus**: landing-page, 3d-visualization
-
-### The-Decosystem
-- **Type**: monorepo
-- **Status**: active
-- **Stack**: Multi-project
-- **Focus**: ecosystem-registry, documentation
-
-### Agent Core
-- **Type**: data
-- **Status**: active
-- **Stack**: SQLite, JSON
-- **Focus**: unified-data, research-index, cognitive-wallet
-
-### Claude Config
-- **Type**: config
-- **Status**: active
-- **Stack**: JSON, Python, Bash
-- **Focus**: hooks, scripts, kernel
 
 ## Key Research Areas
 
 ### Multi-Agent Systems
-- Adaptive Consensus Engine (ACE) - 6-agent autonomous analysis
-- DQ Scoring (Deliberation Quality) - validity + specificity + correctness
+- Adaptive Consensus Engine (ACE) -- 6-agent autonomous analysis
+- DQ Scoring (Deliberation Quality) -- validity + specificity + correctness
 - Voting vs debate consensus mechanisms
 - Heterogeneous agent specialization
+- Agent auction mechanisms
+- Multi-agent coordinator with 4 strategies (parallel research, parallel implement, review build, full orchestration)
+- Supermax coordination mode
+- Conflict resolution and work distribution
 
 ### Cognitive Computing
-- Cognitive Precision Bridge (CPB) - precision-aware AI routing
-- Recursive Language Modeling (RLM) - infinite context windows
+- Cognitive Precision Bridge (CPB) -- precision-aware AI routing
+- Recursive Language Modeling (RLM) -- infinite context windows
 - Energy-aware task routing (Cognitive OS)
 - Flow state detection and optimization
+- Bayesian optimization for routing parameters
+- LRF (Learning Rate Factor) clustering
+- Behavioral outcome tracking
 
 ### Voice & Multimodal AI
-- Voice Nexus - universal multi-provider voice architecture
-- Real-time STT/TTS with Deepgram
+- Voice Nexus -- universal multi-provider voice architecture
+- Real-time STT/TTS with Deepgram and ElevenLabs
 - Complexity-based provider selection
 - Turn-based and continuous modes
+- Knowledge injection into voice pipeline
 
 ### Systems Architecture
 - Session optimization and window management
-- Error pattern recognition and self-healing
-- Context pack selection with semantic embeddings
+- Error pattern recognition and self-healing (94% coverage, 70% auto-fix)
+- Context pack selection with semantic embeddings (7-layer system)
 - Research lineage tracking and provenance
+- Dual-write persistence (SQLite + JSONL)
+- MCP protocol integration across multiple tools
 
+### Biometric & Adaptive UI
+- Face detection and stress sensing
+- Gaze tracking and fixation analysis
+- Adaptive UI complexity levels
+- Semantic gaze for UI intelligence
+- DOM regeneration and component registry
+
+### Knowledge Management
+- Temporal knowledge graph (MiroFish integration)
+- Concept graph with lineage tracking
+- Persona generation and ontology construction
+- ReACT synthesis agent
+- Oracle system for strategic intelligence
+- Coherence engine for cross-session tracking
+
+### Financial Intelligence
+- Cognitive Factor Intelligence (frontier-alpha)
+- CVRF (Cognitive Value Risk Framework) belief-wired portfolio optimization
+- Black-Litterman inspired belief integration
+- GPU pricing, mining stats, power analysis
+
+---
+
+## Development Tool Proficiency
+
+Tool usage patterns from 138+ development sessions:
+
+| Tool | Category | Usage Level |
+|------|----------|-------------|
+| Bash | Execution | Primary |
+| Read | File Access | Primary |
+| Edit | File Modification | Primary |
+| Write | File Creation | High |
+| WebSearch | Research | High |
+| Glob | File Discovery | High |
+| Grep | Code Search | High |
+| WebFetch | Data Retrieval | High |
+| Chrome DevTools | UI Testing | Medium |
+| Task | Background Work | Medium |
+
+---
+
+## Project Development Tracking
+
+### OS-App
+- **Type**: vite (React 19 + Vite)
+- **Status**: active
+- **Commits**: ~589
+- **Stack**: React 19, Vite, Zustand 5, TypeScript, Three.js, Framer Motion
+- **Focus**: agentic-os, biometric-ui, multi-agent-orchestration, voice-native
+
+### CareerCoachAntigravity
+- **Type**: nextjs (Next.js 15)
+- **Status**: active
+- **Commits**: ~192
+- **Stack**: Next.js 15, React 18, Zustand, TypeScript, Sentry, Supabase
+- **Focus**: career-intelligence, ai-agents, resume-builder, skill-graphs
+
+### ResearchGravity
+- **Type**: python
+- **Status**: active
+- **Commits**: ~120
+- **Stack**: Python, SQLite, Qdrant, Supabase, Cohere, MCP
+- **Focus**: research-tracking, auto-capture, knowledge-graph, webhook-system
+
+### frontier-alpha
+- **Type**: typescript
+- **Status**: active
+- **Commits**: ~135
+- **Stack**: TypeScript, CVRF, Black-Litterman
+- **Focus**: portfolio-optimization, factor-intelligence, episodic-learning
+
+### FriendlyFace
+- **Type**: python
+- **Status**: active (newest, Mar 2026)
+- **Commits**: ~90
+- **Stack**: Python, AI Facial Recognition, Blockchain Forensic
+- **Focus**: forensic-evidence, compliance-proxy, patent-pending
+
+### meta-vengine
+- **Type**: python
+- **Status**: active
+- **Commits**: ~99
+- **Stack**: Python, Shell, SQLite, Bayesian Optimization
+- **Focus**: ai-routing, self-healing, multi-agent-coordination
+
+### UCW (Universal Cognitive Wallet)
+- **Type**: python
+- **Status**: active
+- **Commits**: ~13
+- **Stack**: Python, SQLite, MCP, Embeddings
+- **Focus**: session-capture, cognitive-wallet, cross-platform
+
+### PageIndex
+- **Type**: python
+- **Status**: active
+- **Commits**: ~235
+- **Stack**: Python, Multi-model LLM
+- **Focus**: document-indexing, vectorless-rag, reasoning-based
+
+---
+
+## Innovation Highlights
+
+1. **Universal Cognitive Wallet (UCW)** -- Cross-platform AI session capture. Every interaction creates cognitive equity.
+2. **Cognitive Precision Bridge (CPB)** -- Precision-aware routing with DQ scoring. Published as @metaventionsai/cpb-core.
+3. **MiroFish Integration** -- Temporal knowledge graph + ReACT synthesis ported into ResearchGravity.
+4. **Archon Agent** -- Self-maintaining autonomous agent with event bus and state machine.
+5. **Organism Layers** -- Bio-inspired architecture: Cognitive, Genome, Organism, Swarm layers.
+6. **Recovery Engine** -- Self-healing infrastructure: 94% error coverage, 70% auto-fix rate, <5s recovery.
+7. **Voice Nexus** -- Universal voice routing across STT/reasoning/TTS providers with complexity-based selection.
+8. **FriendlyFace ForensicSeal** -- Forensic evidence generation system for AI facial recognition.
+9. **CVRF** -- Cognitive Value Risk Framework for belief-wired portfolio optimization.
+10. **Context Packs V2** -- 7-layer semantic system for intelligent context selection.

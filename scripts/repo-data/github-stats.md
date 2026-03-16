@@ -1,6 +1,6 @@
 # GitHub Activity & Statistics
 
-Generated: Thu 29 Jan 2026 10:38:27 EST
+Generated: Mon 16 Mar 2026
 
 ## OS-App
 
@@ -9,66 +9,25 @@ Generated: Thu 29 Jan 2026 10:38:27 EST
 | Language | TypeScript |
 | Stars | 1 |
 | Forks | 0 |
-| Size | 8964KB |
+| Size | 10007KB |
 | Created | 2025-12-08T07:36:15Z |
-| Last Updated | 2026-01-29T10:33:34Z |
+| Last Updated | 2026-03-14T14:52:00Z |
 
 ### Languages
 ```
-TypeScript: 4199714 bytes
-CSS: 33944 bytes
-JavaScript: 13227 bytes
-HTML: 12355 bytes
+TypeScript: 5,159,373 bytes
+CSS: 35,470 bytes
+JavaScript: 15,309 bytes
+HTML: 12,496 bytes
+Shell: 2,151 bytes
 ```
 
 ### Recent Commits
-- feat: Add Deepgram and OpenAI to API key vault (2026-01-29)
-- feat: Add real-time conversational voice with VAD and streaming STT (2026-01-29)
-- feat: add PREDICTIONS navigation tab for Meta-Learning Engine (2026-01-26)
-- docs: add Meta-Learning Engine section to README (2026-01-26)
-- feat: add Meta-Learning prediction system for session optimization (2026-01-26)
-- Improve healthCheck branch coverage from 92.47% to 95.69% (2026-01-26)
-- Improve branch coverage from 89.75% to 90.6% (2026-01-26)
-- test: add edge case tests for cpb-core router and dqScoring (2026-01-26)
-- Add ResearchGravity v5.0 integration guide (2026-01-26)
-- test: add LLM scoring branch test for rankByDQ (2026-01-26)
+- docs: add quality-sweep interactive guide
+- feat: add code graveyard -- archive disconnected code instead of deleting
+- Recovered all 9 files deleted earlier into .graveyard/ with a MANIFEST.md
 
-**Total Commits:** ~503
-
----
-
-## meta-vengine
-
-| Metric | Value |
-|--------|-------|
-| Language | Python |
-| Stars | 0 |
-| Forks | 0 |
-| Size | 2410KB |
-| Created | 2026-01-18T02:11:04Z |
-| Last Updated | 2026-01-28T08:59:33Z |
-
-### Languages
-```
-Python: 1429546 bytes
-Shell: 406020 bytes
-HTML: 299533 bytes
-JavaScript: 195768 bytes
-```
-
-### Recent Commits
-- docs: Comprehensive SQLite vs JSONL analysis and architectural principles (2026-01-28)
-- feat: Enhanced real-time tool tracking in sqlite-hook.py (2026-01-28)
-- feat: Add git pull protection for dashboard customizations (2026-01-28)
-- feat: add Meta-Learning Engine integration and cognitive learning updates (2026-01-26)
-- Add ResearchGravity v5.0 semantic search integration guide (2026-01-26)
-- feat: CCC live data pipeline and project auto-discovery (2026-01-23)
-- feat: Add self-healing infrastructure and smart session routing (2026-01-23)
-- feat: Add coordinator Python package with status module (2026-01-21)
-- fix: Harden coord-summary.sh based on security review (2026-01-21)
-- docs: Add Multi-Agent Coordinator and Dashboard documentation (2026-01-21)
-
-**Total Commits:** ~59
+**Total Commits:** ~589
 
 ---
 
@@ -77,59 +36,76 @@ JavaScript: 195768 bytes
 | Metric | Value |
 |--------|-------|
 | Language | Python |
-| Stars | 1 |
+| Stars | 2 |
 | Forks | 0 |
-| Size | 1004KB |
+| Size | 21328KB |
 | Created | 2026-01-09T21:39:06Z |
-| Last Updated | 2026-01-26T12:28:12Z |
+| Last Updated | 2026-03-15T22:47:23Z |
 
 ### Languages
 ```
-Python: 1330960 bytes
-Shell: 32721 bytes
+Python: 3,489,185 bytes
+HTML: 68,958 bytes
+TypeScript: 52,851 bytes
+Shell: 32,712 bytes
+JavaScript: 28,076 bytes
+CSS: 5,313 bytes
 ```
 
 ### Recent Commits
-- docs: add Meta-Learning prediction endpoints to README (2026-01-26)
-- feat: implement Meta-Learning Engine with predictive session intelligence (2026-01-26)
-- Add comprehensive ecosystem integration documentation (2026-01-26)
-- Activate Qdrant vector storage and semantic search (100% complete) (2026-01-26)
-- feat: Complete MCP Integration (v3.7) (2026-01-21)
-- docs: Add CPB v2.5 to roadmap as v3.6 complete (2026-01-21)
-- chore: Migrate to google-genai SDK and install aiohttp (2026-01-21)
-- docs: Update CPB documentation for v2.5 (2026-01-21)
-- feat: CPB v2.5 - Comprehensive hardening (caching, retry, fallback, cost tracking) (2026-01-21)
-- feat: CPB Precision Mode v2.4 - Pioneer Mode, Trust Context, Deep Research (2026-01-21)
+- feat: MiroFish integration -- temporal graph, ReACT synthesis, ontology, personas, oracle
 
-**Total Commits:** ~48
+**Total Commits:** ~120
 
 ---
 
-## agent-core
+## meta-vengine
 
 | Metric | Value |
 |--------|-------|
 | Language | Python |
 | Stars | 1 |
-| Forks | 0 |
-| Size | 54KB |
-| Created | 2026-01-09T23:25:24Z |
-| Last Updated | 2026-01-20T01:11:16Z |
+| Forks | 1 |
+| Size | 3210KB |
+| Created | 2026-01-18T02:11:04Z |
+| Last Updated | 2026-03-15T02:29:11Z |
 
 ### Languages
 ```
-Python: 41214 bytes
-Shell: 6395 bytes
+Python: 1,994,246 bytes
+Shell: 566,644 bytes
+HTML: 318,506 bytes
+JavaScript: 314,274 bytes
 ```
 
 ### Recent Commits
-- docs(Metaventions AI): Update to v2.2 with ResearchGravity v3.5 integration (2026-01-17)
-- Identity Unveiling: Rebrand to Dicoangelo (2026-01-17)
-- Update to v2.1.0 with ecosystem integration (2026-01-16)
-- feat: Professional GitHub presence — Metaventions AI branding (2026-01-13)
-- v3.0 SPEC: Pareto-Guided Combinatorial Creativity Engine (PGCCE) (2026-01-09)
+- chore: optimize CLAUDE.md for elite token efficiency (80.7% reduction)
 
-**Total Commits:** ~5
+**Total Commits:** ~99
+
+---
+
+## ucw
+
+| Metric | Value |
+|--------|-------|
+| Language | Python |
+| Stars | 0 |
+| Forks | 0 |
+| Size | 72KB |
+| Created | 2026-02-07T15:15:15Z |
+| Last Updated | 2026-03-15T21:52:13Z |
+
+### Languages
+```
+Python: 145,937 bytes
+Shell: 2,351 bytes
+```
+
+### Recent Commits
+- chore: remove unused embed_texts() and _PROTOCOL_METHODS
+
+**Total Commits:** ~13
 
 ---
 
@@ -140,128 +116,118 @@ Shell: 6395 bytes
 | Language | TypeScript |
 | Stars | 0 |
 | Forks | 0 |
-| Size | 749KB |
+| Size | 1570KB |
 | Created | 2026-01-06T09:14:27Z |
-| Last Updated | 2026-01-26T08:35:34Z |
+| Last Updated | 2026-03-15T21:52:15Z |
 
 ### Languages
 ```
-TypeScript: 1023334 bytes
-Python: 14079 bytes
-CSS: 4187 bytes
-JavaScript: 3309 bytes
-Shell: 1360 bytes
+TypeScript: 3,226,167 bytes
+PLpgSQL: 35,097 bytes
+Python: 14,079 bytes
+CSS: 10,783 bytes
+JavaScript: 6,893 bytes
+Shell: 1,360 bytes
 ```
 
 ### Recent Commits
-- Add ResearchGravity v5.0 semantic search integration guide (2026-01-26)
-- feat: add Sentry error tracking (P2.1 complete) (2026-01-24)
-- docs: update documentation for v2.1.0 release (2026-01-24)
-- feat: complete P3 tasks - component extraction, API docs, and benchmarks (2026-01-24)
-- chore: add vitest config with path alias support (2026-01-24)
-- refactor: replace console statements with structured logging (2026-01-24)
-- feat: production hardening with middleware, logging, and storage adapters (2026-01-24)
-- test: add comprehensive tests for tools module (2026-01-24)
-- refactor: extract nexus-engine and skill-graph into modular directories (2026-01-24)
-- refactor: extract tools.ts into modular directory structure (2026-01-24)
+- chore: gitignore .claude/ and supabase/.temp/
+- chore: bump version to 2.3.0 and fix flatted DoS vulnerability
 
-**Total Commits:** ~115
+**Total Commits:** ~192
 
 ---
 
-## cpb-core
+## frontier-alpha
+
+| Metric | Value |
+|--------|-------|
+| Language | TypeScript |
+| Stars | 2 |
+| Forks | 0 |
+| Size | 42653KB |
+| Created | 2026-02-03T16:38:26Z |
+| Last Updated | 2026-03-15T21:52:15Z |
+
+### Recent Commits
+- feat: CVRF belief-wired portfolio optimization
+
+**Total Commits:** ~135
+
+---
+
+## FriendlyFace
+
+| Metric | Value |
+|--------|-------|
+| Language | Python |
+| Stars | 0 |
+| Forks | 0 |
+| Size | 213746KB |
+| Created | 2026-03-15T21:52:10Z |
+| Last Updated | 2026-03-16T02:15:21Z |
+| Private | Yes |
+
+### Recent Commits
+- fix: remove GitHub and paper download links while repo is private
+
+**Total Commits:** ~90
+
+---
+
+## agent-core
+
+| Metric | Value |
+|--------|-------|
+| Language | Python |
+| Stars | 1 |
+| Forks | 0 |
+| Size | 55KB |
+| Created | 2026-01-09T23:25:24Z |
+| Last Updated | 2026-02-19T12:33:40Z |
+
+### Recent Commits
+- chore: add editorconfig and CI/CD workflow
+- docs(Metaventions AI): Update to v2.2 with ResearchGravity v3.5 integration
+
+**Total Commits:** ~6
+
+---
+
+## dicoangelo.metaventions
 
 | Metric | Value |
 |--------|-------|
 | Language | TypeScript |
 | Stars | 0 |
 | Forks | 0 |
-| Size | 20902KB |
-| Created | 2026-01-19T23:37:02Z |
-| Last Updated | 2026-01-24T10:35:43Z |
-
-### Languages
-```
-TypeScript: 54789 bytes
-JavaScript: 544 bytes
-```
-
-### Recent Commits
-- Add ESLint config for TypeScript linting (2026-01-21)
-- chore: add .gitignore (2026-01-20)
-- test: add comprehensive router unit tests (28 tests) (2026-01-20)
-- chore: rename package scope to @metaventionsai (2026-01-20)
-- docs: Add comprehensive ELITE TIER architecture and 5-agent ACE documentation (2026-01-20)
-- feat: Upgrade to Elite Tier defaults (2026-01-19)
-- docs: Add LICENSE and CONTRIBUTING.md (2026-01-19)
-- feat: Initial release of Cognitive Precision Bridge (2026-01-19)
-
-**Total Commits:** ~8
-
----
-
-## voice-nexus
-
-| Metric | Value |
-|--------|-------|
-| Language | TypeScript |
-| Stars | 0 |
-| Forks | 0 |
-| Size | 60KB |
-| Created | 2026-01-19T23:37:07Z |
-| Last Updated | 2026-01-24T10:36:27Z |
-
-### Languages
-```
-TypeScript: 41392 bytes
-JavaScript: 544 bytes
-```
-
-### Recent Commits
-- Add ESLint config and fix lint error (2026-01-21)
-- test: add comprehensive router unit tests (32 tests) (2026-01-20)
-- chore: rename package scope to @metaventionsai (2026-01-20)
-- docs: Add ELITE TIER architecture with full system diagrams (2026-01-20)
-- feat: Upgrade to Elite Tier defaults (2026-01-19)
-- docs: Add LICENSE and CONTRIBUTING.md (2026-01-19)
-- feat: Initial release of Voice Nexus (2026-01-19)
-
-**Total Commits:** ~7
-
----
-
-## dicoangelo.com
-
-| Metric | Value |
-|--------|-------|
-| Language | TypeScript |
-| Stars | 0 |
-| Forks | 0 |
-| Size | 1163KB |
+| Size | 76339KB |
 | Created | 2026-01-29T06:14:50Z |
-| Last Updated | 2026-01-29T15:35:08Z |
-
-### Languages
-```
-TypeScript: 149303 bytes
-Shell: 8137 bytes
-CSS: 3958 bytes
-JavaScript: 559 bytes
-```
+| Last Updated | 2026-03-09T14:46:18Z |
 
 ### Recent Commits
-- feat: Deep scan GitHub repos - 558 chunks total (2026-01-29)
-- feat: Ingest all GitHub repos (422 chunks total) (2026-01-29)
-- style: Remove gold styling from Analyze nav link (2026-01-29)
-- feat: Expand Contentsquare dossier + move JD Analyzer to home page (2026-01-29)
-- feat: Expand dossier with D-Ecosystem & META-VENGINE deep architecture (2026-01-29)
-- fix: Improve RAG retrieval - lower threshold, more chunks (2026-01-29)
-- chore: trigger redeploy for env vars (2026-01-29)
-- fix: Strengthen system prompt to prevent hallucinations (2026-01-29)
-- fix: Prevent dual STT systems from running simultaneously (2026-01-29)
-- chore: trigger redeploy (2026-01-29)
+- upgrade: supreme README with capsule-render, Mermaid, typing SVG
 
-**Total Commits:** ~39
+**Total Commits:** ~189
+
+---
+
+## PageIndex
+
+| Metric | Value |
+|--------|-------|
+| Language | Python |
+| Stars | 0 |
+| Forks | 0 |
+| Size | 23097KB |
+| Created | 2026-02-09T04:40:03Z |
+| Last Updated | 2026-02-19T12:33:49Z |
+
+### Recent Commits
+- chore: add editorconfig and CI/CD workflow
+- feat: add multi-model LLM support with provider abstraction
+
+**Total Commits:** ~235
 
 ---
 
@@ -276,21 +242,49 @@ JavaScript: 559 bytes
 | Created | 2026-01-21T09:31:33Z |
 | Last Updated | 2026-01-23T21:51:02Z |
 
-### Languages
-```
-Lua: 19622 bytes
-Shell: 10059 bytes
-HTML: 9237 bytes
-Python: 4260 bytes
-```
-
 ### Recent Commits
-- Add CI workflow — Lua validation, brand check (2026-01-23)
-- Add LICENSE and CONTRIBUTING.md (2026-01-21)
-- Update README with D-Ecosystem branding (2026-01-21)
-- Initial release: FlowDesk v1.0 (2026-01-21)
+- Add CI workflow -- Lua validation, brand check
+- Add LICENSE and CONTRIBUTING.md
 
 **Total Commits:** ~4
+
+---
+
+## cpb-core
+
+| Metric | Value |
+|--------|-------|
+| Language | TypeScript |
+| Stars | 0 |
+| Forks | 0 |
+| Size | 20904KB |
+| Created | 2026-01-19T23:37:02Z |
+| Last Updated | 2026-02-19T12:33:40Z |
+
+### Recent Commits
+- chore: add editorconfig and CI/CD workflow
+- chore: bump version to 1.0.1 for npm publish
+
+**Total Commits:** ~10
+
+---
+
+## voice-nexus
+
+| Metric | Value |
+|--------|-------|
+| Language | TypeScript |
+| Stars | 0 |
+| Forks | 0 |
+| Size | 62KB |
+| Created | 2026-01-19T23:37:07Z |
+| Last Updated | 2026-02-19T12:33:40Z |
+
+### Recent Commits
+- chore: add editorconfig and CI/CD workflow
+- chore: bump version to 1.0.1 for npm publish
+
+**Total Commits:** ~9
 
 ---
 
@@ -303,20 +297,46 @@ Python: 4260 bytes
 | Forks | 0 |
 | Size | 36KB |
 | Created | 2026-01-10T15:45:49Z |
-| Last Updated | 2026-01-20T01:15:41Z |
-
-### Languages
-```
-Python: 43347 bytes
-Shell: 4818 bytes
-```
+| Last Updated | 2026-02-19T12:33:42Z |
 
 ### Recent Commits
-- Identity Unveiling: Rebrand to Dicoangelo (2026-01-17)
-- Enhanced README with professional branding and architecture diagrams (2026-01-10)
-- Initial commit: Chrome History Export for NotebookLM (2026-01-10)
+- chore: add editorconfig and CI/CD workflow
+- Identity Unveiling: Rebrand to Dicoangelo
 
-**Total Commits:** ~3
+**Total Commits:** ~4
 
 ---
 
+## Additional Repos
+
+| Repository | Language | Stars | Size | Updated |
+|------------|----------|-------|------|---------|
+| parallax | Python | 0 | 765KB | 2026-03-15 |
+| cognitiveforge | Python | 0 | 44KB | 2026-03-12 |
+| paper-to-production | HTML | 0 | 957KB | 2026-03-11 |
+| antigravity-coordinator | Python | 0 | 4171KB | 2026-03-10 |
+| claude-command-center | HTML | 0 | 23702KB | 2026-03-09 |
+| metagravity | TypeScript | 0 | 6589KB | 2026-03-06 |
+| Metaventions-AI-Landing | TypeScript | 1 | 267KB | 2026-02-25 |
+| notebooklm-mcp-cli | Python | 0 | 1809KB | 2026-02-19 |
+| openclaw | TypeScript | 0 | 182431KB | 2026-02-16 |
+| sovereign-deck | HTML | 0 | 2536KB | 2026-02-19 |
+| enterprise-deck | HTML | 0 | 2549KB | 2026-02-19 |
+| career-dossier | Python | 0 | 105KB | 2026-02-19 |
+| career-coach-mvp | TypeScript | 0 | 238KB | 2026-02-19 |
+| The-Decosystem | - | 1 | 68KB | 2026-02-19 |
+| data-arch-guard | Shell | 0 | 13KB | 2026-02-11 |
+| Dicoangelo | - | 0 | 20KB | 2026-02-19 |
+
+---
+
+## Summary
+
+| Metric | Value |
+|--------|-------|
+| Total Public Repos | 20 |
+| Total Private Repos | 17 |
+| Total Repos | 37 |
+| Total Stars | 10 |
+| Total Forks | 1 |
+| Primary Languages | TypeScript, Python, HTML, Lua, Shell |

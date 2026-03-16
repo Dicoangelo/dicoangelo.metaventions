@@ -4,7 +4,7 @@
 
 Comprehensive breakdown of technical capabilities with quantified evidence from production systems. This document provides measurable proof of expertise across programming, AI/ML systems, infrastructure, research implementation, and enterprise operations.
 
-**Core Value Proposition**: Builder who bridges cutting-edge research and enterprise-scale production. 297K+ lines of code implementing 8+ arXiv papers in <1 year of coding (Nov 2025 - present), built on 5+ years of prompt engineering (since 2020, 0.01% early OpenAI user) and 3 years managing $800M+ in operational infrastructure at Contentsquare.
+**Core Value Proposition**: Builder who bridges cutting-edge research and enterprise-scale production. 900K+ lines of code implementing 8+ arXiv papers in <1 year of coding (Nov 2025 - present), built on 5+ years of prompt engineering (since 2020, 0.01% early OpenAI user) and 3 years managing $800M+ in operational infrastructure at Contentsquare.
 
 **Positioning**: "I design and operationalize AI-native systems that transform complex professional knowledge into reliable, enterprise-grade intelligence."
 
@@ -747,7 +747,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 
 **Rapid Skill Acquisition**:
 - **3 months**: OS-App (152K LOC from zero to production)
-- **3 months**: 297K+ total LOC shipped across 6 projects
+- **5 months**: 900K+ total LOC shipped across 20+ projects
 - **2 months**: Published 2 npm packages
 
 **Continuous Learning**:
@@ -822,7 +822,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 
 **I do both**:
 1. ✅ Research → Production (8+ arXiv papers implemented with code)
-2. ✅ GTM + Technical ($800M deals + 316K LOC)
+2. ✅ GTM + Technical ($800M deals + 900K+ LOC)
 3. ✅ Academic rigor + Industry pragmatism
 
 **Proof Points**:
@@ -956,7 +956,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 
 | Category | Tools | Proficiency | Evidence |
 |----------|-------|-------------|----------|
-| **IDEs** | VS Code, Cursor | Expert | 316K+ LOC |
+| **IDEs** | VS Code, Cursor | Expert | 900K+ LOC |
 | **Version Control** | Git, GitHub | Expert | 1,500+ commits, 21 repos |
 | **Package Managers** | npm, pip | Expert | 2 published packages |
 | **Build Tools** | Vite, tsup, webpack | Expert | Production builds |

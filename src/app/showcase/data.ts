@@ -570,6 +570,24 @@ export const liveSites: LiveSite[] = [
     description: "Production client website \u2014 demonstrates real delivery",
     url: "https://thesignatureevent.metaventionsai.com",
   },
+  {
+    name: "Signature Event",
+    tech: "Next.js",
+    description: "Event marketing & RSVP platform for Cooper Swanson Ventures",
+    url: "https://thesignatureevent.metaventionsai.com",
+  },
+  {
+    name: "BXL Hospitality",
+    tech: "Next.js",
+    description: "Luxury hospitality membership platform",
+    url: "https://bxl.metaventionsai.com",
+  },
+  {
+    name: "FriendlyFace",
+    tech: "Next.js",
+    description: "AI compliance proxy & forensic evidence system",
+    url: "https://friendlyface.metaventionsai.com",
+  },
 ];
 
 // ─── GitHub Repos ────────────────────────────────────────────────────────────

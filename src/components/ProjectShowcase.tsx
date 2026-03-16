@@ -75,6 +75,44 @@ const projects: Project[] = [
     ],
     github: "https://github.com/Dicoangelo",
     loc: "51K+ LOC"
+  },
+  {
+    name: "UCW",
+    tagline: "Universal Cognitive Wallet",
+    description: "Sovereign cross-platform cognitive capture system. Processes 163K+ events from 5 AI platforms into PostgreSQL with pgvector. 12.15M knowledge graph edges, 7.1K memory items, 270K+ interactions.",
+    metrics: [
+      { label: "Graph Edges", value: "12.15M" },
+      { label: "Memory Items", value: "7,130" },
+      { label: "Platforms", value: "5 integrated" },
+      { label: "Interactions", value: "270K+" }
+    ],
+    techStack: ["Python", "PostgreSQL", "pgvector", "MCP Protocol"],
+    papers: [
+      "Cognitive equity thesis",
+      "Cross-platform capture architecture",
+      "Vector similarity search at scale"
+    ],
+    github: "https://github.com/Dicoangelo/ucw",
+    loc: "900K+ LOC"
+  },
+  {
+    name: "ResearchGravity",
+    tagline: "Research Orchestration MCP Server",
+    description: "Temporal knowledge graph with ReACT synthesis agent. FastAPI backend with Qdrant vector search, 114+ archived research sessions, and meta-learning engine with 87% error prevention accuracy.",
+    metrics: [
+      { label: "Sessions", value: "114+" },
+      { label: "Embeddings", value: "2,530" },
+      { label: "URLs Tracked", value: "8,935" },
+      { label: "Error Prevention", value: "87%" }
+    ],
+    techStack: ["Python", "FastAPI", "Qdrant", "SQLite"],
+    papers: [
+      "Temporal knowledge graphs",
+      "ReACT synthesis agents",
+      "Meta-learning error prevention"
+    ],
+    github: "https://github.com/Dicoangelo/ResearchGravity",
+    loc: "35K+ LOC"
   }
 ];
 
@@ -220,7 +258,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
                 : 'border-[#262626] hover:bg-[#141414]'
             }`}
           >
-            View All 20 Repositories →
+            View All 38 Repositories →
           </a>
         </div>
       </div>
