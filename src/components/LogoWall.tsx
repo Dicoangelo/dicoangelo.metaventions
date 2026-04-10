@@ -120,7 +120,7 @@ const logos: Logo[] = [
   },
   {
     name: "Partnership Leaders",
-    description: "Catalyst 2026 Speaker",
+    description: "Catalyst 2026 Participant",
     color: "#8b5cf6",
     svg: (
       <svg viewBox="0 0 64 64" className="w-full h-full">

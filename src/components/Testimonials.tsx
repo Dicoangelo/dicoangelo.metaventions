@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     quote: "Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience.",
     highlightPhrase: "connect meaningfully",
     author: "Dico Angelo",
-    role: "Speaker",
+    role: "Participant",
     company: "Catalyst 2026",
     source: "Partner Ecosystem Conference",
     sourceUrl: "https://www.joincatalyst.com/catalyst26",

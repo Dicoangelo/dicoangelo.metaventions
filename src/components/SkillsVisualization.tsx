@@ -220,7 +220,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
               <span className="text-sm">🏆 2x Microsoft Partner of the Year (2024, 2025)</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">🎤 Catalyst 2026 Fellowship & Speaker</span>
+              <span className="text-sm">🤝 Catalyst 2026 Participant</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
               <span className="text-sm">📰 Suger.io Case Study Feature</span>

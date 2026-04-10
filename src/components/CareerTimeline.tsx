@@ -59,9 +59,9 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       company: "Contentsquare",
       location: "Paris / Remote",
       type: "work",
-      description: "Operations leader enabling $30M+ cloud marketplace revenue growth in 30 months (0 to scale). Managed strategic vendor relationships with AWS & Microsoft.",
+      description: "Led cloud ops on the 3-person alliance team that grew Contentsquare's cloud marketplace from $0 to $30M+ in 30 months. Managed strategic vendor relationships with AWS & Microsoft.",
       highlights: [
-        "Scaled cloud marketplace from $0 to $30M+ in 30 months",
+        "Led cloud ops on the 3-person team scaling marketplace $0 → $30M+ in 30 months",
         "Managed $800M+ TCV with 40% cloud attachment rate",
         "Automated 90% of deal registrations, reducing manual inputs by 60%",
         "Contributed to 2x Microsoft Partner of the Year (2024, 2025)",
@@ -101,18 +101,18 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
     },
     {
       date: "2026",
-      title: "Roundtable Lead Speaker, AI & Partnerships",
+      title: "Participant, AI & Partnerships Roundtable",
       company: "Catalyst 2026 — NYC & Toronto",
       location: "NYC & Toronto",
       type: "achievement",
-      description: "Selected as Roundtable Lead Speaker for AI & Partnerships at Catalyst 2026, connecting founders, operators, and investors across NYC and Toronto.",
+      description: "Participated in Catalyst 2026, joining roundtable discussions on AI & Partnerships alongside founders, operators, and investors across NYC and Toronto.",
       highlights: [
-        "Led roundtable discussions on AI partnerships and enterprise adoption",
+        "Joined roundtable discussions on AI partnerships and enterprise adoption",
         "Networked with 200+ AI founders and builders",
-        "Contributed insights on multi-agent orchestration and sovereign AI systems",
-        "Presented work on autonomous AI systems and cognitive infrastructure",
+        "Exchanged insights on multi-agent orchestration and sovereign AI systems",
+        "Engaged with practitioners on autonomous AI systems and cognitive infrastructure",
       ],
-      metrics: ["Lead Speaker", "NYC & Toronto"],
+      metrics: ["Participant", "NYC & Toronto"],
     },
   ];
 
