@@ -25,6 +25,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
   const { depth } = useReadingDepth();
   const showSummary = depth !== "skim";
   const autoExpandDeep = depth === "deep";
+  const isSkim = depth === "skim";
 
   const events: TimelineEvent[] = [
     {
@@ -175,23 +176,27 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
     <section
       ref={timelineRef}
       id="timeline"
-      className={`py-20 px-6 ${isLight ? 'bg-white' : 'bg-[#0a0a0a]'}`}
+      className={`${isSkim ? 'py-10' : 'py-20'} px-6 ${isLight ? 'bg-white' : 'bg-[#0a0a0a]'}`}
     >
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6366f1]/10 border border-[#6366f1]/30 mb-4">
-            <svg aria-hidden="true" className="w-4 h-4 text-[#6366f1]" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
-            </svg>
-            <span className="text-sm font-semibold text-[#6366f1]">Career Journey</span>
-          </div>
+        <div className={`text-center ${isSkim ? 'mb-4' : 'mb-12'}`}>
+          {!isSkim && (
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6366f1]/10 border border-[#6366f1]/30 mb-4">
+              <svg aria-hidden="true" className="w-4 h-4 text-[#6366f1]" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
+              </svg>
+              <span className="text-sm font-semibold text-[#6366f1]">Career Journey</span>
+            </div>
+          )}
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold ${isSkim ? '' : 'mb-4'}`}>
             Professional Timeline
           </h2>
-          <p className={`text-lg max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-            From operational infrastructure to autonomous AI systems. A journey of building at scale.
-          </p>
+          {showSummary && (
+            <p className={`text-lg max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
+              From operational infrastructure to autonomous AI systems. A journey of building at scale.
+            </p>
+          )}
         </div>
 
         <div className="relative">
@@ -207,7 +212,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
           />
 
           {/* Events */}
-          <div className="space-y-6 md:space-y-12">
+          <div className={isSkim ? "space-y-2" : "space-y-6 md:space-y-12"}>
             {events.map((event, index) => {
               const isExpanded = autoExpandDeep || selectedEvent === index;
               const isLeft = index % 2 === 0;
@@ -229,26 +234,28 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
                       onClick={() => setSelectedEvent(isExpanded ? null : index)}
                     >
                       <div
-                        className={`p-6 rounded-xl border-2 transition-all ${
+                        className={`${isSkim ? 'p-3' : 'p-6'} rounded-xl border-2 transition-all ${
                           isLight
                             ? `bg-white border-gray-200 shadow-md ${isExpanded ? 'shadow-xl border-[#6366f1]' : 'hover:shadow-lg'}`
                             : `bg-[#0f0f1f] border-[#262626] shadow-lg ${isExpanded ? 'shadow-2xl border-[#6366f1]' : 'hover:border-[#6366f1]/50'}`
                         }`}
                       >
                         {/* Header */}
-                        <div className="flex items-start justify-between mb-3">
+                        <div className={`flex items-start justify-between ${isSkim ? 'mb-0' : 'mb-3'}`}>
                           <div className="flex items-center gap-2">
-                            <span className="text-2xl">{getEventIcon(event.type)}</span>
+                            <span className={isSkim ? "text-base" : "text-2xl"}>{getEventIcon(event.type)}</span>
                             <div>
-                              <h3 className="text-lg font-bold leading-tight">{event.title}</h3>
-                              <p className="text-sm text-[#6366f1] font-semibold">{event.company}</p>
+                              <h3 className={`${isSkim ? 'text-sm' : 'text-lg'} font-bold leading-tight`}>{event.title}</h3>
+                              <p className={`${isSkim ? 'text-xs' : 'text-sm'} text-[#6366f1] font-semibold`}>{event.company}</p>
                             </div>
                           </div>
                         </div>
 
-                        <div className={`text-sm ${showSummary ? 'mb-2' : ''} ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-                          {event.date} • {event.location}
-                        </div>
+                        {!isSkim && (
+                          <div className={`text-sm ${showSummary ? 'mb-2' : ''} ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
+                            {event.date} • {event.location}
+                          </div>
+                        )}
 
                         {showSummary && (
                           <>

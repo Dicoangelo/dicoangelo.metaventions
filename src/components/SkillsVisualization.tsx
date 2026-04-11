@@ -25,6 +25,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
   const { depth } = useReadingDepth();
   const showBars = depth !== "skim";
   const showExtras = depth === "deep";
+  const isSkim = depth === "skim";
 
   const skillCategories: SkillCategory[] = [
     {
@@ -122,18 +123,20 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
     <section
       ref={sectionRef}
       id="skills"
-      className={`py-20 px-6 ${isLight ? 'bg-gradient-to-br from-gray-50 to-blue-50' : 'bg-gradient-to-br from-[#0a0a0a] to-[#0f0a1a]'}`}
+      className={`${isSkim ? 'py-10' : 'py-20'} px-6 ${isLight ? 'bg-gradient-to-br from-gray-50 to-blue-50' : 'bg-gradient-to-br from-[#0a0a0a] to-[#0f0a1a]'}`}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6366f1]/10 border border-[#6366f1]/30 mb-4">
-            <svg aria-hidden="true" className="w-4 h-4 text-[#6366f1]" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/>
-            </svg>
-            <span className="text-sm font-semibold text-[#6366f1]">Technical Expertise</span>
-          </div>
+        <div className={`text-center ${isSkim ? 'mb-4' : 'mb-12'}`}>
+          {!isSkim && (
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6366f1]/10 border border-[#6366f1]/30 mb-4">
+              <svg aria-hidden="true" className="w-4 h-4 text-[#6366f1]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/>
+              </svg>
+              <span className="text-sm font-semibold text-[#6366f1]">Technical Expertise</span>
+            </div>
+          )}
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold ${isSkim ? '' : 'mb-4'}`}>
             Skills & Proficiencies
           </h2>
           {showBars && (
@@ -143,11 +146,11 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
           )}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-8">
+        <div className={`grid md:grid-cols-2 ${isSkim ? 'gap-2' : 'gap-4 md:gap-8'}`}>
           {skillCategories.map((category, catIndex) => (
             <div
               key={category.category}
-              className={`p-6 rounded-xl border-2 transition-opacity duration-600 ${
+              className={`${isSkim ? 'p-3' : 'p-6'} rounded-xl border-2 transition-opacity duration-600 ${
                 isLight
                   ? 'bg-white border-gray-200 shadow-lg'
                   : 'bg-[#0f0f1f] border-[#6366f1]/20 shadow-2xl'
@@ -158,8 +161,8 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
               }}
             >
               <div className={`flex items-center gap-3 ${showBars ? "mb-6" : ""}`}>
-                <span className="text-3xl">{category.icon}</span>
-                <h3 className="text-xl font-bold">{category.category}</h3>
+                <span className={isSkim ? "text-xl" : "text-3xl"}>{category.icon}</span>
+                <h3 className={`${isSkim ? 'text-base' : 'text-xl'} font-bold`}>{category.category}</h3>
               </div>
 
               {showBars && (
