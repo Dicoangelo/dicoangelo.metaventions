@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useReadingDepth } from "@/components/ReadingDepthProvider";
 
 interface UCWInsightsSectionProps {
   isLight: boolean;
@@ -59,6 +60,9 @@ const PEAK_HOURS = [
 
 export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
   const [activeTab, setActiveTab] = useState<"overview" | "cognition" | "coherence">("overview");
+  const { depth } = useReadingDepth();
+  const showSummary = depth !== "skim";
+  const showDeep = depth === "deep";
 
   const maxTopicCount = TOP_TOPICS[0].count;
 
@@ -77,10 +81,12 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What 163K AI Interactions Reveal
           </h2>
-          <p className={`text-lg max-w-2xl mx-auto ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-            Real data from the UCW — a system that captures every AI interaction across 6 platforms,
-            generates semantic embeddings, and detects cross-platform coherence.
-          </p>
+          {showSummary && (
+            <p className={`text-lg max-w-2xl mx-auto ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
+              Real data from the UCW — a system that captures every AI interaction across 6 platforms,
+              generates semantic embeddings, and detects cross-platform coherence.
+            </p>
+          )}
         </div>
 
         {/* Tab Navigation */}
@@ -181,9 +187,11 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
                     </div>
                   ))}
                 </div>
-                <p className={`text-xs mt-4 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-                  51.3% deep work means over half of all AI interactions are focused, production-oriented building sessions.
-                </p>
+                {showSummary && (
+                  <p className={`text-xs mt-4 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+                    51.3% deep work means over half of all AI interactions are focused, production-oriented building sessions.
+                  </p>
+                )}
               </div>
 
               <div className={`p-6 rounded-xl border ${isLight ? "bg-gray-50 border-gray-200" : "bg-[#0f0f1f] border-[#262626]"}`}>
@@ -205,9 +213,11 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
                     </div>
                   ))}
                 </div>
-                <p className={`text-xs mt-4 italic ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-                  Cognitive fingerprint: Create &gt; Explore &gt; Search &gt; Analyze
-                </p>
+                {showSummary && (
+                  <p className={`text-xs mt-4 italic ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+                    Cognitive fingerprint: Create &gt; Explore &gt; Search &gt; Analyze
+                  </p>
+                )}
               </div>
             </div>
 
@@ -241,9 +251,11 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
                   );
                 })}
               </div>
-              <p className={`text-center text-xs mt-4 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-                3 AM is peak output — 4.4x any other hour. 33.4% of all work happens between 2-5 AM.
-              </p>
+              {showSummary && (
+                <p className={`text-center text-xs mt-4 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+                  3 AM is peak output — 4.4x any other hour. 33.4% of all work happens between 2-5 AM.
+                </p>
+              )}
             </div>
           </div>
         )}
@@ -251,13 +263,15 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
         {activeTab === "coherence" && (
           <div className="space-y-8">
             {/* Coherence Explanation */}
-            <div className={`p-6 rounded-xl border ${isLight ? "bg-indigo-50 border-indigo-200" : "bg-indigo-950/20 border-indigo-500/20"}`}>
-              <p className={`text-sm leading-relaxed ${isLight ? "text-indigo-900" : "text-indigo-200"}`}>
-                <strong>Cross-platform coherence</strong> is when the same insight emerges independently on different AI platforms
-                without being copied. The UCW detects these by comparing semantic embeddings across 150K+ vectors
-                from Claude, ChatGPT, and Grok. 72 such moments have been detected so far.
-              </p>
-            </div>
+            {showSummary && (
+              <div className={`p-6 rounded-xl border ${isLight ? "bg-indigo-50 border-indigo-200" : "bg-indigo-950/20 border-indigo-500/20"}`}>
+                <p className={`text-sm leading-relaxed ${isLight ? "text-indigo-900" : "text-indigo-200"}`}>
+                  <strong>Cross-platform coherence</strong> is when the same insight emerges independently on different AI platforms
+                  without being copied. The UCW detects these by comparing semantic embeddings across 150K+ vectors
+                  from Claude, ChatGPT, and Grok. 72 such moments have been detected so far.
+                </p>
+              </div>
+            )}
 
             {/* Coherence Types */}
             <div className="grid md:grid-cols-3 gap-4">
@@ -299,6 +313,7 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
             </div>
 
             {/* What it proves */}
+            {showDeep && (
             <div className={`p-6 rounded-xl border-2 border-[#6366f1]/30 ${isLight ? "bg-white" : "bg-[#0a0a1a]"}`}>
               <h3 className={`text-lg font-bold mb-3 ${isLight ? "text-gray-900" : "text-white"}`}>
                 What This Proves
@@ -318,6 +333,7 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
                 </li>
               </ul>
             </div>
+            )}
           </div>
         )}
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useReadingDepth } from "./ReadingDepthProvider";
 
 interface Skill {
   name: string;
@@ -21,6 +22,9 @@ interface SkillsVisualizationProps {
 export default function SkillsVisualization({ isLight }: SkillsVisualizationProps) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { depth } = useReadingDepth();
+  const showBars = depth !== "skim";
+  const showExtras = depth === "deep";
 
   const skillCategories: SkillCategory[] = [
     {
@@ -132,9 +136,11 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Skills & Proficiencies
           </h2>
-          <p className={`text-lg max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-            Bridging operational excellence with technical implementation. From infrastructure to AI systems.
-          </p>
+          {showBars && (
+            <p className={`text-lg max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
+              Bridging operational excellence with technical implementation. From infrastructure to AI systems.
+            </p>
+          )}
         </div>
 
         <div className="grid md:grid-cols-2 gap-4 md:gap-8">
@@ -151,11 +157,12 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
                 animation: isVisible ? 'fadeInUp 0.6s ease-out forwards' : 'none',
               }}
             >
-              <div className="flex items-center gap-3 mb-6">
+              <div className={`flex items-center gap-3 ${showBars ? "mb-6" : ""}`}>
                 <span className="text-3xl">{category.icon}</span>
                 <h3 className="text-xl font-bold">{category.category}</h3>
               </div>
 
+              {showBars && (
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skill.name}>
@@ -179,11 +186,13 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
                   </div>
                 ))}
               </div>
+              )}
             </div>
           ))}
         </div>
 
         {/* Certifications */}
+        {showExtras && (
         <div className="mt-12 text-center">
           <h3 className={`text-lg font-semibold mb-4 ${isLight ? 'text-gray-700' : 'text-[#ededed]'}`}>
             Certifications
@@ -209,8 +218,10 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
             </div>
           </div>
         </div>
+        )}
 
         {/* Achievements & Recognition */}
+        {showExtras && (
         <div className="mt-8 text-center">
           <h3 className={`text-lg font-semibold mb-4 ${isLight ? 'text-gray-700' : 'text-[#ededed]'}`}>
             Achievements & Recognition
@@ -242,6 +253,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
             </div>
           </div>
         </div>
+        )}
       </div>
     </section>
   );

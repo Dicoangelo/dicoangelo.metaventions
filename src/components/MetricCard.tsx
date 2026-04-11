@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
+import { useReadingDepth } from "./ReadingDepthProvider";
 
 interface MetricCardProps {
   value: string;
@@ -20,6 +21,9 @@ export function MetricCard({
 }: MetricCardProps) {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const { depth } = useReadingDepth();
+  const showContext = depth !== "skim";
+  const showProof = depth === "deep";
 
   // Parse value to extract number and formatting
   const parseValue = (
@@ -85,13 +89,17 @@ export function MetricCard({
   return (
     <div ref={cardRef} className="metric-card p-6 rounded-xl">
       <div className="text-3xl font-bold gradient-text mb-1">{displayValue}</div>
-      <div className="font-medium mb-2">{label}</div>
-      <div className={`text-sm mb-2 ${isLight ? "text-gray-600" : "text-[#737373]"}`}>
-        {context}
-      </div>
-      <div className={`text-xs italic ${isLight ? "text-gray-500" : "text-[#525252]"}`}>
-        Proof: {proof}
-      </div>
+      <div className={`font-medium ${showContext ? "mb-2" : ""}`}>{label}</div>
+      {showContext && (
+        <div className={`text-sm ${showProof ? "mb-2" : ""} ${isLight ? "text-gray-600" : "text-[#737373]"}`}>
+          {context}
+        </div>
+      )}
+      {showProof && (
+        <div className={`text-xs italic ${isLight ? "text-gray-500" : "text-[#525252]"}`}>
+          Proof: {proof}
+        </div>
+      )}
     </div>
   );
 }

@@ -3,21 +3,27 @@
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { WorldCard } from "@/components/WorldCard";
 import { LocationBadge } from "@/components/LocationBadge";
+import { useReadingDepth } from "@/components/ReadingDepthProvider";
 
 interface ArenaSectionProps {
   isLight: boolean;
 }
 
 export function ArenaSection({ isLight }: ArenaSectionProps) {
+  const { depth } = useReadingDepth();
+  const showSummary = depth !== "skim";
+  const showDeep = depth === "deep";
   return (
     <AnimatedSection id="arena" className="py-20 px-6 section-alt">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">In The Arena</h2>
-          <p className={`max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-            150+ events across 8 cities over 7 years. Not just attending — building relationships,
-            contributing to communities, and moving between worlds that rarely overlap.
-          </p>
+          {showSummary && (
+            <p className={`max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
+              150+ events across 8 cities over 7 years. Not just attending — building relationships,
+              contributing to communities, and moving between worlds that rarely overlap.
+            </p>
+          )}
         </div>
 
         {/* Worlds I Move In */}
@@ -53,6 +59,7 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
         </div>
 
         {/* Key Relationships */}
+        {showDeep && (
         <div className="mb-12">
           <h3 className="text-xl font-bold mb-6 text-center">Circles & Access</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
@@ -85,8 +92,10 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
             </div>
           </div>
         </div>
+        )}
 
         {/* Geographic Footprint */}
+        {showSummary && (
         <div className="mb-12">
           <h3 className="text-xl font-bold mb-6 text-center">Geographic Presence</h3>
           <div className="flex flex-wrap justify-center gap-3">
@@ -100,8 +109,10 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
             <LocationBadge city="Cannes" count="1" role="Global Summit" isLight={isLight} />
           </div>
         </div>
+        )}
 
         {/* What This Means */}
+        {showDeep && (
         <div className="card p-8 text-center max-w-3xl mx-auto">
           <h3 className="text-xl font-bold mb-4">What 150+ Events Actually Means</h3>
           <div className="grid md:grid-cols-2 gap-6 text-left text-sm">
@@ -123,6 +134,7 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
             </div>
           </div>
         </div>
+        )}
       </div>
     </AnimatedSection>
   );

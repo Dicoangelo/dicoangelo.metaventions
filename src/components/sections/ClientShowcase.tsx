@@ -1,5 +1,7 @@
 "use client";
 
+import { useReadingDepth } from "@/components/ReadingDepthProvider";
+
 interface ClientProject {
   name: string;
   client: string;
@@ -60,6 +62,9 @@ const clientProjects: ClientProject[] = [
 ];
 
 export function ClientShowcase({ isLight }: ClientShowcaseProps) {
+  const { depth } = useReadingDepth();
+  const showSummary = depth !== "skim";
+  const showDeep = depth === "deep";
   return (
     <section id="clients" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -84,9 +89,11 @@ export function ClientShowcase({ isLight }: ClientShowcaseProps) {
             </span>
           </div>
           <h2 className="text-3xl font-bold mb-4">Client Projects</h2>
-          <p className={isLight ? "text-gray-600" : "text-[#737373]"}>
-            End-to-end delivery for real clients — from concept to production
-          </p>
+          {showSummary && (
+            <p className={isLight ? "text-gray-600" : "text-[#737373]"}>
+              End-to-end delivery for real clients — from concept to production
+            </p>
+          )}
         </div>
 
         <div className="space-y-8">
@@ -142,15 +149,18 @@ export function ClientShowcase({ isLight }: ClientShowcaseProps) {
               </div>
 
               {/* Description */}
-              <p
-                className={`mb-6 leading-relaxed ${
-                  isLight ? "text-gray-700" : "text-[#a3a3a3]"
-                }`}
-              >
-                {project.description}
-              </p>
+              {showSummary && (
+                <p
+                  className={`mb-6 leading-relaxed ${
+                    isLight ? "text-gray-700" : "text-[#a3a3a3]"
+                  }`}
+                >
+                  {project.description}
+                </p>
+              )}
 
               {/* Deliverables */}
+              {showDeep && (
               <div className="mb-6">
                 <p
                   className={`text-sm font-semibold mb-3 ${
@@ -175,8 +185,10 @@ export function ClientShowcase({ isLight }: ClientShowcaseProps) {
                   ))}
                 </ul>
               </div>
+              )}
 
               {/* Tech Stack */}
+              {showSummary && (
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech, idx) => (
                   <span
@@ -191,6 +203,7 @@ export function ClientShowcase({ isLight }: ClientShowcaseProps) {
                   </span>
                 ))}
               </div>
+              )}
             </div>
           ))}
         </div>

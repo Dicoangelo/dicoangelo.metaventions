@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useReadingDepth } from "./ReadingDepthProvider";
 
 interface Testimonial {
   quote: string;
@@ -279,6 +280,8 @@ const marqueeTestimonials = [...testimonials, ...testimonials];
 
 export default function Testimonials({ isLight }: TestimonialsProps) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1, once: true });
+  const { depth } = useReadingDepth();
+  const showFullShowcase = depth !== "skim";
   const marqueeRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -342,13 +345,16 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
             <span className="text-xs font-semibold uppercase tracking-wider">Recognition</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Testimonials & Features</h2>
-          <p className={`max-w-2xl mx-auto ${isLight ? "text-gray-600" : "text-gray-400"}`}>
-            Featured in industry case studies and partner ecosystem conferences
-          </p>
+          {showFullShowcase && (
+            <p className={`max-w-2xl mx-auto ${isLight ? "text-gray-600" : "text-gray-400"}`}>
+              Featured in industry case studies and partner ecosystem conferences
+            </p>
+          )}
         </div>
       </div>
 
       {/* Desktop Marquee — continuous right-to-left scroll */}
+      {showFullShowcase && (
       <div
         className="hidden md:block relative"
         onMouseEnter={handleMarqueeEnter}
@@ -381,8 +387,10 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
           ))}
         </div>
       </div>
+      )}
 
       {/* Mobile Swipeable Cards */}
+      {showFullShowcase && (
       <div className="md:hidden relative px-6">
         <div
           ref={scrollContainerRef}
@@ -447,6 +455,7 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
           </button>
         </div>
       </div>
+      )}
 
       {/* Additional Recognition Badge */}
       <div className="max-w-6xl mx-auto px-6">

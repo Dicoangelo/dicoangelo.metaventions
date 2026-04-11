@@ -1,5 +1,7 @@
 "use client";
 
+import { useReadingDepth } from "@/components/ReadingDepthProvider";
+
 const columns = [
   {
     title: "Partner Side",
@@ -22,14 +24,20 @@ const columns = [
 ];
 
 export function BridgeSection({ isLight }: { isLight: boolean }) {
+  const { depth } = useReadingDepth();
+  const showSubtitle = depth !== "skim";
+  const showItems = depth !== "skim";
+
   return (
     <section className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
+        <div className={`text-center ${showSubtitle ? "mb-12" : "mb-8"}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">I speak both languages.</h2>
-          <p className={`max-w-2xl mx-auto text-lg ${isLight ? 'text-gray-600' : 'text-gray-400'}`}>
-            Most people live on one side. Partner ops people understand business but not the AI stack. AI builders understand the tech but not the co-sell motion. I&apos;ve operated both.
-          </p>
+          {showSubtitle && (
+            <p className={`max-w-2xl mx-auto text-lg ${isLight ? 'text-gray-600' : 'text-gray-400'}`}>
+              Most people live on one side. Partner ops people understand business but not the AI stack. AI builders understand the tech but not the co-sell motion. I&apos;ve operated both.
+            </p>
+          )}
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {columns.map(col => (
@@ -39,15 +47,17 @@ export function BridgeSection({ isLight }: { isLight: boolean }) {
                 : isLight ? 'border-gray-200 bg-white' : 'border-white/10 bg-white/5'
             }`}>
               <div className="text-3xl mb-3">{col.icon}</div>
-              <h3 className={`text-lg font-bold mb-4 ${col.accent ? 'text-indigo-400' : ''}`}>{col.title}</h3>
-              <ul className="space-y-2">
-                {col.items.map(item => (
-                  <li key={item} className={`text-sm flex items-start gap-2 ${isLight ? 'text-gray-700' : 'text-gray-300'}`}>
-                    <span className="text-indigo-400 mt-0.5 shrink-0">→</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <h3 className={`text-lg font-bold ${showItems ? "mb-4" : ""} ${col.accent ? 'text-indigo-400' : ''}`}>{col.title}</h3>
+              {showItems && (
+                <ul className="space-y-2">
+                  {col.items.map(item => (
+                    <li key={item} className={`text-sm flex items-start gap-2 ${isLight ? 'text-gray-700' : 'text-gray-300'}`}>
+                      <span className="text-indigo-400 mt-0.5 shrink-0">→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>

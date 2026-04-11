@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useTheme } from "./ThemeProvider";
+import { useReadingDepth } from "./ReadingDepthProvider";
 
 interface Metric {
   value: number;
@@ -26,6 +27,8 @@ interface AnimatedMetricCardProps {
 function AnimatedMetricCard({ metric, isVisible, delay, isLight }: AnimatedMetricCardProps) {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [showComplete, setShowComplete] = useState(false);
+  const { depth } = useReadingDepth();
+  const showSubLabel = depth !== "skim";
 
   // Only animate once
   useEffect(() => {
@@ -139,7 +142,7 @@ function AnimatedMetricCard({ metric, isVisible, delay, isLight }: AnimatedMetri
       </p>
 
       {/* Sub-label */}
-      {metric.subLabel && (
+      {metric.subLabel && showSubLabel && (
         <p
           className={`
             mt-1 text-xs
@@ -161,6 +164,9 @@ export default function AnimatedMetrics({ className = "" }: AnimatedMetricsProps
   const { theme } = useTheme();
   const isLight = theme === "light";
   const { ref, isVisible } = useScrollReveal({ threshold: 0.2, once: true });
+  const { depth } = useReadingDepth();
+  const showSubtitle = depth !== "skim";
+  const showTrust = depth === "deep";
 
   const metrics: Metric[] = [
     {
@@ -239,9 +245,11 @@ export default function AnimatedMetrics({ className = "" }: AnimatedMetricsProps
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
             Measurable Results
           </h2>
-          <p className={`max-w-2xl mx-auto ${isLight ? "text-gray-600" : "text-gray-400"}`}>
-            Quantified impact from orchestrating AI-augmented systems and operations
-          </p>
+          {showSubtitle && (
+            <p className={`max-w-2xl mx-auto ${isLight ? "text-gray-600" : "text-gray-400"}`}>
+              Quantified impact from orchestrating AI-augmented systems and operations
+            </p>
+          )}
         </div>
 
         {/* Metrics Grid */}
@@ -258,6 +266,7 @@ export default function AnimatedMetrics({ className = "" }: AnimatedMetricsProps
         </div>
 
         {/* Trust indicator */}
+        {showTrust && (
         <div className="mt-10 text-center">
           <p className={`text-sm ${isLight ? "text-gray-500" : "text-gray-500"}`}>
             <span className="inline-flex items-center gap-1.5">
@@ -268,6 +277,7 @@ export default function AnimatedMetrics({ className = "" }: AnimatedMetricsProps
             </span>
           </p>
         </div>
+        )}
       </div>
     </section>
   );

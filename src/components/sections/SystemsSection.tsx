@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { useReadingDepth } from "@/components/ReadingDepthProvider";
 
 const ThreeSystemsNetwork = dynamic(() => import("../ThreeSystemsNetwork"), {
   ssr: false,
@@ -20,6 +21,9 @@ interface SystemsSectionProps {
 export function SystemsSection({ isLight }: SystemsSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { depth } = useReadingDepth();
+  const showSummary = depth !== "skim";
+  const showDeep = depth === "deep";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -60,13 +64,15 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
             Self-Improving AI Systems
           </h2>
 
-          <p className={`text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed ${
-            isLight ? 'text-gray-700' : 'text-[#a3a3a3]'
-          }`}>
-            Built autonomous engineering infrastructure that learns from every interaction,
-            self-heals errors, and optimizes performance—reducing development cycles by 50%
-            while maintaining enterprise-grade reliability.
-          </p>
+          {showSummary && (
+            <p className={`text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed ${
+              isLight ? 'text-gray-700' : 'text-[#a3a3a3]'
+            }`}>
+              Built autonomous engineering infrastructure that learns from every interaction,
+              self-heals errors, and optimizes performance—reducing development cycles by 50%
+              while maintaining enterprise-grade reliability.
+            </p>
+          )}
 
           {/* Key Metrics Grid */}
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
@@ -118,12 +124,15 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
           <div className="w-full h-[600px] border border-white/10 rounded-2xl bg-black/5 dark:bg-white/5 backdrop-blur-sm">
             {isVisible && <ThreeSystemsNetwork />}
           </div>
-          <p className={`text-xs text-center mt-4 ${isLight ? 'text-gray-500' : 'text-[#525252]'}`}>
-            Interactive 3D Architecture — Hover to explore each system
-          </p>
+          {showSummary && (
+            <p className={`text-xs text-center mt-4 ${isLight ? 'text-gray-500' : 'text-[#525252]'}`}>
+              Interactive 3D Architecture — Hover to explore each system
+            </p>
+          )}
         </div>
 
         {/* Business Value Section */}
+        {showDeep && (
         <div className="grid md:grid-cols-2 gap-8 mt-16">
           <div className={`p-8 rounded-xl border ${
             isLight ? 'bg-gradient-to-br from-white to-indigo-50 border-indigo-100' : 'bg-gradient-to-br from-[#141414] to-indigo-950/20 border-indigo-500/20'
@@ -165,8 +174,10 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
             </div>
           </div>
         </div>
+        )}
 
         {/* Technical Leadership Highlight */}
+        {showDeep && (
         <div className={`mt-12 p-8 rounded-2xl border ${
           isLight ? 'bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 border-indigo-200' : 'bg-gradient-to-r from-indigo-950/30 via-purple-950/30 to-pink-950/30 border-indigo-500/30'
         }`}>
@@ -180,6 +191,7 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
             </p>
           </div>
         </div>
+        )}
       </div>
     </AnimatedSection>
     </div>
