@@ -18,6 +18,63 @@ interface ProjectShowcaseProps {
 
 const projects: Project[] = [
   {
+    name: "Partnership Graph",
+    tagline: "Bloomberg Terminal for Partnership Intelligence",
+    description: "MCP-native partnership intelligence platform with 13 tools, AI scoring, and a React 19 dashboard. Built on UCW cognitive equity substrate to turn partner ops from spreadsheet hell into a queryable graph.",
+    metrics: [
+      { label: "MCP Tools", value: "13" },
+      { label: "Surface", value: "Dashboard + MCP" },
+      { label: "Substrate", value: "UCW" },
+      { label: "Stack", value: "React 19" }
+    ],
+    techStack: ["TypeScript", "React 19", "MCP Protocol", "AI Scoring"],
+    papers: [
+      "Partnership intelligence as a category",
+      "MCP-native B2B tooling patterns",
+      "Cognitive equity for relationship graphs"
+    ],
+    github: "https://github.com/Dicoangelo/partnership-ai-orchestration",
+    loc: "New"
+  },
+  {
+    name: "Frontier Alpha",
+    tagline: "Cognitive Factor Intelligence Platform",
+    description: "AI-powered portfolio optimization with 80+ factors, episodic learning via CVRF, and explainable recommendations. Brings sovereign cognitive infrastructure into quantitative investment workflows.",
+    metrics: [
+      { label: "Factors", value: "80+" },
+      { label: "Learning", value: "Episodic (CVRF)" },
+      { label: "Output", value: "Explainable" },
+      { label: "Domain", value: "Portfolio Opt" }
+    ],
+    techStack: ["Python", "TypeScript", "Factor Models", "Episodic Memory"],
+    papers: [
+      "CVRF episodic learning",
+      "Multi-factor portfolio construction",
+      "Explainable AI for investment decisions"
+    ],
+    github: "https://github.com/Dicoangelo/frontier-alpha",
+    loc: "New"
+  },
+  {
+    name: "FriendlyFace",
+    tagline: "Forensic Evidence Generation Platform",
+    description: "Forensic-friendly facial recognition with on-chain evidence sealing. Implements Mohammed's ICDF2C 2024 schema with SOTA 2026 components — ForensicSeal as the core invention, compliance proxy as the business model.",
+    metrics: [
+      { label: "Architecture", value: "Layer 3 — Blockchain" },
+      { label: "Schema", value: "ICDF2C 2024" },
+      { label: "Mode", value: "Demo-ready" },
+      { label: "Core", value: "ForensicSeal" }
+    ],
+    techStack: ["TypeScript", "React 19", "Blockchain", "Computer Vision"],
+    papers: [
+      "Mohammed et al. ICDF2C 2024 — Forensic FR schema",
+      "On-chain evidence sealing patterns",
+      "Compliance-by-proxy business model"
+    ],
+    github: "https://github.com/Dicoangelo/FriendlyFace",
+    loc: "New"
+  },
+  {
     name: "ACE",
     tagline: "Adaptive Consensus Engine",
     description: "Multi-agent voting system achieving consensus through adaptive thresholds, DQ-weighted voting, and auction-based agent selection.",
