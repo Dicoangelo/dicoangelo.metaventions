@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { useTypingAnimation } from "@/hooks/useTypingAnimation";
 import { useParallax } from "@/hooks/useParallax";
 import { useTheme } from "@/components/ThemeProvider";
+import { useReadingDepth } from "@/components/ReadingDepthProvider";
 import { useVisitorContext, getWelcomeMessage } from "@/hooks/useVisitorContext";
 
 // Lazy load 3D background with fallback gradient
@@ -28,6 +29,9 @@ export default function Hero() {
   const typedRole = useTypingAnimation(roles, 80, 40, 2000);
   const visitorContext = useVisitorContext();
   const welcomeMessage = getWelcomeMessage(visitorContext);
+  const { depth } = useReadingDepth();
+  const showSummary = depth !== "skim";
+  const showDeep = depth === "deep";
 
   // Parallax for background elements (10-20% speed differential)
   const backgroundParallax = useParallax({ speed: 0.1 });
@@ -83,29 +87,33 @@ export default function Hero() {
         </div>
 
         {/* Personalized Greeting */}
-        <p
-          className={`mb-4 text-sm font-medium animate-fade-in ${
-            isLight ? 'text-gray-500' : 'text-gray-400'
-          }`}
-        >
-          {welcomeMessage}
-        </p>
+        {showSummary && (
+          <p
+            className={`mb-4 text-sm font-medium animate-fade-in ${
+              isLight ? 'text-gray-500' : 'text-gray-400'
+            }`}
+          >
+            {welcomeMessage}
+          </p>
+        )}
 
         {/* Status Badge */}
-        <div
-          className={`mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm animate-fade-in animate-delay-100 ${isLight ? 'bg-white border-gray-200 shadow-sm' : 'bg-[#141414] border-[#262626]'
-            }`}
-          role="status"
-          aria-live="polite"
-        >
-          <span
-            className="w-2 h-2 rounded-full bg-green-500 animate-pulse"
-            aria-label="Available for work"
-          />
-          <span className={isLight ? 'text-gray-700 font-medium' : 'text-[#a3a3a3] font-medium'}>
-            Canadian Citizen · TN Visa Eligible
-          </span>
-        </div>
+        {showSummary && (
+          <div
+            className={`mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm animate-fade-in animate-delay-100 ${isLight ? 'bg-white border-gray-200 shadow-sm' : 'bg-[#141414] border-[#262626]'
+              }`}
+            role="status"
+            aria-live="polite"
+          >
+            <span
+              className="w-2 h-2 rounded-full bg-green-500 animate-pulse"
+              aria-label="Available for work"
+            />
+            <span className={isLight ? 'text-gray-700 font-medium' : 'text-[#a3a3a3] font-medium'}>
+              Canadian Citizen · TN Visa Eligible
+            </span>
+          </div>
+        )}
 
         {/* Main Heading with Typing Animation */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in animate-delay-200">
@@ -117,18 +125,20 @@ export default function Hero() {
         </h1>
 
         {/* Value Proposition */}
-        <p
-          className={`text-xl mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animate-delay-300 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'
-            }`}
-        >
-          Led cloud ops on the <strong>3-person alliance team</strong> that scaled
-          Contentsquare&rsquo;s marketplace from <strong className="text-[#6366f1] font-bold">$0 to $30M+</strong>{" "}
-          across AWS and Microsoft (<strong>2x MSFT Partner of the Year</strong>, <strong>$800M+ TCV</strong>).
-          While running those deals — built <strong>58 production AI tools</strong>, multi-agent frameworks,
-          and infrastructure processing <strong>163K+ events</strong> on Claude.
-          Most people are either operators or builders.{" "}
-          <span className="text-[#6366f1] font-semibold">I&rsquo;m both. At the frontier.</span>
-        </p>
+        {showSummary && (
+          <p
+            className={`text-xl mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animate-delay-300 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'
+              }`}
+          >
+            Led cloud ops on the <strong>3-person alliance team</strong> that scaled
+            Contentsquare&rsquo;s marketplace from <strong className="text-[#6366f1] font-bold">$0 to $30M+</strong>{" "}
+            across AWS and Microsoft (<strong>2x MSFT Partner of the Year</strong>, <strong>$800M+ TCV</strong>).
+            While running those deals — built <strong>58 production AI tools</strong>, multi-agent frameworks,
+            and infrastructure processing <strong>163K+ events</strong> on Claude.
+            Most people are either operators or builders.{" "}
+            <span className="text-[#6366f1] font-semibold">I&rsquo;m both. At the frontier.</span>
+          </p>
+        )}
 
         {/* CTA Buttons */}
         <div className="flex gap-3 md:gap-4 justify-center mb-8 flex-wrap animate-fade-in animate-delay-400">
@@ -169,12 +179,14 @@ export default function Hero() {
         </div>
 
         {/* Quote */}
-        <p
-          className={`text-sm italic animate-fade-in animate-delay-500 ${isLight ? 'text-gray-500' : 'text-[#525252]'
-            }`}
-        >
-          &quot;I don&rsquo;t study the frontier. I&rsquo;m building infrastructure on it — while running enterprise deals.&quot;
-        </p>
+        {showDeep && (
+          <p
+            className={`text-sm italic animate-fade-in animate-delay-500 ${isLight ? 'text-gray-500' : 'text-[#525252]'
+              }`}
+          >
+            &quot;I don&rsquo;t study the frontier. I&rsquo;m building infrastructure on it — while running enterprise deals.&quot;
+          </p>
+        )}
       </div>
     </section>
   );
