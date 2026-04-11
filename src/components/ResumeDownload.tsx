@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useReadingDepth } from "./ReadingDepthProvider";
 
 interface ResumeDownloadProps {
   isLight: boolean;
@@ -8,6 +9,9 @@ interface ResumeDownloadProps {
 
 export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
   const [downloading, setDownloading] = useState(false);
+  const { depth } = useReadingDepth();
+  const showSummary = depth !== "skim";
+  const showDeep = depth === "deep";
 
   const handleDownload = async (format: 'pdf' | 'docx') => {
     setDownloading(true);
@@ -60,15 +64,20 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Download My Resume
             </h2>
-            <p className={`text-lg mb-6 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-              Operations Leader | AI Systems Builder
-            </p>
-            <p className={`text-sm ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
-              Updated February 2026 · Accurate metrics · TN Visa eligible
-            </p>
+            {showSummary && (
+              <p className={`text-lg mb-6 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
+                Operations Leader | AI Systems Builder
+              </p>
+            )}
+            {showDeep && (
+              <p className={`text-sm ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
+                Updated February 2026 · Accurate metrics · TN Visa eligible
+              </p>
+            )}
           </div>
 
           {/* Key Highlights */}
+          {showSummary && (
           <div className="grid grid-cols-3 gap-2 md:gap-4 mb-8">
             <div className={`p-4 rounded-lg text-center ${
               isLight ? 'bg-gray-50' : 'bg-[#1a1a1a]'
@@ -95,6 +104,7 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
               </p>
             </div>
           </div>
+          )}
 
           {/* Download Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -140,6 +150,7 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
           </div>
 
           {/* Quick Links */}
+          {showDeep && (
           <div className="mt-8 pt-6 border-t border-[#262626] text-center">
             <p className={`text-sm mb-3 ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
               Or view my work directly:
@@ -183,6 +194,7 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
               </a>
             </div>
           </div>
+          )}
         </div>
       </div>
     </section>
