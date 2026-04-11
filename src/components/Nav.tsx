@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ThemeToggle, useTheme } from "./ThemeProvider";
+import ReadingDepthToggle, { ReadingDepthToggleMobile } from "./ReadingDepthToggle";
 
 export default function Nav() {
   const { theme } = useTheme();
@@ -237,13 +238,15 @@ export default function Nav() {
                 </a>
               );
             })}
-            <div className="ml-2 pl-2 border-l border-[var(--border)]">
+            <div className="ml-2 pl-2 border-l border-[var(--border)] flex items-center gap-2">
+              <ReadingDepthToggle />
               <ThemeToggle />
             </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 md:hidden">
+            <ReadingDepthToggleMobile />
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

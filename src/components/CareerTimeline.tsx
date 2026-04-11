@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useReadingDepth } from "./ReadingDepthProvider";
 
 interface TimelineEvent {
   date: string;
@@ -21,6 +22,9 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
+  const { depth } = useReadingDepth();
+  const showSummary = depth !== "skim";
+  const autoExpandDeep = depth === "deep";
 
   const events: TimelineEvent[] = [
     {
@@ -205,7 +209,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
           {/* Events */}
           <div className="space-y-6 md:space-y-12">
             {events.map((event, index) => {
-              const isExpanded = selectedEvent === index;
+              const isExpanded = autoExpandDeep || selectedEvent === index;
               const isLeft = index % 2 === 0;
 
               return (
@@ -242,30 +246,34 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
                           </div>
                         </div>
 
-                        <div className={`text-sm mb-2 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
+                        <div className={`text-sm ${showSummary ? 'mb-2' : ''} ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
                           {event.date} • {event.location}
                         </div>
 
-                        <p className={`text-sm mb-3 ${isLight ? 'text-gray-700' : 'text-[#ededed]'}`}>
-                          {event.description}
-                        </p>
+                        {showSummary && (
+                          <>
+                            <p className={`text-sm mb-3 ${isLight ? 'text-gray-700' : 'text-[#ededed]'}`}>
+                              {event.description}
+                            </p>
 
-                        {/* Metrics badges */}
-                        {event.metrics && event.metrics.length > 0 && (
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            {event.metrics.map((metric, i) => (
-                              <span
-                                key={i}
-                                className={`text-xs px-3 py-1 rounded-full font-semibold ${
-                                  isLight
-                                    ? 'bg-blue-100 text-blue-700'
-                                    : 'bg-[#6366f1]/10 text-[#6366f1]'
-                                }`}
-                              >
-                                {metric}
-                              </span>
-                            ))}
-                          </div>
+                            {/* Metrics badges */}
+                            {event.metrics && event.metrics.length > 0 && (
+                              <div className="flex flex-wrap gap-2 mb-3">
+                                {event.metrics.map((metric, i) => (
+                                  <span
+                                    key={i}
+                                    className={`text-xs px-3 py-1 rounded-full font-semibold ${
+                                      isLight
+                                        ? 'bg-blue-100 text-blue-700'
+                                        : 'bg-[#6366f1]/10 text-[#6366f1]'
+                                    }`}
+                                  >
+                                    {metric}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </>
                         )}
 
                         {/* Expandable highlights */}
@@ -285,16 +293,18 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
                           </div>
                         )}
 
-                        {/* Expand indicator */}
-                        <button
-                          className={`mt-2 text-xs font-semibold ${isLight ? 'text-gray-500' : 'text-[#737373]'} hover:text-[#6366f1] transition-colors`}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedEvent(isExpanded ? null : index);
-                          }}
-                        >
-                          {isExpanded ? '▲ Show less' : '▼ Show more'}
-                        </button>
+                        {/* Expand indicator — hidden when global deep mode auto-expands */}
+                        {!autoExpandDeep && showSummary && (
+                          <button
+                            className={`mt-2 text-xs font-semibold ${isLight ? 'text-gray-500' : 'text-[#737373]'} hover:text-[#6366f1] transition-colors`}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setSelectedEvent(isExpanded ? null : index);
+                            }}
+                          >
+                            {isExpanded ? '▲ Show less' : '▼ Show more'}
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>

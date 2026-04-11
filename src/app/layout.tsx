@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { ReadingDepthProvider } from "@/components/ReadingDepthProvider";
 
 // Site URL configuration - can be overridden via NEXT_PUBLIC_SITE_URL env var
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dicoangelo.vercel.app";
@@ -235,7 +236,9 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ThemeProvider>
-          {children}
+          <ReadingDepthProvider>
+            {children}
+          </ReadingDepthProvider>
         </ThemeProvider>
       </body>
     </html>

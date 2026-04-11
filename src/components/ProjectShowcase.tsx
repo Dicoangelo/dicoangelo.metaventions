@@ -1,5 +1,7 @@
 "use client";
 
+import DepthSection from "./DepthSection";
+
 interface Project {
   name: string;
   tagline: string;
@@ -186,117 +188,119 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
 
         <div className="space-y-6 md:space-y-12">
           {projects.map((project, index) => (
-            <div
+            <DepthSection
               key={index}
               className={`p-5 md:p-8 rounded-2xl border ${
                 isLight
                   ? 'bg-gradient-to-br from-white to-gray-50 border-gray-200'
                   : 'bg-gradient-to-br from-[#0a0a0a] to-[#141414] border-[#262626]'
               } hover:border-[#6366f1] transition-all`}
-            >
-              {/* Header */}
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
-                  <p className={`text-lg ${isLight ? 'text-gray-600' : 'text-[#8a8a8a]'}`}>
-                    {project.tagline}
-                  </p>
-                </div>
-                <div className="flex gap-3 mt-4 md:mt-0">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`px-4 py-2 rounded-lg border text-sm font-medium transition-colors ${
-                      isLight
-                        ? 'border-gray-300 hover:bg-gray-100'
-                        : 'border-[#262626] hover:bg-[#1a1a1a]'
-                    }`}
-                  >
-                    GitHub →
-                  </a>
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-lg bg-[#6366f1] hover:bg-[#5558e3] text-white text-sm font-medium transition-colors"
-                    >
-                      Live Demo →
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className={`mb-6 leading-relaxed ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
-                {project.description}
-              </p>
-
-              {/* Metrics */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                {project.metrics.map((metric, idx) => (
-                  <div
-                    key={idx}
-                    className={`p-4 rounded-lg ${
-                      isLight ? 'bg-white border border-gray-200' : 'bg-[#0a0a0a] border border-[#1a1a1a]'
-                    }`}
-                  >
-                    <p className="text-2xl font-bold text-[#6366f1] mb-1">{metric.value}</p>
-                    <p className={`text-xs ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-                      {metric.label}
+              showMoreLabel="Tech stack & research"
+              showLessLabel="Hide tech & research"
+              title={
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
+                    <p className={`text-lg ${isLight ? 'text-gray-600' : 'text-[#8a8a8a]'}`}>
+                      {project.tagline}
                     </p>
                   </div>
-                ))}
-              </div>
-
-              {/* Tech Stack */}
-              <div className="mb-6">
-                <p className={`text-sm font-semibold mb-2 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
-                  Tech Stack:
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                  <div className="flex gap-3 mt-4 md:mt-0">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`px-4 py-2 rounded-lg border text-sm font-medium transition-colors ${
                         isLight
-                          ? 'bg-gray-100 text-gray-700'
-                          : 'bg-[#1a1a1a] text-[#a3a3a3]'
+                          ? 'border-gray-300 hover:bg-gray-100'
+                          : 'border-[#262626] hover:bg-[#1a1a1a]'
                       }`}
                     >
-                      {tech}
-                    </span>
-                  ))}
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      isLight
-                        ? 'bg-blue-50 text-blue-700'
-                        : 'bg-[#1a1a2a] text-[#8a8aff]'
-                    }`}
-                  >
-                    {project.loc}
-                  </span>
+                      GitHub →
+                    </a>
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 rounded-lg bg-[#6366f1] hover:bg-[#5558e3] text-white text-sm font-medium transition-colors"
+                      >
+                        Live Demo →
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-
-              {/* Papers */}
-              <div>
-                <p className={`text-sm font-semibold mb-2 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
-                  Research Implemented:
-                </p>
-                <ul className="space-y-1">
-                  {project.papers.map((paper, idx) => (
-                    <li
-                      key={idx}
-                      className={`text-sm ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}
-                    >
-                      • {paper}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+              }
+              summary={
+                <div className="mt-6">
+                  <p className={`mb-6 leading-relaxed ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
+                    {project.description}
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {project.metrics.map((metric, idx) => (
+                      <div
+                        key={idx}
+                        className={`p-4 rounded-lg ${
+                          isLight ? 'bg-white border border-gray-200' : 'bg-[#0a0a0a] border border-[#1a1a1a]'
+                        }`}
+                      >
+                        <p className="text-2xl font-bold text-[#6366f1] mb-1">{metric.value}</p>
+                        <p className={`text-xs ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
+                          {metric.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              }
+              deep={
+                <div className="mt-6 space-y-6">
+                  <div>
+                    <p className={`text-sm font-semibold mb-2 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
+                      Tech Stack:
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            isLight
+                              ? 'bg-gray-100 text-gray-700'
+                              : 'bg-[#1a1a1a] text-[#a3a3a3]'
+                          }`}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          isLight
+                            ? 'bg-blue-50 text-blue-700'
+                            : 'bg-[#1a1a2a] text-[#8a8aff]'
+                        }`}
+                      >
+                        {project.loc}
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <p className={`text-sm font-semibold mb-2 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
+                      Research Implemented:
+                    </p>
+                    <ul className="space-y-1">
+                      {project.papers.map((paper, idx) => (
+                        <li
+                          key={idx}
+                          className={`text-sm ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}
+                        >
+                          • {paper}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              }
+            />
           ))}
         </div>
 
