@@ -10,13 +10,13 @@ const columns = [
   {
     title: "The Bridge",
     icon: "⚡",
-    items: ["Partner use case identification", "GenAI enablement materials", "Business case development", "Technical ↔ business translation", "From partner pain to AI solution"],
+    items: ["Partnership Graph: partner ops as queryable intelligence", "GenAI enablement materials for partner teams", "Business case development from partner pain", "Technical ↔ business translation", "From co-sell friction to AI-native motion"],
     accent: true,
   },
   {
     title: "AI Side",
     icon: "🤖",
-    items: ["58 MCP tools built on Claude", "Multi-agent orchestration framework", "4,035 Claude sessions", "Production AI pipelines", "GoMotion: Partner SA motion, live"],
+    items: ["58 MCP tools built on Claude", "Multi-agent orchestration framework", "4,035 Claude sessions", "20+ deployed AI systems, 900K+ LOC", "Partnership Graph + Frontier Alpha + UCW"],
     accent: false,
   },
 ];

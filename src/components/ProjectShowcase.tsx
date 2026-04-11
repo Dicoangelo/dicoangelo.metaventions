@@ -315,7 +315,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
                 : 'border-[#262626] hover:bg-[#141414]'
             }`}
           >
-            View All 38 Repositories →
+            View All 42 Repositories →
           </a>
         </div>
       </div>
