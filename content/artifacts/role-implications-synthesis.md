@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This artifact synthesizes the implied competencies and transferable skills from each of Dico Angelo's roles. Job descriptions often use different terminology for the same capabilities. This document maps Dico's actual experience to the language used in TPM, PM, Engineering Manager, Solutions Architect, and Platform Engineer job descriptions.
+This artifact synthesizes the implied competencies and transferable skills from each of Dico Angelo's roles. Job descriptions often use different terminology for the same capabilities. This document maps Dico's actual experience to the language used in Partner Operations, Cloud Alliance Manager, RevOps, GTM Systems, and AI-Hybrid Program Manager job descriptions.
 
 ---
 
@@ -31,10 +31,10 @@ This artifact synthesizes the implied competencies and transferable skills from 
 
 ### What Employers Should Map This To
 
-- **TPM roles:** Release management, launch coordination, cross-functional program management
-- **Product Manager roles:** User story writing, backlog prioritization, adoption metrics, stakeholder management
-- **Solutions Engineer roles:** System administration, multi-platform management, technical support
-- **DevOps/Platform roles:** System workflow design, process automation, onboarding pipelines
+- **Partner/RevOps Program Manager roles:** Release management, launch coordination, cross-functional program management
+- **Product Operations / Partner Operations roles:** User story writing, backlog prioritization, adoption metrics, stakeholder management
+- **GTM Systems / Platform Operations roles:** System administration, multi-platform management, enablement
+- **Enablement / Onboarding Operations roles:** System workflow design, process automation, onboarding pipelines
 
 ---
 
@@ -65,7 +65,7 @@ This artifact synthesizes the implied competencies and transferable skills from 
 ## Role 3: Founder & Systems Architect — Metaventions AI (2025-Present)
 
 **What the title says:** Startup founder.
-**What the role actually was:** Full-stack technical leadership building 20+ production AI systems from research to deployment.
+**What the role actually was:** AI-native program leadership — specifying 20+ production AI systems in English, directing Claude Code / Codex / Gemini to implement them, and shipping from research to deployment.
 
 ### Implied Competencies (for JD matching)
 
@@ -118,10 +118,10 @@ Every role Dico has held operates at the intersection of:
 | 2025 | 20+ systems, 900K+ LOC | Sovereign AI infrastructure |
 
 ### Enterprise vs. Solo — Both Are Valid
-- **Enterprise TPM evidence:** Contentsquare (6 workstreams, $800M TCV, Legal/Privacy/Finance coordination)
-- **Technical depth evidence:** Metaventions AI (900K+ LOC, multi-agent systems, production AI)
+- **Enterprise program evidence:** Contentsquare (6 workstreams, $800M TCV, Legal/Privacy/Finance coordination)
+- **AI-system delivery evidence:** Metaventions AI (900K+ LOC shipped via prompt engineering + agent orchestration, multi-agent systems, production AI)
 - **Product launch evidence:** Rocket Mortgage PSS (feature releases, go/no-go, adoption tracking)
-- **The combination is rare:** Most candidates have enterprise OR technical depth. Dico has both.
+- **The combination is rare:** Most candidates have enterprise GTM OR AI-system delivery. Dico has both — and neither requires whiteboard-grade language fluency, because the AI coding agents close that gap.
 
 ---
 

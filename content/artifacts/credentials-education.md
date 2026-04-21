@@ -134,33 +134,34 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 
 ---
 
-### Technical Skills Acquired (Self-Taught)
+### Skills Acquired (Self-Taught)
 
-**Languages:**
-- TypeScript: 79,947 LOC (424 files)
-- Python: 31,000+ LOC (14K in META-VENGINE, 17K in ResearchGravity)
-- JavaScript: Production-level proficiency
-- Shell: 5,600 LOC (automation scripts)
+**What I do not claim:** Hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify systems in English, direct AI coding agents to implement them, review the output, run it against tests, and ship.
 
-**Frameworks & Libraries:**
-- React 19 (latest features, concurrent mode)
-- Next.js 14 (App Router, server components)
-- FastAPI (backend services)
-- Vite (build tooling)
-- Vitest (testing framework, 95% coverage)
-- tsup (TypeScript build tooling)
+**AI Coding Agents Directed (Daily Use):**
+- Claude Code (primary system builder)
+- Codex / ChatGPT (secondary codegen)
+- Gemini CLI (research-to-code pipeline)
+- Cursor, Grok (spot work)
+- Prompt engineering (systematic, production-grade)
+
+**Stack Surface Shipped Under Prompt Direction:**
+- Web apps: React 19, Next.js 14 (App Router, server components), Vite
+- Python services: FastAPI, data pipelines
+- Shell automation: build tooling, CI glue
+- Testing: Vitest (95% coverage enforced via prompt specs)
+- ~900K+ LOC generated, reviewed, and integrated by me — not hand-typed
 
 **AI/ML & Agentic Systems:**
 - Multi-agent orchestration (ACE, ARCHON)
 - LLM integration (Gemini, Claude, GPT-4, Grok)
-- Prompt engineering (systematic, production-grade)
-- Tool-using agents
+- Tool-using agents, MCP (Model Context Protocol)
 - DQ scoring implementation
 - Consensus mechanisms (voting, auction)
-- Vector search (Qdrant)
-- Semantic embeddings
+- Vector search (Qdrant), semantic embeddings
+- RAG pipelines, LLM evaluation frameworks
 
-**Infrastructure & DevOps:**
+**Infrastructure & Deployment (AI-directed):**
 - Vercel (production deployments)
 - Supabase (backend as a service)
 - SQLite (persistence)
@@ -356,7 +357,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 - **152K LOC in 5 months** (vs typical: 1-2 features)
 - **8 papers implemented concurrently** (vs typical: 1 paper/semester)
 - **2 npm packages published** (vs typical: 0 packages/year)
-- **Self-taught TypeScript, Python, React 19, FastAPI** (vs typical: formal training required)
+- **Self-taught prompt engineering, multi-agent orchestration, MCP, RAG, LLM evaluation** (vs typical: formal training required)
 
 ---
 
@@ -499,11 +500,11 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 
 ### Skills to Acquire (2026)
 
-**Technical:**
-- Rust (systems programming for performance-critical modules)
-- CUDA (GPU acceleration for inference)
-- Kubernetes (container orchestration)
-- Advanced TypeScript patterns (type-level programming)
+**Systems I want to direct AI agents to build:**
+- Performance-critical modules in Rust (prompt-directed, not hand-written)
+- GPU-accelerated inference (CUDA through codegen)
+- Container orchestration (Kubernetes specs via prompt)
+- Type-level program synthesis patterns via prompt chains
 
 **AI/ML:**
 - Fine-tuning (LoRA, QLoRA)
@@ -604,7 +605,7 @@ The question is "Why would a CS degree make this better?"
 
 **Education:** BBA Marketing, University of Windsor (2019)
 **Notable:** SpaceX Hyperloop 2019 Finalist (Engineering Business Marketing Lead)
-**Self-Taught:** TypeScript, Python, React, AI/ML, Multi-Agent Systems
+**Self-Taught:** Prompt engineering, AI coding agent orchestration, MCP, RAG, LLM evaluation, multi-agent systems
 **Research:** 8+ arXiv papers implemented in production
 **Certifications:** AWS (3), Microsoft (1), AI/Cloud (3), PM (1)
 **Code Output:** 900,000+ LOC

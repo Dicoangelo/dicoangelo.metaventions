@@ -13,9 +13,9 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
     <AnimatedSection id="projects" className="py-20 px-6 section-alt">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Technical Projects</h2>
+          <h2 className="text-3xl font-bold mb-4">AI-Directed Projects</h2>
           <p className={isLight ? "text-gray-600" : "text-[#737373]"}>
-            Open source. Live demos. Verifiable code.
+            Specified in English. Built by directing Claude Code / Codex / Gemini. Live demos, open repos.
           </p>
         </div>
 
@@ -24,7 +24,7 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
             name="OS-App"
             tagline="Sovereign AI Operating System"
             description="Voice-native interface with Gemini 2.0 Live, ElevenLabs TTS, biometric stress detection. Adaptive Consensus Engine (ACE) reducing consensus rounds by 50%. Recursive Language Model (RLM) for 100x context extension."
-            tech={["React 19", "TypeScript", "Gemini API", "ElevenLabs"]}
+            tech={["Prompt Engineering", "Multi-Agent Orchestration", "Gemini API", "ElevenLabs"]}
             stats={{ loc: "33K+", components: 71, services: 62, coverage: "95%" }}
             github="https://github.com/Dicoangelo/OS-App"
             demo="https://app.metaventionsai.com"
@@ -35,7 +35,7 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
             name="ResearchGravity"
             tagline="Research Orchestration Platform"
             description="FastAPI backend with Qdrant vector search (2,530 embeddings). Meta-Learning Engine with 87% error prevention accuracy. Cognitive Precision Bridge with 5-agent ensemble and complexity-based routing."
-            tech={["Python", "FastAPI", "Qdrant", "SQLite"]}
+            tech={["AI-Directed Build", "FastAPI", "Qdrant", "Vector Search"]}
             stats={{
               sessions: 114,
               findings: "2,530",
@@ -50,7 +50,7 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
             name="CareerCoachAntigravity"
             tagline="AI Career Governance System"
             description="Multi-agent hiring panel simulation. Generates role-specific feedback from AI personas representing different interview perspectives."
-            tech={["Next.js 14", "TypeScript", "Zustand", "Claude API"]}
+            tech={["Prompt Engineering", "Multi-Agent Orchestration", "Claude API", "MCP Protocol"]}
             stats={{ loc: "15K+", agents: 5, panels: "N/A" }}
             github="https://github.com/Dicoangelo/CareerCoachAntigravity"
             demo="https://careers.metaventionsai.com"
@@ -118,19 +118,37 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
           <p className={`text-sm text-center mb-6 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
             Live products across the metaventionsai.com platform
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
             {[
               {
                 name: "Metaventions AI",
-                url: "https://www.metaventionsai.com",
+                url: "https://metaventionsai.com",
                 description: "Main platform — sovereign AI infrastructure",
                 subdomain: "metaventionsai.com",
               },
               {
+                name: "Portfolio",
+                url: "https://dicoangelo.metaventionsai.com",
+                description: "This site — career dossier, JD Fit Analyzer & AI chat",
+                subdomain: "dicoangelo.",
+              },
+              {
                 name: "OS-App",
                 url: "https://app.metaventionsai.com",
-                description: "Agentic OS with voice, multi-agent orchestration",
+                description: "Sovereign AI OS — voice, multi-agent, biometric",
                 subdomain: "app.",
+              },
+              {
+                name: "Frontier Alpha",
+                url: "https://frontier-alpha.metaventionsai.com",
+                description: "Cognitive Factor Intelligence — 80+ factor portfolio optimization",
+                subdomain: "frontier-alpha.",
+              },
+              {
+                name: "FriendlyFace",
+                url: "https://friendlyface.metaventionsai.com",
+                description: "AI compliance proxy & forensic evidence — ForensicSeal",
+                subdomain: "friendlyface.",
               },
               {
                 name: "Career Coach",
@@ -139,52 +157,64 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
                 subdomain: "careers.",
               },
               {
-                name: "Frontier Alpha",
-                url: "https://frontier-alpha.metaventionsai.com/landing",
-                description: "Frontier research & alpha experiments",
-                subdomain: "frontier-alpha.",
-              },
-              {
-                name: "Pitch Deck",
+                name: "Enterprise Deck",
                 url: "https://deck.metaventionsai.com",
-                description: "Metaventions AI pitch — UCW presentation",
+                description: "Enterprise pitch — UCW protocol substrate, 94% margin",
                 subdomain: "deck.",
               },
               {
-                name: "Portfolio",
-                url: "https://dicoangelo.metaventionsai.com",
-                description: "This site — career dossier & live chat",
-                subdomain: "dicoangelo.",
+                name: "Sovereign Deck",
+                url: "https://sovereign.metaventionsai.com",
+                description: "Sovereign AI architecture investor presentation",
+                subdomain: "sovereign.",
+              },
+              {
+                name: "Paper to Production",
+                url: "https://paper-to-production.metaventionsai.com",
+                description: "arXiv papers → deployed systems architecture reports",
+                subdomain: "paper-to-production.",
+              },
+              {
+                name: "Antigravity Demo",
+                url: "https://anti-gravity.metaventionsai.com",
+                description: "Interactive demo of the Antigravity ecosystem",
+                subdomain: "anti-gravity.",
+              },
+              {
+                name: "Mass Fintech Hub",
+                url: "https://mfth.metaventionsai.com",
+                description: "Fintech bootcamp mentoring — playbooks & coaching",
+                subdomain: "mfth.",
               },
               {
                 name: "Signature Event",
                 url: "https://thesignatureevent.metaventionsai.com",
-                description: "Event marketing & RSVP platform",
+                description: "Client project — event marketing & RSVP platform",
                 subdomain: "thesignatureevent.",
               },
               {
                 name: "BXL Hospitality",
                 url: "https://bxl.metaventionsai.com",
-                description: "Luxury hospitality membership platform",
+                description: "Client project — luxury hospitality membership platform",
                 subdomain: "bxl.",
-              },
-              {
-                name: "FriendlyFace",
-                url: "https://friendlyface.metaventionsai.com",
-                description: "AI compliance proxy & forensic evidence",
-                subdomain: "friendlyface.",
-              },
-              {
-                name: "Paper to Production",
-                url: "https://paper-to-production.vercel.app",
-                description: "arXiv papers → deployed systems architecture reports",
-                subdomain: "paper-to-production.",
               },
               {
                 name: "DQ Scoring",
                 url: "https://dqscoring.vercel.app",
-                description: "DQ scoring collaboration — Drammeh x D'Angelo",
+                description: "Drammeh x D'Angelo — DQ scoring research (arXiv:2511.15755)",
                 subdomain: "dqscoring.",
+              },
+              {
+                name: "Muchen Roadmap",
+                url: "https://muchen-roadmap.vercel.app",
+                description: "Strategic career roadmap & positioning document",
+                subdomain: "muchen-roadmap.",
+              },
+              {
+                name: "Dashboard",
+                url: "https://dashboard-nu-three-99.vercel.app",
+                description: "Analytics dashboard for ecosystem monitoring",
+                subdomain: "dashboard.",
               },
             ].map((item) => (
               <a

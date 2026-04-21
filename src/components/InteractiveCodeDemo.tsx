@@ -23,8 +23,8 @@ export default function InteractiveCodeDemo({ isLight }: InteractiveCodeDemoProp
   const examples: CodeExample[] = [
     {
       id: "react-hooks",
-      title: "React State Management",
-      description: "Clean state management with React hooks",
+      title: "Specified: Stateful Counter",
+      description: "Prompt → AI-generated React hook pattern",
       language: "typescript",
       code: `const [count, setCount] = useState(0);
 
@@ -49,8 +49,8 @@ return (
     },
     {
       id: "typescript",
-      title: "TypeScript Type Safety",
-      description: "Strongly typed interfaces for better DX",
+      title: "Specified: Typed User Interface",
+      description: "Prompt → AI-generated typed contract",
       language: "typescript",
       code: `interface User {
   id: string;
@@ -81,8 +81,8 @@ function getUser(id: string): Promise<User> {
     },
     {
       id: "async-await",
-      title: "Async/Await Patterns",
-      description: "Modern async JavaScript patterns",
+      title: "Specified: Async Error-Handled Pipeline",
+      description: "Prompt → AI-generated try/catch flow",
       language: "typescript",
       code: `async function processData() {
   try {
@@ -120,8 +120,8 @@ function getUser(id: string): Promise<User> {
     },
     {
       id: "tailwind",
-      title: "Utility-First CSS",
-      description: "Rapid UI development with Tailwind",
+      title: "Specified: Gradient Button Component",
+      description: "Prompt → AI-generated utility-class markup",
       language: "tsx",
       code: `<div className="
   flex items-center gap-4
@@ -166,9 +166,9 @@ function getUser(id: string): Promise<User> {
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Interactive Code Examples</h2>
-          <p className={`text-sm ${isLight ? "text-gray-600" : "text-[#737373]"}`}>
-            Live demonstrations of technical skills
+          <h2 className="text-3xl font-bold mb-4">Specified in English. Built by AI Agents.</h2>
+          <p className={`text-sm max-w-2xl mx-auto ${isLight ? "text-gray-600" : "text-[#737373]"}`}>
+            Dico specifies patterns like these in English, directs Claude Code / Codex / Gemini to implement them, then reviews and ships. No claim of hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash — the AI agents close that gap.
           </p>
         </div>
 
@@ -255,12 +255,12 @@ function getUser(id: string): Promise<User> {
         {/* Tech stack badges */}
         <div className="mt-12 flex flex-wrap justify-center gap-3">
           {[
-            "TypeScript",
-            "React 19",
-            "Next.js 16",
-            "Tailwind CSS",
-            "Zustand",
-            "Node.js",
+            "Prompt Engineering",
+            "Claude Code",
+            "Codex",
+            "Gemini CLI",
+            "MCP Protocol",
+            "AI-Directed Build",
           ].map((tech) => (
             <span
               key={tech}

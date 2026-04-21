@@ -26,7 +26,7 @@ Our mission is to transform abstract strategic visions into operational infrastr
 
 **Reactive Operating Environment for Enterprise Intelligence**
 
-Structura OS (implemented as [OS-App](https://github.com/Dicoangelo/OS-App)) is a comprehensive operating environment that integrates disparate corporate assets, business logic, and communication channels into a single reactive system. With 127,000+ lines of production TypeScript code, it's not a prototype—it's a fully-functional AI platform. Unlike traditional enterprise software that treats AI as an add-on, Structura OS is built from the ground up as an intelligent platform.
+Structura OS (implemented as [OS-App](https://github.com/Dicoangelo/OS-App)) is a comprehensive operating environment that integrates disparate corporate assets, business logic, and communication channels into a single reactive system. With 127,000+ lines of production TypeScript code (AI-generated under Dico Angelo's architectural direction via Claude Code, Codex CLI, and Gemini CLI), it's not a prototype—it's a fully-functional AI platform. Unlike traditional enterprise software that treats AI as an add-on, Structura OS is built from the ground up as an intelligent platform.
 
 **Key Capabilities:**
 
@@ -239,7 +239,7 @@ Metavention Labs project enabling autonomous research workflows:
 
 **Research Session Tracking & Auto-Capture**
 
-Python-based framework for institutional memory:
+Research framework for institutional memory (Python runtime, AI-generated under direction):
 
 - Cold start protocol for session initialization
 - URL logging with tier/category/relevance metadata

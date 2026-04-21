@@ -142,11 +142,11 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 ### "Do you have production experience?"
 
-**Yes. 900,000+ LOC in production systems with live users.**
+**Yes. 900,000+ LOC shipped to production systems with live users — AI-generated under my prompt direction, reviewed and integrated by me. I do not claim language fluency.**
 
-**Production systems built:**
+**Production systems shipped (I specified, prompted, reviewed, deployed):**
 
-1. **OS-App** (152,503 LOC, TypeScript)
+1. **OS-App** (152,503 LOC)
    - Voice-native AI interface with Gemini 2.0 & ElevenLabs
    - 75 UI components, 156 services, 20 custom hooks
    - 95% test coverage (Vitest)
@@ -156,20 +156,20 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 2. **Published npm packages** (2 packages, public)
    - @metaventionsai/cpb-core (v1.1.0)—AI orchestration library
    - @metaventionsai/voice-nexus (v1.1.0)—Multi-provider voice architecture
-   - TypeScript + ESM/CJS builds, test suites, semantic versioning
+   - Build artifacts (ESM/CJS), test suites, semantic versioning
    - Anyone can install and use these packages
 
-3. **META-VENGINE** (51,273 LOC, Python)
+3. **META-VENGINE** (51,273 LOC)
    - Self-improving AI infrastructure
    - 9 integrated systems (Cognitive OS, Recovery Engine, Supermemory, etc.)
    - Production automation with 700+ error patterns tracked
    - 70% auto-fix rate
 
-4. **ResearchGravity** (17,000+ LOC, Python)
-   - FastAPI backend + Qdrant vector search
+4. **ResearchGravity** (17,000+ LOC)
+   - Vector search backend, research pipeline automation
    - 114 research sessions archived
    - 8,935 URLs cataloged, 2,530 vector embeddings
-   - SQLite persistence
+   - Persistent storage layer
 
 **Production metrics:**
 - 3,000+ commits across ecosystem
@@ -202,8 +202,8 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Research-to-production pipeline:**
 1. Read arXiv papers (32+ tracked in ResearchGravity)
-2. Implement core algorithms in TypeScript/Python
-3. Write comprehensive tests (95% coverage)
+2. Specify core algorithms in English, prompt Claude Code / Codex / Gemini to implement them, then review + validate the output
+3. Direct the agents to write comprehensive tests (95% coverage)
 4. Deploy to production (Vercel, live demos)
 5. Measure results (DQ scores, performance metrics)
 
@@ -213,22 +213,24 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - I measure results and iterate based on data
 
 **Secondary strengths:**
-- TypeScript (79K+ LOC), React 19, Next.js 14
-- Python (31K+ LOC), FastAPI, vector search
-- AI/ML integration (Gemini, Claude, GPT-4, Grok)
-- Systems integration (Salesforce, AWS, marketplace ops)
+- Prompt engineering for code generation (5+ years, daily use since 2020)
+- AI-directed architecture: specify → prompt → review → integrate
+- Multi-model orchestration (Gemini, Claude, GPT-4, Grok) + MCP
+- Systems integration (Salesforce, AWS, Microsoft marketplace ops)
+
+**What I do not claim:** Language fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify in English, review AI output, run it against tests, and ship. Evaluate me on system design, prompt engineering, and evaluation harnesses — not whiteboard syntax.
 
 ### "Can you code at scale?"
 
 **Yes. Statistics prove it.**
 
-**Codebase metrics:**
-- **Total LOC:** 900,000+ across ecosystem
+**Codebase metrics (AI-generated, human-directed):**
+- **Total LOC shipped:** 900,000+ across ecosystem
 - **Largest single project:** 152,503 LOC (OS-App)
 - **Published packages:** 2 on npm (public, versioned, documented)
 - **Test coverage:** 95% (Vitest)
 - **Commits:** 3,000+ across 38 repositories
-- **Languages:** TypeScript (79K LOC), Python (31K LOC), Shell (5.6K), JavaScript, HTML, Markdown
+- **Stack surface covered by prompts I wrote:** web apps, Python services, shell automation, build tooling, CI — all generated under my direction, not hand-typed
 
 **Architectural complexity:**
 - **OS-App:** 75 UI components, 156 services, 20 custom hooks, Agentic Kernel with state machine (BOOTING → IDLE → PROCESSING → PAGING → SUSPENDED)
@@ -343,24 +345,24 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Willing to take below-market cash for meaningful equity at right company
 - Value working on cutting-edge problems over pure compensation
 
-**Ranges by role type (San Francisco market):**
+**Ranges by role type (North America remote / SF benchmark):**
 
-**Research Engineer / Applied AI Engineer:**
+**Partner Operations / Cloud Alliances Manager:**
+- Base: $140K - $200K
+- Total comp (with variable/equity): $180K - $300K
+- Prioritizing: Ownership of Co-sell + marketplace motion, direct quota impact
+
+**Revenue Operations / GTM Systems Lead:**
+- Base: $140K - $200K
+- Total comp (with variable/equity): $180K - $300K
+- Prioritizing: CRM architecture ownership, pipeline/reporting leadership
+
+**AI-Hybrid Partnerships / Applied AI Program Lead:**
 - Base: $150K - $220K
 - Total comp (with equity): $200K - $400K
-- Prioritizing: Early-stage equity, access to frontier models, publication opportunities
+- Prioritizing: AI partner motion, agentic workflow integration, evaluation frameworks
 
-**Technical Program Manager (AI/ML):**
-- Base: $160K - $240K
-- Total comp (with equity): $220K - $450K
-- Prioritizing: Product ownership, cross-functional impact, strategic influence
-
-**Software Engineer, AI Products:**
-- Base: $140K - $200K
-- Total comp (with equity): $180K - $350K
-- Prioritizing: Production AI systems, rapid iteration, user impact
-
-**Founding Engineer / Early Employee (Startup):**
+**Founding Operator / Early Employee (Startup):**
 - Base: $100K - $160K
 - Equity: 0.5% - 2.0%
 - Prioritizing: Ownership, autonomy, compounding learning
@@ -459,11 +461,11 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
    - Monitoring and observability (Observatory system with 26K+ tool calls tracked)
    - Performance optimization (300x token reduction via arXiv:2511.13193)
 
-3. **Code quality:**
+3. **Code quality (specified by me, generated by AI, reviewed before merge):**
    - Published npm packages with semantic versioning
-   - TypeScript strict mode, ESLint, Prettier
+   - Strict type checking, linting, formatting enforced via prompt specs + CI
    - Modular architecture (156 services in OS-App)
-   - Test-driven development (Vitest suites)
+   - Test-driven prompts (Vitest suites generated to spec)
    - Documentation and code comments with arXiv citations
 
 4. **Business impact:**
@@ -475,10 +477,10 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **Years of experience ≠ quality of experience.**
 
 **What matters:**
-- Do I write clean, tested, production-ready code? Yes.
+- Can I specify and ship clean, tested, production-ready systems via AI coding agents? Yes.
 - Do I make sound architectural decisions? Yes.
 - Do I deliver business value? Yes.
-- Can I own end-to-end systems? Yes (900K+ LOC across ecosystem).
+- Can I own end-to-end systems? Yes (900K+ LOC shipped across ecosystem, all AI-generated under my direction).
 
 **Most 10-year engineers have narrow experience in one tech stack at one company. I've built:**
 - Multi-agent systems from arXiv papers
@@ -489,9 +491,9 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Hire me for what I've built, not how long I've been building.**
 
-### "Your background is in marketing and operations. Why should we trust you as an engineer?"
+### "Your background is in marketing and operations. Why should we trust you as a builder?"
 
-**Because I've shipped 900K+ LOC of production code with 95% test coverage, published 2 npm packages, and implemented 8+ arXiv papers.**
+**Because I've shipped 900K+ LOC of production code with 95% test coverage, published 2 npm packages, and operationalized 8+ arXiv papers — all through prompt engineering, not hand-coding.**
 
 **The transition story:**
 
@@ -500,23 +502,23 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - SpaceX Hyperloop 2019—Engineering Business Marketing Lead
 - Led 4 student organizations (VP Marketing, Lead Mentor)
 
-**2020-2023 (Operations + Self-Learning):**
+**2020-2023 (Operations + Early Prompt Engineering):**
 - Rocket Mortgage: Product Success Specialist (led 45 agents, system admin)
-- Started learning to code (Python, JavaScript)
-- Built internal automation tools (document verification, quality dashboards)
+- Began using GPT-3 / early Codex to generate automation scripts (started 2020)
+- Shipped internal automation tools (document verification, quality dashboards) via prompting
 
-**2022-2025 (GTM + Technical Hybrid):**
+**2022-2025 (GTM + AI Systems Hybrid):**
 - Contentsquare: Cloud Alliance Operations Lead
 - Built operational infrastructure ($800M TCV processed)
 - Systems integration architecture (Salesforce ↔ AWS, PartnerStack UAT)
 - Platform administration (7 tools)
-- **Meanwhile:** Building AI systems nights/weekends
+- **Meanwhile:** Building AI systems nights/weekends via Claude Code, Codex, Gemini CLI
 
-**2025-Present (Full Technical):**
+**2025-Present (Full AI-Native Builder):**
 - Founded Metaventions AI (Nov 2025)
-- Built OS-App (152K LOC)
+- Shipped OS-App (152K LOC)
 - Published 2 npm packages
-- Implemented 8+ arXiv papers
+- Operationalized 8+ arXiv papers
 - Created META-VENGINE (51K LOC self-improving infrastructure)
 
 **Why this background is an advantage:**
@@ -528,18 +530,18 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
    - I've done GTM operations at scale
 
 2. **I'm a builder-operator hybrid.**
-   - I build the product AND understand go-to-market
-   - I can ship code AND talk to customers
-   - I understand both engineering and business constraints
+   - I specify the product AND understand go-to-market
+   - I can ship systems AND talk to customers
+   - I understand both AI-system and business constraints
    - I can bridge technical and non-technical teams
 
-3. **I'm self-taught, which proves fast learning.**
-   - I went from marketing grad to publishing npm packages in 4 years
-   - I implemented arXiv papers without PhD supervision
-   - I taught myself TypeScript, React, Python, FastAPI, vector search, multi-agent systems
-   - I don't need hand-holding
+3. **I code in English, which is the new native language of shipping.**
+   - I went from marketing grad to publishing npm packages in 4 years — by prompting, reviewing, testing
+   - I operationalized arXiv papers without PhD supervision by turning them into specs for Claude Code
+   - I taught myself prompt engineering, multi-agent orchestration, MCP, RAG, and LLM evaluation frameworks
+   - I direct AI coding agents. I do not claim to hand-write TypeScript, Python, or SQL — and I'd rather be evaluated on what I ship than what I can whiteboard
 
-**Most engineers can code. I can code AND understand the business. That's rare and valuable.**
+**Most operators can't ship systems. Most engineers can't run a partner motion. I do both — and the AI coding agents close the syntax gap.**
 
 **Bottom line:** Judge me on what I've built, not where I started. 900K+ LOC, 2 npm packages, 8+ papers implemented, $800M deals managed. That's the resume.
 

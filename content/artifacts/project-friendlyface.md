@@ -29,12 +29,14 @@ LIME/SHAP/SDD outputs aren't just XAI — they're forensic artifacts with proven
 
 ## Technical Stack
 
+*Specified in English and built by directing Claude Code, Codex CLI, and Gemini CLI. I own architecture, prompts, review, and evaluation — the code is AI-generated under my direction.*
+
 - **Framework:** Next.js, React, TypeScript
 - **Cryptography:** W3C Verifiable Credentials, hash chains, Merkle trees, provenance DAGs
 - **ML/AI:** Federated Learning (DP-FedAvg), LIME/SHAP/SDD explainability
 - **Compliance:** EU AI Act Annex IV conformity assessment
 - **Deployment:** Vercel
-- **Codebase:** 42K+ LOC
+- **Codebase:** 42K+ LOC (AI-generated under my prompt direction and review)
 
 ## Key Innovations
 
@@ -63,8 +65,8 @@ LIME/SHAP/SDD outputs aren't just XAI — they're forensic artifacts with proven
 ## Transferable Skills Demonstrated
 
 - **Cryptographic Systems Design:** W3C VCs, hash chains, Merkle trees, provenance DAGs
-- **EU AI Act Compliance Engineering:** Annex IV conformity, Article 13 explainability
-- **Privacy-Preserving ML:** Federated learning with differential privacy
+- **EU AI Act Compliance Architecture:** Annex IV conformity, Article 13 explainability
+- **Privacy-Preserving ML Direction:** Federated learning with differential privacy
 - **Forensic Evidence Architecture:** Courtroom-grade audit trails with tamper detection
 - **SDK/Platform Design:** pip-installable compliance proxy wrapping third-party APIs
 - **Academic Research:** ICDF2C paper, architecture diagrams, formal verification

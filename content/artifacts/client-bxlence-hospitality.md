@@ -16,7 +16,7 @@ https://bxl.metaventionsai.com
 
 | Deliverable | Details |
 |-------------|---------|
-| **Full-Stack Platform** | Next.js 16 App Router site with 15+ pages, API routes, Supabase database, Stripe payments |
+| **End-to-End Platform** | Next.js 16 App Router site with 15+ pages, API routes, Supabase database, Stripe payments — specified in English and built by directing AI coding agents |
 | **Membership System** | 3-tier membership (Silver $2,500 / Gold $10,000 / Black invitation-only) with Stripe checkout |
 | **Contact/Lead Pipeline** | Supabase-backed contact form with Resend email notifications |
 | **Event Packages** | Signature Soiree ($15K), Grand Production ($35K), Bespoke (custom pricing) |
@@ -29,7 +29,9 @@ https://bxl.metaventionsai.com
 
 ## Technical Architecture
 
-- **Framework:** Next.js 16, React 19, TypeScript 5, App Router with Server Components
+*Specified in English and built by directing Claude Code, Codex CLI, and Gemini CLI. I own architecture, prompts, review, and deploy decisions.*
+
+- **Framework:** Next.js 16, React 19, TypeScript, App Router with Server Components
 - **Styling:** Tailwind CSS 4, Framer Motion 12, Lenis smooth scroll
 - **Database:** Supabase (contact submissions, newsletter, membership data)
 - **Payments:** Stripe (membership checkout sessions)
@@ -61,7 +63,9 @@ https://bxl.metaventionsai.com
 
 ## Transferable Skills Demonstrated
 
-- **Full-Stack Product Development:** Database, API, payments, frontend — complete platform
+*I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify in English, review AI output, run it against tests, and ship.*
+
+- **End-to-End Product Direction:** Database, API, payments, frontend — complete platform specified and orchestrated via AI coding agents
 - **Luxury Brand Engineering:** High-end design system with 30+ animation components
 - **Payment Integration:** Stripe checkout for tiered membership model
 - **Lead Generation Systems:** Supabase-backed contact pipeline with email notifications

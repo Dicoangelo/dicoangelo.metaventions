@@ -37,8 +37,8 @@ const SYSTEM_PROMPT = `You are Dico Angelo's voice assistant on his portfolio we
 - For complex topics, use short paragraphs with natural transitions
 
 ## Voice-Friendly Transformations
-BAD (written): "His skills include: React, TypeScript, and Python."
-GOOD (spoken): "He's skilled in React, TypeScript, and Python."
+BAD (written): "His skills include: prompt engineering, multi-agent orchestration, and MCP."
+GOOD (spoken): "He's skilled in prompt engineering, multi-agent orchestration, and the Model Context Protocol."
 
 BAD: "Key achievements:\n- $800M TCV\n- 95% retention"
 GOOD: "His key achievements include driving over 800 million in total contract value and maintaining 95 percent customer retention."
@@ -86,17 +86,19 @@ Innovation Signals:
 - 15,048 events rated excellent quality
 - 72 cross-platform coherence moments prove distributed cognition — the same ideas emerge independently across Claude, ChatGPT, and Grok
 
-Top Topics: AI agents (15.4K), Coding (12.8K), DevOps (10.9K), Research (7.6K), Product (5.4K), Database (4.8K), Frontend (4.1K), Career (3.9K), MCP Protocol (3.2K), Strategy (2.8K)
+Top Topics: AI agents (15.4K), AI-assisted development (12.8K), infrastructure (10.9K), Research (7.6K), Product (5.4K), Database (4.8K), UI systems (4.1K), Career (3.9K), MCP Protocol (3.2K), Strategy (2.8K)
 
-Technical Skills Demonstrated by UCW:
-- Data pipeline engineering (163K events captured, processed, embedded)
+Capabilities Demonstrated by UCW (all specified in English, built by directing AI coding agents):
+- Data pipeline specification (163K events captured, processed, embedded)
 - Cross-platform orchestration (6 platforms unified)
-- Embedding systems (150K+ vectors using SBERT, pgvector)
+- Embedding system design (150K+ vectors using SBERT, pgvector)
 - Coherence detection algorithms (semantic echo, synchronicity, signature matching)
 - MCP protocol implementation (raw MCP transport for cognitive capture)
 - PostgreSQL + pgvector at scale
-- Daemon architecture (LaunchAgent-based always-on capture)
+- Always-on capture daemon (LaunchAgent-based)
 - Quality scoring (automated assessment of 163K events)
+
+Dico specifies these systems in English and directs Claude Code, Codex, and Gemini to implement them. He reviews, tests, and ships. He does not claim hand-fluency in TypeScript, Python, or SQL.
 
 ## Your Role
 - Answer questions about Dico's background, skills, projects, and career
@@ -190,10 +192,15 @@ export async function POST(request: Request) {
     retrievalTimeMs = Date.now() - retrievalStart;
     contextLength = dossierContext.length;
 
-    // Build the full system prompt with RAG context
-    const fullSystemPrompt = dossierContext
-      ? `${SYSTEM_PROMPT}\n\n${dossierContext}`
-      : SYSTEM_PROMPT;
+    // Inject skill gap coaching notes (top 3 gaps seen 5+ times)
+    const gapNotes = await getSkillGapCoachingNotes();
+
+    // Build the full system prompt with RAG context and coaching
+    const fullSystemPrompt = [
+      SYSTEM_PROMPT,
+      gapNotes,
+      dossierContext,
+    ].filter(Boolean).join('\n\n');
 
     const stream = await anthropic.messages.stream({
       model: "claude-sonnet-4-6",
@@ -281,6 +288,29 @@ export async function POST(request: Request) {
 /**
  * Log chat interaction to Supabase for analytics
  */
+/**
+ * Query top skill gaps (5+ occurrences) and format as coaching notes.
+ * Fails silently if table doesn't exist or Supabase is unavailable.
+ */
+async function getSkillGapCoachingNotes(): Promise<string> {
+  try {
+    const sb = getSupabase();
+    if (!sb) return '';
+    const { data } = await (sb.from('skill_gap_analytics') as ReturnType<typeof sb.from>)
+      .select('skill_name, gap_count')
+      .gte('gap_count', 5)
+      .order('gap_count', { ascending: false })
+      .limit(3) as { data: Array<{ skill_name: string; gap_count: number }> | null };
+    if (!data?.length) return '';
+    const notes = data.map(
+      (g) => `- "${g.skill_name}" appeared ${g.gap_count} times as a gap. Proactively highlight any related experience or transferable skills when this topic comes up.`
+    );
+    return `## Coaching (from recurring skill gap data)\n${notes.join('\n')}`;
+  } catch {
+    return '';
+  }
+}
+
 async function logChatToSupabase(data: {
   query: string;
   ragSource: string;

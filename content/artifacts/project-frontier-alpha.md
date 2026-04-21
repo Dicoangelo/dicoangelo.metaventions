@@ -14,7 +14,9 @@ https://frontier-alpha.metaventionsai.com
 
 ## Technical Architecture
 
-- **Frontend:** React 19, TypeScript 5.3, Vite 7, Zustand + React Query state management, Recharts + D3 visualizations
+*Architected in English and built by directing Claude Code, Codex CLI, and Gemini CLI. I specify the system, review generated output, and ship.*
+
+- **Frontend:** React 19, TypeScript, Vite 7, Zustand + React Query state management, Recharts + D3 visualizations
 - **Backend:** Fastify 4, Node.js 20, 29+ API endpoints, 67 API routes
 - **Database:** Supabase PostgreSQL with Row Level Security, 6+ migrations
 - **Market Data:** Polygon.io (WebSocket streaming for real-time quotes), Alpha Vantage (fundamentals + Ken French Library)
@@ -53,9 +55,11 @@ https://frontier-alpha.metaventionsai.com
 
 ## Transferable Skills Demonstrated
 
-- **Quantitative Finance:** 80+ factor analysis beyond Fama-French 5, Monte Carlo optimization, walk-forward backtesting with regime detection
-- **Real-Time Systems:** WebSocket streaming from Polygon.io, server-sent events for push alerts, real-time portfolio monitoring
-- **Explainable AI:** Dual-mode explanation system (LLM + template) with confidence scoring and source attribution
-- **Self-Improving ML:** CVRF belief system that learns from investment episodes, reinforces correct beliefs, and weakens incorrect ones
-- **Full-Stack Platform Engineering:** 22 modular subsystems with pluggable implementations, 6 database migrations, and multi-platform deployment
-- **Financial Compliance:** Tax lot tracking, wash sale detection, SEC filing monitoring, and row-level security for multi-tenant data isolation
+I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify in English, review AI output, run it against tests, and ship.
+
+- **Quantitative Finance Domain:** 80+ factor analysis beyond Fama-French 5, Monte Carlo optimization, walk-forward backtesting with regime detection
+- **Real-Time System Direction:** WebSocket streaming from Polygon.io, server-sent events for push alerts, real-time portfolio monitoring
+- **Explainable AI Architecture:** Dual-mode explanation system (LLM + template) with confidence scoring and source attribution
+- **Self-Improving ML Design:** CVRF belief system that learns from investment episodes, reinforces correct beliefs, and weakens incorrect ones
+- **AI-Directed Platform Orchestration:** 22 modular subsystems with pluggable implementations, 6 database migrations, and multi-platform deployment — specified and shipped by directing AI coding agents
+- **Financial Compliance Architecture:** Tax lot tracking, wash sale detection, SEC filing monitoring, and row-level security for multi-tenant data isolation

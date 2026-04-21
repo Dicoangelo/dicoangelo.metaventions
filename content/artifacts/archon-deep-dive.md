@@ -100,14 +100,16 @@ Integration with CLI Coordinator:
 
 ### Stack
 
-**CLI Layer:**
-- Python 3.8+
+Specified in English and built by directing AI coding agents (Claude Code, Codex CLI, Gemini CLI). I do not claim hand-fluency in Python, TypeScript, JavaScript, SQL, or Bash — I specify in English, review AI output, run it against tests, and ship.
+
+**CLI Layer (Runtime Targeted):**
+- Python 3.8+ (AI-generated under direction)
 - File-based persistence (JSON/JSONL)
 - fcntl for file locking
 - Subprocess management for agent spawning
 
-**Application Layer:**
-- TypeScript 5.x
+**Application Layer (Runtime Targeted):**
+- TypeScript 5.x (strict mode specified in prompts, verified in review)
 - React 19
 - Zustand (state management)
 - Vite (build tooling)

@@ -29,7 +29,7 @@ const projects: Project[] = [
       { label: "Substrate", value: "UCW" },
       { label: "Stack", value: "React 19" }
     ],
-    techStack: ["TypeScript", "React 19", "MCP Protocol", "AI Scoring"],
+    techStack: ["Prompt Engineering", "MCP Protocol", "AI Scoring", "Multi-Agent Orchestration"],
     papers: [
       "Partnership intelligence as a category",
       "MCP-native B2B tooling patterns",
@@ -48,7 +48,7 @@ const projects: Project[] = [
       { label: "Output", value: "Explainable" },
       { label: "Domain", value: "Portfolio Opt" }
     ],
-    techStack: ["Python", "TypeScript", "Factor Models", "Episodic Memory"],
+    techStack: ["AI-Directed Build", "Factor Models", "Episodic Memory", "CVRF"],
     papers: [
       "CVRF episodic learning",
       "Multi-factor portfolio construction",
@@ -67,7 +67,7 @@ const projects: Project[] = [
       { label: "Mode", value: "Demo-ready" },
       { label: "Core", value: "ForensicSeal" }
     ],
-    techStack: ["TypeScript", "React 19", "Blockchain", "Computer Vision"],
+    techStack: ["Prompt Engineering", "Blockchain", "Computer Vision", "ForensicSeal"],
     papers: [
       "Mohammed et al. ICDF2C 2024 — Forensic FR schema",
       "On-chain evidence sealing patterns",
@@ -86,7 +86,7 @@ const projects: Project[] = [
       { label: "Consensus Rounds", value: "50% faster" },
       { label: "Test Coverage", value: "95%" }
     ],
-    techStack: ["TypeScript", "Vitest", "Multi-Agent Systems"],
+    techStack: ["AI-Directed Build", "Multi-Agent Systems", "DQ-Weighted Voting", "Vitest"],
     papers: [
       "arXiv:2511.15755 - DQ Scoring Framework",
       "arXiv:2511.13193 - Agent Auctions (DALA)",
@@ -106,7 +106,7 @@ const projects: Project[] = [
       { label: "Providers", value: "4 LLMs" },
       { label: "Budget Management", value: "Token-aware" }
     ],
-    techStack: ["TypeScript", "React 19", "Multi-Provider Routing"],
+    techStack: ["Prompt Engineering", "Multi-Provider Routing", "Multi-Agent Orchestration"],
     papers: [
       "arXiv:2601.09742 - Adaptive Orchestration",
       "arXiv:2506.12508 - AgentOrchestra",
@@ -126,7 +126,7 @@ const projects: Project[] = [
       { label: "DQ Score Avg", value: "0.889" },
       { label: "Systems", value: "9 integrated" }
     ],
-    techStack: ["Python", "Bash", "SQLite", "Pattern Recognition"],
+    techStack: ["AI-Directed Build", "Pattern Recognition", "Self-Healing Systems", "SQLite"],
     papers: [
       "Self-healing systems",
       "Feedback loop optimization",
@@ -145,7 +145,7 @@ const projects: Project[] = [
       { label: "Platforms", value: "5 integrated" },
       { label: "Interactions", value: "270K+" }
     ],
-    techStack: ["Python", "PostgreSQL", "pgvector", "MCP Protocol"],
+    techStack: ["AI-Directed Build", "PostgreSQL", "pgvector", "MCP Protocol"],
     papers: [
       "Cognitive equity thesis",
       "Cross-platform capture architecture",
@@ -164,7 +164,7 @@ const projects: Project[] = [
       { label: "URLs Tracked", value: "8,935" },
       { label: "Error Prevention", value: "87%" }
     ],
-    techStack: ["Python", "FastAPI", "Qdrant", "SQLite"],
+    techStack: ["AI-Directed Build", "FastAPI", "Qdrant", "Vector Search"],
     papers: [
       "Temporal knowledge graphs",
       "ReACT synthesis agents",
@@ -182,7 +182,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Major Projects</h2>
           <p className={`text-lg ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-            Research-driven AI systems implementing arXiv papers into production code
+            Specified in English. Built by directing Claude Code / Codex / Gemini. arXiv → production.
           </p>
         </div>
 

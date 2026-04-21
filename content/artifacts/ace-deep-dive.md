@@ -58,7 +58,11 @@ Scores below 0.50 trigger automatic re-deliberation with additional context inje
 ## Technical Implementation
 
 ### Stack
-- TypeScript for type-safe agent orchestration
+
+Specified in English and built by directing AI coding agents (Claude Code, Codex CLI, Gemini CLI). I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash — I specify in English, review AI output, run it against tests, and ship.
+
+**Runtimes Targeted (AI-Generated Under Direction):**
+- TypeScript for type-safe agent orchestration (strict mode specified in prompts, verified in review)
 - Streaming responses via ReadableStream
 - SQLite for deliberation logs and DQ tracking
 - JSON-RPC for inter-agent communication

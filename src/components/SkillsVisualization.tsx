@@ -51,14 +51,14 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
       ],
     },
     {
-      category: "Technical Stack",
-      icon: "💻",
+      category: "AI-Assisted Development (Code in English)",
+      icon: "💬",
       skills: [
-        { name: "TypeScript", level: 82, years: "<1 year" },
-        { name: "React/Next.js", level: 80, years: "<1 year" },
-        { name: "Python", level: 78, years: "<1 year" },
-        { name: "Node.js", level: 75, years: "<1 year" },
-        { name: "Supabase/PostgreSQL", level: 72, years: "<1 year" },
+        { name: "Claude Code / Codex / Gemini CLI", level: 92, years: "<1 year" },
+        { name: "Prompt Engineering for Code Generation", level: 90, years: "<1 year" },
+        { name: "MCP (Model Context Protocol)", level: 85, years: "<1 year" },
+        { name: "LLM Evaluation Frameworks", level: 82, years: "<1 year" },
+        { name: "Agentic Workflow Automation", level: 85, years: "<1 year" },
       ],
     },
     {
@@ -214,7 +214,16 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
               <span className="text-sm">🔒 Microsoft Copilot for Security</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">🔷 Azure Development Certifications</span>
+              <span className="text-sm">🔷 Microsoft Azure AI Cloud Week</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">🛒 Microsoft Marketplace Private Offer Best Practices</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">📈 Mastering Cloud Marketplaces — Partner Insight</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
+              <span className="text-sm">🧠 AI-First Product Leader (LinkedIn Learning)</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
               <span className="text-sm">📋 Project Management (Coursera)</span>

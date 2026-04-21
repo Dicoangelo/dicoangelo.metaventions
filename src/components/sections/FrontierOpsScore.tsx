@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useReadingDepth } from "@/components/ReadingDepthProvider";
 
 const dimensions = [
   {
@@ -128,6 +130,7 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
 
   return (
     <section
+      id="frontier-ops"
       ref={sectionRef as React.RefObject<HTMLElement>}
       className="py-20 px-6"
     >
@@ -224,7 +227,7 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
           }`}
         >
           <p
-            className={`max-w-3xl mx-auto text-sm leading-relaxed ${
+            className={`max-w-3xl mx-auto text-sm leading-relaxed mb-6 ${
               isLight ? "text-gray-500" : "text-gray-500"
             }`}
           >
@@ -237,6 +240,21 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
             </span>{" "}
             is the skill of working at the surface of the AI capability bubble — sensing where agents succeed, designing clean handoffs, maintaining failure models, and calibrating human attention as capabilities shift quarterly. Scores are evidence-based, derived from production systems built and operated over 4,035+ Claude sessions.
           </p>
+
+          {/* Score Yourself CTA */}
+          <Link
+            href="/frontier-ops"
+            className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all hover:scale-105 border ${
+              isLight
+                ? "border-indigo-200 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300"
+                : "border-indigo-500/30 bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 hover:border-indigo-500/50"
+            }`}
+          >
+            <span>Score Yourself</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
@@ -259,6 +277,16 @@ function DimensionCard({
   delay,
 }: DimensionCardProps) {
   const [visible, setVisible] = useState(false);
+  const { depth } = useReadingDepth();
+  const showDefinition = depth !== "skim";
+  const autoExpandEvidence = depth === "deep";
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    setExpanded(false);
+  }, [depth]);
+
+  const showEvidence = autoExpandEvidence || expanded;
 
   useEffect(() => {
     if (animate) {
@@ -293,7 +321,7 @@ function DimensionCard({
       </div>
 
       {/* Progress bar */}
-      <div className="mb-4">
+      <div className={showDefinition || showEvidence ? "mb-4" : ""}>
         <ProgressBar
           score={dim.score}
           colorClass={colors.bar}
@@ -302,29 +330,53 @@ function DimensionCard({
       </div>
 
       {/* Definition */}
-      <p
-        className={`text-xs leading-relaxed mb-4 ${
-          isLight ? "text-gray-500" : "text-gray-400"
-        }`}
-      >
-        {dim.definition}
-      </p>
+      {showDefinition && (
+        <p
+          className={`text-xs leading-relaxed ${showEvidence ? "mb-4" : ""} ${
+            isLight ? "text-gray-500" : "text-gray-400"
+          }`}
+        >
+          {dim.definition}
+        </p>
+      )}
 
-      {/* Evidence bullets */}
-      <ul className="space-y-2">
-        {dim.evidence.map((point, i) => (
-          <li key={i} className="flex items-start gap-2">
-            <span className={`shrink-0 mt-0.5 ${colors.bullet}`}>→</span>
-            <span
-              className={`text-xs leading-relaxed ${
-                isLight ? "text-gray-700" : "text-gray-300"
-              }`}
-            >
-              {point}
-            </span>
-          </li>
-        ))}
-      </ul>
+      {/* Evidence bullets — lazy mounted */}
+      {showEvidence && (
+        <ul className="space-y-2">
+          {dim.evidence.map((point, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className={`shrink-0 mt-0.5 ${colors.bullet}`}>→</span>
+              <span
+                className={`text-xs leading-relaxed ${
+                  isLight ? "text-gray-700" : "text-gray-300"
+                }`}
+              >
+                {point}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* Expand button — only when not in deep mode and definition is visible */}
+      {!autoExpandEvidence && showDefinition && (
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          className={`mt-3 inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide transition-colors ${
+            isLight
+              ? "text-gray-500 hover:text-indigo-600"
+              : "text-gray-500 hover:text-indigo-400"
+          }`}
+        >
+          {expanded ? "Hide evidence" : "Show evidence"}
+          <span
+            className={`transition-transform ${expanded ? "rotate-180" : ""}`}
+          >
+            ▾
+          </span>
+        </button>
+      )}
     </div>
   );
 }

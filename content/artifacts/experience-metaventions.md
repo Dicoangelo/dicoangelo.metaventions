@@ -4,7 +4,9 @@
 
 As Founder & Systems Architect at Metaventions AI, I'm building the Antigravity ecosystem—a comprehensive suite of interconnected AI systems that bridge cutting-edge research and production-ready software. My work spans autonomous multi-agent orchestration, self-evolving infrastructure, voice-native interfaces, and research-driven development. I've published 2 npm packages, implemented 8+ arXiv papers into production, and shipped 900K+ lines of code across 20+ projects—all while maintaining 95% test coverage and live production deployments.
 
-This role demonstrates my ability to translate frontier AI research into practical, scalable systems that solve real problems. I don't just read papers—I implement them. I don't just prototype—I ship production systems with comprehensive testing and documentation.
+*All code is specified in English and generated under my direction via Claude Code, Codex CLI, Gemini CLI, Cursor, and Grok. I own architecture, prompts, review, and evaluation. I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash.*
+
+This role demonstrates my ability to translate frontier AI research into practical, scalable systems that solve real problems. I don't just read papers—I direct implementation. I don't just prototype—I ship production systems with comprehensive testing and documentation.
 
 ## Duration
 
@@ -14,7 +16,7 @@ November 2025 - Present (5 months)
 
 | Metric | Value | Context |
 |--------|-------|---------|
-| **Code Shipped** | 900,000+ LOC | Production AI systems across 20+ projects |
+| **Code Shipped** | 900,000+ LOC | AI-generated under my direction across 20+ projects |
 | **npm Packages** | 2 published | @metaventionsai/cpb-core, @metaventionsai/voice-nexus |
 | **arXiv Papers** | 8+ implemented | Research to production in weeks |
 | **Active Projects** | 20+ systems | OS-App, ACE, ARCHON, ResearchGravity, META-VENGINE, CareerCoach, UCW, FriendlyFace, PageIndex, Frontier Alpha, and more |
@@ -25,12 +27,12 @@ November 2025 - Present (5 months)
 
 ### Detailed Code Breakdown
 
-| Project | LOC | Language | Status | Purpose |
-|---------|-----|----------|--------|---------|
-| **OS-App** | 152,503 | TypeScript (79K) | Production | Voice-native AI OS with agentic kernel |
-| **CareerCoach** | 76,704 | TypeScript (22K) | Active | AI hiring panel & career intelligence |
-| **META-VENGINE** | 51,273 | Python (14K) | Production | Self-improving DevOps infrastructure |
-| **ResearchGravity** | 17,000+ | Python | Active | Research orchestration & vector search |
+| Project | LOC | Runtime Targeted | Status | Purpose |
+|---------|-----|------------------|--------|---------|
+| **OS-App** | 152,503 | TypeScript (79K) — AI-generated | Production | Voice-native AI OS with agentic kernel |
+| **CareerCoach** | 76,704 | TypeScript (22K) — AI-generated | Active | AI hiring panel & career intelligence |
+| **META-VENGINE** | 51,273 | Python (14K) — AI-generated | Production | Self-improving infrastructure |
+| **ResearchGravity** | 17,000+ | Python — AI-generated | Active | Research orchestration & vector search |
 | **Total** | **900,000+** | - | - | - |
 
 ## What I Built
@@ -111,7 +113,7 @@ ARCHON
 ### 3. OS-App (Sovereign AI Operating System)
 **Voice-Native React 19 Application | 152,503 LOC**
 
-A production-grade voice-first AI interface with agentic workflows, biometric sensing, and 3D visualizations. OS-App demonstrates full-stack capability and modern React patterns.
+A production-grade voice-first AI interface with agentic workflows, biometric sensing, and 3D visualizations. OS-App demonstrates end-to-end product direction across frontend, services, and infrastructure — specified in English and built by directing AI coding agents.
 
 **Code Statistics:**
 - Total: 152,503 LOC
@@ -367,13 +369,15 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 
 ## Technical Stack
 
-### Languages & Frameworks
+*Specified in English and built by directing Claude Code, Codex CLI, Gemini CLI, Cursor, and Grok. I own architecture, prompts, review, tests, and deploy. I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash.*
+
+### Runtimes & Frameworks Targeted (AI-Generated Under Direction)
 - **TypeScript:** 101,886 LOC (OS-App: 79K, CareerCoach: 22K)
 - **Python:** 31,000+ LOC (META-VENGINE: 14K, ResearchGravity: 17K+)
 - **React 19:** Latest concurrent features, Suspense, Transitions
 - **Next.js 14:** App Router, Server Components, API Routes
 - **FastAPI:** High-performance Python REST framework
-- **Shell Scripting:** 5,600+ LOC (automation, DevOps)
+- **Shell Scripting:** 5,600+ LOC (automation scripts, generated not hand-written)
 
 ### AI/ML Stack
 - **LLM Providers:** Gemini API (primary), Claude API, OpenAI API, Grok API
@@ -385,12 +389,12 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 - **Voice:** ElevenLabs TTS, Browser Speech Recognition
 - **Biometrics:** face-api.js (emotion, gaze, stress detection)
 
-### Infrastructure & DevOps
+### Infrastructure & Deployment Direction
 - **Hosting:** Vercel (production deployments)
-- **CI/CD:** GitHub Actions + Vercel auto-deploy
+- **CI/CD:** GitHub Actions + Vercel auto-deploy (configs specified, generated, reviewed)
 - **Databases:** SQLite (persistence), Qdrant (vector search)
 - **State Management:** Zustand (TypeScript), JSON files (Python)
-- **Testing:** Vitest (TypeScript - 95% coverage), pytest (Python)
+- **Testing:** Vitest (TypeScript - 95% coverage), pytest (Python) — specs written in English, implementation AI-generated
 - **Build Tools:** Vite (React), tsup (npm packages), esbuild
 - **Version Control:** Git (1,500+ commits across ecosystem)
 
@@ -405,8 +409,8 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 - **face-api.js:** Facial recognition and emotion detection
 
 ### Development Practices
-- **Test-Driven:** 95% coverage on critical systems
-- **Type-Safe:** Strict TypeScript, comprehensive interfaces
+- **Test-Directed:** 95% coverage on critical systems (tests specified in English, generated, and validated)
+- **Type-Safe Specification:** Strict TypeScript contracts specified in prompts, verified in review
 - **Documentation:** Inline comments citing arXiv papers
 - **Modular:** 156 service files in OS-App alone
 - **Versioning:** Semantic versioning for npm packages
@@ -482,12 +486,12 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 ## Skills Demonstrated
 
 ### Technical Skills
-- **Multi-Agent Systems:** Production-grade consensus mechanisms, parallel orchestration
-- **Full-Stack Development:** React 19, Next.js 14, FastAPI, TypeScript, Python
-- **AI/ML Engineering:** LLM integration, prompt engineering, vector search, embeddings
+- **Multi-Agent System Design:** Production-grade consensus mechanisms, parallel orchestration
+- **End-to-End Product Direction:** Specifying and directing React 19, Next.js 14, FastAPI, TypeScript, Python systems end-to-end via AI coding agents
+- **AI Orchestration:** LLM integration direction, prompt engineering, vector search specification, embeddings
 - **System Architecture:** Microservices, event-driven, state machines, caching strategies
-- **DevOps:** CI/CD, Vercel hosting, monitoring, error tracking, automation
-- **Testing:** 95% coverage, unit/integration tests, Vitest, pytest
+- **Deployment Direction:** CI/CD configuration, Vercel hosting, monitoring specs, error tracking, automation
+- **Test-Directed Development:** 95% coverage, unit/integration tests specified in English, generated and validated
 - **API Design:** REST, streaming responses, WebSocket, multi-provider abstraction
 - **Research Translation:** arXiv → production in 2-4 weeks
 
@@ -580,11 +584,11 @@ This experience demonstrates I can:
    - arXiv citations in code comments
    - Transparent about intellectual foundations
 
-5. **Full-Stack Capability**
-   - Frontend (React 19, 3D viz, voice UI)
-   - Backend (FastAPI, vector search, APIs)
-   - Infrastructure (CI/CD, monitoring, DevOps)
-   - Not specialized—can build entire products
+5. **End-to-End Product Direction**
+   - Frontend (React 19, 3D viz, voice UI) — specified, generated, reviewed
+   - Backend (FastAPI, vector search, APIs) — specified, generated, reviewed
+   - Infrastructure (CI/CD, monitoring, deploy configs) — specified, generated, reviewed
+   - Not specialized as a hand-coder — I direct entire products via AI coding agents
 
 ### Business Impact Analog
 
@@ -596,7 +600,7 @@ While this is a startup venture (not yet revenue), the work demonstrates capabil
 - **2 npm packages** shows I can ship reusable artifacts
 - **95% coverage** shows I understand quality gates
 
-**For hiring managers:** I can build AI products from research → production at the pace of a 10-person team, with the quality of a senior engineer, and the research depth of a PhD candidate—without the PhD.
+**For hiring managers:** I can direct AI products from research → production at the pace of a 10-person team, with the quality bar of a senior operator, and the research depth of a PhD candidate—without the PhD, and without claiming hand-coder credentials. I specify in English, review AI output, run tests, and ship.
 
 ---
 

@@ -133,8 +133,9 @@ export default function Hero() {
             Led cloud ops on the <strong>3-person alliance team</strong> that scaled
             Contentsquare&rsquo;s marketplace from <strong className="text-[#6366f1] font-bold">$0 to $30M+</strong>{" "}
             across AWS and Microsoft (<strong>2x MSFT Partner of the Year</strong>, <strong>$800M+ TCV</strong>).
-            While running those deals — built <strong>58 production AI tools</strong>, multi-agent frameworks,
-            and infrastructure processing <strong>163K+ events</strong> on Claude.
+            While running those deals — <strong>specified 58 production AI tools in English</strong>,
+            directed <strong>Claude Code / Codex / Gemini</strong> to build them, and shipped infrastructure
+            processing <strong>163K+ events</strong> on Claude.
             Most people are either operators or builders.{" "}
             <span className="text-[#6366f1] font-semibold">I&rsquo;m both. At the frontier.</span>
           </p>

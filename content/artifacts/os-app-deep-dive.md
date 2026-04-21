@@ -2,13 +2,15 @@
 
 ## Overview
 
-**Structura OS** (codenamed OS-App) is a **voice-native, multi-agent AI operating system interface** representing 127,000+ lines of production-grade TypeScript/React code. It's not a prototype—it's a fully-functional AI platform integrating real-time voice AI, recursive language models, multi-agent consensus, and predictive session intelligence. The platform implements the **Precision Bridge Framework** to achieve Opus-quality decisions through Haiku-budget compute by compressing, pre-computing, parallel exploring, accumulating, reconstructing, and verifying decisions.
+**Structura OS** (codenamed OS-App) is a **voice-native, multi-agent AI operating system interface** representing 127,000+ lines of production-grade TypeScript/React code (AI-generated under my direction — I specify in English, direct Claude Code / Codex CLI / Gemini CLI, review, test, and ship). It's not a prototype—it's a fully-functional AI platform integrating real-time voice AI, recursive language models, multi-agent consensus, and predictive session intelligence. The platform implements the **Precision Bridge Framework** to achieve Opus-quality decisions through Haiku-budget compute by compressing, pre-computing, parallel exploring, accumulating, reconstructing, and verifying decisions.
+
+*I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. The code is AI-generated under my architectural direction and review.*
 
 ## Key Metrics
 
 | Metric | Value | Context |
 |--------|-------|---------|
-| **Total Lines of Code** | 127,692 | TypeScript/JavaScript (excluding dependencies) |
+| **Total Lines of Code** | 127,692 | TypeScript/JavaScript, AI-generated under my direction (excluding dependencies) |
 | **Files** | 476+ | Main application code |
 | **Components** | 130+ | React UI components (TSX) |
 | **Services** | 200+ | Business logic modules |
