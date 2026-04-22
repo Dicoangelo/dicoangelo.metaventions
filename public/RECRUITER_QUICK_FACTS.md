@@ -15,8 +15,8 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 
 ### Business
 - **$800M+ TCV** registered/processed through cloud marketplace infrastructure at Contentsquare
-- **2,500+ deal registrations** with 97% approval rate (operations lead)
-- **Operations lead (team of 3)** supporting $30M+ ACV growth
+- **2,500+ deal registrations** with 97% approval rate (operations on 3-person alliance team)
+- **Operations on 3-person alliance team** — program reached $30M+ ACV growth (Head of Cloud Alliances led strategy; I ran the operational layer)
 - **40%** cloud attachment rate on enterprise deals
 - **$222,750** annual cost savings at Rocket Mortgage
 - **2x Microsoft Partner of the Year** awards
@@ -64,7 +64,7 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 **Contentsquare** (Jan 2022 - Nov 2025)
 - Cloud Alliance Operations Lead — infrastructure, automation, marketplace operations
 - Registered/processed $800M+ TCV through AWS and Microsoft marketplace systems
-- Operations lead (team of 3) supporting $30M+ ACV growth in 2024
+- Operations on 3-person alliance team; program reached $30M+ ACV growth in 2024 (I ran the operational layer)
 - Built operational infrastructure: 50+ dynamic reports, 6 platform integrations, 90% automation improvement
 - 2,500+ deal registrations with 97% approval rate, 600+ deals/quarter capacity
 - Led PartnerStack ↔ Salesforce UAT: 10+ test cases, identified sync gaps, enabled 3K+ partner ecosystem

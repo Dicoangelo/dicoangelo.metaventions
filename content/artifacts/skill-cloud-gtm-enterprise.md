@@ -74,8 +74,8 @@ Combines technical cloud platform knowledge with strategic partner management, r
 **$800M+ Total Contract Value (TCV) Processed**
 
 - **Program Scale:**
-  - Built and scaled cloud marketplace operations from ground up
-  - Multi-hyperscaler go-to-market strategy across AWS, Azure, GCP
+  - Built and operated the cloud marketplace operations layer from ground up
+  - Operational support for multi-hyperscaler GTM motion across AWS, Azure, GCP (strategy owned by Head of Cloud Alliances)
   - Processed hundreds of enterprise deals through marketplace channels
 
 - **Operational Excellence:**

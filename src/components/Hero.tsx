@@ -130,9 +130,10 @@ export default function Hero() {
             className={`text-xl mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animate-delay-300 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'
               }`}
           >
-            Led cloud ops on the <strong>3-person alliance team</strong> that scaled
-            Contentsquare&rsquo;s marketplace from <strong className="text-[#6366f1] font-bold">$0 to $30M+</strong>{" "}
-            across AWS and Microsoft (<strong>2x MSFT Partner of the Year</strong>, <strong>$800M+ TCV</strong>).
+            Operated cloud ops on the <strong>3-person alliance team</strong> at Contentsquare.
+            Program scaled <strong className="text-[#6366f1] font-bold">$0 → $30M+</strong>{" "}
+            across AWS and Microsoft (<strong>2x MSFT Partner of the Year</strong>, <strong>$800M+ TCV</strong>) —
+            I ran the operational layer (CRM, automation, dashboards, enablement) that turned strategy into velocity.
             While running those deals — <strong>specified 58 production AI tools in English</strong>,
             directed <strong>Claude Code / Codex / Gemini</strong> to build them, and shipped infrastructure
             processing <strong>163K+ events</strong> on Claude.

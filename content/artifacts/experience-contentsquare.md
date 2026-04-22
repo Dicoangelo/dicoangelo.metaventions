@@ -2,11 +2,11 @@
 
 ## Overview
 
-Served as **Cloud Alliance Operations Lead** managing a team of 3, building the operational infrastructure that enabled $30M+ ACV growth through AWS and Microsoft partnerships. This role spanned four concurrent domains: (1) cloud marketplace operations at enterprise scale, (2) systems integration architecture across CRM, PRM, and data platforms, (3) partner intelligence infrastructure with 50+ dynamic reports, and (4) platform administration for critical GTM tools.
+Externally titled **Cloud Alliance Operations Lead** (Suger.io case study, Catalyst Summit). Operated on a 3-person alliance team — the Head of Cloud Alliances drove partnership strategy and exec relationships with AWS and Microsoft; I ran the operational layer (CRM architecture, automation, dashboards, enablement, UAT) that turned that strategy into $30M+ ACV growth. The role spanned four concurrent domains: (1) cloud marketplace operations at enterprise scale, (2) systems integration architecture across CRM, PRM, and data platforms, (3) partner intelligence infrastructure with 50+ dynamic reports, and (4) platform administration for critical GTM tools.
 
-The work bridged technical infrastructure with business operations — building automation that processed $800M+ in total contract value while designing the systems, workflows, and intelligence layers that powered a 3,000+ partner ecosystem.
+The work bridged technical infrastructure with business operations — building automation that processed $800M+ in total contract value while operationalizing the systems, workflows, and intelligence layers that powered a 3,000+ partner ecosystem.
 
-This was not a sales role. This was an **operational architecture role** where the product was the infrastructure itself.
+This was not a sales role and not a strategy-ownership role. This was an **operational architecture role** where the product was the infrastructure itself.
 
 ## Duration
 
@@ -23,7 +23,7 @@ This was not a sales role. This was an **operational architecture role** where t
 | **Co-Sell Registrations (2024)** | 3,000+ | Microsoft + AWS combined |
 | **Processing Capacity** | 600+ deals/quarter | Operational throughput |
 | **Partners Onboarded (2024)** | 300+ | Tiered governance frameworks |
-| **Team Size** | 3 (operations lead) | Direct operational leadership |
+| **Team Size** | 3 (alliance team) | Operations on the team; Head of Cloud Alliances led the function |
 | **Cloud Attachment Rate** | 40% | Enterprise deals with cloud component |
 | **Revenue via Cloud Channel** | 10% | Company-wide revenue attribution |
 | **Automation Impact** | 90% reduction | Registration time: 8 min → 30 sec |
@@ -42,15 +42,15 @@ This was not a sales role. This was an **operational architecture role** where t
 - Executed co-sell registration workflows for 3,000+ opportunities (2024)
 - Led PRACR (Partner Revenue Attribution and Co-sell Reporting) for strategic account activation
 
-**Partner Lifecycle Management**
-- Designed and operated 3-tier partner ecosystem (Premier, Select, Member)
-- Onboarded 300+ partners in 2024 with structured governance frameworks
-- Created scalable onboarding via PartnerStack + Skilljar automation
-- Managed partner benefits, MDF allocation, and joint business planning
+**Partner Lifecycle Operations**
+- Operationalized the 3-tier partner ecosystem (Premier, Select, Member) — built onboarding workflows, governance docs, and reporting
+- Onboarded 300+ partners in 2024 against the structured governance frameworks
+- Built scalable onboarding via PartnerStack + Skilljar automation
+- Managed partner benefits, MDF allocation, and joint business planning operations
 
-**Commission & Program Design**
-- Designed PLG (Product-Led Growth) commission model: 15% on paid ACV (first 12 months)
-- Designed SLG (Sales-Led Growth) tiered model:
+**Commission & Program Operations**
+- Operationalized the PLG (Product-Led Growth) commission model: 15% on paid ACV (first 12 months) — built CRM workflows and ACV calculation automation
+- Operationalized the SLG (Sales-Led Growth) tiered model:
   - Sourcing: 10% (15% for Premier)
   - Co-sell + Fulfill: 15%
   - Standalone Fulfill: 10%
@@ -344,8 +344,8 @@ These insights powered strategic decision-making across Sales, Marketing, and Pr
 - Co-sell program execution
 - MACC reporting & strategic account activation
 
-**Operations Leadership:**
-- Led team of 3 (operations lead)
+**Operational Execution:**
+- Operations on the 3-person alliance team
 - Cross-functional coordination (Engineering, Product, Data, Legal, Privacy, Finance)
 - Process optimization (60-90% manual effort reduction)
 - Quality assurance (97% approval rate)
@@ -496,8 +496,8 @@ This experience demonstrates:
 - Focus: architecture and automation, not execution
 
 ### A GTM Systems Engineering Role
-- Operations lead (team of 3)
-- Systems integration architect
+- Operations on a 3-person alliance team (Head of Cloud Alliances led the function)
+- Systems integration architect (operational layer)
 - Partner intelligence infrastructure builder
 - Platform administrator (8 major systems)
 - UAT leader for production integrations

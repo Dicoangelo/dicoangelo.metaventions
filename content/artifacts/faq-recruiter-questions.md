@@ -92,7 +92,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Scope of work:**
 - Registered/processed **$800M+ TCV** through cloud marketplace infrastructure (AWS, Microsoft)
-- Operations lead (team of 3) supporting **$30M+ ACV growth** in 2024
+- Operations on the 3-person alliance team — program reached **$30M+ ACV growth** in 2024 (Head of Cloud Alliances led strategy; I ran the operational layer)
 - Built infrastructure handling **2,500+ deal registrations** with 97% approval rate
 - **600+ deals/quarter** processing capacity
 - Platform admin for enterprise systems: Salesforce, AWS ACE, Microsoft Partner Center, PartnerStack, Reveal, Suger
@@ -127,7 +127,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Product owner: wrote user stories, managed backlog, agile methodology
 
 **At Contentsquare:**
-- Operations lead (team of 3) supporting $30M+ ACV growth
+- Operations on the 3-person alliance team; program reached $30M+ ACV growth (I ran the operational layer)
 - Led Systems & Admins work stream with **weekly cross-functional coordination** across engineering, product, data architecture, legal, privacy, and finance
 - Coordinated across Sales, Marketing, Product, and Partnerships for 6 iteration workstreams
 - Platform admin supporting 3,000+ partner ecosystem
@@ -600,7 +600,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **At Contentsquare (2022-2025) while building AI systems on the side:**
 - Registered/processed $800M+ TCV
-- Operations lead supporting $30M+ ACV growth
+- Operations on the 3-person alliance team; program reached $30M+ ACV growth
 - Built 50+ reports, 6 platform integrations
 - 2x Microsoft Partner of the Year awards (2024, 2025)
 - "Best-in-class" reporting—executive praise
@@ -654,7 +654,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **Why these transitions make sense:**
 
 1. **Rocket → Contentsquare (2023):**
-   - Promotion from Product Specialist to Cloud Alliance Operations Lead
+   - Moved from Product Specialist into the Cloud Alliance Operations role (externally titled "Cloud Alliance Operations Lead" via Suger.io and Catalyst)
    - 3 years at Rocket (delivered $222K savings, led 45 agents)
    - Moved for growth opportunity in cloud partnerships
 

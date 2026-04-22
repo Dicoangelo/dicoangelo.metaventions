@@ -80,9 +80,9 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       company: "Contentsquare",
       location: "Paris / Remote",
       type: "work",
-      description: "Led cloud ops on the 3-person alliance team that grew Contentsquare's cloud marketplace from $0 to $30M+ in 30 months. Managed strategic vendor relationships with AWS & Microsoft.",
+      description: "Operated cloud ops on the 3-person alliance team at Contentsquare. Program grew $0 → $30M+ in 30 months — I ran the operational layer (CRM, automation, dashboards, enablement) that turned strategy into velocity. Managed the operational layer of vendor relationships with AWS & Microsoft.",
       highlights: [
-        "Led cloud ops on the 3-person team scaling marketplace $0 → $30M+ in 30 months",
+        "Operational lead on the 3-person alliance team; program scaled $0 → $30M+ in 30 months",
         "Managed $800M+ TCV with 40% cloud attachment rate",
         "Automated 90% of deal registrations, reducing manual inputs by 60%",
         "Contributed to 2x Microsoft Partner of the Year (2024, 2025)",

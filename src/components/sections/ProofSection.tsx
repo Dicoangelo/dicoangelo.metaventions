@@ -39,7 +39,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
             value="$800M+"
             label="TCV Processed"
             context="Registered through cloud marketplace infrastructure"
-            proof="Operations lead (team of 3), 97% approval rate"
+            proof="Operations on 3-person alliance team, 97% approval rate"
             isLight={isLight}
           />
           <MetricCard
@@ -61,7 +61,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
           <MetricCard
             value="$30M+"
             label="ACV Growth Support"
-            context="Operations lead (team of 3) at Contentsquare"
+            context="Operations on 3-person alliance team; ran the operational layer (CRM, automation, dashboards)"
             proof="2024 AWS & Microsoft partnership results"
             isLight={isLight}
           />

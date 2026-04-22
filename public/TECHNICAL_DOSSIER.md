@@ -528,7 +528,7 @@ A multi-agent hiring panel simulation that generates role-specific feedback from
 ### Contentsquare (Jan 2022 - Nov 2025)
 **Cloud Alliance Operations Lead | Systems Integration | Partner Intelligence | Platform Administration**
 
-**Role:** Operations lead (team of 3) building infrastructure that enabled $30M+ ACV growth through AWS and Microsoft partnerships.
+**Role:** Operations on a 3-person alliance team. Head of Cloud Alliances led partnership strategy and exec relationships with AWS and Microsoft; I ran the operational layer (CRM architecture, automation, dashboards, enablement) that turned strategy into $30M+ ACV growth.
 
 **Scope of Work:**
 Operated across four concurrent tracks: (1) cloud alliance operations with AWS and Microsoft (deal registration, marketplace operations, PRACR reporting), (2) systems integration architecture across CRM, PRM, and data platforms, (3) partner intelligence and reporting infrastructure (50+ dynamic reports), and (4) platform administration for GTM tools. Led multiple iteration workstreams while managing program consolidation across 3 acquired companies (Contentsquare, Hotjar, Heap).
