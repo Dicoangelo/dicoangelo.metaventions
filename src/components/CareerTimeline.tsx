@@ -21,6 +21,7 @@ interface CareerTimelineProps {
 export default function CareerTimeline({ isLight }: CareerTimelineProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
+  const [showFullTimeline, setShowFullTimeline] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
   const { depth } = useReadingDepth();
   const showSummary = depth !== "skim";
@@ -213,7 +214,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
 
           {/* Events */}
           <div className={isSkim ? "space-y-2" : "space-y-6 md:space-y-12"}>
-            {events.map((event, index) => {
+            {(showFullTimeline || autoExpandDeep ? events : events.slice(0, 4)).map((event, index) => {
               const isExpanded = autoExpandDeep || selectedEvent === index;
               const isLeft = index % 2 === 0;
 
@@ -327,6 +328,33 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
             })}
           </div>
         </div>
+
+        {!autoExpandDeep && events.length > 4 && (
+          <div className="mt-12 text-center">
+            <button
+              type="button"
+              onClick={() => setShowFullTimeline(!showFullTimeline)}
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg border font-medium transition-colors ${
+                isLight
+                  ? 'border-indigo-300 text-indigo-700 hover:bg-indigo-50'
+                  : 'border-indigo-500/40 text-indigo-300 hover:bg-indigo-500/10'
+              }`}
+              aria-expanded={showFullTimeline}
+            >
+              {showFullTimeline
+                ? 'Show recent only'
+                : `Show full timeline (${events.length - 4} more)`}
+              <svg
+                className={`w-4 h-4 transition-transform ${showFullTimeline ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

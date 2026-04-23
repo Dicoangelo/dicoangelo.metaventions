@@ -17,8 +17,10 @@ import { useCountAnimation } from "@/hooks/useCountAnimation";
 
 // Section components
 import TLDRBanner from "@/components/TLDRBanner";
+import HeroProofBar from "@/components/HeroProofBar";
 import { AskSection } from "@/components/sections/AskSection";
 import { ProofSection } from "@/components/sections/ProofSection";
+import { MidCTA } from "@/components/sections/MidCTA";
 import { ArenaSection } from "@/components/sections/ArenaSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { UCWInsightsSection } from "@/components/sections/UCWInsightsSection";
@@ -121,6 +123,9 @@ export default function Home() {
       {/* Hero */}
       <Hero />
 
+      {/* 4-tile proof bar — lives directly under hero, above the fold */}
+      <HeroProofBar />
+
       {/* TLDR Banner - Quick summary for recruiters */}
       <TLDRBanner />
 
@@ -159,6 +164,9 @@ export default function Home() {
       <AskSection isLight={isLight} />
 
       <ProofSection isLight={isLight} />
+
+      {/* Mid-page repeat CTA — don't make them wait for the footer */}
+      <MidCTA isLight={isLight} />
 
       {/* UCW Cognitive Insights */}
       <UCWInsightsSection isLight={isLight} />
