@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import DepthSection from "./DepthSection";
 
 interface Project {
@@ -176,6 +177,11 @@ const projects: Project[] = [
 ];
 
 export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
+  const [expanded, setExpanded] = useState(false);
+  const previewCount = 3;
+  const visibleProjects = expanded ? projects : projects.slice(0, previewCount);
+  const hiddenCount = projects.length - previewCount;
+
   return (
     <section id="projects" className={`py-20 px-6 ${isLight ? 'bg-white' : 'bg-[#050505]'}`}>
       <div className="max-w-7xl mx-auto">
@@ -187,7 +193,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
         </div>
 
         <div className="space-y-6 md:space-y-12">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <DepthSection
               key={index}
               className={`p-5 md:p-8 rounded-2xl border ${
@@ -304,6 +310,36 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
           ))}
         </div>
 
+        {/* Expand / collapse toggle */}
+        {hiddenCount > 0 && (
+          <div className="mt-10 text-center">
+            <button
+              type="button"
+              onClick={() => setExpanded(!expanded)}
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg border font-medium transition-colors ${
+                isLight
+                  ? 'border-indigo-300 text-indigo-700 hover:bg-indigo-50'
+                  : 'border-indigo-500/40 text-indigo-300 hover:bg-indigo-500/10'
+              }`}
+              aria-expanded={expanded}
+            >
+              {expanded ? (
+                <>Show fewer projects</>
+              ) : (
+                <>Show {hiddenCount} more projects</>
+              )}
+              <svg
+                className={`w-4 h-4 transition-transform ${expanded ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        )}
+
         {/* CTA */}
         <div className="mt-12 text-center">
           <p className={`mb-4 ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
@@ -319,7 +355,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
                 : 'border-[#262626] hover:bg-[#141414]'
             }`}
           >
-            View All 42 Repositories →
+            View All 44 Repositories →
           </a>
         </div>
       </div>
