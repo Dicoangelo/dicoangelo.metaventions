@@ -2,9 +2,9 @@
 
 ## Overview
 
-Externally titled **Cloud Alliance Operations Lead** (Suger.io case study, Catalyst Summit). Operated on a 3-person alliance team — the Head of Cloud Alliances drove partnership strategy and exec relationships with AWS and Microsoft; I ran the operational layer (CRM architecture, automation, dashboards, enablement, UAT) that turned that strategy into $30M+ ACV growth. The role spanned four concurrent domains: (1) cloud marketplace operations at enterprise scale, (2) systems integration architecture across CRM, PRM, and data platforms, (3) partner intelligence infrastructure with 50+ dynamic reports, and (4) platform administration for critical GTM tools.
+Externally titled **Cloud Alliance Operations Lead** (Suger.io case study, Catalyst Summit). Operated on a 3-person alliance team supporting AWS, Microsoft, and GCP partnerships. I owned the operational layer (CRM architecture, automation, dashboards, enablement, UAT) and the daily execution that powered $30M+ ACV growth on the program. The role spanned four concurrent domains: (1) cloud marketplace operations at enterprise scale, (2) systems integration architecture across CRM, PRM, and data platforms, (3) partner intelligence infrastructure with 50+ dynamic reports, and (4) platform administration for critical GTM tools.
 
-The work bridged technical infrastructure with business operations — building automation that processed $800M+ in total contract value while operationalizing the systems, workflows, and intelligence layers that powered a 3,000+ partner ecosystem.
+The work bridged technical infrastructure with business operations, building automation that processed $800M+ in total contract value while operationalizing the systems, workflows, and intelligence layers that powered a 3,000+ partner ecosystem.
 
 This was not a sales role and not a strategy-ownership role. This was an **operational architecture role** where the product was the infrastructure itself.
 
@@ -23,7 +23,7 @@ This was not a sales role and not a strategy-ownership role. This was an **opera
 | **Co-Sell Registrations (2024)** | 3,000+ | Microsoft + AWS combined |
 | **Processing Capacity** | 600+ deals/quarter | Operational throughput |
 | **Partners Onboarded (2024)** | 300+ | Tiered governance frameworks |
-| **Team Size** | 3 (alliance team) | Operations on the team; Head of Cloud Alliances led the function |
+| **Team Size** | 3 (alliance team) | I owned the operational layer (systems, automation, dashboards, UAT) |
 | **Cloud Attachment Rate** | 40% | Enterprise deals with cloud component |
 | **Revenue via Cloud Channel** | 10% | Company-wide revenue attribution |
 | **Automation Impact** | 90% reduction | Registration time: 8 min → 30 sec |
@@ -43,13 +43,13 @@ This was not a sales role and not a strategy-ownership role. This was an **opera
 - Led PRACR (Partner Revenue Attribution and Co-sell Reporting) for strategic account activation
 
 **Partner Lifecycle Operations**
-- Operationalized the 3-tier partner ecosystem (Premier, Select, Member) — built onboarding workflows, governance docs, and reporting
+- Operationalized the 3-tier partner ecosystem (Premier, Select, Member). Built onboarding workflows, governance docs, and reporting
 - Onboarded 300+ partners in 2024 against the structured governance frameworks
 - Built scalable onboarding via PartnerStack + Skilljar automation
 - Managed partner benefits, MDF allocation, and joint business planning operations
 
 **Commission & Program Operations**
-- Operationalized the PLG (Product-Led Growth) commission model: 15% on paid ACV (first 12 months) — built CRM workflows and ACV calculation automation
+- Operationalized the PLG (Product-Led Growth) commission model: 15% on paid ACV (first 12 months). Built CRM workflows and ACV calculation automation
 - Operationalized the SLG (Sales-Led Growth) tiered model:
   - Sourcing: 10% (15% for Premier)
   - Co-sell + Fulfill: 15%
@@ -213,13 +213,13 @@ These insights powered strategic decision-making across Sales, Marketing, and Pr
 
 **Industry Recognition:**
 - **2x Microsoft Partner of the Year** awards (team contributor, 2024, 2025)
-- **Catalyst 2026 Speaker** — Featured testimonial: *"Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience."* ([source](https://www.joincatalyst.com/catalyst26))
-- **1159.ai Innovation Workshop** — Featured testimonial on rapid prototyping and iterative design: *"This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment... The iterative process we followed enabled us to test and refine our ideas rapidly, collaboratively engaging with previous iterations to find the best solution."* ([source](https://blog.1159.ai/the-art-and-science-of-innovation))
-- **Suger.io Case Study** — Featured as Cloud Alliance Operations Lead: *"Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool—it's become an extension of our team."* ([source](https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits))
+- **Catalyst 2026 Speaker.** Featured testimonial: *"Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience."* ([source](https://www.joincatalyst.com/catalyst26))
+- **1159.ai Innovation Workshop.** Featured testimonial on rapid prototyping and iterative design: *"This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment... The iterative process we followed enabled us to test and refine our ideas rapidly, collaboratively engaging with previous iterations to find the best solution."* ([source](https://blog.1159.ai/the-art-and-science-of-innovation))
+- **Suger.io Case Study.** Featured as Cloud Alliance Operations Lead: *"Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool, it's become an extension of our team."* ([source](https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits))
 
 **Internal Praise:**
-- "Best-in-class" reporting — executive praise
-- Suger thought leader — public recognition
+- "Best-in-class" reporting (executive praise)
+- Suger thought leader (public recognition)
 - Subject matter expert for marketplace automation and partner intelligence
 
 ---
@@ -496,7 +496,7 @@ This experience demonstrates:
 - Focus: architecture and automation, not execution
 
 ### A GTM Systems Engineering Role
-- Operations on a 3-person alliance team (Head of Cloud Alliances led the function)
+- Operations on a 3-person alliance team (I owned the systems, automation, dashboards, and UAT layer)
 - Systems integration architect (operational layer)
 - Partner intelligence infrastructure builder
 - Platform administrator (8 major systems)
@@ -515,7 +515,7 @@ This role demonstrates the ability to:
 4. **Drive automation and efficiency** (90% manual work reduction, 60% effort savings)
 5. **Deliver measurable business impact** ($30M+ ACV growth, 5.4x conversion, 31% larger deals)
 
-This is the profile of a **builder-operator hybrid** — someone who can architect systems, operate them at scale, and translate technical work into quantified business outcomes.
+This is the profile of a **builder-operator hybrid**: someone who can architect systems, operate them at scale, and translate technical work into quantified business outcomes.
 
 ---
 
