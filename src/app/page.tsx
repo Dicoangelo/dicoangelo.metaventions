@@ -28,6 +28,7 @@ import { BridgeSection } from "@/components/sections/BridgeSection";
 import { FrontierOpsScore } from "@/components/sections/FrontierOpsScore";
 import { GoMotionSection } from "@/components/sections/GoMotionSection";
 import { ClientShowcase } from "@/components/sections/ClientShowcase";
+import { InTheFieldSection } from "@/components/sections/InTheFieldSection";
 import Link from "next/link";
 
 // Loading skeletons
@@ -176,6 +177,9 @@ export default function Home() {
 
       {/* Logo Wall */}
       <LogoWall animated={true} />
+
+      {/* In the Field — visual presence */}
+      <InTheFieldSection isLight={isLight} />
 
       {/* Testimonials Section */}
       <Testimonials isLight={isLight} />
