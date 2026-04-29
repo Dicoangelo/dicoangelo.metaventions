@@ -757,9 +757,9 @@ import type { ReasoningProvider } from '../../src';
 export const openaiReasoning: ReasoningProvider = {
     name: 'openai',
     models: {
-        fast: 'gpt-3.5-turbo',
+        fast: 'gpt-4o-mini',
         balanced: 'gpt-4',
-        deep: 'gpt-4-turbo'
+        deep: 'gpt-4o'
     },
     isAvailable: () => !!process.env.OPENAI_API_KEY,
     generate: async (prompt, config) => {

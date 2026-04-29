@@ -1472,7 +1472,7 @@ class ClaudeService {
         prompt: string,
         imageBase64: string,
         mediaType: 'image/png' | 'image/jpeg' | 'image/gif' | 'image/webp' = 'image/png',
-        model: string = 'claude-sonnet-4-20250514'
+        model: string = 'claude-sonnet-4-6'
     ): Promise<string> {
         const apiKey = apiKeyService.getKey('claude');
 
@@ -2739,7 +2739,7 @@ type LLMProvider = 'claude' | 'gemini' | 'auto';
 
 const CONFIG = {
   provider: 'auto' as LLMProvider,
-  claudeModel: 'claude-sonnet-4-20250514',
+  claudeModel: 'claude-sonnet-4-6',
   geminiModel: 'gemini-2.0-flash',
   generationTimeoutMs: 3000,
   maxRetries: 2,
