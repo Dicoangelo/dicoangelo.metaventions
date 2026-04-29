@@ -1,10 +1,5 @@
 import { cookies } from "next/headers";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-);
+import { getSupabase } from "@/lib/supabase-server";
 
 const SESSION_COOKIE_NAME = "jd_admin_session";
 
@@ -38,7 +33,7 @@ export async function GET() {
   }
 
   // Get skill gap analytics
-  const { data: skillGaps, error: gapsError } = await supabase
+  const { data: skillGaps, error: gapsError } = await getSupabase()
     .from("skill_gap_analytics")
     .select("*")
     .order("gap_count", { ascending: false })
@@ -49,7 +44,7 @@ export async function GET() {
   }
 
   // Get analysis summary stats
-  const { data: analyses, error: analysesError } = await supabase
+  const { data: analyses, error: analysesError } = await getSupabase()
     .from("jd_analyses")
     .select("fit_tier, fit_score, created_at");
 

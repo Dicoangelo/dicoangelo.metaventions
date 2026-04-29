@@ -1,10 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-);
+import { getSupabase } from "@/lib/supabase-server";
 
 export async function POST(req: NextRequest) {
   try {
@@ -24,7 +19,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { error } = await supabase.from("contact_submissions").insert({
+    const { error } = await getSupabase().from("contact_submissions").insert({
       name: name.trim(),
       email: email.trim(),
       message: message.trim(),
