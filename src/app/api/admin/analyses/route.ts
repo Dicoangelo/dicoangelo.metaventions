@@ -1,10 +1,5 @@
 import { cookies } from "next/headers";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-);
+import { getSupabase } from "@/lib/supabase-server";
 
 const SESSION_COOKIE_NAME = "jd_admin_session";
 
@@ -45,7 +40,7 @@ export async function GET(request: Request) {
 
   const offset = (page - 1) * limit;
 
-  let query = supabase
+  let query = getSupabase()
     .from("jd_analyses")
     .select("*", { count: "exact" })
     .order("created_at", { ascending: false })

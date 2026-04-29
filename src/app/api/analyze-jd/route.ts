@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { createClient } from "@supabase/supabase-js";
+import { getSupabase } from "@/lib/supabase-server";
 import { getDossierContextForJD, getCombinedContextForJD } from "@/lib/dossier";
 import { jdAnalyzerRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
 import { jdAnalyzerSchema, validateRequest } from "@/lib/schemas";
@@ -7,11 +7,6 @@ import { jdAnalyzerSchema, validateRequest } from "@/lib/schemas";
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-);
 
 interface JDAnalysisAssessment {
   summary: string;
@@ -209,7 +204,7 @@ Based on the job description and dossier context above, provide your brutally ho
       assessment = JSON.parse(cleanedResponse);
     } catch (parseError) {
       console.error("Failed to parse analysis response:", parseError);
-      await supabase.from("jd_analyses").insert({
+      await getSupabase().from("jd_analyses").insert({
         jd_raw_text: jd_text,
         jd_title,
         company_name,
@@ -224,7 +219,7 @@ Based on the job description and dossier context above, provide your brutally ho
     }
 
     // Store in database
-    const { error: dbError } = await supabase.from("jd_analyses").insert({
+    const { error: dbError } = await getSupabase().from("jd_analyses").insert({
       jd_raw_text: jd_text,
       jd_title,
       company_name,
@@ -273,14 +268,14 @@ async function updateSkillGapAnalytics(
 
     if (!skillName) continue;
 
-    const { data: existing } = await supabase
+    const { data: existing } = await getSupabase()
       .from("skill_gap_analytics")
       .select("id, gap_count, total_occurrences")
       .eq("skill_name", skillName)
       .single();
 
     if (existing) {
-      await supabase
+      await getSupabase()
         .from("skill_gap_analytics")
         .update({
           gap_count: existing.gap_count + 1,
@@ -289,7 +284,7 @@ async function updateSkillGapAnalytics(
         })
         .eq("id", existing.id);
     } else {
-      await supabase.from("skill_gap_analytics").insert({
+      await getSupabase().from("skill_gap_analytics").insert({
         skill_name: skillName,
         gap_count: 1,
         total_occurrences: 1,

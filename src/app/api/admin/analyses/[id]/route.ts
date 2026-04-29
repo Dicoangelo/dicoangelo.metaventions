@@ -1,10 +1,5 @@
 import { cookies } from "next/headers";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-);
+import { getSupabase } from "@/lib/supabase-server";
 
 const SESSION_COOKIE_NAME = "jd_admin_session";
 
@@ -43,7 +38,7 @@ export async function GET(request: Request, context: RouteContext) {
 
   const { id } = await context.params;
 
-  const { data, error } = await supabase
+  const { data, error } = await getSupabase()
     .from("jd_analyses")
     .select("*")
     .eq("id", id)
@@ -92,7 +87,7 @@ export async function PATCH(request: Request, context: RouteContext) {
       );
     }
 
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("jd_analyses")
       .update(sanitizedUpdates)
       .eq("id", id)
@@ -130,7 +125,7 @@ export async function DELETE(request: Request, context: RouteContext) {
 
   const { id } = await context.params;
 
-  const { error } = await supabase.from("jd_analyses").delete().eq("id", id);
+  const { error } = await getSupabase().from("jd_analyses").delete().eq("id", id);
 
   if (error) {
     return new Response(
