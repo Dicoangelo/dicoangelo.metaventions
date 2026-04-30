@@ -211,10 +211,10 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
                 subdomain: "muchen-roadmap.",
               },
               {
-                name: "Dashboard",
-                url: "https://dashboard-nu-three-99.vercel.app",
-                description: "Analytics dashboard for ecosystem monitoring",
-                subdomain: "dashboard.",
+                name: "The Partnership Graph",
+                url: "https://partnerships.metaventionsai.com",
+                description: "Bloomberg Terminal for partnerships — live demo. Multi-CRM, AI scoring, attribution.",
+                subdomain: "partnerships.",
               },
             ].map((item) => (
               <a
