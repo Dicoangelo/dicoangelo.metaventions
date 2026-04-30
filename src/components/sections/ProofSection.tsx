@@ -60,9 +60,9 @@ export function ProofSection({ isLight }: ProofSectionProps) {
           {/* Row 2 - Cloud Partnership Metrics */}
           <MetricCard
             value="$30M+"
-            label="ACV Growth Support"
+            label="Cloud Alliance Revenue"
             context="Operations on 3-person alliance team; ran the operational layer (CRM, automation, dashboards)"
-            proof="2024 AWS & Microsoft partnership results"
+            proof="AWS + Microsoft, $0 → $30M+ in 30 months"
             isLight={isLight}
           />
           <MetricCard
@@ -106,9 +106,9 @@ export function ProofSection({ isLight }: ProofSectionProps) {
           {/* Row 4 - Technical Metrics */}
           <MetricCard
             value="900K+"
-            label="Lines of Code"
-            context="Across 4 deployed systems"
-            proof="Structura (85.5K), CareerCoach (26.6K), ResearchGravity (35.2K), Claude Infrastructure (262.4K)"
+            label="Lines of AI-Directed Code"
+            context="Across 20+ shipped systems, 44 repos"
+            proof="Structura (85.5K), CareerCoach (26.6K), ResearchGravity (35.2K), Claude Infrastructure (262.4K), plus 16+ additional production systems"
             isLight={isLight}
           />
           <MetricCard
