@@ -640,10 +640,10 @@ export const liveSites: LiveSite[] = [
     url: "https://muchen-roadmap.vercel.app",
   },
   {
-    name: "Dashboard",
-    tech: "VITE / ANALYTICS",
-    description: "Analytics dashboard for ecosystem monitoring",
-    url: "https://dashboard-nu-three-99.vercel.app",
+    name: "The Partnership Graph",
+    tech: "REACT 19 / RECHARTS / MCP / 13 TOOLS / 93 TESTS",
+    description: "Bloomberg Terminal for partnerships — multi-CRM sync, real-time partner health, AI co-sell content, revenue attribution. Live demo with 15-partner portfolio.",
+    url: "https://partnerships.metaventionsai.com",
   },
 ];
 

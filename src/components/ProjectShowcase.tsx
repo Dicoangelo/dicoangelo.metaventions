@@ -37,6 +37,7 @@ const projects: Project[] = [
       "Cognitive equity for relationship graphs"
     ],
     github: "https://github.com/Dicoangelo/partnership-ai-orchestration",
+    demo: "https://partnerships.metaventionsai.com",
     loc: "New"
   },
   {
