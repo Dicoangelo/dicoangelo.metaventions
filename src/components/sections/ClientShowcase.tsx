@@ -59,6 +59,29 @@ const clientProjects: ClientProject[] = [
     ],
     url: "https://bxl.metaventionsai.com",
   },
+  {
+    name: "FriendlyFace",
+    client: "Mohammed Safiia (U of Windsor)",
+    role: "Engineering & Productization",
+    description:
+      "Forensic-friendly facial recognition platform productizing Mohammed's ICDF2C 2024 schema — chain-of-custody evidence sealing (ForensicSeal), AI compliance proxy, and Layer-3 blockchain anchoring. Took the academic framework from paper to deployable product, deployed across 3 Fly.io regions with LiteFS replication.",
+    deliverables: [
+      "ForensicSeal evidence-sealing primitive (the core invention)",
+      "AI compliance proxy as Trojan-horse business model",
+      "Multi-region Fly.io deployment with LiteFS replication",
+      "Demo-ready UI with live forensic chain-of-custody trace",
+      "ICDF2C 2024 schema implementation w/ SOTA 2026 components",
+    ],
+    tech: [
+      "FastAPI",
+      "Computer Vision",
+      "Blockchain",
+      "Fly.io",
+      "LiteFS",
+      "Docker",
+    ],
+    url: "https://friendlyface.metaventionsai.com",
+  },
 ];
 
 export function ClientShowcase({ isLight }: ClientShowcaseProps) {
