@@ -170,20 +170,28 @@ function PhotoCard({ photo, isLight, ariaHidden }: PhotoCardProps) {
       />
 
       {/* gradient mask + caption overlay (shown on hover and on touch devices) */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover/card:opacity-100 [@media(pointer:coarse)]:opacity-100 transition-opacity duration-300 pointer-events-none"
-        aria-hidden
-      />
-      <figcaption
-        className="absolute inset-x-0 bottom-0 px-4 py-3 text-white opacity-0 group-hover/card:opacity-100 [@media(pointer:coarse)]:opacity-100 transition-opacity duration-300 pointer-events-none"
-      >
-        <div className="text-sm font-semibold leading-tight truncate">
-          {photo.caption}
-        </div>
-        <div className="text-xs font-mono uppercase tracking-wider text-white/70 mt-0.5 truncate">
-          {[photo.location, photo.year].filter(Boolean).join(" · ")}
-        </div>
-      </figcaption>
+      {(photo.caption || photo.location || photo.year) && (
+        <>
+          <div
+            className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover/card:opacity-100 [@media(pointer:coarse)]:opacity-100 transition-opacity duration-300 pointer-events-none"
+            aria-hidden
+          />
+          <figcaption
+            className="absolute inset-x-0 bottom-0 px-4 py-3 text-white opacity-0 group-hover/card:opacity-100 [@media(pointer:coarse)]:opacity-100 transition-opacity duration-300 pointer-events-none"
+          >
+            {photo.caption && (
+              <div className="text-sm font-semibold leading-tight truncate">
+                {photo.caption}
+              </div>
+            )}
+            {(photo.location || photo.year) && (
+              <div className="text-xs font-mono uppercase tracking-wider text-white/70 mt-0.5 truncate">
+                {[photo.location, photo.year].filter(Boolean).join(" · ")}
+              </div>
+            )}
+          </figcaption>
+        </>
+      )}
     </figure>
   );
 }
