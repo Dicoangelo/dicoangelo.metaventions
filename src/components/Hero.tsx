@@ -157,6 +157,18 @@ export default function Hero() {
             <span>Live Demo: OS-App</span>
           </a>
           <a
+            href="https://partnerships.metaventionsai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary btn-lg group"
+            aria-label="View live demo of Partnership Graph"
+          >
+            <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+            <span>Live Demo: Partnership Graph</span>
+          </a>
+          <a
             href="https://github.com/Dicoangelo"
             target="_blank"
             rel="noopener noreferrer"
