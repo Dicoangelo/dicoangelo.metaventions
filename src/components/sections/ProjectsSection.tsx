@@ -145,12 +145,6 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
                 subdomain: "frontier-alpha.",
               },
               {
-                name: "FriendlyFace",
-                url: "https://friendlyface.metaventionsai.com",
-                description: "AI compliance proxy & forensic evidence — ForensicSeal",
-                subdomain: "friendlyface.",
-              },
-              {
                 name: "Career Coach",
                 url: "https://careers.metaventionsai.com",
                 description: "AI career governance & hiring panel simulation",
@@ -197,6 +191,12 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
                 url: "https://bxl.metaventionsai.com",
                 description: "Client project — luxury hospitality membership platform",
                 subdomain: "bxl.",
+              },
+              {
+                name: "FriendlyFace",
+                url: "https://friendlyface.metaventionsai.com",
+                description: "Client / collaboration — AI compliance proxy & forensic evidence (ForensicSeal, Mohammed Safiia ICDF2C 2024)",
+                subdomain: "friendlyface.",
               },
               {
                 name: "DQ Scoring",
