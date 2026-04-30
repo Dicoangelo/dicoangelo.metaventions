@@ -572,12 +572,6 @@ export const liveSites: LiveSite[] = [
     url: "https://frontier-alpha.metaventionsai.com",
   },
   {
-    name: "FriendlyFace",
-    tech: "FASTAPI / AI COMPLIANCE / FORENSIC EVIDENCE",
-    description: "AI compliance proxy & forensic evidence generation system — ForensicSeal",
-    url: "https://friendlyface.metaventionsai.com",
-  },
-  {
     name: "Career Coach",
     tech: "NEXT.JS 15 / MULTI-AGENT / ZUSTAND",
     description: "AI career governance — multi-agent hiring panel simulation, NSRG patterns",
@@ -625,6 +619,12 @@ export const liveSites: LiveSite[] = [
     tech: "NEXT.JS 16 / SUPABASE / STRIPE / CLIENT PROJECT",
     description: "Luxury hospitality membership platform — 3-tier membership, event packages",
     url: "https://bxl.metaventionsai.com",
+  },
+  {
+    name: "FriendlyFace",
+    tech: "FASTAPI / AI COMPLIANCE / FORENSIC EVIDENCE / CLIENT PROJECT",
+    description: "Client / collaboration — AI compliance proxy + forensic evidence (ForensicSeal). Built with Mohammed Safiia (ICDF2C 2024 schema)",
+    url: "https://friendlyface.metaventionsai.com",
   },
   // ─── Vercel-Only Sites ───
   {
