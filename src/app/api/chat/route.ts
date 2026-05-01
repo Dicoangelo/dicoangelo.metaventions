@@ -5,9 +5,16 @@ import { getPageIndexContext, isPageIndexAvailable, stripCitationsForVoice } fro
 import { chatRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
 import { chatMessageSchema, validateRequest } from "@/lib/schemas";
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
+// DeepSeek V4 via the Anthropic-compatible Messages API (same SDK, different baseURL).
+// V4 Pro: $0.43/$0.87 per 1M tokens during 75% promo through 2026-05-31.
+// V4 Flash: $0.14/$0.28 per 1M tokens — used as fallback on rate-limit / 5xx.
+const deepseek = new Anthropic({
+  apiKey: process.env.DEEPSEEK_API_KEY,
+  baseURL: "https://api.deepseek.com/anthropic",
 });
+
+const CHAT_MODEL = process.env.DEEPSEEK_CHAT_MODEL || "deepseek-v4-pro";
+const CHAT_FALLBACK_MODEL = process.env.DEEPSEEK_FALLBACK_MODEL || "deepseek-v4-flash";
 
 // Lazy init Supabase for logging
 let supabase: ReturnType<typeof createClient> | null = null;
@@ -202,15 +209,33 @@ export async function POST(request: Request) {
       dossierContext,
     ].filter(Boolean).join('\n\n');
 
-    const stream = await anthropic.messages.stream({
-      model: "claude-sonnet-4-6",
-      max_tokens: 1024,
-      system: fullSystemPrompt,
-      messages: messages.map((m: { role: string; content: string }) => ({
-        role: m.role as "user" | "assistant",
-        content: m.content,
-      })),
-    });
+    const mappedMessages = messages.map((m: { role: string; content: string }) => ({
+      role: m.role as "user" | "assistant",
+      content: m.content,
+    }));
+
+    let modelUsed = CHAT_MODEL;
+    let stream: Awaited<ReturnType<typeof deepseek.messages.stream>>;
+    try {
+      stream = await deepseek.messages.stream({
+        model: CHAT_MODEL,
+        max_tokens: 1024,
+        system: fullSystemPrompt,
+        messages: mappedMessages,
+      });
+    } catch (primaryErr) {
+      // Fall back to V4 Flash on rate-limit / 5xx / model-unavailable.
+      modelUsed = CHAT_FALLBACK_MODEL;
+      stream = await deepseek.messages.stream({
+        model: CHAT_FALLBACK_MODEL,
+        max_tokens: 1024,
+        system: fullSystemPrompt,
+        messages: mappedMessages,
+      });
+      if (process.env.NODE_ENV === "development") {
+        console.warn("[chat] primary model failed, fell back to", CHAT_FALLBACK_MODEL, primaryErr);
+      }
+    }
 
     const encoder = new TextEncoder();
     let fullResponse = "";
@@ -252,6 +277,7 @@ export async function POST(request: Request) {
         "Transfer-Encoding": "chunked",
         "X-RAG-Source": ragSource,
         "X-Retrieval-Time-Ms": retrievalTimeMs.toString(),
+        "X-Chat-Model": modelUsed,
       },
     });
   } catch (error) {
