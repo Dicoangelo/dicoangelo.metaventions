@@ -17,6 +17,7 @@ interface IndexEntry {
   title: string;
   slug: string;
   category: string;
+  summary: string | null;
 }
 
 const TTL_MS = 5 * 60 * 1000;
@@ -50,7 +51,7 @@ export async function getArtifactIndex(): Promise<string> {
 
   const { data, error } = await sb
     .from("artifacts")
-    .select("title, slug, category")
+    .select("title, slug, category, summary")
     .eq("status", "published")
     .order("category")
     .order("title");
@@ -65,18 +66,31 @@ export async function getArtifactIndex(): Promise<string> {
     grouped.set(entry.category, list);
   }
 
+  // Layer 1+2 combined: title is the heading, the summary follows on the
+  // next line as the "what is this" gloss. With ~27 artifacts at ~80 words
+  // each this comes out to ~2-3K tokens — small enough to inline. After
+  // the first request DeepSeek's KV cache makes it nearly free.
   const sections: string[] = [];
   for (const cat of CATEGORY_ORDER) {
     const list = grouped.get(cat);
     if (!list?.length) continue;
     const label = CATEGORY_LABEL[cat] ?? cat.toUpperCase();
-    const lines = list.map((e) => `  - ${e.title}`).join("\n");
+    const lines = list
+      .map((e) => {
+        const sum = e.summary?.trim();
+        if (!sum || sum === "## Overview") return `  - ${e.title}`;
+        const oneLine = sum.replace(/\s+/g, " ").trim();
+        return `  - ${e.title}\n      ${oneLine}`;
+      })
+      .join("\n");
     sections.push(`${label}:\n${lines}`);
   }
 
   const value = `## Knowledge Index — what Dico has detailed information on
 
-You have specific, retrievable detail on every item below. If a visitor asks about ANYTHING NOT on this list, do NOT invent details — say plainly "I don't have specifics on that one, but Dico can speak to it directly" and offer to take their email.
+Each item below is followed by a one-paragraph TL;DR. Use these summaries to answer general questions accurately and cite specific numbers. For deeper questions, retrieved chunks (further down) will give you the full text.
+
+If a visitor asks about ANYTHING NOT on this list, do NOT invent details — say plainly "I don't have specifics on that one, but Dico can speak to it directly" and offer to take their email.
 
 ${sections.join("\n\n")}`;
 
