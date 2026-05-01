@@ -216,8 +216,10 @@ export async function POST(request: Request) {
 
     // DeepSeek V4 defaults to chain-of-thought "thinking" mode. For voice chat
     // that adds 3-5s of silent latency before TTS gets any tokens. Disable it.
+    // temperature 0.7 gives a warmer, more conversational tone for TTS.
     const baseRequest = {
       max_tokens: 1024,
+      temperature: 0.7,
       thinking: { type: "disabled" as const },
       system: fullSystemPrompt,
       messages: mappedMessages,
@@ -261,6 +263,29 @@ export async function POST(request: Request) {
           }
         }
 
+        // Capture DeepSeek KV cache hit ratio so we can see whether our
+        // prompt structure (static SYSTEM_PROMPT first, dynamic RAG last)
+        // is actually getting cache hits. Cached tokens cost 1/120th of misses.
+        let cacheHitTokens = 0;
+        let cacheMissTokens = 0;
+        try {
+          const finalMessage = await stream.finalMessage();
+          const usage = finalMessage.usage as unknown as {
+            cache_read_input_tokens?: number;
+            cache_creation_input_tokens?: number;
+            input_tokens?: number;
+          };
+          cacheHitTokens = usage?.cache_read_input_tokens ?? 0;
+          cacheMissTokens = (usage?.input_tokens ?? 0) + (usage?.cache_creation_input_tokens ?? 0);
+          if (process.env.NODE_ENV === "development") {
+            const total = cacheHitTokens + cacheMissTokens;
+            const hitPct = total > 0 ? Math.round((cacheHitTokens / total) * 100) : 0;
+            console.log(`[chat] ${modelUsed} cache: ${cacheHitTokens} hit / ${cacheMissTokens} miss (${hitPct}%)`);
+          }
+        } catch {
+          // Best-effort metrics, don't fail the response.
+        }
+
         // Log to Supabase after streaming completes (non-blocking)
         logChatToSupabase({
           query,
@@ -270,6 +295,9 @@ export async function POST(request: Request) {
           responsePreview: fullResponse.substring(0, 200),
           clientIp: identifier,
           isVoice: isVoiceRequest,
+          model: modelUsed,
+          cacheHitTokens,
+          cacheMissTokens,
         }).catch(() => {}); // Ignore logging errors
 
         controller.close();
@@ -350,6 +378,9 @@ async function logChatToSupabase(data: {
   responsePreview: string;
   clientIp: string;
   isVoice: boolean;
+  model?: string;
+  cacheHitTokens?: number;
+  cacheMissTokens?: number;
 }) {
   const sb = getSupabase();
   if (!sb) return;
@@ -366,6 +397,9 @@ async function logChatToSupabase(data: {
       is_voice: data.isVoice,
       metadata: {
         pageindex_available: isPageIndexAvailable(),
+        model: data.model,
+        cache_hit_tokens: data.cacheHitTokens,
+        cache_miss_tokens: data.cacheMissTokens,
       },
     } as Record<string, unknown>);
   } catch (err) {
