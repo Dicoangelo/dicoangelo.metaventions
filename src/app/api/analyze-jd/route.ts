@@ -36,19 +36,32 @@ interface JDAnalysisAssessment {
 }
 
 /**
- * Clean markdown code blocks from LLM response
+ * Clean markdown code blocks and other LLM-generated noise from a JSON
+ * response. Tolerates leading prose, trailing commentary, and trailing
+ * commas inside arrays/objects (a common DeepSeek V4 emission).
  */
 function cleanJsonResponse(response: string): string {
   let cleaned = response.trim();
-  if (cleaned.startsWith("```json")) {
-    cleaned = cleaned.slice(7);
+
+  // Strip markdown code fences if present.
+  if (cleaned.startsWith("```json")) cleaned = cleaned.slice(7);
+  else if (cleaned.startsWith("```")) cleaned = cleaned.slice(3);
+  if (cleaned.endsWith("```")) cleaned = cleaned.slice(0, -3);
+  cleaned = cleaned.trim();
+
+  // If there's any leading prose before the first {, drop it. Same for
+  // any trailing prose after the last matching }.
+  const firstBrace = cleaned.indexOf("{");
+  const lastBrace = cleaned.lastIndexOf("}");
+  if (firstBrace > 0) cleaned = cleaned.slice(firstBrace);
+  if (lastBrace > -1 && lastBrace < cleaned.length - 1) {
+    cleaned = cleaned.slice(0, lastBrace + 1);
   }
-  if (cleaned.startsWith("```")) {
-    cleaned = cleaned.slice(3);
-  }
-  if (cleaned.endsWith("```")) {
-    cleaned = cleaned.slice(0, -3);
-  }
+
+  // Remove trailing commas before } or ] — strict JSON forbids these
+  // but LLMs emit them all the time.
+  cleaned = cleaned.replace(/,(\s*[}\]])/g, "$1");
+
   return cleaned.trim();
 }
 
@@ -99,25 +112,44 @@ Respond with a JSON object matching this exact structure:
 }
 
 ## UCW-Derived Skills (treat these as verified, demonstrated capabilities):
-Dico built the Universal Cognitive Wallet (UCW) — a production system that captures, embeds, and analyzes cognitive events across 6 AI platforms. This demonstrates:
+Dico built the Universal Cognitive Wallet (UCW) — a production system that captures, embeds, and analyzes AI interactions across 5 platforms (Claude, ChatGPT, Gemini, ResearchGravity, NotebookLM). Current scale (snapshot 2026-03):
 
-- **Data Pipeline Engineering**: Built ETL pipeline processing 163,113 events from 6 platforms into PostgreSQL with pgvector
-- **Vector Embeddings / Semantic Search**: Generated 150,742 SBERT embeddings, implemented cosine similarity search at scale
-- **Cross-Platform Data Integration**: Unified Claude CLI, ChatGPT, Grok, Claude Code, Claude Desktop into single cognitive view
-- **Real-Time Data Capture**: LaunchAgent daemon architecture polling every 5 minutes, always-on capture
-- **MCP Protocol Implementation**: Raw MCP transport (no SDK) for cognitive event capture with 3-layer semantic enrichment
-- **PostgreSQL + pgvector**: Production database with vector similarity search, 11 tables, complex JSONB queries
-- **Quality Scoring / Evaluation**: Automated quality assessment across 163K events with multi-tier scoring
-- **Coherence Detection Algorithms**: Semantic echo (cosine similarity), synchronicity (temporal alignment), signature matching
-- **Daemon / Service Architecture**: LaunchAgent-based services, background processing, stall detection
-- **AI-Directed Pipeline Engineering**: Specified 35K+ lines in ResearchGravity (importers, scorers, embedding pipelines) in English, built by directing Claude Code / Codex / Gemini
-- **Multi-Agent Orchestration**: 6-agent ACE consensus engine, DQ scoring for autonomous model routing
-- **RAG Pipelines**: Vector embeddings for knowledge retrieval across multiple production systems
-- **Event-Driven Architecture**: Real-time event processing with PostgreSQL triggers and notification channels
+- **12.15 million graph edges** across 7,130 memory items (~1,704 avg connections per node)
+- **243,922 tool interactions** logged, 50,624 in DB
+- **4,954 DQ routing decisions** (avg score 0.889) and 4,435 ACE-scored session outcomes
+- **2,848 learnings** with spaced-repetition consolidation
+- **900K+ lines of production code** across 20+ repos, all AI-directed
 
-When a JD mentions AI operations, AI infrastructure, multi-agent systems, embeddings, vector search, semantic search, RAG, cognitive computing, prompt engineering, LLM evaluation, agentic architectures, or GTM/marketplace operations — these UCW skills are STRONG matches. Score them accordingly.
+This demonstrates:
 
-IMPORTANT: Dico specifies systems in English and directs AI coding agents (Claude Code, Codex, Gemini) to implement them. He reviews, tests, and ships. He does NOT claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. If a JD requires deep language fluency (whiteboard coding in a specific language, senior SWE / ML Engineer / Data Engineer / DevOps / SRE / Platform Engineer / Security Engineer / deep-tech Solutions Architect / pre-sales SE at a hyperscaler), flag this as a HIGH-severity gap regardless of adjacent skills.
+- **Data Pipeline Engineering at Scale**: ETL across 5 AI platforms into PostgreSQL with pgvector; 12.15M-edge knowledge graph
+- **Vector Embeddings / Semantic Search**: cosine similarity over 1024-dim embeddings, three-layer retrieval (title → summary → chunks) shipped to production chat
+- **Cross-Platform Data Integration**: unified Claude / ChatGPT / Gemini / ResearchGravity / NotebookLM into a single cognitive view
+- **MCP Protocol Implementation**: raw MCP transport for cognitive capture, 3-layer semantic enrichment
+- **PostgreSQL + pgvector at production scale**: 11 tables, JSONB metadata queries, IVFFlat vector indexes
+- **Decision-Quality (DQ) Scoring**: 4,954 routing decisions averaging 0.889 quality score, autonomous model selection
+- **Multi-Agent Orchestration**: 6-agent ACE consensus with bicameral voting, 21-agent SUPERMAX coordination
+- **Coherence Detection Algorithms**: semantic echo, synchronicity, signature matching
+- **AI-Directed Pipeline Engineering**: specifies 30K+ line subsystems in plain English, directs Claude Code, Codex, Gemini, and DeepSeek V4 to implement
+- **RAG Pipelines**: production three-layer retrieval shipped to portfolio chat 2026-05; verified 99% KV cache hit ratio after warm-up
+- **Event-Driven Architecture**: real-time event processing with PostgreSQL triggers, daemon services with stall detection
+
+## Recently Demonstrated Engineering Capabilities (2026-04 / 2026-05)
+
+These are concrete shipped wins from the last 30 days, not aspirational claims:
+
+- **Provider Abstraction & Migration**: migrated production AI surfaces (chat + JD analyzer) from Anthropic Sonnet to DeepSeek V4 Pro via the Anthropic-compatible Messages API. Same SDK, swapped baseURL — ~28x cost reduction end-to-end with no behavioral regression.
+- **KV Cache Optimization**: structured prompt prefix as static-then-dynamic so DeepSeek's auto-cache hits 99% on warm requests. Verified with cache_hit_tokens telemetry logged per request.
+- **Runtime Feature Flags + A/B Testing**: shipped a 3-state toggle (off / on / ab) for Cohere rerank, with hash-stable variant assignment per visitor and metadata logging for offline quality comparison.
+- **Resilient Degradation**: when Cohere hit its monthly billing cap mid-day, the chat and JD analyzer continued working by gracefully falling back to the always-loaded artifact title+summary index. No customer-facing outage.
+- **Multi-Provider Abstraction with Fallback**: V4 Pro primary with automatic V4 Flash fallback on rate-limit / 5xx / model-unavailable. One try/catch, transparent observability via X-Chat-Model header.
+- **Observability Instrumentation**: per-request logging of model_used, cache_hit_tokens, cache_miss_tokens, rerank_mode, rerank_variant into Supabase chat_logs.metadata for post-hoc analysis.
+- **Anti-Hallucination Prompt Engineering**: caught a live production hallucination (chat fabricated a Partnership Graph project that didn't exist), shipped explicit anti-hallucination guards with project-name examples. Verified the fix by re-asking the same query.
+- **Live Voice + Text Chat**: voice orb with thinking-mode disabled to keep TTS latency under 500ms, conversation persistence via sessionStorage, copy/regenerate buttons.
+
+When a JD mentions AI operations, AI infrastructure, multi-agent systems, embeddings, vector search, semantic search, RAG, cognitive computing, prompt engineering, LLM evaluation, agentic architectures, observability, feature flags, A/B testing, multi-provider abstraction, or GTM/marketplace operations — these capabilities are STRONG matches. Score them accordingly.
+
+IMPORTANT: Dico specifies systems in English and directs AI coding agents (Claude Code, Codex, Gemini, DeepSeek V4) to implement them. He reviews, tests, and ships. He does NOT claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. If a JD requires deep language fluency (whiteboard coding in a specific language, senior SWE / ML Engineer / Data Engineer / DevOps / SRE / Platform Engineer / Security Engineer / deep-tech Solutions Architect / pre-sales SE at a hyperscaler), flag this as a HIGH-severity gap regardless of adjacent skills.
 
 CRITICAL: Your response must be valid JSON only. No markdown, no explanation, just the JSON object.`;
 
@@ -211,13 +243,15 @@ Based on the job description and dossier context above, provide your brutally ho
     let modelUsed: string = JD_MODEL;
 
     const baseRequest = {
-      max_tokens: 2048,
-      // JD analysis benefits from V4's reasoning, so unlike voice chat
-      // we leave thinking enabled by default. Set DEEPSEEK_JD_THINKING=off
-      // to override if the analysis ever runs over latency budget.
-      ...(process.env.DEEPSEEK_JD_THINKING === "off"
-        ? { thinking: { type: "disabled" as const } }
-        : {}),
+      max_tokens: 3000,
+      temperature: 0.2,
+      // Thinking is OFF by default for JD analysis — V4's chain-of-thought
+      // makes structured JSON output less deterministic. The brutally-
+      // honest prompt itself is structured enough to drive the assessment.
+      // Set DEEPSEEK_JD_THINKING=on to opt back in if needed.
+      ...(process.env.DEEPSEEK_JD_THINKING === "on"
+        ? {}
+        : { thinking: { type: "disabled" as const } }),
       system: BRUTALLY_HONEST_PROMPT,
       messages: [{ role: "user" as const, content: analysisPrompt }],
     };
