@@ -149,7 +149,34 @@ These are concrete shipped wins from the last 30 days, not aspirational claims:
 
 When a JD mentions AI operations, AI infrastructure, multi-agent systems, embeddings, vector search, semantic search, RAG, cognitive computing, prompt engineering, LLM evaluation, agentic architectures, observability, feature flags, A/B testing, multi-provider abstraction, or GTM/marketplace operations — these capabilities are STRONG matches. Score them accordingly.
 
-IMPORTANT: Dico specifies systems in English and directs AI coding agents (Claude Code, Codex, Gemini, DeepSeek V4) to implement them. He reviews, tests, and ships. He does NOT claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. If a JD requires deep language fluency (whiteboard coding in a specific language, senior SWE / ML Engineer / Data Engineer / DevOps / SRE / Platform Engineer / Security Engineer / deep-tech Solutions Architect / pre-sales SE at a hyperscaler), flag this as a HIGH-severity gap regardless of adjacent skills.
+IMPORTANT — How to score language requirements:
+
+Dico ships production code in TypeScript, Python, SQL, and Bash, but he produces it by directing AI coding agents (Claude Code, Codex, Gemini, DeepSeek V4) in plain English. He reviews, tests, and ships. He does NOT claim whiteboard fluency in any specific language.
+
+This is a SCORING RULE, not a flat skip rule. Different language requirements warrant different treatment:
+
+STRONG MATCH (cite the actual production work, do not flag as a gap):
+- Python for data pipelines, ETL, ML feature engineering, RAG ingestion, scripting, automation, or MCP server work — Dico has shipped this in ResearchGravity, META-VENGINE, and the UCW system.
+- TypeScript / JavaScript for React, Next.js, partner-facing web tooling, dashboards, internal tooling — Dico has shipped 152K+ lines of OS-App and the dicoangelo.metaventions site.
+- SQL for analytics, partner ops reporting, dashboards, vector queries — Dico has shipped Supabase + pgvector at production scale.
+- Bash / shell for ops automation, deployment scripts — routine in his stack.
+- AI Engineering / LLM Engineering / RAG / Multi-Agent / Embedding work — these are production-shipped strengths.
+
+MEDIUM/LOW MATCH (caveat the AI-assisted production model, but don't kill the score):
+- Python or TS for product-engineering work where the role is partner-facing or ops-leaning rather than core IC (e.g. solutions engineering with implementation expectations, technical PM with code review).
+
+HARD SKIP regardless of adjacent skills (these archetypes assume hand-fluency Dico does not claim):
+- Senior whiteboard-coding SWE roles (Backend / Frontend / Full-Stack / Mobile)
+- ML Engineer / Data Engineer / Data Scientist with model-training expectations
+- SRE / DevOps / Platform Engineer / Security Engineer with on-call ownership
+- Senior pre-sales Solutions Engineer with 5+ years Solutions Consulting at a hyperscaler
+- Salesforce-architect-dressed-as-SE with 6+ years Salesforce declarative tooling
+- Code-test-driven hiring loops (LeetCode-style interviews)
+
+OK SE/SA archetypes (these are learnable):
+- Solution Engineer / Solutions Architect with 3+ yrs and a "learn our product" framing where the product is learnable in 90 days.
+
+Default policy when ambiguous: lean toward MATCH if the role is operational, partner-facing, ops-architecture, RevOps, partner ops, or strategic. Lean toward SKIP if the role is pure IC engineering or pre-sales SE with senior fluency expectations.
 
 CRITICAL: Your response must be valid JSON only. No markdown, no explanation, just the JSON object.`;
 
