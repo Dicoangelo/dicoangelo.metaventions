@@ -214,23 +214,28 @@ export async function POST(request: Request) {
       content: m.content,
     }));
 
+    // DeepSeek V4 defaults to chain-of-thought "thinking" mode. For voice chat
+    // that adds 3-5s of silent latency before TTS gets any tokens. Disable it.
+    const baseRequest = {
+      max_tokens: 1024,
+      thinking: { type: "disabled" as const },
+      system: fullSystemPrompt,
+      messages: mappedMessages,
+    };
+
     let modelUsed = CHAT_MODEL;
     let stream: Awaited<ReturnType<typeof deepseek.messages.stream>>;
     try {
       stream = await deepseek.messages.stream({
         model: CHAT_MODEL,
-        max_tokens: 1024,
-        system: fullSystemPrompt,
-        messages: mappedMessages,
+        ...baseRequest,
       });
     } catch (primaryErr) {
       // Fall back to V4 Flash on rate-limit / 5xx / model-unavailable.
       modelUsed = CHAT_FALLBACK_MODEL;
       stream = await deepseek.messages.stream({
         model: CHAT_FALLBACK_MODEL,
-        max_tokens: 1024,
-        system: fullSystemPrompt,
-        messages: mappedMessages,
+        ...baseRequest,
       });
       if (process.env.NODE_ENV === "development") {
         console.warn("[chat] primary model failed, fell back to", CHAT_FALLBACK_MODEL, primaryErr);
