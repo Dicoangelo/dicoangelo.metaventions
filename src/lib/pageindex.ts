@@ -241,14 +241,15 @@ export async function getPageIndexContext(query: string): Promise<string> {
 /**
  * Strip inline citations for voice output
  * PageIndex returns citations like: <doc=file.pdf;page=5>
+ *
+ * NOTE: Called per-chunk during streaming. Must NOT trim or collapse
+ * meaningful whitespace, or word boundaries get destroyed across chunks.
  */
 export function stripCitationsForVoice(text: string): string {
   return text
     .replace(/<doc=[^>]+>/g, '')
     .replace(/<physical_index_\d+>/g, '')
-    .replace(/\[Page \d+\]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+    .replace(/\[Page \d+\]/g, '');
 }
 
 /**
