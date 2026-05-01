@@ -176,15 +176,19 @@ export type { DossierChunk };
 import { searchArtifacts, formatArtifactContext, ArtifactChunk } from "./artifacts";
 
 /**
- * Get combined context from both artifacts and legacy dossier
- * Artifacts are searched first (new system), then dossier (fallback)
+ * Get combined context from both artifacts and legacy dossier.
+ * Artifacts are searched first (new system), then dossier (fallback).
  *
- * Cohere rerank is OFF by default — embedding similarity already orders well
- * enough for chat, and rerank calls are billed per-search and add latency.
- * Set CHAT_RERANK_ENABLED=true to opt back in.
+ * Cohere rerank is controlled at runtime by CHAT_RERANK_MODE
+ * (off | on | ab). See lib/rerank-control.ts. Pass a stable client
+ * identifier when calling from a per-request context so the A/B mode
+ * gives the same visitor the same variant.
  */
-export async function getCombinedContext(query: string): Promise<string> {
-  const rerankEnabled = process.env.CHAT_RERANK_ENABLED === "true";
+export async function getCombinedContext(
+  query: string,
+  options: { rerank?: boolean } = {}
+): Promise<string> {
+  const rerankEnabled = options.rerank === true;
 
   // Search artifacts (new system). Lower threshold from 0.15 -> 0.10 so we
   // catch chunks that are clearly relevant but missed the original cutoff.
