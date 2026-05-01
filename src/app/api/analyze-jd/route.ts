@@ -3,10 +3,20 @@ import { getSupabase } from "@/lib/supabase-server";
 import { getDossierContextForJD, getCombinedContextForJD } from "@/lib/dossier";
 import { jdAnalyzerRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
 import { jdAnalyzerSchema, validateRequest } from "@/lib/schemas";
+import { resolveRerank } from "@/lib/rerank-control";
+import { getArtifactIndex } from "@/lib/artifact-index";
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
+// JD Analyzer also runs on DeepSeek V4 Pro via the Anthropic-compat
+// endpoint, same as the chat route. Falls back to V4 Flash on errors.
+// Migrated off Anthropic for cost (Sonnet 4.6 was ~$3/$15 per 1M tokens
+// and JD analyses are 3-5K tokens each — adds up fast).
+const deepseek = new Anthropic({
+  apiKey: process.env.DEEPSEEK_API_KEY,
+  baseURL: "https://api.deepseek.com/anthropic",
 });
+
+const JD_MODEL = process.env.DEEPSEEK_JD_MODEL || "deepseek-v4-pro";
+const JD_FALLBACK_MODEL = process.env.DEEPSEEK_FALLBACK_MODEL || "deepseek-v4-flash";
 
 interface JDAnalysisAssessment {
   summary: string;
@@ -148,10 +158,33 @@ export async function POST(request: Request) {
 
     const { jd_text, session_id } = validation.data;
 
-    // Get comprehensive context from both artifacts and legacy dossier
-    const { context: dossierContext, artifactChunks, dossierChunks } = await getCombinedContextForJD(jd_text);
+    // Resolve rerank from the runtime toggle (off / on / ab) so JD
+    // analysis honors the same control as chat. Default off keeps the
+    // Cohere bill at zero. Pass the identifier so A/B mode is stable.
+    const rerankDecision = resolveRerank(identifier);
 
-    if (artifactChunks.length === 0 && dossierChunks.length === 0) {
+    // Always-loaded baseline: title + summary index for every published
+    // artifact. Works without Cohere/PageIndex and is enough on its own
+    // for most JD assessments. Three-layer retrieval Layer 1+2.
+    const artifactIndex = await getArtifactIndex();
+
+    // Optional augmentation: deep RAG chunks. Will return empty if Cohere
+    // is rate-limited / at billing cap; that's fine — we still have the
+    // artifact index as a fallback so the analyzer never hard-fails.
+    let chunkContext = "";
+    try {
+      const result = await getCombinedContextForJD(jd_text, {
+        rerank: rerankDecision.shouldRerank,
+      });
+      chunkContext = result.context || "";
+    } catch (ragErr) {
+      console.warn("[analyze-jd] chunk retrieval failed, falling back to artifact index only:", ragErr);
+    }
+
+    // Compose: index always present, deep chunks when available.
+    const dossierContext = [artifactIndex, chunkContext].filter(Boolean).join("\n\n---\n\n");
+
+    if (!dossierContext) {
       return new Response(
         JSON.stringify({ error: "Unable to retrieve dossier context. Please try again." }),
         { status: 500, headers: { "Content-Type": "application/json" } }
@@ -175,26 +208,45 @@ Based on the job description and dossier context above, provide your brutally ho
 
     // Collect the full response before sending to avoid partial/empty stream errors
     let fullResponse = "";
+    let modelUsed: string = JD_MODEL;
 
-    try {
-      const stream = await anthropic.messages.stream({
-        model: "claude-sonnet-4-6",
-        max_tokens: 2048,
-        system: BRUTALLY_HONEST_PROMPT,
-        messages: [{ role: "user", content: analysisPrompt }],
-      });
+    const baseRequest = {
+      max_tokens: 2048,
+      // JD analysis benefits from V4's reasoning, so unlike voice chat
+      // we leave thinking enabled by default. Set DEEPSEEK_JD_THINKING=off
+      // to override if the analysis ever runs over latency budget.
+      ...(process.env.DEEPSEEK_JD_THINKING === "off"
+        ? { thinking: { type: "disabled" as const } }
+        : {}),
+      system: BRUTALLY_HONEST_PROMPT,
+      messages: [{ role: "user" as const, content: analysisPrompt }],
+    };
 
+    async function runStream(model: string) {
+      const stream = await deepseek.messages.stream({ model, ...baseRequest });
+      let collected = "";
       for await (const event of stream) {
         if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-          fullResponse += event.delta.text;
+          collected += event.delta.text;
         }
       }
-    } catch (apiError) {
-      console.error("Anthropic API error:", apiError);
-      return new Response(
-        JSON.stringify({ error: "AI analysis service temporarily unavailable. Please try again." }),
-        { status: 502, headers: { "Content-Type": "application/json" } }
-      );
+      return collected;
+    }
+
+    try {
+      fullResponse = await runStream(JD_MODEL);
+    } catch (primaryErr) {
+      console.warn("[analyze-jd] primary model failed, falling back to", JD_FALLBACK_MODEL, primaryErr);
+      try {
+        modelUsed = JD_FALLBACK_MODEL;
+        fullResponse = await runStream(JD_FALLBACK_MODEL);
+      } catch (apiError) {
+        console.error("DeepSeek API error (both Pro and Flash failed):", apiError);
+        return new Response(
+          JSON.stringify({ error: "AI analysis service temporarily unavailable. Please try again." }),
+          { status: 502, headers: { "Content-Type": "application/json" } }
+        );
+      }
     }
 
     // Parse the completed response
@@ -209,7 +261,7 @@ Based on the job description and dossier context above, provide your brutally ho
         jd_title,
         company_name,
         assessment: { raw_response: fullResponse, parse_error: true },
-        model_used: "claude-sonnet-4-6",
+        model_used: modelUsed,
         session_id: session_id || null,
       });
       return new Response(
@@ -226,7 +278,7 @@ Based on the job description and dossier context above, provide your brutally ho
       fit_score: assessment.fit_score,
       fit_tier: assessment.fit_tier,
       assessment,
-      model_used: "claude-sonnet-4-6",
+      model_used: modelUsed,
       session_id: session_id || null,
     });
 

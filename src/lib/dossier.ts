@@ -222,18 +222,25 @@ export async function getCombinedContext(
 }
 
 /**
- * Get combined context for JD analysis (more comprehensive)
+ * Get combined context for JD analysis (more comprehensive).
+ * Rerank is opt-in by the caller (default off) — honors the same
+ * runtime toggle as chat. Pass { rerank: true } only when budget allows.
  */
-export async function getCombinedContextForJD(jdText: string): Promise<{
+export async function getCombinedContextForJD(
+  jdText: string,
+  options: { rerank?: boolean } = {}
+): Promise<{
   context: string;
   artifactChunks: ArtifactChunk[];
   dossierChunks: DossierChunk[];
 }> {
+  const rerankEnabled = options.rerank === true;
+
   // Search artifacts with lower threshold for comprehensive matching
   const artifactChunks = await searchArtifacts(jdText, {
     threshold: 0.10,
     limit: 15,
-    rerank: true,
+    rerank: rerankEnabled,
     rerankTopK: 10,
   });
 
