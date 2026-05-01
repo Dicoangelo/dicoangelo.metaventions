@@ -86,7 +86,13 @@ export interface SearchArtifactsOptions {
   limit?: number; // default: 20
   category?: string;
   tags?: string[];
-  rerank?: boolean; // default: true
+  /**
+   * Cohere rerank — OFF by default to avoid per-search cost.
+   * The rerank code in ./reranker.ts is intentionally preserved so we
+   * can flip this back on, run A/B tests, or selectively rerank for
+   * specific surfaces. See lib/rerank-control.ts for the runtime toggle.
+   */
+  rerank?: boolean; // default: false
   rerankTopK?: number; // default: 5
 }
 
