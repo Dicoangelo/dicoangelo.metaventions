@@ -12,14 +12,37 @@ interface Message {
 
 const SUGGESTED_QUESTIONS = [
   "What's the $800M+ TCV story?",
-  "What did the UCW figure out about him?",
+  "Tell me about Metaventions AI",
   "What multi-agent systems has he built?",
-  "What's his cognitive fingerprint?",
-  "Is he open to relocation to the US?",
-  "What are his 72 coherence moments?",
-  "Show me metrics from his Contentsquare role",
-  "Why does he work at 3 AM?",
+  "What's the Universal Cognitive Wallet?",
+  "How did he drive $30M in cloud alliance revenue?",
+  "What partnerships did he run at Contentsquare?",
+  "Is he open to US relocation? What about visas?",
+  "What does it mean that he directs AI agents to write code?",
 ];
+
+const STORAGE_KEY = "dicoangelo-chat-history-v1";
+
+function loadHistory(): Message[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = sessionStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveHistory(messages: Message[]) {
+  if (typeof window === "undefined") return;
+  try {
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+  } catch {
+    // sessionStorage can fail on private browsing — silently degrade
+  }
+}
 
 export default function Chat() {
   // SHARED conversation history (used by both voice and text behind the scenes)
@@ -29,9 +52,25 @@ export default function Chat() {
   const [textMessages, setTextMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isTextLoading, setIsTextLoading] = useState(false);
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const { theme } = useTheme();
+
+  // Hydrate text history + shared history from sessionStorage on first mount
+  // so a refresh doesn't nuke the visitor's conversation.
+  useEffect(() => {
+    const stored = loadHistory();
+    if (stored.length > 0) {
+      setTextMessages(stored);
+      setConversationHistory(stored);
+    }
+  }, []);
+
+  // Persist on every text-message change
+  useEffect(() => {
+    if (textMessages.length > 0) saveHistory(textMessages);
+  }, [textMessages]);
 
   // Prevent page scroll when input is focused (browser tries to scroll it into view)
   const handleInputFocus = () => {
@@ -120,6 +159,37 @@ export default function Chat() {
     sendTextMessage(input);
   };
 
+  const handleRegenerate = () => {
+    if (textMessages.length === 0 || isTextLoading) return;
+    // Find the last user turn and re-fire it. Trim everything after that
+    // user turn so the regen replaces the bad assistant reply.
+    const lastUserIndex = [...textMessages].reverse().findIndex((m) => m.role === "user");
+    if (lastUserIndex === -1) return;
+    const cutAt = textMessages.length - 1 - lastUserIndex;
+    const trimmedText = textMessages.slice(0, cutAt);
+    const trimmedHistory = conversationHistory.slice(0, conversationHistory.findIndex((m) => m === textMessages[cutAt]));
+    const lastUserText = textMessages[cutAt].content;
+    setTextMessages(trimmedText);
+    setConversationHistory(trimmedHistory.length > 0 ? trimmedHistory : []);
+    sendTextMessage(lastUserText);
+  };
+
+  const handleCopy = async (text: string, index: number) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedIndex(index);
+      setTimeout(() => setCopiedIndex(null), 1500);
+    } catch {
+      // clipboard can be blocked — silently degrade
+    }
+  };
+
+  const handleClearHistory = () => {
+    setTextMessages([]);
+    setConversationHistory([]);
+    if (typeof window !== "undefined") sessionStorage.removeItem(STORAGE_KEY);
+  };
+
   const isLight = theme === "light";
 
   return (
@@ -134,12 +204,25 @@ export default function Chat() {
           <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-[#6366f1]/20">
             <Image src="/headshot-ama.jpg" alt="Dico Angelo" fill className="object-cover" />
           </div>
-          <div>
+          <div className="flex-1 min-w-0">
             <h3 className="font-bold">Ask Me Anything</h3>
             <p className={`text-sm transition-colors ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
-              Voice or text — context is shared
+              Voice or text. Context is shared across both.
             </p>
           </div>
+          {textMessages.length > 0 && (
+            <button
+              onClick={handleClearHistory}
+              aria-label="Clear conversation history"
+              className={`text-xs px-2.5 py-1.5 rounded-md transition-colors ${
+                isLight
+                  ? 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+                  : 'text-[#737373] hover:text-white hover:bg-[#1f1f1f]'
+              }`}
+            >
+              Clear
+            </button>
+          )}
         </div>
       </div>
 
@@ -180,7 +263,7 @@ export default function Chat() {
                   Ask About Anything
                 </h4>
                 <p className={`mb-5 text-sm text-center max-w-[320px] ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-                  700+ career dossier chunks indexed with semantic search. Start with a suggestion or ask your own question.
+                  Real-time semantic search over Dico's portfolio, partnerships, and projects. Start with a suggestion or ask your own.
                 </p>
                 <div className="w-full max-w-[340px]">
                   <p className={`text-xs font-semibold mb-3 text-center ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
@@ -205,25 +288,63 @@ export default function Chat() {
               </div>
             ) : (
               <>
-                {textMessages.map((message, i) => (
-                  <div
-                    key={i}
-                    className={`flex ${message.role === "user" ? "justify-end" : "justify-start"} animate-in fade-in slide-in-from-bottom-2 duration-300`}
-                    style={{ animationDelay: `${Math.min(i, 5) * 50}ms` }}
-                  >
+                {textMessages.map((message, i) => {
+                  const isLastAssistant =
+                    message.role === "assistant" && i === textMessages.length - 1;
+                  const isStreamingNow = isLastAssistant && isTextLoading;
+                  const showActions =
+                    message.role === "assistant" && message.content.length > 0 && !isStreamingNow;
+                  return (
                     <div
-                      className={`max-w-[85%] px-4 py-2.5 rounded-2xl transition-all duration-200 ${
-                        message.role === "user"
-                          ? "bg-[#6366f1] text-white rounded-br-md"
-                          : isLight
-                            ? "bg-gray-100 text-gray-800 rounded-bl-md"
-                            : "bg-[#1f1f1f] text-[#ededed] rounded-bl-md"
-                      }`}
+                      key={i}
+                      className={`flex ${message.role === "user" ? "justify-end" : "justify-start"} animate-in fade-in slide-in-from-bottom-2 duration-300`}
+                      style={{ animationDelay: `${Math.min(i, 5) * 50}ms` }}
                     >
-                      <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.content}</p>
+                      <div className="max-w-[85%] flex flex-col gap-1.5">
+                        <div
+                          className={`px-4 py-2.5 rounded-2xl transition-all duration-200 ${
+                            message.role === "user"
+                              ? "bg-[#6366f1] text-white rounded-br-md"
+                              : isLight
+                                ? "bg-gray-100 text-gray-800 rounded-bl-md"
+                                : "bg-[#1f1f1f] text-[#ededed] rounded-bl-md"
+                          }`}
+                        >
+                          <p className="text-sm whitespace-pre-wrap leading-relaxed">
+                            {message.content}
+                            {isStreamingNow && (
+                              <span
+                                aria-hidden="true"
+                                className="inline-block w-[2px] h-[1em] ml-0.5 align-[-2px] bg-current animate-pulse"
+                              />
+                            )}
+                          </p>
+                        </div>
+                        {showActions && (
+                          <div className={`flex gap-3 px-1 text-[11px] ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
+                            <button
+                              type="button"
+                              onClick={() => handleCopy(message.content, i)}
+                              className="hover:text-[#6366f1] transition-colors"
+                            >
+                              {copiedIndex === i ? "Copied" : "Copy"}
+                            </button>
+                            {isLastAssistant && (
+                              <button
+                                type="button"
+                                onClick={handleRegenerate}
+                                disabled={isTextLoading}
+                                className="hover:text-[#6366f1] transition-colors disabled:opacity-50"
+                              >
+                                Regenerate
+                              </button>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
                 {isTextLoading && textMessages[textMessages.length - 1]?.role === "user" && (
                   <div className="flex justify-start animate-in fade-in duration-200">
                     <div className={`px-4 py-3 rounded-2xl rounded-bl-md ${isLight ? 'bg-gray-100' : 'bg-[#1f1f1f]'}`}>
@@ -273,6 +394,12 @@ export default function Chat() {
                 Send
               </button>
             </div>
+            <p
+              id="chat-help"
+              className={`mt-2 text-[10px] text-center ${isLight ? 'text-gray-400' : 'text-[#525252]'}`}
+            >
+              Powered by DeepSeek V4 with semantic retrieval over Dico's portfolio. May make mistakes.
+            </p>
           </form>
         </div>
       </div>
