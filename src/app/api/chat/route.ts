@@ -4,6 +4,7 @@ import { getDossierContext, getCombinedContext } from "@/lib/dossier";
 import { getPageIndexContext, isPageIndexAvailable, stripCitationsForVoice } from "@/lib/pageindex";
 import { chatRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
 import { chatMessageSchema, validateRequest } from "@/lib/schemas";
+import { getArtifactIndex } from "@/lib/artifact-index";
 
 // DeepSeek V4 via the Anthropic-compatible Messages API (same SDK, different baseURL).
 // V4 Pro: $0.43/$0.87 per 1M tokens during 75% promo through 2026-05-31.
@@ -178,9 +179,17 @@ export async function POST(request: Request) {
     // Inject skill gap coaching notes (top 3 gaps seen 5+ times)
     const gapNotes = await getSkillGapCoachingNotes();
 
-    // Build the full system prompt with RAG context and coaching
+    // Layer 1 of three-layer retrieval: always-loaded artifact title index.
+    // Cached 5 min in-memory + lives inside the static prefix of the prompt
+    // so DeepSeek's KV cache makes it ~free per request after the first.
+    const artifactIndex = await getArtifactIndex();
+
+    // Build the full system prompt:
+    //   STATIC (cache-friendly): SYSTEM_PROMPT + artifact title index
+    //   DYNAMIC (changes per query): coaching notes + retrieved RAG chunks
     const fullSystemPrompt = [
       SYSTEM_PROMPT,
+      artifactIndex,
       gapNotes,
       dossierContext,
     ].filter(Boolean).join('\n\n');
