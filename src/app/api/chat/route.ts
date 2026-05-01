@@ -5,6 +5,7 @@ import { getPageIndexContext, isPageIndexAvailable, stripCitationsForVoice } fro
 import { chatRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
 import { chatMessageSchema, validateRequest } from "@/lib/schemas";
 import { getArtifactIndex } from "@/lib/artifact-index";
+import { resolveRerank, type RerankVariant, type RerankMode } from "@/lib/rerank-control";
 
 // DeepSeek V4 via the Anthropic-compatible Messages API (same SDK, different baseURL).
 // V4 Pro: $0.43/$0.87 per 1M tokens during 75% promo through 2026-05-31.
@@ -150,6 +151,13 @@ export async function POST(request: Request) {
 
     query = latestUserMessage?.content || '';
 
+    // Resolve rerank assignment for this request. Mode is set by env
+    // CHAT_RERANK_MODE (off | on | ab). In ab mode the visitor's IP-derived
+    // identifier is hashed into a stable 50/50 bucket so the same visitor
+    // always sees the same variant within a run, and the variant is
+    // logged so we can compare quality after enough traffic.
+    const rerankDecision = resolveRerank(identifier);
+
     // Retrieve context using PageIndex (preferred) or Cohere/Supabase (fallback)
     let dossierContext = "";
     const retrievalStart = Date.now();
@@ -166,7 +174,9 @@ export async function POST(request: Request) {
       // Fallback to combined context (artifacts + dossier) if PageIndex unavailable or empty
       if (!dossierContext) {
         // Use combined context which searches both artifacts (new) and dossier (legacy)
-        dossierContext = await getCombinedContext(latestUserMessage.content);
+        dossierContext = await getCombinedContext(latestUserMessage.content, {
+          rerank: rerankDecision.shouldRerank,
+        });
         if (dossierContext) {
           ragSource = isPageIndexAvailable() ? 'fallback' : 'cohere';
         }
@@ -283,6 +293,8 @@ export async function POST(request: Request) {
           model: modelUsed,
           cacheHitTokens,
           cacheMissTokens,
+          rerankMode: rerankDecision.mode,
+          rerankVariant: rerankDecision.variant,
         }).catch(() => {}); // Ignore logging errors
 
         controller.close();
@@ -366,6 +378,8 @@ async function logChatToSupabase(data: {
   model?: string;
   cacheHitTokens?: number;
   cacheMissTokens?: number;
+  rerankMode?: RerankMode;
+  rerankVariant?: RerankVariant;
 }) {
   const sb = getSupabase();
   if (!sb) return;
@@ -385,6 +399,8 @@ async function logChatToSupabase(data: {
         model: data.model,
         cache_hit_tokens: data.cacheHitTokens,
         cache_miss_tokens: data.cacheMissTokens,
+        rerank_mode: data.rerankMode,
+        rerank_variant: data.rerankVariant,
       },
     } as Record<string, unknown>);
   } catch (err) {
