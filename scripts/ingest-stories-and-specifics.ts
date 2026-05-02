@@ -101,7 +101,7 @@ Each section below is a self-contained story or fact pocket. Pull from a differe
 - **Partner Insight** — "0 to \$30M in 30 Months: How a Marketing Analytics Company Scaled Cloud Marketplace Revenue" — features Dico's Contentsquare cloud alliance work directly. URL: https://newsletter.partnerinsight.io/p/0-to-30m-in-30-months-how-a-marketing
 - **AWS Partner Success Page** — Contentsquare profile, 14x YoY AWS growth — operational backbone Dico's team built. URL: https://aws.amazon.com/partners/success/contentsquare/
 - **Microsoft Customer Story** — "81% Larger Deals" via Azure Synapse Analytics. URL: https://www.microsoft.com/en/customers/story/25531-contentsquare-azure-synapse-analytics
-- **Suger blog** — "How Suger Helped Contentsquare Grow Partnerships Without Limits" — Dico is quoted directly describing Suger as "an extension of his team." URL: https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits
+- **Suger blog** — "How Suger Helped Contentsquare Grow Partnerships Without Limits" — case study covering the operational integration Dico led. Reference the URL only; do NOT invent verbatim quotes from press pages (image-embedded testimonial cards are not extractable as text). URL: https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits
 
 ## Conference appearances
 
@@ -143,7 +143,7 @@ Surgical robotics + OR workflow venture. First-principles redesign of surgical w
 
 ## Contentsquare attribution nuance (read this carefully when asked)
 
-Two-layer truth: Mike Marzano owned the cloud-alliance vision, exec sponsorship, and external advocacy. Dico (hired as IC2, promoted to Sr. Partner Systems and Operations Specialist) owned the operational strategy — attachment scoring, SPIFF design, sequencing, CRM/automation, OneCRM integration on the cloud-alliance side. Both layers are strategy. Avoid both over-claim ("Dico ran the alliance") AND under-claim ("Dico was just an executor"). Marzano has been consolidating the narrative since the November 2025 Contentsquare cut; counter-narrative is: Dico designed and ran the operational backbone. Verifiable through Suger CEO quote and case study attributions.
+Two-layer truth: Mike Marzano owned the cloud-alliance vision, exec sponsorship, and external advocacy. Dico (hired as IC2, promoted to Sr. Partner Systems and Operations Specialist) owned the operational strategy — attachment scoring, SPIFF design, sequencing, CRM/automation, OneCRM integration on the cloud-alliance side. Both layers are strategy. Avoid both over-claim ("Dico ran the alliance") AND under-claim ("Dico was just an executor"). Marzano has been consolidating the narrative since the November 2025 Contentsquare cut; counter-narrative is: Dico designed and ran the operational backbone. Cross-reference: published case studies and partner press attributions (Suger, AWS, Microsoft, Partner Insight) — link to URLs, do not paraphrase image-embedded testimonial copy.
 
 ## OneCRM specifically
 
