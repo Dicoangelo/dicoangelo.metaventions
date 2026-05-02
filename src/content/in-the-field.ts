@@ -147,4 +147,11 @@ export const fieldPhotos: FieldPhoto[] = [
     alt: "Conference group portrait at a Boston tech event",
     aspect: "landscape",
   },
+  {
+    id: "p19",
+    src: "/gallery/photo-19.webp",
+    alt: "Top Alliances Impact recognition slide naming Dico Angelo as Most Impactful Partner Support, alongside Julia Doran (Top Alliances Manager) and Andrea Della Corte (Top Program Manager)",
+    caption: "Most Impactful Partner Support",
+    aspect: "landscape",
+  },
 ];
