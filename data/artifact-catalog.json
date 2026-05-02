@@ -1,0 +1,1990 @@
+[
+  {
+    "slug": "ace-adaptive-consensus-engine",
+    "title": "ACE: Adaptive Consensus Engine",
+    "category": "project",
+    "summary": "ACE achieves a +23% accuracy improvement over single-agent baselines on complex reasoning tasks and reduces false-positive errors by 34% in production. It orchestrates 6 specialized agents\u2014Analyst, Critic, Synthesizer, Devil's Advocate, Quality Auditor, and Arbiter\u2014using a bicameral voting protocol requiring a 4/6 supermajority. The Decision Quality (DQ) score combines Validity (40%), Specificity (30%), and Correctness (30%), with scores below 0.50 triggering automatic re-deliberation.",
+    "content_chars": 4807,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "investor"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "solutions-architect"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "code-artifact",
+        "metric",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "multi-agent",
+      "consensus",
+      "typescript",
+      "ai"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:11.471Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "6b9b56de-6ca4-407a-89e2-92dbbee547c9"
+  },
+  {
+    "slug": "application-outcomes-and-conversion-patterns",
+    "title": "Application Outcomes & Conversion Patterns",
+    "category": "deep-dive",
+    "summary": "Dico has applied to 36 roles and generated 11 more across 5 archetypes: ai_engineer (17), gtm_operations (14), partner_solutions (12), data_operations (2), and technical_pm (2). No applications have advanced to screening, interview, or offer stage yet. The best-documented archetype-fit example is the Anthropic Data Operations Manager role (match 95%, $250K-$365K USD, San Francisco hybrid), which was upgraded through v2 and v3 with portfolio case studies and production AI evidence.",
+    "content_chars": 7125,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "revops-ai-infra",
+        "solutions-architect",
+        "founder-cto",
+        "applied-ai-product"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "applications",
+      "outcomes",
+      "archetypes",
+      "conversion",
+      "pipeline"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:15.781Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "338c0513-ca02-461d-855c-ece13a09315c"
+  },
+  {
+    "slug": "archon-autonomous-recursive-coordination-hierarchical-orchestration-network",
+    "title": "ARCHON: Autonomous Recursive Coordination & Hierarchical Orchestration Network",
+    "category": "project",
+    "summary": "ARCHON is a dual-layer meta-orchestration system achieving 100% actionable outputs via DQ (Decision Quality) scoring with a target of 0.7. At the CLI layer, it delivers 2-3x parallel speedup with 100% conflict prevention through file locking, while the application layer uses a 1M token budget per session and escalates to humans after 5 attempts. The system routes goals through specialized AI subsystems with allocated budget ratios of 30% to ACE, 25% to CPB, 15% to Evolution, and 10% to Dream Protocol.",
+    "content_chars": 14979,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "investor"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "solutions-architect"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description",
+        "metric"
+      ]
+    },
+    "topical_tags": [
+      "orchestration",
+      "multi-agent",
+      "coordination"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:20.688Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "49c976b1-452a-4209-89db-78d18fab4948"
+  },
+  {
+    "slug": "canonical-applied-positioning-resume-corpus",
+    "title": "Canonical Applied Positioning: Resume Corpus",
+    "category": "deep-dive",
+    "summary": "Dico Angelo's Master Profile v3.0 positions him as an \"Architect-Operator Hybrid\" with the tagline \"Builder-first GTM Systems & Agentic Automation leader who turns revenue motion into infrastructure.\" He is open to relocation to SF, NYC, Austin, Boston, or Toronto and requires TN Visa sponsorship. His career arc spans from process mastery at Edison Financial to founding Metaventions AI, where he is building Structura, a Sovereign OS, and the Agentic Partner Weaver framework.",
+    "content_chars": 70901,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "peer-engineer",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "revops-ai-infra",
+        "solutions-architect",
+        "founder-cto",
+        "applied-ai-product"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "positioning",
+      "resumes",
+      "applied-narrative",
+      "jd-matching"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:26.084Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "a97b0325-4e7e-4775-aedb-54c3f1ae5e30"
+  },
+  {
+    "slug": "capabilities-and-tools-inventory",
+    "title": "Capabilities & Tools Inventory",
+    "category": "skill",
+    "summary": "Dico ships production code in TypeScript, Python, SQL, and Bash by directing AI coding agents (Claude Code, Codex, Gemini, DeepSeek V4) in plain English, with 900,000+ lines across 20+ shipped systems and 44 repositories. Cloud Marketplace Operations proficiency is expert-level with $800M+ TCV, 2500+ deal registrations, and a 97% approval rate on 600+ deals/quarter. Shipped portfolio includes OS-App (React 19, TypeScript, Gemini 2.0, 33K lines), CareerCoachAntigravity (Next.js 15, 15K lines), and ResearchGravity (Python, FastAPI, Qdrant, 17K lines).",
+    "content_chars": 7517,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "peer-engineer",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "revops-ai-infra",
+        "solutions-architect",
+        "founder-cto",
+        "applied-ai-product"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "code-artifact",
+        "process-description",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "capabilities",
+      "tools",
+      "certifications",
+      "stack",
+      "ai-assisted-dev"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:31.083Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "c9fe6aae-5b64-4562-b244-641ede507a48"
+  },
+  {
+    "slug": "client-bxlence-hospitality",
+    "title": "Client Project: Bxlence Hospitality",
+    "category": "experience",
+    "summary": "Bxlence Hospitality (bxl.metaventionsai.com) is a luxury hospitality platform co-founded by Dico Angelo and Mirando Atemici, offering curated access to hotels, dining, nightlife, yacht charters, and private aviation with a flagship location in Miami. The full-stack Next.js 16 platform features a 3-tier membership system priced at Silver $2,500, Gold $10,000, and Black invitation-only, with Stripe checkout, and event packages including the Signature Soiree at $15,000 and Grand Production at $35,000. The site includes 15+ pages, a Supabase-backed contact pipeline with Resend email notifications, and 30+ custom animation components.",
+    "content_chars": 3922,
+    "labels": {
+      "audience": [
+        "partner",
+        "investor",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "solutions-architect",
+        "applied-ai-product"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description",
+        "metric"
+      ]
+    },
+    "topical_tags": [
+      "client-project",
+      "hospitality",
+      "next.js",
+      "stripe",
+      "supabase",
+      "luxury",
+      "miami"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:35.002Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "97263fca-15a9-41f5-9133-f12af4512841"
+  },
+  {
+    "slug": "client-signature-event",
+    "title": "Client Project: The Signature Event",
+    "category": "experience",
+    "summary": "The Signature Event (thesignatureevent.metaventionsai.com) is a luxury marketing website for a February 20, 2026 invitation-only networking gathering of 40 curated professionals at the 500 Brickell penthouse in Miami. Built for Cooper Swanson Ventures (Jordan Cooper & Leif Swanson), the Next.js 16 site features a 57-photo lightbox, sponsor tiers including title sponsor MB2 Dental, and RSVP integration. The project was delivered end-to-end in under 2 weeks.",
+    "content_chars": 2997,
+    "labels": {
+      "audience": [
+        "partner",
+        "general"
+      ],
+      "role_cuts": [
+        "solutions-architect",
+        "founder-cto",
+        "general"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "client-project",
+      "event-marketing",
+      "next.js",
+      "luxury",
+      "miami"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:38.426Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "4010a3e0-4f62-4afa-95a7-296308b28e08"
+  },
+  {
+    "slug": "cloud-gtm-enterprise-partnerships",
+    "title": "Cloud GTM & Enterprise Partnerships",
+    "category": "skill",
+    "summary": "Contentsquare processed $800M+ total contract value through cloud marketplace programs built from the ground up across AWS, Microsoft Azure, and Google Cloud Platform. The program earned Microsoft Partner of the Year twice and accelerated enterprise deal cycles by unlocking customer cloud commits like EDP and MACC. Expertise spans private offer creation, co-sell motion orchestration, and hyperscaler partner portal administration including AWS ACE and Microsoft Partner Center.",
+    "content_chars": 7923,
+    "labels": {
+      "audience": [
+        "partner",
+        "investor",
+        "recruiter"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "revops-ai-infra"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "metric",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "cloud",
+      "gtm",
+      "aws",
+      "azure",
+      "enterprise"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:42.344Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "f3eb88eb-10dd-4267-898c-c19b339e15c3"
+  },
+  {
+    "slug": "cognitive-os-energy-aware-task-routing",
+    "title": "Cognitive OS: Energy-Aware Task Routing",
+    "category": "project",
+    "summary": "Cognitive OS analyzes 34,134+ events and 424+ sessions to detect cognitive rhythms and route tasks. Peak productivity hours are 20:00, 19:00, and 03:00, with Monday showing 68% productivity versus Thursday's 37%. Session fate prediction achieves ~80-85% accuracy using message count (25% weight), tool count (25% weight), and intent warmup (20% weight) as primary features.",
+    "content_chars": 16264,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "general"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "cognitive",
+      "flow-state",
+      "routing"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:45.457Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "75b78512-b271-48e9-bd1c-fd5d1f99d9b5"
+  },
+  {
+    "slug": "collaboration-drammeh-dq-scoring",
+    "title": "Research Collaboration: Philip Drammeh \u2014 DQ Scoring in Production",
+    "category": "experience",
+    "summary": "Philip Drammeh\u2019s paper arXiv:2511.15755, the most referenced paper in the Antigravity ecosystem with 599 citations, proposed multi-agent LLM orchestration using a DQ scoring framework (validity 40% + specificity 30% + correctness 30%). Dico Angelo implemented this framework into a production routing engine, validating it with 4,687+ routing decisions from Jan 16 to Mar 6, 2026, where DQ scores improved from 0.575 to 0.870 and multi-agent consensus achieved a 95.4% variance reduction. A co-authored paper titled \"DQ Scoring in Production\" has been proposed targeting NeurIPS, ICML, or AAAI.",
+    "content_chars": 4027,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "investor",
+        "partner"
+      ],
+      "role_cuts": [
+        "applied-ai-product",
+        "solutions-architect",
+        "founder-cto"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "metric",
+        "named-person",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "research-collaboration",
+      "dq-scoring",
+      "arxiv",
+      "multi-agent",
+      "production-validation"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:48.840Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "b9388caf-92a3-439f-bc36-ed7b6c4c1f75"
+  },
+  {
+    "slug": "contentsquare-cloud-alliance-operations-lead",
+    "title": "Contentsquare: Cloud Alliance Operations Lead",
+    "category": "experience",
+    "summary": "Contentsquare's Cloud Alliance Operations Lead role managed a team of 3 and built infrastructure enabling $30M+ ACV growth through AWS and Microsoft partnerships. Processed $800M+ in total contract value across 2,500+ deal registrations with a 97% approval rate. Built 50+ dynamic reports and automated deal registration from 8 minutes to 30 seconds.",
+    "content_chars": 30086,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "revops-ai-infra"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "enterprise",
+      "operations",
+      "cloud",
+      "partnerships"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:32:52.370Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "a6c46b78-1512-4829-bbdb-fb582c1b832a"
+  },
+  {
+    "slug": "corporate-ai-thought-leadership",
+    "title": "Corporate AI Thought Leadership",
+    "category": "deep-dive",
+    "summary": "Dico Angelo engages directly with Elon Musk on robotics economics and Andrej Karpathy on AI development paradigms via X/Twitter (@dicoangelo). His analysis of Anthropic's AWS partnership identifies a dual-track hyperscaler strategy where cloud providers offer both proprietary and partnership-based AI solutions to prevent vendor lock-in. He predicts the 2026 \"Generative UI Revolution\" will decouple business logic from presentation, making UI a commodity while data and integration depth become the enterprise moat.",
+    "content_chars": 13622,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "solutions-architect"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "thought-leadership",
+      "corporate",
+      "ai",
+      "strategy"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:32:56.540Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "0c157d30-7941-4c7e-8b6a-72af15df8c7a"
+  },
+  {
+    "slug": "education-credentials",
+    "title": "Education & Credentials",
+    "category": "experience",
+    "summary": "Dico holds a BBA in Marketing from the University of Windsor's Odette School of Business (2019). He was a SpaceX Hyperloop Pod Competition 2019 Finalist as the Engineering Business Marketing Lead. Professional recognition includes 2x Microsoft Partner of the Year Contributor (2024, 2025) and selection for the Catalyst 2026 Fellowship.",
+    "content_chars": 24216,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "peer-engineer",
+        "investor"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "solutions-architect",
+        "revops-ai-infra",
+        "gtm-systems-architect"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "metric",
+        "award",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "education",
+      "credentials",
+      "self-taught"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:33:00.362Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "46c231be-84b6-4cdc-aeed-758d979b0d28"
+  },
+  {
+    "slug": "elevator-briefing-30-second-pitch",
+    "title": "Elevator Briefing: 30-Second & 2-Minute Pitches",
+    "category": "deep-dive",
+    "summary": "Dico Angelo ran the operational backbone of Contentsquare's cloud alliance, processing $800M+ TCV and enabling $30M+ in marketplace revenue across AWS and Microsoft. He simultaneously shipped 900K+ lines of AI-directed production code across 20+ systems, implementing arXiv papers into working infrastructure. He targets Partner Operations, Cloud Alliance Ops, or GTM Systems Architect roles where operational depth meets AI-native velocity; Canadian citizen, TN Visa eligible.",
+    "content_chars": 7409,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "revops-ai-infra",
+        "solutions-architect",
+        "founder-cto"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "metric",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "elevator-pitch",
+      "compound-synthesis",
+      "tldr",
+      "high-density"
+    ],
+    "source": {
+      "kind": "compound-synthesis",
+      "notes": "Compound synthesis on synthesis artifacts"
+    },
+    "ingested_at": "2026-05-02T21:33:04.716Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "686f3892-5b59-4dff-ac4b-0bcf1b7dc6e1"
+  },
+  {
+    "slug": "experience-early-career-v2",
+    "title": "Early Career: Operations Foundation (2020-2022)",
+    "category": "experience",
+    "summary": "At Rocket Mortgage Canada (2021-2022), Dico managed end-to-end feature releases including go/no-go checkpoints and staged rollouts to 45+ agents, while serving as System Administrator for multiple platforms. At Edison Financial (2020-2021), he reduced the number of documents needed to process while maintaining pipelines. He also attended 150+ community events across 8 cities including NFT NYC and Miami Hack Week.",
+    "content_chars": 8499,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "general"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "revops-ai-infra",
+        "solutions-architect",
+        "general"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "rocket-mortgage",
+      "pss",
+      "release-management",
+      "system-admin",
+      "early-career"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:33:08.077Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "f9787c35-f8ee-4647-b08a-2cb8919c9885"
+  },
+  {
+    "slug": "linkedin-public-profile-snapshot",
+    "title": "LinkedIn Public Profile Snapshot",
+    "category": "deep-dive",
+    "summary": "Dico Angelo's LinkedIn headline is \"Partner Operations\". His profile at linkedin.com/in/dico-angelo shows he is the Founder & Systems Architect at Metaventions AI, based in Canada with 3,300+ followers. Open to Work is enabled targeting Operations Partner, Operations Manager, and Partner Operations Manager roles in locations including San Francisco, New York, and Toronto.",
+    "content_chars": 4317,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "general"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "founder-cto"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "linkedin",
+      "public-profile",
+      "open-to-work",
+      "external-presence"
+    ],
+    "source": {
+      "kind": "manual-curation",
+      "paths": [
+        "~/projects/career/job-search/linkedin-audit-2026-04-24/AUDIT.md",
+        "~/projects/career/resume-hub/resumes/linkedin_bio.txt"
+      ]
+    },
+    "ingested_at": "2026-05-02T21:33:11.310Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "2d7c0ad7-cc8e-4050-bb66-197e5b8c6aec"
+  },
+  {
+    "slug": "live-site-headline-facts",
+    "title": "Live Site Headline Facts (dicoangelo.metaventionsai.com)",
+    "category": "deep-dive",
+    "summary": "Dico Angelo's portfolio site (dicoangelo.metaventuresai.com) positions him as a \"Partner-Builder\" with the tagline: \"Operated cloud ops on the 3-person alliance team at Contentsquare. Program scaled $0 \u2192 $30M+ across AWS and Microsoft (2x MSFT Partner of the Year, $800M+ TCV).\" He claims to have specified 58 production AI tools in English, directed Claude Code/Codex/Gemini to build them, and shipped infrastructure capturing 275K+ tool events and 20M+ knowledge-graph edges. The site highlights four headline proof numbers: $30M+ Cloud Alliance Revenue, $800M+ Partner TCV Processed, 20M+ Cognitive Graph Edges, and 900K+ Lines of AI-Directed Code.",
+    "content_chars": 23913,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor",
+        "general"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "solutions-architect",
+        "founder-cto",
+        "applied-ai-product"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "award",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "live-site",
+      "homepage",
+      "canonical-narrative",
+      "headline-facts"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:33:17.835Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "83026fac-8871-4812-a205-f887db89c969"
+  },
+  {
+    "slug": "metaventions-ai-founder-systems-architect",
+    "title": "Metaventions AI: Founder & Systems Architect",
+    "category": "experience",
+    "summary": "Dico Angelo founded Metaventions AI in November 2025 and serves as Founder & Systems Architect. He shipped 900,000+ lines of code across 20+ projects, published 2 npm packages (@metaventionsai/cpb-core and @metaventionsai/voice-nexus), and implemented 8+ arXiv papers into production. The live OS-App demo is at https://app.metaventionsai.com.",
+    "content_chars": 23154,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "solutions-architect"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "code-artifact",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "founder",
+      "ai",
+      "full-stack",
+      "research"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:33:21.504Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "4720ea1c-5b3d-4f04-b7ea-4b1eaa867d31"
+  },
+  {
+    "slug": "metaventions-ai-founding-vision-and-cognitive-equity",
+    "title": "Metaventions AI: Founding Vision & Cognitive Equity Thesis",
+    "category": "deep-dive",
+    "summary": "Metaventions AI introduces \"cognitive equity\" \u2014 making human-AI cognitive output a sovereign, compounding asset rather than free training data. The whitepaper states: \"Bitcoin introduced digital scarcity. Ethereum introduced programmable value. Metaventions introduces cognitive equity \u2014 where thinking is owning.\" A working system has captured 174,169 cognitive events across 5 platforms, including 33,240 research findings and 68,341 tool interactions.",
+    "content_chars": 10666,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "whitepaper",
+      "founding-narrative",
+      "cognitive-equity",
+      "thesis",
+      "metaventions-origin"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:33:24.109Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "8df6a103-829d-481f-b253-a8773eadcac9"
+  },
+  {
+    "slug": "metaventions-ai-product-suite",
+    "title": "Metaventions AI: Product Suite",
+    "category": "project",
+    "summary": "Metaventions AI is a research studio pioneering \"Architected Intelligence\" with a mission to transform abstract strategic visions into operational infrastructure. Structura OS, implemented as OS-App at github.com/Dicoangelo/OS-App, is a reactive operating environment with 127,000+ lines of production TypeScript code. The Agentic Partner Weaver framework includes an Adaptive Consensus Engine with a Decision Quality score averaging 0.621 across 10,000+ routing decisions and a Recovery Success rate of 87%.",
+    "content_chars": 16596,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "solutions-architect",
+        "applied-ai-product"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description",
+        "metric"
+      ]
+    },
+    "topical_tags": [
+      "metaventions",
+      "products",
+      "enterprise",
+      "structura"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:33:27.852Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "8384786b-84e6-4f5f-9ec2-9bbe5581cc3a"
+  },
+  {
+    "slug": "os-app-metaventions-ai-platform",
+    "title": "OS-App (Structura OS): Metaventions AI Platform",
+    "category": "project",
+    "summary": "Structura OS is a voice-native, multi-agent AI platform codenamed OS-App, comprising 127,692 lines of TypeScript/React code at version 1.4.0. It integrates real-time voice AI, recursive language models, and multi-agent consensus, implementing a \"Precision Bridge Framework\" to achieve Opus-quality decisions through Haiku-budget compute. The platform learns from 666+ historical outcomes and 60,000+ error patterns to predict session success.",
+    "content_chars": 23397,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "investor",
+        "partner"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "solutions-architect",
+        "applied-ai-product"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "code-artifact",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "full-stack",
+      "react",
+      "voice",
+      "ai-platform"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:33:31.283Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "6dd37b74-af60-425f-b7d9-90710a05d83e"
+  },
+  {
+    "slug": "personal-philosophy-values",
+    "title": "The Human Behind the Code: Values & Philosophy",
+    "category": "deep-dive",
+    "summary": "Dico's core philosophy is \"Be Impeccable With Your Word,\" treating every commitment as sacred. He operates on a \"Systems Over Goals\" principle, building habits that make success inevitable. Formative experiences include varsity basketball, systems hacking in RPGs, and a self-taught coding journey from a marketing background to shipping 900K+ lines of code in 5 months.",
+    "content_chars": 12623,
+    "labels": {
+      "audience": [
+        "general"
+      ],
+      "role_cuts": [
+        "general"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "values",
+      "philosophy",
+      "personal",
+      "motivation",
+      "character"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:33:34.019Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "39c8684a-3dfa-4e85-8aab-43cdfba27c5e"
+  },
+  {
+    "slug": "press-urls-and-public-awards-index",
+    "title": "Press URLs & Public Awards Index",
+    "category": "deep-dive",
+    "summary": "Partner Insight profiled the Contentsquare cloud alliance Dico operationalized in \"0 to $30M in 30 Months: How a Marketing Analytics Company Scaled Cloud Marketplace Revenue\" at newsletter.partnerinsight.io/p/0-to-30m-in-30-months-how-a-marketing, citing 14X year-over-year AWS marketplace growth. Contentsquare won the Microsoft Commercial Marketplace Partner of the Year award in both 2023 and 2024, verifiable on Microsoft's Partner of the Year program page. Dico co-built the AWS Strategic Collaboration Agreement with AWS Account Manager Matt Rivron and holds the Partner Insight Cloud GTM Leader certification.",
+    "content_chars": 7019,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "solutions-architect"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "verifiable-external",
+      "evidence_type": [
+        "press",
+        "award",
+        "narrative"
+      ]
+    },
+    "topical_tags": [
+      "press",
+      "awards",
+      "anti-fabrication",
+      "external-validation"
+    ],
+    "source": {
+      "kind": "manual-curation",
+      "urls": [
+        "https://newsletter.partnerinsight.io/p/0-to-30m-in-30-months-how-a-marketing",
+        "https://aws.amazon.com/partners/success/contentsquare/",
+        "https://www.microsoft.com/en/customers/story/25531-contentsquare-azure-synapse-analytics",
+        "https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits"
+      ]
+    },
+    "ingested_at": "2026-05-02T21:33:39.729Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "c993b42e-15af-4035-88f7-f10307183ae0"
+  },
+  {
+    "slug": "project-brooks-vitality",
+    "title": "Brooks Vitality: Coaching Brand for Donovan Brooks",
+    "category": "project",
+    "summary": "Brooks Vitality is a coaching brand Dico is building for client Donovan Brooks, with the preview site live at brooksvitality.metaventionsai.com. The stack uses Vercel static, Cal.com, Stripe, and Tally. As of April 29, 2026, the project is blocked on Donovan\u2019s intake answers for niche, credentials, transformations, pricing, and photos.",
+    "content_chars": 4064,
+    "labels": {
+      "audience": [
+        "general"
+      ],
+      "role_cuts": [
+        "general"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "process-description",
+        "narrative"
+      ]
+    },
+    "topical_tags": [
+      "client-work",
+      "coaching",
+      "vercel",
+      "stripe",
+      "cal-com",
+      "tally"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:33:42.406Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "6bd626da-2a64-496b-b512-91d53dc2440f"
+  },
+  {
+    "slug": "project-careercoach",
+    "title": "CareerCoachAntigravity: AI Career Governance",
+    "category": "project",
+    "summary": "CareerCoachAntigravity is a sovereign career intelligence system at https://careers.metaventionsai.com (GitHub: https://github.com/Dicoangelo/CareerCoachAntigravity) built on Next.js 16, React 19, and TypeScript 5.0 strict mode with zero `any` types. It features a multi-agent hiring committee (Claude, Grok, GPT-4o), a Chameleon Engine v2 for resume narrative switching across Speed, Safety, Creative, and Ecosystem archetypes, and a Skill Graph Navigator with demand gravity and growth velocity metrics. The codebase has 1,801 passing tests across 47 files, zero lint issues, and uses Supabase PostgreSQL with Row Level Security, NextAuth.js v5, and Upstash Redis for rate limiting.",
+    "content_chars": 3932,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "recruiter"
+      ],
+      "role_cuts": [
+        "solutions-architect",
+        "applied-ai-product",
+        "founder-cto"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "verifiable-external",
+      "evidence_type": [
+        "code-artifact",
+        "metric",
+        "process-description",
+        "narrative"
+      ]
+    },
+    "topical_tags": [
+      "careercoach",
+      "hiring-panel",
+      "multi-agent",
+      "career",
+      "next.js"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:33:46.182Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "3285c80b-de78-4e1c-908a-958e1e4c3a93"
+  },
+  {
+    "slug": "project-cinema-studio",
+    "title": "Cinema Studio: Multi-Provider Cinematic Video Generation",
+    "category": "project",
+    "summary": "Cinema Studio shipped into OS-App in May 2026 with a multi-provider video generation engine totaling approximately 2,300 lines of TypeScript. The production substrate stack for face-lock work is Kling 3.0 Pro/Master and Luma Ray 2, after Seedance 2.0 was abandoned due to a policy ceiling. Real renders were proven on 2026-05-01, including a Kling 2.1 Master 10s render of Dico saved to `~/Desktop/cinema-renders/kling21-MAX-20260501-001450.mp4` and a Kling 3.0 Pro render, with auto-download to a renders directory.",
+    "content_chars": 15738,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "partner"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "solutions-architect",
+        "applied-ai-product"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "code-artifact",
+        "process-description",
+        "metric"
+      ]
+    },
+    "topical_tags": [
+      "video-generation",
+      "kling",
+      "luma",
+      "fal",
+      "cinema",
+      "os-app"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:33:49.902Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "0a8a9ab5-3219-4125-a61a-37a457b3e1f0"
+  },
+  {
+    "slug": "project-convergence-stack",
+    "title": "Convergence Stack: 8-Layer Digital Infrastructure Model",
+    "category": "project",
+    "summary": "The Convergence Stack is an 8-layer digital infrastructure model Dico discovered during Bentley Bootcamp prep, mapping 21 speakers to layers from Security & Trust (Hypernative, $100B protected) to Cognitive Equity at the apex. Key metrics include 150+ chains (Allium), $27T CRE target (Inveniam), 4,800+ citations (FinRL), and the UMA standard (Lightspark). The thesis states each layer depends on the one below it, with the missing layer being Cognitive Equity \u2014 who owns what AI agents produce.",
+    "content_chars": 8234,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "solutions-architect",
+        "applied-ai-product"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "infrastructure",
+      "thesis",
+      "research",
+      "bentley-bootcamp",
+      "framework"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:33:53.598Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "3ca0648c-9979-40a9-a6a8-eac3b1ed3f54"
+  },
+  {
+    "slug": "project-friendlyface",
+    "title": "FriendlyFace: AI Compliance & Forensic Evidence System",
+    "category": "project",
+    "summary": "FriendlyFace (friendlyface.metaventionsai.com) wraps existing facial recognition systems like NEC, AWS Rekognition, and Cognitec with a compliance proxy that generates a ForensicSeal \u2014 a W3C Verifiable Credential binding hash chains, Merkle trees, and provenance DAGs into one publicly-verifiable artifact. The 42K+ LOC codebase includes a pip-installable SDK, an Annex IV Report Generator for EU AI Act self-assessment, and novel forensic logging of DP-FedAvg training as courtroom-grade evidence. An ICDF2C 2026 paper submission underpins the research, developed with University of Windsor PhD candidate Safiia Mohammed.",
+    "content_chars": 4322,
+    "labels": {
+      "audience": [
+        "partner",
+        "investor",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "solutions-architect",
+        "founder-cto",
+        "applied-ai-product"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "code-artifact",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "friendlyface",
+      "ai-compliance",
+      "eu-ai-act",
+      "forensic-evidence",
+      "federated-learning",
+      "cryptography"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:33:57.248Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "81300ecd-7718-4445-9b92-63aa220b7c42"
+  },
+  {
+    "slug": "project-frontier-alpha",
+    "title": "Frontier Alpha: Cognitive Factor Intelligence",
+    "category": "project",
+    "summary": "Frontier Alpha is a cognitive factor intelligence platform at https://frontier-alpha.metaventionsai.com with source code at https://github.com/Dicoangelo/frontier-alpha. It analyzes 80+ quantitative factors across 6 categories, uses a self-improving CVRF belief system, and explains decisions via GPT-4o. The platform includes 22 subsystems, 29+ API endpoints, 205 tests, and 62,000+ lines of code.",
+    "content_chars": 3393,
+    "labels": {
+      "audience": [
+        "investor",
+        "peer-engineer",
+        "partner"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "solutions-architect"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "verifiable-external",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "code-artifact",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "frontier-alpha",
+      "portfolio",
+      "factor-analysis",
+      "monte-carlo"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:34:01.665Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "06fc3726-a2e3-4257-be73-a99510235717"
+  },
+  {
+    "slug": "project-meta-vengine",
+    "title": "META-VENGINE: Self-Improving AI Infrastructure",
+    "category": "project",
+    "summary": "META-VENGINE is a self-improving AI routing framework at github.com/Dicoangelo/meta-vengine. It has scored 4,687+ DQ decisions with an average score of 0.889, achieves 94% error coverage (655/700 historical errors) with a 70% auto-fix rate, and uses Thompson Sampling across 19 learnable parameters. The system routes queries across Ollama, Gemini 2.0, Claude Opus, and OpenAI GPT-4, and a 100-query benchmark showed a +12.4% DQ improvement using SUPERMAX multi-agent consensus.",
+    "content_chars": 3635,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "investor",
+        "partner"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "solutions-architect",
+        "revops-ai-infra"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "verifiable-external",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "code-artifact",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "meta-vengine",
+      "dq-scoring",
+      "recovery-engine",
+      "cognitive-os",
+      "routing"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:34:06.705Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "daa9f96b-d057-4a60-91e6-642f561e8a95"
+  },
+  {
+    "slug": "project-nightingale",
+    "title": "Project Nightingale: Surgical Robotics & OR Workflow Venture",
+    "category": "project",
+    "summary": "Project Nightingale is a surgical robotics and OR workflow venture Dico is building with Zack Goldfarb, formerly of Pulmonx and Stryker (Mako certified, Clemson BME). Dico is positioned as a \"Frontier AI builder operator bridging into Health-Tech\" within Health Board Advisors, described as \"the only seed-to-scale clinical venture ecosystem in the U.S.\" HBA leadership includes CEO Richie Hosein (FreeHealth.ai), CSO Sabrina Runbeck (PulsePoint Path), COO Dr. Val Torres (MD/MBA), and Alex Fair (MedStartr Ventures, 70+ startups).",
+    "content_chars": 2168,
+    "labels": {
+      "audience": [
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "solutions-architect",
+        "general"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "named-person",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "healthcare",
+      "robotics",
+      "venture",
+      "research",
+      "or-workflow"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:34:10.584Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "cc2238d6-078f-4717-85f6-d0ad99d673ad"
+  },
+  {
+    "slug": "project-nile-savannah",
+    "title": "Nile Savannah Co.: Heritage Homewares for Monica Kuku",
+    "category": "project",
+    "summary": "Nile Savannah Co. is a heritage homewares brand built for founder Monica Kuku, headquartered in Springfield, MA, with the tagline \"Crafted along the Nile. Inspired by the Savannah.\" The brand features eight Kenyan soapstone SKUs named after Nile-region places, including THE ASWAN VASE ($120) and THE KHARTOUM CANDLE ($65). The multi-page static site is deployed at nilesavannah.metaventionsai.com.",
+    "content_chars": 3554,
+    "labels": {
+      "audience": [
+        "partner",
+        "peer-engineer",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "solutions-architect",
+        "general"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description",
+        "code-artifact"
+      ]
+    },
+    "topical_tags": [
+      "client-work",
+      "shopify",
+      "ecommerce",
+      "heritage-brand",
+      "live-preview"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:34:14.422Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "de86231d-3747-48ef-85d0-b3e170b80151"
+  },
+  {
+    "slug": "project-paper-to-production",
+    "title": "Paper to Production: arXiv Implementation Reports",
+    "category": "project",
+    "summary": "Paper to Production (paper-to-production.vercel.app) is a series of technical architecture reports documenting the translation of research papers into deployed production systems. The flagship report, \"The 28-Wire Nervous System\" published March 11, 2026, documents how 28 wires installed across 5 functional layers produced a +32% improvement in Decision Quality (from 0.704 to 0.952) in a single session. The system created 6 closed feedback loops and 3 self-learning mechanisms, with 83% of decisions becoming pattern-enhanced and SUPERMAX consensus providing a +12.4% DQ lift.",
+    "content_chars": 3111,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "investor",
+        "partner"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "solutions-architect",
+        "applied-ai-product"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "verifiable-machine-generated",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "code-artifact",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "paper-to-production",
+      "arxiv",
+      "architecture",
+      "reports"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:34:19.649Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "841542c8-5eed-4b55-a887-4c1f64fbf584"
+  },
+  {
+    "slug": "project-partnership-graph",
+    "title": "Partnership Graph: AI Orchestration Layer for Cloud Alliances",
+    "category": "project",
+    "summary": "Partnership Graph launched March 25, 2026 with a 30-day category-claim window and a strategy doc claiming a $3.2B SAM. Built by a partnership operator who managed $800M+ TCV across AWS, Microsoft, Crossbeam, Impartner, and PartnerStack. It is an AI orchestration layer for enterprise cloud alliances, described as \"Bloomberg for partnerships,\" built on the UCW substrate.",
+    "content_chars": 29235,
+    "labels": {
+      "audience": [
+        "partner",
+        "investor",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "founder-cto"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "code-artifact",
+        "process-description",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "partnerships",
+      "ai-orchestration",
+      "ucw",
+      "bloomberg-for-partnerships",
+      "live"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:34:23.445Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "60f3d265-6658-4053-bae8-4fec7017d897"
+  },
+  {
+    "slug": "project-researchgravity",
+    "title": "ResearchGravity: Research Orchestration MCP Server",
+    "category": "project",
+    "summary": "ResearchGravity is a Python research intelligence framework at github.com/Dicoangelo/ResearchGravity, version 6.1.0. It has archived 114+ sessions, 2,530+ findings/embeddings, 8,935+ tracked URLs, and processed 27M+ tokens. The system provides an MCP server with 21+ tools, a FastAPI API on port 3847, and uses Cohere embed-v4.0 with Qdrant for semantic search.",
+    "content_chars": 3479,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "partner"
+      ],
+      "role_cuts": [
+        "solutions-architect",
+        "applied-ai-product",
+        "founder-cto"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "verifiable-external",
+      "evidence_type": [
+        "code-artifact",
+        "metric",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "researchgravity",
+      "mcp",
+      "qdrant",
+      "research",
+      "knowledge-graph"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:34:29.878Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "1d7cd37c-6957-47de-b7e4-d8c69c63f0a1"
+  },
+  {
+    "slug": "project-supermax",
+    "title": "SUPERMAX: Multi-Agent Team Coordination",
+    "category": "project",
+    "summary": "SUPERMAX is a 21-agent team coordination system achieving +12.4% DQ improvement and -95.4% variance reduction versus single-model on a 100-query benchmark (arXiv:2511.15755), passing 8/8 tests. It uses council-based architecture with technical, strategic, UCW, and design councils, weighted consensus voting, and automatic escalation from single-agent to multi-agent review when DQ confidence drops. Deployed in CareerCoachAntigravity, META-VENGINE Wire 23, and Paper to Production.",
+    "content_chars": 3910,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "investor"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "solutions-architect"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "metric",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "supermax",
+      "multi-agent",
+      "council",
+      "coordination",
+      "dq-scoring"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:34:33.642Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "0db7b2da-32ef-4ba9-ab10-2e562c5e91da"
+  },
+  {
+    "slug": "project-ucw",
+    "title": "Universal Cognitive Wallet (UCW)",
+    "category": "project",
+    "summary": "UCW is an MCP server on GitHub (github.com/Dicoangelo/ucw) that captures AI conversations across 5 platforms (Claude, ChatGPT, Grok, Gemini, NotebookLM) with 270,000+ total interactions and 163,000+ events captured. It enriches messages using three semantic layers \u2014 Data, Light, and Instinct \u2014 and maintains a knowledge graph with 12.15M edges and 7,130 memory items. The system uses Python 3.8+, SQLite WAL mode locally, PostgreSQL with pgvector in production, and exposes 8 MCP tools including emergence detection and cross-platform coherence search.",
+    "content_chars": 2867,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "investor",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "solutions-architect"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "verifiable-external",
+      "evidence_type": [
+        "code-artifact",
+        "metric",
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "ucw",
+      "cognitive-wallet",
+      "pgvector",
+      "mcp",
+      "cross-platform"
+    ],
+    "source": {
+      "kind": "memory-and-readme",
+      "notes": "From ~/.claude/memory/ + project README"
+    },
+    "ingested_at": "2026-05-02T21:34:38.427Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "b5cd0222-a14d-40b3-b96b-180bd1cf1618"
+  },
+  {
+    "slug": "quantified-achievement-atlas",
+    "title": "Quantified Achievement Atlas: Verified Metrics by Role",
+    "category": "deep-dive",
+    "summary": "Contentsquare scaled cloud marketplace revenue from $0 to $30M+ in ~30 months, processing $800M+ TCV through marketplace systems. Dico Angelo led operations for a team of 3, built OneCRM integration (Salesforce + AWS + PartnerStack + Crossbeam), and earned 2x Microsoft Partner of the Year awards. Cloud marketplace deals were 81% larger on average with a 26-day shorter sales cycle.",
+    "content_chars": 6307,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "revops-ai-infra",
+        "founder-cto"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "verifiable-external",
+      "evidence_type": [
+        "metric",
+        "press",
+        "award",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "metrics",
+      "achievements",
+      "evidence",
+      "case-studies",
+      "proof"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:34:43.151Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "52ad6717-02b9-48df-a715-334e590b46f3"
+  },
+  {
+    "slug": "recruiter-faq-common-questions-answered",
+    "title": "Recruiter FAQ: Common Questions Answered",
+    "category": "faq",
+    "summary": "Dico Angelo classifies himself as an AI Systems Engineer specializing in Multi-Agent Systems & Enterprise Infrastructure. He positions himself as a systems integrator who converts ambiguity into queryable intelligence, building with an infrastructure mindset for audit-ready design. He is not optimized for pure IC coding roles or politically driven environments.",
+    "content_chars": 42703,
+    "labels": {
+      "audience": [
+        "recruiter"
+      ],
+      "role_cuts": [
+        "general"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "metric",
+        "named-person",
+        "award",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "recruiter",
+      "hiring",
+      "interview",
+      "objections"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:34:46.277Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "2abfbf33-42d7-4bae-879c-8d4b656df8b3"
+  },
+  {
+    "slug": "recruiter-quick-fire-faq",
+    "title": "Recruiter Quick-Fire FAQ: Work Auth, Salary, Common Screens",
+    "category": "faq",
+    "summary": "Dico is a Canadian citizen not currently authorized to work in the US for any employer, requiring TN visa sponsorship under USMCA. TN visas are issued at the port of entry with a job offer letter, have no lottery or cap, and allow a 2-3 week start from offer. Salary expectations are open to discussion based on the full compensation package, and he is willing to relocate anywhere with no notice period.",
+    "content_chars": 3663,
+    "labels": {
+      "audience": [
+        "recruiter"
+      ],
+      "role_cuts": [
+        "general"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "recruiter",
+      "faq",
+      "work-auth",
+      "tn-visa",
+      "salary",
+      "screening"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:34:49.161Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "e6e979a7-2ce6-4340-98ba-31a7a2db5657"
+  },
+  {
+    "slug": "role-implications-synthesis",
+    "title": "Role Implications Synthesis: Reading Between the Lines",
+    "category": "skill",
+    "summary": "Dico Angelo's roles map to TPM, PM, Engineering Manager, Solutions Architect, and Platform Engineer job descriptions. At Rocket Mortgage Canada, release management for a 45-person team involved PRD writing, go/no-go gates, and cross-functional communication. At Contentsquare, program management at $800M+ scale included 6 major platform integrations like Salesforce to AWS Marketplace and a 90% reduction in manual processing. At Metaventions AI, 20+ production AI systems were built with 900K+ lines of code, including a 6-agent ACE consensus engine and 21+ MCP tools.",
+    "content_chars": 10032,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "solutions-architect",
+        "revops-ai-infra",
+        "founder-cto",
+        "applied-ai-product"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "synthesis",
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "role-synthesis",
+      "tpm",
+      "release-management",
+      "cross-functional",
+      "google",
+      "transferable-skills"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:34:52.891Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "76b7e378-dee9-4dbd-81ea-ba1e5076a714"
+  },
+  {
+    "slug": "stories-and-specifics-named-people-and-anecdotes",
+    "title": "Stories & Specifics: Named People, Quotes, Conferences, Anecdotes",
+    "category": "deep-dive",
+    "summary": "Philip Drammeh, Global Technical Program Executive and author of arXiv:2511.15755 (Multi-Agent LLM Orchestration / DQ Scoring), called Dico's production implementation \"phenomenal.\" The paper is the #1 most-referenced across Dico's ecosystem with 599 references. Dico met Drammeh on 2026-03-06, and a co-authored paper proposal is in flight.",
+    "content_chars": 70099,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "peer-engineer",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "revops-ai-infra",
+        "solutions-architect",
+        "founder-cto",
+        "applied-ai-product"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "named-person",
+        "press",
+        "process-description",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "stories",
+      "anecdotes",
+      "people",
+      "papers",
+      "press",
+      "anti-repetition"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:34:57.442Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "e0e71ca0-12bc-4ece-85c0-3d586d913284"
+  },
+  {
+    "slug": "supermemory-long-term-memory-layer",
+    "title": "Supermemory: Long-Term Memory Layer",
+    "category": "project",
+    "summary": "Supermemory is an intelligent long-term memory system for the Antigravity ecosystem that has captured 2,494 total memory items, including 589 auto-extracted learnings and 8 error patterns, stored in a 208 MB SQLite database at `~/.claude/memory/supermemory.db`. It implements the SM-2 spaced repetition algorithm with 172 items in the review queue, 15 due today, and an average ease factor of 2.5 indicating ~91% retention. The system tracks 904,416 cross-references across 6 indexed projects (os-app, career, research, metaventions, claude-system, general) and categorizes memories as FACTUAL, EXPERIENTIAL, or WORKING based on epistemology.",
+    "content_chars": 20212,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "general"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "verifiable-machine-generated",
+      "evidence_type": [
+        "metric",
+        "process-description",
+        "code-artifact"
+      ]
+    },
+    "topical_tags": [
+      "memory",
+      "spaced-repetition",
+      "sqlite"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:35:00.888Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "c007ef25-f6f2-4421-8a78-3d1bdc743f86"
+  },
+  {
+    "slug": "synthesis-cross-artifact-themes-and-patterns",
+    "title": "Synthesis: Cross-Artifact Themes & Patterns",
+    "category": "deep-dive",
+    "summary": "Dico implements arXiv papers into production systems in days, not quarters \u2014 8+ papers implemented, including Drammeh's DQ scoring framework (arXiv:2511.15755) which improved DQ from 0.575 to 0.870 across 4,687+ decisions. He builds sovereign infrastructure from scratch (127K+ LOC Structura OS, zero external frameworks in META-VENGINE) before layering integrations. He produces 900K+ lines of code by directing AI agents in English, operates one layer above his title (built systems processing $800M+ TCV as \"Operations Lead\"), and instruments telemetry into every system from day one.",
+    "content_chars": 18695,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "peer-engineer",
+        "investor"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "applied-ai-product",
+        "solutions-architect",
+        "revops-ai-infra",
+        "gtm-systems-architect"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "synthesis",
+        "narrative",
+        "metric",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "synthesis",
+      "meta-artifact",
+      "cross-cutting"
+    ],
+    "source": {
+      "kind": "compound-synthesis",
+      "notes": "Synthesized from corpus by DeepSeek V4 Pro"
+    },
+    "ingested_at": "2026-05-02T21:35:05.156Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "3c02eece-2b26-41c6-8de5-97035549087a"
+  },
+  {
+    "slug": "synthesis-hirability-across-archetypes",
+    "title": "Synthesis: Hirability Across Target Role Archetypes",
+    "category": "deep-dive",
+    "summary": "Contentsquare Cloud Alliance Operations Lead role processed $800M+ TCV, enabled $30M+ ACV, and managed 2,500+ deal registrations at 97% approval rate with 3,000+ co-sell registrations. Cloud GTM Enterprise Partnerships artifact verifies hyperscaler fluency including AWS ACE, CPPO, private offers, and Microsoft Partner of the Year 2x. Honest gaps include no direct quota-carrying revenue ownership and alliance scope limited to hyperscalers without SI, MSP, or channel partner ecosystem management at scale.",
+    "content_chars": 12825,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "revops-ai-infra",
+        "founder-cto"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "synthesis",
+        "narrative",
+        "metric"
+      ]
+    },
+    "topical_tags": [
+      "synthesis",
+      "meta-artifact",
+      "cross-cutting"
+    ],
+    "source": {
+      "kind": "compound-synthesis",
+      "notes": "Synthesized from corpus by DeepSeek V4 Pro"
+    },
+    "ingested_at": "2026-05-02T21:35:09.001Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "465e5de1-1ee1-4ceb-9879-3820f72f9314"
+  },
+  {
+    "slug": "synthesis-strongest-evidence-clusters",
+    "title": "Synthesis: Strongest Evidence Clusters",
+    "category": "deep-dive",
+    "summary": "Contentsquare cloud alliance operations processed $800M+ in total contract value through AWS and Microsoft marketplaces, enabling $30M+ in annual ACV growth. 2,500+ deal registrations at 97% approval rate and 3,000+ co-sell registrations. The program earned Microsoft Partner of the Year recognition twice.",
+    "content_chars": 16025,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "founder-cto",
+        "applied-ai-product"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "synthesis",
+        "metric",
+        "narrative",
+        "named-person"
+      ]
+    },
+    "topical_tags": [
+      "synthesis",
+      "meta-artifact",
+      "cross-cutting"
+    ],
+    "source": {
+      "kind": "compound-synthesis",
+      "notes": "Synthesized from corpus by DeepSeek V4 Pro"
+    },
+    "ingested_at": "2026-05-02T21:35:19.275Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "6c776c63-838e-4cf7-823c-df732129ffd4"
+  },
+  {
+    "slug": "target-companies-positioning-archetypes",
+    "title": "Target Companies & Positioning Archetypes",
+    "category": "deep-dive",
+    "summary": "Dico's default positioning archetype is \"Architect-Operator Hybrid\" with the verbatim pitch \"Builder-first GTM Systems & Agentic Automation leader who turns revenue motion into infrastructure.\" Dream-tier targets include Anthropic, Google DeepMind, NVIDIA, OpenAI, SpaceX, and Tesla. Strong-fit targets include Cohere, Databricks, Stripe, and Scale AI, with specific role types like Partner Operations, Technical PM, and AI Engineer identified for each.",
+    "content_chars": 4675,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect",
+        "solutions-architect",
+        "founder-cto",
+        "applied-ai-product"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "targeting",
+      "positioning",
+      "archetypes",
+      "icp",
+      "companies"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:35:23.472Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "3b28b5d0-488a-4bb9-8569-40a10159381a"
+  },
+  {
+    "slug": "technical-skills-deep-dive",
+    "title": "Technical Skills Deep-Dive",
+    "category": "skill",
+    "summary": "Dico implemented 8+ arXiv papers into production systems generating 900K+ lines of code in under one year (Nov 2025\u2013present). TypeScript/JavaScript output reached 150,000+ LOC across OS-App (79,947 LOC), CareerCoach (22,939 LOC), and published npm packages `@metaventionsai/cpb-core` and `@metaventionsai/voice-nexus`. Python output reached 50,000+ LOC across META-VENGINE (14K LOC) and ResearchGravity (17K LOC), integrating 9 systems including a recovery engine tracking 700+ error patterns.",
+    "content_chars": 41344,
+    "labels": {
+      "audience": [
+        "peer-engineer",
+        "recruiter"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "solutions-architect",
+        "applied-ai-product"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "code-artifact",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "typescript",
+      "python",
+      "ai-ml",
+      "multi-agent"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:35:27.792Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "a2e9148e-f050-4f9d-b93f-40299d27d1cd"
+  },
+  {
+    "slug": "ucw-and-meta-token-blockchain-substrate",
+    "title": "UCW & $META Token: Blockchain Substrate Architecture",
+    "category": "deep-dive",
+    "summary": "The UCW is a five-layer substrate: Capture, Synthesis, Valuation, Ownership, and Coordination. The $META token serves as the coordination mechanism, with Proof-of-Cognition as the consensus mechanism for creative work. As of February 2026, the system captured 174,169 total events across 5 platform adapters, detected 163+ cross-platform coherence moments, and stored 43,092 semantic embedding vectors.",
+    "content_chars": 17461,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "solutions-architect",
+        "revops-ai-infra"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description",
+        "metric"
+      ]
+    },
+    "topical_tags": [
+      "whitepaper",
+      "blockchain",
+      "tokenomics",
+      "$meta",
+      "ucw-architecture",
+      "basix-index",
+      "web3"
+    ],
+    "source": {
+      "kind": "manual-curation"
+    },
+    "ingested_at": "2026-05-02T21:35:31.260Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "d3c90d16-5e5e-4cb9-af23-3c8b0f473083"
+  },
+  {
+    "slug": "verified-session-activity-evidence-by-project",
+    "title": "Verified Session Activity Evidence by Project",
+    "category": "deep-dive",
+    "summary": "Dico has 698 total Claude sessions across 11 project directories, with 408,137 event records and 3.35GB of session log data on disk. In the last 30 days, 459 sessions occurred across 2 active projects, with the home directory accounting for 458 of those sessions. The frontier/alpha project recorded 16 sessions between February 12 and March 10, 2026, generating 13,904 events and 31.5MB of data.",
+    "content_chars": 3230,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "general"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "verifiable-machine-generated",
+      "evidence_type": [
+        "metric",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "sessions",
+      "verifiable-activity",
+      "machine-generated",
+      "audit-trail"
+    ],
+    "source": {
+      "kind": "machine-generated",
+      "paths": [
+        "~/.claude/projects/"
+      ]
+    },
+    "ingested_at": "2026-05-02T21:35:34.436Z",
+    "ingested_by": "scripts/classify-and-catalog-existing.ts",
+    "artifact_id": "45d79bc7-423a-47bb-9f06-1614b9683868"
+  }
+]
