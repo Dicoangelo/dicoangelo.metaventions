@@ -43,7 +43,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 -z-30"
         style={{
-          backgroundImage: 'url(/hero-bg.png)',
+          backgroundImage: 'url(/hero-bg-v2.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: isLight ? 0.25 : 0.6,
