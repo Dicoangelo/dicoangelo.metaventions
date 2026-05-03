@@ -1246,6 +1246,108 @@
     "artifact_id": "024d7e07-771b-4609-a23b-054c2fc86ff2"
   },
   {
+    "slug": "ms365-podcast-cloud-alliance-intelligence-01",
+    "title": "Cloud Alliance Intelligence Podcast 01: A 360° View of Dico's Partner-Ops Journey",
+    "category": "deep-dive",
+    "summary": "Dicoangelo cut the deal registration process from 6–8 minutes to 2 minutes by creating standardized templates and checklists. In Q4 2023, he exceeded deal registration targets and drove millions in revenue, with his manager citing his \"deep understanding of AWS offerings\" as key to closing a major deal. He also completed over 179 hours of AWS training and leveraged AWS/Microsoft relationships to gain early access to beta programs and product insights.",
+    "content_chars": 12308,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "podcast-transcript",
+        "third-party-narration",
+        "career-arc"
+      ]
+    },
+    "topical_tags": [
+      "podcast-narration",
+      "third-party-synthesis",
+      "career-arc",
+      "performance-review-grounded",
+      "deal-registration-metrics",
+      "salesforce-hygiene",
+      "crm-connector-project",
+      "partner-ops-journey",
+      "aws-sca",
+      "microsoft-partnership",
+      "title-shift-narrative",
+      "cloud-operations-specialist",
+      "salary-negotiation-context",
+      "whisper-small-en-transcript",
+      "audio-evidence",
+      "notebooklm-podcast-format"
+    ],
+    "source": {
+      "kind": "ms365-audio-transcript",
+      "paths": [
+        "OneDrive root: Dico's Cloud Alliance Intelligence Podcast 01.wav",
+        "NotebookLM podcast generated from internal career documents (performance review, self-assessment, salary info)"
+      ],
+      "notes": "Two-host NotebookLM podcast format. Synthesized from Dico's internal career documents. Whisper small.en transcription, ~1979 words, 296 lines. Quotes specific metrics (deal registration 6-8 min -> 2 min, CRM Connector Project, Salesforce hygiene). References internal performance reviews and salary discussions, hence sensitivity:internal."
+    },
+    "ingested_at": "2026-05-03T00:21:37.170Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "3c9becb3-f5e6-4bc9-a479-c9b25a7ff5ee"
+  },
+  {
+    "slug": "ms365-podcast-heap-on-azure",
+    "title": "Heap on Azure Podcast: The Microsoft Marketplace Cutover Narrative",
+    "category": "deep-dive",
+    "summary": "Contentsquare faces a decision on adapting Heap to Microsoft Azure, with \"$14.4M in potential contracts at stake\" and an additional \"$11.7 million\" from existing customers blocked by Azure incompatibility. The document cites a \"strategic partnership with Microsoft\" that could offset re-engineering costs, while a \"three year pact\" strategic collaboration agreement with AWS complicates the move.",
+    "content_chars": 8080,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "podcast-transcript",
+        "third-party-narration",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "podcast-narration",
+      "third-party-synthesis",
+      "azure-marketplace",
+      "heap-acquisition",
+      "marketplace-cutover",
+      "ms-partner-program",
+      "cs-aws-azure-strategy",
+      "fourteen-point-four-million-deals",
+      "heap-azure-compatibility",
+      "whisper-small-en-transcript",
+      "audio-evidence",
+      "notebooklm-podcast-format"
+    ],
+    "source": {
+      "kind": "ms365-audio-transcript",
+      "paths": [
+        "OneDrive: Heap On Azure Podcast.wav",
+        "NotebookLM podcast generated from internal Heap-on-Azure strategy docs"
+      ],
+      "notes": "Two-host NotebookLM podcast on Heap acquisition into Contentsquare's Azure Marketplace strategy. Cites 14.4 million USD in potential contracts at stake on Azure compatibility decision. Whisper small.en transcript, 1273 words."
+    },
+    "ingested_at": "2026-05-03T00:38:57.388Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "6738b2eb-79e7-45a2-ab77-db33e67a94ba"
+  },
+  {
     "slug": "ms365-resume-contentsquare-partner-ops-manager-2025-12",
     "title": "Resume: Dico Angelo — Contentsquare Partner Operations Manager (2025-12)",
     "category": "experience",
