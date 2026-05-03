@@ -11,6 +11,42 @@ export interface UseDeepgramSTTReturn {
   isAvailable: boolean;
 }
 
+/**
+ * Full nova-3 streaming STT.
+ *
+ * Auth: short-lived bearer tokens minted by /api/deepgram-token (no master key in browser).
+ * Model: nova-3 with smart_format, numerals, vad_events, utterance_end_ms.
+ * Bias: keyterm priming for Dico-specific vocabulary so names + brand transcribe correctly.
+ * Endpointing: Deepgram-side UtteranceEnd is the primary trigger; the JS silence timer
+ *   is a backstop in case the WS message is dropped.
+ */
+const DEEPGRAM_PARAMS = new URLSearchParams({
+  model: "nova-3",
+  language: "en-US",
+  smart_format: "true",
+  interim_results: "true",
+  endpointing: "300",
+  utterance_end_ms: "1000",
+  vad_events: "true",
+  numerals: "true",
+  filler_words: "false",
+  diarize: "false",
+});
+
+const KEYTERMS = [
+  "Dico",
+  "Dico Angelo",
+  "Antigravity",
+  "Metaventions",
+  "Contentsquare",
+  "UCW",
+  "FriendlyFace",
+  "ResearchGravity",
+];
+KEYTERMS.forEach((term) => DEEPGRAM_PARAMS.append("keyterm", term));
+
+const DEEPGRAM_WS_URL = `wss://api.deepgram.com/v1/listen?${DEEPGRAM_PARAMS.toString()}`;
+
 export function useDeepgramSTT(
   onPartialTranscript?: (text: string, isFinal: boolean) => void,
   onSilenceDetected?: (finalTranscript: string) => void,
@@ -37,12 +73,18 @@ export function useDeepgramSTT(
   const resetSilenceTimer = useCallback(() => {
     clearSilenceTimer();
     silenceTimerRef.current = setTimeout(() => {
-      // Only fire if still listening and no error
       if (transcriptRef.current.trim() && socketRef.current?.readyState === WebSocket.OPEN) {
         onSilenceDetected?.(transcriptRef.current.trim());
       }
     }, silenceTimeout);
   }, [clearSilenceTimer, silenceTimeout, onSilenceDetected]);
+
+  const fireUtteranceEnd = useCallback(() => {
+    clearSilenceTimer();
+    if (transcriptRef.current.trim() && socketRef.current?.readyState === WebSocket.OPEN) {
+      onSilenceDetected?.(transcriptRef.current.trim());
+    }
+  }, [clearSilenceTimer, onSilenceDetected]);
 
   const start = useCallback(async () => {
     setError(null);
@@ -50,29 +92,23 @@ export function useDeepgramSTT(
     transcriptRef.current = "";
 
     try {
-      // Fetch API key
       const res = await fetch("/api/deepgram-token");
       if (!res.ok) {
         setIsAvailable(false);
         throw new Error("Failed to get Deepgram token");
       }
-      const { key } = await res.json();
+      const { token } = (await res.json()) as { token: string; expiresIn: number };
 
-      // Get microphone access
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       streamRef.current = stream;
 
-      // Connect to Deepgram WebSocket
-      const socket = new WebSocket(
-        `wss://api.deepgram.com/v1/listen?model=nova-2&punctuate=true&interim_results=true&endpointing=300`,
-        ["token", key]
-      );
+      // Bearer subprotocol — short-lived scoped token, not the master API key.
+      const socket = new WebSocket(DEEPGRAM_WS_URL, ["bearer", token]);
       socketRef.current = socket;
 
       socket.onopen = () => {
         setIsListening(true);
 
-        // Start MediaRecorder
         const mediaRecorder = new MediaRecorder(stream, { mimeType: "audio/webm" });
         mediaRecorderRef.current = mediaRecorder;
 
@@ -82,33 +118,41 @@ export function useDeepgramSTT(
           }
         };
 
-        mediaRecorder.start(100); // Send chunks every 100ms
+        mediaRecorder.start(100);
       };
 
       socket.onmessage = (event) => {
         try {
           const data = JSON.parse(event.data);
-          const transcript = data.channel?.alternatives?.[0]?.transcript || "";
+
+          // Deepgram emits multiple event types when vad_events + utterance_end_ms are on.
+          if (data.type === "UtteranceEnd") {
+            fireUtteranceEnd();
+            return;
+          }
+          if (data.type === "SpeechStarted") {
+            // Could surface this for orb animation in the future.
+            return;
+          }
+
+          const transcriptText = data.channel?.alternatives?.[0]?.transcript || "";
           const isFinal = data.is_final;
           const speechFinal = data.speech_final;
 
-          if (transcript) {
+          if (transcriptText) {
             if (isFinal) {
-              transcriptRef.current += " " + transcript;
-              transcriptRef.current = transcriptRef.current.trim();
+              transcriptRef.current = (transcriptRef.current + " " + transcriptText).trim();
               setTranscript(transcriptRef.current);
               onPartialTranscript?.(transcriptRef.current, true);
               resetSilenceTimer();
             } else {
-              const displayTranscript = transcriptRef.current + " " + transcript;
-              setTranscript(displayTranscript.trim());
-              onPartialTranscript?.(displayTranscript.trim(), false);
+              const displayTranscript = (transcriptRef.current + " " + transcriptText).trim();
+              setTranscript(displayTranscript);
+              onPartialTranscript?.(displayTranscript, false);
               resetSilenceTimer();
             }
           }
 
-          // Deepgram's speech_final indicates end of utterance
-          // Only fire if socket is still open (not errored/closed)
           if (speechFinal && transcriptRef.current.trim() && socketRef.current?.readyState === WebSocket.OPEN) {
             clearSilenceTimer();
             onSilenceDetected?.(transcriptRef.current.trim());
@@ -133,34 +177,36 @@ export function useDeepgramSTT(
       setIsAvailable(false);
       throw e;
     }
-  }, [onPartialTranscript, onSilenceDetected, resetSilenceTimer, clearSilenceTimer]);
+  }, [onPartialTranscript, onSilenceDetected, resetSilenceTimer, clearSilenceTimer, fireUtteranceEnd]);
 
   const stop = useCallback(async (): Promise<string> => {
     clearSilenceTimer();
 
-    // Stop MediaRecorder
     if (mediaRecorderRef.current && mediaRecorderRef.current.state !== "inactive") {
       mediaRecorderRef.current.stop();
       mediaRecorderRef.current = null;
     }
 
-    // Stop media stream
     if (streamRef.current) {
       streamRef.current.getTracks().forEach((track) => track.stop());
       streamRef.current = null;
     }
 
-    // Close WebSocket
     if (socketRef.current) {
+      // Send CloseStream so Deepgram flushes any final transcripts before tearing down.
       if (socketRef.current.readyState === WebSocket.OPEN) {
+        try {
+          socketRef.current.send(JSON.stringify({ type: "CloseStream" }));
+        } catch {
+          /* noop */
+        }
         socketRef.current.close();
       }
       socketRef.current = null;
     }
 
     setIsListening(false);
-    const finalTranscript = transcriptRef.current;
-    return finalTranscript;
+    return transcriptRef.current;
   }, [clearSilenceTimer]);
 
   return {
