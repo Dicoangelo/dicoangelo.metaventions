@@ -46,7 +46,7 @@ export default function Hero() {
           backgroundImage: 'url(/hero-bg.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: isLight ? 0.15 : 0.4,
+          opacity: isLight ? 0.25 : 0.6,
         }}
       />
 
