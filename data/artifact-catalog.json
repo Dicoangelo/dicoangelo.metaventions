@@ -1138,6 +1138,106 @@
     "artifact_id": "842b150d-b29d-4179-bfcb-eb89d0dbded6"
   },
   {
+    "slug": "ms365-mindmap-h1-2025-performance-review",
+    "title": "H1 2025 Performance Review: Verifiable Outcomes (Mindmap-Extracted)",
+    "category": "deep-dive",
+    "summary": "Partner onboarding time reduced by 30 percent and invoice processing accelerated by 40 percent. Approximately 4,000 accounts cleaned with 95 percent data accuracy in key fields. 400 plus new deals operationalized across AWS and Microsoft, with 12 plus high-value transactions enforced compliance.",
+    "content_chars": 2358,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "verifiable-machine-generated",
+      "evidence_type": [
+        "mindmap-extraction",
+        "performance-review",
+        "metric-evidence"
+      ]
+    },
+    "topical_tags": [
+      "performance-review",
+      "h1-2025",
+      "verifiable-metrics",
+      "data-integrity",
+      "process-efficiency",
+      "pipeline-growth",
+      "enablement-engagement",
+      "issue-resolution",
+      "mindmap-extracted",
+      "claude-vision-extracted",
+      "machine-extracted-evidence",
+      "internal-evidence",
+      "performance-categories",
+      "outcomes-metrics"
+    ],
+    "source": {
+      "kind": "ms365-mindmap-png",
+      "paths": [
+        "OneDrive: /C/OneDrive-BlackAmethystCapitalKeyHoldings/NotebookLM Mind Map (9).png (842KB, 4645x2837px)"
+      ],
+      "notes": "Verbatim node-by-node extraction of NotebookLM mindmap PNG generated from Dico's H1 2025 Performance Review document. Hard internal metrics. Extracted via Claude vision. ~4000 accounts cleaned, 95% data accuracy, partner onboarding -30%, invoice processing +40%, 400+ deals operationalized AWS/MSFT, 12+ high-value transactions enforced compliance, partner ramp -20%, partner engagement +20%, 8+ critical bugs resolved, 24-48h SLA."
+    },
+    "ingested_at": "2026-05-03T01:33:25.609Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "59bc9e0e-f772-4e9e-bc16-c400e11a24a7"
+  },
+  {
+    "slug": "ms365-mindmap-heap-onecrm-migration",
+    "title": "Heap to OneCRM Migration: Technical Architecture (Mindmap-Extracted)",
+    "category": "deep-dive",
+    "summary": "The Heap to OneCRM Migration mindmap documents the integration choreography Dico owned, including \"Unplugging from Heap Sales Course\" and \"Plugging into OneCRM.\" It surfaces a \"Broken Data Integration\" where the \"Data Warehouse to PartnerStack\" pipe was missing referrals, and notes that \"Partner Key Matching: Doesn't Live in PartnerStack.\" Action items include \"Create Ticket for Changes\" and \"Ensure Customer Key Field in OneCRM Account.\"",
+    "content_chars": 3523,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "verifiable-machine-generated",
+      "evidence_type": [
+        "mindmap-extraction",
+        "technical-architecture",
+        "migration-plan"
+      ]
+    },
+    "topical_tags": [
+      "heap-onecrm-migration",
+      "technical-architecture",
+      "partnerstack-integration",
+      "salesforce",
+      "onecrm",
+      "data-warehouse",
+      "customer-key",
+      "partner-key",
+      "deal-registration-form",
+      "data-mapping",
+      "mindmap-extracted",
+      "claude-vision-extracted",
+      "machine-extracted-evidence",
+      "migration-architecture"
+    ],
+    "source": {
+      "kind": "ms365-mindmap-png",
+      "paths": [
+        "OneDrive: /C/OneDrive-BlackAmethystCapitalKeyHoldings/NotebookLM Mind Map (2).png (588KB, 2568x3217px)"
+      ],
+      "notes": "Verbatim extraction of NotebookLM mindmap PNG documenting the Heap-to-OneCRM Migration architecture Dico owned the cloud-alliance side of. PartnerStack integration, broken Data Warehouse to PartnerStack pipe, lead creation rules in OneCRM, customer linking via referral, partner key matching. Specific action items Dico drove. Extracted via Claude vision."
+    },
+    "ingested_at": "2026-05-03T01:33:30.682Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "8ce1d721-321d-4e9d-a762-29db542b2b2a"
+  },
+  {
     "slug": "ms365-paper-cloud-alliance-operating-system-2026",
     "title": "The Cloud-Alliance Operating System: How I Run Partner Operations at Contentsquare",
     "category": "deep-dive",
@@ -1244,6 +1344,207 @@
     "ingested_at": "2026-05-03T00:04:55.741Z",
     "ingested_by": "scripts/ingest-ms365-batch.ts",
     "artifact_id": "024d7e07-771b-4609-a23b-054c2fc86ff2"
+  },
+  {
+    "slug": "ms365-paper-heap-onecrm-migration-technical",
+    "title": "The Heap-to-OneCRM Migration I Owned the Cloud-Alliance Side Of",
+    "category": "deep-dive",
+    "summary": "Dico Angelo owned the cloud-alliance side of the Heap-to-OneCRM migration, integrating partner data into OneCRM while maintaining the trial program. He diagnosed a broken data warehouse-to-PartnerStack pipe that caused missing referrals and partner attribution blind spots. He enforced strict field value matching, connected historical records to new fields, and solved a customer linking puzzle where OneCRM’s \"no free accounts\" policy delayed attribution until after purchase.",
+    "content_chars": 9128,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "narrative-paper",
+        "technical-architecture",
+        "migration-walkthrough"
+      ]
+    },
+    "topical_tags": [
+      "first-person-paper",
+      "technical-operator-angle",
+      "heap-onecrm-migration",
+      "data-flow-diagnosis",
+      "partnerstack-integration",
+      "broken-data-warehouse-pipe",
+      "customer-key-field",
+      "partner-key-matching",
+      "deal-registration-form",
+      "action-items-driven",
+      "operational-ceiling",
+      "synthesis-paper",
+      "mindmap-grounded"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (15 sources)",
+        "Mindmap PNG: NotebookLM Mind Map (2).png — Heap-to-OneCRM Migration architecture",
+        "Conversation: 224e1f57-76b8-4ffc-a141-51cccfd99f69"
+      ],
+      "notes": "First-person technical paper from Dico Angelo. Technical Operator angle. Walks through the Heap-to-OneCRM migration architecture grounded in the mindmap PNG. Six sections: structural gap, data flow inherited (broken DW-PartnerStack pipe), integration setup in OneCRM, customer linking puzzle, action items driven, operational ceiling. ~1313 words, zero em dashes."
+    },
+    "ingested_at": "2026-05-03T01:33:46.162Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "6a3f7d6d-1062-40c7-a0eb-af8f989e4219"
+  },
+  {
+    "slug": "ms365-paper-operator-to-founder-bridge",
+    "title": "What Partner Ops Taught Me That I'm Bringing to Metaventions",
+    "category": "deep-dive",
+    "summary": "Dico Angelo, founder of Metaventions, writes that his tenure as Sr. Partner Systems and Operations Specialist at Contentsquare involved managing global cloud operations, registering deals exceeding \"800 million USD in Total Contract Value,\" and driving a \"20 percent attachment rate on cloud-registered transactions.\" He ported five operational patterns—including a \"7 percent AWS Account Executive spiff\" and achieving \"95 percent data accuracy\" across 4,000 accounts—to build the Universal Cognitive Wallet (UCW) and Metaventions ecosystem. The paper frames the UCW as a \"sovereign container for your innovation\" and a \"verifiable asset registry for cognitive output,\" directly translating enterprise alliance-economics fluency into automated cognitive equity payouts.",
+    "content_chars": 9647,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "narrative-paper",
+        "investor-letter",
+        "thesis-statement"
+      ]
+    },
+    "topical_tags": [
+      "first-person-paper",
+      "operator-to-founder-bridge",
+      "investor-letter",
+      "five-patterns-ported",
+      "gap-first-product-framing",
+      "alliance-economics-fluency",
+      "data-hygiene-foundation",
+      "incentive-sequencing",
+      "composability-pattern",
+      "metaventions-roadmap",
+      "ucw-substrate",
+      "partnership-graph",
+      "synthesis-paper"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (5 founding-lane sources scoped)",
+        "Conversation: 08f40e5d-450a-4ade-8027-6e962ece438c"
+      ],
+      "notes": "First-person paper from Dico Angelo as Founder of Metaventions. Operator-to-founder bridge angle. Investor-letter genre. Five patterns ported from Contentsquare to Metaventions: gap-first product framing, alliance-economics fluency, data hygiene as foundation, incentive sequencing, composability. 12-month execution roadmap. ~1371 words, zero em dashes."
+    },
+    "ingested_at": "2026-05-03T01:34:25.548Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "995424df-b16b-4170-90b8-b8d645af6b03"
+  },
+  {
+    "slug": "ms365-paper-process-architect-operational-layer",
+    "title": "How I Designed the Operational Layer of the Contentsquare Cloud Alliance",
+    "category": "deep-dive",
+    "summary": "Dico Angelo served as Sr. Partner Systems and Operations Specialist from May 2023 to Nov 2025, constructing the operational layer for the Contentsquare Cloud Alliance. He integrated the Salesforce CRM connector with AWS Partner Central, drastically reducing deal registration time and ultimately registering deals representing \"800 million plus TCV.\" Angelo designed SPIFF machinery achieving a \"20 percent attachment rate on cloud-registered deals with Microsoft and AWS\" and sequenced a \"10 million USD MDF budget\" allocation framework.",
+    "content_chars": 10260,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "narrative-paper",
+        "process-description",
+        "methodology"
+      ]
+    },
+    "topical_tags": [
+      "first-person-paper",
+      "process-architect-angle",
+      "operational-layer",
+      "marzano-attribution",
+      "deal-registration-system",
+      "spiff-design",
+      "attachment-rate",
+      "mdf-allocation-framework",
+      "marketplace-cutover",
+      "systems-leadership",
+      "notebooklm-grounded",
+      "synthesis-paper"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (15 sources)",
+        "Conversation: 833715d4-f0b2-459e-81fc-ea09a7b57d37"
+      ],
+      "notes": "First-person paper from Dico Angelo. Process Architect angle showing the operational systems Dico owned inside Marzano's strategic envelope. Six sections: structural gap, deal registration system (AWS Partner Central + OneCRM), SPIFF + attachment-rate machinery, MDF allocation framework, marketplace cutover ops, systems-leadership reflection. ~1437 words, zero em dashes."
+    },
+    "ingested_at": "2026-05-03T01:33:35.310Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "ce999276-daf6-468a-9427-42c0050cfbd4"
+  },
+  {
+    "slug": "ms365-paper-recruiter-pitch-contentsquare-years",
+    "title": "What Recruiters Should Know About My Contentsquare Years (May 2023 to Nov 2025)",
+    "category": "deep-dive",
+    "summary": "Dico Angelo served as Sr. Partner Systems and Operations Specialist at Contentsquare from May 2023 to Nov 2025, delivering H1 2025 metrics including \"95 percent data accuracy,\" \"400 plus new deals operationalized across AWS and Microsoft,\" and \"over 800 million USD in Total Contract Value\" registered across cloud alliances. He reduced partner onboarding time by 30 percent and accelerated invoice processing by 40 percent through CRM automation and the OneCRM cloud-alliance integration. His operational strategy supported a \"50 million USD AWS Marketplace target\" and a \"12.5 percent Azure Marketplace target.\"",
+    "content_chars": 9410,
+    "labels": {
+      "audience": [
+        "recruiter"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "narrative-paper",
+        "recruiter-pitch",
+        "career-summary"
+      ]
+    },
+    "topical_tags": [
+      "first-person-paper",
+      "recruiter-pitch-angle",
+      "hireable-shape",
+      "h1-2025-outcomes",
+      "verifiable-metrics",
+      "systems-portability",
+      "marzano-attribution",
+      "spiff-quota-retirement",
+      "mdf-budget",
+      "tcv-pipeline",
+      "synthesis-paper",
+      "notebooklm-grounded"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (15 sources)",
+        "Conversation: 08b48eef-00e8-4f00-8f9a-82eb8b518000"
+      ],
+      "notes": "First-person paper from Dico Angelo. Recruiter Pitch angle compressing 2.5 years of partner-ops into hireable signal. Four sections: hireable shape, H1 2025 outcomes (numbers first), systems behind those outcomes, what's portable to recruiter's stack. Grounded in mindmap-extracted H1 2025 metrics. ~1402 words, zero em dashes."
+    },
+    "ingested_at": "2026-05-03T01:33:41.082Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "06363309-4763-4fbf-9be9-f97932d6e8da"
   },
   {
     "slug": "ms365-podcast-cloud-alliance-intelligence-01",
