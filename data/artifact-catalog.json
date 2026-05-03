@@ -3,7 +3,7 @@
     "slug": "ace-adaptive-consensus-engine",
     "title": "ACE: Adaptive Consensus Engine",
     "category": "project",
-    "summary": "ACE achieves a +23% accuracy improvement over single-agent baselines on complex reasoning tasks and reduces false-positive errors by 34% in production. It orchestrates 6 specialized agents\u2014Analyst, Critic, Synthesizer, Devil's Advocate, Quality Auditor, and Arbiter\u2014using a bicameral voting protocol requiring a 4/6 supermajority. The Decision Quality (DQ) score combines Validity (40%), Specificity (30%), and Correctness (30%), with scores below 0.50 triggering automatic re-deliberation.",
+    "summary": "ACE achieves a +23% accuracy improvement over single-agent baselines on complex reasoning tasks and reduces false-positive errors by 34% in production. It orchestrates 6 specialized agents—Analyst, Critic, Synthesizer, Devil's Advocate, Quality Auditor, and Arbiter—using a bicameral voting protocol requiring a 4/6 supermajority. The Decision Quality (DQ) score combines Validity (40%), Specificity (30%), and Correctness (30%), with scores below 0.50 triggering automatic re-deliberation.",
     "content_chars": 4807,
     "labels": {
       "audience": [
@@ -360,9 +360,9 @@
   },
   {
     "slug": "collaboration-drammeh-dq-scoring",
-    "title": "Research Collaboration: Philip Drammeh \u2014 DQ Scoring in Production",
+    "title": "Research Collaboration: Philip Drammeh — DQ Scoring in Production",
     "category": "experience",
-    "summary": "Philip Drammeh\u2019s paper arXiv:2511.15755, the most referenced paper in the Antigravity ecosystem with 599 citations, proposed multi-agent LLM orchestration using a DQ scoring framework (validity 40% + specificity 30% + correctness 30%). Dico Angelo implemented this framework into a production routing engine, validating it with 4,687+ routing decisions from Jan 16 to Mar 6, 2026, where DQ scores improved from 0.575 to 0.870 and multi-agent consensus achieved a 95.4% variance reduction. A co-authored paper titled \"DQ Scoring in Production\" has been proposed targeting NeurIPS, ICML, or AAAI.",
+    "summary": "Philip Drammeh’s paper arXiv:2511.15755, the most referenced paper in the Antigravity ecosystem with 599 citations, proposed multi-agent LLM orchestration using a DQ scoring framework (validity 40% + specificity 30% + correctness 30%). Dico Angelo implemented this framework into a production routing engine, validating it with 4,687+ routing decisions from Jan 16 to Mar 6, 2026, where DQ scores improved from 0.575 to 0.870 and multi-agent consensus achieved a 95.4% variance reduction. A co-authored paper titled \"DQ Scoring in Production\" has been proposed targeting NeurIPS, ICML, or AAAI.",
     "content_chars": 4027,
     "labels": {
       "audience": [
@@ -641,7 +641,7 @@
     "slug": "live-site-headline-facts",
     "title": "Live Site Headline Facts (dicoangelo.metaventionsai.com)",
     "category": "deep-dive",
-    "summary": "Dico Angelo's portfolio site (dicoangelo.metaventuresai.com) positions him as a \"Partner-Builder\" with the tagline: \"Operated cloud ops on the 3-person alliance team at Contentsquare. Program scaled $0 \u2192 $30M+ across AWS and Microsoft (2x MSFT Partner of the Year, $800M+ TCV).\" He claims to have specified 58 production AI tools in English, directed Claude Code/Codex/Gemini to build them, and shipped infrastructure capturing 275K+ tool events and 20M+ knowledge-graph edges. The site highlights four headline proof numbers: $30M+ Cloud Alliance Revenue, $800M+ Partner TCV Processed, 20M+ Cognitive Graph Edges, and 900K+ Lines of AI-Directed Code.",
+    "summary": "Dico Angelo's portfolio site (dicoangelo.metaventuresai.com) positions him as a \"Partner-Builder\" with the tagline: \"Operated cloud ops on the 3-person alliance team at Contentsquare. Program scaled $0 → $30M+ across AWS and Microsoft (2x MSFT Partner of the Year, $800M+ TCV).\" He claims to have specified 58 production AI tools in English, directed Claude Code/Codex/Gemini to build them, and shipped infrastructure capturing 275K+ tool events and 20M+ knowledge-graph edges. The site highlights four headline proof numbers: $30M+ Cloud Alliance Revenue, $800M+ Partner TCV Processed, 20M+ Cognitive Graph Edges, and 900K+ Lines of AI-Directed Code.",
     "content_chars": 23913,
     "labels": {
       "audience": [
@@ -724,7 +724,7 @@
     "slug": "metaventions-ai-founding-vision-and-cognitive-equity",
     "title": "Metaventions AI: Founding Vision & Cognitive Equity Thesis",
     "category": "deep-dive",
-    "summary": "Metaventions AI introduces \"cognitive equity\" \u2014 making human-AI cognitive output a sovereign, compounding asset rather than free training data. The whitepaper states: \"Bitcoin introduced digital scarcity. Ethereum introduced programmable value. Metaventions introduces cognitive equity \u2014 where thinking is owning.\" A working system has captured 174,169 cognitive events across 5 platforms, including 33,240 research findings and 68,341 tool interactions.",
+    "summary": "Metaventions AI introduces \"cognitive equity\" — making human-AI cognitive output a sovereign, compounding asset rather than free training data. The whitepaper states: \"Bitcoin introduced digital scarcity. Ethereum introduced programmable value. Metaventions introduces cognitive equity — where thinking is owning.\" A working system has captured 174,169 cognitive events across 5 platforms, including 33,240 research findings and 68,341 tool interactions.",
     "content_chars": 10666,
     "labels": {
       "audience": [
@@ -796,6 +796,649 @@
     "ingested_at": "2026-05-02T21:33:27.852Z",
     "ingested_by": "scripts/classify-and-catalog-existing.ts",
     "artifact_id": "8384786b-84e6-4f5f-9ec2-9bbe5581cc3a"
+  },
+  {
+    "slug": "ms365-black-amethyst-effigy-circle-strategic-partner-advisor-2022",
+    "title": "Black Amethyst Effigy Circle × Strategic Partner Advisor (June 2022)",
+    "category": "deep-dive",
+    "summary": "Black Amethyst Effigy Circle names Dico Angelo as Strategic Partner and poses the headline question \"Could 2020-2030 be the Age Of Abundance?\" The artifact frames three motions: Consult, Advise, Innovate. It is the earliest first-person partner-advisor positioning in the corpus, dated June 2022.",
+    "content_chars": 15202,
+    "labels": {
+      "audience": [
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "founder-cto"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "black-amethyst-origin",
+      "effigy-circle",
+      "strategic-partner-advisor",
+      "consult-advise-innovate",
+      "web3",
+      "age-of-abundance",
+      "founding-era-2022",
+      "pre-metaventions"
+    ],
+    "source": {
+      "kind": "ms365-onedrive",
+      "paths": [
+        "OneDrive/Black Amethyst - Shaolin Samurai - Pilot/Black Amethyst Effigy Circle x Strategic Partner Advisor.pdf"
+      ],
+      "urls": [
+        "https://blackamethystcapitalkeyhold-my.sharepoint.com/personal/dicoangelo_blackamethystcapitalkeyhold_onmicrosoft_com/Documents/Black%20Amethyst%20-%20Shaolin%20Samurai%20-%20Pilot/Black%20Amethyst%20Effigy%20Circle%20x%20Strategic%20Partner%20Advisor.pdf"
+      ],
+      "notes": "June 2022. Black Amethyst founding-era partner advisor positioning. Headline asks 'Could 2020-2030 be the Age Of Abundance?'. Frames Black Amethyst around three motions: Consult / Advise / Innovate. Names Dico Angelo as Strategic Partner. Pre-Metaventions — this is the founder's earliest articulated partner-advisor framing, four years before the whitepaper."
+    },
+    "ingested_at": "2026-05-02T22:57:28.405Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "7af4633b-9e51-40f9-a0d2-f675850b2f7a"
+  },
+  {
+    "slug": "ms365-black-amethyst-founding-network-named-persons-2022-2024",
+    "title": "Black Amethyst Founding Network — Verifiable Named-Person Evidence (2022-2024)",
+    "category": "deep-dive",
+    "summary": "Dico Angelo's founding-era network includes Caleb Kozak (calebkozak@gmail.com, internal Black Amethyst tenant), Justin Carrothers (justin@carrotherscapital.com, \"Launch Resources\" Mar 2022), Paige Loreto Larsen (paige.loretolarsen@goldfingr.io, Goldfingr), Dapo Ogunfeitimi (dapo@flourishventures.com, Flourish Ventures), Alec Alfonso (alec.alfonso@verybigthings.com, Very Big Things), and Gianfranco Prior (later gianfranco.prior@midanft.com, Mida NFT). Client engagements include Sarrah Rose and Julianna Hensel (CEO On Fire, \"Call with Sarrah\" Jul-Aug 2022) and Jake Diab (diab.jake@gmail.com, \"Code-generating Link\" Aug 2022). In Sep 2024, Will Taylor (vvilltaylor@gmail.com) shared the \"Bowtie, Signal-Led Sales + Partner Operations Master Sheet\" with D",
+    "content_chars": 7165,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "founder-cto"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "verifiable-machine-generated",
+      "evidence_type": [
+        "named-person",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "founding-network",
+      "named-persons",
+      "black-amethyst-bookings",
+      "caleb-kozak",
+      "justin-carrothers",
+      "dapo-ogunfeitimi-flourish-ventures",
+      "alec-alfonso-very-big-things",
+      "gianfranco-prior-mida",
+      "terence-fiteni",
+      "egin-govender",
+      "idowu-sodiq",
+      "sarrah-rose-ceo-on-fire",
+      "jake-diab",
+      "will-taylor-bowtie-signal-led-sales",
+      "verifiable-meeting-evidence"
+    ],
+    "source": {
+      "kind": "ms365-outlook",
+      "paths": [
+        "/me/mailFolders/Black Amethyst Meetings (53 messages)",
+        "/me/mailFolders/Client Meetings (18 messages)"
+      ],
+      "notes": "Aggregated from 71 mail headers across two folders. Sender + subject + date only — no message bodies were read. This artifact was built deterministically from API metadata, not from any human content extraction."
+    },
+    "ingested_at": "2026-05-02T23:01:23.004Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "51e47eb0-27f7-44d5-8464-935a0c453c32"
+  },
+  {
+    "slug": "ms365-cs-aws-partnership-plan-2024-full",
+    "title": "Contentsquare & AWS Partnership Plan 2024 — Full Joint Strategy",
+    "category": "deep-dive",
+    "summary": "Contentsquare and AWS are in their third year of partnership, targeting 10% of global revenue transacted through the AWS marketplace in 2024. The partnership focuses on three pillars: Co-Sell, Co-Market, and Co-Innovation, with Co-Sell showing the strongest momentum. Contentsquare has experienced a 121% compound annual recurring revenue growth rate over five years, a 133% net customer retention rate, and serves over 1,300 large enterprise customers including 30% of the global Fortune 100.",
+    "content_chars": 57145,
+    "labels": {
+      "audience": [
+        "partner",
+        "investor",
+        "general"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "general"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "metric",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "aws-partnership",
+      "contentsquare-aws-partnership",
+      "joint-value-proposition",
+      "co-sell",
+      "co-market",
+      "co-innovate",
+      "global",
+      "emea",
+      "namer",
+      "apj",
+      "fy2024",
+      "partnership-objectives"
+    ],
+    "source": {
+      "kind": "ms365-sharepoint",
+      "paths": [
+        "/sites/ContentSquare/Shared Documents/PDF V2/ContentSquare AWS Partner Plan 2024.pdf"
+      ],
+      "urls": [
+        "https://blackamethystcapitalkeyhold.sharepoint.com/sites/ContentSquare/Shared%20Documents/PDF%20V2/ContentSquare%20AWS%20Partner%20Plan%202024.pdf"
+      ],
+      "notes": "Full joint partnership plan with executive summary, partnership objectives, joint value proposition, 2023 results + 2024 goals, regional breakdown (Global/EMEA/NAMER/APJ). 56KB markdown extracted from the larger 2024 partner-strategy PDF."
+    },
+    "ingested_at": "2026-05-02T22:47:33.262Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "bd4929b3-b49a-4521-8471-f6b69bc6534c"
+  },
+  {
+    "slug": "ms365-cs-aws-sca-business-plan-2024",
+    "title": "Contentsquare + AWS SCA Business Plan 2024 (Mike Marzano)",
+    "category": "deep-dive",
+    "summary": "Contentsquare and AWS FY 2024 SCA business plan, authored by Mike Marzano, targets a $100M EDP and $50M in marketplace ARR. The plan states Contentsquare’s actual AWS spend trends between $900k and $1.1M monthly, with $4M transacted via 10 marketplace deals in FY’23. It outlines co-sell, co-market, and co-innovation pillars, including listing HotJar on AWS Marketplace and integrating with S3/Redshift for AI-driven insights.",
+    "content_chars": 19581,
+    "labels": {
+      "audience": [
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description",
+        "metric"
+      ]
+    },
+    "topical_tags": [
+      "aws-strategic-collaboration-agreement",
+      "contentsquare-aws-partnership",
+      "co-sell",
+      "co-market",
+      "co-innovate",
+      "marketplace",
+      "heap-acquisition",
+      "rambod-aws",
+      "fy2024-partnership-plan"
+    ],
+    "source": {
+      "kind": "ms365-sharepoint",
+      "paths": [
+        "/sites/ContentSquare/Shared Documents/PDF V2/CS + AWS SCA Business Plan 2024.pdf"
+      ],
+      "urls": [
+        "https://blackamethystcapitalkeyhold.sharepoint.com/sites/ContentSquare/Shared%20Documents/PDF%20V2/CS%20+%20AWS%20SCA%20Business%20Plan%202024.pdf"
+      ],
+      "notes": "Authored by Mike Marzano (VP at Contentsquare). Updated 2024-01-03. Templated version was being co-built with Rambod (AWS). Covers FY 2024 joint objectives: Co-Sell, Co-Market, Co-Innovation. References the Heap acquisition (Dec 2023, +300 employees). pdf → pdftotext-layout → markdown."
+    },
+    "ingested_at": "2026-05-02T22:47:18.462Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "808255d0-d764-4805-b3d6-ba7fbfad7784"
+  },
+  {
+    "slug": "ms365-meta-manifestation-sovereign-architect-narrative-2026",
+    "title": "The Meta-Manifestation: Sovereign Architect Narrative (Jan 2026)",
+    "category": "deep-dive",
+    "summary": "Dico Angelo founded Metaventions in 2024 after seeing \"the gap between intelligence and ownership\" at the edge of collapsing Web3 and AI worlds. The founding vision crystallizes into three epochs: \"2009: Bitcoin → Digital scarcity proved. 2015: Ethereum → Programmable value proved. 2026: Metaventions → Cognitive equity proved.\" The Universal Cognitive Wallet (UCW) is the central artifact, described as \"a sovereign container for your innovation.\"",
+    "content_chars": 12939,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "general"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "synthesis"
+      ]
+    },
+    "topical_tags": [
+      "founding-narrative",
+      "sovereign-architect",
+      "metaventions-origin",
+      "black-amethyst-origin",
+      "meta-manifestation",
+      "cognitive-equity",
+      "mythic-framing",
+      "vision-doc"
+    ],
+    "source": {
+      "kind": "ms365-onedrive",
+      "paths": [
+        "OneDrive/The Meta-Manifestation of Black Amethyst Capital Key Holdings and the Metaventions Vision.docx"
+      ],
+      "urls": [
+        "https://blackamethystcapitalkeyhold-my.sharepoint.com/personal/dicoangelo_blackamethystcapitalkeyhold_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B584644F4-7A0F-4990-BD23-7DC9541455D2%7D"
+      ],
+      "notes": "Most recent founding-vision document (lastModified 2026-01-25). Mythic-register narrative — opens with 'THE SOVEREIGN ARCHITECT: A VISIONARY STORY', PROLOGUE: THE VOID BEFORE CREATION (2024), PART I: THE ARCHITECT EMERGES. docx → pandoc → markdown. This is the story-form companion to the whitepaper's analytical thesis."
+    },
+    "ingested_at": "2026-05-02T22:57:14.574Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "5c4b5011-0ca7-4a61-9f23-c5f88189161e"
+  },
+  {
+    "slug": "ms365-metaventions-pitch-deck-may-2025",
+    "title": "Metaventions × Black Amethyst Capital Key Holdings Pitch Deck (May 2025)",
+    "category": "deep-dive",
+    "summary": "UNLOCKING THE HIDDEN GEM IN YOU with METAVENTIONS / Decosystem Designs. The deck states \"We absorb the world of web 3 and crystallize pure gems on the other side.\" Founder Dicorose Angelo is identified as Founder & CEO of Metaventions and Black Amethyst Capital Gems.",
+    "content_chars": 26282,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "general"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "pitch-deck",
+      "metaventions",
+      "black-amethyst-capital-key-holdings",
+      "decosystem-designs",
+      "hidden-gem",
+      "discovery",
+      "worth",
+      "empowerment",
+      "investor-deck"
+    ],
+    "source": {
+      "kind": "ms365-onedrive",
+      "paths": [
+        "OneDrive/Metaventions - Black Amethyst Capital Key Holdings Pitch Deck.pdf"
+      ],
+      "urls": [
+        "https://blackamethystcapitalkeyhold-my.sharepoint.com/personal/dicoangelo_blackamethystcapitalkeyhold_onmicrosoft_com/Documents/Metaventions%20-%20Black%20Amethyst%20Capital%20Key%20Holdings%20Pitch%20Deck.pdf"
+      ],
+      "notes": "Foundational Metaventions pitch deck (PDF cut, 2.07 MB, lastModified 2025-05-24). Canonical title: 'UNLOCKING THE HIDDEN GEM IN YOU with METAVENTIONS — Decosystem Designs'. 18 slides. pdftotext-layout extraction. The 99 MB pptx version was skipped in favor of this manageable PDF cut. Slide structure: Discovery → Worth → Empowerment progression."
+    },
+    "ingested_at": "2026-05-02T22:57:21.550Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "0b9eba0a-f8ac-41e3-b7dd-2f97b19b0e21"
+  },
+  {
+    "slug": "ms365-mida-pitch-deck-06-nft-museum-bridge-2022",
+    "title": "Mida — Pitch Deck 06: Traditional Art × Web 3.0 NFT Bridge (April 2022)",
+    "category": "project",
+    "summary": "Mida's April 2022 pitch deck proposes an NFT bridge between traditional art and Web 3.0, creating \"virtual alter-egos\" of physical artworks sold to museums. The deck cites the Hermitage Museum's September 2021 NFT auction on Binance, where \"Madonna and child\" by Leonardo da Vinci fetched $150,000. Mida's smart contract auctions remit the majority of proceeds to the artwork's rights holder, plus half of a 7% royalty on secondary trades.",
+    "content_chars": 23778,
+    "labels": {
+      "audience": [
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "general"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "verifiable-external",
+      "evidence_type": [
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "mida",
+      "nft",
+      "metaverse",
+      "web3-art",
+      "museums",
+      "art-foundations",
+      "physical-artwork-tokenization",
+      "partnership-mida",
+      "pre-metaventions"
+    ],
+    "source": {
+      "kind": "ms365-onedrive",
+      "paths": [
+        "OneDrive/Mida - Pitch Deck 06.pdf"
+      ],
+      "urls": [
+        "https://blackamethystcapitalkeyhold-my.sharepoint.com/personal/dicoangelo_blackamethystcapitalkeyhold_onmicrosoft_com/Documents/Mida%20-%20Pitch%20Deck%2006.pdf"
+      ],
+      "notes": "Mida is a Web3-art venture Dico partnered with in 2022. The deck describes Mida as a bridge between the traditional art world and Web 3.0 — virtual alter-egos of physical artworks as NFTs sold to museums and art foundations. Authored by Mida (third party); included in Dico's corpus because it documents one of his earliest active partnership engagements. Pair with the 'Black Amethyst x Mida' Visio artifact (vsdx, not yet ingested) for the partnership architecture view."
+    },
+    "ingested_at": "2026-05-02T22:57:36.808Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "842b150d-b29d-4179-bfcb-eb89d0dbded6"
+  },
+  {
+    "slug": "ms365-paper-cloud-alliance-operating-system-2026",
+    "title": "The Cloud-Alliance Operating System: How I Run Partner Operations at Contentsquare",
+    "category": "deep-dive",
+    "summary": "Contentsquare’s Sr. Partner Systems and Operations Specialist managed the operational glue for AWS and Microsoft alliances, processing \"800M+ TCV registered\" and achieving a \"20% attachment rate on cloud-registered deals.\" The role owned deal registration across AWS Partner Central and Microsoft co-sell portals, and tracked a \"$10M total MDF budget\" for co-marketing. It also spearheaded the CRM Connector Project to sync Salesforce with AWS Partner Central and integrated partner systems into the OneCRM initiative.",
+    "content_chars": 12826,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "narrative-paper",
+        "process-description",
+        "methodology"
+      ]
+    },
+    "topical_tags": [
+      "cloud-alliance",
+      "partner-operations",
+      "aws-sca",
+      "azure-marketplace",
+      "onecrm-integration",
+      "co-sell",
+      "marzano-attribution",
+      "synthesis-paper",
+      "first-person-methodology",
+      "notebooklm-grounded",
+      "partner-systems-and-operations",
+      "contentsquare",
+      "deal-registration",
+      "mdf-budget",
+      "spiff-attachment-rate",
+      "pipeline-attribution"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (15 sources)",
+        "/Users/dicoangelo/Library/CloudStorage/OneDrive-BlackAmethystCapitalKeyhold (partner-program PDFs + business plans + resume)"
+      ],
+      "notes": "Synthesized via NotebookLM scoped query against partner-ops grounded sources: AWS SCA action plan + business plan, AWS Cloud Center of Excellence, AWS MP GTM, Partner Investment Program guide, Marzano Cloud GTM whitepaper, Azure Contentsquare onepager, MS Startups Partner Innovation, AWS Partner Plan 2024, partner-ops resume. First-person voice, gap-first framing, anti-hype, all metrics quoted verbatim. Honors Marzano-vs-Dico attribution split."
+    },
+    "ingested_at": "2026-05-03T00:04:50.856Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "94de9dc1-92a2-44ec-abf8-439b1562add2"
+  },
+  {
+    "slug": "ms365-paper-founding-arc-cognitive-equity-2026",
+    "title": "From Black Amethyst to Metaventions: The Founding Arc of Cognitive Equity",
+    "category": "deep-dive",
+    "summary": "Black Amethyst Capital launched in June 2022 to map capital flows and solve missing legal/technical verification for decentralized assets, culminating in the Metaventions cognitive equity thesis by January 2026. The Mida NFT project instituted a Value Preservation Agreement guaranteeing no other NFT copies of a specific masterpiece would be produced. At Contentsquare, the author helped register deals exceeding 800 million in total contract value and achieved a 20 percent attachment rate on cloud-registered deals with Microsoft and the Azure Marketplace.",
+    "content_chars": 12686,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "partner-ops"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "narrative-paper",
+        "founding-story",
+        "thesis-statement"
+      ]
+    },
+    "topical_tags": [
+      "founding-arc",
+      "black-amethyst-capital",
+      "metaventions",
+      "cognitive-equity",
+      "ucw",
+      "partnership-graph",
+      "mida-nft",
+      "effigy-circle",
+      "sovereign-architect",
+      "meta-manifestation",
+      "synthesis-paper",
+      "first-person-narrative",
+      "notebooklm-grounded",
+      "founding-network",
+      "operator-to-founder-arc",
+      "investor-to-operator-bridge"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (5 founding-lane sources)",
+        "Sources: Meta-Manifestation, Metaventions Pitch Deck (May 2025), Effigy Circle Strategic Partner Advisor brief, Mida Pitch Deck, partner-ops resume"
+      ],
+      "notes": "Synthesized via NotebookLM scoped query against founding-lane grounded sources only. Tracks 4-year arc: Black Amethyst Capital (June 2022), Effigy Circle Strategic Partner Advisor framework, Mida NFT pattern recognition, Contentsquare operator-school, Metaventions cognitive equity thesis (January 2026). First-person founder voice. Named entities only when source-grounded."
+    },
+    "ingested_at": "2026-05-03T00:04:55.741Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "024d7e07-771b-4609-a23b-054c2fc86ff2"
+  },
+  {
+    "slug": "ms365-resume-contentsquare-partner-ops-manager-2025-12",
+    "title": "Resume: Dico Angelo — Contentsquare Partner Operations Manager (2025-12)",
+    "category": "experience",
+    "summary": "Dico Angelo led partner operations at Contentsquare, registering deals exceeding 800 million total contract value and achieving a 20% attachment rate on cloud-registered deals with Microsoft and AWS. He supported and optimized a partner-influenced pipeline from cloud alliances, contributing to 10% of revenue. His resume targets a role at bblack.io, citing 4-5 years of Web3 community leadership and conference engagement at NFT NYC and Eth Toronto.",
+    "content_chars": 9978,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "metric",
+        "narrative",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "resume",
+      "partner-operations-manager",
+      "contentsquare",
+      "aws-cloud-alliance",
+      "microsoft-cloud-alliance",
+      "rocket-mortgage",
+      "edison-financial",
+      "up2youth",
+      "metaventions"
+    ],
+    "source": {
+      "kind": "ms365-onedrive",
+      "paths": [
+        "OneDrive/Resume Dico Angelo - Contentsquare Partner Operations Manager - Copy.docx"
+      ],
+      "urls": [
+        "https://blackamethystcapitalkeyhold-my.sharepoint.com/personal/dicoangelo_blackamethystcapitalkeyhold_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7BFDF503F7-029C-4E80-A8AF-FCD235DFA0EE%7D"
+      ],
+      "notes": "Most recent partner-ops resume (lastModified 2025-12-21). docx → pandoc → markdown. The doc starts with a 2024-07-07 bblack.io cover letter; the Contentsquare partner-ops resume content begins after the Profile heading. Concrete metrics: 800M+ TCV cloud-registered deals, 20% attachment rate AWS/MSFT, $222,750 annual savings at Rocket Mortgage."
+    },
+    "ingested_at": "2026-05-02T22:47:10.521Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "ad951981-cec3-480d-b7a1-1b1c61d79d8e"
+  },
+  {
+    "slug": "ms365-sca-aws-action-plan-product-tech-strategy-2024",
+    "title": "SCA Action Plan: Product Technical Strategy Phase 1 (May 2024)",
+    "category": "deep-dive",
+    "summary": "Lucie and Patrick are designated to lead AWS workshops. The plan requires team members to obtain certifications in Redshift and other AWS services, with five members at the leadership level needing to collect current certification numbers. It includes participation in the APN Accelerate Program and AWS Immersion Days, with Xavier and Florian attending and Guillaume requesting 15-20 people for a workshop.",
+    "content_chars": 9163,
+    "labels": {
+      "audience": [
+        "partner",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "gtm-systems-architect"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "process-description",
+        "narrative"
+      ]
+    },
+    "topical_tags": [
+      "aws-strategic-collaboration-agreement",
+      "product-technical-strategy",
+      "redshift",
+      "apn-accelerate",
+      "ramp-up-guides",
+      "tlg-learning",
+      "lucie-aws-workshops",
+      "patrick-aws-workshops",
+      "certifications"
+    ],
+    "source": {
+      "kind": "ms365-sharepoint",
+      "paths": [
+        "/sites/ContentSquare/Shared Documents/PDF V2/Action Plan SCA-AWS Management_ Product Technical Strategy.pdf"
+      ],
+      "urls": [
+        "https://blackamethystcapitalkeyhold.sharepoint.com/sites/ContentSquare/Shared%20Documents/PDF%20V2/Action%20Plan%20SCA-AWS%20Management_%20Product%20Technical%20Strategy%20.pdf"
+      ],
+      "notes": "Phase 1 action plan dated May 13 2024. Covers certifications/training (Redshift + AWS), strategic goal alignment, technical resources, partnership strategies. Names Lucie and Patrick to lead AWS workshops. References APN Accelerate, TLG Learning, Ramp Up Guides, AWS Subscription Team Builder."
+    },
+    "ingested_at": "2026-05-02T22:47:25.807Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "e5493b23-c4fb-4cad-b23d-4646f27aa94f"
+  },
+  {
+    "slug": "ms365-sca-gtm-marketplace-strategy",
+    "title": "SCA GTM Marketplace Strategy (Dico Angelo, Feb 2024)",
+    "category": "deep-dive",
+    "summary": "Dico Angelo authored a February 2024 AWS Marketplace GTM strategy for Contentsquare, outlining a co-sell flow from \"Deal Registration\" through \"Marketplace Customer Win Wire.\" The document specifies a \"Marketplace Value Proposition Presentation Meeting\" involving the GTM Lead, AWS Rep, CS PSM, CS AE, and customer. It also defines a messaging checklist covering \"Cloud Adoption,\" \"Use Case,\" and \"Marketplace benefits: Enhancing customer value.\"",
+    "content_chars": 1637,
+    "labels": {
+      "audience": [
+        "partner",
+        "peer-engineer"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "self-reported",
+      "evidence_type": [
+        "process-description",
+        "narrative"
+      ]
+    },
+    "topical_tags": [
+      "aws-marketplace",
+      "co-sell",
+      "deal-registration",
+      "psm",
+      "ae",
+      "go-to-market",
+      "messaging-development",
+      "use-case-matching"
+    ],
+    "source": {
+      "kind": "ms365-sharepoint",
+      "paths": [
+        "/sites/ContentSquare/Shared Documents/General/SCA Dico Angelo GTM Marketplace.docx"
+      ],
+      "urls": [
+        "https://blackamethystcapitalkeyhold.sharepoint.com/sites/ContentSquare/Shared%20Documents/General/SCA%20Dico%20Angelo%20GTM%20Marketplace.docx"
+      ],
+      "notes": "Authored by Dico (Feb 2024). Compact GTM marketplace strategy outline: deal registration, AWS deal validation + seller introduction, CS×AWS customer co-sell alignment, marketplace value-prop meeting structure, marketplace transaction flow, and a Module 1 messaging-development checklist (cloud adoption, use case, customer challenge matching, differentiation). Lightweight — ingested as canonical Dico-authored partner-ops artifact rather than for length."
+    },
+    "ingested_at": "2026-05-02T22:47:41.559Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "9275576b-13ca-4687-a153-45693044e1f6"
+  },
+  {
+    "slug": "ms365-speaking-events-and-conferences-2024-2026",
+    "title": "Speaking Events & Conferences — Verifiable Activity Evidence (2024-2026)",
+    "category": "deep-dive",
+    "summary": "Dico Angelo's Microsoft 365 calendar on the BlackAmethyst tenant shows 25 events from June 2024 to January 2026, including \"Competing in the GenAI era\" on June 18, 2024, \"WAGMI Kickoff Celebration & Networker by CoinFund\" at Pier 5 Market, 401 Biscayne Blvd, Miami, FL 33132 on January 22, 2025, and \"Tech + Startups Community Conference @ Miami Dade College Auditorium – Downtown Miami\" at 300 NE 2nd Ave., Miami, FL 33132 on May 1, 2025. The calendar also lists \"Newport Beach Investor Conference\" at Renaissance Newport Beach Hotel, 4500 MacArthur Blvd, Newport Beach, CA 92660 on October 17, 2024, and \"NYC SaaS Rooftop Tech + Startups Social\" at citizenM New York Bowery, 189 Bowery, New York, NY 10002 on July 17, 2024. A \"Bitcoin",
+    "content_chars": 7690,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto",
+        "partner-ops",
+        "general"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "verifiable-machine-generated",
+      "evidence_type": [
+        "named-person",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "speaking-events",
+      "conferences",
+      "wagmi-miami",
+      "coinfund-wagmi",
+      "icp-hub-miami",
+      "newport-beach-investor-conference",
+      "miami-dade-tech-startups",
+      "marketing-innovation-summit",
+      "miami-tech-hh",
+      "blockworks-bitcoin-whale-watching",
+      "competing-in-genai-era",
+      "nyc-saas-rooftop",
+      "metaventions-kickoff-2026",
+      "verifiable-activity",
+      "calendar-evidence"
+    ],
+    "source": {
+      "kind": "ms365-calendar",
+      "paths": [
+        "/me/calendars/Calendar (default — Black Amethyst tenant)"
+      ],
+      "notes": "25 events from the default calendar, span 2024-06 to 2026-01. Subject + start/end + organizer + attendees + location.address only — no event bodies were read. Verifiable activity evidence (machine-generated calendar metadata)."
+    },
+    "ingested_at": "2026-05-02T23:01:31.948Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "eb9f747e-e511-46a0-88ed-fe65f9524d96"
   },
   {
     "slug": "os-app-metaventions-ai-platform",
@@ -919,7 +1562,7 @@
     "slug": "project-brooks-vitality",
     "title": "Brooks Vitality: Coaching Brand for Donovan Brooks",
     "category": "project",
-    "summary": "Brooks Vitality is a coaching brand Dico is building for client Donovan Brooks, with the preview site live at brooksvitality.metaventionsai.com. The stack uses Vercel static, Cal.com, Stripe, and Tally. As of April 29, 2026, the project is blocked on Donovan\u2019s intake answers for niche, credentials, transformations, pricing, and photos.",
+    "summary": "Brooks Vitality is a coaching brand Dico is building for client Donovan Brooks, with the preview site live at brooksvitality.metaventionsai.com. The stack uses Vercel static, Cal.com, Stripe, and Tally. As of April 29, 2026, the project is blocked on Donovan’s intake answers for niche, credentials, transformations, pricing, and photos.",
     "content_chars": 4064,
     "labels": {
       "audience": [
@@ -1035,7 +1678,7 @@
     "slug": "project-convergence-stack",
     "title": "Convergence Stack: 8-Layer Digital Infrastructure Model",
     "category": "project",
-    "summary": "The Convergence Stack is an 8-layer digital infrastructure model Dico discovered during Bentley Bootcamp prep, mapping 21 speakers to layers from Security & Trust (Hypernative, $100B protected) to Cognitive Equity at the apex. Key metrics include 150+ chains (Allium), $27T CRE target (Inveniam), 4,800+ citations (FinRL), and the UMA standard (Lightspark). The thesis states each layer depends on the one below it, with the missing layer being Cognitive Equity \u2014 who owns what AI agents produce.",
+    "summary": "The Convergence Stack is an 8-layer digital infrastructure model Dico discovered during Bentley Bootcamp prep, mapping 21 speakers to layers from Security & Trust (Hypernative, $100B protected) to Cognitive Equity at the apex. Key metrics include 150+ chains (Allium), $27T CRE target (Inveniam), 4,800+ citations (FinRL), and the UMA standard (Lightspark). The thesis states each layer depends on the one below it, with the missing layer being Cognitive Equity — who owns what AI agents produce.",
     "content_chars": 8234,
     "labels": {
       "audience": [
@@ -1075,7 +1718,7 @@
     "slug": "project-friendlyface",
     "title": "FriendlyFace: AI Compliance & Forensic Evidence System",
     "category": "project",
-    "summary": "FriendlyFace (friendlyface.metaventionsai.com) wraps existing facial recognition systems like NEC, AWS Rekognition, and Cognitec with a compliance proxy that generates a ForensicSeal \u2014 a W3C Verifiable Credential binding hash chains, Merkle trees, and provenance DAGs into one publicly-verifiable artifact. The 42K+ LOC codebase includes a pip-installable SDK, an Annex IV Report Generator for EU AI Act self-assessment, and novel forensic logging of DP-FedAvg training as courtroom-grade evidence. An ICDF2C 2026 paper submission underpins the research, developed with University of Windsor PhD candidate Safiia Mohammed.",
+    "summary": "FriendlyFace (friendlyface.metaventionsai.com) wraps existing facial recognition systems like NEC, AWS Rekognition, and Cognitec with a compliance proxy that generates a ForensicSeal — a W3C Verifiable Credential binding hash chains, Merkle trees, and provenance DAGs into one publicly-verifiable artifact. The 42K+ LOC codebase includes a pip-installable SDK, an Annex IV Report Generator for EU AI Act self-assessment, and novel forensic logging of DP-FedAvg training as courtroom-grade evidence. An ICDF2C 2026 paper submission underpins the research, developed with University of Windsor PhD candidate Safiia Mohammed.",
     "content_chars": 4322,
     "labels": {
       "audience": [
@@ -1437,7 +2080,7 @@
     "slug": "project-ucw",
     "title": "Universal Cognitive Wallet (UCW)",
     "category": "project",
-    "summary": "UCW is an MCP server on GitHub (github.com/Dicoangelo/ucw) that captures AI conversations across 5 platforms (Claude, ChatGPT, Grok, Gemini, NotebookLM) with 270,000+ total interactions and 163,000+ events captured. It enriches messages using three semantic layers \u2014 Data, Light, and Instinct \u2014 and maintains a knowledge graph with 12.15M edges and 7,130 memory items. The system uses Python 3.8+, SQLite WAL mode locally, PostgreSQL with pgvector in production, and exposes 8 MCP tools including emergence detection and cross-platform coherence search.",
+    "summary": "UCW is an MCP server on GitHub (github.com/Dicoangelo/ucw) that captures AI conversations across 5 platforms (Claude, ChatGPT, Grok, Gemini, NotebookLM) with 270,000+ total interactions and 163,000+ events captured. It enriches messages using three semantic layers — Data, Light, and Instinct — and maintains a knowledge graph with 12.15M edges and 7,130 memory items. The system uses Python 3.8+, SQLite WAL mode locally, PostgreSQL with pgvector in production, and exposes 8 MCP tools including emergence detection and cross-platform coherence search.",
     "content_chars": 2867,
     "labels": {
       "audience": [
@@ -1714,7 +2357,7 @@
     "slug": "synthesis-cross-artifact-themes-and-patterns",
     "title": "Synthesis: Cross-Artifact Themes & Patterns",
     "category": "deep-dive",
-    "summary": "Dico implements arXiv papers into production systems in days, not quarters \u2014 8+ papers implemented, including Drammeh's DQ scoring framework (arXiv:2511.15755) which improved DQ from 0.575 to 0.870 across 4,687+ decisions. He builds sovereign infrastructure from scratch (127K+ LOC Structura OS, zero external frameworks in META-VENGINE) before layering integrations. He produces 900K+ lines of code by directing AI agents in English, operates one layer above his title (built systems processing $800M+ TCV as \"Operations Lead\"), and instruments telemetry into every system from day one.",
+    "summary": "Dico implements arXiv papers into production systems in days, not quarters — 8+ papers implemented, including Drammeh's DQ scoring framework (arXiv:2511.15755) which improved DQ from 0.575 to 0.870 across 4,687+ decisions. He builds sovereign infrastructure from scratch (127K+ LOC Structura OS, zero external frameworks in META-VENGINE) before layering integrations. He produces 900K+ lines of code by directing AI agents in English, operates one layer above his title (built systems processing $800M+ TCV as \"Operations Lead\"), and instruments telemetry into every system from day one.",
     "content_chars": 18695,
     "labels": {
       "audience": [
@@ -1875,7 +2518,7 @@
     "slug": "technical-skills-deep-dive",
     "title": "Technical Skills Deep-Dive",
     "category": "skill",
-    "summary": "Dico implemented 8+ arXiv papers into production systems generating 900K+ lines of code in under one year (Nov 2025\u2013present). TypeScript/JavaScript output reached 150,000+ LOC across OS-App (79,947 LOC), CareerCoach (22,939 LOC), and published npm packages `@metaventionsai/cpb-core` and `@metaventionsai/voice-nexus`. Python output reached 50,000+ LOC across META-VENGINE (14K LOC) and ResearchGravity (17K LOC), integrating 9 systems including a recovery engine tracking 700+ error patterns.",
+    "summary": "Dico implemented 8+ arXiv papers into production systems generating 900K+ lines of code in under one year (Nov 2025–present). TypeScript/JavaScript output reached 150,000+ LOC across OS-App (79,947 LOC), CareerCoach (22,939 LOC), and published npm packages `@metaventionsai/cpb-core` and `@metaventionsai/voice-nexus`. Python output reached 50,000+ LOC across META-VENGINE (14K LOC) and ResearchGravity (17K LOC), integrating 9 systems including a recovery engine tracking 700+ error patterns.",
     "content_chars": 41344,
     "labels": {
       "audience": [
