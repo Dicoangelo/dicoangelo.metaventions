@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- **Voice stack overhaul.** Deepgram STT bumped from `nova-2` to `nova-3` with full feature set: `smart_format`, `utterance_end_ms`, `vad_events`, `numerals`, `filler_words=false`, plus 8 keyterm primings (Dico, Antigravity, Metaventions, etc.) so brand vocabulary stops getting mistranscribed.
+- **TTS provider primary swap.** xAI Custom Voices is now the default TTS provider. ElevenLabs Mike remains as fallback. Set `XAI_API_KEY` in Vercel; voice defaults to stock `eve` until `XAI_VOICE_ID` is set to a cloned voice.
+- **Honest UI label.** VoiceOrb badge now reads `STT: nova-3` (or `STT: browser`) with a hover tooltip — was misleadingly labeled `Deepgram` in a context that implied it was the speaking voice.
+
+### Security
+- **`/api/deepgram-token` no longer leaks the master API key.** Endpoint now mints a 30-second scoped token via Deepgram's `/v1/auth/grant`. Browser receives the temp token and uses it as a `bearer` WebSocket subprotocol. Fixes a credential exfiltration path that was visible in DevTools.
+
 ## [2026-03-17]
 ### Added
 - MIT license

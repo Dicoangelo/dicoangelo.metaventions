@@ -456,8 +456,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
 
       source.start(0);
     } catch (err) {
-      // ElevenLabs failed - no fallback, just stop speaking
-      console.error("[VoiceOrb] ElevenLabs TTS failed:", err);
+      console.error("[VoiceOrb] TTS failed:", err);
       setIsSpeaking(false);
     }
   };
@@ -623,9 +622,11 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
           {isActive ? (isSpeaking ? 'Speaking' : isProcessing ? 'Thinking' : 'Listening') : 'Ready'}
         </span>
         {isListening && (
-          <span className={`text-[8px] px-1.5 py-0.5 rounded ${useDeepgram && deepgramAvailable ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'
-            }`}>
-            {useDeepgram && deepgramAvailable ? 'Deepgram' : 'Browser'}
+          <span
+            className={`text-[8px] px-1.5 py-0.5 rounded ${useDeepgram && deepgramAvailable ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'}`}
+            title={useDeepgram && deepgramAvailable ? 'Speech-to-text: Deepgram nova-3' : 'Speech-to-text: browser Web Speech API'}
+          >
+            STT: {useDeepgram && deepgramAvailable ? 'nova-3' : 'browser'}
           </span>
         )}
       </div>
