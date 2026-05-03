@@ -1299,6 +1299,58 @@
     "artifact_id": "3c9becb3-f5e6-4bc9-a479-c9b25a7ff5ee"
   },
   {
+    "slug": "ms365-podcast-cloud-partnerships-innovation-v4",
+    "title": "Cloud Partnerships and Innovation V4: Synthesis Podcast",
+    "category": "deep-dive",
+    "summary": "Dico, a real cloud alliance expert, says partner selection must fit your client base: \"if you mainly work with mid-market companies… Microsoft Azure might be your perfect partner\" because of Office 365 ubiquity, while AWS suits \"massive enterprise clients\" needing \"serious cloud firepower.\" They call WorkSpan’s implementation \"a nightmare\" that took \"six months\" with data syncing issues, and stress empowering finance teams to create private offers to avoid \"bottleneck\" deal delays.",
+    "content_chars": 17931,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance",
+        "founder-cto"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "podcast-transcript",
+        "third-party-narration",
+        "thesis-statement"
+      ]
+    },
+    "topical_tags": [
+      "podcast-narration",
+      "third-party-synthesis",
+      "cloud-partnerships",
+      "innovation-strategy",
+      "v4-iteration",
+      "co-innovation",
+      "co-build",
+      "partner-selection-logic",
+      "mid-market-office-365",
+      "aws-microsoft-google",
+      "whisper-small-en-transcript",
+      "audio-evidence",
+      "notebooklm-podcast-format"
+    ],
+    "source": {
+      "kind": "ms365-audio-transcript",
+      "paths": [
+        "OneDrive: Cloud Partnerships & Innovation V4.wav",
+        "NotebookLM podcast"
+      ],
+      "notes": "Two-host NotebookLM podcast on cloud partnerships and innovation strategy (4th iteration). Frames partner selection logic for mid-market vs enterprise, and Office 365 distribution gravity. 2903 words, whisper small.en transcript."
+    },
+    "ingested_at": "2026-05-03T00:51:10.099Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "39a9ef75-f237-474b-a221-1418b2fef51f"
+  },
+  {
     "slug": "ms365-podcast-heap-on-azure",
     "title": "Heap on Azure Podcast: The Microsoft Marketplace Cutover Narrative",
     "category": "deep-dive",
@@ -1346,6 +1398,56 @@
     "ingested_at": "2026-05-03T00:38:57.388Z",
     "ingested_by": "scripts/ingest-ms365-batch.ts",
     "artifact_id": "6738b2eb-79e7-45a2-ab77-db33e67a94ba"
+  },
+  {
+    "slug": "ms365-podcast-marketplace-cloud-commits",
+    "title": "Marketplace Cloud Commits: TCV and Customer Commit Mechanics",
+    "category": "deep-dive",
+    "summary": "A NotebookLM-generated podcast transcript decodes cloud partnerships, explaining that a \"cloud commit\" is a bulk-discount agreement where a company commits to spending millions or billions with AWS or Microsoft. ContentSquare has exclusive access to data like AWS \"high propensity\" accounts and Microsoft's \"MACC program\" through strategic partnerships. The podcast frames this as actionable sales intelligence for targeting high-value accounts.",
+    "content_chars": 14643,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "internal",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "podcast-transcript",
+        "third-party-narration",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "podcast-narration",
+      "third-party-synthesis",
+      "cloud-commits",
+      "marketplace-economics",
+      "tcv-mechanics",
+      "customer-commit-burndown",
+      "private-offer-pricing",
+      "aws-microsoft-bulk-discount",
+      "b2b-cloud-sales",
+      "commit-mechanics",
+      "whisper-small-en-transcript",
+      "audio-evidence",
+      "notebooklm-podcast-format"
+    ],
+    "source": {
+      "kind": "ms365-audio-transcript",
+      "paths": [
+        "OneDrive: Marketplace Cloud Commits.wav",
+        "NotebookLM podcast"
+      ],
+      "notes": "Two-host NotebookLM podcast on marketplace cloud commits. Walks through how AWS/Microsoft customer commits work as bulk-discount agreements, and how partner-ops unlocks burndown against committed spend. 2381 words, whisper small.en transcript."
+    },
+    "ingested_at": "2026-05-03T00:52:50.507Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "7924dc05-91bb-4926-ad1b-ecfb25f33134"
   },
   {
     "slug": "ms365-resume-contentsquare-partner-ops-manager-2025-12",
