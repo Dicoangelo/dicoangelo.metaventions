@@ -368,7 +368,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: messagesForApi }),
+        body: JSON.stringify({ messages: messagesForApi, isVoice: true }),
       });
 
       if (!res.ok) throw new Error("Chat failed");
