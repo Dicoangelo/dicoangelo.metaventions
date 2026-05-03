@@ -1238,6 +1238,56 @@
     "artifact_id": "8ce1d721-321d-4e9d-a762-29db542b2b2a"
   },
   {
+    "slug": "ms365-paper-cloud-alliance-blueprint-slides",
+    "title": "Cloud Alliance Operations Blueprint — Presenter Slide Deck",
+    "category": "deep-dive",
+    "summary": "The Cloud Alliance Operations Blueprint defines success across four stages: \"Hands-off Visibility,\" \"Engaged Influence,\" \"Partner Advocacy and Influence,\" and \"Sourced.\" It targets transacting 10 to 12.5 percent of global revenue through hyperscaler marketplaces. The CCoE operates under the \"REALMS Tenets: Research, Evangelize, Apply, Lead, Mentor, and Scale.\"",
+    "content_chars": 4650,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "general"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "studio-slide-deck",
+        "presenter-slides",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "studio-slide-deck",
+      "presenter-slides",
+      "seven-slide-blueprint",
+      "three-pillars-co-sell-co-market-co-innovate",
+      "success-measurement-stages",
+      "ccoe-realms",
+      "marketplace-strategy",
+      "operational-excellence",
+      "executive-sponsorship",
+      "planner-builder-executioner-lobbyist",
+      "notebooklm-studio"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (all sources)",
+        "Studio artifact: bda559bb-8f72-42f7-80ea-f8cfd4e82e94",
+        "Conversation: 58d8dee5-45de-41e9-a2d0-7875f4e2b934"
+      ],
+      "notes": "NotebookLM Studio Slide Deck (presenter slides format). 7-slide blueprint walking through cloud alliance operations: three pillars, success measurement (Hands-off Visibility -> Sourced), CCoE REALMS, marketplace strategy, ops excellence, exec sponsorship. Each slide has speaker notes."
+    },
+    "ingested_at": "2026-05-03T01:56:49.166Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "28674f14-d241-4dda-bf07-b937309378a4"
+  },
+  {
     "slug": "ms365-paper-cloud-alliance-operating-system-2026",
     "title": "The Cloud-Alliance Operating System: How I Run Partner Operations at Contentsquare",
     "category": "deep-dive",
@@ -1292,6 +1342,57 @@
     "artifact_id": "94de9dc1-92a2-44ec-abf8-439b1562add2"
   },
   {
+    "slug": "ms365-paper-comprehensive-study-guide-marketplace-gtm",
+    "title": "Cloud Alliance Programs and Marketplace GTM Strategy: Comprehensive Study Guide",
+    "category": "deep-dive",
+    "summary": "Contentsquare targets roughly 10 percent of global ARR, or approximately 50 million USD, through the AWS Marketplace. The strategy integrates Heap and Hotjar acquisitions into unified Digital Experience Analytics and Product Analytics platforms. Co-innovation includes a direct Amazon Redshift integration and fully funded Gen AI pilots using Amazon Bedrock, SageMaker, and CodeWhisperer.",
+    "content_chars": 6689,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "general"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "studio-study-guide",
+        "reference-doc",
+        "process-description"
+      ]
+    },
+    "topical_tags": [
+      "studio-study-guide",
+      "marketplace-gtm-comprehensive",
+      "five-section-reference",
+      "cppo-detailed",
+      "ccoe-realms-tenets",
+      "asset-development-levels",
+      "campaign-development-find-try-buy",
+      "messaging-development-framework",
+      "contentsquare-case-study",
+      "notebooklm-studio",
+      "google-docs-exported"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (all 15 sources)",
+        "Studio artifact: 10ff66b3-3e36-412b-948f-a04220d3130e",
+        "Google Docs export: https://docs.google.com/document/d/1_SMVHdoJr1Anr1tzIb6KKvbZl6juWFO7IYSPrROSylE",
+        "Conversation: 69eee47e-2981-4437-a776-6905465aa2af"
+      ],
+      "notes": "NotebookLM Studio Comprehensive Study Guide. Multi-source synthesis covering AWS Marketplace mechanics, CPPO program, CCoE phases (Advisory/Catalyst/Consolidation), REALMS core tenets, and the Contentsquare case study. ~1100 words. Reference doc for anyone learning the cloud alliance discipline from scratch."
+    },
+    "ingested_at": "2026-05-03T01:52:35.052Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "80f4b9bf-c28f-4999-8047-aee909bce6ef"
+  },
+  {
     "slug": "ms365-paper-founding-arc-cognitive-equity-2026",
     "title": "From Black Amethyst to Metaventions: The Founding Arc of Cognitive Equity",
     "category": "deep-dive",
@@ -1344,6 +1445,58 @@
     "ingested_at": "2026-05-03T00:04:55.741Z",
     "ingested_by": "scripts/ingest-ms365-batch.ts",
     "artifact_id": "024d7e07-771b-4609-a23b-054c2fc86ff2"
+  },
+  {
+    "slug": "ms365-paper-founding-lane-strategic-briefing",
+    "title": "Strategic Intelligence Briefing: The Metaventions and Black Amethyst Ecosystem",
+    "category": "deep-dive",
+    "summary": "Dico Angelo founded the Metaventions and Black Amethyst ecosystem, which bridges AI, Web3, and venture capital. The 2025 roadmap targets scaling Black Amethyst Capital to $1,000,000 USD in raised funds and growing its portfolio to $100,000 USD. Key partner MIDA, led by CEO Gianfranco Prior, provides luxury Web3 experiences and uses the Stendhal Social Token.",
+    "content_chars": 3870,
+    "labels": {
+      "audience": [
+        "investor",
+        "partner",
+        "general"
+      ],
+      "role_cuts": [
+        "founder-cto"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "studio-briefing-doc",
+        "founding-story",
+        "thesis-statement"
+      ]
+    },
+    "topical_tags": [
+      "studio-briefing-doc",
+      "founding-lane-scoped",
+      "source-scoped-no-partner-ops-contamination",
+      "metaventions-ecosystem",
+      "black-amethyst-three-pillars",
+      "ucw-substrate",
+      "d-ecosystem",
+      "mida-doxxedco",
+      "gianfranco-prior-mida",
+      "founder-profile",
+      "2025-roadmap-scaling-abundance",
+      "notebooklm-studio",
+      "google-docs-exported"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (5 founding-lane sources scoped)",
+        "Studio artifact: 3b2b7422-32bf-4d78-8f93-a0abb9c57aa7",
+        "Google Docs export: https://docs.google.com/document/d/177Cs8zJwRN5X1CH-GW97W1vgXG0g-nR9gcQ9cq9c5ys",
+        "Conversation: 6f3fe06d-bf67-4771-b24b-05f12f9cd946"
+      ],
+      "notes": "NotebookLM Studio Briefing Doc, source-scoped to 5 founding-lane sources only (Meta-Manifestation, Metaventions Pitch Deck May 2025, Effigy Circle Strategic Partner Advisor, Mida Pitch Deck, partner-ops resume bridge). Partner-ops/AWS/Azure docs explicitly excluded. Maps the three-pillar ecosystem (Metaventions AI / Black Amethyst Aesthetic / Black Amethyst Capital), D-Ecosystem strategic partnerships including MIDA / Gianfranco Prior, and the 2025 Scaling for Abundance roadmap. ~700 words."
+    },
+    "ingested_at": "2026-05-03T01:56:44.631Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "ced8d017-c4a5-4424-a549-a111ba48200b"
   },
   {
     "slug": "ms365-paper-heap-onecrm-migration-technical",
@@ -1545,6 +1698,57 @@
     "ingested_at": "2026-05-03T01:33:41.082Z",
     "ingested_by": "scripts/ingest-ms365-batch.ts",
     "artifact_id": "06363309-4763-4fbf-9be9-f97932d6e8da"
+  },
+  {
+    "slug": "ms365-paper-strategic-evolution-partner-ops-scoped",
+    "title": "Strategic Evolution of Cloud Alliance Programs: Insights from Contentsquare and AWS Marketplace",
+    "category": "deep-dive",
+    "summary": "Contentsquare's 2024 AWS partnership plan targets routing 10% of global revenue, approximately 50 million USD, through the AWS Marketplace. The strategy leverages acquisitions of Heap and Hotjar to segment offerings across SMB, Mid-Market, and Enterprise. Key operational mechanisms include Seller Private Offers, Consulting Partner Private Offers (CPPO), and pursuing new AWS Competencies in SMB, Financial Services, and Travel and Hospitality.",
+    "content_chars": 6269,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "studio-briefing-doc",
+        "process-description",
+        "methodology"
+      ]
+    },
+    "topical_tags": [
+      "studio-briefing-doc",
+      "partner-ops-scoped",
+      "source-scoped-no-founding-contamination",
+      "three-pillars",
+      "co-sell-co-market-co-innovate",
+      "cppo-program",
+      "ccoe-phases",
+      "marketplace-gtm",
+      "aws-strategic-collaboration-agreement",
+      "azure-mitigation",
+      "notebooklm-studio",
+      "google-docs-exported"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (11 partner-ops sources scoped)",
+        "Studio artifact: 20a29ff0-0f70-4e7f-9532-e1e8380c6a14",
+        "Google Docs export: https://docs.google.com/document/d/11plNl-28J8XBSex7-iDaemdZh_JjsFKxQ_Zr9cF0_6Q",
+        "Conversation: 56499c64-6555-457f-8b3a-0b4d03541c3d"
+      ],
+      "notes": "NotebookLM Studio Briefing Doc, source-scoped to 11 partner-ops grounded sources only (AWS SCA action plan + business plan, AWS Cloud Center of Excellence, AWS MP GTM, Partner Investment Program guide, Marzano Cloud GTM whitepaper, Azure Contentsquare onepager, MS Startups Partner Innovation, AWS Partner Plan 2024, partner-ops resume). Founding-lane sources (Mida, Effigy, Meta-Manifestation, Metaventions deck) explicitly excluded to prevent contamination. Five sections, ~1100 words."
+    },
+    "ingested_at": "2026-05-03T01:52:30.470Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "80d0f9ba-a379-4529-9441-d53eda36fe3b"
   },
   {
     "slug": "ms365-podcast-cloud-alliance-intelligence-01",
