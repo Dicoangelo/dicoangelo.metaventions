@@ -1550,6 +1550,59 @@
     "artifact_id": "6a3f7d6d-1062-40c7-a0eb-af8f989e4219"
   },
   {
+    "slug": "ms365-paper-narrative-lead-canonical-operational-layer",
+    "title": "The Operational Layer Underneath the Strategy",
+    "category": "deep-dive",
+    "summary": "Dico Angelo operationalized Contentsquare's global cloud alliance strategy by building the underlying systems, not chasing individual deals. The systems processed 400+ deals and registered $800M+ in TCV, achieving a 20% attachment rate on cloud registered deals across Microsoft and AWS. Angelo maintained a 95% database accuracy rate by cleaning ~4,000 accounts and upheld a 24-48 hour SLA for pipeline management tasks.",
+    "content_chars": 8477,
+    "labels": {
+      "audience": [
+        "recruiter",
+        "partner",
+        "investor"
+      ],
+      "role_cuts": [
+        "partner-ops",
+        "cloud-alliance"
+      ],
+      "sensitivity": "public",
+      "evidence_strength": "inferred-synthesis",
+      "evidence_type": [
+        "narrative-paper",
+        "canonical-synthesis",
+        "role-defense"
+      ]
+    },
+    "topical_tags": [
+      "first-person-paper",
+      "narrative-lead-frame",
+      "canonical-synthesis",
+      "five-pillar-frame",
+      "scrubbed-public",
+      "story-first",
+      "role-alignment",
+      "marzano-attribution",
+      "impact-anchored-to-systems",
+      "endorsement-of-role",
+      "operational-ceiling",
+      "portable-capability",
+      "synthesis-paper",
+      "source-scoped-partner-ops",
+      "notebooklm-grounded"
+    ],
+    "source": {
+      "kind": "ms365-synthesis",
+      "paths": [
+        "NotebookLM b6630aef-db7a-40d5-9ee3-1393cfb41e5c (4 partner-ops sources scoped: SCA action plan, AWS Partner Plan 2024, Marzano Cloud GTM, partner-ops resume)",
+        "Conversation: 2cf6ccbb-e5ba-4632-8476-fba1bfedf291"
+      ],
+      "notes": "Canonical first-person paper applying the new five-pillar narrative-lead frame. Section I narrative-only (no metrics). Section II role-alignment (Marzano vs Dico, OneCRM verbs strict). Section III impact metrics anchored to systems. Section IV endorsement of role-shape + portability. Sensitive data scrubbed: no internal emails, no internal $ values not public, no confidential client names beyond resume. ~1400 words, zero em dashes, zero hype words."
+    },
+    "ingested_at": "2026-05-03T02:55:41.554Z",
+    "ingested_by": "scripts/ingest-ms365-batch.ts",
+    "artifact_id": "7582a23a-6c01-4a72-bccb-8bd5ca57d019"
+  },
+  {
     "slug": "ms365-paper-operator-to-founder-bridge",
     "title": "What Partner Ops Taught Me That I'm Bringing to Metaventions",
     "category": "deep-dive",
