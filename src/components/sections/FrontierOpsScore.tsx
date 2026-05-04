@@ -239,7 +239,7 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
         >
           <p className={`max-w-3xl mx-auto text-[13.5px] leading-relaxed mb-6 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
             <span className={`font-semibold ${isLight ? "text-gray-700" : "text-gray-300"}`}>Frontier Operations</span>{" "}
-            is the skill of working at the surface of the AI capability bubble — sensing where agents succeed, designing clean handoffs, maintaining failure models, and calibrating human attention as capabilities shift quarterly. Scores are evidence-based, derived from production systems built and operated over 4,035+ Claude sessions.
+            is the skill of working at the surface of the AI capability bubble — sensing where agents succeed, designing clean handoffs, maintaining failure models, and calibrating human attention as capabilities shift quarterly. Scores are evidence-based, derived from production systems operated across multi-model substrates (Claude, Grok, Gemini, NotebookLM) and 270K+ interactions captured via UCW.
           </p>
 
           {/* Score Yourself CTA */}
