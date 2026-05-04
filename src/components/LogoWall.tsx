@@ -21,7 +21,7 @@ const logos: Logo[] = [
   { name: "AWS", description: "Cloud Alliance · Co-sell motion", src: "/logos/aws.svg", color: "#FF9900" },
   { name: "Microsoft", description: "Cloud Partner · Azure marketplace", src: "/logos/microsoft.svg", color: "#00A4EF" },
   { name: "Google Cloud", description: "GCP Marketplace partnership", src: "/logos/googlecloud.svg", color: "#4285F4" },
-  { name: "Anthropic", description: "Claude API · 4,035+ sessions", src: "/logos/anthropic.svg", color: "#D4A574" },
+  { name: "Anthropic", description: "Claude API · agent substrate", src: "/logos/anthropic.svg", color: "#D4A574" },
   { name: "OpenAI", description: "GPT integration · multi-platform", src: "/logos/openai.svg", color: "#10a37f" },
   { name: "xAI", description: "Grok · Custom Voices TTS", src: "/logos/xai.svg", color: "#ffffff" },
   { name: "Deepgram", description: "nova-3 streaming STT", src: "/logos/deepgram.svg", color: "#13EF93" },

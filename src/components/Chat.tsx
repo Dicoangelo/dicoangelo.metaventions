@@ -10,18 +10,20 @@ interface Message {
   content: string;
 }
 
-const SUGGESTED_QUESTIONS = [
-  "What's the $800M+ TCV story?",
-  "What is the Universal Cognitive Wallet?",
-  "What multi-agent systems has he built?",
-  "Is he open to US relocation?",
+const SUGGESTED_QUESTIONS: { tag: string; question: string }[] = [
+  { tag: "Cloud Alliance · $800M+ TCV", question: "Walk me through the $800M+ TCV story" },
+  { tag: "Partner Ops · Contentsquare", question: "What partner systems did he wire at Contentsquare?" },
+  { tag: "Partner of the Year ×2", question: "How did the AWS + MSFT POY wins happen?" },
+  { tag: "OneCRM", question: "What did he own on the cloud alliance side of OneCRM?" },
+  { tag: "Frontier Operator", question: "What strategic-operator scope is he targeting?" },
+  { tag: "UCW · Sovereign AI", question: "What is the Universal Cognitive Wallet?" },
 ];
 
 const PROFILE_METRICS: { value: string; label: string }[] = [
   { value: "58", label: "MCP tools shipped" },
   { value: "44", label: "Production repos" },
   { value: "8", label: "arXiv → production" },
-  { value: "4,035", label: "Claude sessions" },
+  { value: "270K+", label: "Multi-model interactions" },
 ];
 
 const PROFILE_LINKS: { label: string; href: string }[] = [
@@ -35,7 +37,7 @@ const CAREER_STAGES: { label: string; detail: string; state: "done" | "active" }
   { label: "Sr. Partner Systems & Ops", detail: "Contentsquare · OneCRM, 6 platforms wired", state: "done" },
   { label: "Cloud Alliance Lead", detail: "AWS + MSFT · 2x Partner of the Year", state: "done" },
   { label: "Sovereign AI Builder", detail: "Metaventions · multi-agent orchestration", state: "done" },
-  { label: "Frontier Operator role", detail: "Open to staff/principal partner-AI seats", state: "active" },
+  { label: "Open to work", detail: "AI-native partner ops + frontier operator scope", state: "active" },
 ];
 
 const STORAGE_KEY = "dicoangelo-chat-history-v1";
@@ -651,17 +653,20 @@ export default function Chat() {
                 className={`px-5 pt-2 pb-2 flex gap-2 overflow-x-auto ${hasMessages ? "border-t" : ""} ${isLight ? "border-gray-200/70" : "border-white/[0.06]"}`}
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
-                {SUGGESTED_QUESTIONS.map((q) => (
+                {SUGGESTED_QUESTIONS.map(({ tag, question }) => (
                   <button
-                    key={q}
-                    onClick={() => sendTextMessage(q)}
-                    className={`shrink-0 px-3 py-1.5 text-[12px] rounded-full whitespace-nowrap transition-all duration-200 hover:translate-y-[-1px] active:translate-y-0 backdrop-blur-sm ${
+                    key={question}
+                    onClick={() => sendTextMessage(question)}
+                    className={`shrink-0 px-3 py-1.5 rounded-2xl whitespace-nowrap transition-all duration-200 hover:translate-y-[-1px] active:translate-y-0 backdrop-blur-sm text-left flex flex-col gap-0.5 ${
                       isLight
                         ? "bg-white/75 border border-gray-200/80 hover:border-[#6366f1]/40 hover:bg-white hover:text-[#6366f1] text-gray-700"
                         : "bg-white/[0.04] border border-white/[0.08] hover:border-[#6366f1]/40 hover:bg-white/[0.07] hover:text-white text-[#a3a3a3]"
                     }`}
                   >
-                    {q}
+                    <span className={`text-[9.5px] font-semibold uppercase tracking-[0.08em] ${isLight ? "text-[#6366f1]/80" : "text-[#8b5cf6]/90"}`}>
+                      {tag}
+                    </span>
+                    <span className="text-[12px] leading-tight">{question}</span>
                   </button>
                 ))}
               </div>
