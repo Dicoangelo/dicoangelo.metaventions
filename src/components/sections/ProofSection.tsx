@@ -22,7 +22,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
   const showDeep = depth === "deep";
 
   return (
-    <AnimatedSection id="proof" className="relative py-24 px-6">
+    <AnimatedSection id="proof" className="relative py-20 px-6">
       {/* Ambient brand wash */}
       <div
         aria-hidden="true"
@@ -36,7 +36,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
 
       <div className="relative max-w-6xl mx-auto">
         <RevealOnScroll direction="up" threshold={0.2}>
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <span
               className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
                 isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
@@ -55,7 +55,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
           </div>
         </RevealOnScroll>
 
-        <StaggeredGrid className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-14">
+        <StaggeredGrid className="grid grid-cols-2 md:grid-cols-3 gap-2.5 md:gap-3 mb-10">
           <MetricCard value="$800M+" label="TCV Processed" context="Registered through cloud marketplace infrastructure" proof="Operations on 3-person alliance team, 97% approval rate" isLight={isLight} />
           <MetricCard value="2,500+" label="Deal Registrations" context="600+ deals/quarter capacity" proof="97% approval rate, AWS ACE & Microsoft Partner Center" isLight={isLight} />
           <MetricCard value="90%" label="Automation Improvement" context="Registration time: 8 min → 30 sec" proof="Process automation at Contentsquare" isLight={isLight} />
@@ -72,8 +72,8 @@ export function ProofSection({ isLight }: ProofSectionProps) {
 
         {showDeep && (
           <div className="text-center">
-            <p className={`text-[12.5px] uppercase tracking-[0.16em] font-semibold mb-5 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-              Want to verify? Here&rsquo;s the trail.
+            <p className={`text-[11.5px] uppercase tracking-[0.18em] font-semibold mb-4 ${isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"}`}>
+              Verify the trail
             </p>
             <div className="flex gap-2.5 justify-center flex-wrap">
               {VERIFY_LINKS.map((link) => (
