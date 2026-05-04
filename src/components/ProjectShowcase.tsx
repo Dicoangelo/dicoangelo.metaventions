@@ -184,12 +184,29 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
   const hiddenCount = projects.length - previewCount;
 
   return (
-    <section id="projects" className={`py-20 px-6 ${isLight ? 'bg-white' : 'bg-[#050505]'}`}>
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Major Projects</h2>
-          <p className={`text-lg ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-            Specified in English. Built by directing Claude Code / Codex / Gemini. arXiv → production.
+    <section id="projects" className={`relative py-20 px-6 ${isLight ? 'bg-transparent' : 'bg-[#050505]'}`}>
+      <div className="relative max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <span
+            className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
+              isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
+            }`}
+          >
+            Owned Projects
+          </span>
+          <h2
+            className={`text-4xl md:text-5xl font-bold tracking-tight ${
+              isLight ? "text-gray-900" : "text-white"
+            }`}
+          >
+            Specified in English. Built by AI.
+          </h2>
+          <p
+            className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${
+              isLight ? "text-gray-600" : "text-[#a3a3a3]"
+            }`}
+          >
+            Directed Claude Code, Codex, and Gemini to ship 20+ production systems. arXiv research → live infrastructure.
           </p>
         </div>
 

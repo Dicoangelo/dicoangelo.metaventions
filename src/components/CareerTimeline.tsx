@@ -182,20 +182,29 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       <div className="max-w-5xl mx-auto">
         <div className={`text-center ${isSkim ? 'mb-4' : 'mb-12'}`}>
           {!isSkim && (
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6366f1]/10 border border-[#6366f1]/30 mb-4">
-              <svg aria-hidden="true" className="w-4 h-4 text-[#6366f1]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
-              </svg>
-              <span className="text-sm font-semibold text-[#6366f1]">Career Journey</span>
-            </div>
+            <span
+              className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
+                isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
+              }`}
+            >
+              Career Journey
+            </span>
           )}
 
-          <h2 className={`text-3xl md:text-4xl font-bold ${isSkim ? '' : 'mb-4'}`}>
-            Professional Timeline
+          <h2
+            className={`text-3xl md:text-4xl font-bold tracking-tight ${isSkim ? '' : 'mb-3'} ${
+              isLight ? "text-gray-900" : "text-white"
+            }`}
+          >
+            From operations to autonomous systems.
           </h2>
           {showSummary && (
-            <p className={`text-lg max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-              From operational infrastructure to autonomous AI systems. A journey of building at scale.
+            <p
+              className={`mt-3 max-w-2xl mx-auto text-[15px] leading-relaxed ${
+                isLight ? "text-gray-600" : "text-[#a3a3a3]"
+              }`}
+            >
+              A working journey through building at scale.
             </p>
           )}
         </div>

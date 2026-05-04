@@ -63,10 +63,6 @@ const CareerTimeline = dynamic(() => import("@/components/CareerTimeline"), {
   ssr: true,
 });
 
-const AnimatedMetrics = dynamic(() => import("@/components/AnimatedMetrics"), {
-  ssr: true,
-});
-
 const LogoWall = dynamic(() => import("@/components/LogoWall"), {
   ssr: true,
 });
@@ -153,9 +149,6 @@ export default function Home() {
       {/* UCW Cognitive Insights */}
       <UCWInsightsSection isLight={isLight} />
 
-      {/* Animated Metrics */}
-      <AnimatedMetrics />
-
       {/* Logo Wall */}
       <LogoWall animated={true} />
 
@@ -182,25 +175,40 @@ export default function Home() {
       <SkillsVisualization isLight={isLight} />
 
       {/* JD Fit Analyzer */}
-      <section id="analyze" className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">JD Fit Analyzer</h2>
-            <p className={isLight ? 'text-gray-600' : 'text-[#737373]'}>
-              Paste a job description to get an evidence-based fit assessment against my career dossier.
-            </p>
-          </div>
+      <section id="analyze" className="relative py-20 px-6">
+        {/* Ambient brand wash */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[55%] blur-3xl opacity-40"
+          style={{
+            background: isLight
+              ? "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(99,102,241,0.08), transparent 70%)"
+              : "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(99,102,241,0.14), transparent 70%)",
+          }}
+        />
 
-          {/* Intro */}
-          <div className={`mb-8 p-4 rounded-lg border ${isLight ? 'bg-gray-50 border-gray-200' : 'bg-[#141414] border-[#262626]'
-            }`}>
-            <h3 className={`text-sm font-semibold mb-2 ${isLight ? 'text-gray-900' : 'text-white'}`}>
-              How It Works
-            </h3>
-            <p className={`text-sm leading-relaxed ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-              This analyzer searches my career dossier (700+ indexed chunks covering skills, projects, metrics, and experience)
-              and returns an{" "}
-              <strong className={isLight ? 'text-gray-900' : 'text-white'}>evidence-based</strong> fit assessment grounded in real artifacts.
+        <div className="relative max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <span
+              className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
+                isLight ? 'text-[#6366f1]/80' : 'text-[#818cf8]'
+              }`}
+            >
+              JD Fit Analyzer
+            </span>
+            <h2
+              className={`text-3xl md:text-4xl font-bold tracking-tight ${
+                isLight ? 'text-gray-900' : 'text-white'
+              }`}
+            >
+              Paste a JD, get the match.
+            </h2>
+            <p
+              className={`mt-4 max-w-xl mx-auto text-[14px] leading-relaxed ${
+                isLight ? 'text-gray-600' : 'text-[#a3a3a3]'
+              }`}
+            >
+              Searches 700+ indexed dossier chunks and returns an evidence-based fit assessment grounded in real artifacts.
             </p>
           </div>
 
