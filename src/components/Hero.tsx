@@ -124,21 +124,15 @@ export default function Hero() {
           </span>
         </h1>
 
-        {/* Value Proposition */}
+        {/* Value Proposition — one-sentence positioning. Receipts live below. */}
         {showSummary && (
           <p
-            className={`text-xl mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animate-delay-300 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'
-              }`}
+            className={`text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animate-delay-300 ${
+              isLight ? "text-gray-700" : "text-[#a3a3a3]"
+            }`}
           >
-            Operated cloud ops on the <strong>3-person alliance team</strong> at Contentsquare.
-            Program scaled <strong className="text-[#6366f1] font-bold">$0 → $30M+</strong>{" "}
-            across AWS and Microsoft (<strong>2x MSFT Partner of the Year</strong>, <strong>$800M+ TCV</strong>) —
-            I ran the operational layer (CRM, automation, dashboards, enablement) that turned strategy into velocity.
-            While running those deals — <strong>specified 58 production AI tools in English</strong>,
-            directed <strong>Claude Code / Codex / Gemini</strong> to build them, and shipped infrastructure
-            capturing <strong>275K+ tool events</strong> and <strong>20M+ knowledge-graph edges</strong> on Claude.
-            Most people are either operators or builders.{" "}
-            <span className="text-[#6366f1] font-semibold">I&rsquo;m both. At the frontier.</span>
+            Most people are either an operator or a builder.{" "}
+            <span className="text-[#6366f1] font-semibold">I&rsquo;m both — at the frontier.</span>
           </p>
         )}
 

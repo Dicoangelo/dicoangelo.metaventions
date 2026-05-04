@@ -18,10 +18,10 @@ const SUGGESTED_QUESTIONS = [
 ];
 
 const PROFILE_METRICS: { value: string; label: string }[] = [
-  { value: "900K+", label: "Lines of code" },
-  { value: "$30M+", label: "Cloud alliance TCV" },
-  { value: "12.15M", label: "Cognitive graph links" },
-  { value: "140K", label: "AI events captured" },
+  { value: "58", label: "MCP tools shipped" },
+  { value: "44", label: "Production repos" },
+  { value: "8", label: "arXiv → production" },
+  { value: "4,035", label: "Claude sessions" },
 ];
 
 const PROFILE_LINKS: { label: string; href: string }[] = [
@@ -31,10 +31,10 @@ const PROFILE_LINKS: { label: string; href: string }[] = [
 ];
 
 const CAREER_STAGES: { label: string; detail: string; state: "done" | "active" }[] = [
-  { label: "Operations IC", detail: "Rocket Mortgage · process savings $222K/yr", state: "done" },
-  { label: "Sr. Partner Systems & Ops", detail: "Contentsquare · OneCRM + 6 platforms", state: "done" },
-  { label: "Cloud Alliance Lead", detail: "AWS + MSFT · $0 → $30M in 30 mo", state: "done" },
-  { label: "Sovereign AI Builder", detail: "900K LOC · 58 MCP tools · 12.15M graph", state: "done" },
+  { label: "Operations IC", detail: "Rocket Mortgage · process automation", state: "done" },
+  { label: "Sr. Partner Systems & Ops", detail: "Contentsquare · OneCRM, 6 platforms wired", state: "done" },
+  { label: "Cloud Alliance Lead", detail: "AWS + MSFT · 2x Partner of the Year", state: "done" },
+  { label: "Sovereign AI Builder", detail: "Metaventions · multi-agent orchestration", state: "done" },
   { label: "Frontier Operator role", detail: "Open to staff/principal partner-AI seats", state: "active" },
 ];
 
