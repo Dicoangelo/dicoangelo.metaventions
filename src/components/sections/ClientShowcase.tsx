@@ -48,15 +48,7 @@ const clientProjects: ClientProject[] = [
       "Supabase-backed lead pipeline + Resend email notifications",
       "Multi-city expansion framework with waitlist system",
     ],
-    tech: [
-      "Next.js 16",
-      "React 19",
-      "Supabase",
-      "Stripe",
-      "Resend",
-      "Framer Motion",
-      "Lenis",
-    ],
+    tech: ["Next.js 16", "React 19", "Supabase", "Stripe", "Resend", "Framer Motion", "Lenis"],
     url: "https://bxl.metaventionsai.com",
   },
   {
@@ -72,14 +64,7 @@ const clientProjects: ClientProject[] = [
       "Demo-ready UI with live forensic chain-of-custody trace",
       "ICDF2C 2024 schema implementation w/ SOTA 2026 components",
     ],
-    tech: [
-      "FastAPI",
-      "Computer Vision",
-      "Blockchain",
-      "Fly.io",
-      "LiteFS",
-      "Docker",
-    ],
+    tech: ["FastAPI", "Computer Vision", "Blockchain", "Fly.io", "LiteFS", "Docker"],
     url: "https://friendlyface.metaventionsai.com",
   },
 ];
@@ -88,85 +73,116 @@ export function ClientShowcase({ isLight }: ClientShowcaseProps) {
   const { depth } = useReadingDepth();
   const showSummary = depth !== "skim";
   const showDeep = depth === "deep";
+
   return (
-    <section id="clients" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <div
-            className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border mb-4 ${
-              isLight
-                ? "bg-white border-amber-200 text-amber-700"
-                : "bg-black/30 border-amber-500/30 text-amber-400"
+    <section id="clients" className="relative py-24 px-6">
+      {/* Ambient brand wash */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[60%] blur-3xl opacity-40"
+        style={{
+          background: isLight
+            ? "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(99,102,241,0.10), transparent 70%)"
+            : "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(99,102,241,0.16), transparent 70%)",
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <span
+            className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
+              isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
             }`}
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
-            <span className="text-xs font-semibold uppercase tracking-wider">
-              Client Work
-            </span>
-          </div>
-          <h2 className="text-3xl font-bold mb-4">Client Projects</h2>
+            Client Work
+          </span>
+          <h2
+            className={`text-4xl md:text-5xl font-bold tracking-tight ${
+              isLight ? "text-gray-900" : "text-white"
+            }`}
+          >
+            Shipped for clients.
+          </h2>
           {showSummary && (
-            <p className={isLight ? "text-gray-600" : "text-[#737373]"}>
-              End-to-end delivery for real clients — from concept to production
+            <p
+              className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${
+                isLight ? "text-gray-600" : "text-[#a3a3a3]"
+              }`}
+            >
+              End-to-end delivery — from first conversation to production traffic.
             </p>
           )}
         </div>
 
-        <div className="space-y-8">
-          {clientProjects.map((project, index) => (
-            <div
-              key={index}
-              className={`p-6 md:p-8 rounded-2xl border transition-all hover:border-amber-500/50 ${
+        <div className="space-y-5">
+          {clientProjects.map((project) => (
+            <article
+              key={project.name}
+              className={`group relative overflow-hidden p-6 md:p-8 rounded-2xl border backdrop-blur-sm transition-all duration-300 ${
                 isLight
-                  ? "bg-gradient-to-br from-white to-amber-50/30 border-gray-200"
-                  : "bg-gradient-to-br from-[#0a0a0a] to-[#0f0d08] border-[#262626]"
+                  ? "bg-white/70 border-gray-200/80 hover:border-[#6366f1]/40 hover:shadow-[0_12px_32px_-12px_rgba(99,102,241,0.20)]"
+                  : "bg-white/[0.025] border-white/[0.07] hover:border-[#6366f1]/40 hover:bg-white/[0.04]"
               }`}
             >
+              {/* Top hairline accent */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-8 -top-px h-px opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.7) 50%, transparent 100%)",
+                }}
+              />
+
               {/* Header */}
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold mb-1">{project.name}</h3>
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
+                <div className="min-w-0">
                   <p
-                    className={`text-sm mb-1 ${
-                      isLight ? "text-amber-700" : "text-amber-400"
+                    className={`text-[10.5px] font-semibold uppercase tracking-[0.16em] mb-1.5 ${
+                      isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"
+                    }`}
+                  >
+                    {project.role}
+                  </p>
+                  <h3
+                    className={`text-[22px] md:text-2xl font-bold tracking-tight mb-1.5 ${
+                      isLight ? "text-gray-900" : "text-white"
+                    }`}
+                  >
+                    {project.name}
+                  </h3>
+                  <p
+                    className={`text-[13px] ${
+                      isLight ? "text-gray-500" : "text-[#737373]"
                     }`}
                   >
                     {project.client}
                   </p>
-                  <p
-                    className={`text-sm ${
-                      isLight ? "text-gray-500" : "text-[#737373]"
-                    }`}
-                  >
-                    Role: {project.role}
-                  </p>
                 </div>
+
                 <a
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 md:mt-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-sm font-medium transition-colors"
+                  className="group/cta shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-medium text-white transition-all duration-200 active:scale-[0.98] hover:shadow-[0_8px_20px_-8px_rgba(99,102,241,0.5)]"
+                  style={{
+                    background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                  }}
                 >
-                  View Live Site
+                  View live site
                   <svg
-                    className="w-4 h-4"
+                    aria-hidden="true"
+                    width="11"
+                    height="11"
+                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    viewBox="0 0 24 24"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-transform group-hover/cta:translate-x-0.5"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
+                    <path d="M5 12h14M13 6l6 6-6 6" />
                   </svg>
                 </a>
               </div>
@@ -174,7 +190,7 @@ export function ClientShowcase({ isLight }: ClientShowcaseProps) {
               {/* Description */}
               {showSummary && (
                 <p
-                  className={`mb-6 leading-relaxed ${
+                  className={`text-[14px] leading-relaxed mb-5 ${
                     isLight ? "text-gray-700" : "text-[#a3a3a3]"
                   }`}
                 >
@@ -184,50 +200,52 @@ export function ClientShowcase({ isLight }: ClientShowcaseProps) {
 
               {/* Deliverables */}
               {showDeep && (
-              <div className="mb-6">
-                <p
-                  className={`text-sm font-semibold mb-3 ${
-                    isLight ? "text-gray-700" : "text-[#a3a3a3]"
-                  }`}
-                >
-                  Deliverables:
-                </p>
-                <ul className="grid md:grid-cols-2 gap-2">
-                  {project.deliverables.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className={`flex items-start gap-2 text-sm ${
-                        isLight ? "text-gray-600" : "text-[#8a8a8a]"
-                      }`}
-                    >
-                      <span className="text-amber-500 mt-0.5 shrink-0">
-                        &bull;
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="mb-5">
+                  <p
+                    className={`text-[10.5px] font-semibold uppercase tracking-[0.14em] mb-3 ${
+                      isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"
+                    }`}
+                  >
+                    Delivered
+                  </p>
+                  <ul className="grid md:grid-cols-2 gap-x-6 gap-y-2">
+                    {project.deliverables.map((item) => (
+                      <li
+                        key={item}
+                        className={`flex items-start gap-2 text-[13px] leading-snug ${
+                          isLight ? "text-gray-600" : "text-[#a3a3a3]"
+                        }`}
+                      >
+                        <span
+                          className={`mt-[7px] shrink-0 inline-block w-1 h-1 rounded-full ${
+                            isLight ? "bg-[#6366f1]/60" : "bg-[#818cf8]/70"
+                          }`}
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
 
               {/* Tech Stack */}
               {showSummary && (
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech, idx) => (
-                  <span
-                    key={idx}
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      isLight
-                        ? "bg-amber-50 text-amber-700 border border-amber-200"
-                        : "bg-amber-950/30 text-amber-400 border border-amber-800/30"
-                    }`}
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className={`text-[10.5px] px-2 py-1 rounded-md font-medium tracking-tight ${
+                        isLight
+                          ? "bg-gray-100/80 text-gray-700"
+                          : "bg-white/[0.04] text-[#a3a3a3]"
+                      }`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               )}
-            </div>
+            </article>
           ))}
         </div>
       </div>
