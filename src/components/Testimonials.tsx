@@ -320,7 +320,7 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
     <section
       ref={ref}
       id="testimonials"
-      className={`py-20 overflow-hidden ${isLight ? "bg-gray-50/50" : "bg-black/20"}`}
+      className={`relative py-20 overflow-hidden ${isLight ? "bg-white/40" : "bg-black/20"}`}
     >
       {/* Header — stays in grid */}
       <div className="max-w-6xl mx-auto px-6">
@@ -330,24 +330,27 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
             ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
           `}
         >
-          <div
-            className={`
-              inline-flex items-center gap-2 px-3 py-1 rounded-full border mb-4
-              ${isLight
-                ? "bg-amber-50 border-amber-200 text-amber-700"
-                : "bg-amber-500/10 border-amber-500/30 text-amber-400"
-              }
-            `}
+          <span
+            className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
+              isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
+            }`}
           >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-            <span className="text-xs font-semibold uppercase tracking-wider">Recognition</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Testimonials & Features</h2>
+            Recognition
+          </span>
+          <h2
+            className={`text-4xl md:text-5xl font-bold tracking-tight ${
+              isLight ? "text-gray-900" : "text-white"
+            }`}
+          >
+            Featured & cited.
+          </h2>
           {showFullShowcase && (
-            <p className={`max-w-2xl mx-auto ${isLight ? "text-gray-600" : "text-gray-400"}`}>
-              Featured in industry case studies and partner ecosystem conferences
+            <p
+              className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${
+                isLight ? "text-gray-600" : "text-[#a3a3a3]"
+              }`}
+            >
+              Featured in industry case studies and partner ecosystem conferences.
             </p>
           )}
         </div>

@@ -53,25 +53,29 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
             : 'bg-[#0f0f1f] border-[#6366f1]/30 shadow-2xl'
         }`}>
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6366f1]/10 border border-[#6366f1]/30 mb-4">
-              <svg aria-hidden="true" className="w-4 h-4 text-[#6366f1]" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
-              </svg>
-              <span className="text-sm font-semibold text-[#6366f1]">Resume Available</span>
-            </div>
+            <span
+              className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
+                isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
+              }`}
+            >
+              Resume Available
+            </span>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Download My Resume
+            <h2
+              className={`text-3xl md:text-4xl font-bold tracking-tight mb-3 ${
+                isLight ? "text-gray-900" : "text-white"
+              }`}
+            >
+              Take it with you.
             </h2>
             {showSummary && (
-              <p className={`text-lg mb-6 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-                Operations Leader | AI Systems Builder
+              <p className={`text-[14px] leading-relaxed mb-2 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
+                Operations Leader · AI Systems Builder
               </p>
             )}
             {showDeep && (
-              <p className={`text-sm ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
-                Updated February 2026 · Accurate metrics · TN Visa eligible
+              <p className={`text-[12px] ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
+                Updated February 2026 · TN Visa eligible
               </p>
             )}
           </div>
