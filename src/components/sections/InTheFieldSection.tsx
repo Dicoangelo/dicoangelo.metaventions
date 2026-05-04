@@ -25,27 +25,27 @@ export function InTheFieldSection({ isLight }: InTheFieldSectionProps) {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 mb-12">
-        <div className="max-w-2xl">
-          <div
-            className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-semibold uppercase tracking-wider mb-4 ${
-              isLight
-                ? "bg-white border-indigo-200 text-indigo-600"
-                : "bg-black/30 border-indigo-500/30 text-indigo-400"
+        <div className="text-center">
+          <span
+            className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
+              isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
             }`}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
-            <span>In the Field</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
-            On stage, at the table, in the room.
+            In the Field
+          </span>
+          <h2
+            className={`text-4xl md:text-5xl font-bold tracking-tight ${
+              isLight ? "text-gray-900" : "text-white"
+            }`}
+          >
+            On stage. At the table. In the room.
           </h2>
           <p
-            className={`text-base leading-relaxed ${
+            className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${
               isLight ? "text-gray-600" : "text-[#a3a3a3]"
             }`}
           >
-            A few moments from the rooms where partnership systems get built, mentored,
-            and shipped.
+            Moments from the rooms where partnership systems get built, mentored, and shipped.
           </p>
         </div>
       </div>
@@ -155,10 +155,10 @@ function PhotoCard({ photo, isLight, ariaHidden }: PhotoCardProps) {
   return (
     <figure
       aria-hidden={ariaHidden || undefined}
-      className={`relative h-72 ${widthClass} flex-shrink-0 overflow-hidden rounded-2xl border group/card ${
+      className={`relative h-72 ${widthClass} flex-shrink-0 overflow-hidden rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:border-[#6366f1]/40 group/card ${
         isLight
-          ? "border-gray-200 bg-gray-100"
-          : "border-white/10 bg-[#111]"
+          ? "border-gray-200/80 bg-white/70"
+          : "border-white/[0.07] bg-white/[0.025]"
       }`}
     >
       <Image

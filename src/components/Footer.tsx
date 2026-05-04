@@ -64,54 +64,77 @@ export default function Footer({ isLight }: FooterProps) {
 
   return (
     <footer
-      className={`border-t ${isLight ? "border-gray-200 bg-gray-50" : "border-[#262626] bg-[#0a0a0a]"
-        }`}
+      className={`relative border-t ${
+        isLight ? "border-gray-200/80 bg-white/40" : "border-white/[0.07] bg-[#070707]"
+      }`}
     >
-      {/* Main Footer Content */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+      {/* Hairline accent */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 -top-px h-px"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.4) 50%, transparent 100%)",
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto px-6 py-14">
+        <div className="grid md:grid-cols-12 gap-8 md:gap-10 mb-10">
           {/* Brand Column */}
-          <div className="md:col-span-2">
-            <p className="text-xl font-bold mb-3">Dico Angelo</p>
-            <p
-              className={`text-sm mb-4 max-w-md ${isLight ? "text-gray-600" : "text-[#a3a3a3]"
-                }`}
-            >
-              Operations Leader & AI Systems Builder. Combining enterprise-scale
-              execution with hands-on technical depth in AI and automation.
+          <div className="md:col-span-6">
+            <div className="flex items-center gap-2.5 mb-3">
+              <span
+                aria-hidden="true"
+                className="inline-block w-2 h-2 rounded-full"
+                style={{
+                  background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                  boxShadow: "0 0 12px rgba(99,102,241,0.6)",
+                }}
+              />
+              <p className={`text-[18px] font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
+                Dico Angelo
+              </p>
+            </div>
+            <p className={`text-[13.5px] leading-relaxed mb-5 max-w-md ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
+              Operations leader and AI systems builder. Enterprise-scale execution + hands-on technical depth in AI and automation.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-2">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`transition-colors hover:text-[#6366f1] ${isLight ? "text-gray-600" : "text-[#a3a3a3]"
-                    }`}
                   aria-label={link.label}
+                  className={`inline-flex items-center justify-center w-9 h-9 rounded-xl border backdrop-blur-sm transition-all duration-200 active:scale-[0.96] ${
+                    isLight
+                      ? "bg-white/70 border-gray-200/80 text-gray-600 hover:border-[#6366f1]/40 hover:text-[#6366f1] hover:bg-white"
+                      : "bg-white/[0.04] border-white/[0.08] text-[#a3a3a3] hover:border-[#6366f1]/40 hover:text-white hover:bg-white/[0.07]"
+                  }`}
                 >
-                  {link.icon}
+                  <span className="block w-[18px] h-[18px]">{link.icon}</span>
                 </a>
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3
-              className={`text-sm font-semibold mb-3 ${isLight ? "text-gray-900" : "text-white"
-                }`}
+          <div className="md:col-span-3">
+            <p
+              className={`text-[10.5px] font-semibold uppercase tracking-[0.16em] mb-4 ${
+                isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"
+              }`}
             >
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
+              Navigate
+            </p>
+            <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className={`text-sm transition-colors hover:text-[#6366f1] ${isLight ? "text-gray-600" : "text-[#a3a3a3]"
-                      }`}
+                    className={`text-[13px] transition-colors ${
+                      isLight ? "text-gray-600 hover:text-[#6366f1]" : "text-[#a3a3a3] hover:text-white"
+                    }`}
                   >
                     {link.label}
                   </a>
@@ -121,23 +144,30 @@ export default function Footer({ isLight }: FooterProps) {
           </div>
 
           {/* Quick Stats */}
-          <div>
-            <h3
-              className={`text-sm font-semibold mb-3 ${isLight ? "text-gray-900" : "text-white"
-                }`}
+          <div className="md:col-span-3">
+            <p
+              className={`text-[10.5px] font-semibold uppercase tracking-[0.16em] mb-4 ${
+                isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"
+              }`}
             >
-              At a Glance
-            </h3>
-            <ul className="space-y-2">
+              At a glance
+            </p>
+            <ul className="space-y-2.5">
               {stats.map((stat) => (
-                <li key={stat.label} className="text-sm">
-                  <span className={`font-bold ${isLight ? "text-[#4f46e5]" : "text-[#6366f1]"}`}>{stat.value}</span>
+                <li key={stat.label} className="flex items-baseline gap-2">
                   <span
-                    className={`ml-2 ${isLight ? "text-gray-600" : "text-[#a3a3a3]"
-                      }`}
+                    className="font-bold tabular-nums text-[14px]"
+                    style={{
+                      fontFamily: "var(--font-jetbrains-mono, 'JetBrains Mono', ui-monospace, monospace)",
+                      background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
                   >
-                    {stat.label}
+                    {stat.value}
                   </span>
+                  <span className={`text-[12.5px] ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>{stat.label}</span>
                 </li>
               ))}
             </ul>
@@ -146,35 +176,29 @@ export default function Footer({ isLight }: FooterProps) {
 
         {/* Bottom Bar */}
         <div
-          className={`pt-6 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-sm ${isLight
-              ? "border-gray-200 text-gray-500"
-              : "border-[#262626] text-[#525252]"
-            }`}
+          className={`pt-6 border-t flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[12px] ${
+            isLight ? "border-gray-200/80 text-gray-500" : "border-white/[0.06] text-[#737373]"
+          }`}
         >
-          <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-3 md:items-center">
             <span>&copy; {currentYear} Dico Angelo. All rights reserved.</span>
-            <span
-              className={`hidden md:inline ${isLight ? "text-gray-300" : "text-[#404040]"
-                }`}
-            >
-              •
+            <span aria-hidden="true" className={`hidden md:inline ${isLight ? "text-gray-300" : "text-[#404040]"}`}>
+              ·
             </span>
-            <span className="text-xs">Canadian Citizen · TN Visa Eligible</span>
+            <span>Canadian Citizen · TN Visa Eligible</span>
           </div>
-          <div className="flex items-center gap-3">
-            {/* Reduced Motion Toggle for accessibility */}
+          <div className="flex items-center gap-3 flex-wrap">
             <ReducedMotionToggle isLight={isLight} />
-            <span
-              className={`hidden md:inline ${isLight ? "text-gray-300" : "text-[#404040]"}`}
-            >
-              •
+            <span aria-hidden="true" className={`hidden md:inline ${isLight ? "text-gray-300" : "text-[#404040]"}`}>
+              ·
             </span>
-            <span className="text-xs">Built with AI orchestration</span>
+            <span>Built with AI orchestration</span>
             <span
-              className={`px-2 py-1 rounded text-xs ${isLight
-                  ? "bg-blue-100 text-blue-700"
-                  : "bg-[#6366f1]/10 text-[#6366f1]"
-                }`}
+              className={`px-2 py-1 rounded-md text-[10.5px] font-semibold tracking-tight backdrop-blur-sm ${
+                isLight
+                  ? "bg-[#6366f1]/10 text-[#6366f1] border border-[#6366f1]/20"
+                  : "bg-[#6366f1]/15 text-[#818cf8] border border-[#6366f1]/25"
+              }`}
             >
               0 lines manually written
             </span>

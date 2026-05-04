@@ -191,10 +191,18 @@ export default function Nav() {
           <Link
             href="/"
             onClick={handleLogoClick}
-            className={`font-bold transition-all duration-300 hover:text-[var(--accent)] ${
-              isCompact ? "text-base" : "text-lg"
+            className={`group inline-flex items-center gap-2 font-bold tracking-tight transition-all duration-300 hover:opacity-90 ${
+              isCompact ? "text-[15px]" : "text-[16px]"
             }`}
           >
+            <span
+              aria-hidden="true"
+              className="inline-block w-2 h-2 rounded-full transition-transform duration-300 group-hover:scale-110"
+              style={{
+                background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                boxShadow: "0 0 12px rgba(99,102,241,0.6)",
+              }}
+            />
             <span className="hidden sm:inline">Dico Angelo</span>
             <span className="sm:hidden">DA</span>
           </Link>

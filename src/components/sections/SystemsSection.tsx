@@ -44,156 +44,186 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
     return () => observer.disconnect();
   }, []);
 
+  const heroMetrics = [
+    { value: "428K+", label: "Autonomous Decisions", note: "Real-time quality scoring" },
+    { value: "94%", label: "Error Auto-Resolution", note: "700+ patterns recognized" },
+    { value: "24/7", label: "Production Uptime", note: "Since November 2025" },
+  ];
+
   return (
     <div ref={sectionRef}>
-      <AnimatedSection id="systems" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Header with Value Proposition */}
-        <div className="text-center mb-16">
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6 ${
-            isLight ? 'bg-indigo-50 border-indigo-200 text-indigo-700' : 'bg-indigo-950/50 border-indigo-500/30 text-indigo-400'
-          }`}>
-            <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M13 7H7v6h6V7z" />
-              <path fillRule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clipRule="evenodd" />
-            </svg>
-            <span className="text-xs font-semibold uppercase tracking-wider">Production AI Infrastructure</span>
+      <AnimatedSection id="systems" className="relative py-24 px-6">
+        {/* Ambient brand wash */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[60%] blur-3xl opacity-40"
+          style={{
+            background: isLight
+              ? "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(99,102,241,0.10), transparent 70%)"
+              : "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(99,102,241,0.16), transparent 70%)",
+          }}
+        />
+
+        <div className="relative max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-14">
+            <span className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"}`}>
+              Production AI Infrastructure
+            </span>
+            <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
+              Self-improving systems.
+            </h2>
+            {showSummary && (
+              <p className={`mt-5 max-w-3xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>
+                Autonomous engineering infrastructure that learns from every interaction, self-heals errors, and optimizes performance — cutting development cycles in half while holding enterprise-grade reliability.
+              </p>
+            )}
+
+            {/* Key Metrics Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto mt-10">
+              {heroMetrics.map((m) => (
+                <div
+                  key={m.label}
+                  className={`group p-5 md:p-6 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 ${
+                    isLight
+                      ? "bg-white/70 border-gray-200/80 hover:border-[#6366f1]/40 hover:shadow-[0_8px_24px_-8px_rgba(99,102,241,0.20)]"
+                      : "bg-white/[0.025] border-white/[0.07] hover:border-[#6366f1]/40 hover:bg-white/[0.04]"
+                  }`}
+                >
+                  <div
+                    className="text-[28px] md:text-[32px] font-bold leading-none tabular-nums tracking-tight"
+                    style={{
+                      fontFamily: "var(--font-jetbrains-mono, 'JetBrains Mono', ui-monospace, monospace)",
+                      background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                      filter: "drop-shadow(0 2px 14px rgba(99,102,241,0.20))",
+                    }}
+                  >
+                    {m.value}
+                  </div>
+                  <div className={`mt-3 text-[13px] font-semibold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
+                    {m.label}
+                  </div>
+                  <div className={`text-[11.5px] mt-1.5 leading-snug ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+                    {m.note}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Self-Improving AI Systems
-          </h2>
-
-          {showSummary && (
-            <p className={`text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed ${
-              isLight ? 'text-gray-700' : 'text-[#a3a3a3]'
-            }`}>
-              Built autonomous engineering infrastructure that learns from every interaction,
-              self-heals errors, and optimizes performance—reducing development cycles by 50%
-              while maintaining enterprise-grade reliability.
+          {/* 3D Network Visualization */}
+          <div className="mb-14">
+            <p className={`text-center text-[12px] font-semibold uppercase tracking-[0.18em] mb-5 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+              9 Interconnected AI Systems
             </p>
+            <div
+              className={`w-full h-[600px] rounded-2xl border backdrop-blur-sm overflow-hidden ${
+                isLight ? "bg-white/60 border-gray-200/80" : "bg-white/[0.02] border-white/[0.07]"
+              }`}
+            >
+              {isVisible && <ThreeSystemsNetwork />}
+            </div>
+            {showSummary && (
+              <p className={`text-[12px] text-center mt-4 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+                Interactive 3D architecture — hover to explore each system
+              </p>
+            )}
+          </div>
+
+          {/* Business Value Section */}
+          {showDeep && (
+            <div className="grid md:grid-cols-2 gap-4 md:gap-5 mt-12">
+              <ValueCard
+                isLight={isLight}
+                title="Built for scale"
+                body="Autonomous systems optimize resource allocation, predict failures before they occur, and continuously improve performance from historical patterns — same playbook that scaled Contentsquare's marketplace operations from days to minutes."
+                icon={
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                }
+              />
+              <ValueCard
+                isLight={isLight}
+                title="Data-driven innovation"
+                body="Every system decision is measured, analyzed, and optimized. Real-time analytics track quality scores, error patterns, and efficiency metrics — surfacing actionable insights that drive continuous improvement."
+                icon={
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 3v18h18" />
+                    <path d="M7 14l4-4 4 4 6-6" />
+                  </svg>
+                }
+              />
+            </div>
           )}
 
-          {/* Key Metrics Grid */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-            <div className={`p-6 rounded-xl border ${
-              isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'
-            }`}>
-              <div className="text-3xl font-bold text-indigo-500 mb-2">428K+</div>
-              <div className={`text-sm ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-                Autonomous Decisions
-              </div>
-              <div className={`text-xs mt-1 ${isLight ? 'text-gray-500' : 'text-[#525252]'}`}>
-                Real-time quality scoring
-              </div>
-            </div>
-
-            <div className={`p-6 rounded-xl border ${
-              isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'
-            }`}>
-              <div className="text-3xl font-bold text-indigo-500 mb-2">94%</div>
-              <div className={`text-sm ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-                Error Auto-Resolution
-              </div>
-              <div className={`text-xs mt-1 ${isLight ? 'text-gray-500' : 'text-[#525252]'}`}>
-                700+ patterns recognized
-              </div>
-            </div>
-
-            <div className={`p-6 rounded-xl border ${
-              isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'
-            }`}>
-              <div className="text-3xl font-bold text-indigo-500 mb-2">24/7</div>
-              <div className={`text-sm ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-                Production Uptime
-              </div>
-              <div className={`text-xs mt-1 ${isLight ? 'text-gray-500' : 'text-[#525252]'}`}>
-                Since November 2025
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 3D Network Visualization */}
-        <div className="mb-12">
-          <h3 className={`text-xl font-semibold mb-4 text-center ${
-            isLight ? 'text-gray-800' : 'text-[#e5e7eb]'
-          }`}>
-            9 Interconnected AI Systems
-          </h3>
-          <div className="w-full h-[600px] border border-white/10 rounded-2xl bg-black/5 dark:bg-white/5 backdrop-blur-sm">
-            {isVisible && <ThreeSystemsNetwork />}
-          </div>
-          {showSummary && (
-            <p className={`text-xs text-center mt-4 ${isLight ? 'text-gray-500' : 'text-[#525252]'}`}>
-              Interactive 3D Architecture — Hover to explore each system
-            </p>
-          )}
-        </div>
-
-        {/* Business Value Section */}
-        {showDeep && (
-        <div className="grid md:grid-cols-2 gap-8 mt-16">
-          <div className={`p-8 rounded-xl border ${
-            isLight ? 'bg-gradient-to-br from-white to-indigo-50 border-indigo-100' : 'bg-gradient-to-br from-[#141414] to-indigo-950/20 border-indigo-500/20'
-          }`}>
-            <div className="flex items-start gap-4 mb-4">
-              <div className="p-3 rounded-lg bg-indigo-500/10">
-                <svg aria-hidden="true" className="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="font-bold text-lg mb-2">Built for Scale</h4>
-                <p className={`text-sm leading-relaxed ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
-                  Designed autonomous systems that optimize resource allocation, predict failures before they occur,
-                  and continuously improve performance based on historical patterns—similar to how I scaled
-                  Contentsquare's marketplace operations from days to minutes.
+          {/* Why This Matters */}
+          {showDeep && (
+            <div
+              className={`relative overflow-hidden mt-10 p-8 rounded-2xl border backdrop-blur-sm ${
+                isLight ? "bg-white/85 border-[#6366f1]/30" : "bg-[#0a0a0a]/85 border-[#6366f1]/35"
+              }`}
+            >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-8 -top-px h-px"
+                style={{ background: "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.7) 50%, transparent 100%)" }}
+              />
+              <div className="max-w-4xl mx-auto text-center">
+                <p className={`text-[10.5px] font-semibold uppercase tracking-[0.18em] mb-3 ${isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"}`}>
+                  Why this matters
+                </p>
+                <h3 className={`text-[20px] md:text-[22px] font-bold tracking-tight mb-4 ${isLight ? "text-gray-900" : "text-white"}`}>
+                  Systems that compound, not tools that decay.
+                </h3>
+                <p className={`text-[14px] leading-relaxed ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>
+                  These aren&apos;t scripts — they&apos;re a systematic approach to building intelligent, self-optimizing infrastructure. The same principles applied at Contentsquare to transform marketplace operations (enabling 81% ACV growth) are now embedded in autonomous systems that scale engineering productivity while holding enterprise reliability.
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className={`p-8 rounded-xl border ${
-            isLight ? 'bg-gradient-to-br from-white to-purple-50 border-purple-100' : 'bg-gradient-to-br from-[#141414] to-purple-950/20 border-purple-500/20'
-          }`}>
-            <div className="flex items-start gap-4 mb-4">
-              <div className="p-3 rounded-lg bg-purple-500/10">
-                <svg aria-hidden="true" className="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="font-bold text-lg mb-2">Data-Driven Innovation</h4>
-                <p className={`text-sm leading-relaxed ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
-                  Every system decision is measured, analyzed, and optimized. Real-time analytics track
-                  performance across quality scores, error patterns, and efficiency metrics—providing
-                  actionable insights that drive continuous improvement.
-                </p>
-              </div>
-            </div>
-          </div>
+          )}
         </div>
-        )}
+      </AnimatedSection>
+    </div>
+  );
+}
 
-        {/* Technical Leadership Highlight */}
-        {showDeep && (
-        <div className={`mt-12 p-8 rounded-2xl border ${
-          isLight ? 'bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 border-indigo-200' : 'bg-gradient-to-r from-indigo-950/30 via-purple-950/30 to-pink-950/30 border-indigo-500/30'
-        }`}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4">Why This Matters</h3>
-            <p className={`text-base leading-relaxed ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
-              These aren't just tools—they represent a systematic approach to building intelligent,
-              self-optimizing infrastructure. The same principles I applied at Contentsquare to transform
-              marketplace operations (enabling 81% ACV growth) are now embedded into autonomous systems
-              that scale engineering productivity while maintaining enterprise reliability standards.
-            </p>
-          </div>
+interface ValueCardProps {
+  isLight: boolean;
+  title: string;
+  body: string;
+  icon: React.ReactNode;
+}
+
+function ValueCard({ isLight, title, body, icon }: ValueCardProps) {
+  return (
+    <div
+      className={`group relative p-6 md:p-7 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 ${
+        isLight
+          ? "bg-white/70 border-gray-200/80 hover:border-[#6366f1]/40 hover:shadow-[0_12px_28px_-12px_rgba(99,102,241,0.20)]"
+          : "bg-white/[0.025] border-white/[0.07] hover:border-[#6366f1]/40 hover:bg-white/[0.04]"
+      }`}
+    >
+      <div className="flex items-start gap-4">
+        <div
+          className={`shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-xl ${
+            isLight ? "bg-[#6366f1]/10 text-[#6366f1]" : "bg-[#6366f1]/15 text-[#818cf8]"
+          }`}
+        >
+          {icon}
         </div>
-        )}
+        <div>
+          <h4 className={`text-[15px] font-bold tracking-tight mb-2 ${isLight ? "text-gray-900" : "text-white"}`}>
+            {title}
+          </h4>
+          <p className={`text-[13px] leading-relaxed ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>
+            {body}
+          </p>
+        </div>
       </div>
-    </AnimatedSection>
     </div>
   );
 }
