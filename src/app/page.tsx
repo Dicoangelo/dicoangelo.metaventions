@@ -127,30 +127,11 @@ export default function Home() {
       {/* 4-tile proof bar — lives directly under hero, above the fold */}
       <HeroProofBar />
 
-      {/* TLDR Banner - Quick summary for recruiters */}
+      {/* TLDR Banner — one-line positioning + CTA */}
       <TLDRBanner />
 
-      {/* AI-Augmented Operator — moved to /ai-augmented subpage */}
-      <section className="py-6 px-6">
-        <div className="max-w-4xl mx-auto flex justify-center">
-          <Link
-            href="/ai-augmented"
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 ${
-              isLight
-                ? 'bg-white border-indigo-200 text-indigo-600 hover:border-indigo-400'
-                : 'bg-black/30 border-indigo-500/30 text-indigo-400 hover:border-indigo-400/60'
-            }`}
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-            <span>AI-Augmented Operator</span>
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link>
-        </div>
-      </section>
+      {/* Ask Me Anything — promoted to position 2 (right under the front block) */}
+      <AskSection isLight={isLight} />
 
       {/* Bridge Section - Partner + AI dual language positioning */}
       <BridgeSection isLight={isLight} />
@@ -160,9 +141,6 @@ export default function Home() {
 
       {/* GoMotion Case Study */}
       <GoMotionSection isLight={isLight} />
-
-      {/* Ask Me Anything */}
-      <AskSection isLight={isLight} />
 
       <ProofSection isLight={isLight} />
 

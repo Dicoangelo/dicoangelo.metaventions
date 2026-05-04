@@ -46,23 +46,13 @@ export default function TLDRBanner() {
               TLDR
             </span>
             <p className={`text-[15.5px] md:text-[16px] leading-relaxed ${isLight ? "text-gray-900" : "text-white"}`}>
-              Operated cloud ops on the 3-person alliance team at Contentsquare. Program scaled{" "}
-              <span
-                className="font-bold tabular-nums"
-                style={{
-                  fontFamily: "var(--font-jetbrains-mono, 'JetBrains Mono', ui-monospace, monospace)",
-                  background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                $0 → $30M+
-              </span>{" "}
-              across AWS and Microsoft, $800M+ in registered deals, 2x MSFT Partner of the Year — I ran the operational layer (CRM, automation, dashboards) that turned strategy into velocity. At the same time: specified 58 production MCP tools in English, directed Claude Code / Codex / Gemini to build them, shipped multi-agent infrastructure processing 163K+ events on Claude. Not sequentially — <em className="not-italic font-semibold">simultaneously</em>.
+              Operator who scales partner programs. Builder who ships AI infrastructure.{" "}
+              <span className={isLight ? "text-gray-600" : "text-[#a3a3a3]"}>
+                Partner SA is the seat where those two things collide.
+              </span>
             </p>
-            <p className={`text-[14px] md:text-[14.5px] leading-relaxed mt-3 ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>
-              I&rsquo;m the operations expert who is also literally at the frontier, building. Partner SA is exactly where those two things collide.
+            <p className={`text-[13px] md:text-[13.5px] leading-relaxed mt-2.5 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+              The receipts are above, the chat is below — interrogate either.
             </p>
           </div>
 
