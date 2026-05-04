@@ -142,7 +142,26 @@ export async function POST(request: NextRequest) {
       return new Response("TTS not configured", { status: 503 });
     }
 
-    if (hasXAI) {
+    // Explicit provider selection via TTS_PROVIDER env (elevenlabs | xai).
+    // ElevenLabs is the production default — it hosts Dico's actual cloned voice.
+    // xAI is kept wired for future use (Voice Agent migration, alternate clones).
+    const preferred = (process.env.TTS_PROVIDER || "elevenlabs").toLowerCase();
+    const tryXAIFirst = preferred === "xai" && hasXAI;
+    const tryElevenFirst = preferred === "elevenlabs" && hasEleven;
+
+    if (tryElevenFirst) {
+      try {
+        return await synthesizeWithElevenLabs(text);
+      } catch (e) {
+        console.warn("[TTS] ElevenLabs failed, falling back to xAI:", e);
+        if (!hasXAI) {
+          return new Response("TTS generation failed", { status: 502 });
+        }
+        return await synthesizeWithXAI(text);
+      }
+    }
+
+    if (tryXAIFirst) {
       try {
         return await synthesizeWithXAI(text);
       } catch (e) {
@@ -150,10 +169,14 @@ export async function POST(request: NextRequest) {
         if (!hasEleven) {
           return new Response("TTS generation failed", { status: 502 });
         }
+        return await synthesizeWithElevenLabs(text);
       }
     }
 
-    return await synthesizeWithElevenLabs(text);
+    // Default fallback when no preference and only one provider configured.
+    return hasEleven
+      ? await synthesizeWithElevenLabs(text)
+      : await synthesizeWithXAI(text);
   } catch (error) {
     console.error("TTS error:", error);
     return new Response("Internal server error", { status: 500 });
