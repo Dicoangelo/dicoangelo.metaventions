@@ -25,7 +25,7 @@ export function AskSection({ isLight }: AskSectionProps) {
           <h2 className="text-3xl font-bold mb-4">Ask Me Anything</h2>
           {showSummary && (
             <p className={isLight ? 'text-gray-600' : 'text-[#737373]'}>
-              AI-powered chat that knows my entire portfolio. Go ahead, interrogate.
+              AI-powered chat grounded in my full portfolio. Ask anything — voice or text.
             </p>
           )}
         </div>
