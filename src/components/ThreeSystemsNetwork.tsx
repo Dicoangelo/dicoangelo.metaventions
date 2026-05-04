@@ -2,7 +2,7 @@
 
 import { useRef, useState, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Text, Html, Line, Sphere } from "@react-three/drei";
+import { Html, Line, Sphere } from "@react-three/drei";
 import * as THREE from "three";
 import { useTheme } from "./ThemeProvider";
 
@@ -63,16 +63,22 @@ function Node({ data, hoveredNode, setHoveredNode }: { data: SystemNode; hovered
                 />
             </Sphere>
 
-            {/* Label (Always visible but small, bigger on hover) */}
-            <Text
-                position={[0, -0.6, 0]}
-                fontSize={isHovered ? 0.35 : 0.25}
-                color={isLight ? "#1f2937" : "#e5e7eb"}
-                anchorX="center"
-                anchorY="top"
-            >
-                {data.name}
-            </Text>
+            {/* Label — DOM overlay (no Web Worker, no troika SDF font) */}
+            <Html position={[0, -0.55, 0]} center distanceFactor={8}>
+                <div
+                    className="pointer-events-none select-none whitespace-nowrap text-center font-semibold tracking-tight"
+                    style={{
+                        fontSize: isHovered ? 13 : 11,
+                        color: isLight ? "#1f2937" : "#e5e7eb",
+                        textShadow: isLight
+                            ? "0 1px 2px rgba(255,255,255,0.7)"
+                            : "0 1px 3px rgba(0,0,0,0.7)",
+                        transition: "font-size 200ms ease",
+                    }}
+                >
+                    {data.name}
+                </div>
+            </Html>
 
             {/* Info Card (Visible on hover) */}
             {isHovered && (

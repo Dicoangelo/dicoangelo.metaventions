@@ -53,7 +53,7 @@ const CARDS: PivotCard[] = [
 
 export function DeepDivePivot({ isLight }: DeepDivePivotProps) {
   return (
-    <section id="deep-dive" aria-label="Go deeper" className="relative py-20 px-6">
+    <section id="deep-dive" aria-label="Go deeper" className="relative py-16 px-6">
       {/* Ambient brand wash */}
       <div
         aria-hidden="true"

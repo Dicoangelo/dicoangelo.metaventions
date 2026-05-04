@@ -71,7 +71,7 @@ export function MetricCard({ value, label, context, proof, isLight }: MetricCard
   return (
     <div
       ref={cardRef}
-      className={`group relative p-5 md:p-6 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 ${
+      className={`group relative p-4 md:p-5 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 ${
         isLight
           ? "bg-white/70 border-gray-200/80 hover:border-[#6366f1]/40 hover:shadow-[0_8px_24px_-8px_rgba(99,102,241,0.20)]"
           : "bg-white/[0.025] border-white/[0.07] hover:border-[#6366f1]/40 hover:bg-white/[0.04]"
@@ -113,10 +113,7 @@ export function MetricCard({ value, label, context, proof, isLight }: MetricCard
       )}
 
       {showProof && (
-        <div className={`relative text-[10.5px] leading-snug pt-2.5 border-t ${isLight ? "text-gray-500 border-gray-200/70" : "text-[#737373] border-white/[0.06]"}`}>
-          <span className={`font-semibold uppercase tracking-[0.12em] mr-1.5 ${isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"}`}>
-            Proof
-          </span>
+        <div className={`relative text-[10.5px] leading-snug pt-2.5 mt-2.5 border-t ${isLight ? "text-gray-500 border-gray-200/70" : "text-[#737373] border-white/[0.06]"}`}>
           {proof}
         </div>
       )}
