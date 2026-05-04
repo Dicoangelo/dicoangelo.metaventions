@@ -71,9 +71,9 @@ const columns: BridgeColumn[] = [
     kicker: "What I shipped",
     Icon: ChipIcon,
     items: [
-      "58 MCP tools built on Claude",
+      "58 MCP tools across Claude, Grok, Gemini, NotebookLM",
       "Multi-agent orchestration framework",
-      "4,035 Claude sessions",
+      "UCW substrate: 270K+ multi-model interactions",
       "20+ deployed AI systems, 900K+ LOC",
       "Partnership Graph + Frontier Alpha + UCW",
     ],
