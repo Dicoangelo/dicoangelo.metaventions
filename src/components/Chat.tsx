@@ -30,6 +30,14 @@ const PROFILE_LINKS: { label: string; href: string }[] = [
   { label: "Email", href: "mailto:dicoangelo@metaventionsai.com" },
 ];
 
+const CAREER_STAGES: { label: string; detail: string; state: "done" | "active" }[] = [
+  { label: "Operations IC", detail: "Rocket Mortgage · process savings $222K/yr", state: "done" },
+  { label: "Sr. Partner Systems & Ops", detail: "Contentsquare · OneCRM + 6 platforms", state: "done" },
+  { label: "Cloud Alliance Lead", detail: "AWS + MSFT · $0 → $30M in 30 mo", state: "done" },
+  { label: "Sovereign AI Builder", detail: "900K LOC · 58 MCP tools · 12.15M graph", state: "done" },
+  { label: "Frontier Operator role", detail: "Open to staff/principal partner-AI seats", state: "active" },
+];
+
 const STORAGE_KEY = "dicoangelo-chat-history-v1";
 
 function loadHistory(): Message[] {
@@ -376,56 +384,123 @@ export default function Chat() {
               ))}
             </div>
 
-            {/* Location pill row */}
-            <div className="flex flex-wrap gap-1.5">
-              <span
-                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] font-medium ${
-                  isLight ? "bg-gray-100 text-gray-700" : "bg-white/[0.04] text-[#a3a3a3]"
-                }`}
-              >
-                <svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                Windsor, ON
-              </span>
-              <span
-                className={`inline-flex items-center px-2.5 py-1 rounded-full text-[10.5px] font-medium ${
-                  isLight ? "bg-[#6366f1]/10 text-[#6366f1]" : "bg-[#6366f1]/15 text-[#818cf8]"
-                }`}
-              >
-                TN visa eligible
-              </span>
-              <span
-                className={`inline-flex items-center px-2.5 py-1 rounded-full text-[10.5px] font-medium ${
-                  isLight ? "bg-gray-100 text-gray-700" : "bg-white/[0.04] text-[#a3a3a3]"
-                }`}
-              >
-                Remote · US/CA
-              </span>
-            </div>
-
-            {/* Links rail */}
+            {/* Career XP meter — replaces redundant pills/links (footer has them) */}
             <div
-              className={`flex items-center gap-1 pt-3 border-t ${
-                isLight ? "border-gray-200/70" : "border-white/[0.06]"
+              className={`relative overflow-hidden p-4 rounded-2xl border ${
+                isLight ? "bg-white/60 border-gray-200/80" : "bg-white/[0.025] border-white/[0.07]"
               }`}
             >
-              {PROFILE_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                  rel="noopener noreferrer"
-                  className={`flex-1 text-center text-[11px] font-medium px-2 py-1.5 rounded-lg transition-all ${
-                    isLight
-                      ? "text-gray-500 hover:text-[#6366f1] hover:bg-gray-50"
-                      : "text-[#737373] hover:text-white hover:bg-white/[0.05]"
-                  }`}
+              {/* Top hairline */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-4 -top-px h-px"
+                style={{ background: "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.7) 50%, transparent 100%)" }}
+              />
+
+              {/* Header: level + xp */}
+              <div className="flex items-baseline justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <span className={`text-[9.5px] font-semibold uppercase tracking-[0.16em] ${isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"}`}>
+                    Level
+                  </span>
+                  <span
+                    className="text-[15px] font-bold leading-none tabular-nums"
+                    style={{
+                      fontFamily: "var(--font-jetbrains-mono, 'JetBrains Mono', ui-monospace, monospace)",
+                      background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    5/5
+                  </span>
+                </div>
+                <span
+                  className="inline-flex items-center gap-1 text-[9.5px] font-semibold uppercase tracking-[0.12em] px-2 py-0.5 rounded-md"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(16,185,129,0.18) 0%, rgba(16,185,129,0.08) 100%)",
+                    color: isLight ? "#047857" : "#34d399",
+                    border: `1px solid ${isLight ? "rgba(16,185,129,0.3)" : "rgba(16,185,129,0.35)"}`,
+                  }}
                 >
-                  {link.label}
-                </a>
-              ))}
+                  <span className="relative flex h-1 w-1">
+                    <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-70" />
+                    <span className="relative h-1 w-1 rounded-full bg-emerald-500" />
+                  </span>
+                  Active
+                </span>
+              </div>
+
+              {/* XP bar */}
+              <div className={`relative h-1.5 rounded-full overflow-hidden mb-4 ${isLight ? "bg-gray-200/60" : "bg-white/[0.06]"}`}>
+                <div
+                  className="absolute inset-y-0 left-0 rounded-full"
+                  style={{
+                    width: "100%",
+                    background: "linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%)",
+                    boxShadow: "0 0 12px rgba(99,102,241,0.45)",
+                  }}
+                />
+              </div>
+
+              {/* Stage list */}
+              <ul className="space-y-2.5">
+                {CAREER_STAGES.map((s, i) => {
+                  const isActive = s.state === "active";
+                  return (
+                    <li key={s.label} className="flex items-start gap-2.5">
+                      <span className="relative flex shrink-0 items-center justify-center w-3.5 h-3.5 mt-[3px]">
+                        {isActive ? (
+                          <>
+                            <span
+                              className="absolute inset-0 rounded-full opacity-50 animate-ping"
+                              style={{ background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)" }}
+                            />
+                            <span
+                              className="relative w-2 h-2 rounded-full"
+                              style={{
+                                background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                                boxShadow: "0 0 8px rgba(99,102,241,0.7)",
+                              }}
+                            />
+                          </>
+                        ) : (
+                          <span
+                            className="relative w-2.5 h-2.5 rounded-full flex items-center justify-center"
+                            style={{
+                              background: isLight ? "rgba(16,185,129,0.18)" : "rgba(16,185,129,0.22)",
+                              border: `1px solid ${isLight ? "rgba(16,185,129,0.4)" : "rgba(16,185,129,0.45)"}`,
+                            }}
+                          >
+                            <svg width="6" height="6" viewBox="0 0 12 12" fill="none" stroke={isLight ? "#047857" : "#34d399"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M2.5 6.5l2.5 2.5 4.5-5.5" />
+                            </svg>
+                          </span>
+                        )}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-baseline gap-1.5">
+                          <span
+                            className={`text-[10px] font-semibold tabular-nums ${
+                              isActive ? (isLight ? "text-[#6366f1]" : "text-[#818cf8]") : isLight ? "text-gray-400" : "text-[#525252]"
+                            }`}
+                            style={{ fontFamily: "var(--font-jetbrains-mono, 'JetBrains Mono', ui-monospace, monospace)" }}
+                          >
+                            0{i + 1}
+                          </span>
+                          <span className={`text-[12px] font-semibold leading-tight ${isLight ? "text-gray-900" : "text-white"}`}>
+                            {s.label}
+                          </span>
+                        </div>
+                        <div className={`text-[10.5px] leading-snug mt-0.5 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+                          {s.detail}
+                        </div>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </aside>
 
