@@ -9,25 +9,77 @@ interface ArenaSectionProps {
   isLight: boolean;
 }
 
+const CIRCLES = [
+  {
+    title: "Investor Networks",
+    items: [
+      { name: "CoinFund", note: "Attended several events, Jake Brukhman's network" },
+      { name: "Pompliano", note: "Invited to annual Christmas party" },
+      { name: "BitAngels", note: "Angel investor network access" },
+      { name: "Maja Vujinovic", note: "OGroup MD, FinTech/Digital Assets" },
+    ],
+  },
+  {
+    title: "Builder Communities",
+    items: [
+      { name: "Detroit Blockchain", note: "15+ events, community leader" },
+      { name: "AI Collective Detroit", note: "Active builder participant" },
+      { name: "Web3 Toronto", note: "Conference, every few months" },
+      { name: "AI Friends Toronto", note: "Research community" },
+    ],
+  },
+  {
+    title: "Exclusive Access",
+    items: [
+      { name: "Tavern Cohorts", note: "Application-only founder programs" },
+      { name: "Jeremy Piven events", note: "Delmonico's, Legacy series" },
+      { name: "Hamptons", note: "Summer investor circuit" },
+      { name: "Health Board Advisors", note: "Mastermind member" },
+    ],
+  },
+];
+
+const MEANINGS = [
+  { title: "Cross-Cultural Fluency", body: "Comfortable with artists, researchers, executives, investors, and founders. Can translate between worlds." },
+  { title: "Early Adopter Pattern", body: "AI events in Feb 2023 — before the boom. Sees what's coming, positions early." },
+  { title: "Relationship Over Transaction", body: "Same communities for 3+ years. Builder Series, Detroit Blockchain, Blockchain Collective — consistent presence." },
+  { title: "Community Builder", body: "Not just attending — contributing. Education workshops, local scene building, advocacy." },
+];
+
 export function ArenaSection({ isLight }: ArenaSectionProps) {
   const { depth } = useReadingDepth();
   const showSummary = depth !== "skim";
   const showDeep = depth === "deep";
+
   return (
-    <AnimatedSection id="arena" className="py-20 px-6 section-alt">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">In The Arena</h2>
+    <AnimatedSection id="arena" className="relative py-24 px-6">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[60%] blur-3xl opacity-40"
+        style={{
+          background: isLight
+            ? "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(139,92,246,0.08), transparent 70%)"
+            : "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(139,92,246,0.14), transparent 70%)",
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <span className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"}`}>
+            Where I show up
+          </span>
+          <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
+            In the arena.
+          </h2>
           {showSummary && (
-            <p className={`max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-              150+ events across 8 cities over 7 years. Not just attending — building relationships,
-              contributing to communities, and moving between worlds that rarely overlap.
+            <p className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
+              150+ events across 8 cities over 7 years. Not just attending — building relationships, contributing to communities, and moving between worlds that rarely overlap.
             </p>
           )}
         </div>
 
-        {/* Worlds I Move In */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-12">
+        {/* Worlds */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-16">
           <WorldCard
             title="Art & Culture"
             events="3 consecutive Art Basel Miami"
@@ -58,82 +110,88 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
           />
         </div>
 
-        {/* Key Relationships */}
+        {/* Circles */}
         {showDeep && (
-        <div className="mb-12">
-          <h3 className="text-xl font-bold mb-6 text-center">Circles & Access</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-            <div className="card p-5">
-              <h4 className="font-bold text-[#6366f1] mb-3">Investor Networks</h4>
-              <ul className={`text-sm space-y-2 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-                <li>• <strong>CoinFund</strong> — Attended several events, Jake Brukhman&apos;s network</li>
-                <li>• <strong>Pompliano</strong> — Invited to annual Christmas party</li>
-                <li>• <strong>BitAngels</strong> — Angel investor network access</li>
-                <li>• <strong>Maja Vujinovic</strong> — OGroup MD, FinTech/Digital Assets</li>
-              </ul>
-            </div>
-            <div className="card p-5">
-              <h4 className="font-bold text-[#6366f1] mb-3">Builder Communities</h4>
-              <ul className={`text-sm space-y-2 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-                <li>• <strong>Detroit Blockchain</strong> — 15+ events, community leader</li>
-                <li>• <strong>AI Collective Detroit</strong> — Active builder participant</li>
-                <li>• <strong>Web3 Toronto</strong> — Conference, every few months</li>
-                <li>• <strong>AI Friends Toronto</strong> — Research community</li>
-              </ul>
-            </div>
-            <div className="card p-5">
-              <h4 className="font-bold text-[#6366f1] mb-3">Exclusive Access</h4>
-              <ul className={`text-sm space-y-2 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-                <li>• <strong>Tavern Cohorts</strong> — Application-only founder programs</li>
-                <li>• <strong>Jeremy Piven events</strong> — Delmonico&apos;s, Legacy series</li>
-                <li>• <strong>Hamptons</strong> — Summer investor circuit</li>
-                <li>• <strong>Health Board Advisors</strong> — Mastermind member</li>
-              </ul>
+          <div className="mb-16">
+            <h3 className={`text-center text-[12px] font-semibold uppercase tracking-[0.18em] mb-6 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+              Circles &amp; access
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {CIRCLES.map((circle) => (
+                <div
+                  key={circle.title}
+                  className={`p-5 rounded-2xl border backdrop-blur-sm ${
+                    isLight ? "bg-white/70 border-gray-200/80" : "bg-white/[0.025] border-white/[0.07]"
+                  }`}
+                >
+                  <h4 className={`font-bold text-[13.5px] tracking-tight mb-3 ${isLight ? "text-[#6366f1]" : "text-[#818cf8]"}`}>
+                    {circle.title}
+                  </h4>
+                  <ul className="space-y-2">
+                    {circle.items.map((item) => (
+                      <li
+                        key={item.name}
+                        className={`text-[12.5px] leading-snug flex items-start gap-2 ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}
+                      >
+                        <span className={`mt-[7px] shrink-0 inline-block w-1 h-1 rounded-full ${isLight ? "bg-gray-400" : "bg-[#525252]"}`} />
+                        <span>
+                          <strong className={isLight ? "text-gray-900" : "text-white"}>{item.name}</strong>
+                          <span className="ml-1">{item.note}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
         )}
 
-        {/* Geographic Footprint */}
+        {/* Geo */}
         {showSummary && (
-        <div className="mb-12">
-          <h3 className="text-xl font-bold mb-6 text-center">Geographic Presence</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            <LocationBadge city="Miami" count="40+" role="Primary Hub" isLight={isLight} />
-            <LocationBadge city="Detroit" count="20+" role="Community Leader" isLight={isLight} />
-            <LocationBadge city="NYC" count="15+" role="Founder Network" isLight={isLight} />
-            <LocationBadge city="Toronto" count="15+" role="Canadian Tech" isLight={isLight} />
-            <LocationBadge city="San Francisco" count="5+" role="Enterprise AI" isLight={isLight} />
-            <LocationBadge city="Monaco" count="F1" role="International" isLight={isLight} />
-            <LocationBadge city="Hamptons" count="3+" role="Investor Circuit" isLight={isLight} />
-            <LocationBadge city="Cannes" count="1" role="Global Summit" isLight={isLight} />
+          <div className="mb-16">
+            <h3 className={`text-center text-[12px] font-semibold uppercase tracking-[0.18em] mb-6 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+              Geographic presence
+            </h3>
+            <div className="flex flex-wrap justify-center gap-2.5">
+              <LocationBadge city="Miami" count="40+" role="Primary Hub" isLight={isLight} />
+              <LocationBadge city="Detroit" count="20+" role="Community Leader" isLight={isLight} />
+              <LocationBadge city="NYC" count="15+" role="Founder Network" isLight={isLight} />
+              <LocationBadge city="Toronto" count="15+" role="Canadian Tech" isLight={isLight} />
+              <LocationBadge city="San Francisco" count="5+" role="Enterprise AI" isLight={isLight} />
+              <LocationBadge city="Monaco" count="F1" role="International" isLight={isLight} />
+              <LocationBadge city="Hamptons" count="3+" role="Investor Circuit" isLight={isLight} />
+              <LocationBadge city="Cannes" count="1" role="Global Summit" isLight={isLight} />
+            </div>
           </div>
-        </div>
         )}
 
-        {/* What This Means */}
+        {/* Meaning */}
         {showDeep && (
-        <div className="card p-8 text-center max-w-3xl mx-auto">
-          <h3 className="text-xl font-bold mb-4">What 150+ Events Actually Means</h3>
-          <div className="grid md:grid-cols-2 gap-6 text-left text-sm">
-            <div>
-              <p className="text-[#6366f1] font-medium mb-2">Cross-Cultural Fluency</p>
-              <p className={isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}>Comfortable with artists, researchers, executives, investors, and founders. Can translate between worlds.</p>
-            </div>
-            <div>
-              <p className="text-[#6366f1] font-medium mb-2">Early Adopter Pattern</p>
-              <p className={isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}>AI events in Feb 2023 — before the boom. Sees what&apos;s coming, positions early.</p>
-            </div>
-            <div>
-              <p className="text-[#6366f1] font-medium mb-2">Relationship Over Transaction</p>
-              <p className={isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}>Same communities for 3+ years. Builder Series, Detroit Blockchain, Blockchain Collective — consistent presence.</p>
-            </div>
-            <div>
-              <p className="text-[#6366f1] font-medium mb-2">Community Builder</p>
-              <p className={isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}>Not just attending — contributing. Education workshops, local scene building, advocacy.</p>
+          <div
+            className={`relative overflow-hidden p-8 rounded-2xl border backdrop-blur-sm max-w-4xl mx-auto ${
+              isLight ? "bg-white/85 border-[#6366f1]/30" : "bg-[#0a0a0a]/85 border-[#6366f1]/35"
+            }`}
+          >
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-8 -top-px h-px"
+              style={{ background: "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.7) 50%, transparent 100%)" }}
+            />
+            <h3 className={`text-center text-[14px] font-semibold mb-6 tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
+              What 150+ events actually means
+            </h3>
+            <div className="grid md:grid-cols-2 gap-x-8 gap-y-5">
+              {MEANINGS.map((m) => (
+                <div key={m.title}>
+                  <p className={`text-[10.5px] font-semibold uppercase tracking-[0.14em] mb-1.5 ${isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"}`}>
+                    {m.title}
+                  </p>
+                  <p className={`text-[13px] leading-relaxed ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>{m.body}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
         )}
       </div>
     </AnimatedSection>
