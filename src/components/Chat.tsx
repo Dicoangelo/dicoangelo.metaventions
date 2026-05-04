@@ -239,10 +239,41 @@ export default function Chat() {
       <div
         className={`relative rounded-[28px] overflow-hidden border backdrop-blur-2xl transition-colors ${
           isLight
-            ? "bg-white/85 border-gray-200/80 shadow-[0_24px_60px_-20px_rgba(15,23,42,0.18),0_8px_24px_-8px_rgba(15,23,42,0.08)]"
-            : "bg-[#0a0a0a]/85 border-white/[0.07] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.7),0_8px_24px_-8px_rgba(0,0,0,0.4)]"
+            ? "bg-white/55 border-gray-200/80 shadow-[0_24px_60px_-20px_rgba(15,23,42,0.22),0_8px_24px_-8px_rgba(15,23,42,0.08)]"
+            : "bg-[#0a0a0a]/55 border-white/[0.07] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.7),0_8px_24px_-8px_rgba(0,0,0,0.4)]"
         }`}
       >
+        {/* Brand backdrop — Metaventions hero film, blurred + scrimmed for legibility */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+          <Image
+            src="/chat-brand-bg.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 768px) 100vw, 672px"
+            priority={false}
+            className="object-cover object-center scale-[1.05]"
+            style={{ filter: "blur(1.5px) saturate(1.15)", opacity: isLight ? 0.18 : 0.32 }}
+          />
+          {/* Vertical scrim — keeps content readable, lets the cyan METAVENTIONS bar peek through low */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: isLight
+                ? "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.78) 35%, rgba(255,255,255,0.88) 70%, rgba(255,255,255,0.78) 100%)"
+                : "linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.78) 35%, rgba(10,10,10,0.88) 70%, rgba(10,10,10,0.72) 100%)",
+            }}
+          />
+          {/* Subtle indigo wash on top — ties the bg into the brand accent */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: isLight
+                ? "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.06), transparent 70%)"
+                : "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.10), transparent 70%)",
+            }}
+          />
+        </div>
+
         {/* Identity header */}
         <div className={`relative px-5 py-3.5 flex items-center gap-3 border-b ${isLight ? "border-gray-100" : "border-white/[0.05]"}`}>
           <div className="relative">
