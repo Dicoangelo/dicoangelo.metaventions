@@ -187,7 +187,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">JD Fit Analyzer</h2>
             <p className={isLight ? 'text-gray-600' : 'text-[#737373]'}>
-              Paste a job description to get a brutally honest fit assessment against my career dossier.
+              Paste a job description to get an evidence-based fit assessment against my career dossier.
             </p>
           </div>
 
@@ -198,10 +198,9 @@ export default function Home() {
               How It Works
             </h3>
             <p className={`text-sm leading-relaxed ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-              This analyzer searches my comprehensive career dossier (700+ indexed chunks covering skills,
-              projects, metrics, and experience) and provides evidence-based matching.
-              <strong className={isLight ? 'text-gray-900' : 'text-white'}> No flattery, no sugarcoating</strong> —
-              just the facts.
+              This analyzer searches my career dossier (700+ indexed chunks covering skills, projects, metrics, and experience)
+              and returns an{" "}
+              <strong className={isLight ? 'text-gray-900' : 'text-white'}>evidence-based</strong> fit assessment grounded in real artifacts.
             </p>
           </div>
 

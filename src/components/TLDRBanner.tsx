@@ -52,7 +52,7 @@ export default function TLDRBanner() {
               </span>
             </p>
             <p className={`text-[13px] md:text-[13.5px] leading-relaxed mt-2.5 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-              The receipts are above, the chat is below — interrogate either.
+              The numbers are above, the chat is below — happy to walk you through either.
             </p>
           </div>
 

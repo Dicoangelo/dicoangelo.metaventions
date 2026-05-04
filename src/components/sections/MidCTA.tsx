@@ -56,7 +56,7 @@ export function MidCTA({ isLight }: MidCTAProps) {
 
             {showSub && (
               <p className={`mt-4 text-[15px] md:text-[16px] leading-relaxed max-w-xl mx-auto ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-                20-min intro call. No deck, no pitch — just answer the questions you&rsquo;d ask in a first-round loop.
+                20-minute intro call. Bring whichever questions matter — happy to walk through partner ops, AI infrastructure, or anything in between.
               </p>
             )}
 

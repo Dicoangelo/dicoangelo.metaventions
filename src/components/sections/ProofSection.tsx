@@ -49,7 +49,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
             </h2>
             {showSummary && (
               <p className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-                Every metric below has documentation. Hover for context. Read deep for the proof trail.
+                Every metric below is documented. Hover for context, switch to Deep mode for the full trail.
               </p>
             )}
           </div>
@@ -73,7 +73,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
         {showDeep && (
           <div className="text-center">
             <p className={`text-[12.5px] uppercase tracking-[0.16em] font-semibold mb-5 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-              Skeptical? Good. Verify everything.
+              Want to verify? Here&rsquo;s the trail.
             </p>
             <div className="flex gap-2.5 justify-center flex-wrap">
               {VERIFY_LINKS.map((link) => (
