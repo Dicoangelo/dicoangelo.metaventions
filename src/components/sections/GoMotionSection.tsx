@@ -2,48 +2,119 @@
 
 import { useReadingDepth } from "@/components/ReadingDepthProvider";
 
+const SPECS = ["4 core AI agents", "13 sub-agents", "MCP server", "MEDDPICC scoring", "Crossbeam · SF · HubSpot · Slack"];
+const DELIVERED = ["Technical specification", "Onboarding playbooks", "MEDDPICC instruction set", "Orchestration quickstart"];
+
 export function GoMotionSection({ isLight }: { isLight: boolean }) {
   const { depth } = useReadingDepth();
   const showSummary = depth !== "skim";
   const showDeep = depth === "deep";
 
   return (
-    <section className="py-16 px-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border mb-6 bg-indigo-500/10 border-indigo-500/30 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
-          <span>⚡ Case Study</span>
-        </div>
-        {/* Featured card with accent border */}
-        <div className={`p-8 rounded-2xl border-2 border-indigo-500/50 ${isLight ? 'bg-gradient-to-br from-indigo-50 to-purple-50' : 'bg-gradient-to-br from-indigo-950/20 to-purple-950/20'}`}>
-          <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
-            <div>
-              <h3 className="text-2xl font-bold mb-1">GoMotion: Partner Sales Orchestration Platform</h3>
-              {showSummary && (
-                <p className={`text-sm ${isLight ? 'text-gray-600' : 'text-gray-400'}`}>Architected live in a single Claude session with a partner manager</p>
-              )}
+    <section className="relative py-16 px-6">
+      {/* Ambient brand wash */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[60%] blur-3xl opacity-40"
+        style={{
+          background: isLight
+            ? "radial-gradient(ellipse 50% 50% at 50% 50%, rgba(99,102,241,0.10), transparent 70%)"
+            : "radial-gradient(ellipse 50% 50% at 50% 50%, rgba(99,102,241,0.16), transparent 70%)",
+        }}
+      />
+
+      <div className="relative max-w-4xl mx-auto">
+        {/* Featured glass card */}
+        <div
+          className={`relative overflow-hidden rounded-2xl border backdrop-blur-xl ${
+            isLight
+              ? "bg-white/70 border-[#6366f1]/30 shadow-[0_24px_60px_-20px_rgba(99,102,241,0.30),0_8px_24px_-8px_rgba(15,23,42,0.10)]"
+              : "bg-[#0a0a0a]/70 border-[#6366f1]/35 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.7),0_8px_24px_-8px_rgba(99,102,241,0.30)]"
+          }`}
+        >
+          {/* Top hairline accent */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-8 -top-px h-px"
+            style={{ background: "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.7) 50%, transparent 100%)" }}
+          />
+
+          <div className="p-7 md:p-9">
+            {/* Top badge row */}
+            <div className="flex items-center gap-2 mb-5">
+              <span
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10.5px] font-semibold uppercase tracking-[0.16em] ${
+                  isLight ? "bg-[#6366f1]/10 text-[#6366f1] border border-[#6366f1]/30" : "bg-[#6366f1]/15 text-[#818cf8] border border-[#6366f1]/30"
+                }`}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1]" />
+                Case Study
+              </span>
+              <span
+                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] font-semibold uppercase tracking-[0.14em] ${
+                  isLight ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                }`}
+              >
+                Built live · 1 session
+              </span>
             </div>
-            <span className="px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-bold">This is the Partner SA motion</span>
+
+            {/* Title */}
+            <h3 className={`text-[24px] md:text-[28px] font-bold tracking-tight leading-tight ${isLight ? "text-gray-900" : "text-white"}`}>
+              GoMotion: Partner Sales Orchestration Platform
+            </h3>
+
+            {showSummary && (
+              <p className={`mt-2 text-[14.5px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
+                Architected live in a single Claude session with a partner manager. This is the Partner SA motion.
+              </p>
+            )}
+
+            {showSummary && (
+              <>
+                <p className={`mt-7 text-[10.5px] font-semibold uppercase tracking-[0.16em] mb-3 ${isLight ? "text-gray-400" : "text-[#525252]"}`}>
+                  System spec
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+                  {SPECS.map((spec) => (
+                    <div
+                      key={spec}
+                      className={`px-3 py-2.5 rounded-xl text-[11.5px] font-medium text-center backdrop-blur-sm ${
+                        isLight
+                          ? "bg-white/80 border border-gray-200/80 text-gray-700"
+                          : "bg-white/[0.025] border border-white/[0.07] text-[#a3a3a3]"
+                      }`}
+                    >
+                      {spec}
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {showDeep && (
+              <>
+                <p className={`mt-7 text-[10.5px] font-semibold uppercase tracking-[0.16em] mb-3 ${isLight ? "text-gray-400" : "text-[#525252]"}`}>
+                  Delivered live
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {DELIVERED.map((d) => (
+                    <span
+                      key={d}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-medium backdrop-blur-sm ${
+                        isLight ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30"
+                      }`}
+                    >
+                      <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      {d}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
-          {/* Specs grid */}
-          {showSummary && (
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-6">
-              {["4 core AI agents", "13 sub-agents", "MCP server", "MEDDPICC scoring", "Crossbeam + SF + HubSpot + Slack"].map(spec => (
-                <div key={spec} className={`px-3 py-2 rounded-lg text-xs font-medium text-center ${isLight ? 'bg-white border border-gray-200' : 'bg-white/5 border border-white/10'}`}>{spec}</div>
-              ))}
-            </div>
-          )}
-          {/* Deliverables */}
-          {showDeep && (
-            <div>
-              <p className={`text-xs font-semibold uppercase tracking-wider mb-2 ${isLight ? 'text-gray-500' : 'text-gray-500'}`}>Delivered Live</p>
-              <div className="flex flex-wrap gap-2">
-                {["Technical specification", "Onboarding playbooks", "MEDDPICC instruction set", "Orchestration quickstart guide"].map(d => (
-                  <span key={d} className={`px-3 py-1 rounded-full text-xs ${isLight ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-green-500/10 text-green-400 border border-green-500/30'}`}>✓ {d}</span>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </section>
