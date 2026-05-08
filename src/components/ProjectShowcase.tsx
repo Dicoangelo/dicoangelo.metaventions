@@ -57,7 +57,28 @@ const projects: Project[] = [
       "Explainable AI for investment decisions"
     ],
     github: "https://github.com/Dicoangelo/frontier-alpha",
-    loc: "New"
+    demo: "https://frontier-alpha.metaventionsai.com",
+    loc: "v1.1"
+  },
+  {
+    name: "CareerCoach Antigravity",
+    tagline: "Sovereign Career Intelligence",
+    description: "AI-driven career operating system — eligibility-gate-first job matching, warm-line outreach, ATS-aware tailoring, and parallel-session coordination. Reclaims agency in an algorithmic hiring world.",
+    metrics: [
+      { label: "Tests", value: "2,959 passing" },
+      { label: "Stack", value: "Next.js 16" },
+      { label: "Tier", value: "$9 Single-Shot" },
+      { label: "Surface", value: "Live" }
+    ],
+    techStack: ["Next.js 16", "React 19", "Tailwind 4", "TypeScript", "Stripe", "Prompt Engineering"],
+    papers: [
+      "Eligibility-gate-first hiring funnels",
+      "Warm-line conversion vs cold apply",
+      "ATS keyword fidelity in resume tailoring"
+    ],
+    github: "https://github.com/Dicoangelo/CareerCoachAntigravity",
+    demo: "https://careers.metaventionsai.com",
+    loc: "v2.5"
   },
   {
     name: "FriendlyFace",
