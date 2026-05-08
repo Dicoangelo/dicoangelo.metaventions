@@ -97,7 +97,8 @@ const projects: Project[] = [
       "Compliance-by-proxy business model"
     ],
     github: "https://github.com/Dicoangelo/FriendlyFace",
-    loc: "New"
+    demo: "https://friendlyface.metaventionsai.com",
+    loc: "Demo-ready"
   },
   {
     name: "ACE",
