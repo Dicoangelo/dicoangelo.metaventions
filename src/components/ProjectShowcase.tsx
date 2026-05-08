@@ -200,7 +200,7 @@ const projects: Project[] = [
 
 export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
   const [expanded, setExpanded] = useState(false);
-  const previewCount = 3;
+  const previewCount = 4;
   const visibleProjects = expanded ? projects : projects.slice(0, previewCount);
   const hiddenCount = projects.length - previewCount;
 
