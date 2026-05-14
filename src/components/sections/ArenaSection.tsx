@@ -33,7 +33,7 @@ const CIRCLES = [
     items: [
       { name: "Tavern Cohorts", note: "Application-only founder programs" },
       { name: "Jeremy Piven events", note: "Delmonico's, Legacy series" },
-      { name: "Hamptons", note: "Summer investor circuit" },
+      { name: "Hamptons Legacy", note: "Invitation" },
       { name: "Health Board Advisors", note: "Mastermind member" },
     ],
   },
@@ -71,6 +71,9 @@ export function ArenaSection({ isLight }: ArenaSectionProps) {
           <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
             In the arena.
           </h2>
+          <p className={`mt-3 text-[13px] md:text-sm font-medium tracking-[0.14em] uppercase ${isLight ? "text-gray-500" : "text-[#a3a3a3]"}`}>
+            Technology, Innovation &amp; Culture
+          </p>
           {showSummary && (
             <p className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
               150+ events across 8 cities over 7 years. Not just attending — building relationships, contributing to communities, and moving between worlds that rarely overlap.
