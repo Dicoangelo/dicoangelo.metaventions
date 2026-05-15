@@ -751,7 +751,7 @@ export default function Chat() {
 
               {!hasMessages && (
                 <p className={`text-center text-[10.5px] mt-2.5 tracking-[-0.005em] ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-                  Voice replies use Dico&apos;s actual cloned voice. Press{" "}
+                  Voice replies stream sentence-by-sentence for low-latency conversation. Press{" "}
                   <kbd className={`px-1 py-0.5 font-mono text-[10px] rounded border ${isLight ? "bg-white border-gray-200" : "bg-white/[0.05] border-white/10"}`}>/</kbd>{" "}
                   to focus.
                 </p>

@@ -98,7 +98,7 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
         processVoice(finalTranscript.trim());
       }
     },
-    1200
+    600
   );
 
   // Visual states
@@ -113,7 +113,8 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
   const analyserRef = useRef<AnalyserNode | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const micAnimationRef = useRef<number | null>(null);
-  const currentAudioRef = useRef<AudioBufferSourceNode | null>(null);
+  const currentAudioElRef = useRef<HTMLAudioElement | null>(null);
+  const audioQueueRef = useRef<HTMLAudioElement[]>([]);
   const ttsAnalyserRef = useRef<AnalyserNode | null>(null);
   const ttsAnimationRef = useRef<number | null>(null);
   const silenceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -329,6 +330,67 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
     }
   }, [initMicAnalyser, cleanupMic, isListening, isProcessing, isSpeaking, useDeepgram, deepgramAvailable, startDeepgram]);
 
+  // Drain the audio queue: pop the next ready <audio> element and play it sequentially.
+  // Resolves the per-sentence promise when that sentence finishes, then plays the next.
+  const drainAudioQueue = useCallback(() => {
+    if (currentAudioElRef.current) return; // already playing
+    const next = audioQueueRef.current.shift();
+    if (!next) {
+      setIsSpeaking(false);
+      setDicoFrequencies(new Array(48).fill(12));
+      return;
+    }
+    currentAudioElRef.current = next;
+    setIsSpeaking(true);
+    next.play().catch((e) => {
+      console.error("[VoiceOrb] Audio play failed:", e);
+      currentAudioElRef.current = null;
+      drainAudioQueue();
+    });
+  }, []);
+
+  // Synthesize one sentence and append its <audio> to the playback queue.
+  // Uses URL.createObjectURL on the MP3 blob — skips the decodeAudioData step
+  // entirely so playback can start as soon as the MP3 header is parseable.
+  const enqueueSentenceTTS = useCallback(async (sentence: string): Promise<void> => {
+    try {
+      const res = await fetch("/api/tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: sentence }),
+      });
+      if (!res.ok) throw new Error("TTS failed");
+
+      const blob = await res.blob();
+      const audio = new Audio(URL.createObjectURL(blob));
+
+      return new Promise<void>((resolve) => {
+        audio.onended = () => {
+          URL.revokeObjectURL(audio.src);
+          if (currentAudioElRef.current === audio) {
+            currentAudioElRef.current = null;
+            drainAudioQueue();
+          }
+          resolve();
+        };
+        audio.onerror = () => {
+          URL.revokeObjectURL(audio.src);
+          if (currentAudioElRef.current === audio) {
+            currentAudioElRef.current = null;
+            drainAudioQueue();
+          }
+          resolve();
+        };
+
+        audioQueueRef.current.push(audio);
+        // Kick the queue if nothing is currently playing
+        if (!currentAudioElRef.current) drainAudioQueue();
+      });
+    } catch (err) {
+      console.error("[VoiceOrb] TTS sentence failed:", err);
+    }
+  }, [drainAudioQueue]);
+
   // Process voice input
   const processVoice = useCallback(async (text: string) => {
     // Guard: Use ref for synchronous check to prevent double-processing
@@ -377,89 +439,70 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       if (!reader) throw new Error("No reader");
 
       const decoder = new TextDecoder();
+      let buffer = "";
       let fullResponse = "";
+      let firstSentenceFired = false;
+      const ttsPromises: Promise<void>[] = [];
+
+      // Sentence-boundary pipelining: as soon as a sentence-ending punctuation lands,
+      // fire TTS for that chunk so audio playback starts before the LLM finishes generating.
+      // First sentence is what determines time-to-first-audio.
+      const SENTENCE_RE = /^([\s\S]+?[.!?])\s+/;
 
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        fullResponse += decoder.decode(value, { stream: true });
+        const chunk = decoder.decode(value, { stream: true });
+        buffer += chunk;
+        fullResponse += chunk;
+
+        // Live-update the visible response card while we stream
+        setLastResponse(fullResponse);
+        if (!firstSentenceFired) setShowResponse(true);
+
+        // Flush any complete sentences out of the buffer to TTS
+        let m: RegExpMatchArray | null;
+        while ((m = buffer.match(SENTENCE_RE))) {
+          const sentence = m[1].trim();
+          buffer = buffer.slice(m[0].length);
+          if (sentence) {
+            ttsPromises.push(enqueueSentenceTTS(sentence));
+            if (!firstSentenceFired) {
+              firstSentenceFired = true;
+              setIsProcessing(false);
+            }
+          }
+        }
+      }
+
+      // Flush any trailing text (no sentence terminator)
+      if (buffer.trim()) {
+        ttsPromises.push(enqueueSentenceTTS(buffer.trim()));
       }
 
       // Add assistant response to shared history
       onAddToHistory({ role: "assistant", content: fullResponse });
 
-      setIsProcessing(false);
-      setLastResponse(fullResponse);
-      setShowResponse(true);
+      // If we never got a sentence boundary at all (very short reply), we still need
+      // to flip out of the processing state so the orb stops "thinking"
+      if (!firstSentenceFired) setIsProcessing(false);
 
-      // Speak THEN clear guard (prevents race condition)
-      await speakResponse(fullResponse);
+      // Wait for all queued audio to finish playing before re-arming the mic
+      await Promise.all(ttsPromises);
       isProcessingRef.current = false;
 
-      // Auto-restart listening after TTS completes (1.5s delay to avoid echo feedback)
+      // Auto-restart listening after TTS completes (700ms delay to avoid echo feedback;
+      // modern echo cancellation handles less than this just fine)
       setTimeout(() => {
         if (!isListening && !isSpeaking) startListening();
-      }, 1500);
+      }, 700);
     } catch {
       setIsProcessing(false);
       isProcessingRef.current = false;
       setError("Failed to respond");
     }
-  }, [cleanupMic, startListening, isListening, isSpeaking, conversationHistory, onAddToHistory, deepgramListening, stopDeepgram]);
+  }, [cleanupMic, startListening, isListening, isSpeaking, conversationHistory, onAddToHistory, deepgramListening, stopDeepgram, enqueueSentenceTTS]);
 
-  // Speak with TTS
-  const speakResponse = async (text: string) => {
-    // Stop any currently playing audio first
-    if (currentAudioRef.current) {
-      try { currentAudioRef.current.stop(); } catch (e) { /* Audio already stopped */ }
-      currentAudioRef.current = null;
-    }
-    if (ttsAnimationRef.current) {
-      cancelAnimationFrame(ttsAnimationRef.current);
-      ttsAnimationRef.current = null;
-    }
-    setIsSpeaking(true);
-
-    try {
-      const res = await fetch("/api/tts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text }),
-      });
-
-      if (!res.ok) throw new Error("TTS failed");
-
-      const arrayBuffer = await res.arrayBuffer();
-      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
-      if (!audioContextRef.current) audioContextRef.current = new AudioCtx();
-      if (audioContextRef.current.state === "suspended") await audioContextRef.current.resume();
-
-      const audioBuffer = await audioContextRef.current.decodeAudioData(arrayBuffer.slice(0));
-      const source = audioContextRef.current.createBufferSource();
-      source.buffer = audioBuffer;
-
-      ttsAnalyserRef.current = audioContextRef.current.createAnalyser();
-      ttsAnalyserRef.current.fftSize = 128;
-      source.connect(ttsAnalyserRef.current);
-      ttsAnalyserRef.current.connect(audioContextRef.current.destination);
-
-      currentAudioRef.current = source;
-      updateTtsFrequencies();
-
-      source.onended = () => {
-        if (ttsAnimationRef.current) cancelAnimationFrame(ttsAnimationRef.current);
-        ttsAnalyserRef.current = null;
-        setIsSpeaking(false);
-        currentAudioRef.current = null;
-        setDicoFrequencies(new Array(48).fill(12));
-      };
-
-      source.start(0);
-    } catch (err) {
-      console.error("[VoiceOrb] TTS failed:", err);
-      setIsSpeaking(false);
-    }
-  };
 
   // Stop/Interrupt everything
   const stopAll = useCallback(() => {
@@ -476,10 +519,18 @@ export default function VoiceOrb({ conversationHistory, onAddToHistory }: VoiceO
       recognitionRef.current.abort();
       recognitionRef.current = null;
     }
-    if (currentAudioRef.current) {
-      try { currentAudioRef.current.stop(); } catch (e) { /* Audio already stopped */ }
-      currentAudioRef.current = null;
+    // Stop currently-playing audio + drain pending queue
+    if (currentAudioElRef.current) {
+      try {
+        currentAudioElRef.current.pause();
+        URL.revokeObjectURL(currentAudioElRef.current.src);
+      } catch { /* noop */ }
+      currentAudioElRef.current = null;
     }
+    audioQueueRef.current.forEach((a) => {
+      try { URL.revokeObjectURL(a.src); } catch { /* noop */ }
+    });
+    audioQueueRef.current = [];
     if (ttsAnimationRef.current) {
       cancelAnimationFrame(ttsAnimationRef.current);
       ttsAnimationRef.current = null;

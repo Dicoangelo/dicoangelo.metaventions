@@ -26,7 +26,7 @@ const DEEPGRAM_PARAMS = new URLSearchParams({
   smart_format: "true",
   interim_results: "true",
   endpointing: "300",
-  utterance_end_ms: "1000",
+  utterance_end_ms: "600",
   vad_events: "true",
   numerals: "true",
   filler_words: "false",
@@ -50,7 +50,7 @@ const DEEPGRAM_WS_URL = `wss://api.deepgram.com/v1/listen?${DEEPGRAM_PARAMS.toSt
 export function useDeepgramSTT(
   onPartialTranscript?: (text: string, isFinal: boolean) => void,
   onSilenceDetected?: (finalTranscript: string) => void,
-  silenceTimeout = 1200
+  silenceTimeout = 600
 ): UseDeepgramSTTReturn {
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState("");

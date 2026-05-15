@@ -66,8 +66,11 @@ async function synthesizeWithElevenLabs(text: string): Promise<Response> {
   const apiKey = process.env.ELEVENLABS_API_KEY!;
   const voiceId = process.env.ELEVENLABS_VOICE_ID || ELEVENLABS_VOICES.MIKE;
 
+  // /stream endpoint + optimize_streaming_latency=3 returns the first audio bytes
+  // ~400ms sooner than the buffered endpoint. We proxy ElevenLabs' ReadableStream
+  // straight back to the browser so playback can start before synthesis finishes.
   const response = await fetch(
-    `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`,
+    `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/stream?optimize_streaming_latency=3&output_format=mp3_22050_32`,
     {
       method: "POST",
       headers: {
@@ -87,19 +90,19 @@ async function synthesizeWithElevenLabs(text: string): Promise<Response> {
     }
   );
 
-  if (!response.ok) {
-    const err = await response.json().catch(() => ({ detail: "unknown" }));
-    console.error("[ElevenLabs] Failed:", err);
+  if (!response.ok || !response.body) {
+    const err = await response.text().catch(() => "unknown");
+    console.error("[ElevenLabs] Failed:", response.status, err);
     throw new Error("ElevenLabs TTS failed");
   }
 
-  const audioBuffer = await response.arrayBuffer();
-  return new Response(audioBuffer, {
+  return new Response(response.body, {
     headers: {
       "Content-Type": "audio/mpeg",
       "Cache-Control": "no-cache",
       "X-TTS-Provider": "elevenlabs",
       "X-TTS-Voice": voiceId,
+      "Transfer-Encoding": "chunked",
     },
   });
 }
