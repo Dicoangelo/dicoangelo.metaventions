@@ -16,13 +16,13 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 ### Business
 - **$800M+ TCV** registered/processed through cloud marketplace infrastructure at Contentsquare
 - **2,500+ deal registrations** with 97% approval rate (operations on 3-person alliance team)
-- **Operations on 3-person alliance team** — program reached $30M+ ACV growth (Head of Cloud Alliances led strategy; I ran the operational layer)
+- **Operations on 3-person alliance team**: program reached $30M+ ACV growth (Head of Cloud Alliances led strategy; I ran the operational layer)
 - **40%** cloud attachment rate on enterprise deals
 - **$222,750** annual cost savings at Rocket Mortgage
 - **2x Microsoft Partner of the Year** awards
-- **Catalyst 2026 Speaker** — Partner ecosystem conference testimonial
-- **1159.ai Innovation Workshop** — Rapid prototyping & iterative design testimonial
-- **Suger.io Case Study** — Featured as Cloud Alliance Operations Lead in vendor case study
+- **Catalyst 2026 Speaker**: Partner ecosystem conference testimonial
+- **1159.ai Innovation Workshop**: Rapid prototyping & iterative design testimonial
+- **Suger.io Case Study**: Featured as Sr. Partner Systems and Operations Specialist in vendor case study
 
 ### 2024 Highlights (Contentsquare)
 - **$30M+ ACV growth** (AWS + Microsoft partnerships)
@@ -62,7 +62,7 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 - Published 2 npm packages
 
 **Contentsquare** (Jan 2022 - Nov 2025)
-- Cloud Alliance Operations Lead — infrastructure, automation, marketplace operations
+- Sr. Partner Systems and Operations Specialist, infrastructure, automation, marketplace operations
 - Registered/processed $800M+ TCV through AWS and Microsoft marketplace systems
 - Operations on 3-person alliance team; program reached $30M+ ACV growth in 2024 (I ran the operational layer)
 - Built operational infrastructure: 50+ dynamic reports, 6 platform integrations, 90% automation improvement
@@ -90,13 +90,13 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 
 **Education:**
 - BBA Marketing, University of Windsor (2019)
-- SpaceX Hyperloop 2019 Competition Finalist — Engineering Business Marketing Lead
+- SpaceX Hyperloop 2019 Competition Finalist, Engineering Business Marketing Lead
 
 **University Leadership (2015-2019):**
-- UWindsor Hyperloop — Engineering Business Marketing Lead
-- Odette High School Leadership Initiative — VP of Marketing
-- Enactus Windsor — Lead Mentor
-- AIESEC Windsor — Lead
+- UWindsor Hyperloop, Engineering Business Marketing Lead
+- Odette High School Leadership Initiative, VP of Marketing
+- Enactus Windsor, Lead Mentor
+- AIESEC Windsor, Lead
 
 **Certifications:**
 - AWS Partner: Business Accreditation
@@ -161,7 +161,7 @@ Canadian Citizen - TN Visa Eligible (No sponsorship needed)
 
 ## 📋 TECHNICAL STACK
 
-**Languages:** TypeScript (79K LOC), Python (31K LOC)
+**Languages:** (79K LOC), (31K LOC)
 **Frameworks:** React 19, Next.js 14, FastAPI
 **AI/ML:** Gemini, Claude, GPT-4, Grok, Vector Search
 **Infrastructure:** Vercel, Supabase, SQLite, Qdrant

@@ -13,7 +13,7 @@ Direct, evidence-backed answers to the questions recruiters and hiring managers 
 **AI Systems Engineer** · Multi-Agent Systems & Enterprise Infrastructure
 
 ### What Defines Dico
-- **Systems Integrator**: Operates upstream of implementation—architecture, orchestration, knowledge modeling, and leverage
+- **Systems Integrator**: Operates upstream of implementation, architecture, orchestration, knowledge modeling, and leverage
 - **Ambiguity → Structure**: Converts complex, unstructured problems into queryable intelligence systems
 - **Infrastructure Mindset**: Treats documentation, knowledge, and process as infrastructure, not afterthoughts
 - **Audit-Ready Design**: Builds assuming scale, audit trails, and long-term maintainability
@@ -54,7 +54,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 | Google Cloud Console | 354 | Infrastructure operations |
 | Vercel | High | Shipping products to production |
 
-**The signal:** Vercel + GitHub activity confirms I'm shipping products, not just researching. This is builder activity — model testing to production deployment in the same session. The work speaks for itself.
+**The signal:** Vercel + GitHub activity confirms I'm shipping products, not just researching. This is builder activity, model testing to production deployment in the same session. The work speaks for itself.
 
 ### "Why no PhD or CS degree?"
 **I'm new school.** 5 months of intensive coding. No CS degree, no bootcamp. Learned with AI tools, not before them.
@@ -76,7 +76,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 2. **I ship fast.** 900K+ LOC in 5 months. No gradual ramp-up - learned with AI tools and shipped production systems immediately. New school velocity.
 
-3. **I bridge research and production.** 8+ arXiv papers implemented with test coverage. I don't just read papers—I implement them, measure results, and iterate.
+3. **I bridge research and production.** 8+ arXiv papers implemented with test coverage. I don't just read papers, I implement them, measure results, and iterate.
 
 4. **Self-directed learner.** No CS degree, no bootcamp. Built everything by doing. When corporate didn't promote me, I built my own path.
 
@@ -92,7 +92,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Scope of work:**
 - Registered/processed **$800M+ TCV** through cloud marketplace infrastructure (AWS, Microsoft)
-- Operations on the 3-person alliance team — program reached **$30M+ ACV growth** in 2024 (Head of Cloud Alliances led strategy; I ran the operational layer)
+- Operations on the 3-person alliance team, program reached **$30M+ ACV growth** in 2024 (Head of Cloud Alliances led strategy; I ran the operational layer)
 - Built infrastructure handling **2,500+ deal registrations** with 97% approval rate
 - **600+ deals/quarter** processing capacity
 - Platform admin for enterprise systems: Salesforce, AWS ACE, Microsoft Partner Center, PartnerStack, Reveal, Suger
@@ -112,8 +112,8 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **Recognition:**
 - 2x Microsoft Partner of the Year awards (2024, 2025)
 - Catalyst 2026 Speaker
-- Suger.io Case Study (featured as Cloud Alliance Operations Lead)
-- "Best-in-class" reporting—executive praise
+- Suger.io Case Study (featured as Sr. Partner Systems and Operations Specialist)
+- "Best-in-class" reporting, executive praise
 
 ### "Can you work in a team?"
 
@@ -133,16 +133,16 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Platform admin supporting 3,000+ partner ecosystem
 
 **At University of Windsor (2015-2019):**
-- SpaceX Hyperloop 2019 Competition Finalist—Engineering Business Marketing Lead
-- VP of Marketing—Odette High School Leadership Initiative
-- Lead Mentor—Enactus Windsor
-- Lead—AIESEC Windsor
+- SpaceX Hyperloop 2019 Competition Finalist, Engineering Business Marketing Lead
+- VP of Marketing, Odette High School Leadership Initiative
+- Lead Mentor, Enactus Windsor
+- Lead, AIESEC Windsor
 
 **Solo projects demonstrate I can own end-to-end execution, not that I can't collaborate.** The pattern is clear: I lead teams, coordinate cross-functionally, and deliver measurable outcomes.
 
 ### "Do you have production experience?"
 
-**Yes. 900,000+ LOC shipped to production systems with live users — AI-generated under my prompt direction, reviewed and integrated by me. I do not claim language fluency.**
+**Yes. 900,000+ LOC shipped to production systems with live users, AI-generated under my prompt direction, reviewed and integrated by me. I do not claim language fluency.**
 
 **Production systems shipped (I specified, prompted, reviewed, deployed):**
 
@@ -154,8 +154,8 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
    - Deployed on Vercel with real users
 
 2. **Published npm packages** (2 packages, public)
-   - @metaventionsai/cpb-core (v1.1.0)—AI orchestration library
-   - @metaventionsai/voice-nexus (v1.1.0)—Multi-provider voice architecture
+   - @metaventionsai/cpb-core (v1.1.0), AI orchestration library
+   - @metaventionsai/voice-nexus (v1.1.0), Multi-provider voice architecture
    - Build artifacts (ESM/CJS), test suites, semantic versioning
    - Anyone can install and use these packages
 
@@ -218,7 +218,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Multi-model orchestration (Gemini, Claude, GPT-4, Grok) + MCP
 - Systems integration (Salesforce, AWS, Microsoft marketplace ops)
 
-**What I do not claim:** Language fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify in English, review AI output, run it against tests, and ship. Evaluate me on system design, prompt engineering, and evaluation harnesses — not whiteboard syntax.
+**What I do not claim:** Language fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify in English, review AI output, run it against tests, and ship. Evaluate me on system design, prompt engineering, and evaluation harnesses, not whiteboard syntax.
 
 ### "Can you code at scale?"
 
@@ -230,7 +230,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - **Published packages:** 2 on npm (public, versioned, documented)
 - **Test coverage:** 95% (Vitest)
 - **Commits:** 3,000+ across 38 repositories
-- **Stack surface covered by prompts I wrote:** web apps, Python services, shell automation, build tooling, CI — all generated under my direction, not hand-typed
+- **Stack surface covered by prompts I wrote:** web apps, Python services, shell automation, build tooling, CI, all generated under my direction, not hand-typed
 
 **Architectural complexity:**
 - **OS-App:** 75 UI components, 156 services, 20 custom hooks, Agentic Kernel with state machine (BOOTING → IDLE → PROCESSING → PAGING → SUSPENDED)
@@ -245,26 +245,26 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Live demos with real users (not just localhost)
 - Published npm packages with semantic versioning
 
-**Solo contributor note:** Being the sole contributor demonstrates **end-to-end capability**—I own architecture, implementation, testing, deployment, and maintenance. No hand-holding needed.
+**Solo contributor note:** Being the sole contributor demonstrates **end-to-end capability**, I own architecture, implementation, testing, deployment, and maintenance. No hand-holding needed.
 
 ### "What's your GitHub like?"
 
 **38 repositories, 3,000+ commits, 2 published packages.**
 
 **Public repositories (17):**
-- **cpb-core** (TypeScript)—Cognitive Precision Bridge npm package
-- **voice-nexus** (TypeScript)—Multi-provider voice architecture npm package
-- **chrome-history-export** (Python)—AI-ready browsing history export
-- **FlowDesk** (Lua)—Multi-monitor workspace automation for macOS
-- **Dicoangelo** (Markdown)—Profile README
-- **Metaventions-AI-Landing** (TypeScript)—Company landing page
+- **cpb-core** (TypeScript), Cognitive Precision Bridge npm package
+- **voice-nexus** (TypeScript), Multi-provider voice architecture npm package
+- **chrome-history-export** (Python), AI-ready browsing history export
+- **FlowDesk** (Lua), Multi-monitor workspace automation for macOS
+- **Dicoangelo** (Markdown), Profile README
+- **Metaventions-AI-Landing** (TypeScript), Company landing page
 - Others available on request
 
 **Private repositories (19):**
-- **OS-App** (152K LOC)—Proprietary AI operating system
-- **CareerCoachAntigravity** (76K LOC)—Career governance system
-- **meta-vengine** (51K LOC)—Self-improving infrastructure
-- **ResearchGravity** (17K LOC)—Research orchestration framework
+- **OS-App** (152K LOC), Proprietary AI operating system
+- **CareerCoachAntigravity** (76K LOC), Career governance system
+- **meta-vengine** (51K LOC), Self-improving infrastructure
+- **ResearchGravity** (17K LOC), Research orchestration framework
 - Enterprise materials (pitch decks, investor presentations)
 - Others containing proprietary algorithms
 
@@ -291,15 +291,15 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **No. I'm a Canadian citizen with TN visa eligibility under USMCA (United States-Mexico-Canada Agreement).**
 
 **Key facts:**
-- **No H-1B lottery required**—TN visas are not subject to caps
-- **Fast processing**—Can be approved at border crossing or via USCIS
-- **3-year validity**—Renewable indefinitely
-- **Can start immediately**—No waiting period once offer is accepted
+- **No H-1B lottery required**, TN visas are not subject to caps
+- **Fast processing**, Can be approved at border crossing or via USCIS
+- **3-year validity**, Renewable indefinitely
+- **Can start immediately**, No waiting period once offer is accepted
 
 **TN visa categories I qualify for:**
-- **Computer Systems Analyst**—For technical roles
-- **Management Consultant**—For TPM/GTM roles
-- **Scientific Technician/Technologist**—For research roles
+- **Computer Systems Analyst**, For technical roles
+- **Management Consultant**, For TPM/GTM roles
+- **Scientific Technician/Technologist**, For research roles
 
 **What employers need to provide:**
 - Offer letter specifying TN-eligible job category
@@ -313,11 +313,11 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **Primary targets: SF Bay Area, NYC, Austin, Boston, Toronto. Open to relocating.**
 
 **Location priorities:**
-1. **San Francisco Bay Area**—Top choice for AI/ML roles (Google DeepMind, Anthropic, OpenAI)
-2. **New York City**—Strong for technical roles and founder networks
-3. **Austin**—Growing AI hub, attended Capital Factory events
-4. **Boston**—Research-heavy companies
-5. **Toronto**—Canadian tech hub, no visa needed
+1. **San Francisco Bay Area**, Top choice for AI/ML roles (Google DeepMind, Anthropic, OpenAI)
+2. **New York City**, Strong for technical roles and founder networks
+3. **Austin**, Growing AI hub, attended Capital Factory events
+4. **Boston**, Research-heavy companies
+5. **Toronto**, Canadian tech hub, no visa needed
 
 **Why these locations:**
 - High concentration of AI/ML companies
@@ -368,11 +368,11 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Prioritizing: Ownership, autonomy, compounding learning
 
 **What I value beyond compensation:**
-1. **Access to frontier AI models**—Working directly with latest capabilities
-2. **Research collaboration**—Publishing, arXiv implementations
-3. **Ownership & autonomy**—Trusted to own outcomes, not micromanaged
-4. **Rapid learning environment**—Exposure to world-class engineers
-5. **Equity upside**—Participate in company success
+1. **Access to frontier AI models**, Working directly with latest capabilities
+2. **Research collaboration**, Publishing, arXiv implementations
+3. **Ownership & autonomy**, Trusted to own outcomes, not micromanaged
+4. **Rapid learning environment**, Exposure to world-class engineers
+5. **Equity upside**, Participate in company success
 
 **Negotiation approach:**
 - Transparent about expectations
@@ -425,7 +425,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **My position:**
 - I'm joining to build, not to steal IP or customers
-- I won't compete during employment—that's professional ethics
+- I won't compete during employment, that's professional ethics
 - After employment, I need ability to work in my field
 - Open to reasonable restrictions with reasonable compensation
 
@@ -493,13 +493,13 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 ### "Your background is in marketing and operations. Why should we trust you as a builder?"
 
-**Because I've shipped 900K+ LOC of production code with 95% test coverage, published 2 npm packages, and operationalized 8+ arXiv papers — all through prompt engineering, not hand-coding.**
+**Because I've shipped 900K+ LOC of production code with 95% test coverage, published 2 npm packages, and operationalized 8+ arXiv papers, all through prompt engineering, not hand-coding.**
 
 **The transition story:**
 
 **2015-2019 (University):**
 - BBA Marketing at University of Windsor
-- SpaceX Hyperloop 2019—Engineering Business Marketing Lead
+- SpaceX Hyperloop 2019, Engineering Business Marketing Lead
 - Led 4 student organizations (VP Marketing, Lead Mentor)
 
 **2020-2023 (Operations + Early Prompt Engineering):**
@@ -508,7 +508,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Shipped internal automation tools (document verification, quality dashboards) via prompting
 
 **2022-2025 (GTM + AI Systems Hybrid):**
-- Contentsquare: Cloud Alliance Operations Lead
+- Contentsquare: Sr. Partner Systems and Operations Specialist
 - Built operational infrastructure ($800M TCV processed)
 - Systems integration architecture (Salesforce ↔ AWS, PartnerStack UAT)
 - Platform administration (7 tools)
@@ -536,12 +536,12 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
    - I can bridge technical and non-technical teams
 
 3. **I code in English, which is the new native language of shipping.**
-   - I went from marketing grad to publishing npm packages in 4 years — by prompting, reviewing, testing
+   - I went from marketing grad to publishing npm packages in 4 years, by prompting, reviewing, testing
    - I operationalized arXiv papers without PhD supervision by turning them into specs for Claude Code
    - I taught myself prompt engineering, multi-agent orchestration, MCP, RAG, and LLM evaluation frameworks
-   - I direct AI coding agents. I do not claim to hand-write TypeScript, Python, or SQL — and I'd rather be evaluated on what I ship than what I can whiteboard
+   - I direct AI coding agents. I do not claim to hand-write TypeScript, Python, or SQL, and I'd rather be evaluated on what I ship than what I can whiteboard
 
-**Most operators can't ship systems. Most engineers can't run a partner motion. I do both — and the AI coding agents close the syntax gap.**
+**Most operators can't ship systems. Most engineers can't run a partner motion. I do both, and the AI coding agents close the syntax gap.**
 
 **Bottom line:** Judge me on what I've built, not where I started. 900K+ LOC, 2 npm packages, 8+ papers implemented, $800M deals managed. That's the resume.
 
@@ -552,7 +552,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **The decision timeline:**
 
 **Jan 2022 - Mid 2024:**
-- Thriving at Contentsquare (Cloud Alliance Operations Lead)
+- Thriving at Contentsquare (Sr. Partner Systems and Operations Specialist)
 - Building AI systems nights/weekends
 - Implementing arXiv papers as side projects
 
@@ -603,7 +603,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Operations on the 3-person alliance team; program reached $30M+ ACV growth
 - Built 50+ reports, 6 platform integrations
 - 2x Microsoft Partner of the Year awards (2024, 2025)
-- "Best-in-class" reporting—executive praise
+- "Best-in-class" reporting, executive praise
 
 **At Rocket Mortgage (2020-2023) while learning to code:**
 - Led 45 agents
@@ -639,7 +639,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 | Company | Role | Duration | Reason for Leaving |
 |---------|------|----------|-------------------|
-| **Bridge Training Services** | Director | Mar 2019 - Present (6 years) | Non-profit side role (ongoing) |
+| **Up2Youth** | Founding Director | Mar 2019 - Mar 2022 (3 years) | Closed 36-month Government of Ontario Youth Opportunities Fund grant cycle in good standing |
 | **Metaventions AI** | Founder | Nov 2025 - Present (5 months) | Current role |
 | **Contentsquare** | Cloud Alliance Ops Lead | Jan 2022 - Nov 2025 (4 years) | Left to build startup full-time |
 | **Edison Financial** | Document Review Specialist | Jul 2021 - Apr 2022 (9 months) | Concurrent with Rocket, left to focus |
@@ -648,13 +648,13 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **Tenure breakdown:**
 - **Contentsquare:** 4 years (longest tenure, left for entrepreneurship)
 - **Rocket Mortgage:** 3 years (standard, left for promotion)
-- **Bridge Training Services:** 6 years ongoing (community commitment)
+- **Up2Youth:** 3 years (Founding Director, $255K Government of Ontario YOF grant, closed in good standing)
 - **Edison Financial:** 9 months (concurrent role, expected short duration)
 
 **Why these transitions make sense:**
 
 1. **Rocket → Contentsquare (2023):**
-   - Moved from Product Specialist into the Cloud Alliance Operations role (externally titled "Cloud Alliance Operations Lead" via Suger.io and Catalyst)
+   - Moved from Product Specialist into the Cloud Alliance Operations role (externally titled "Sr. Partner Systems and Operations Specialist" via Suger.io and Catalyst)
    - 3 years at Rocket (delivered $222K savings, led 45 agents)
    - Moved for growth opportunity in cloud partnerships
 
@@ -674,7 +674,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - **Commitment:** 3-4 years per role (above industry average for tech)
 - **Performance:** Left each role with awards/recognition
 - **Growth:** Each move was a promotion or expansion
-- **Loyalty when earned:** Bridge Training Services (6 years ongoing, community)
+- **Loyalty when earned:** Up2Youth (3-year grant cycle delivered end-to-end as Founding Director)
 
 **For the right opportunity, I'll commit long-term.** I'm looking for a 4+ year opportunity where I can compound learning, build equity, and make meaningful impact.
 
@@ -691,17 +691,17 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **At Contentsquare:**
 - Led PartnerStack ↔ Salesforce UAT, identified sync gaps, and documented them for engineering remediation (not defensively, collaboratively)
 - Built 50+ reports with iterative feedback from Sales, Marketing, and Partnerships
-- Weekly cross-functional coordination across 6 teams—had to incorporate feedback continuously
+- Weekly cross-functional coordination across 6 teams, had to incorporate feedback continuously
 
 **At Rocket Mortgage:**
-- Managed 45 agents—had to give and receive feedback daily
+- Managed 45 agents, had to give and receive feedback daily
 - 90% satisfaction score (agents felt heard, not micromanaged)
 - Implemented process changes based on agent feedback
 
 **In technical work:**
-- 95% test coverage—I write tests to catch my own mistakes
-- Published npm packages—public code review by anyone who uses it
-- Attended 150+ events (AI research, builder communities)—learned from world-class engineers
+- 95% test coverage, I write tests to catch my own mistakes
+- Published npm packages, public code review by anyone who uses it
+- Attended 150+ events (AI research, builder communities), learned from world-class engineers
 
 **How I process criticism:**
 1. **Listen fully** before responding (don't interrupt, don't defend)
@@ -745,7 +745,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Example from Contentsquare:**
 
-**Situation:** Q4 2024—3 concurrent urgent requests:
+**Situation:** Q4 2024, 3 concurrent urgent requests:
 1. AWS Quarterly Partner Review (QPR) deck due in 2 days
 2. Microsoft co-sell pipeline data needed for executive meeting tomorrow
 3. PartnerStack sync failing (300 partners can't register deals)
@@ -860,7 +860,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 4. **Iterate based on feedback:**
    - Delivered 50+ reports over 3 years
    - Each one refined based on actual usage
-   - "Best-in-class" reporting—executive praise
+   - "Best-in-class" reporting, executive praise
 
 **Result:** Started with ambiguity ("build something"), ended with executive-praised intelligence layer used across Sales, Marketing, and Partnerships.
 
@@ -977,7 +977,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 5. **Self-directed learning**
    - Marketing grad → published npm packages in 4 years
    - No PhD, but implemented 8+ arXiv papers
-   - No hand-holding needed—I figure it out
+   - No hand-holding needed, I figure it out
 
 **What makes me different:**
 
@@ -1029,4 +1029,4 @@ I do **both**. I'm a builder who understands business. An operator who ships cod
 - RECRUITER_QUICK_FACTS.md (metrics summary)
 - career_dossier_chunks (Supabase, detailed evidence)
 
-All metrics are verifiable through code, Git history, LinkedIn, or professional documentation. Ask specific questions—this FAQ is backed by real evidence, not claims.
+All metrics are verifiable through code, Git history, LinkedIn, or professional documentation. Ask specific questions, this FAQ is backed by real evidence, not claims.

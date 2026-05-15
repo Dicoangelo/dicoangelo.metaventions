@@ -6,7 +6,7 @@ This artifact synthesizes the implied competencies and transferable skills from 
 
 ---
 
-## Role 1: Associate Product Success Specialist — Rocket Mortgage Canada (2021-2022)
+## Role 1: Associate Product Success Specialist, Rocket Mortgage Canada (2021-2022)
 
 **What the title says:** Product specialist helping teams use products.
 **What the role actually was:** Release management, feature launch coordination, and cross-functional program management at the intersection of technology, process, and people.
@@ -20,7 +20,7 @@ This artifact synthesizes the implied competencies and transferable skills from 
 | PRD writing / user stories | Wrote user stories for product development, prioritized backlog | Product owner responsibilities |
 | SDLC participation | Worked directly with software developers on bug reports, feature requests, system behavior | Bridge between engineering and operations |
 | Stakeholder management | Coordinated across engineering, operations, and client-facing teams | 45+ agents, product team, engineering |
-| Leading without authority | Drove adoption of product changes through communication, training, and documentation — not mandate | Led team of 45 without direct reports |
+| Leading without authority | Drove adoption of product changes through communication, training, and documentation, not mandate | Led team of 45 without direct reports |
 | System administration | Multi-platform lifecycle management, onboarding, maintenance workflows | System Admin across operational platforms |
 | Technical documentation | Release notes, how-to guides, training materials for each feature update | Created documentation for every release |
 | Change management | Guided operations team through product transitions, system migrations, workflow changes | Multiple platform transitions managed |
@@ -38,7 +38,7 @@ This artifact synthesizes the implied competencies and transferable skills from 
 
 ---
 
-## Role 2: Cloud Alliance Operations Lead — Contentsquare (2023-2025)
+## Role 2: Sr. Partner Systems and Operations Specialist, Contentsquare (2023-2025)
 
 **What the title says:** Alliance operations coordinator.
 **What the role actually was:** Enterprise program management at $800M+ scale, platform integration architecture, and cross-functional coordination across 6 business functions.
@@ -62,10 +62,10 @@ This artifact synthesizes the implied competencies and transferable skills from 
 
 ---
 
-## Role 3: Founder & Systems Architect — Metaventions AI (2025-Present)
+## Role 3: Founder & Systems Architect, Metaventions AI (2025-Present)
 
 **What the title says:** Startup founder.
-**What the role actually was:** AI-native program leadership — specifying 20+ production AI systems in English, directing Claude Code / Codex / Gemini to implement them, and shipping from research to deployment.
+**What the role actually was:** AI-native program leadership, specifying 20+ production AI systems in English, directing Claude Code / Codex / Gemini to implement them, and shipping from research to deployment.
 
 ### Implied Competencies (for JD matching)
 
@@ -85,7 +85,7 @@ This artifact synthesizes the implied competencies and transferable skills from 
 
 ---
 
-## Role 4: Operations Document Review Specialist — Edison Financial (2020-2021)
+## Role 4: Operations Document Review Specialist, Edison Financial (2020-2021)
 
 **What the title says:** Document reviewer.
 **What the role actually was:** High-volume process optimization under speed and quality constraints.
@@ -105,9 +105,9 @@ This artifact synthesizes the implied competencies and transferable skills from 
 
 ### The Technology-Process-People Triad
 Every role Dico has held operates at the intersection of:
-1. **Technology** — System administration, platform integration, AI infrastructure
-2. **Process** — Release management, workflow design, operational efficiency
-3. **People** — Cross-functional coordination, stakeholder management, adoption driving
+1. **Technology**: System administration, platform integration, AI infrastructure
+2. **Process**: Release management, workflow design, operational efficiency
+3. **People**: Cross-functional coordination, stakeholder management, adoption driving
 
 ### The Scaling Pattern
 | Year | Scale | Complexity |
@@ -117,11 +117,11 @@ Every role Dico has held operates at the intersection of:
 | 2023 | $800M+ TCV, 6 functions | Enterprise platform operations |
 | 2025 | 20+ systems, 900K+ LOC | Sovereign AI infrastructure |
 
-### Enterprise vs. Solo — Both Are Valid
+### Enterprise vs. Solo, Both Are Valid
 - **Enterprise program evidence:** Contentsquare (6 workstreams, $800M TCV, Legal/Privacy/Finance coordination)
 - **AI-system delivery evidence:** Metaventions AI (900K+ LOC shipped via prompt engineering + agent orchestration, multi-agent systems, production AI)
 - **Product launch evidence:** Rocket Mortgage PSS (feature releases, go/no-go, adoption tracking)
-- **The combination is rare:** Most candidates have enterprise GTM OR AI-system delivery. Dico has both — and neither requires whiteboard-grade language fluency, because the AI coding agents close that gap.
+- **The combination is rare:** Most candidates have enterprise GTM OR AI-system delivery. Dico has both, and neither requires whiteboard-grade language fluency, because the AI coding agents close that gap.
 
 ---
 
@@ -136,7 +136,7 @@ Dico is an active Google ecosystem user and builder:
 | Google AI Studio | Active | 348+ sessions, model prototyping and testing |
 | Gemini 2.0 / Gemini Live | Production integration | Primary reasoning engine in OS-App voice pipeline |
 | Google NotebookLM | Active research tool | Intelligence extraction, Audio Overviews, grounded Q&A |
-| Google Workspace | Daily use | Docs, Sheets, Slides, Drive — enterprise collaboration |
+| Google Workspace | Daily use | Docs, Sheets, Slides, Drive, enterprise collaboration |
 | Chrome DevTools | Development | Visual QA, performance auditing, screenshot automation |
 
-When a JD mentions "Google ecosystem familiarity," "cloud infrastructure," or "AI platform experience" — Dico's usage is not theoretical. It's production-grade, daily, and measurable.
+When a JD mentions "Google ecosystem familiarity," "cloud infrastructure," or "AI platform experience", Dico's usage is not theoretical. It's production-grade, daily, and measurable.

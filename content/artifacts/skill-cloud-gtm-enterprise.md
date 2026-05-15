@@ -135,7 +135,7 @@ Understanding how enterprises procure and deploy AI/ML solutions through cloud m
 
 - **Procurement Shift:** Fortune 500 companies increasingly prefer cloud marketplace purchases to utilize existing cloud commits (EDP/MACC), reducing procurement friction and accelerating time-to-deployment
 
-- **Multi-Modal AI Strategy:** Enterprises are adopting hybrid approaches combining foundation models (OpenAI, Anthropic), specialized models (domain-specific), and custom-trained models—requiring marketplace listings that support flexible deployment options
+- **Multi-Modal AI Strategy:** Enterprises are adopting hybrid approaches combining foundation models (OpenAI, Anthropic), specialized models (domain-specific), and custom-trained models, requiring marketplace listings that support flexible deployment options
 
 - **Governance & Compliance:** Cloud marketplace vetting provides security teams confidence in vendor compliance, making marketplace presence critical for enterprise AI tool adoption
 

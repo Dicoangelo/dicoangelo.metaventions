@@ -220,7 +220,7 @@ in cloud alliance deals with verified results:
 • 50% reduction in deal registration time through CRM automation
 • 2x Microsoft Partner of the Year awards
 
-He built OneCRM integration (Salesforce + AWS + PartnerStack) to
+He integrated the cloud alliance side of OneCRM integration (Salesforce + AWS + PartnerStack) to
 automate partner operations. This demonstrates he can both execute
 GTM at scale AND build the systems to optimize it."
 ```

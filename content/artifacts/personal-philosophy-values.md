@@ -61,7 +61,7 @@ Goals are outcomes. Systems are the daily actions that compound into outcomes.
 
 ### The Systems Hacker
 
-**Origin:** Countless hours playing RPGs, discovering patterns, finding exploits, optimizing character builds. This wasn't just gaming—it was training for systems thinking.
+**Origin:** Countless hours playing RPGs, discovering patterns, finding exploits, optimizing character builds. This wasn't just gaming, it was training for systems thinking.
 
 **Pattern:**
 1. Observe the system
@@ -86,7 +86,7 @@ This background explains why I gravitate toward meta-systems: orchestrators that
 
 1. **Learning how to learn**: Without a structured curriculum, I developed meta-learning skills. I know how to go from "no idea" to "production code" efficiently.
 
-2. **Practical over theoretical**: Every skill was learned to solve a real problem. No academic exercises—just production requirements.
+2. **Practical over theoretical**: Every skill was learned to solve a real problem. No academic exercises, just production requirements.
 
 3. **No gatekeepers**: I don't wait for permission. If something needs to exist, I build it.
 
@@ -132,7 +132,7 @@ I'm energized by what's emerging, not what's established:
 - Unsolved problems (enterprise knowledge architecture)
 - Systems that don't exist yet
 
-This doesn't mean ignoring lessons from the past—it means applying them to build the future.
+This doesn't mean ignoring lessons from the past, it means applying them to build the future.
 
 ### Depth Over Breadth
 
@@ -172,7 +172,7 @@ This explains the emphasis on:
 
 ### The Aesthetic
 
-A deliberate visual identity that reflects inner values — colors chosen not for trend but for meaning:
+A deliberate visual identity that reflects inner values, colors chosen not for trend but for meaning:
 - Stealth, depth, substance over flash
 - Wisdom, creativity, transformation through pressure
 
@@ -182,15 +182,18 @@ The aesthetic embodies a core belief: *Pressure creates gems. Difficulty creates
 
 ## Community & Service
 
-### Up2Youth — Bridge Training Services (2019-Present)
+### Up2Youth (Mar 2019 to Mar 2022)
 
-**Role:** Director & Project Administrator
+**Role:** Founding Director
+**Funder:** Government of Ontario, Youth Opportunities Fund (Youth Innovations stream), administered via United Way/Centraide Windsor-Essex County
+**Public grant record:** [otf.ca/grants-awarded/5551](https://otf.ca/grants-awarded/5551)
+**Instagram:** [@up2youthwindsor](https://www.instagram.com/up2youthwindsor/)
 
-**What it is:** Youth education and employment program serving at-risk communities. Government-funded through Ontario Trillium Foundation, partnered with United Way.
+**What it is:** Founded a youth-development program from idea stage. $255,000 over 36 months serving Black youth ages 15 to 19 across Essex, Kent, and Lambton counties through weekly mentoring, individualized tutoring, wellness checks, and post-secondary access pathways. Closed grant cycle in good standing with the funder.
 
 **Why it matters:**
-- 7+ years of continuous commitment (not a resume line—a life priority)
-- Skills: grant writing, program management, mentorship, community organizing
+- 3 years of paid Founding Director-level work, not volunteer
+- Skills: program design, grant compliance, partner cultivation, mentor-team management, community recruitment, multi-county catchment coordination
 - Perspective: Understanding that not everyone starts with the same advantages
 - Grounding: Reminds me why technology should serve humanity, not just optimize for profit
 
@@ -202,7 +205,7 @@ The aesthetic embodies a core belief: *Pressure creates gems. Difficulty creates
 
 ### Builder Communities
 
-**150+ events attended** — not for networking, but for learning:
+**150+ events attended**: not for networking, but for learning:
 - AI research meetups (learning from practitioners)
 - Blockchain communities (understanding decentralized systems)
 - Entrepreneur networks (seeing patterns across domains)
@@ -248,7 +251,7 @@ The aesthetic embodies a core belief: *Pressure creates gems. Difficulty creates
 
 ## The Vision: Renaissance Figure in the Digital Era
 
-A synthesis of all ambitions points to one coherent identity: becoming a **Renaissance figure for the digital age** — someone who bridges:
+A synthesis of all ambitions points to one coherent identity: becoming a **Renaissance figure for the digital age**: someone who bridges:
 
 - **Technology & Humanity**: Building AI systems that augment rather than replace
 - **Wealth & Purpose**: Financial success as a tool for impact, not an end

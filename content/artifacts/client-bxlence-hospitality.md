@@ -2,11 +2,11 @@
 
 ## Overview
 
-Co-founded and built the complete digital platform for Bxlence Hospitality — a luxury hospitality brand offering curated access to hotels, dining, nightlife, yacht charters, private aviation, and membership experiences. Flagship location: Miami, FL with planned expansion to Dubai, Las Vegas, Ibiza, and El Salvador.
+Co-founded and built the complete digital platform for Bxlence Hospitality, a luxury hospitality brand offering curated access to hotels, dining, nightlife, yacht charters, private aviation, and membership experiences. Flagship location: Miami, FL with planned expansion to Dubai, Las Vegas, Ibiza, and El Salvador.
 
 ## Client / Partner
 
-Bxlence Hospitality — Co-founded with Mirando Atemici (founder/operations) and Dico Angelo (co-founder/technology).
+Bxlence Hospitality, Co-founded with Mirando Atemici (founder/operations) and Dico Angelo (co-founder/technology).
 
 ## Live URL
 
@@ -16,15 +16,15 @@ https://bxl.metaventionsai.com
 
 | Deliverable | Details |
 |-------------|---------|
-| **End-to-End Platform** | Next.js 16 App Router site with 15+ pages, API routes, Supabase database, Stripe payments — specified in English and built by directing AI coding agents |
+| **End-to-End Platform** | Next.js 16 App Router site with 15+ pages, API routes, Supabase database, Stripe payments, specified in English and built by directing AI coding agents |
 | **Membership System** | 3-tier membership (Silver $2,500 / Gold $10,000 / Black invitation-only) with Stripe checkout |
 | **Contact/Lead Pipeline** | Supabase-backed contact form with Resend email notifications |
 | **Event Packages** | Signature Soiree ($15K), Grand Production ($35K), Bespoke (custom pricing) |
-| **Content Platform** | "The Edit" — dynamic blog/editorial with slug-based routing |
+| **Content Platform** | "The Edit", dynamic blog/editorial with slug-based routing |
 | **Destination Pages** | City-specific pages (Miami, Dubai, Las Vegas, Ibiza, El Salvador) with notify-me waitlists |
 | **Event Gallery** | Cooper Swanson Signature Event photo gallery integration (50+ photos) |
 | **Design System** | 30+ custom animation components, luxury design language |
-| **Brand Architecture** | Complete brand identity — color system, typography, component library |
+| **Brand Architecture** | Complete brand identity, color system, typography, component library |
 | **SEO** | JSON-LD structured data, OpenGraph, dynamic sitemap, robots.ts |
 
 ## Technical Architecture
@@ -36,7 +36,7 @@ https://bxl.metaventionsai.com
 - **Database:** Supabase (contact submissions, newsletter, membership data)
 - **Payments:** Stripe (membership checkout sessions)
 - **Email:** Resend API for contact form notifications
-- **Animation Library:** 30+ custom components — ScrollReveal, StaggerReveal, InkSpread, KenBurns, CountUp, ParallaxSection, TextReveal, NeonPulse, TiltCard, MagneticButton, HolographicCard, GradientMesh
+- **Animation Library:** 30+ custom components, ScrollReveal, StaggerReveal, InkSpread, KenBurns, CountUp, ParallaxSection, TextReveal, NeonPulse, TiltCard, MagneticButton, HolographicCard, GradientMesh
 - **Deployment:** Vercel with smart deploy filters
 
 ## Design System
@@ -63,9 +63,9 @@ https://bxl.metaventionsai.com
 
 ## Transferable Skills Demonstrated
 
-*I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify in English, review AI output, run it against tests, and ship.*
+*I do not claim hand-fluency in TypeScript, JavaScript, Python, AI-assisted SQL via Claude Code, or Bash. I specify in English, review AI output, run it against tests, and ship.*
 
-- **End-to-End Product Direction:** Database, API, payments, frontend — complete platform specified and orchestrated via AI coding agents
+- **End-to-End Product Direction:** Database, API, payments, frontend, complete platform specified and orchestrated via AI coding agents
 - **Luxury Brand Engineering:** High-end design system with 30+ animation components
 - **Payment Integration:** Stripe checkout for tiered membership model
 - **Lead Generation Systems:** Supabase-backed contact pipeline with email notifications

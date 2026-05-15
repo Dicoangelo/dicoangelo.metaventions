@@ -2,11 +2,11 @@
 
 ## Overview
 
-As Founder & Systems Architect at Metaventions AI, I'm building the Antigravity ecosystem—a comprehensive suite of interconnected AI systems that bridge cutting-edge research and production-ready software. My work spans autonomous multi-agent orchestration, self-evolving infrastructure, voice-native interfaces, and research-driven development. I've published 2 npm packages, implemented 8+ arXiv papers into production, and shipped 900K+ lines of code across 20+ projects—all while maintaining 95% test coverage and live production deployments.
+As Founder & Systems Architect at Metaventions AI, I'm building the Antigravity ecosystem, a comprehensive suite of interconnected AI systems that bridge cutting-edge research and production-ready software. My work spans autonomous multi-agent orchestration, self-evolving infrastructure, voice-native interfaces, and research-driven development. I've published 2 npm packages, implemented 8+ arXiv papers into production, and shipped 900K+ lines of code across 20+ projects, all while maintaining 95% test coverage and live production deployments.
 
 *All code is specified in English and generated under my direction via Claude Code, Codex CLI, Gemini CLI, Cursor, and Grok. I own architecture, prompts, review, and evaluation. I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash.*
 
-This role demonstrates my ability to translate frontier AI research into practical, scalable systems that solve real problems. I don't just read papers—I direct implementation. I don't just prototype—I ship production systems with comprehensive testing and documentation.
+This role demonstrates my ability to translate frontier AI research into practical, scalable systems that solve real problems. I don't just read papers, I direct implementation. I don't just prototype, I ship production systems with comprehensive testing and documentation.
 
 ## Duration
 
@@ -29,10 +29,10 @@ November 2025 - Present (5 months)
 
 | Project | LOC | Runtime Targeted | Status | Purpose |
 |---------|-----|------------------|--------|---------|
-| **OS-App** | 152,503 | TypeScript (79K) — AI-generated | Production | Voice-native AI OS with agentic kernel |
-| **CareerCoach** | 76,704 | TypeScript (22K) — AI-generated | Active | AI hiring panel & career intelligence |
-| **META-VENGINE** | 51,273 | Python (14K) — AI-generated | Production | Self-improving infrastructure |
-| **ResearchGravity** | 17,000+ | Python — AI-generated | Active | Research orchestration & vector search |
+| **OS-App** | 152,503 | TypeScript (79K), AI-generated | Production | Voice-native AI OS with agentic kernel |
+| **CareerCoach** | 76,704 | TypeScript (22K), AI-generated | Active | AI hiring panel & career intelligence |
+| **META-VENGINE** | 51,273 | Python (14K), AI-generated | Production | Self-improving infrastructure |
+| **ResearchGravity** | 17,000+ | Python, AI-generated | Active | Research orchestration & vector search |
 | **Total** | **900,000+** | - | - | - |
 
 ## What I Built
@@ -113,7 +113,7 @@ ARCHON
 ### 3. OS-App (Sovereign AI Operating System)
 **Voice-Native React 19 Application | 152,503 LOC**
 
-A production-grade voice-first AI interface with agentic workflows, biometric sensing, and 3D visualizations. OS-App demonstrates end-to-end product direction across frontend, services, and infrastructure — specified in English and built by directing AI coding agents.
+A production-grade voice-first AI interface with agentic workflows, biometric sensing, and 3D visualizations. OS-App demonstrates end-to-end product direction across frontend, services, and infrastructure, specified in English and built by directing AI coding agents.
 
 **Code Statistics:**
 - Total: 152,503 LOC
@@ -186,7 +186,7 @@ A production-ready AI orchestration library with multi-provider support and prec
 **npm Link:** https://www.npmjs.com/package/@metaventionsai/cpb-core
 **Repository:** https://github.com/Dicoangelo/cpb-core
 
-**Impact:** Enables any developer to integrate multi-provider AI with quality scoring—open source contribution to the AI ecosystem.
+**Impact:** Enables any developer to integrate multi-provider AI with quality scoring, open source contribution to the AI ecosystem.
 
 ---
 
@@ -206,14 +206,14 @@ A unified voice pipeline supporting multiple STT/TTS providers with intelligent 
 **npm Link:** https://www.npmjs.com/package/@metaventionsai/voice-nexus
 **Repository:** https://github.com/Dicoangelo/voice-nexus
 
-**Impact:** Democratizes voice AI—developers can build voice-native apps without vendor lock-in.
+**Impact:** Democratizes voice AI, developers can build voice-native apps without vendor lock-in.
 
 ---
 
 ### 5. META-VENGINE (Self-Improving Infrastructure)
 **Autonomous DevOps System | 51,273 LOC**
 
-A bidirectional co-evolution engine—a self-improving AI productivity system containing 9 integrated subsystems.
+A bidirectional co-evolution engine, a self-improving AI productivity system containing 9 integrated subsystems.
 
 **Core Systems:**
 
@@ -369,7 +369,7 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 
 ## Technical Stack
 
-*Specified in English and built by directing Claude Code, Codex CLI, Gemini CLI, Cursor, and Grok. I own architecture, prompts, review, tests, and deploy. I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash.*
+*Specified in English and built by directing Claude Code, Codex CLI, Gemini CLI, Cursor, and Grok. I own architecture, prompts, review, tests, and deploy. I do not claim hand-fluency in TypeScript, JavaScript, Python, AI-assisted SQL via Claude Code, or Bash.*
 
 ### Runtimes & Frameworks Targeted (AI-Generated Under Direction)
 - **TypeScript:** 101,886 LOC (OS-App: 79K, CareerCoach: 22K)
@@ -394,7 +394,7 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 - **CI/CD:** GitHub Actions + Vercel auto-deploy (configs specified, generated, reviewed)
 - **Databases:** SQLite (persistence), Qdrant (vector search)
 - **State Management:** Zustand (TypeScript), JSON files (Python)
-- **Testing:** Vitest (TypeScript - 95% coverage), pytest (Python) — specs written in English, implementation AI-generated
+- **Testing:** Vitest (TypeScript - 95% coverage), pytest (Python), specs written in English, implementation AI-generated
 - **Build Tools:** Vite (React), tsup (npm packages), esbuild
 - **Version Control:** Git (1,500+ commits across ecosystem)
 
@@ -527,7 +527,7 @@ This experience demonstrates I can:
 
 1. **Translate Research to Production**
    - 8+ arXiv papers implemented with measurable results
-   - Not just prototypes—95% test coverage, production deployments
+   - Not just prototypes, 95% test coverage, production deployments
    - Evidence-based development: benchmark vs paper baselines
 
 2. **Build at Scale**
@@ -570,7 +570,7 @@ This experience demonstrates I can:
    - Demonstrates public artifact creation
 
 2. **Live Production Demos**
-   - Not vaporware—fully deployed systems
+   - Not vaporware, fully deployed systems
    - Real users can interact with the work
    - Verifiable via URLs
 
@@ -585,10 +585,10 @@ This experience demonstrates I can:
    - Transparent about intellectual foundations
 
 5. **End-to-End Product Direction**
-   - Frontend (React 19, 3D viz, voice UI) — specified, generated, reviewed
-   - Backend (FastAPI, vector search, APIs) — specified, generated, reviewed
-   - Infrastructure (CI/CD, monitoring, deploy configs) — specified, generated, reviewed
-   - Not specialized as a hand-coder — I direct entire products via AI coding agents
+   - Frontend (React 19, 3D viz, voice UI), specified, generated, reviewed
+   - Backend (FastAPI, vector search, APIs), specified, generated, reviewed
+   - Infrastructure (CI/CD, monitoring, deploy configs), specified, generated, reviewed
+   - Not specialized as a hand-coder, I direct entire products via AI coding agents
 
 ### Business Impact Analog
 
@@ -600,7 +600,7 @@ While this is a startup venture (not yet revenue), the work demonstrates capabil
 - **2 npm packages** shows I can ship reusable artifacts
 - **95% coverage** shows I understand quality gates
 
-**For hiring managers:** I can direct AI products from research → production at the pace of a 10-person team, with the quality bar of a senior operator, and the research depth of a PhD candidate—without the PhD, and without claiming hand-coder credentials. I specify in English, review AI output, run tests, and ship.
+**For hiring managers:** I can direct AI products from research → production at the pace of a 10-person team, with the quality bar of a senior operator, and the research depth of a PhD candidate, without the PhD, and without claiming hand-coder credentials. I specify in English, review AI output, run tests, and ship.
 
 ---
 

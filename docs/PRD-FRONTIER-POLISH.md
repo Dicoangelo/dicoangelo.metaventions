@@ -9,7 +9,7 @@
 
 ## Vision
 
-Transform dicoangelo.com into an undeniably impressive portfolio that communicates **AI-Augmented Operator + Systems Thinker** positioning. The site should feel like a product from 2028 — sophisticated, performant, and memorable.
+Transform dicoangelo.com into an undeniably impressive portfolio that communicates **AI-Augmented Operator + Systems Thinker** positioning. The site should feel like a product from 2028, sophisticated, performant, and memorable.
 
 **Core Message:** "I orchestrate sophisticated systems with vision and judgment."
 
@@ -75,7 +75,7 @@ npm run typecheck && npm run lint && npm run test
 
 **Design Direction:**
 - Abstract crystalline/network structure representing "systems thinking"
-- Not a face, not a logo — something that suggests complexity and orchestration
+- Not a face, not a logo, something that suggests complexity and orchestration
 - Inspired by: generative art, data visualization aesthetics
 
 ---
@@ -556,13 +556,13 @@ npm run typecheck && npm run lint && npm run test
 
 ## References & Inspiration
 
-- [Linear.app](https://linear.app) — Smooth animations, attention to detail
-- [Stripe.com](https://stripe.com) — 3D elements, scroll storytelling
-- [Vercel.com](https://vercel.com) — Dark mode excellence, performance
-- [Raycast.com](https://raycast.com) — Command palette, keyboard-first
-- [Apple.com](https://apple.com) — Cinematic transitions, premium feel
-- [lusion.co](https://lusion.co) — WebGL mastery
-- [dennissnellenberg.com](https://dennissnellenberg.com) — Portfolio excellence
+- [Linear.app](https://linear.app), Smooth animations, attention to detail
+- [Stripe.com](https://stripe.com), 3D elements, scroll storytelling
+- [Vercel.com](https://vercel.com), Dark mode excellence, performance
+- [Raycast.com](https://raycast.com), Command palette, keyboard-first
+- [Apple.com](https://apple.com), Cinematic transitions, premium feel
+- [lusion.co](https://lusion.co), WebGL mastery
+- [dennissnellenberg.com](https://dennissnellenberg.com), Portfolio excellence
 
 ---
 

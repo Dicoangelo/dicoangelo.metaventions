@@ -2,7 +2,7 @@
 
 ## Overview
 
-ACE is a multi-agent consensus system that achieves reliable AI decision-making through structured deliberation. Built for the Antigravity ecosystem, it orchestrates 6 specialized agents that analyze, debate, and vote on complex decisions—transforming unreliable single-model outputs into trustworthy consensus.
+ACE is a multi-agent consensus system that achieves reliable AI decision-making through structured deliberation. Built for the Antigravity ecosystem, it orchestrates 6 specialized agents that analyze, debate, and vote on complex decisions, transforming unreliable single-model outputs into trustworthy consensus.
 
 ## Key Metrics
 
@@ -59,7 +59,7 @@ Scores below 0.50 trigger automatic re-deliberation with additional context inje
 
 ### Stack
 
-Specified in English and built by directing AI coding agents (Claude Code, Codex CLI, Gemini CLI). I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash — I specify in English, review AI output, run it against tests, and ship.
+Specified in English and built by directing AI coding agents (Claude Code, Codex CLI, Gemini CLI). I do not claim hand-fluency in TypeScript, JavaScript, Python, AI-assisted SQL via Claude Code, or Bash, I specify in English, review AI output, run it against tests, and ship.
 
 **Runtimes Targeted (AI-Generated Under Direction):**
 - TypeScript for type-safe agent orchestration (strict mode specified in prompts, verified in review)

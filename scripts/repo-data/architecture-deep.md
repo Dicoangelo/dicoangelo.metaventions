@@ -93,8 +93,8 @@ hooks/
 ### Lib Packages (internal npm)
 ```
 libs/
-  cpb-core/           # @metaventionsai/cpb-core — router, orchestrator, feedbackAdapter
-  voice-nexus/        # @metaventionsai/voice-nexus — router, orchestrator
+  cpb-core/           # @metaventionsai/cpb-core, router, orchestrator, feedbackAdapter
+  voice-nexus/        # @metaventionsai/voice-nexus, router, orchestrator
   graph-reasoning-engine/  # engine.ts, simulate_career.ts, benchmark.ts
   codebase-scanner/   # index.ts
 ```

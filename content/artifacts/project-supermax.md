@@ -6,7 +6,7 @@ SUPERMAX is a 21-agent team coordination system that operates as a framework wit
 
 ## Repository
 
-No separate repository — SUPERMAX is a skill and coordination framework embedded within the Claude Code environment, with council implementations in projects like CareerCoachAntigravity and META-VENGINE.
+No separate repository, SUPERMAX is a skill and coordination framework embedded within the Claude Code environment, with council implementations in projects like CareerCoachAntigravity and META-VENGINE.
 
 ## Technical Architecture
 
@@ -14,7 +14,7 @@ No separate repository — SUPERMAX is a skill and coordination framework embedd
 - **Council System:** Multi-council architecture (technical, strategic, UCW, design) with weighted consensus
 - **Routing:** Attention-based routing that matches task profiles to agent capabilities
 - **Escalation:** Automatic escalation from single-agent to multi-agent consensus when DQ confidence drops
-- **Integration:** Embedded in META-VENGINE DQ scoring pipeline — Wire 23 triggers auto-escalation
+- **Integration:** Embedded in META-VENGINE DQ scoring pipeline, Wire 23 triggers auto-escalation
 
 ## Council Architecture
 
@@ -33,7 +33,7 @@ No separate repository — SUPERMAX is a skill and coordination framework embedd
 | **Attention Routing** | Weighted agent selection based on task type, agent trust scores, and historical performance |
 | **Failure Taxonomy** | Structured classification of failures (type, severity, recovery path) for systematic error handling |
 | **Consensus Protocol** | Weighted voting across council members with conflict resolution and minority opinion preservation |
-| **Frontier Operations** | Framework for tasks at the edge of known capability — pioneer mode with adjusted quality thresholds |
+| **Frontier Operations** | Framework for tasks at the edge of known capability, pioneer mode with adjusted quality thresholds |
 
 ## Key Metrics
 
@@ -47,9 +47,9 @@ No separate repository — SUPERMAX is a skill and coordination framework embedd
 ## Deployments
 
 SUPERMAX council implementations are active in:
-- **CareerCoachAntigravity** — 3-agent review council (Principal Engineer, Product Strategist, QA Lead) with append-only JSONL review logging
-- **META-VENGINE** — Wire 23 auto-escalation triggers SUPERMAX consensus when single-model DQ drops below threshold
-- **Paper to Production** — DQ benchmark validation using SUPERMAX consensus scoring
+- **CareerCoachAntigravity**: 3-agent review council (Principal Engineer, Product Strategist, QA Lead) with append-only JSONL review logging
+- **META-VENGINE**: Wire 23 auto-escalation triggers SUPERMAX consensus when single-model DQ drops below threshold
+- **Paper to Production**: DQ benchmark validation using SUPERMAX consensus scoring
 
 ## Transferable Skills Demonstrated
 

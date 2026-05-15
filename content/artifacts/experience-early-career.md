@@ -16,7 +16,7 @@ Before enterprise cloud operations at Contentsquare, Dico built foundational ski
 
 **Release Management & Feature Launches**
 - Managed end-to-end feature release processes: requirements gathering, UAT coordination, go/no-go decisions, staged rollout, and post-launch adoption tracking
-- Coordinated release communication across engineering, operations, and client-facing teams — bridging the gap between what was being built and who needed to know
+- Coordinated release communication across engineering, operations, and client-facing teams, bridging the gap between what was being built and who needed to know
 - Ran go/no-go checkpoints for new feature releases, gathering sign-off from operations leads before rollout to 45+ agents
 - Documented release notes, how-to guides, and training materials for each feature update
 - Tracked feature adoption metrics post-release and reported back to product development
@@ -29,14 +29,14 @@ Before enterprise cloud operations at Contentsquare, Dico built foundational ski
 
 **System Administration & Process Design**
 - Acted as System Administrator for multiple platforms, managing product lifecycles
-- Designed and maintained system workflows and operational processes — defining how teams used tools, what the handoff points were, and where automation could replace manual steps
+- Designed and maintained system workflows and operational processes, defining how teams used tools, what the handoff points were, and where automation could replace manual steps
 - Managed onboarding processes and product maintenance workflows
 - Provided customer success support for agents and operations users
 
 **Working at the Intersection of Technology, Process, and People**
-- **Technology:** Worked directly with software developers on bug reports, feature requests, and system behavior — translating operational reality into technical requirements
+- **Technology:** Worked directly with software developers on bug reports, feature requests, and system behavior, translating operational reality into technical requirements
 - **Process:** Built, directed, and refined system workflows and tools that governed how the operations team functioned day-to-day
-- **People:** Got new features, process changes, and system updates in front of both client-facing teams and internal stakeholders — driving adoption through communication, not mandate
+- **People:** Got new features, process changes, and system updates in front of both client-facing teams and internal stakeholders, driving adoption through communication, not mandate
 
 **Product Development**
 - Product owner prioritization of backlog features
@@ -58,7 +58,7 @@ Before enterprise cloud operations at Contentsquare, Dico built foundational ski
 
 ### Why This Matters
 
-This role was the **first intersection of technology, process, and people** — the exact TPM triad. Dico wasn't just "using products" — he was managing the release process, coordinating across technical and non-technical teams, running go/no-go gates, and tracking adoption. The same pattern that would later manifest in designing partner systems, AI infrastructure, and multi-agent orchestration at enterprise scale.
+This role was the **first intersection of technology, process, and people**: the exact TPM triad. Dico wasn't just "using products", he was managing the release process, coordinating across technical and non-technical teams, running go/no-go gates, and tracking adoption. The same pattern that would later manifest in designing partner systems, AI infrastructure, and multi-agent orchestration at enterprise scale.
 
 ---
 
@@ -76,7 +76,7 @@ This role was the **first intersection of technology, process, and people** — 
 
 ### Key Achievement
 
-**Process Optimization:** Successfully reduced the number of documents needed to process while maintaining excellent pipelines — an early demonstration of the efficiency mindset that would scale to 90% automation reductions in later roles.
+**Process Optimization:** Successfully reduced the number of documents needed to process while maintaining excellent pipelines, an early demonstration of the efficiency mindset that would scale to 90% automation reductions in later roles.
 
 ### Skills Developed
 
@@ -95,7 +95,7 @@ The progression from Edison Financial → Rocket Mortgage → Contentsquare reve
 |-------|------|-------|--------|
 | **2020-2021** | Document Review Specialist | Individual contributor | Process efficiency |
 | **2021-2022** | Product Success Specialist | Cross-functional | Product adoption, system admin |
-| **2022-2025** | Cloud Alliance Operations Lead | Team of 3, $800M+ | Enterprise infrastructure |
+| **2022-2025** | Sr. Partner Systems and Operations Specialist | Team of 3, $800M+ | Enterprise infrastructure |
 
 Each role built on the previous:
 - Document efficiency → Product efficiency → Enterprise efficiency
@@ -133,18 +133,28 @@ This active engagement led to:
 
 ---
 
-## Leadership Continuity
+## Founding Director Role (Concurrent)
 
-### Bridge Training Services (2019-Present)
-**Role:** Director & Project Administrator
+### Up2Youth | Mar 2019 - Mar 2022
+**Role:** Founding Director
+**Funder:** Government of Ontario (Youth Opportunities Fund, Youth Innovations stream), administered via United Way/Centraide Windsor-Essex County
+**Public grant record:** [otf.ca/grants-awarded/5551](https://otf.ca/grants-awarded/5551)
+**Instagram:** [@up2youthwindsor](https://www.instagram.com/up2youthwindsor/)
 
-Running concurrently with corporate roles, demonstrating capacity for parallel commitments:
-- Youth education and employment program
-- Partnership with Ontario Trillium Foundation and United Way
-- 7+ years of continuous community service
-- Grant writing, program management, mentorship
+Founded a youth-development program from idea stage, awarded **$255,000 over 36 months** by the Government of Ontario's Youth Opportunities Fund. Served **Black youth ages 15 to 19** across Essex, Kent, and Lambton counties through weekly mentoring, individualized tutoring, wellness checks, and post-secondary access pathways. Ran concurrently with corporate roles, demonstrating capacity for parallel commitments without quality degradation.
 
-This volunteer leadership role shows values alignment — not just career advancement, but genuine community impact.
+**End-to-end ownership:**
+- Program design from concept stage
+- Operations and program delivery
+- Grant compliance and impact reporting to the funder
+- Partner cultivation (United Way Windsor-Essex, community organizations)
+- Community recruitment and outreach
+- Mentor-team management
+- Multi-county catchment coordination (Essex, Kent, Lambton)
+
+**Outcome:** 36-month grant cycle closed in good standing with the funder. Program objective: "Supporting Indigenous, Black, and/or newcomer youth to enter the labour market and transition to sustainable career pathways" (per the OTF grant mandate).
+
+This was **paid Founding Director-level work**, not a volunteer commitment. Government-funded program with formal accountability to United Way Windsor-Essex and the Government of Ontario.
 
 ---
 
@@ -158,4 +168,4 @@ The early career phase established:
 4. **Community engagement**: Active networker who builds relationships, not just connections
 5. **Parallel execution**: Can manage concurrent commitments without quality degradation
 
-The foundation built here enabled the rapid scaling at Contentsquare — $800M+ in operations wasn't luck, it was the result of years of operational pattern development.
+The foundation built here enabled the rapid scaling at Contentsquare, $800M+ in operations wasn't luck, it was the result of years of operational pattern development.

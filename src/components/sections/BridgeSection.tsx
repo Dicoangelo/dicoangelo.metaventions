@@ -58,7 +58,7 @@ const columns: BridgeColumn[] = [
     kicker: "Where it compounds",
     Icon: BridgeIcon,
     items: [
-      "Partnership Graph: partner ops as queryable intelligence",
+      "Partnership Graph (concept demo): partner ops as queryable intelligence",
       "GenAI enablement materials for partner teams",
       "Business case development from partner pain",
       "Technical ↔ business translation",
@@ -75,7 +75,7 @@ const columns: BridgeColumn[] = [
       "Multi-agent orchestration framework",
       "UCW substrate: 270K+ multi-model interactions",
       "20+ deployed AI systems, 900K+ LOC",
-      "Partnership Graph + Frontier Alpha + UCW",
+      "Partnership Graph (concept) + Frontier Alpha + UCW",
     ],
     accent: false,
   },

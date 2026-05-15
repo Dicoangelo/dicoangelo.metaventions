@@ -100,7 +100,7 @@ Integration with CLI Coordinator:
 
 ### Stack
 
-Specified in English and built by directing AI coding agents (Claude Code, Codex CLI, Gemini CLI). I do not claim hand-fluency in Python, TypeScript, JavaScript, SQL, or Bash — I specify in English, review AI output, run it against tests, and ship.
+Specified in English and built by directing AI coding agents (Claude Code, Codex CLI, Gemini CLI). I do not claim hand-fluency in Python, TypeScript, JavaScript, AI-assisted SQL via Claude Code, or Bash, I specify in English, review AI output, run it against tests, and ship.
 
 **CLI Layer (Runtime Targeted):**
 - Python 3.8+ (AI-generated under direction)

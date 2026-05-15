@@ -114,7 +114,7 @@ def get_session_by_id(session_id: str) -> Optional[Dict]:
 #!/usr/bin/env python3
 """
 Show ResearchGravity session status.
-Used for cold start protocol — check state before proceeding.
+Used for cold start protocol, check state before proceeding.
 
 Usage:
   python3 status.py
@@ -203,7 +203,7 @@ def get_wallet_value():
 def main():
     print()
     print("=" * 50)
-    print("  ResearchGravity — Metaventions AI")
+    print("  ResearchGravity, Metaventions AI")
     print("=" * 50)
     print()
 

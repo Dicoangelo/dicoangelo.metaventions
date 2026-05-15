@@ -8,7 +8,7 @@ Generated: Thu 29 Jan 2026 10:24:13 EST
 
 **URL:** https://github.com/Dicoangelo/OS-App
 **Language:** TypeScript
-**Description:** Sovereign AI Operating System — Voice-native, multi-agent interface powered by Gemini Live & ElevenLabs
+**Description:** Sovereign AI Operating System, Voice-native, multi-agent interface powered by Gemini Live & ElevenLabs
 
 ### README Content
 
@@ -64,7 +64,7 @@ Generated: Thu 29 Jan 2026 10:24:13 EST
 
 ## Executive Summary
 
-A **33,000+ line**, **145-file** React/TypeScript application representing a fully-functional AI-native operating system interface. This is not a prototype—it is a production-grade platform integrating:
+A **33,000+ line**, **145-file** React/TypeScript application representing a fully-functional AI-native operating system interface. This is not a prototype, it is a production-grade platform integrating:
 
 - **Meta-Learning Engine** (Predictive session intelligence from 666+ historical outcomes)
 - **Voice Nexus** (Multi-provider voice with complexity-based routing)
@@ -167,7 +167,7 @@ npm run dev
 ## Core Services
 
 ### 1. Voice Nexus (services/voiceNexus/)
-**Universal Multi-Provider Voice Architecture — Routes to optimal AI based on query complexity.**
+**Universal Multi-Provider Voice Architecture, Routes to optimal AI based on query complexity.**
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -213,7 +213,7 @@ npm run dev
 | **Quality** | Claude → ElevenLabs | ~3-4s | Deep thinking, premium voice |
 
 ### 2. Meta-Learning Engine (components/predictions/)
-**Predictive Session Intelligence — Learn from 666+ past sessions to predict success before you start.**
+**Predictive Session Intelligence, Learn from 666+ past sessions to predict success before you start.**
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -331,7 +331,7 @@ const { prediction, isLoading } = useSessionPrediction({
 | `system_navigate` | Mode switching via natural language |
 
 ### 5. adaptiveConsensus.ts (420 lines)
-**Adaptive Convergence Engine (ACE) — Multi-agent consensus with quality scoring.**
+**Adaptive Convergence Engine (ACE), Multi-agent consensus with quality scoring.**
 
 | Feature | Description |
 |---------|-------------|
@@ -344,7 +344,7 @@ const { prediction, isLoading } = useSessionPrediction({
 **Research Foundation**: arXiv:2511.15755 (DQ Scoring), arXiv:2508.17536 (Voting vs Debate)
 
 ### 6. recursiveLanguageModel.ts (736 lines)
-**Recursive Language Model (RLM) — Infinite context processing.**
+**Recursive Language Model (RLM), Infinite context processing.**
 
 | Feature | Description |
 |---------|-------------|
@@ -357,7 +357,7 @@ const { prediction, isLoading } = useSessionPrediction({
 **Research Foundation**: arXiv:2512.24601 (Recursive Language Models), Tesla US20260017019A1 (Precision Bridge)
 
 ### 7. dqScoring.ts (316 lines)
-**Decision Quality Framework — Quantitative output validation.**
+**Decision Quality Framework, Quantitative output validation.**
 
 | Component | Weight | Measures |
 |-----------|--------|----------|
@@ -443,7 +443,7 @@ You have built a **Sovereign, Voice-Native Operating System**:
 
 ## What's New (January 2026)
 
-### v1.4.0 — Voice Nexus (Latest)
+### v1.4.0, Voice Nexus (Latest)
 
 | Update | Status |
 |--------|--------|
@@ -454,7 +454,7 @@ You have built a **Sovereign, Voice-Native Operating System**:
 | **Three Voice Modes** | Realtime / Hybrid / Quality with UI selector |
 | **Agent Core SDK** | Knowledge base client for semantic search |
 
-### v1.3.0 — ACE & RLM
+### v1.3.0, ACE & RLM
 
 | Update | Status |
 |--------|--------|
@@ -464,7 +464,7 @@ You have built a **Sovereign, Voice-Native Operating System**:
 | **HRPO Algorithm** | Hierarchical response clustering for expert tasks |
 | **Precision Bridge Framework** | Unified pattern: Compress → Explore → Reconstruct |
 
-### v1.2.0 — Voice Core 2.0
+### v1.2.0, Voice Core 2.0
 
 | Update | Status |
 |--------|--------|
@@ -495,7 +495,7 @@ You have built a **Sovereign, Voice-Native Operating System**:
 - [x] ~~Voice Nexus Multi-Provider~~ (v1.4)
 - [x] ~~Claude Integration~~ (v1.4)
 - [x] ~~Knowledge Injection~~ (v1.4)
-- [ ] Cognitive Precision Bridge (CPB) — Full implementation
+- [ ] Cognitive Precision Bridge (CPB), Full implementation
 - [ ] Multi-user collaboration
 - [ ] Plugin ecosystem
 - [ ] Mobile companion app
@@ -518,7 +518,7 @@ You have built a **Sovereign, Voice-Native Operating System**:
 
 ## License
 
-MIT License — See [LICENSE](LICENSE)
+MIT License, See [LICENSE](LICENSE)
 
 ---
 
@@ -547,7 +547,7 @@ dicoangelo@metaventionsai.com
 
 **URL:** https://github.com/Dicoangelo/meta-vengine
 **Language:** Python
-**Description:** THE CLOSED LOOP — The system that improves itself. Bidirectional Co-Evolution • HSRGS Routing • D-Ecosystem • Metaventions AI
+**Description:** THE CLOSED LOOP, The system that improves itself. Bidirectional Co-Evolution • HSRGS Routing • D-Ecosystem • Metaventions AI
 
 ### README Content
 
@@ -681,7 +681,7 @@ flowchart TB
     style HUMAN fill:#00d9ff,stroke:#fff,stroke-width:2px,color:#0d1117
 ```
 
-<sub>🔄 <i>The Closed Loop — Telemetry flows up, modifications flow down, the flywheel spins</i></sub>
+<sub>🔄 <i>The Closed Loop, Telemetry flows up, modifications flow down, the flywheel spins</i></sub>
 
 </div>
 
@@ -796,7 +796,7 @@ flowchart TB
 
 ### Self-Healing System
 
-**The system now heals itself.** Auto-Recovery Engine detects errors and applies safe fixes automatically — or provides smart suggestions for complex cases.
+**The system now heals itself.** Auto-Recovery Engine detects errors and applies safe fixes automatically, or provides smart suggestions for complex cases.
 
 <table>
 <tr>
@@ -837,7 +837,7 @@ flowchart TB
 
 ### Major Milestone
 
-**Eliminated all simulated/placeholder data from Command Center** — The dashboard now displays exclusively real or calculated metrics.
+**Eliminated all simulated/placeholder data from Command Center**: The dashboard now displays exclusively real or calculated metrics.
 
 <table>
 <tr>
@@ -904,7 +904,7 @@ flowchart TB
 |:---------|:----------:|:--------|
 | 🟢 **Real Data** | **97%** | Session stats, costs, git activity, productivity |
 | 🔵 **Calculated** | **3%** | Averages, ratios, projections (from real sources) |
-| ⚫ **Simulated** | **0%** | None — all placeholders eliminated |
+| ⚫ **Simulated** | **0%** | None, all placeholders eliminated |
 | 🔴 **Missing** | **0%** | All Observatory files created/backfilled |
 
 </div>
@@ -1052,7 +1052,7 @@ recovery-engine.py recover --error "error text"  # Manual recovery trigger
 │                                                                                │
 │   ══════════════════════════════════════════════════════════════════════════   │
 │                                                                                │
-│   "The system improves itself — but only within bounds you control."           │
+│   "The system improves itself, but only within bounds you control."           │
 │                                                                                │
 └────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -1140,7 +1140,7 @@ recovery-engine.py recover --error "error text"  # Manual recovery trigger
 ║                                                                              ║
 ║                   "Let the invention be hidden in your vision"               ║
 ║                                                                              ║
-║                                              — Dico Angelo, 2026            ║
+║                                             , Dico Angelo, 2026            ║
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
@@ -1159,7 +1159,7 @@ recovery-engine.py recover --error "error text"  # Manual recovery trigger
 
 **URL:** https://github.com/Dicoangelo/ResearchGravity
 **Language:** Python
-**Description:** Metaventions AI Research Framework — Multi-tier signal capture for frontier intelligence. Architected Intelligence.
+**Description:** Metaventions AI Research Framework, Multi-tier signal capture for frontier intelligence. Architected Intelligence.
 
 ### README Content
 
@@ -1205,7 +1205,7 @@ recovery-engine.py recover --error "error text"  # Manual recovery trigger
 
 ---
 
-## What's New in v5.0 — Chief of Staff (January 2026)
+## What's New in v5.0, Chief of Staff (January 2026)
 
 **The AI Second Brain is now complete.** Full infrastructure for sovereign knowledge management.
 
@@ -1214,7 +1214,7 @@ recovery-engine.py recover --error "error text"  # Manual recovery trigger
 | **🔮 Meta-Learning Engine** | Predictive session intelligence from 666+ outcomes, 1,014 cognitive states |
 | **🏛️ Storage Triad** | SQLite (WAL mode, FTS5) + Qdrant (semantic search) |
 | **⚖️ Writer-Critic System** | 3 critics validate archives, evidence, and context packs |
-| **🕸️ Graph Intelligence** | 11,579 nodes, 13,744 edges — concept relationships & lineage |
+| **🕸️ Graph Intelligence** | 11,579 nodes, 13,744 edges, concept relationships & lineage |
 | **🔌 REST API** | 22 endpoints on port 3847 for cross-app integration |
 | **📊 Oracle Consensus** | Multi-stream validation for high-stakes outputs |
 | **🎯 Evidence Layer** | Citations, confidence scoring, source validation |
@@ -1252,7 +1252,7 @@ recovery-engine.py recover --error "error text"  # Manual recovery trigger
 
 | Feature | Description |
 |---------|-------------|
-| **🧠 CPB Module** | Cognitive Precision Bridge — 5-path AI orchestration |
+| **🧠 CPB Module** | Cognitive Precision Bridge, 5-path AI orchestration |
 | **🎯 ELITE TIER** | 5-agent ACE consensus, Opus-first routing, 0.75 DQ bar |
 | **📊 DQ Scoring** | Validity (40%) + Specificity (30%) + Correctness (30%) |
 | **🔀 Smart Routing** | Auto-select path based on query complexity |
@@ -1352,8 +1352,8 @@ python3 -m cpb precision "your research question" --verbose
 
 | Feature | Description |
 |---------|-------------|
-| **Context Prefetcher** | `prefetch.py` — Inject relevant learnings into Claude sessions |
-| **Learnings Backfill** | `backfill_learnings.py` — Extract learnings from all archived sessions |
+| **Context Prefetcher** | `prefetch.py`, Inject relevant learnings into Claude sessions |
+| **Learnings Backfill** | `backfill_learnings.py`, Extract learnings from all archived sessions |
 | **Memory Injection** | Auto-load project context, papers, and lineage at session start |
 | **Shell Integration** | `prefetch`, `prefetch-clip`, `prefetch-inject` shell commands |
 
@@ -1361,7 +1361,7 @@ python3 -m cpb precision "your research question" --verbose
 
 | Feature | Description |
 |---------|-------------|
-| **YouTube Research** | `youtube_channel.py` — Channel analysis and transcript extraction |
+| **YouTube Research** | `youtube_channel.py`, Channel analysis and transcript extraction |
 | **Enhanced Backfill** | Improved session recovery with better transcript parsing |
 | **Ecosystem Sync** | Deeper integration with Agent Core orchestration |
 
@@ -1369,7 +1369,7 @@ python3 -m cpb precision "your research question" --verbose
 
 | Feature | Description |
 |---------|-------------|
-| **Auto-Capture** | Sessions automatically tracked — URLs, findings, full transcripts extracted |
+| **Auto-Capture** | Sessions automatically tracked, URLs, findings, full transcripts extracted |
 | **Lineage Tracking** | Link research sessions to implementation projects |
 | **Project Registry** | 4 registered projects with cross-referenced research |
 | **Context Loader** | Auto-load project context from any directory |
@@ -1391,10 +1391,10 @@ Traditional research workflows fail at the frontier:
 
 **ResearchGravity** solves this with:
 
-- **Multi-tier source hierarchy** — Tier 1 (primary), Tier 2 (amplifiers), Tier 3 (context)
-- **Cold Start Protocol** — Never lose session context
-- **Synthesis workflow** — Thesis → Gap → Innovation Direction
-- **Quality checklist** — Consistent Metaventions-grade output
+- **Multi-tier source hierarchy**: Tier 1 (primary), Tier 2 (amplifiers), Tier 3 (context)
+- **Cold Start Protocol**: Never lose session context
+- **Synthesis workflow**: Thesis → Gap → Innovation Direction
+- **Quality checklist**: Consistent Metaventions-grade output
 
 ---
 
@@ -1434,7 +1434,7 @@ Traditional research workflows fail at the frontier:
 ResearchGravity/                    # SCRIPTS (git repo)
 │
 ├── api/                            # 🆕 REST API Server (v5.0)
-│   └── server.py                   # FastAPI on port 3847 — 19 endpoints
+│   └── server.py                   # FastAPI on port 3847, 19 endpoints
 │
 ├── storage/                        # 🆕 Storage Triad (v5.0)
 │   ├── __init__.py                 # Package exports
@@ -1454,7 +1454,7 @@ ResearchGravity/                    # SCRIPTS (git repo)
 ├── graph/                          # 🆕 Graph Intelligence (v5.0)
 │   ├── __init__.py                 # Package exports
 │   ├── lineage.py                  # LineageNode, LineageEdge, LineageGraph
-│   ├── concept_graph.py            # ConceptGraph — relationship traversal
+│   ├── concept_graph.py            # ConceptGraph, relationship traversal
 │   └── queries.py                  # Convenience query functions
 │
 ├── cpb/                            # Cognitive Precision Bridge (v4.0)
@@ -1646,7 +1646,7 @@ python3 project_context.py --index
 ### Phase 2: Synthesis (20 min)
 ```
 1. Group findings by theme (not source)
-2. Identify the GAP — what's missing?
+2. Identify the GAP, what's missing?
 3. Draft thesis: "X is happening because Y, which means Z"
 ```
 
@@ -1705,7 +1705,7 @@ When invoking ResearchGravity, always run `status.py` first:
 
 ```
 ==================================================
-  ResearchGravity — Metaventions AI
+  ResearchGravity, Metaventions AI
 ==================================================
 
 📍 ACTIVE SESSION
@@ -1713,8 +1713,8 @@ When invoking ResearchGravity, always run `status.py` first:
    URLs logged: X | Findings: Y | Thesis: Yes/No
 
 📚 RECENT SESSIONS
-   1. [topic] — [date]
-   2. [topic] — [date]
+   1. [topic], [date]
+   2. [topic], [date]
 
 --------------------------------------------------
 OPTIONS:
@@ -1837,9 +1837,9 @@ python3 backfill_learnings.py --dry-run
 
 | Component | Source |
 |-----------|--------|
-| Project info | `projects.json` — name, focus, tech stack, status |
+| Project info | `projects.json`, name, focus, tech stack, status |
 | Project memory | `memory/projects/[project].md` |
-| Recent learnings | `memory/learnings.md` — filtered by project/topic/days |
+| Recent learnings | `memory/learnings.md`, filtered by project/topic/days |
 | Research papers | `paper_index` in projects.json |
 | Lineage | Research sessions → features implemented |
 
@@ -1969,12 +1969,12 @@ clusters = await graph.get_concept_clusters(min_size=5)
 - [x] Unified research index (v3.2)
 - [x] Context prefetcher & memory injection (v3.4)
 - [x] Learnings backfill from archived sessions (v3.4)
-- [x] CPB — Cognitive Precision Bridge (v4.0)
-- [x] Storage Triad — SQLite + Qdrant (v5.0)
+- [x] CPB, Cognitive Precision Bridge (v4.0)
+- [x] Storage Triad, SQLite + Qdrant (v5.0)
 - [x] Writer-Critic validation system (v5.0)
-- [x] Graph Intelligence — concept relationships (v5.0)
-- [x] REST API — 19 endpoints (v5.0)
-- [x] Evidence Layer — citations & confidence (v5.0)
+- [x] Graph Intelligence, concept relationships (v5.0)
+- [x] REST API, 19 endpoints (v5.0)
+- [x] Evidence Layer, citations & confidence (v5.0)
 - [x] CCC Dashboard sync (v5.0)
 
 ### Future
@@ -1987,7 +1987,7 @@ clusters = await graph.get_concept_clusters(min_size=5)
 
 ## License
 
-MIT License — See [LICENSE](LICENSE)
+MIT License, See [LICENSE](LICENSE)
 
 ---
 
@@ -2016,7 +2016,7 @@ dicoangelo@metaventionsai.com
 
 **URL:** https://github.com/Dicoangelo/agent-core
 **Language:** Python
-**Description:** Unified research orchestration for CLI, Antigravity, and web — Innovation Scout, URL logging, cross-environment sync
+**Description:** Unified research orchestration for CLI, Antigravity, and web, Innovation Scout, URL logging, cross-environment sync
 
 ### README Content
 
@@ -2079,11 +2079,11 @@ dicoangelo@metaventionsai.com
 
 ### Key Capabilities
 
-- **Innovation Scout** — Dual-filter GitHub + arXiv research (Viral + Groundbreaker)
-- **URL Logging** — Track every URL visited with relevance scoring
-- **Cross-Environment Sync** — Seamless CLI ↔ Antigravity ↔ Web state sharing
-- **Long-Term Memory** — Auto-extract learnings from research sessions
-- **Session Management** — Archive, resume, and review past research
+- **Innovation Scout**: Dual-filter GitHub + arXiv research (Viral + Groundbreaker)
+- **URL Logging**: Track every URL visited with relevance scoring
+- **Cross-Environment Sync**: Seamless CLI ↔ Antigravity ↔ Web state sharing
+- **Long-Term Memory**: Auto-extract learnings from research sessions
+- **Session Management**: Archive, resume, and review past research
 
 ---
 
@@ -2227,7 +2227,7 @@ git pull
 
 ## License
 
-MIT License — See [LICENSE](LICENSE)
+MIT License, See [LICENSE](LICENSE)
 
 ---
 
@@ -2256,7 +2256,7 @@ dicoangelo@metaventionsai.com
 
 **URL:** https://github.com/Dicoangelo/CareerCoachAntigravity
 **Language:** TypeScript
-**Description:** Sovereign Career Intelligence — AI-powered positioning, skill graphs, and multi-agent hiring simulation
+**Description:** Sovereign Career Intelligence, AI-powered positioning, skill graphs, and multi-agent hiring simulation
 
 ### README Content
 
@@ -2324,7 +2324,7 @@ dicoangelo@metaventionsai.com
 
 ## Executive Summary
 
-A **Next.js 14** career governance system that forces receipts, detects drift, and crystallizes value. This isn't a job board—it's a **sovereign intelligence layer** for your professional trajectory.
+A **Next.js 14** career governance system that forces receipts, detects drift, and crystallizes value. This isn't a job board, it's a **sovereign intelligence layer** for your professional trajectory.
 
 ### Core Capabilities
 
@@ -2578,13 +2578,13 @@ Part of the **Antigravity Ecosystem**:
 
 ## License
 
-MIT License © 2026 Metaventions AI - Dico Angelo — See [LICENSE](LICENSE)
+MIT License © 2026 Metaventions AI - Dico Angelo, See [LICENSE](LICENSE)
 
 ---
 
 ## Contact
 
-**Metaventions AI** — Architected Intelligence
+**Metaventions AI**: Architected Intelligence
 
 For questions, issues, or contributions, please use GitHub Issues or Discussions.
 
@@ -2649,11 +2649,11 @@ For questions, issues, or contributions, please use GitHub Issues or Discussions
 
 ## Executive Summary
 
-**Career Coach MVP** simulates a real hiring committee to evaluate your resume against job descriptions. Three AI agents—each powered by different models—provide independent assessments, then reach a **consensus verdict**.
+**Career Coach MVP** simulates a real hiring committee to evaluate your resume against job descriptions. Three AI agents, each powered by different models, provide independent assessments, then reach a **consensus verdict**.
 
-- **Hiring Manager** (Claude) — Strategic fit, leadership potential, career trajectory
-- **Tech Lead** (Grok/Gemini) — Technical depth, implementation experience, skill validation
-- **HR/Culture** (GPT-4) — Culture alignment, soft skills, team dynamics
+- **Hiring Manager** (Claude), Strategic fit, leadership potential, career trajectory
+- **Tech Lead** (Grok/Gemini), Technical depth, implementation experience, skill validation
+- **HR/Culture** (GPT-4), Culture alignment, soft skills, team dynamics
 
 The **Nexus Engine** pre-analyzes resumes using neuro-symbolic algorithms to extract competency depth scores and infer implicit skills before the agents deliberate.
 
@@ -2749,7 +2749,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the application.
 ## Core Engines
 
 ### 1. Nexus Engine (lib/engines/nexus.ts)
-**Neuro-Symbolic Resume Graph Core — Pre-analysis before agent evaluation.**
+**Neuro-Symbolic Resume Graph Core, Pre-analysis before agent evaluation.**
 
 | Algorithm | Purpose |
 |-----------|---------|
@@ -2767,7 +2767,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the application.
 | EXPOSED | 1 | familiar, learned, assisted, participated |
 
 ### 2. Multi-Agent Evaluation (lib/engines/multi-agent-eval.ts)
-**Simulated Hiring Committee — Three perspectives, one verdict.**
+**Simulated Hiring Committee, Three perspectives, one verdict.**
 
 | Agent | Model | Focus Areas |
 |-------|-------|-------------|
@@ -2867,7 +2867,7 @@ career-coach-mvp/
 
 ## Roadmap
 
-- [x] ~~Nexus Engine — Competency scoring~~
+- [x] ~~Nexus Engine, Competency scoring~~
 - [x] ~~Multi-agent evaluation system~~
 - [x] ~~Job tracking kanban~~
 - [ ] Resume optimization suggestions
@@ -2880,7 +2880,7 @@ career-coach-mvp/
 
 ## License
 
-MIT License — See [LICENSE](LICENSE)
+MIT License, See [LICENSE](LICENSE)
 
 ---
 
@@ -3834,7 +3834,7 @@ MIT © Dicoangelo
 
 **URL:** https://github.com/Dicoangelo/FlowDesk
 **Language:** Lua
-**Description:** Multi-monitor workspace automation for macOS — 5 layouts, auto-launch, smart hide, numpad controls. Part of the D-Ecosystem by Metaventions AI.
+**Description:** Multi-monitor workspace automation for macOS, 5 layouts, auto-launch, smart hide, numpad controls. Part of the D-Ecosystem by Metaventions AI.
 
 ### README Content
 
@@ -3881,7 +3881,7 @@ MIT © Dicoangelo
 
 ## Overview
 
-FlowDesk transforms your multi-monitor setup into a productivity powerhouse. Switch between optimized workspace layouts with a single keystroke—apps auto-launch, position perfectly, and distractions hide automatically.
+FlowDesk transforms your multi-monitor setup into a productivity powerhouse. Switch between optimized workspace layouts with a single keystroke, apps auto-launch, position perfectly, and distractions hide automatically.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -3940,8 +3940,8 @@ cd FlowDesk
 ### Grant Permissions
 
 When prompted, enable Accessibility access for:
-- **Rectangle** — System Settings → Privacy & Security → Accessibility
-- **Hammerspoon** — System Settings → Privacy & Security → Accessibility
+- **Rectangle**: System Settings → Privacy & Security → Accessibility
+- **Hammerspoon**: System Settings → Privacy & Security → Accessibility
 
 ### Start Using
 
@@ -3955,7 +3955,7 @@ When prompted, enable Accessibility access for:
 
 ## Layouts
 
-### 🔥 Deep Work — `Ctrl + Shift + 1`
+### 🔥 Deep Work, `Ctrl + Shift + 1`
 
 Best for: **Coding, building, focused development**
 
@@ -3971,7 +3971,7 @@ Best for: **Coding, building, focused development**
                           MACBOOK
 ```
 
-### 📚 Research — `Ctrl + Shift + 2`
+### 📚 Research, `Ctrl + Shift + 2`
 
 Best for: **Learning, reading, note-taking**
 
@@ -3984,7 +3984,7 @@ Best for: **Learning, reading, note-taking**
        LEFT                 CENTER              RIGHT
 ```
 
-### 🎯 Comms — `Ctrl + Shift + 3`
+### 🎯 Comms, `Ctrl + Shift + 3`
 
 Best for: **Team chat, collaboration**
 
@@ -3997,11 +3997,11 @@ Best for: **Team chat, collaboration**
        LEFT                 CENTER              RIGHT
 ```
 
-### 🎨 Media — `Ctrl + Shift + 4`
+### 🎨 Media, `Ctrl + Shift + 4`
 
 Best for: **YouTube, streaming, content**
 
-### ⚡ Meetings — `Ctrl + Shift + 5`
+### ⚡ Meetings, `Ctrl + Shift + 5`
 
 Best for: **Video calls, presentations**
 
@@ -4120,7 +4120,7 @@ FlowDesk is part of the **D-Ecosystem**, a suite of sovereign AI infrastructure 
 
 ## License
 
-MIT License — © 2026 Metaventions AI
+MIT License, © 2026 Metaventions AI
 
 ---
 
@@ -4137,7 +4137,7 @@ MIT License — © 2026 Metaventions AI
 </p>
 
 <p align="center">
-  <strong>FlowDesk</strong> — Part of the D-Ecosystem by Metaventions AI<br/>
+  <strong>FlowDesk</strong>, Part of the D-Ecosystem by Metaventions AI<br/>
   <em>Work Smarter, Not Harder.</em>
 </p>
 
@@ -4626,7 +4626,7 @@ See [LICENSE](LICENSE) for full text.
 
 **URL:** https://github.com/Dicoangelo/Dicoangelo
 **Language:** N/A
-**Description:** Profile README — Architecting Sovereign AI Infrastructure
+**Description:** Profile README, Architecting Sovereign AI Infrastructure
 
 ### README Content
 
@@ -4669,13 +4669,13 @@ See [LICENSE](LICENSE) for full text.
 
 > *"Let the invention be hidden in your vision."*
 
-I build **sovereign AI infrastructure** — systems that compound intelligence, maintain context across sessions, and operate with full user agency. No vendor lock-in. No data exploitation. Just tools that work for you.
+I build **sovereign AI infrastructure**: systems that compound intelligence, maintain context across sessions, and operate with full user agency. No vendor lock-in. No data exploitation. Just tools that work for you.
 
 <br/>
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
-│                      🏛️ CHIEF OF STAFF — AI SECOND BRAIN                         │
+│                      🏛️ CHIEF OF STAFF, AI SECOND BRAIN                         │
 ├──────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                   │
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐       │
@@ -4737,7 +4737,7 @@ CLI-first research workflows with session persistence, cross-environment sync, a
 <td width="50%" valign="top">
 
 ### [ResearchGravity](https://github.com/Dicoangelo/ResearchGravity) `v5.0`
-**Chief of Staff — AI Second Brain**
+**Chief of Staff, AI Second Brain**
 
 114 sessions, 2,530 findings, 8,935 URLs, 27M tokens. Storage Triad + Writer-Critic + Graph Intelligence with 19 API endpoints.
 
@@ -4771,7 +4771,7 @@ Bidirectional co-evolution system. Claude analyzes its own patterns and modifies
 ### [The-Decosystem](https://github.com/Dicoangelo/The-Decosystem)
 **Ecosystem Blueprint + Chief of Staff**
 
-The architectural blueprint for sovereign AI. Chief of Staff infrastructure powers all components — capture, storage, intelligence, retrieval.
+The architectural blueprint for sovereign AI. Chief of Staff infrastructure powers all components, capture, storage, intelligence, retrieval.
 
 `Architecture` `Blueprint` `Chief-of-Staff`
 
@@ -4982,7 +4982,7 @@ flowchart TB
     style HUMAN fill:#00d9ff,stroke:#fff,stroke-width:2px,color:#0d1117
 ```
 
-<sub>🔄 <i>Layered architecture — Human sovereignty at every level</i></sub>
+<sub>🔄 <i>Layered architecture, Human sovereignty at every level</i></sub>
 
 </div>
 
@@ -5028,7 +5028,7 @@ flowchart TB
 <td width="50%" align="center">
 <img src="https://user-images.githubusercontent.com/74038190/216120974-24a76b31-7f39-41f1-a38f-b3c1377cc612.png" width="80"/>
 <h3>🏛️ ResearchGravity</h3>
-<b>Chief of Staff — AI Second Brain</b>
+<b>Chief of Staff, AI Second Brain</b>
 <br/><br/>
 <p>114 sessions • 11K nodes • 27M tokens. Storage Triad (SQLite + Qdrant), Writer-Critic validation, Graph Intelligence. 19 API endpoints.</p>
 <br/>
@@ -5091,7 +5091,7 @@ flowchart TB
 |:-----:|:----------|:------------|:-----|:------:|
 | 🎙️ | [OS-App](https://github.com/Dicoangelo/OS-App) | Sovereign voice interface + ACE/RLM | TypeScript, React | `v1.3` |
 | 🔄 | [Agent Core](https://github.com/Dicoangelo/agent-core) | Research orchestration | Python, CLI | `v2.2` |
-| 🏛️ | [ResearchGravity](https://github.com/Dicoangelo/ResearchGravity) | **Chief of Staff** — 114 sessions, Graph Intelligence | Python, FastAPI | `v5.0` |
+| 🏛️ | [ResearchGravity](https://github.com/Dicoangelo/ResearchGravity) | **Chief of Staff**: 114 sessions, Graph Intelligence | Python, FastAPI | `v5.0` |
 | 💼 | [CareerCoachAntigravity](https://github.com/Dicoangelo/CareerCoachAntigravity) | Career intelligence | TypeScript, Next.js | `v2.0` |
 | ⚙️ | [Meta-Vengine](https://github.com/Dicoangelo/meta-vengine) | **Co-Evolution Engine** | Python, JS | `v1.0` |
 | 🛠️ | [chrome-history-export](https://github.com/Dicoangelo/chrome-history-export) | Browser data extraction | Python | `v2.0` |
@@ -5263,7 +5263,7 @@ git clone https://github.com/Dicoangelo/chrome-history-export.git
 ║   THE D-ECOSYSTEM IS BUILDING TOWARD:                                         ║
 ║                                                                              ║
 ║   ▸ Every individual has sovereign AI infrastructure                         ║
-║   ▸ Context compounds over time — your AI remembers                          ║
+║   ▸ Context compounds over time, your AI remembers                          ║
 ║   ▸ Tools work for you, not Big Tech                                         ║
 ║   ▸ Intelligence is architected, not just prompted                           ║
 ║                                                                              ║
@@ -5380,7 +5380,7 @@ git clone https://github.com/Dicoangelo/chrome-history-export.git
 
 **URL:** https://github.com/Dicoangelo/Metaventions-AI-Landing
 **Language:** TypeScript
-**Description:** Official landing page for Metaventions AI — Architected Intelligence
+**Description:** Official landing page for Metaventions AI, Architected Intelligence
 
 ### README Content
 
@@ -5403,17 +5403,17 @@ git clone https://github.com/Dicoangelo/chrome-history-export.git
 
 ## Overview
 
-A futuristic, responsive landing page showcasing Metaventions AI — a research and development studio focused on **Architected Intelligence** and agentic workflows.
+A futuristic, responsive landing page showcasing Metaventions AI, a research and development studio focused on **Architected Intelligence** and agentic workflows.
 
 ### Features
 
-- **Hero Section** — Animated introduction with call-to-action
-- **Mission Statement** — Core philosophy and vision
-- **Ecosystem Showcase** — Overview of Antigravity projects
-- **Dark/Light Mode** — Theme persistence via localStorage
-- **Custom Backgrounds** — User-configurable visual settings
-- **Modal System** — Vision, Product, Contact, and Investor modals
-- **Responsive Design** — Mobile-first, works on all devices
+- **Hero Section**: Animated introduction with call-to-action
+- **Mission Statement**: Core philosophy and vision
+- **Ecosystem Showcase**: Overview of Antigravity projects
+- **Dark/Light Mode**: Theme persistence via localStorage
+- **Custom Backgrounds**: User-configurable visual settings
+- **Modal System**: Vision, Product, Contact, and Investor modals
+- **Responsive Design**: Mobile-first, works on all devices
 
 ---
 
@@ -5571,7 +5571,7 @@ npm run build
 
 **URL:** https://github.com/Dicoangelo/sovereign-deck
 **Language:** HTML
-**Description:** Metaventions AI — Investor presentation and pitch deck materials
+**Description:** Metaventions AI, Investor presentation and pitch deck materials
 
 *No README available*
 

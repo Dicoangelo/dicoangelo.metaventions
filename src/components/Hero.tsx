@@ -132,7 +132,7 @@ export default function Hero() {
             }`}
           >
             Most people are either an operator or a builder.{" "}
-            <span className="text-[#6366f1] font-semibold">I&rsquo;m both — at the frontier.</span>
+            <span className="text-[#6366f1] font-semibold">I&rsquo;m both, at the frontier.</span>
           </p>
         )}
 
@@ -155,12 +155,12 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary btn-lg group"
-            aria-label="View live demo of Partnership Graph"
+            aria-label="View Partnership Graph concept demo"
           >
             <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-            <span>Live Demo: Partnership Graph</span>
+            <span>Concept Demo: Partnership Graph</span>
           </a>
           <a
             href="https://github.com/Dicoangelo"
@@ -192,7 +192,7 @@ export default function Hero() {
             className={`text-sm italic animate-fade-in animate-delay-500 ${isLight ? 'text-gray-500' : 'text-[#525252]'
               }`}
           >
-            &quot;I don&rsquo;t study the frontier. I&rsquo;m building infrastructure on it — while running enterprise deals.&quot;
+            &quot;I don&rsquo;t study the frontier. I&rsquo;m building infrastructure on it, while running enterprise deals.&quot;
           </p>
         )}
       </div>

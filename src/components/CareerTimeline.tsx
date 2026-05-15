@@ -3,6 +3,11 @@
 import { useState, useEffect, useRef } from "react";
 import { useReadingDepth } from "./ReadingDepthProvider";
 
+interface TimelineEventLink {
+  label: string;
+  url: string;
+}
+
 interface TimelineEvent {
   date: string;
   title: string;
@@ -12,6 +17,7 @@ interface TimelineEvent {
   description: string;
   highlights: string[];
   metrics?: string[];
+  sources?: TimelineEventLink[];
 }
 
 interface CareerTimelineProps {
@@ -51,14 +57,44 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       company: "Detroit Blockchain Collective",
       location: "Detroit, MI",
       type: "achievement",
-      description: "Plugged into Detroit's blockchain ecosystem during networking travels — three back-to-back events covering protocol fundamentals, real-world asset tokenization, and Web3 builder community.",
+      description: "Plugged into Detroit's blockchain ecosystem during networking travels. Three back-to-back events covering protocol fundamentals, real-world asset tokenization, and Web3 builder community.",
       highlights: [
-        "Blockchain 101 at Wayne State University — protocol fundamentals refresher",
-        "RWA On Chain — real-world asset tokenization landscape and operator perspectives",
-        "Web3 Builders Mixer at Atwater Brewery — builder community and infrastructure plays",
+        "Blockchain 101 at Wayne State University: protocol fundamentals refresher",
+        "RWA On Chain: real-world asset tokenization landscape and operator perspectives",
+        "Web3 Builders Mixer at Atwater Brewery: builder community and infrastructure plays",
         "Cross-pollinating blockchain context into AI partnership and cognitive equity work",
       ],
       metrics: ["3 Events", "Detroit"],
+    },
+    {
+      date: "2026",
+      title: "Multi-Agent Systems Research",
+      company: "Independent Research",
+      location: "Remote",
+      type: "achievement",
+      description: "Published research on consensus mechanisms, DQ scoring, and agentic architectures.",
+      highlights: [
+        "arXiv:2511.15755 - DQ Scoring Framework",
+        "arXiv:2508.17536 - Voting mechanisms in multi-agent systems",
+        "arXiv:2512.05470 - Agentic File System (AFS)",
+        "Weekly arXiv monitoring and synthesis",
+      ],
+      metrics: ["8+ Papers", "4 Core Systems"],
+    },
+    {
+      date: "2026",
+      title: "Participant, Partnership Leaders Catalyst Summit",
+      company: "Partnership Leaders, NYC & Toronto",
+      location: "NYC & Toronto",
+      type: "achievement",
+      description: "Attended Partnership Leaders Catalyst Summit in both NYC and Toronto, joining roundtable discussions on AI & Partnerships alongside founders, partner ops leaders, and investors.",
+      highlights: [
+        "Joined roundtables on AI partnerships, partner ops tooling, and enterprise adoption",
+        "Networked with partner ops leaders and AI founders across both summits",
+        "Exchanged insights on multi-agent orchestration and sovereign AI systems",
+        "Direct field input feeding into the Partnership Graph concept demo",
+      ],
+      metrics: ["Participant", "NYC & Toronto"],
     },
     {
       date: "Nov 2025 - Present",
@@ -81,7 +117,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       company: "Contentsquare",
       location: "Paris / Remote",
       type: "work",
-      description: "Operated cloud ops on the 3-person alliance team at Contentsquare. Program grew $0 → $30M+ in 30 months — I ran the operational layer (CRM, automation, dashboards, enablement) that turned strategy into velocity. Managed the operational layer of vendor relationships with AWS & Microsoft.",
+      description: "Operated cloud ops on the 3-person alliance team at Contentsquare. Program grew $0 to $30M+ in 30 months. I ran the operational layer (CRM, automation, dashboards, enablement) that turned strategy into velocity. Managed the operational layer of vendor relationships with AWS & Microsoft.",
       highlights: [
         "Operational lead on the 3-person alliance team; program scaled $0 → $30M+ in 30 months",
         "Managed $800M+ TCV with 40% cloud attachment rate",
@@ -107,34 +143,24 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       metrics: ["$222K Savings", "45 Agents", "91% Efficiency"],
     },
     {
-      date: "2026",
-      title: "Multi-Agent Systems Research",
-      company: "Independent Research",
-      location: "Remote",
-      type: "achievement",
-      description: "Published research on consensus mechanisms, DQ scoring, and agentic architectures.",
+      date: "Mar 2019 - Mar 2022",
+      title: "Founding Director",
+      company: "Up2Youth",
+      location: "Windsor, ON",
+      type: "work",
+      description: "Founded a youth-development program from idea stage, awarded $255,000 over 36 months by the Government of Ontario's Youth Opportunities Fund (Youth Innovations stream) administered via United Way/Centraide Windsor-Essex County. Served Black youth ages 15 to 19 across Essex, Kent, and Lambton counties through weekly mentoring, individualized tutoring, wellness checks, and post-secondary access pathways.",
       highlights: [
-        "arXiv:2511.15755 - DQ Scoring Framework",
-        "arXiv:2508.17536 - Voting mechanisms in multi-agent systems",
-        "arXiv:2512.05470 - Agentic File System (AFS)",
-        "Weekly arXiv monitoring and synthesis",
+        "Founded the program from concept stage; closed the 36-month grant cycle in good standing with the funder",
+        "End-to-end ownership: program design, operations, grant compliance and impact reporting, partner cultivation, community recruitment, mentor-team management",
+        "Served Black youth ages 15 to 19 across Essex, Kent, and Lambton counties (3-county catchment)",
+        "$255,000 Government of Ontario Youth Opportunities Fund grant, Youth Innovations stream",
+        "Public grant record at otf.ca/grants-awarded/5551, verifiable on the Ontario Trillium Foundation's grant database",
       ],
-      metrics: ["8+ Papers", "4 Core Systems"],
-    },
-    {
-      date: "2026",
-      title: "Participant, Partnership Leaders Catalyst Summit",
-      company: "Partnership Leaders — NYC & Toronto",
-      location: "NYC & Toronto",
-      type: "achievement",
-      description: "Attended Partnership Leaders Catalyst Summit in both NYC and Toronto, joining roundtable discussions on AI & Partnerships alongside founders, partner ops leaders, and investors.",
-      highlights: [
-        "Joined roundtables on AI partnerships, partner ops tooling, and enterprise adoption",
-        "Networked with partner ops leaders and AI founders across both summits",
-        "Exchanged insights on multi-agent orchestration and sovereign AI systems",
-        "Direct field input feeding into the Partnership Graph product strategy",
+      metrics: ["$255K Grant", "36 Months", "3 Counties", "OTF / United Way"],
+      sources: [
+        { label: "Public OTF grant record", url: "https://otf.ca/grants-awarded/5551" },
+        { label: "Up2Youth Windsor on Instagram", url: "https://www.instagram.com/up2youthwindsor/" },
       ],
-      metrics: ["Participant", "NYC & Toronto"],
     },
   ];
 
@@ -307,6 +333,34 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
                                 </li>
                               ))}
                             </ul>
+
+                            {event.sources && event.sources.length > 0 && (
+                              <div className="mt-4 pt-4 border-t border-dashed">
+                                <h4 className={`text-xs font-semibold uppercase tracking-wide mb-2 ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
+                                  Verifiable sources:
+                                </h4>
+                                <ul className="space-y-1 text-sm">
+                                  {event.sources.map((source, i) => (
+                                    <li key={i} className="flex items-start gap-2">
+                                      <span className="text-[#6366f1] mt-1">↗</span>
+                                      <a
+                                        href={source.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                        className={`underline decoration-dotted underline-offset-4 transition-colors ${
+                                          isLight
+                                            ? 'text-[#6366f1] hover:text-[#4f46e5]'
+                                            : 'text-[#818cf8] hover:text-[#a5b4fc]'
+                                        }`}
+                                      >
+                                        {source.label}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
                           </div>
                         )}
 

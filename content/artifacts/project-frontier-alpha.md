@@ -31,7 +31,7 @@ https://frontier-alpha.metaventionsai.com
 | **Factor Engine** | 80+ factors across 6 categories (momentum, value, quality, volatility, size, sentiment) |
 | **CVRF Intelligence** | Self-improving belief system with conviction tracking and episode learning |
 | **Cognitive Explainer** | GPT-4o + template dual-mode with confidence scores |
-| **Portfolio Optimizer** | Monte Carlo simulation — max Sharpe, min variance, risk parity, CVRF-weighted |
+| **Portfolio Optimizer** | Monte Carlo simulation, max Sharpe, min variance, risk parity, CVRF-weighted |
 | **Walk-Forward Backtest** | CVRF integration, historical data loading, episode replay |
 | **Earnings Oracle** | Calendar, consensus estimates, beat rates, expected moves |
 | **Risk Alert System** | 11 alert types with real-time monitoring |
@@ -55,11 +55,11 @@ https://frontier-alpha.metaventionsai.com
 
 ## Transferable Skills Demonstrated
 
-I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify in English, review AI output, run it against tests, and ship.
+I do not claim hand-fluency in TypeScript, JavaScript, Python, AI-assisted SQL via Claude Code, or Bash. I specify in English, review AI output, run it against tests, and ship.
 
 - **Quantitative Finance Domain:** 80+ factor analysis beyond Fama-French 5, Monte Carlo optimization, walk-forward backtesting with regime detection
 - **Real-Time System Direction:** WebSocket streaming from Polygon.io, server-sent events for push alerts, real-time portfolio monitoring
 - **Explainable AI Architecture:** Dual-mode explanation system (LLM + template) with confidence scoring and source attribution
 - **Self-Improving ML Design:** CVRF belief system that learns from investment episodes, reinforces correct beliefs, and weakens incorrect ones
-- **AI-Directed Platform Orchestration:** 22 modular subsystems with pluggable implementations, 6 database migrations, and multi-platform deployment — specified and shipped by directing AI coding agents
+- **AI-Directed Platform Orchestration:** 22 modular subsystems with pluggable implementations, 6 database migrations, and multi-platform deployment, specified and shipped by directing AI coding agents
 - **Financial Compliance Architecture:** Tax lot tracking, wash sale detection, SEC filing monitoring, and row-level security for multi-tenant data isolation

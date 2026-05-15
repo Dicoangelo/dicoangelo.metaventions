@@ -364,7 +364,7 @@ Recommendation: This is normal for Next.js. Monitor size as app grows.
 
 **Page Title:**
 ```html
-<title>Dico Angelo — Operations Infrastructure Builder | AI Systems Engineer</title>
+<title>Dico Angelo, Operations Infrastructure Builder | AI Systems Engineer</title>
 ```
 - ✅ Unique and descriptive
 - ✅ Under 60 characters (readable in search results)
@@ -381,7 +381,7 @@ shipping 297K+ lines of production AI systems...">
 ### Open Graph Tags (Social Sharing)
 
 ```html
-<meta property="og:title" content="Dico Angelo — Operations Infrastructure...">
+<meta property="og:title" content="Dico Angelo, Operations Infrastructure...">
 <meta property="og:description" content="Processed $800M+ in cloud marketplace...">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dicoangelo.vercel.app">
@@ -398,7 +398,7 @@ shipping 297K+ lines of production AI systems...">
 
 ```html
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Dico Angelo — Operations Infrastructure...">
+<meta name="twitter:title" content="Dico Angelo, Operations Infrastructure...">
 <meta name="twitter:creator" content="@dicoangelo">
 <meta name="twitter:image" content="/headshot.jpg">
 ```

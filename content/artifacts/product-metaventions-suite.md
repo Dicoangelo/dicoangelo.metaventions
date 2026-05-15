@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Metaventions AI** is a research studio pioneering "Architected Intelligence" — a paradigm shift from conventional automation to high-fidelity human-agent collaboration systems. We build intelligent operating systems where vision becomes system, and system becomes invention.
+**Metaventions AI** is a research studio pioneering "Architected Intelligence", a paradigm shift from conventional automation to high-fidelity human-agent collaboration systems. We build intelligent operating systems where vision becomes system, and system becomes invention.
 
 Our mission is to transform abstract strategic visions into operational infrastructure through deliberate architectural design, treating AI not as a replacement for human capability but as a precision extension of human agency.
 
@@ -26,7 +26,7 @@ Our mission is to transform abstract strategic visions into operational infrastr
 
 **Reactive Operating Environment for Enterprise Intelligence**
 
-Structura OS (implemented as [OS-App](https://github.com/Dicoangelo/OS-App)) is a comprehensive operating environment that integrates disparate corporate assets, business logic, and communication channels into a single reactive system. With 127,000+ lines of production TypeScript code (AI-generated under Dico Angelo's architectural direction via Claude Code, Codex CLI, and Gemini CLI), it's not a prototype—it's a fully-functional AI platform. Unlike traditional enterprise software that treats AI as an add-on, Structura OS is built from the ground up as an intelligent platform.
+Structura OS (implemented as [OS-App](https://github.com/Dicoangelo/OS-App)) is a comprehensive operating environment that integrates disparate corporate assets, business logic, and communication channels into a single reactive system. With 127,000+ lines of production TypeScript code (AI-generated under Dico Angelo's architectural direction via Claude Code, Codex CLI, and Gemini CLI), it's not a prototype, it's a fully-functional AI platform. Unlike traditional enterprise software that treats AI as an add-on, Structura OS is built from the ground up as an intelligent platform.
 
 **Key Capabilities:**
 
@@ -182,7 +182,7 @@ Every feature ships with empirical validation. We track 700+ error patterns, ana
 
 **4. Cognitive Awareness**
 
-Our systems account for human cognitive patterns — time-of-day energy levels, flow state protection, expertise-aware routing. AI that adapts to you, not the other way around.
+Our systems account for human cognitive patterns, time-of-day energy levels, flow state protection, expertise-aware routing. AI that adapts to you, not the other way around.
 
 **5. Radical Transparency**
 

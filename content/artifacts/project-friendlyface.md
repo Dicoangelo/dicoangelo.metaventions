@@ -2,7 +2,7 @@
 
 ## Overview
 
-FriendlyFace is a forensic evidence generation system for AI compliance — specifically designed for EU AI Act conformity. It wraps existing facial recognition systems (NEC, AWS Rekognition, Cognitec) with a compliance proxy that generates cryptographically verifiable forensic evidence chains. The core invention is the ForensicSeal — a W3C Verifiable Credential that binds six independent verification dimensions into one publicly-verifiable artifact.
+FriendlyFace is a forensic evidence generation system for AI compliance, specifically designed for EU AI Act conformity. It wraps existing facial recognition systems (NEC, AWS Rekognition, Cognitec) with a compliance proxy that generates cryptographically verifiable forensic evidence chains. The core invention is the ForensicSeal, a W3C Verifiable Credential that binds six independent verification dimensions into one publicly-verifiable artifact.
 
 ## Live URL
 
@@ -10,26 +10,26 @@ https://friendlyface.metaventionsai.com
 
 ## Core Architecture
 
-### ForensicSeal — The Real Invention
-Not face recognition, not federated learning — those are table stakes. The ForensicSeal is a compliance primitive: a W3C Verifiable Credential that cryptographically binds six independent verification dimensions into one publicly-verifiable artifact. A court can verify a seal without access to FriendlyFace. That's sovereignty.
+### ForensicSeal, The Real Invention
+Not face recognition, not federated learning, those are table stakes. The ForensicSeal is a compliance primitive: a W3C Verifiable Credential that cryptographically binds six independent verification dimensions into one publicly-verifiable artifact. A court can verify a seal without access to FriendlyFace. That's sovereignty.
 
-### Compliance Proxy — "Stripe for AI Compliance"
-A pip-installable SDK decorator that wraps existing inference calls. Existing FR deployments become EU AI Act compliant without ripping out their recognition stack. Not competing with Rekognition — wrapping it. Every police force, border agency, and enterprise using third-party FR needs this.
+### Compliance Proxy, "Stripe for AI Compliance"
+A pip-installable SDK decorator that wraps existing inference calls. Existing FR deployments become EU AI Act compliant without ripping out their recognition stack. Not competing with Rekognition, wrapping it. Every police force, border agency, and enterprise using third-party FR needs this.
 
 ### Triple Verification Structure
-- **Hash Chain:** Temporal ordering — did event B come after A?
-- **Merkle Tree:** Membership verification — is this event in the set?
-- **Provenance DAG:** Data lineage — which dataset trained this model that made this decision?
+- **Hash Chain:** Temporal ordering, did event B come after A?
+- **Merkle Tree:** Membership verification, is this event in the set?
+- **Provenance DAG:** Data lineage, which dataset trained this model that made this decision?
 
 ### Forensic Logging of Training (Novel)
 Nobody else logs the training process as forensic evidence. Every federated learning paper treats training as a black box. FriendlyFace says: training itself is evidence. Poisoning detection events are hash-chained, courtroom-grade.
 
 ### Explainability-as-Evidence
-LIME/SHAP/SDD outputs aren't just XAI — they're forensic artifacts with provenance links. Explanations are hash-chained to exact inference events, model versions, and training data lineage. Can't tamper after the fact. Direct response to EU AI Act Article 13.
+LIME/SHAP/SDD outputs aren't just XAI, they're forensic artifacts with provenance links. Explanations are hash-chained to exact inference events, model versions, and training data lineage. Can't tamper after the fact. Direct response to EU AI Act Article 13.
 
 ## Technical Stack
 
-*Specified in English and built by directing Claude Code, Codex CLI, and Gemini CLI. I own architecture, prompts, review, and evaluation — the code is AI-generated under my direction.*
+*Specified in English and built by directing Claude Code, Codex CLI, and Gemini CLI. I own architecture, prompts, review, and evaluation, the code is AI-generated under my direction.*
 
 - **Framework:** Next.js, React, TypeScript
 - **Cryptography:** W3C Verifiable Credentials, hash chains, Merkle trees, provenance DAGs
@@ -50,7 +50,7 @@ LIME/SHAP/SDD outputs aren't just XAI — they're forensic artifacts with proven
 ## Market Context
 
 - EU AI Act compliance deadline approaching (August 2026)
-- No notified bodies designated for AI conformity assessment yet — massive market opening
+- No notified bodies designated for AI conformity assessment yet, massive market opening
 - Self-assessment with verifiable evidence is the only viable path before August 2026
 - Closest competitor (eyreACT) sells documentation, not cryptographic proof
 - Every organization using third-party facial recognition needs compliance wrapping
@@ -60,7 +60,7 @@ LIME/SHAP/SDD outputs aren't just XAI — they're forensic artifacts with proven
 - ICDF2C 2026 paper submission with 10 publication-quality architecture diagrams
 - Collaboration with Safiia Mohammed (University of Windsor PhD candidate, framework creator)
 - Research into privacy-preserving federated learning with forensic audit trails
-- Novel contribution: DP-FedAvg with forensic logging — training process as courtroom evidence
+- Novel contribution: DP-FedAvg with forensic logging, training process as courtroom evidence
 
 ## Transferable Skills Demonstrated
 

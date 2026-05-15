@@ -1,4 +1,4 @@
-# Research Collaboration: Philip Drammeh — DQ Scoring in Production
+# Research Collaboration: Philip Drammeh, DQ Scoring in Production
 
 ## Overview
 
@@ -6,7 +6,7 @@ Research collaboration with Philip Drammeh, author of arXiv:2511.15755 (Multi-Ag
 
 ## The Paper: arXiv:2511.15755
 
-Philip Drammeh's paper proposed that multi-agent LLM orchestration with DQ scoring (validity + specificity + correctness) achieves deterministic, high-quality decision support. The Antigravity ecosystem took that framework and built an entire production routing engine around it — making it the foundational intelligence layer for all AI model routing.
+Philip Drammeh's paper proposed that multi-agent LLM orchestration with DQ scoring (validity + specificity + correctness) achieves deterministic, high-quality decision support. The Antigravity ecosystem took that framework and built an entire production routing engine around it, making it the foundational intelligence layer for all AI model routing.
 
 ## Production Implementation
 
@@ -46,10 +46,10 @@ meta-vengine (core routing), OS-App ACE (multi-agent consensus), SUPERMAX (21-ag
 ## Collaboration Proposal
 
 ### Track 1: Co-Authored Paper
-"DQ Scoring in Production" — demonstrating that DQ scoring works in production, improves over time, and generalizes beyond incident response. Target: NeurIPS, ICML, or AAAI.
+"DQ Scoring in Production", demonstrating that DQ scoring works in production, improves over time, and generalizes beyond incident response. Target: NeurIPS, ICML, or AAAI.
 
 ### Track 2: DQ Standard Proposal
-Define an industry standard for measuring AI routing/decision quality — RFC-style specification document.
+Define an industry standard for measuring AI routing/decision quality, RFC-style specification document.
 
 ### Track 3: Research Questions
 - Self-evolving V/S/C weights (meta-learning formulation)

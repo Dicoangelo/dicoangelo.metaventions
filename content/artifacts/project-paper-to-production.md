@@ -2,7 +2,7 @@
 
 ## Overview
 
-Paper to Production is a series of technical architecture reports that document the translation of research papers and AI concepts into deployed, benchmarked production systems within the Metaventions D-Ecosystem. The flagship report — "The 28-Wire Nervous System" — documents how 17 isolated AI components were surgically wired into a compound intelligence engine in a single session, producing a measurable +32% improvement in Decision Quality.
+Paper to Production is a series of technical architecture reports that document the translation of research papers and AI concepts into deployed, benchmarked production systems within the Metaventions D-Ecosystem. The flagship report, "The 28-Wire Nervous System", documents how 17 isolated AI components were surgically wired into a compound intelligence engine in a single session, producing a measurable +32% improvement in Decision Quality.
 
 ## GitHub
 
@@ -42,7 +42,7 @@ In a single session, 28 wires were installed across 5 functional layers, creatin
 
 ### Underlying Telemetry
 
-The wires did not add new data — they connected existing data to the decision point:
+The wires did not add new data, they connected existing data to the decision point:
 - 4,949 routing decisions already captured
 - 4,377 session outcomes already recorded
 - 141K tool events already logged
@@ -63,6 +63,6 @@ The wires did not add new data — they connected existing data to the decision 
 
 - **Technical Writing:** Long-form architecture reports with executive summaries, quantitative evidence, and wire-by-wire analysis
 - **Systems Integration:** Connecting 17 isolated components into a compound system through targeted wiring rather than rewriting
-- **Measurement-Driven Engineering:** Every claim backed by before/after telemetry — DQ scores, pattern enhancement rates, variance reduction
+- **Measurement-Driven Engineering:** Every claim backed by before/after telemetry, DQ scores, pattern enhancement rates, variance reduction
 - **Research Translation:** Bridging the gap between arXiv concepts (arXiv:2511.15755) and deployed production systems with benchmarked results
 - **Visual Communication:** Dark-mode technical report design with data cards, tagged tables, and architectural diagrams

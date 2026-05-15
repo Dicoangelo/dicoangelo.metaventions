@@ -9,7 +9,7 @@
 
 **Architect-Operator Hybrid** with proven track record building operational infrastructure that processed $800M+ in cloud marketplace deal registrations while shipping production AI systems. Published 2 npm packages, implemented 8+ arXiv papers into 297K+ lines of production code, and delivered measurable business impact at scale.
 
-**Unique Value Proposition:** I bridge the gap between cutting-edge AI research and enterprise operations. I don't just read papers—I implement them into production systems. I don't just register deals—I build the automation infrastructure that makes them flow at scale.
+**Unique Value Proposition:** I bridge the gap between cutting-edge AI research and enterprise operations. I don't just read papers, I implement them into production systems. I don't just register deals, I build the automation infrastructure that makes them flow at scale.
 
 ---
 
@@ -399,15 +399,15 @@ A multi-agent hiring panel simulation that generates role-specific feedback from
 ### Core AI Systems
 | Repository | Language | Description |
 |------------|----------|-------------|
-| **OS-App** | TypeScript | Sovereign AI Operating System — Voice-native, multi-agent interface powered by Gemini Live & ElevenLabs |
-| **meta-vengine** | Python | THE CLOSED LOOP — The system that improves itself. Bidirectional Co-Evolution, HSRGS Routing, D-Ecosystem |
-| **ResearchGravity** | Python | Metaventions AI Research Framework — Multi-tier signal capture for frontier intelligence |
-| **agent-core** | Python | Unified research orchestration for CLI, Antigravity, and web — Innovation Scout, URL logging, cross-environment sync |
+| **OS-App** | TypeScript | Sovereign AI Operating System, Voice-native, multi-agent interface powered by Gemini Live & ElevenLabs |
+| **meta-vengine** | Python | THE CLOSED LOOP, The system that improves itself. Bidirectional Co-Evolution, HSRGS Routing, D-Ecosystem |
+| **ResearchGravity** | Python | Metaventions AI Research Framework, Multi-tier signal capture for frontier intelligence |
+| **agent-core** | Python | Unified research orchestration for CLI, Antigravity, and web, Innovation Scout, URL logging, cross-environment sync |
 
 ### Career & Professional Tools
 | Repository | Language | Description |
 |------------|----------|-------------|
-| **CareerCoachAntigravity** | TypeScript | Sovereign Career Intelligence — AI-powered positioning, skill graphs, and multi-agent hiring simulation |
+| **CareerCoachAntigravity** | TypeScript | Sovereign Career Intelligence, AI-powered positioning, skill graphs, and multi-agent hiring simulation |
 | **career-coach-mvp** | TypeScript | AI Hiring Panel Verdict - Multi-agent resume analysis with Nexus Engine |
 | **dicoangelo.com** | TypeScript | Personal portfolio site - Builder-Operator Hybrid showcasing AI systems and enterprise GTM experience |
 
@@ -421,20 +421,20 @@ A multi-agent hiring panel simulation that generates role-specific feedback from
 | Repository | Language | Description |
 |------------|----------|-------------|
 | **enterprise-deck** | HTML | Metaventions Enterprise Pitch Deck |
-| **sovereign-deck** | HTML | Metaventions AI — Investor presentation and pitch deck materials |
+| **sovereign-deck** | HTML | Metaventions AI, Investor presentation and pitch deck materials |
 | **metaventions-pitch-deck-2026** | HTML | Metaventions AI Enterprise Pitch Deck - Protocol substrate ownership, 94% margin model |
-| **Metaventions-AI-Landing** | TypeScript | Official landing page for Metaventions AI — Architected Intelligence |
+| **Metaventions-AI-Landing** | TypeScript | Official landing page for Metaventions AI, Architected Intelligence |
 
 ### Productivity & Utilities
 | Repository | Language | Description |
 |------------|----------|-------------|
-| **FlowDesk** | Lua | Multi-monitor workspace automation for macOS — 5 layouts, auto-launch, smart hide, numpad controls |
+| **FlowDesk** | Lua | Multi-monitor workspace automation for macOS, 5 layouts, auto-launch, smart hide, numpad controls |
 | **chrome-history-export** | Python | Transform Chrome browsing history into AI-ready insights. Multi-platform export optimized for NotebookLM, Gemini, Grok, Cursor |
 
 ### Brand & Identity
 | Repository | Language | Description |
 |------------|----------|-------------|
-| **Dicoangelo** | Markdown | Profile README — Architecting Sovereign AI Infrastructure |
+| **Dicoangelo** | Markdown | Profile README, Architecting Sovereign AI Infrastructure |
 | **The-Decosystem** | Markdown | Uncovering Untapped Value, Synthesizing Data Streams, Building Sovereign Outputs |
 
 **Note:** 14 repositories are private (proprietary code). 7 are public for demonstration and open-source contribution.
@@ -526,7 +526,7 @@ A multi-agent hiring panel simulation that generates role-specific feedback from
 - Built meta-orchestrator for autonomy
 
 ### Contentsquare (Jan 2022 - Nov 2025)
-**Cloud Alliance Operations Lead | Systems Integration | Partner Intelligence | Platform Administration**
+**Sr. Partner Systems and Operations Specialist | Systems Integration | Partner Intelligence | Platform Administration**
 
 **Role:** Operations on a 3-person alliance team. Head of Cloud Alliances led partnership strategy and exec relationships with AWS and Microsoft; I ran the operational layer (CRM architecture, automation, dashboards, enablement) that turned strategy into $30M+ ACV growth.
 
@@ -634,7 +634,7 @@ Led end-to-end User Acceptance Testing for the PartnerStack-Salesforce bidirecti
 | **Skilljar** | Partner University | Training/LMS integration |
 | **Crossbeam** | Account Mapping | Partner overlap analysis |
 
-**Additional Tools:** Tableau, Monday.com, Miro, SuperGlue
+**Additional Tools:** Monday.com, Miro, SuperGlue
 
 ---
 
@@ -668,12 +668,12 @@ Personal methodology applied across all workstreams:
 ---
 
 #### Recognition
-- "Best-in-class" reporting — executive praise
-- Suger thought leader — public recognition
+- "Best-in-class" reporting, executive praise
+- Suger thought leader, public recognition
 - 2x Microsoft Partner of the Year contributor
-- **Catalyst 2026 Speaker** — Featured testimonial: *"Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience."* ([source](https://www.joincatalyst.com/catalyst26))
-- **1159.ai Innovation Workshop** — Featured testimonial on rapid prototyping and iterative design: *"This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment... The iterative process we followed enabled us to test and refine our ideas rapidly, collaboratively engaging with previous iterations to find the best solution."* ([source](https://blog.1159.ai/the-art-and-science-of-innovation))
-- **Suger.io Case Study** — Featured in vendor case study as Cloud Alliance Operations Lead: *"Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool—it's become an extension of our team."* ([source](https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits))
+- **Catalyst 2026 Speaker**: Featured testimonial: *"Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience."* ([source](https://www.joincatalyst.com/catalyst26))
+- **1159.ai Innovation Workshop**: Featured testimonial on rapid prototyping and iterative design: *"This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment... The iterative process we followed enabled us to test and refine our ideas rapidly, collaboratively engaging with previous iterations to find the best solution."* ([source](https://blog.1159.ai/the-art-and-science-of-innovation))
+- **Suger.io Case Study**: Featured in vendor case study as Sr. Partner Systems and Operations Specialist: *"Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool, it's become an extension of our team."* ([source](https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits))
 
 ### Rocket Mortgage Canada (Jun 2020 - May 2023)
 **Product Success Specialist**
@@ -729,8 +729,8 @@ Personal methodology applied across all workstreams:
 - Oversee organizational functions including financing, marketing, and accounting
 
 **Partnerships:**
-- **Ontario Trillium Foundation** — Grant partnership
-- **United Way** — Community partnership
+- **Ontario Trillium Foundation**: Grant partnership
+- **United Way**: Community partnership
 
 **Community Impact:**
 - Train and mentor at-risk youth through sports and personal development
@@ -766,7 +766,7 @@ Personal methodology applied across all workstreams:
 **University of Windsor - Odette School of Business**
 - Bachelor of Business Administration (BBA), Marketing
 - Graduated: 2019
-- **SpaceX Hyperloop 2019 Competition Finalist** — Engineering Business Marketing Lead for UWindsor Loop team
+- **SpaceX Hyperloop 2019 Competition Finalist**: Engineering Business Marketing Lead for UWindsor Loop team
 
 ---
 
@@ -806,10 +806,10 @@ Personal methodology applied across all workstreams:
 - Web3 Toronto (every few months)
 
 **Web3 & Blockchain Conferences:**
-- **Capital Factory** — Austin
-- **Miami Art Basel / Miami Hack Week** — Miami
-- **NFT NYC** — New York
-- **Blockchain Futurist / EthToronto** — Toronto
+- **Capital Factory**: Austin
+- **Miami Art Basel / Miami Hack Week**: Miami
+- **NFT NYC**: New York
+- **Blockchain Futurist / EthToronto**: Toronto
 
 **Investor Access:**
 - CoinFund (attended several events)
@@ -1010,12 +1010,12 @@ OBSERVE → SYNTHESIZE → BUILD → COMPOUND
 
 ### META-VENGINE: The 9 Systems
 
-META-VENGINE is a **bidirectional co-evolution engine** — a sophisticated self-improving AI productivity system containing 9 integrated systems across 2,051 code artifacts.
+META-VENGINE is a **bidirectional co-evolution engine**: a sophisticated self-improving AI productivity system containing 9 integrated systems across 2,051 code artifacts.
 
-#### System 1: Cognitive OS — Energy-Aware Routing
+#### System 1: Cognitive OS, Energy-Aware Routing
 **Purpose:** Time-aware cognitive modeling that predicts session outcomes and protects flow states.
 
-**Implementation:** Python (`~/.claude/kernel/cognitive-os.py` — 1,901 LOC)
+**Implementation:** Python (`~/.claude/kernel/cognitive-os.py`, 1,901 LOC)
 
 **Features:**
 - 5 cognitive modes (morning, peak, dip, evening, deep_night)
@@ -1024,10 +1024,10 @@ META-VENGINE is a **bidirectional co-evolution engine** — a sophisticated self
 - PersonalRouter for energy-aware model selection
 - Peak hours tracked: 20:00, 12:00, 02:00
 
-#### System 2: DQ Routing System — Decision Quality Model Selection
+#### System 2: DQ Routing System, Decision Quality Model Selection
 **Purpose:** Intelligent multi-model routing (Haiku/Sonnet/Opus) using DQ scoring.
 
-**Implementation:** JavaScript/Python (`~/.claude/kernel/dq-scorer.js` — 21,910 LOC)
+**Implementation:** JavaScript/Python (`~/.claude/kernel/dq-scorer.js`, 21,910 LOC)
 
 **Algorithm:**
 ```
@@ -1044,7 +1044,7 @@ Route to:
 - 0.889 average DQ score
 - 93% cache efficiency
 
-#### System 3: Recovery Engine — Self-Healing Infrastructure
+#### System 3: Recovery Engine, Self-Healing Infrastructure
 **Purpose:** Automatic error detection and remediation.
 
 **Implementation:** Python (`~/.claude/kernel/recovery-engine.py`)
@@ -1054,25 +1054,25 @@ Route to:
 **Categories:** Git errors, concurrency, permissions, quota, crash, recursion, syntax
 
 **Auto-Fix Actions:**
-- `fix_username_case` — Correct GitHub username
-- `clear_git_locks` — Remove stale locks
-- `reset_permissions` — Fix file access
-- `rebuild_cache` — Clear corrupted state
+- `fix_username_case`, Correct GitHub username
+- `clear_git_locks`, Remove stale locks
+- `reset_permissions`, Fix file access
+- `rebuild_cache`, Clear corrupted state
 
-#### System 4: Supermemory — Cross-Session Intelligence
+#### System 4: Supermemory, Cross-Session Intelligence
 **Purpose:** Transform telemetry into compounding cross-session knowledge.
 
-**Implementation:** Python/SQLite (`~/.claude/kernel/supermemory.py` — 1,051 LOC)
+**Implementation:** Python/SQLite (`~/.claude/kernel/supermemory.py`, 1,051 LOC)
 
 **Components:**
-- Session Synthesis — Post-session learning extraction
-- Context Linking — Connect orphaned data
-- Weekly Synthesis — Cross-domain correlation
-- Knowledge Graph — Semantic relationships
-- Briefing Generator — Pre-session context
-- Spaced Repetition — Error pattern learning
+- Session Synthesis, Post-session learning extraction
+- Context Linking, Connect orphaned data
+- Weekly Synthesis, Cross-domain correlation
+- Knowledge Graph, Semantic relationships
+- Briefing Generator, Pre-session context
+- Spaced Repetition, Error pattern learning
 
-#### System 5: Multi-Agent Coordinator — Parallel Orchestration
+#### System 5: Multi-Agent Coordinator, Parallel Orchestration
 **Purpose:** Orchestrate multiple Claude agents for parallel research, building, and review.
 
 **Strategies:**
@@ -1115,7 +1115,7 @@ USER REQUEST
               └───────────────────────┘
 ```
 
-#### System 6: ACE — Adaptive Consensus Engine
+#### System 6: ACE, Adaptive Consensus Engine
 **Purpose:** Synthesize results from multiple agents using DQ-weighted voting.
 
 **Architecture:**
@@ -1135,7 +1135,7 @@ Weighted Voting → Outcome consensus
 - Identifies hidden assumptions
 - Prevents groupthink
 
-#### System 7: Observatory — Unified Analytics
+#### System 7: Observatory, Unified Analytics
 **Purpose:** Comprehensive metrics across all Claude Code operations.
 
 **Metrics Tracked:**
@@ -1148,7 +1148,7 @@ Weighted Voting → Outcome consensus
 
 **Data Authenticity:** 97% real, 3% calculated, 0% simulated
 
-#### System 8: Context Packs V2 — 7-Layer Semantic Selection
+#### System 8: Context Packs V2, 7-Layer Semantic Selection
 **Purpose:** Intelligent context selection using embeddings and layered scoring.
 
 **Layers:**
@@ -1160,7 +1160,7 @@ Weighted Voting → Outcome consensus
 6. Historical utility
 7. Token budget optimization
 
-#### System 9: Learning Hub — Cross-Domain Correlation
+#### System 9: Learning Hub, Cross-Domain Correlation
 **Purpose:** Unified aggregation of all learning systems.
 
 **Features:**
@@ -1177,7 +1177,7 @@ Weighted Voting → Outcome consensus
 ```
 Friction Signal → Hypothesis → Code Generation → Sandbox Test → User Approval → Hot Reload
 ```
-The OS watches for repeated errors, long pauses, dead ends — then **writes its own improvements**.
+The OS watches for repeated errors, long pauses, dead ends, then **writes its own improvements**.
 
 #### 2. Dream Protocol (OS-App)
 When idle 5+ minutes:
@@ -1199,7 +1199,7 @@ Pure symbolic reasoning, no LLM needed:
 - 5-level verb depth scoring ("architected" > "managed" > "built" > "used" > "familiar")
 - 229 trigger patterns → inferred skills with confidence
 - Evidence chains traceable to source text
-- **Anti-bullshit resume design** — claims are structurally verifiable
+- **Anti-bullshit resume design**: claims are structurally verifiable
 
 #### 5. Research → Implementation Lineage (ResearchGravity)
 ```
@@ -1220,10 +1220,10 @@ projects.json lineage.features_implemented
 ### OS-App Deep Architecture
 
 #### Agentic Kernel (/services/kernel/)
-- **AgentKernel.ts** — Central dispatcher with state machine: BOOTING → IDLE → PROCESSING → PAGING → SUSPENDED
-- **KernelScheduler.ts** — Priority queue: CRITICAL(100) → HIGH(75) → NORMAL(50) → LOW(25) → BACKGROUND(10)
-- **IntentResolver.ts** — 8 intent categories: NAVIGATION, QUERY, MUTATION, CREATION, ANALYSIS, ORCHESTRATION, BIOMETRIC, UI_REGENERATION
-- **SemanticPager.ts** — Context management with LRU/LFU/RELEVANCE eviction policies
+- **AgentKernel.ts**: Central dispatcher with state machine: BOOTING → IDLE → PROCESSING → PAGING → SUSPENDED
+- **KernelScheduler.ts**: Priority queue: CRITICAL(100) → HIGH(75) → NORMAL(50) → LOW(25) → BACKGROUND(10)
+- **IntentResolver.ts**: 8 intent categories: NAVIGATION, QUERY, MUTATION, CREATION, ANALYSIS, ORCHESTRATION, BIOMETRIC, UI_REGENERATION
+- **SemanticPager.ts**: Context management with LRU/LFU/RELEVANCE eviction policies
 
 #### The 5-Agent Hive
 | Agent | Role | Skepticism | Logic | Creativity |

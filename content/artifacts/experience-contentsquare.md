@@ -1,8 +1,8 @@
-# Contentsquare: Cloud Alliance Operations Lead
+# Contentsquare: Sr. Partner Systems and Operations Specialist
 
 ## Overview
 
-Externally titled **Cloud Alliance Operations Lead** (Suger.io case study, Catalyst Summit). Operated on a 3-person alliance team supporting AWS, Microsoft, and GCP partnerships. I owned the operational layer (CRM architecture, automation, dashboards, enablement, UAT) and the daily execution that powered $30M+ ACV growth on the program. The role spanned four concurrent domains: (1) cloud marketplace operations at enterprise scale, (2) systems integration architecture across CRM, PRM, and data platforms, (3) partner intelligence infrastructure with 50+ dynamic reports, and (4) platform administration for critical GTM tools.
+Externally titled **Sr. Partner Systems and Operations Specialist** (Suger.io case study, Catalyst Summit). Operated on a 3-person alliance team supporting AWS, Microsoft, and GCP partnerships. I owned the operational layer (CRM architecture, automation, dashboards, enablement, UAT) and the daily execution that powered $30M+ ACV growth on the program. The role spanned four concurrent domains: (1) cloud marketplace operations at enterprise scale, (2) systems integration architecture across CRM, PRM, and data platforms, (3) partner intelligence infrastructure with 50+ dynamic reports, and (4) platform administration for critical GTM tools.
 
 The work bridged technical infrastructure with business operations, building automation that processed $800M+ in total contract value while operationalizing the systems, workflows, and intelligence layers that powered a 3,000+ partner ecosystem.
 
@@ -146,7 +146,7 @@ These insights powered strategic decision-making across Sales, Marketing, and Pr
 | **Skilljar** | Partner University | Training/LMS integration |
 | **Crossbeam** | Account Mapping | Partner overlap analysis |
 
-**Additional Tools:** Tableau, Monday.com, Miro, AirTable, SuperGlue
+**Additional Tools:** Monday.com, Miro, AirTable, SuperGlue
 
 **Platform Expertise:**
 - Configured bidirectional sync workflows across platforms
@@ -215,7 +215,7 @@ These insights powered strategic decision-making across Sales, Marketing, and Pr
 - **2x Microsoft Partner of the Year** awards (team contributor, 2024, 2025)
 - **Catalyst 2026 Speaker.** Featured testimonial: *"Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience."* ([source](https://www.joincatalyst.com/catalyst26))
 - **1159.ai Innovation Workshop.** Featured testimonial on rapid prototyping and iterative design: *"This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment... The iterative process we followed enabled us to test and refine our ideas rapidly, collaboratively engaging with previous iterations to find the best solution."* ([source](https://blog.1159.ai/the-art-and-science-of-innovation))
-- **Suger.io Case Study.** Featured as Cloud Alliance Operations Lead: *"Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool, it's become an extension of our team."* ([source](https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits))
+- **Suger.io Case Study.** Featured as Sr. Partner Systems and Operations Specialist: *"Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool, it's become an extension of our team."* ([source](https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits))
 
 **Internal Praise:**
 - "Best-in-class" reporting (executive praise)
@@ -311,7 +311,7 @@ These insights powered strategic decision-making across Sales, Marketing, and Pr
 
 **Data & Analytics:**
 - Tableau (executive dashboards, partner insights)
-- SQL (data warehouse queries, commission calculation)
+- AI-assisted SQL via Claude Code (data warehouse queries, commission calculation)
 - Propensity modeling (pipeline scoring)
 - Pipeline health scoring (conversion probability)
 

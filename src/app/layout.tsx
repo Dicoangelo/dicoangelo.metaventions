@@ -19,8 +19,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Dico Angelo — Operations Leader | AI Systems Builder",
-  description: "Operated cloud ops on the 3-person alliance team at Contentsquare. Program scaled $0 → $30M+ across AWS and Microsoft, $800M+ TCV, 2x MSFT Partner of the Year — I ran the operational layer (CRM, automation, dashboards) that turned strategy into velocity. Now shipping 900K+ lines of production AI systems across 20+ deployed systems.",
+  title: "Dico Angelo, Operations Leader and AI Systems Builder",
+  description: "Operated cloud ops on the 3-person alliance team at Contentsquare. The program reached $0 to $30M+ marketplace revenue in 30 months across AWS and Microsoft, $800M+ TCV registered, 2x Microsoft Partner of the Year. I owned the operational layer (CRM, automation, dashboards). Now shipping 900K+ lines of production AI systems across 20+ deployed systems.",
   keywords: [
     "Cloud Alliance Manager",
     "Partner Operations",
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Dico Angelo", url: SITE_URL }],
   creator: "Dico Angelo",
   openGraph: {
-    title: "Dico Angelo — Operations Leader & AI Systems Builder",
-    description: "Cloud ops on the 3-person alliance team. Program scaled $0 → $30M+ in 30 months — I ran the operational layer (CRM, automation, dashboards). $800M+ TCV. 2x MSFT Partner of the Year. 900K+ lines of production AI systems shipped.",
+    title: "Dico Angelo, Operations Leader and AI Systems Builder",
+    description: "Cloud ops on the 3-person alliance team. Program reached $0 to $30M+ marketplace revenue in 30 months. I owned the operational layer (CRM, automation, dashboards). $800M+ TCV. 2x Microsoft Partner of the Year. 900K+ lines of production AI systems shipped.",
     type: "website",
     url: SITE_URL,
     siteName: "Dico Angelo Portfolio",
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dico Angelo — Operations Leader & AI Systems Builder",
-    description: "Cloud ops on 3-person alliance team. Program scaled $0 → $30M+; I ran the operational layer. $800M+ TCV. 2x MSFT POTY. 900K+ LOC across 20+ AI systems.",
+    title: "Dico Angelo, Operations Leader and AI Systems Builder",
+    description: "Cloud ops on 3-person alliance team. Program reached $0 to $30M+ marketplace revenue. I owned the operational layer. $800M+ TCV. 2x Microsoft POTY. 900K+ LOC across 20+ AI systems.",
     creator: "@dicoangelo",
     images: ["/headshot.jpg"],
   },
@@ -89,7 +89,7 @@ const personSchema = {
   "@type": "Person",
   name: "Dico Angelo",
   jobTitle: "Operations Leader & AI Systems Builder",
-  description: "Operated cloud ops on the 3-person alliance team at Contentsquare. Program scaled $0 → $30M+ across AWS and Microsoft ($800M+ TCV) — ran the operational layer (CRM, automation, dashboards) while shipping 900K+ lines of production AI systems",
+  description: "Operated cloud ops on the 3-person alliance team at Contentsquare. Program reached $0 to $30M+ marketplace revenue across AWS and Microsoft ($800M+ TCV). I owned the operational layer (CRM, automation, dashboards) while shipping 900K+ lines of production AI systems",
   url: SITE_URL,
   email: "hello@dicoangelo.com",
   nationality: "Canadian",

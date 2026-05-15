@@ -4,14 +4,14 @@
 **Status:** Saved for later
 
 ## Current Problem
-- 29 sections on one page — way too long (~43,000px)
-- `ProjectShowcase` and `ProjectsSection` showed overlapping projects (fixed — removed ProjectsSection)
+- 29 sections on one page, way too long (~43,000px)
+- `ProjectShowcase` and `ProjectsSection` showed overlapping projects (fixed, removed ProjectsSection)
 - `AnimatedMetrics` overlaps with `ProofSection`
 - Side nav dots AND top nav = redundant
 
 ## Proposed Structure
 
-### Homepage (`/`) — 7 sections max
+### Homepage (`/`), 7 sections max
 
 | # | Section | Notes |
 |---|---------|-------|
@@ -27,17 +27,17 @@
 
 | Route | Content (moved from homepage) |
 |-------|------|
-| `/projects` | `ProjectShowcase` + `ProjectsSection` merged — full grid with filters |
+| `/projects` | `ProjectShowcase` + `ProjectsSection` merged, full grid with filters |
 | `/resume` | `ResumeDownload` + `CareerTimeline` + `SkillsVisualization` |
-| `/analyze` | Already exists — JD Analyzer |
-| `/see-more` | Already exists — technical deep dive |
+| `/analyze` | Already exists, JD Analyzer |
+| `/see-more` | Already exists, technical deep dive |
 
 ### Sections to consolidate
-- `AnimatedMetrics` — merge into `ProofSection`
-- `LogoWall` — fold into footer or proof section
-- `ArenaSection` — move to `/resume` as "Beyond Work"
-- `SectionNav` (side dots) — remove, top nav handles it
-- `Testimonials` — move to `/resume` or keep 1-2 on homepage
+- `AnimatedMetrics`, merge into `ProofSection`
+- `LogoWall`, fold into footer or proof section
+- `ArenaSection`, move to `/resume` as "Beyond Work"
+- `SectionNav` (side dots), remove, top nav handles it
+- `Testimonials`, move to `/resume` or keep 1-2 on homepage
 
 ### Nav Update
 

@@ -21,9 +21,9 @@ interface ProjectShowcaseProps {
 
 const projects: Project[] = [
   {
-    name: "Partnership Graph",
-    tagline: "Bloomberg Terminal for Partnership Intelligence",
-    description: "MCP-native partnership intelligence platform with 13 tools, AI scoring, and a React 19 dashboard. Built on UCW cognitive equity substrate to turn partner ops from spreadsheet hell into a queryable graph.",
+    name: "Partnership Graph (Concept Demo)",
+    tagline: "Hypothetical partner-intelligence layer, custom-built concept demo",
+    description: "A custom-built concept demo (not a launched product): an MCP-native partner-intelligence layer with 13 tools, AI scoring, and a React 19 dashboard on the UCW substrate. Designed to complement partner-tech like Crossbeam, Reveal, and PartnerStack, not replace them. All partner data shown is illustrative sample data; the listed partners are unaffiliated.",
     metrics: [
       { label: "MCP Tools", value: "13" },
       { label: "Surface", value: "Dashboard + MCP" },
@@ -38,7 +38,7 @@ const projects: Project[] = [
     ],
     github: "https://github.com/Dicoangelo/partnership-ai-orchestration",
     demo: "https://partnerships.metaventionsai.com",
-    loc: "New"
+    loc: "Concept"
   },
   {
     name: "Frontier Alpha",
@@ -63,7 +63,7 @@ const projects: Project[] = [
   {
     name: "CareerCoach Antigravity",
     tagline: "Sovereign Career Intelligence",
-    description: "AI-driven career operating system — eligibility-gate-first job matching, warm-line outreach, ATS-aware tailoring, and parallel-session coordination. Reclaims agency in an algorithmic hiring world.",
+    description: "AI-driven career operating system: eligibility-gate-first job matching, warm-line outreach, ATS-aware tailoring, and parallel-session coordination. Reclaims agency in an algorithmic hiring world.",
     metrics: [
       { label: "Tests", value: "2,959 passing" },
       { label: "Stack", value: "Next.js 16" },
@@ -83,16 +83,16 @@ const projects: Project[] = [
   {
     name: "FriendlyFace",
     tagline: "Forensic Evidence Generation Platform",
-    description: "Forensic-friendly facial recognition with on-chain evidence sealing. Implements Mohammed's ICDF2C 2024 schema with SOTA 2026 components — ForensicSeal as the core invention, compliance proxy as the business model.",
+    description: "Forensic-friendly facial recognition with on-chain evidence sealing. Implements Mohammed's ICDF2C 2024 schema with SOTA 2026 components. ForensicSeal is the core invention, compliance proxy the business model.",
     metrics: [
-      { label: "Architecture", value: "Layer 3 — Blockchain" },
+      { label: "Architecture", value: "Layer 3: Blockchain" },
       { label: "Schema", value: "ICDF2C 2024" },
       { label: "Mode", value: "Demo-ready" },
       { label: "Core", value: "ForensicSeal" }
     ],
     techStack: ["Prompt Engineering", "Blockchain", "Computer Vision", "ForensicSeal"],
     papers: [
-      "Mohammed et al. ICDF2C 2024 — Forensic FR schema",
+      "Mohammed et al. ICDF2C 2024: Forensic FR schema",
       "On-chain evidence sealing patterns",
       "Compliance-by-proxy business model"
     ],

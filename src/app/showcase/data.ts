@@ -115,7 +115,7 @@ export const showcaseItems: ShowcaseItem[] = [
     num: 1,
     system: "Antigravity OS",
     file: "/showcase/antigravity-dashboard.png",
-    title: "Antigravity OS — Dashboard",
+    title: "Antigravity OS, Dashboard",
     subtitle: "Native macOS App (Tauri + React 19 + Rust)",
     description:
       "Real-time analytics: 412 sessions, 14.8K messages, 28.7K tools, 94.2% cache efficiency. Daily activity charts with multi-metric visualization. SSE streaming from SQLite.",
@@ -126,9 +126,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-cloud", label: "SSE STREAMING" },
     ],
     talkingPoints: [
-      "This is a native macOS desktop app I built with Tauri, React 19, and Rust — it monitors my entire AI development infrastructure in real-time.",
-      "412 sessions tracked, 14.8K messages, 28.7K tool calls — all streamed via SSE from a SQLite backend. It\u2019s how I monitor system health at scale.",
-      "The daily activity chart shows multi-model usage patterns across Opus, Sonnet, and Haiku — relevant to multi-service orchestration at scale.",
+      "This is a native macOS desktop app I built with Tauri, React 19, and Rust, it monitors my entire AI development infrastructure in real-time.",
+      "412 sessions tracked, 14.8K messages, 28.7K tool calls, all streamed via SSE from a SQLite backend. It\u2019s how I monitor system health at scale.",
+      "The daily activity chart shows multi-model usage patterns across Opus, Sonnet, and Haiku, relevant to multi-service orchestration at scale.",
     ],
   },
   {
@@ -147,9 +147,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-data", label: "DQ SCORING" },
     ],
     talkingPoints: [
-      "This is my Decision Quality scoring system — it routes queries to the optimal AI model based on complexity, domain, and cost.",
+      "This is my Decision Quality scoring system, it routes queries to the optimal AI model based on complexity, domain, and cost.",
       "158 routing decisions with 0.890 average DQ score and 89.9% accuracy on Opus. This is the kind of intelligent orchestration layer needed for enterprise AI systems.",
-      "The histogram shows DQ distribution — most decisions cluster above 0.85, meaning the routing heuristic is well-calibrated.",
+      "The histogram shows DQ distribution, most decisions cluster above 0.85, meaning the routing heuristic is well-calibrated.",
     ],
   },
   {
@@ -167,9 +167,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-orchestration", label: "MULTI-AGENT" },
     ],
     talkingPoints: [
-      "This is a multi-agent launch interface — I can spin up parallel AI agents with different model assignments and track their execution.",
+      "This is a multi-agent launch interface, I can spin up parallel AI agents with different model assignments and track their execution.",
       "Each agent gets a PID, model selection (Haiku for fast tasks, Opus for deep reasoning), and real-time status tracking.",
-      "This maps directly to agentic AI workflows — I\u2019ve built the orchestration layer, not just consumed APIs.",
+      "This maps directly to agentic AI workflows, I\u2019ve built the orchestration layer, not just consumed APIs.",
     ],
   },
   {
@@ -177,7 +177,7 @@ export const showcaseItems: ShowcaseItem[] = [
     num: 4,
     system: "Antigravity OS",
     file: "/showcase/antigravity-cognitive.png",
-    title: "Cognitive OS — Energy-Aware Routing",
+    title: "Cognitive OS, Energy-Aware Routing",
     subtitle: "Flow State Detection + Task Recommendations",
     description:
       "Peak performance mode detection, energy gauge (82/100), flow score (0.75). Weekly energy heatmap. AI recommendations: deep architecture, multi-agent coordination, complex refactoring.",
@@ -187,8 +187,8 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-monitoring", label: "FLOW DETECTION" },
     ],
     talkingPoints: [
-      "Cognitive OS detects my flow state and energy level, then routes tasks to the right model — peak energy gets complex architecture work, dips get routine tasks.",
-      "The energy gauge reads 82/100 with a flow score of 0.75 — it uses time-of-day patterns and session history to predict productivity.",
+      "Cognitive OS detects my flow state and energy level, then routes tasks to the right model, peak energy gets complex architecture work, dips get routine tasks.",
+      "The energy gauge reads 82/100 with a flow score of 0.75, it uses time-of-day patterns and session history to predict productivity.",
       "This kind of intelligent automation demonstrates systems that adapt to context, not just follow rules.",
     ],
   },
@@ -207,9 +207,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-monitoring", label: "SESSION TRACKING" },
     ],
     talkingPoints: [
-      "Session intelligence tracking with quality scoring — every AI session gets rated on outcome, complexity, and cost efficiency.",
+      "Session intelligence tracking with quality scoring, every AI session gets rated on outcome, complexity, and cost efficiency.",
       "48.9% completion rate with filterable views by model, outcome, and project. This is operational telemetry at scale.",
-      "The star rating system uses multi-agent consensus (ACE engine) — 6 agents vote on session quality.",
+      "The star rating system uses multi-agent consensus (ACE engine), 6 agents vote on session quality.",
     ],
   },
   {
@@ -228,9 +228,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-data", label: "KNOWLEDGE BASE" },
     ],
     talkingPoints: [
-      "This is a semantic search system over long-term memory — 1,842 items including learnings, error patterns, and knowledge nodes.",
+      "This is a semantic search system over long-term memory, 1,842 items including learnings, error patterns, and knowledge nodes.",
       "It uses spaced repetition for review and constellation visualization for knowledge graph exploration.",
-      "This is essentially a RAG system I built for my own knowledge management — the same architecture applicable to enterprise search problems.",
+      "This is essentially a RAG system I built for my own knowledge management, the same architecture applicable to enterprise search problems.",
     ],
   },
   {
@@ -250,7 +250,7 @@ export const showcaseItems: ShowcaseItem[] = [
     ],
     talkingPoints: [
       "5 MCP servers with 178 tools, all connected via the Model Context Protocol. 15.6K total tool calls tracked in real-time.",
-      "This is microservices architecture in practice — each server is independent (x-twitter, researchgravity, notebooklm, chrome-devtools, supabase) with stdio protocol communication.",
+      "This is microservices architecture in practice, each server is independent (x-twitter, researchgravity, notebooklm, chrome-devtools, supabase) with stdio protocol communication.",
       "I designed the tool registry, health monitoring, and usage analytics from scratch.",
     ],
   },
@@ -270,9 +270,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-ai", label: "AUTOMATION" },
     ],
     talkingPoints: [
-      "Event-driven automation engine with WHEN/AND/THEN rule syntax — 6 rules, 3 currently active, fired 16 times.",
+      "Event-driven automation engine with WHEN/AND/THEN rule syntax, 6 rules, 3 currently active, fired 16 times.",
       "Auto-upgrades to Opus when DQ drops, suggests breaks during energy dips, triggers recovery on error spikes.",
-      "This is self-healing infrastructure — the same pattern applicable to cloud reliability for enterprise clients.",
+      "This is self-healing infrastructure, the same pattern applicable to cloud reliability for enterprise clients.",
     ],
   },
   {
@@ -291,7 +291,7 @@ export const showcaseItems: ShowcaseItem[] = [
     ],
     talkingPoints: [
       "Antifragile system view showing 9,153 autonomous self-heal repairs with 94% error pattern coverage.",
-      "The system doesn\u2019t just detect problems — it fixes them automatically. 70% auto-fix rate without human intervention.",
+      "The system doesn\u2019t just detect problems, it fixes them automatically. 70% auto-fix rate without human intervention.",
       "This is the kind of resilience engineering that matters at enterprise scale.",
     ],
   },
@@ -310,8 +310,8 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-ai", label: "PATTERN DETECTION" },
     ],
     talkingPoints: [
-      "Temporal analysis of development patterns — identifies optimal working windows, productivity cycles, and energy patterns over time.",
-      "This is time-series analytics applied to developer productivity — the same observability approach applicable to cloud system performance monitoring.",
+      "Temporal analysis of development patterns, identifies optimal working windows, productivity cycles, and energy patterns over time.",
+      "This is time-series analytics applied to developer productivity, the same observability approach applicable to cloud system performance monitoring.",
     ],
   },
   {
@@ -329,9 +329,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-orchestration", label: "SELF-IMPROVING" },
     ],
     talkingPoints: [
-      "Co-evolution modifications — the system reads its own behavioral patterns and proposes configuration changes with an audit trail.",
-      "Applied vs pending changes are tracked. It\u2019s a self-improving system — the configuration evolves based on measured outcomes.",
-      "This demonstrates iterative improvement methodology — measure, propose, review, apply — which maps to cloud architecture optimization.",
+      "Co-evolution modifications, the system reads its own behavioral patterns and proposes configuration changes with an audit trail.",
+      "Applied vs pending changes are tracked. It\u2019s a self-improving system, the configuration evolves based on measured outcomes.",
+      "This demonstrates iterative improvement methodology, measure, propose, review, apply, which maps to cloud architecture optimization.",
     ],
   },
   {
@@ -350,7 +350,7 @@ export const showcaseItems: ShowcaseItem[] = [
     ],
     talkingPoints: [
       "Unified project registry across 30+ repositories with session counts, activity status, and cross-project context linking.",
-      "This is how I manage complexity across a large codebase — each project\u2019s health, dependencies, and recent activity visible in one view.",
+      "This is how I manage complexity across a large codebase, each project\u2019s health, dependencies, and recent activity visible in one view.",
       "For multi-client engagements, this kind of project orchestration dashboard is exactly what enterprise delivery needs.",
     ],
   },
@@ -370,9 +370,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-ai", label: "UCW" },
     ],
     talkingPoints: [
-      "Universal Cognitive Wallet — captures and unifies cognitive events from Claude, ChatGPT, Gemini, Grok, and CLI. 174,169 events across 6 platforms.",
-      "This is cross-platform data integration at scale — different APIs, different schemas, unified into a single queryable store.",
-      "The architecture pattern — capture, normalize, enrich, store — is the same for any enterprise data pipeline.",
+      "Universal Cognitive Wallet, captures and unifies cognitive events from Claude, ChatGPT, Gemini, Grok, and CLI. 174,169 events across 6 platforms.",
+      "This is cross-platform data integration at scale, different APIs, different schemas, unified into a single queryable store.",
+      "The architecture pattern, capture, normalize, enrich, store, is the same for any enterprise data pipeline.",
     ],
   },
   // === SYSTEM: ResearchGravity (2 screenshots) ===
@@ -392,7 +392,7 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-orchestration", label: "MCP TOOLS" },
     ],
     talkingPoints: [
-      "ResearchGravity\u2019s full architecture — an 8-tier sovereign research intelligence system with 21 MCP tools.",
+      "ResearchGravity\u2019s full architecture, an 8-tier sovereign research intelligence system with 21 MCP tools.",
       "Full RAG pipeline: signal capture, Cohere embeddings, Qdrant vector search, DQ scoring, knowledge graph, and REST API.",
       "174K+ events processed, 43K vectors indexed across 7 platforms. This is production RAG, not a demo.",
     ],
@@ -412,8 +412,8 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-ai", label: "DEMO" },
     ],
     talkingPoints: [
-      "Animated walkthrough of the ResearchGravity system — session management, URL logging, semantic search, and synthesis pipeline.",
-      "This is the system I use daily for research — it captures, indexes, and synthesizes across multiple knowledge sources.",
+      "Animated walkthrough of the ResearchGravity system, session management, URL logging, semantic search, and synthesis pipeline.",
+      "This is the system I use daily for research, it captures, indexes, and synthesizes across multiple knowledge sources.",
     ],
   },
   // === SYSTEM: UCW Dashboard (3 screenshots) ===
@@ -423,7 +423,7 @@ export const showcaseItems: ShowcaseItem[] = [
     system: "UCW Dashboard",
     file: "/showcase/researchgravity-dashboard.png",
     title: "UCW Coherence Dashboard",
-    subtitle: "Cross-Platform Intelligence — 161K Events / 150K Embeddings",
+    subtitle: "Cross-Platform Intelligence, 161K Events / 150K Embeddings",
     description:
       "Cognitive Sync Pulse visualization showing 7-platform data flow (CLI, ChatGPT, Grok, test, code). Coherence timeline, confidence distribution, signal breakdown radar. Real-time refresh.",
     category: "data",
@@ -433,9 +433,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-ai", label: "COHERENCE" },
     ],
     talkingPoints: [
-      "UCW Coherence Dashboard — cross-platform intelligence capturing 161K events with 150K embeddings.",
+      "UCW Coherence Dashboard, cross-platform intelligence capturing 161K events with 150K embeddings.",
       "It unifies data from Claude, ChatGPT, Grok, and CLI into a single coherence timeline with confidence distribution.",
-      "The Cognitive Sync Pulse visualization shows real-time cross-platform data flow — this is the kind of data pipeline integration enterprise systems need.",
+      "The Cognitive Sync Pulse visualization shows real-time cross-platform data flow, this is the kind of data pipeline integration enterprise systems need.",
     ],
   },
   {
@@ -443,7 +443,7 @@ export const showcaseItems: ShowcaseItem[] = [
     num: 17,
     system: "UCW Dashboard",
     file: "/showcase/researchgravity-dashboard2.png",
-    title: "UCW Coherence Dashboard — Timeline",
+    title: "UCW Coherence Dashboard, Timeline",
     subtitle: "Coherence Arc Detection Over Time",
     description:
       "Temporal view of coherence moments across platforms. Signal type breakdown with radar chart visualization. Confidence distribution histogram.",
@@ -453,8 +453,8 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-ai", label: "PATTERN DETECTION" },
     ],
     talkingPoints: [
-      "Temporal view of coherence moments across platforms — identifies when insights from different AI systems converge on the same topic.",
-      "Signal type breakdown with radar chart and confidence distribution histogram — multi-dimensional analysis of knowledge quality.",
+      "Temporal view of coherence moments across platforms, identifies when insights from different AI systems converge on the same topic.",
+      "Signal type breakdown with radar chart and confidence distribution histogram, multi-dimensional analysis of knowledge quality.",
     ],
   },
   {
@@ -462,7 +462,7 @@ export const showcaseItems: ShowcaseItem[] = [
     num: 18,
     system: "UCW Dashboard",
     file: "/showcase/researchgravity-dashboard3.png",
-    title: "UCW Coherence Dashboard — Signals",
+    title: "UCW Coherence Dashboard, Signals",
     subtitle: "Multi-Dimensional Signal Analysis",
     description:
       "Deep signal analysis across cognitive dimensions: Concept, Temporal, Semantic, Meta-Cognitive, Instinct. Platform network graph showing cross-platform knowledge flow.",
@@ -473,7 +473,7 @@ export const showcaseItems: ShowcaseItem[] = [
     ],
     talkingPoints: [
       "Deep signal analysis across 5 cognitive dimensions: Concept, Temporal, Semantic, Meta-Cognitive, and Instinct.",
-      "Platform network graph shows cross-platform knowledge flow — which systems contribute to which insights.",
+      "Platform network graph shows cross-platform knowledge flow, which systems contribute to which insights.",
       "This multi-dimensional analytics approach is applicable to any complex data analysis problem.",
     ],
   },
@@ -494,9 +494,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-data", label: "17 TABS" },
     ],
     talkingPoints: [
-      "Claude Command Center — a 17-tab real-time analytics dashboard streaming via SSE.",
-      "Specified in English, built by directing Claude Code against an HTTP server and SQLite — zero external dependencies. Monitors 174K+ events.",
-      "This shows systems thinking at scale — real-time streaming, monitoring, and ~9,000 lines of reviewed AI-generated code.",
+      "Claude Command Center, a 17-tab real-time analytics dashboard streaming via SSE.",
+      "Specified in English, built by directing Claude Code against an HTTP server and SQLite, zero external dependencies. Monitors 174K+ events.",
+      "This shows systems thinking at scale, real-time streaming, monitoring, and ~9,000 lines of reviewed AI-generated code.",
     ],
   },
   // === SYSTEM: Metaventions AI (1 screenshot) ===
@@ -505,7 +505,7 @@ export const showcaseItems: ShowcaseItem[] = [
     num: 20,
     system: "Metaventions AI",
     file: "/showcase/metaventions-landing.png",
-    title: "Metaventions AI — Brand",
+    title: "Metaventions AI, Brand",
     subtitle: "Company Identity & Landing Page",
     description:
       "Metaventions AI brand identity. Company behind the sovereign AI infrastructure portfolio. Landing page, product vision, and ecosystem overview.",
@@ -515,9 +515,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-data", label: "COMPANY" },
     ],
     talkingPoints: [
-      "Metaventions AI is the company behind this entire ecosystem — sovereign AI infrastructure as a product.",
+      "Metaventions AI is the company behind this entire ecosystem, sovereign AI infrastructure as a product.",
       "This represents the full journey: from individual tools to an integrated platform to a company with a whitepaper, token economics, and go-to-market.",
-      "It shows thinking at the product and business level, not just the code level — which matters for any client-facing role.",
+      "It shows thinking at the product and business level, not just the code level, which matters for any client-facing role.",
     ],
   },
 ];
@@ -550,7 +550,7 @@ export const liveSites: LiveSite[] = [
   {
     name: "Metaventions AI",
     tech: "VITE / COMPANY LANDING",
-    description: "Official Metaventions AI landing — sovereign AI infrastructure platform",
+    description: "Official Metaventions AI landing, sovereign AI infrastructure platform",
     url: "https://metaventionsai.com",
   },
   {
@@ -560,7 +560,7 @@ export const liveSites: LiveSite[] = [
     url: "https://dicoangelo.metaventionsai.com",
   },
   {
-    name: "OS-App — Sovereign AI OS",
+    name: "OS-App, Sovereign AI OS",
     tech: "REACT 19 / VITE / GEMINI 2.0 / ELEVENLABS / 33K LOC",
     description: "Voice-native AI OS with multi-agent orchestration and biometric sensing",
     url: "https://app.metaventionsai.com",
@@ -568,19 +568,19 @@ export const liveSites: LiveSite[] = [
   {
     name: "Frontier Alpha",
     tech: "AI-DIRECTED BUILD / CVRF / 80+ FACTORS",
-    description: "Cognitive Factor Intelligence Platform — AI-powered portfolio optimization with CVRF",
+    description: "Cognitive Factor Intelligence Platform, AI-powered portfolio optimization with CVRF",
     url: "https://frontier-alpha.metaventionsai.com",
   },
   {
     name: "Career Coach",
     tech: "NEXT.JS 15 / MULTI-AGENT / ZUSTAND",
-    description: "AI career governance — multi-agent hiring panel simulation, NSRG patterns",
+    description: "AI career governance, multi-agent hiring panel simulation, NSRG patterns",
     url: "https://careers.metaventionsai.com",
   },
   {
     name: "Enterprise Deck",
     tech: "HTML / PITCH DECK",
-    description: "Metaventions AI enterprise pitch — UCW, protocol substrate, 94% margin model",
+    description: "Metaventions AI enterprise pitch, UCW, protocol substrate, 94% margin model",
     url: "https://deck.metaventionsai.com",
   },
   {
@@ -592,45 +592,45 @@ export const liveSites: LiveSite[] = [
   {
     name: "Paper to Production",
     tech: "HTML / ARCHITECTURE REPORTS",
-    description: "arXiv papers translated into deployed systems — technical architecture reports",
+    description: "arXiv papers translated into deployed systems, technical architecture reports",
     url: "https://paper-to-production.metaventionsai.com",
   },
   {
     name: "Antigravity Demo",
     tech: "HTML / INTERACTIVE DEMO",
-    description: "Interactive demo of the Antigravity ecosystem — live system walkthrough",
+    description: "Interactive demo of the Antigravity ecosystem, live system walkthrough",
     url: "https://anti-gravity.metaventionsai.com",
   },
   {
     name: "Mass Fintech Hub",
     tech: "HTML / MENTORING PLATFORM",
-    description: "Fintech bootcamp mentoring hub — playbooks, coaching, roundtable prep",
+    description: "Fintech bootcamp mentoring hub, playbooks, coaching, roundtable prep",
     url: "https://mfth.metaventionsai.com",
   },
   // ─── Client Projects ───
   {
     name: "Jordan Signature Event",
     tech: "NEXT.JS 16 / VERCEL / CLIENT PROJECT",
-    description: "Production client website — event marketing & RSVP platform",
+    description: "Production client website, event marketing & RSVP platform",
     url: "https://thesignatureevent.metaventionsai.com",
   },
   {
     name: "BXLENCE Hospitality",
     tech: "NEXT.JS 16 / SUPABASE / STRIPE / CLIENT PROJECT",
-    description: "Luxury hospitality membership platform — 3-tier membership, event packages",
+    description: "Luxury hospitality membership platform, 3-tier membership, event packages",
     url: "https://bxl.metaventionsai.com",
   },
   {
     name: "FriendlyFace",
     tech: "FASTAPI / AI COMPLIANCE / FORENSIC EVIDENCE / CLIENT PROJECT",
-    description: "Client / collaboration — AI compliance proxy + forensic evidence (ForensicSeal). Built with Mohammed Safiia (ICDF2C 2024 schema)",
+    description: "Client / collaboration, AI compliance proxy + forensic evidence (ForensicSeal). Built with Mohammed Safiia (ICDF2C 2024 schema)",
     url: "https://friendlyface.metaventionsai.com",
   },
   // ─── Vercel-Only Sites ───
   {
     name: "DQ Scoring Collaboration",
     tech: "HTML / RESEARCH PRESENTATION",
-    description: "Philip Drammeh x D'Angelo — DQ scoring production validation (arXiv:2511.15755)",
+    description: "Philip Drammeh x D'Angelo, DQ scoring production validation (arXiv:2511.15755)",
     url: "https://dqscoring.vercel.app",
   },
   {
@@ -640,9 +640,9 @@ export const liveSites: LiveSite[] = [
     url: "https://muchen-roadmap.vercel.app",
   },
   {
-    name: "The Partnership Graph",
+    name: "The Partnership Graph (concept demo)",
     tech: "REACT 19 / RECHARTS / MCP / 13 TOOLS / 93 TESTS",
-    description: "Bloomberg Terminal for partnerships — multi-CRM sync, real-time partner health, AI co-sell content, revenue attribution. Live demo with 15-partner portfolio.",
+    description: "A hypothetical, custom-built concept demo for a partner-intelligence layer (not a launched product): partner health, AI co-sell content, and revenue attribution as a queryable graph that would complement tools like Crossbeam, Reveal, and PartnerStack rather than compete with them. The 15-partner portfolio is illustrative sample data, not real CRM integrations.",
     url: "https://partnerships.metaventionsai.com",
   },
 ];
@@ -660,7 +660,7 @@ export const githubRepos: GithubRepo[] = [
   },
   {
     name: "ResearchGravity",
-    description: "Multi-tier signal capture — 21 MCP tools, knowledge graph, hybrid search, FastAPI, Qdrant",
+    description: "Multi-tier signal capture, 21 MCP tools, knowledge graph, hybrid search, FastAPI, Qdrant",
     match: "RAG + SEARCH",
     matchLevel: "strong",
     visibility: "public",
@@ -681,98 +681,98 @@ export const githubRepos: GithubRepo[] = [
   },
   {
     name: "frontier-alpha",
-    description: "Cognitive Factor Intelligence Platform — AI-powered portfolio optimization with CVRF, 80+ factors",
+    description: "Cognitive Factor Intelligence Platform, AI-powered portfolio optimization with CVRF, 80+ factors",
     match: "AI + FINANCE",
     matchLevel: "strong",
     visibility: "public",
   },
   {
     name: "notebooklm-mcp-cli",
-    description: "NotebookLM MCP server and CLI — 37 tools for notebook management, source curation, AI content",
+    description: "NotebookLM MCP server and CLI, 37 tools for notebook management, source curation, AI content",
     match: "AI WORKFLOWS",
     matchLevel: "strong",
     visibility: "public",
   },
   {
     name: "ucw",
-    description: "Cross-platform AI session capture via MCP protocol — Claude, ChatGPT, Gemini, Grok",
+    description: "Cross-platform AI session capture via MCP protocol, Claude, ChatGPT, Gemini, Grok",
     match: "MULTI-SERVICE AI",
     matchLevel: "strong",
     visibility: "public",
   },
   {
     name: "PageIndex",
-    description: "Vectorless reasoning-based RAG — novel document indexing architecture",
+    description: "Vectorless reasoning-based RAG, novel document indexing architecture",
     match: "RAG INNOVATION",
     matchLevel: "strong",
     visibility: "public",
   },
   {
     name: "dicoangelo.metaventions",
-    description: "Portfolio & AI showcase — specified in English, built by directing Claude Code against Next.js 16 / React 19, 59 components, JD Fit Analyzer",
+    description: "Portfolio & AI showcase, specified in English, built by directing Claude Code against Next.js 16 / React 19, 59 components, JD Fit Analyzer",
     match: "AI-DIRECTED BUILD",
     matchLevel: "strong",
     visibility: "public",
   },
   {
     name: "voice-nexus",
-    description: "Universal multi-provider voice architecture — seamless routing between STT, reasoning, TTS",
+    description: "Universal multi-provider voice architecture, seamless routing between STT, reasoning, TTS",
     match: "AI + AUDIO",
     matchLevel: "strong",
     visibility: "public",
   },
   {
     name: "career-coach-mvp",
-    description: "AI Hiring Panel Verdict — multi-agent resume analysis with Nexus Engine",
+    description: "AI Hiring Panel Verdict, multi-agent resume analysis with Nexus Engine",
     match: "MULTI-AGENT",
     matchLevel: "partial",
     visibility: "public",
   },
   {
     name: "data-arch-guard",
-    description: "Claude Code skill preventing data architecture mistakes — duplicate stores, schema drift",
+    description: "Claude Code skill preventing data architecture mistakes, duplicate stores, schema drift",
     match: "ARCHITECTURE",
     matchLevel: "partial",
     visibility: "public",
   },
   {
     name: "paper-to-production",
-    description: "arXiv papers translated into deployed systems — technical architecture reports",
+    description: "arXiv papers translated into deployed systems, technical architecture reports",
     match: "RESEARCH + DOCS",
     matchLevel: "partial",
     visibility: "public",
   },
   {
     name: "FlowDesk",
-    description: "Multi-monitor workspace automation for macOS — 5 layouts, auto-launch, smart hiding",
+    description: "Multi-monitor workspace automation for macOS, 5 layouts, auto-launch, smart hiding",
     match: "DEVTOOLS",
     matchLevel: "partial",
     visibility: "public",
   },
   {
     name: "The-Decosystem",
-    description: "Sovereign AI systems — uncovering untapped value, synthesizing data streams",
+    description: "Sovereign AI systems, uncovering untapped value, synthesizing data streams",
     match: "ARCHITECTURE",
     matchLevel: "partial",
     visibility: "public",
   },
   {
     name: "Metaventions-AI-Landing",
-    description: "Official landing page for Metaventions AI — Architected Intelligence",
+    description: "Official landing page for Metaventions AI, Architected Intelligence",
     match: "BRAND",
     matchLevel: "partial",
     visibility: "public",
   },
   {
     name: "OpenViking",
-    description: "Open-source context database for AI agents — semantic search, Viking URI system",
+    description: "Open-source context database for AI agents, semantic search, Viking URI system",
     match: "AI + DATABASE",
     matchLevel: "strong",
     visibility: "public",
   },
   {
     name: "cpb-core",
-    description: "Cognitive Precision Bridge — AI orchestration with precision-aware routing",
+    description: "Cognitive Precision Bridge, AI orchestration with precision-aware routing",
     match: "AI ORCHESTRATION",
     matchLevel: "partial",
     visibility: "public",
@@ -786,21 +786,21 @@ export const githubRepos: GithubRepo[] = [
   },
   {
     name: "openclaw",
-    description: "Personal AI assistant — any OS, any platform, Claude-powered",
+    description: "Personal AI assistant, any OS, any platform, Claude-powered",
     match: "AI ASSISTANT",
     matchLevel: "partial",
     visibility: "public",
   },
   {
     name: "DicoroseAngelo.github.io",
-    description: "Original personal site — Black Amethyst Gem, futurist portfolio",
+    description: "Original personal site, Black Amethyst Gem, futurist portfolio",
     match: "PORTFOLIO",
     matchLevel: "partial",
     visibility: "public",
   },
   {
     name: "Dicoangelo",
-    description: "GitHub profile README — Architecting Sovereign AI Infrastructure",
+    description: "GitHub profile README, Architecting Sovereign AI Infrastructure",
     match: "PROFILE",
     matchLevel: "partial",
     visibility: "public",
@@ -808,35 +808,35 @@ export const githubRepos: GithubRepo[] = [
   // ─── Private Repos (19) ───
   {
     name: "OS-App",
-    description: "Sovereign AI OS — 33K LOC, React 19, Vite, Gemini 2.0, ElevenLabs TTS, biometric sensing",
+    description: "Sovereign AI OS, 33K LOC, React 19, Vite, Gemini 2.0, ElevenLabs TTS, biometric sensing",
     match: "AI + AGENTIC SYSTEMS",
     matchLevel: "strong",
     visibility: "private",
   },
   {
     name: "FriendlyFace",
-    description: "Forensic-friendly AI facial recognition — Docker + Fly.io 3-region, LiteFS, ForensicSeal",
+    description: "Forensic-friendly AI facial recognition, Docker + Fly.io 3-region, LiteFS, ForensicSeal",
     match: "CONTAINERS + CLOUD",
     matchLevel: "strong",
     visibility: "private",
   },
   {
     name: "CareerCoachAntigravity",
-    description: "Sovereign career intelligence — Next.js 15, multi-agent hiring panels, Zustand",
+    description: "Sovereign career intelligence, Next.js 15, multi-agent hiring panels, Zustand",
     match: "AI + NEXT.JS",
     matchLevel: "strong",
     visibility: "private",
   },
   {
     name: "agent-core",
-    description: "Unified research orchestration — session archives, project registry, 174K events",
+    description: "Unified research orchestration, session archives, project registry, 174K events",
     match: "DATA + ORCHESTRATION",
     matchLevel: "strong",
     visibility: "private",
   },
   {
     name: "partnership-ai-orchestration",
-    description: "The Partnership Graph — Bloomberg Terminal for Partnership Intelligence, MCP-native",
+    description: "The Partnership Graph: a hypothetical MCP-native concept demo for a partner-intelligence layer (not a launched product), designed to complement partner-tech tooling rather than compete with it",
     match: "AI + STRATEGY",
     matchLevel: "strong",
     visibility: "private",
@@ -850,35 +850,35 @@ export const githubRepos: GithubRepo[] = [
   },
   {
     name: "cognitiveforge",
-    description: "Manufacturing Intelligence Protocol — sovereign agentic AI for manufacturing",
+    description: "Manufacturing Intelligence Protocol, sovereign agentic AI for manufacturing",
     match: "AI + MANUFACTURING",
     matchLevel: "strong",
     visibility: "private",
   },
   {
     name: "parallax",
-    description: "Parallax — Architected Intelligence Engine by Metaventions",
+    description: "Parallax, Architected Intelligence Engine by Metaventions",
     match: "AI ENGINE",
     matchLevel: "strong",
     visibility: "private",
   },
   {
     name: "jordan-signature-event",
-    description: "Production client website — Next.js 16, Vercel deployment, event marketing",
+    description: "Production client website, Next.js 16, Vercel deployment, event marketing",
     match: "CLIENT DELIVERY",
     matchLevel: "strong",
     visibility: "private",
   },
   {
     name: "bxlence-hospitality",
-    description: "BXLENCE Hospitality — neon-luxe ultra-luxury hospitality portfolio, Next.js + Supabase",
+    description: "BXLENCE Hospitality, neon-luxe ultra-luxury hospitality portfolio, Next.js + Supabase",
     match: "CLIENT DELIVERY",
     matchLevel: "strong",
     visibility: "private",
   },
   {
     name: "mass-fintech-hub",
-    description: "Mass Fintech Hub — bootcamp mentoring platform, playbooks, coaching resources",
+    description: "Mass Fintech Hub, bootcamp mentoring platform, playbooks, coaching resources",
     match: "FINTECH + MENTORING",
     matchLevel: "partial",
     visibility: "private",
@@ -892,35 +892,35 @@ export const githubRepos: GithubRepo[] = [
   },
   {
     name: "enterprise-deck",
-    description: "Metaventions Enterprise Pitch Deck — UCW protocol substrate, 94% margin model",
+    description: "Metaventions Enterprise Pitch Deck, UCW protocol substrate, 94% margin model",
     match: "STRATEGY",
     matchLevel: "partial",
     visibility: "private",
   },
   {
     name: "metaventions-pitch-deck-2026",
-    description: "Metaventions AI Enterprise Pitch Deck 2026 — updated investor materials",
+    description: "Metaventions AI Enterprise Pitch Deck 2026, updated investor materials",
     match: "STRATEGY",
     matchLevel: "partial",
     visibility: "private",
   },
   {
     name: "metaventions-landing",
-    description: "Metaventions AI landing page — company site source",
+    description: "Metaventions AI landing page, company site source",
     match: "BRAND",
     matchLevel: "partial",
     visibility: "private",
   },
   {
     name: "career-dossier",
-    description: "Career management dossier — metrics, interview prep, resume artifacts",
+    description: "Career management dossier, metrics, interview prep, resume artifacts",
     match: "CAREER",
     matchLevel: "partial",
     visibility: "private",
   },
   {
     name: "chrome-history-export",
-    description: "Transform Chrome browsing history into AI-ready insights — multi-platform export",
+    description: "Transform Chrome browsing history into AI-ready insights, multi-platform export",
     match: "DATA + TOOLS",
     matchLevel: "partial",
     visibility: "private",
@@ -934,7 +934,7 @@ export const githubRepos: GithubRepo[] = [
   },
   {
     name: "metaventions-ai-v1--18-",
-    description: "Metaventions AI landing — legacy version archive",
+    description: "Metaventions AI landing, legacy version archive",
     match: "ARCHIVE",
     matchLevel: "partial",
     visibility: "private",
@@ -957,7 +957,7 @@ export const dockerEvidence: DockerProject[] = [
   {
     project: "Frontier Alpha",
     files: "Dockerfile, docker-compose.yml",
-    proof: "Cognitive factor intelligence platform — containerized via Docker",
+    proof: "Cognitive factor intelligence platform, containerized via Docker",
   },
   {
     project: "Metaventions Landing",
@@ -977,6 +977,6 @@ export const certifications = [
   "AWS Partner Generative AI on AWS Essentials",
   "AWS Knowledge: Cloud Essentials",
   "AWS Partner Business Accreditation",
-  "Mastering Cloud Marketplaces — Partner Insight",
+  "Mastering Cloud Marketplaces, Partner Insight",
   "AI-First Product Leader (LinkedIn Learning)",
 ];

@@ -70,7 +70,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
         { name: "AWS Cloud Marketplace", level: 95, years: "3 years" },
         { name: "Salesforce Administration", level: 88, years: "3 years" },
         { name: "PRM (PartnerStack, Crossbeam, Reveal)", level: 85, years: "3 years" },
-        { name: "Snowflake, Tableau, Miro, Figma", level: 82, years: "3 years" },
+        { name: "Tableau, Miro", level: 82, years: "3 years" },
       ],
     },
     {
@@ -229,7 +229,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
               <span className="text-sm">🛒 Microsoft Marketplace Private Offer Best Practices</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">📈 Mastering Cloud Marketplaces — Partner Insight</span>
+              <span className="text-sm">📈 Mastering Cloud Marketplaces: Partner Insight</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
               <span className="text-sm">🧠 AI-First Product Leader (LinkedIn Learning)</span>

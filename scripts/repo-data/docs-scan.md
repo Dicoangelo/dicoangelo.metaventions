@@ -7,7 +7,7 @@ Generated: Thu 29 Jan 2026 10:33:39 EST
 ### CONTRIBUTING.md
 # Contributing to OS-App
 
-Thank you for your interest in contributing to **OS-App** — the Sovereign AI Operating System by Metaventions AI!
+Thank you for your interest in contributing to **OS-App**: the Sovereign AI Operating System by Metaventions AI!
 
 ## Ways to Contribute
 
@@ -70,19 +70,19 @@ npm run dev
 
 ## Architecture Guidelines
 
-- **Services** (`/services`) — API integrations, business logic
-- **Components** — React components with clear responsibilities
-- **Hooks** (`/hooks`) — Reusable stateful logic
-- **Store** (`store.ts`) — Zustand global state
+- **Services** (`/services`), API integrations, business logic
+- **Components**: React components with clear responsibilities
+- **Hooks** (`/hooks`), Reusable stateful logic
+- **Store** (`store.ts`), Zustand global state
 
 ## Metaventions Quality Standards
 
 All contributions should align with the Metaventions philosophy:
 
-- **Signal density** — Every addition should move the project forward
-- **Compounding potential** — Features should enable future innovation
-- **Sovereignty** — User data stays with the user
-- **Premium experience** — Polish matters
+- **Signal density**: Every addition should move the project forward
+- **Compounding potential**: Features should enable future innovation
+- **Sovereignty**: User data stays with the user
+- **Premium experience**: Polish matters
 
 ## Questions?
 
@@ -91,7 +91,7 @@ Contact: dicoangelo@metaventionsai.com
 ---
 
 *"Let the invention be hidden in your vision"*
-**Metaventions AI** — Architected Intelligence
+**Metaventions AI**: Architected Intelligence
 
 ### index.html
 
@@ -306,9 +306,9 @@ Use the [Feature Request template](https://github.com/Dicoangelo/ResearchGravity
 
 All contributions should align with the Metaventions philosophy:
 
-- **Signal density** — Every addition should move the project forward
-- **Compounding potential** — Features should enable future innovation
-- **Sovereignty** — User data stays with the user
+- **Signal density**: Every addition should move the project forward
+- **Compounding potential**: Features should enable future innovation
+- **Sovereignty**: User data stays with the user
 
 ## Questions?
 
@@ -317,7 +317,7 @@ Contact: dicoangelo@metaventionsai.com
 ---
 
 *"Let the invention be hidden in your vision"*
-**Metaventions AI** — Architected Intelligence
+**Metaventions AI**: Architected Intelligence
 
 ### ROADMAP.md
 # ResearchGravity + Context Packs - Roadmap
@@ -588,9 +588,9 @@ source ~/.zshrc
 
 All contributions should align with the Metaventions philosophy:
 
-- **Signal density** — Every addition should move the project forward
-- **Compounding potential** — Features should enable future innovation
-- **Sovereignty** — User data stays with the user
+- **Signal density**: Every addition should move the project forward
+- **Compounding potential**: Features should enable future innovation
+- **Sovereignty**: User data stays with the user
 
 ## Questions?
 
@@ -599,7 +599,7 @@ Contact: dicoangelo@metaventionsai.com
 ---
 
 *"Let the invention be hidden in your vision"*
-**Metaventions AI** — Architected Intelligence
+**Metaventions AI**: Architected Intelligence
 
 ## CareerCoachAntigravity
 
@@ -815,7 +815,7 @@ Open an issue for questions or discussions.
 
     
     
-    Metaventions AI — Business Pitch
+    Metaventions AI, Business Pitch
     
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
@@ -1019,7 +1019,7 @@ Open an issue for questions or discussions.
 
     
     
-    Sovereign Cognitive Equity — Metaventions AI
+    Sovereign Cognitive Equity, Metaventions AI
     
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -1223,7 +1223,7 @@ Open an issue for questions or discussions.
 
     
     
-    Metaventions AI — Business Pitch
+    Metaventions AI, Business Pitch
     
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 

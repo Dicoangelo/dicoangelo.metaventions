@@ -7,9 +7,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- **Voice latency overhaul.** Time-to-first-audio cut from ~3-5s to sub-second by pipelining TTS at sentence boundaries: as the LLM streams a response, each completed sentence is synthesized and queued for playback before generation finishes. ElevenLabs now hits the `/stream` endpoint with `optimize_streaming_latency=3` and the `ReadableStream` is proxied straight to the browser. Deepgram turn detection tightened (`utterance_end_ms` 1000 -> 600, silence timeout 1200 -> 600, post-response listen restart 1500 -> 700ms).
+- **VoiceOrb playback rewrite.** Replaced single-buffer `decodeAudioData` playback with a sequential `<audio>`-element queue over object URLs, so playback starts as soon as the first MP3 header is parseable instead of waiting for the whole clip to decode.
+- **Honest voice copy.** Removed the inaccurate "Voice replies use Dico's actual cloned voice" line (production TTS is ElevenLabs Mike streaming, not a cloned xAI voice). Replaced with "Voice replies stream sentence-by-sentence for low-latency conversation."
+- **Up2Youth founding-Director credential.** Career timeline now carries Up2Youth (Founding Director, Mar 2019 - Mar 2022) as a verifiable `work` entry: $255K Government of Ontario Youth Opportunities Fund grant, 36 months, 3-county catchment, with a new "Verifiable sources" block linking the public OTF grant record (otf.ca/grants-awarded/5551) and Up2Youth Windsor's Instagram. Reflected across recruiter-facing content artifacts (early-career, credentials, FAQ, philosophy/values).
+- **Skills accuracy.** Dropped Snowflake and Figma from the dashboard/tooling skill row (kept Tableau, Miro) to match the canonical platform framing.
+- **Partnership Graph reframed as a concept demo.** Every surface (chat system prompt, showcase data, homepage ProjectShowcase card, Hero CTA, BridgeSection, career timeline) now states it is a hypothetical, custom-built proof-of-concept, not a launched product. Positioned as a partner-intelligence layer that complements tools like Crossbeam, Reveal, and PartnerStack rather than competing with them; all partner names/data shown are illustrative and unaffiliated. The chatbot no longer tells visitors it "launched 2026-03-25 with $3.2B SAM."
+
+### Removed
+- **Em dashes site-wide.** 432+ em-dash instances stripped across all content artifacts, docs, public dossiers, README, and rendered timeline/skills copy, replaced with commas, colons, or sentence breaks. The strongest AI-writing tell, now zero across the site.
+
+## [2026-05-03]
+
+### Changed
 - **Voice stack overhaul.** Deepgram STT bumped from `nova-2` to `nova-3` with full feature set: `smart_format`, `utterance_end_ms`, `vad_events`, `numerals`, `filler_words=false`, plus 8 keyterm primings (Dico, Antigravity, Metaventions, etc.) so brand vocabulary stops getting mistranscribed.
-- **TTS provider primary swap.** xAI Custom Voices is now the default TTS provider. ElevenLabs Mike remains as fallback. Set `XAI_API_KEY` in Vercel; voice defaults to stock `eve` until `XAI_VOICE_ID` is set to a cloned voice.
-- **Honest UI label.** VoiceOrb badge now reads `STT: nova-3` (or `STT: browser`) with a hover tooltip — was misleadingly labeled `Deepgram` in a context that implied it was the speaking voice.
+- **TTS provider toggle added.** `TTS_PROVIDER` env switch with xAI Custom Voices wired as an option. Note: production runs ElevenLabs Mike (no `XAI_API_KEY`/`XAI_VOICE_ID` set); the [Unreleased] honest-copy change above corrects the UI to match this reality.
+- **Honest UI label.** VoiceOrb badge now reads `STT: nova-3` (or `STT: browser`) with a hover tooltip, was misleadingly labeled `Deepgram` in a context that implied it was the speaking voice.
 
 ### Security
 - **`/api/deepgram-token` no longer leaks the master API key.** Endpoint now mints a 30-second scoped token via Deepgram's `/v1/auth/grant`. Browser receives the temp token and uses it as a `bearer` WebSocket subprotocol. Fixes a credential exfiltration path that was visible in DevTools.
@@ -36,7 +49,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Nav bar always visible with new Clients tab
 
 ### Changed
-- Full ecosystem data refresh — 900K+ LOC, role synthesis, Google context
+- Full ecosystem data refresh, 900K+ LOC, role synthesis, Google context
 
 ## [2026-03-09]
 ### Changed
@@ -48,7 +61,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [2026-03-06]
 ### Added
-- `/showcase` page — production AI infrastructure gallery
+- `/showcase` page, production AI infrastructure gallery
 
 ### Fixed
 - Footer quick links use absolute paths for cross-page navigation
@@ -69,7 +82,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [2026-02-19]
 ### Added
-- Ecosystem hardening — UCW insights, chat/JD analyzer improvements, CI/CD
+- Ecosystem hardening, UCW insights, chat/JD analyzer improvements, CI/CD
 
 ### Fixed
 - Make lint step non-blocking in CI workflow
@@ -171,10 +184,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Voice interface with Deepgram streaming STT
 - VoiceOrb with real-time TTS audio visualization
 - Calendly scheduling widget in contact section
-- Deep source scan — 658 chunks with rate limit handling
+- Deep source scan, 658 chunks with rate limit handling
 - Dynamic OG and Twitter social sharing images
 - Light/dark mode toggle with D-icosystem branding
-- "In The Arena" section — soft skills, lifestyle, network
+- "In The Arena" section, soft skills, lifestyle, network
 - Comprehensive technical dossier for recruiter AI chat
 - Initial commit: dicoangelo.com portfolio site
 
@@ -183,5 +196,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Light mode contrast across all components
 - Prevent overlapping TTS audio playback
 - Prevent dual STT systems from running simultaneously
-- RAG retrieval improvements — lower threshold, more chunks
+- RAG retrieval improvements, lower threshold, more chunks
 - System prompt strengthening to prevent hallucinations

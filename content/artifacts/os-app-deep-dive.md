@@ -2,9 +2,9 @@
 
 ## Overview
 
-**Structura OS** (codenamed OS-App) is a **voice-native, multi-agent AI operating system interface** representing 127,000+ lines of production-grade TypeScript/React code (AI-generated under my direction — I specify in English, direct Claude Code / Codex CLI / Gemini CLI, review, test, and ship). It's not a prototype—it's a fully-functional AI platform integrating real-time voice AI, recursive language models, multi-agent consensus, and predictive session intelligence. The platform implements the **Precision Bridge Framework** to achieve Opus-quality decisions through Haiku-budget compute by compressing, pre-computing, parallel exploring, accumulating, reconstructing, and verifying decisions.
+**Structura OS** (codenamed OS-App) is a **voice-native, multi-agent AI operating system interface** representing 127,000+ lines of production-grade TypeScript/React code (AI-generated under my direction, I specify in English, direct Claude Code / Codex CLI / Gemini CLI, review, test, and ship). It's not a prototype, it's a fully-functional AI platform integrating real-time voice AI, recursive language models, multi-agent consensus, and predictive session intelligence. The platform implements the **Precision Bridge Framework** to achieve Opus-quality decisions through Haiku-budget compute by compressing, pre-computing, parallel exploring, accumulating, reconstructing, and verifying decisions.
 
-*I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. The code is AI-generated under my architectural direction and review.*
+*I do not claim hand-fluency in TypeScript, JavaScript, Python, AI-assisted SQL via Claude Code, or Bash. The code is AI-generated under my architectural direction and review.*
 
 ## Key Metrics
 
@@ -464,7 +464,7 @@ OS-App implements cutting-edge research from peer-reviewed papers:
 
 ## Version History
 
-### v1.4.0 — Voice Nexus (Current - January 2026)
+### v1.4.0, Voice Nexus (Current - January 2026)
 
 - Multi-provider voice routing (Gemini + Claude + ElevenLabs)
 - Complexity router with DQ-inspired scoring
@@ -473,7 +473,7 @@ OS-App implements cutting-edge research from peer-reviewed papers:
 - Three voice modes (Realtime/Hybrid/Quality)
 - Agent Core SDK integration
 
-### v1.3.0 — ACE & RLM
+### v1.3.0, ACE & RLM
 
 - Adaptive Consensus Engine (ACE) with dynamic thresholds
 - Recursive Language Model (RLM) for infinite context
@@ -481,7 +481,7 @@ OS-App implements cutting-edge research from peer-reviewed papers:
 - HRPO (Hierarchical Response Pattern Optimization)
 - Precision Bridge Framework implementation
 
-### v1.2.0 — Voice Core 2.0
+### v1.2.0, Voice Core 2.0
 
 - Agent hot-swap via voice command
 - Resilient sessions with auto-retry
@@ -551,4 +551,4 @@ dicoangelo@metaventionsai.com
 
 ---
 
-*Built with Metaventions AI — "Let the invention be hidden in your vision"*
+*Built with Metaventions AI, "Let the invention be hidden in your vision"*

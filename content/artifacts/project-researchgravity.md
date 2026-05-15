@@ -2,7 +2,7 @@
 
 ## Overview
 
-ResearchGravity is a research intelligence framework that tracks, indexes, and synthesizes AI research sessions. It provides an MCP server with 21+ tools, a FastAPI-based API, semantic search via Cohere embeddings and Qdrant, a temporal knowledge graph (MiroFish integration), and a ReACT synthesis agent. The system auto-captures research findings from Claude sessions, maintains source lineage, and enables cross-session intelligence through pattern detection and predictive analytics. Specified in English and built by directing Claude Code, Codex CLI, and Gemini CLI — I own architecture, prompts, review, and evaluation.
+ResearchGravity is a research intelligence framework that tracks, indexes, and synthesizes AI research sessions. It provides an MCP server with 21+ tools, a FastAPI-based API, semantic search via Cohere embeddings and Qdrant, a temporal knowledge graph (MiroFish integration), and a ReACT synthesis agent. The system auto-captures research findings from Claude sessions, maintains source lineage, and enables cross-session intelligence through pattern detection and predictive analytics. Specified in English and built by directing Claude Code, Codex CLI, and Gemini CLI, I own architecture, prompts, review, and evaluation.
 
 ## GitHub
 
@@ -49,7 +49,7 @@ https://github.com/Dicoangelo/ResearchGravity
 
 ## Transferable Skills Demonstrated
 
-I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify in English, review AI output, run it against tests, and ship.
+I do not claim hand-fluency in TypeScript, JavaScript, Python, AI-assisted SQL via Claude Code, or Bash. I specify in English, review AI output, run it against tests, and ship.
 
 - **RAG Pipeline Architecture:** Production semantic search with Cohere embeddings, Qdrant vectors, hybrid BM25+cosine retrieval, and reranking
 - **API Security Direction:** JWT authentication, rate limiting, input validation, dead-letter queues for reliability

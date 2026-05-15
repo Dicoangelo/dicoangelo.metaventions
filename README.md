@@ -24,7 +24,7 @@
 
 ## The Proof
 
-This isn't a portfolio template. Every line of the **32,129 lines of TypeScript** was written by AI agents orchestrated through [meta-vengine](https://github.com/Dicoangelo/meta-vengine) — a self-improving routing engine that scores decisions, learns from sessions, and evolves its own configuration.
+This isn't a portfolio template. Every line of the **32,129 lines of TypeScript** was written by AI agents orchestrated through [meta-vengine](https://github.com/Dicoangelo/meta-vengine), a self-improving routing engine that scores decisions, learns from sessions, and evolves its own configuration.
 
 The site itself is evidence of the systems it describes.
 
@@ -85,28 +85,28 @@ flowchart TB
 
 ## Pages
 
-### `/` — Portfolio
+### `/`, Portfolio
 
 The main page is a single-page application with 10 sections, adaptive scroll-aware navigation, and a command palette (`Cmd+K`).
 
 | Feature | What It Does |
 |---------|-------------|
-| **AI Chat** | Claude-powered Q&A about my background — streaming responses, RAG context from 700+ indexed chunks |
+| **AI Chat** | Claude-powered Q&A about my background, streaming responses, RAG context from 700+ indexed chunks |
 | **JD Fit Analyzer** | Paste a job description, get AI-scored fit analysis with gap identification |
-| **Frontier Ops Score** | 5-dimension radar chart — Agentic Fluency, Failure Modeling, Seam Design, Attention Calibration, Evolution Rate |
+| **Frontier Ops Score** | 5-dimension radar chart, Agentic Fluency, Failure Modeling, Seam Design, Attention Calibration, Evolution Rate |
 | **Command Palette** | `Cmd+K` navigation with search, theme toggle, section jumps |
 | **Career Timeline** | Interactive professional journey with expandable details |
 | **Keyboard Shortcuts** | Press `?` for full shortcut reference |
 | **Theme Toggle** | Light/dark with persistent preference and smooth transitions |
-| **GSAP Animations** | Scroll reveals, stagger grids, parallax — respects `prefers-reduced-motion` |
+| **GSAP Animations** | Scroll reveals, stagger grids, parallax, respects `prefers-reduced-motion` |
 
-### `/showcase` — Production AI Showcase
+### `/showcase`, Production AI Showcase
 
 A visual gallery proving that the AI systems described on the portfolio actually exist and work.
 
 | Feature | What It Does |
 |---------|-------------|
-| **20 Screenshots** | Across 5 systems — Antigravity OS (13), ResearchGravity (2), UCW Dashboard (3), Command Center (1), Metaventions AI (1) |
+| **20 Screenshots** | Across 5 systems, Antigravity OS (13), ResearchGravity (2), UCW Dashboard (3), Command Center (1), Metaventions AI (1) |
 | **Presentation Mode** | Full walkthrough with talking points sidebar, keyboard nav (←→), auto-advance timer, ALL/HIGHLIGHTS playlist |
 | **Search & Filter** | Real-time search with category filters (Monitoring, Orchestration, AI/ML, RAG, Cloud) |
 | **Lightbox** | Full-screen viewer with crossfade transitions and body scroll lock |
@@ -194,11 +194,11 @@ dicoangelo.metaventions/
 
 | Layer | Implementation |
 |:------|:--------------|
-| **Rate Limiting** | Upstash Redis — 10 req/min chat, 5 req/min analyzer |
+| **Rate Limiting** | Upstash Redis, 10 req/min chat, 5 req/min analyzer |
 | **Input Validation** | Zod schemas on every API endpoint |
 | **Headers** | CSP, HSTS (1yr), X-Frame-Options DENY, X-Content-Type-Options |
 | **Error Tracking** | Sentry with automatic PII scrubbing |
-| **Type Safety** | TypeScript strict — no implicit any, no unchecked index |
+| **Type Safety** | TypeScript strict, no implicit any, no unchecked index |
 
 ## Development
 
@@ -228,14 +228,14 @@ This portfolio is one node in a larger sovereign AI infrastructure:
 
 | Project | What It Is | Link |
 |:--------|:-----------|:-----|
-| **Antigravity OS** | Sovereign AI OS — 33K LOC, multi-agent orchestration | [app.metaventionsai.com](https://app.metaventionsai.com) |
-| **meta-vengine** | Self-improving routing engine — DQ scoring, co-evolution | [GitHub](https://github.com/Dicoangelo/meta-vengine) |
+| **Antigravity OS** | Sovereign AI OS, 33K LOC, multi-agent orchestration | [app.metaventionsai.com](https://app.metaventionsai.com) |
+| **meta-vengine** | Self-improving routing engine, DQ scoring, co-evolution | [GitHub](https://github.com/Dicoangelo/meta-vengine) |
 | **ResearchGravity** | 21 MCP tools, knowledge graph, hybrid search | [GitHub](https://github.com/Dicoangelo/ResearchGravity) |
-| **antigravity-coordinator** | Multi-agent orchestration — 212 tests, 93.1% routing | [GitHub](https://github.com/Dicoangelo/antigravity-coordinator) |
-| **UCW** | Universal Cognitive Wallet — 174K events across 6 platforms | [GitHub](https://github.com/Dicoangelo/ucw) |
-| **Command Center** | 17-tab real-time dashboard — SSE streaming, 131K events | [GitHub](https://github.com/Dicoangelo/claude-command-center) |
+| **antigravity-coordinator** | Multi-agent orchestration, 212 tests, 93.1% routing | [GitHub](https://github.com/Dicoangelo/antigravity-coordinator) |
+| **UCW** | Universal Cognitive Wallet, 174K events across 6 platforms | [GitHub](https://github.com/Dicoangelo/ucw) |
+| **Command Center** | 17-tab real-time dashboard, SSE streaming, 131K events | [GitHub](https://github.com/Dicoangelo/claude-command-center) |
 | **Metaventions AI** | Company landing page | [metaventionsai.com](https://metaventionsai.com) |
-| **Jordan Signature Event** | Client delivery — production website | [thesignatureevent.metaventionsai.com](https://thesignatureevent.metaventionsai.com) |
+| **Jordan Signature Event** | Client delivery, production website | [thesignatureevent.metaventionsai.com](https://thesignatureevent.metaventionsai.com) |
 
 </div>
 

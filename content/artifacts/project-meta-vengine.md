@@ -2,7 +2,7 @@
 
 ## Overview
 
-META-VENGINE is a bidirectional co-evolution framework that routes AI queries to optimal providers, learns from every session, and self-modifies its own configuration. The system closes the feedback loop between human and AI — telemetry flows up from interactions, the meta-analyzer proposes modifications, and the next session starts measurably better. It supports multi-provider intelligent routing across Ollama, Gemini, Claude, and OpenAI with DQ (Decision Quality) scoring, pattern detection, and autonomous recovery.
+META-VENGINE is a bidirectional co-evolution framework that routes AI queries to optimal providers, learns from every session, and self-modifies its own configuration. The system closes the feedback loop between human and AI, telemetry flows up from interactions, the meta-analyzer proposes modifications, and the next session starts measurably better. It supports multi-provider intelligent routing across Ollama, Gemini, Claude, and OpenAI with DQ (Decision Quality) scoring, pattern detection, and autonomous recovery.
 
 ## GitHub
 
@@ -10,11 +10,11 @@ https://github.com/Dicoangelo/meta-vengine
 
 ## Technical Architecture
 
-*Specified in English and built by directing Claude Code, Codex CLI, and Gemini CLI. I own architecture, prompt specs, review, and deployment — the code is AI-generated under my direction.*
+*Specified in English and built by directing Claude Code, Codex CLI, and Gemini CLI. I own architecture, prompt specs, review, and deployment, the code is AI-generated under my direction.*
 
 - **Runtimes Targeted:** Python 3.8+ / Node.js 18+ / shell scripts (generated, not hand-written)
 - **Storage:** SQLite3 + JSONL (append-only telemetry)
-- **Dependencies:** Zero external frameworks — vanilla runtime + stdlib, by design
+- **Dependencies:** Zero external frameworks, vanilla runtime + stdlib, by design
 - **Routing:** DQ Scorer with HSRGS (Homeomorphic Self-Routing Godel System) for emergent routing
 - **Learning:** Thompson Sampling bandit engine with 19 learnable parameters, 5% max drift/epoch, automatic rollback on 8% reward drop
 - **Providers:** Ollama (local), Gemini 2.0, Claude Opus, OpenAI GPT-4
@@ -52,11 +52,11 @@ https://github.com/Dicoangelo/meta-vengine
 
 ## Transferable Skills Demonstrated
 
-I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify in English, review AI output, run it against tests, and ship.
+I do not claim hand-fluency in TypeScript, JavaScript, Python, AI-assisted SQL via Claude Code, or Bash. I specify in English, review AI output, run it against tests, and ship.
 
 - **Self-Improving System Design:** Bidirectional co-evolution loop where the system reads its own telemetry and modifies its own configuration
 - **Multi-Provider AI Routing:** Intelligent model selection across 4 providers using Decision Quality scoring with Thompson Sampling weight learning
 - **Autonomous Recovery Architecture:** Self-healing infrastructure that detects, classifies, and repairs errors with safe-path validation
 - **Reinforcement Learning Orchestration:** Bandit-based parameter optimization with drift clamping, rollback safety, and feature flags
 - **Observability Direction:** 12-tab command center, append-only JSONL telemetry, real data verification, and multi-dimensional metrics
-- **Zero-Dependency Architecture:** Entire system designed with vanilla runtimes and stdlib — no framework lock-in
+- **Zero-Dependency Architecture:** Entire system designed with vanilla runtimes and stdlib, no framework lock-in

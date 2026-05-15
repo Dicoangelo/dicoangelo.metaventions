@@ -14,7 +14,7 @@ https://careers.metaventionsai.com
 
 ## Technical Architecture
 
-*Specified in English and built by directing Claude Code, Codex CLI, and Gemini CLI. I own architecture, prompts, review, and evaluation — the code is AI-generated under my direction.*
+*Specified in English and built by directing Claude Code, Codex CLI, and Gemini CLI. I own architecture, prompts, review, and evaluation, the code is AI-generated under my direction.*
 
 - **Framework:** Next.js 16, React 19, TypeScript (strict mode, zero `any` types specified in prompts, verified in review)
 - **AI Models:** Claude (core), Grok (tech analysis), Gemini (synthesis), GPT-4o (HR persona)
@@ -34,7 +34,7 @@ https://careers.metaventionsai.com
 | **Multi-Agent Hiring Committee** | 3-agent panel (Hiring Manager, Tech Lead via Grok, HR Partner) with weighted consensus scoring |
 | **Chameleon Engine v2** | Context-aware narrative switching across 4 archetypes: Speed, Safety, Creative, Ecosystem |
 | **Skill Graph Navigator** | GNN-style skill mapping with gravity (demand) and velocity (growth) metrics |
-| **Nexus Engine** | Background data weaving — crystallizes profile, skills, and market gaps into strategic assets |
+| **Nexus Engine** | Background data weaving, crystallizes profile, skills, and market gaps into strategic assets |
 | **Interview Prep** | Question generation, answer scoring, and multi-model AI feedback system |
 | **Coherence Engine** | Pattern detection for skill-demand shifts, tech convergence, and gap clusters |
 | **SUPERMAX Council** | 3-agent review council (Principal Engineer, Product Strategist, QA Lead) |
@@ -59,11 +59,11 @@ Versioned at `/api/v1/` with backwards-compatible legacy routes. Key endpoints i
 
 ## Transferable Skills Demonstrated
 
-I do not claim hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify in English, review AI output, run it against tests, and ship.
+I do not claim hand-fluency in TypeScript, JavaScript, Python, AI-assisted SQL via Claude Code, or Bash. I specify in English, review AI output, run it against tests, and ship.
 
 - **Multi-Agent System Design:** Hiring committee simulation with model-specific personas (Claude for strategy, Grok for technical depth, GPT-4o for culture) and weighted consensus
 - **Career Domain Architecture:** Skill graph with demand gravity and growth velocity, resume narrative switching across 4 archetypes, and market gap detection
-- **Production Next.js Direction:** Next.js 16 with App Router, API versioning, Supabase RLS, Redis rate limiting, and Sentry error tracking — all specified via prompts and validated through review
+- **Production Next.js Direction:** Next.js 16 with App Router, API versioning, Supabase RLS, Redis rate limiting, and Sentry error tracking, all specified via prompts and validated through review
 - **Test-Directed Development:** 1,801 tests across unit, integration, and E2E suites with 60%+ code coverage (specs authored in English, generated and verified by AI tools I direct)
-- **Type-Safe Specification:** Zero `any` types, full strict mode, Zod validation on all API routes — enforced through prompt constraints and code review gates
+- **Type-Safe Specification:** Zero `any` types, full strict mode, Zod validation on all API routes, enforced through prompt constraints and code review gates
 - **Cross-System Integration:** ResearchGravity MCP client for career research signals, META-VENGINE DQ score visualization, and SUPERMAX council for automated review

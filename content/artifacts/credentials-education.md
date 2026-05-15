@@ -47,7 +47,7 @@ A non-traditional path combining formal business education with intensive self-d
 - Resource mobilization (fundraising, sponsor management)
 
 **Why This Matters:**
-This was the **first signal** of the builder-operator hybrid pattern. Most marketing leads don't work on engineering teams. Most engineers don't lead marketing. Dico did both — a pattern that continues in current work (building AI systems while understanding GTM strategy).
+This was the **first signal** of the builder-operator hybrid pattern. Most marketing leads don't work on engineering teams. Most engineers don't lead marketing. Dico did both, a pattern that continues in current work (building AI systems while understanding GTM strategy).
 
 ---
 
@@ -70,7 +70,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 5. **Social Impact:** Enactus focused on entrepreneurship for social good
 
 **Current Relevance:**
-- Community leadership → Now: Bridge Training Services (Director, 2019-Present)
+- Community leadership → Up2Youth (Founding Director, Mar 2019 to Mar 2022): government-funded youth program, $255K Ontario YOF grant, served Black youth ages 15-19
 - Marketing skills → Now: Metaventions AI brand strategy, positioning
 - Mentorship → Now: Open-source contributions, documentation-focused development
 
@@ -97,7 +97,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 
 ### The Alternative Path: Research → Implementation
 
-**Philosophy:** Instead of pursuing a traditional CS degree or PhD, Dico chose to **implement cutting-edge research into production systems** — learning by building, with code as the credential.
+**Philosophy:** Instead of pursuing a traditional CS degree or PhD, Dico chose to **implement cutting-edge research into production systems**: learning by building, with code as the credential.
 
 **Core Principle:**
 > "While others were writing papers, I was implementing them into production systems. The proof is in production, not publications."
@@ -136,7 +136,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 
 ### Skills Acquired (Self-Taught)
 
-**What I do not claim:** Hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash. I specify systems in English, direct AI coding agents to implement them, review the output, run it against tests, and ship.
+**What I do not claim:** Hand-fluency in TypeScript, JavaScript, Python, AI-assisted SQL via Claude Code, or Bash. I specify systems in English, direct AI coding agents to implement them, review the output, run it against tests, and ship.
 
 **AI Coding Agents Directed (Daily Use):**
 - Claude Code (primary system builder)
@@ -150,7 +150,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 - Python services: FastAPI, data pipelines
 - Shell automation: build tooling, CI glue
 - Testing: Vitest (95% coverage enforced via prompt specs)
-- ~900K+ LOC generated, reviewed, and integrated by me — not hand-typed
+- ~900K+ LOC generated, reviewed, and integrated by me, not hand-typed
 
 **AI/ML & Agentic Systems:**
 - Multi-agent orchestration (ACE, ARCHON)
@@ -189,24 +189,24 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 ## Certifications & Training
 
 ### AWS Certifications (2023-2024)
-- **AWS Partner: Business Accreditation** — Business case development, value propositions
-- **AWS Partner: Generative AI on AWS Essentials** — AI/ML on AWS infrastructure
-- **AWS Knowledge: Cloud Essentials** — Cloud fundamentals, architecture
+- **AWS Partner: Business Accreditation**: Business case development, value propositions
+- **AWS Partner: Generative AI on AWS Essentials**: AI/ML on AWS infrastructure
+- **AWS Knowledge: Cloud Essentials**: Cloud fundamentals, architecture
 
-**Context:** Acquired while at Contentsquare as Cloud Alliance Operations Lead. Needed to understand technical infrastructure for $800M+ in AWS marketplace deals.
+**Context:** Acquired while at Contentsquare as Sr. Partner Systems and Operations Specialist. Needed to understand technical infrastructure for $800M+ in AWS marketplace deals.
 
 ### Microsoft Certifications (2024)
-- **Microsoft Copilot for Security Sales Training** — AI security products
+- **Microsoft Copilot for Security Sales Training**: AI security products
 
 **Context:** Supported Microsoft Partner of the Year wins (2x) and $30M+ ACV growth via MSFT partnerships.
 
 ### AI & Cloud Development
-- **Azure Development Learning Certifications** — Azure cloud services
-- **Artificial Intelligence Strategies for Business** — AI business applications
-- **Mastering Cloud Marketplaces: Partner Insight** — Marketplace operations
+- **Azure Development Learning Certifications**: Azure cloud services
+- **Artificial Intelligence Strategies for Business**: AI business applications
+- **Mastering Cloud Marketplaces: Partner Insight**: Marketplace operations
 
 ### Professional Development
-- **Project Management Professional Development** (Coursera) — Agile, stakeholder management
+- **Project Management Professional Development** (Coursera), Agile, stakeholder management
 
 **Why These Matter:**
 - Demonstrates willingness to learn formal methodologies
@@ -529,8 +529,8 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 **1159.ai Innovation Workshop**
 > "This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment... The iterative process we followed enabled us to test and refine our ideas rapidly, collaboratively engaging with previous iterations to find the best solution."
 
-**Suger.io Case Study (Cloud Alliance Operations Lead)**
-> "Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool—it's become an extension of our team."
+**Suger.io Case Study (Sr. Partner Systems and Operations Specialist)**
+> "Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool, it's become an extension of our team."
 
 **What This Proves:**
 - Industry recognition (not just self-promotion)
@@ -566,11 +566,11 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 - Family Office Forums
 
 **Geographic Presence:**
-- Miami (40+ events) — Primary hub
-- Detroit (20+ events) — Community leader
-- NYC (15+ events) — Founder network
-- Toronto (15+ events) — Canadian tech
-- SF Bay (5+ events) — Enterprise AI
+- Miami (40+ events), Primary hub
+- Detroit (20+ events), Community leader
+- NYC (15+ events), Founder network
+- Toronto (15+ events), Canadian tech
+- SF Bay (5+ events), Enterprise AI
 - International: Monaco, Hamptons, Cannes
 
 **Why This Matters:**
