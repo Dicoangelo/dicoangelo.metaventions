@@ -28,7 +28,7 @@ const logos: Logo[] = [
   { name: "ElevenLabs", description: "Voice cloning · production TTS", src: "/logos/elevenlabs.svg", color: "#ffffff" },
   { name: "Vercel", description: "Production deployment infra", src: "/logos/vercel.svg", color: "#ffffff" },
   { name: "Suger", description: "Marketplace operations platform", src: "/logos/suger.svg", color: "#ec4899" },
-  { name: "Contentsquare", description: "5 yrs · Sr. Partner Systems & Ops", src: "/logos/contentsquare.svg", color: "#6366f1" },
+  { name: "Contentsquare", description: "Sr. Partner Systems & Operations · OneCRM, 6 platforms", src: "/logos/contentsquare.svg", color: "#6366f1" },
 ];
 
 const duplicatedLogos = [...logos, ...logos];
