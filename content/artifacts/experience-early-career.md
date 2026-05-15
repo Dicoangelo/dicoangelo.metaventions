@@ -8,8 +8,8 @@ Before enterprise cloud operations at Contentsquare, Dico built foundational ski
 
 ## Rocket Mortgage Canada (Rock Family of Companies)
 
-**Role:** Associate Product Success Specialist
-**Duration:** 2021 - 2022
+**Role:** Product Operations Specialist (entry-level, technical right-hand to the CRO at a small Canadian subsidiary)
+**Duration:** Jun 2020 - May 2023
 **Location:** 156 Chatham St W, Windsor, Ontario
 
 ### Core Responsibilities
@@ -25,7 +25,7 @@ Before enterprise cloud operations at Contentsquare, Dico built foundational ski
 - Facilitated and measured adoption of new product features across operations teams
 - Gathered and compiled feedback on product processing bugs, issues, and best practices
 - Developed business insights on product strategy and drove ideas for the business
-- Led a team of 45 agents through product transitions, system changes, and workflow updates
+- Supported a 45-agent operation through product transitions, system changes, and workflow updates
 
 **System Administration & Process Design**
 - Acted as System Administrator for multiple platforms, managing product lifecycles
@@ -54,7 +54,7 @@ Before enterprise cloud operations at Contentsquare, Dico built foundational ski
 | Go/no-go decision facilitation | Cross-team sign-off before feature releases | Direct: launch review process |
 | Feedback synthesis | Converting user input into actionable improvements | Direct: user research |
 | Cross-functional communication | Bridge between engineering, ops, and business teams | Direct: stakeholder management |
-| Team leadership | Led 45 agents through product and process transitions | Direct: leading without authority |
+| Cross-functional support | Supported a 45-agent operation through product and process transitions | Direct: influence without authority |
 
 ### Why This Matters
 
@@ -94,7 +94,7 @@ The progression from Edison Financial → Rocket Mortgage → Contentsquare reve
 | Stage | Role | Scale | Impact |
 |-------|------|-------|--------|
 | **2020-2021** | Document Review Specialist | Individual contributor | Process efficiency |
-| **2021-2022** | Product Success Specialist | Cross-functional | Product adoption, system admin |
+| **2020-2023** | Product Operations Specialist | Cross-functional | Product adoption, Salesforce admin |
 | **2022-2025** | Sr. Partner Systems and Operations Specialist | Team of 3, $800M+ | Enterprise infrastructure |
 
 Each role built on the previous:

@@ -71,9 +71,9 @@ Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of product
 - Platform admin: Salesforce, AWS ACE, Microsoft Partner Center, PartnerStack, Reveal, Suger
 - 2x Microsoft Partner of the Year
 
-**Rocket Mortgage** (Jun 2020 - May 2023)
-- Product Success Specialist
-- Led 45 agents, $222K savings
+**Rocket Mortgage Canada** (Jun 2020 - May 2023)
+- Product Operations Specialist (entry-level, technical right-hand to the CRO at a small Canadian subsidiary)
+- Built quality-control + eval frameworks supporting a 45-agent operation, $222K savings
 - System Administrator for multiple platforms (Finmo, Lendesk, Floify, DocuSign)
 - Product owner, user stories, agile methodology
 

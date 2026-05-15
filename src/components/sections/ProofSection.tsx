@@ -63,8 +63,8 @@ export function ProofSection({ isLight }: ProofSectionProps) {
           <MetricCard value="40%" label="Cloud Attachment" context="Enterprise deals with cloud platforms" proof="Quarterly reports, 2x Microsoft POY" isLight={isLight} />
           <MetricCard value="50+" label="Dynamic Reports" context="6 platform integrations built" proof="Salesforce, AWS ACE, PartnerStack, Reveal, Suger, Crossbeam" isLight={isLight} />
           <MetricCard value="$222,750" label="Annual Savings" context="Rocket Mortgage Canada" proof="Process optimization documentation" isLight={isLight} />
-          <MetricCard value="45" label="Team Size Led" context="90% satisfaction score" proof="Team management records" isLight={isLight} />
-          <MetricCard value="98%" label="Accuracy Rate" context="Quality control metrics" proof="Performance reviews" isLight={isLight} />
+          <MetricCard value="45" label="Agent Ops Supported" context="Quality-control + eval frameworks built" proof="Process optimization documentation" isLight={isLight} />
+          <MetricCard value="98%" label="Accuracy Rate" context="Quality control metrics" proof="Quality-control documentation" isLight={isLight} />
           <MetricCard value="900K+" label="Lines of AI-Directed Code" context="Across 20+ shipped systems, 44 repos" proof="Structura (85.5K), CareerCoach (26.6K), ResearchGravity (35.2K), Claude Infra (262.4K), plus 16+ production systems" isLight={isLight} />
           <MetricCard value="8+" label="Papers Implemented" context="arXiv research → production" proof="ACE (2511.15755), ARCHON (2601.09742), agent auctions (2511.13193)" isLight={isLight} />
           <MetricCard value="2" label="npm Packages" context="Published & maintained" proof="npmjs.com/@metaventionsai" isLight={isLight} />

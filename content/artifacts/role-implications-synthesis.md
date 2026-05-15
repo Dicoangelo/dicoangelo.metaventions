@@ -6,21 +6,21 @@ This artifact synthesizes the implied competencies and transferable skills from 
 
 ---
 
-## Role 1: Associate Product Success Specialist, Rocket Mortgage Canada (2021-2022)
+## Role 1: Product Operations Specialist, Rocket Mortgage Canada (2020-2023)
 
-**What the title says:** Product specialist helping teams use products.
+**What the title says:** Entry-level product operations specialist (technical right-hand to the CRO at a small Canadian subsidiary).
 **What the role actually was:** Release management, feature launch coordination, and cross-functional program management at the intersection of technology, process, and people.
 
 ### Implied Competencies (for JD matching)
 
 | JD Language | Dico's Equivalent | Evidence |
 |-------------|-------------------|----------|
-| Release management | Managed feature release lifecycle: go/no-go gates, staged rollouts, adoption tracking | Led releases for 45-person operations team |
+| Release management | Coordinated feature release lifecycle: go/no-go gates, staged rollouts, adoption tracking | Supported releases for a 45-person operations team |
 | Product launch lifecycle | End-to-end: requirements → UAT → go/no-go → rollout → post-launch metrics | Each feature update followed this cycle |
 | PRD writing / user stories | Wrote user stories for product development, prioritized backlog | Product owner responsibilities |
 | SDLC participation | Worked directly with software developers on bug reports, feature requests, system behavior | Bridge between engineering and operations |
 | Stakeholder management | Coordinated across engineering, operations, and client-facing teams | 45+ agents, product team, engineering |
-| Leading without authority | Drove adoption of product changes through communication, training, and documentation, not mandate | Led team of 45 without direct reports |
+| Leading without authority | Drove adoption of product changes through communication, training, and documentation, not mandate | Influenced a 45-person operation with no direct reports |
 | System administration | Multi-platform lifecycle management, onboarding, maintenance workflows | System Admin across operational platforms |
 | Technical documentation | Release notes, how-to guides, training materials for each feature update | Created documentation for every release |
 | Change management | Guided operations team through product transitions, system migrations, workflow changes | Multiple platform transitions managed |
@@ -113,14 +113,14 @@ Every role Dico has held operates at the intersection of:
 | Year | Scale | Complexity |
 |------|-------|------------|
 | 2020 | Individual contributor | Document processing |
-| 2021 | Team of 45 | Feature releases, system admin |
+| 2021 | Supported a 45-person op | Feature releases, Salesforce admin |
 | 2023 | $800M+ TCV, 6 functions | Enterprise platform operations |
 | 2025 | 20+ systems, 900K+ LOC | Sovereign AI infrastructure |
 
 ### Enterprise vs. Solo, Both Are Valid
 - **Enterprise program evidence:** Contentsquare (6 workstreams, $800M TCV, Legal/Privacy/Finance coordination)
 - **AI-system delivery evidence:** Metaventions AI (900K+ LOC shipped via prompt engineering + agent orchestration, multi-agent systems, production AI)
-- **Product launch evidence:** Rocket Mortgage PSS (feature releases, go/no-go, adoption tracking)
+- **Product launch evidence:** Rocket Mortgage Product Operations Specialist (feature releases, go/no-go, adoption tracking)
 - **The combination is rare:** Most candidates have enterprise GTM OR AI-system delivery. Dico has both, and neither requires whiteboard-grade language fluency, because the AI coding agents close that gap.
 
 ---

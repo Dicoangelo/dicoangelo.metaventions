@@ -119,8 +119,8 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Yes. Demonstrated leadership and cross-functional collaboration.**
 
-**At Rocket Mortgage:**
-- Led team of **45 agents**
+**At Rocket Mortgage Canada (Product Operations Specialist, technical right-hand to the CRO):**
+- Built quality-control + evaluation systems supporting a **45-agent** operation
 - Delivered $222,750 annual cost savings
 - 98% accuracy rate, 90% satisfaction score
 - System Administrator for multiple platforms (Finmo, Lendesk, Floify, DocuSign)
@@ -503,7 +503,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Led 4 student organizations (VP Marketing, Lead Mentor)
 
 **2020-2023 (Operations + Early Prompt Engineering):**
-- Rocket Mortgage: Product Success Specialist (led 45 agents, system admin)
+- Rocket Mortgage Canada: Product Operations Specialist (technical right-hand to the CRO, supported a 45-agent op, Salesforce admin)
 - Began using GPT-3 / early Codex to generate automation scripts (started 2020)
 - Shipped internal automation tools (document verification, quality dashboards) via prompting
 
@@ -525,7 +525,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 1. **I understand the business.**
    - I know how enterprise sales work ($800M in deals)
-   - I understand customer pain points (Product Success Specialist)
+   - I understand customer pain points (Product Operations Specialist)
    - I can translate technical work into business value
    - I've done GTM operations at scale
 
@@ -605,8 +605,8 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - 2x Microsoft Partner of the Year awards (2024, 2025)
 - "Best-in-class" reporting, executive praise
 
-**At Rocket Mortgage (2020-2023) while learning to code:**
-- Led 45 agents
+**At Rocket Mortgage Canada (2020-2023, Product Operations Specialist) while learning to code:**
+- Built quality-control + eval systems supporting a 45-agent op (technical right-hand to the CRO)
 - $222,750 annual cost savings
 - 98% accuracy, 90% satisfaction
 - System administrator for 4 platforms
@@ -643,7 +643,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 | **Metaventions AI** | Founder | Nov 2025 - Present (5 months) | Current role |
 | **Contentsquare** | Cloud Alliance Ops Lead | Jan 2022 - Nov 2025 (4 years) | Left to build startup full-time |
 | **Edison Financial** | Document Review Specialist | Jul 2021 - Apr 2022 (9 months) | Concurrent with Rocket, left to focus |
-| **Rocket Mortgage** | Product Success Specialist | Jun 2020 - May 2023 (3 years) | Left for Contentsquare (career growth) |
+| **Rocket Mortgage Canada** | Product Operations Specialist | Jun 2020 - May 2023 (3 years) | Left for Contentsquare (career growth) |
 
 **Tenure breakdown:**
 - **Contentsquare:** 4 years (longest tenure, left for entrepreneurship)
@@ -655,7 +655,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 1. **Rocket → Contentsquare (2023):**
    - Moved from Product Specialist into the Cloud Alliance Operations role (externally titled "Sr. Partner Systems and Operations Specialist" via Suger.io and Catalyst)
-   - 3 years at Rocket (delivered $222K savings, led 45 agents)
+   - 3 years at Rocket (delivered $222K savings, supported a 45-agent op as technical right-hand to the CRO)
    - Moved for growth opportunity in cloud partnerships
 
 2. **Contentsquare → Metaventions (2025):**
@@ -694,7 +694,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Weekly cross-functional coordination across 6 teams, had to incorporate feedback continuously
 
 **At Rocket Mortgage:**
-- Managed 45 agents, had to give and receive feedback daily
+- Worked daily with a 45-agent operation and the CRO, giving and receiving feedback constantly
 - 90% satisfaction score (agents felt heard, not micromanaged)
 - Implemented process changes based on agent feedback
 

@@ -33,7 +33,7 @@ const PROFILE_LINKS: { label: string; href: string }[] = [
 ];
 
 const CAREER_STAGES: { label: string; detail: string; state: "done" | "active" }[] = [
-  { label: "Operations IC", detail: "Rocket Mortgage · process automation", state: "done" },
+  { label: "Product Operations Specialist", detail: "Rocket Mortgage Canada · Salesforce data + automation", state: "done" },
   { label: "Sr. Partner Systems & Ops", detail: "Contentsquare · OneCRM, 6 platforms wired", state: "done" },
   { label: "Cloud Alliance Lead", detail: "AWS + MSFT · 2x Partner of the Year", state: "done" },
   { label: "Sovereign AI Builder", detail: "Metaventions · multi-agent orchestration", state: "done" },

@@ -533,25 +533,26 @@ projects.json → lineage.features_implemented
 
 ## Enterprise & GTM Skills
 
-### Cross-Functional Leadership
+### Cross-Functional Support
 
-**Rocket Mortgage (2020-2023, 3 years)**:
-- Led team of **45 agents** (Product Success Specialist)
+**Rocket Mortgage Canada (2020-2023, 3 years), Product Operations Specialist**:
+- Technical right-hand to the CRO at a small Canadian subsidiary: day-to-day Salesforce admin, data, and revenue reporting
+- Built quality-control + evaluation systems supporting a **45-agent** operations team
 - **$222,750 annual cost savings** through automation
 - **7,425 hours/year** time savings
 - **98% accuracy rate**, **90% satisfaction score**
 
 **Skills Demonstrated**:
-- Team leadership and training (45 direct reports)
+- Quality-control system design and process automation supporting a 45-agent operation
 - Process optimization and automation
 - Quality assurance and SOP standardization
-- Product ownership and backlog prioritization
-- Stakeholder management (cross-functional coordination)
+- Backlog prioritization and product-operations support
+- Stakeholder coordination (cross-functional, without authority)
 
 **Quantified Impact**:
 - 30% faster document verification via automation
 - Quality control dashboards reducing error rates
-- Agent training programs improving onboarding speed
+- Onboarding automation improving ramp speed
 
 ---
 
@@ -704,7 +705,7 @@ Every project (OS-App, CareerCoach, ResearchGravity) implements this recursive i
 
 **Cross-Functional Coordination**:
 - **Weekly work stream leadership** at Contentsquare (engineering, product, data, legal, privacy, finance)
-- **45-agent team leadership** at Rocket Mortgage
+- **Quality-control + eval systems** supporting a 45-agent operation at Rocket Mortgage
 - **Multi-stakeholder alignment** for PartnerStack-Salesforce UAT
 
 **Influence Without Authority**:
@@ -833,7 +834,7 @@ I do **not** claim language fluency in TypeScript, JavaScript, Python, AI-assist
 
 **Operator Side**:
 - $800M+ TCV in deal registrations
-- 45-agent team leadership
+- Quality-control + eval systems supporting a 45-agent operation
 - $222K annual cost savings
 - Platform administration (8+ systems)
 

@@ -676,10 +676,10 @@ Personal methodology applied across all workstreams:
 - **Suger.io Case Study**: Featured in vendor case study as Sr. Partner Systems and Operations Specialist: *"Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool, it's become an extension of our team."* ([source](https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits))
 
 ### Rocket Mortgage Canada (Jun 2020 - May 2023)
-**Product Success Specialist**
+**Product Operations Specialist** (entry-level, technical right-hand to the CRO at a small Canadian subsidiary)
 
 **Quantified Impact:**
-- Led team of **45 agents**
+- Built quality-control + evaluation systems supporting a **45-agent** operation
 - **$222,750** annual cost savings
 - **7,425 hours/year** time savings
 - **98%** accuracy rate
@@ -700,7 +700,7 @@ Personal methodology applied across all workstreams:
 - Created and maintained onboarding processes and product maintenance documentation
 
 **Skills Demonstrated:**
-- Team leadership (45 agents)
+- Quality-control + eval systems supporting a 45-agent operation
 - Process optimization
 - Quality assurance
 - Automation implementation
@@ -909,7 +909,7 @@ Scale AI, Databricks, Cohere, Mistral, Hugging Face, Notion, Figma, Vercel, Stri
 ### For TPM/GTM Roles
 1. **Review the metrics:** $800M TCV, 40% attachment, 2x awards
 2. **Check the systems:** OneCRM, deal registration automation
-3. **Verify the scale:** 45 agents led, $222K savings
+3. **Verify the scale:** supported a 45-agent operation (built QC/eval frameworks), $222K savings
 4. **Ask about process:** I can articulate the "why" behind every system
 
 ### For Research Roles
@@ -923,7 +923,7 @@ Scale AI, Databricks, Cohere, Mistral, Hugging Face, Notion, Figma, Vercel, Stri
 ## QUESTIONS RECRUITERS ASK
 
 ### "Can you work in a team?"
-Yes. At Rocket Mortgage, I led 45 agents. At Contentsquare, I coordinated across Sales, Marketing, Product, and Partnerships. My solo projects demonstrate I can **own** end-to-end execution, not that I can't collaborate.
+Yes. At Rocket Mortgage Canada, I was the technical right-hand to the CRO and built quality-control systems supporting a 45-agent operation. At Contentsquare, I coordinated across Sales, Marketing, Product, and Partnerships. My solo projects demonstrate I can **own** end-to-end execution, not that I can't collaborate.
 
 ### "Why no PhD?"
 I chose implementation over academia. While others were writing papers, I was implementing them into production systems. I have 297K LOC of code and 2 published packages. The proof is in production, not publications.
