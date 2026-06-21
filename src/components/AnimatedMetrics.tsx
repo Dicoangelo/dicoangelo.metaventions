@@ -211,7 +211,7 @@ export default function AnimatedMetrics({ className = "" }: AnimatedMetricsProps
       value: 900,
       suffix: "K+",
       label: "Lines of AI-Directed Code",
-      subLabel: "20+ shipped systems, 44 repos",
+      subLabel: "20+ shipped systems, 48 repos",
       accentColor: "#ec4899",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

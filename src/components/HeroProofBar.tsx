@@ -36,7 +36,7 @@ const tiles: Tile[] = [
   {
     value: "900K+",
     label: "Lines AI-Directed Code",
-    sub: "20+ shipped systems · 44 repos",
+    sub: "20+ shipped systems · 48 repos",
     accent: "#ec4899",
     glow: "rgba(236,72,153,0.18)",
   },

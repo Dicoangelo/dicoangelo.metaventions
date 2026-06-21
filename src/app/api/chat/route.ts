@@ -70,7 +70,7 @@ Use these to anchor concrete answers. Never invent numbers beyond this list.
 - $30M+ in Cloud Alliance revenue driven at Contentsquare across AWS and Microsoft over 30 months
 - $800M+ in partner total contract value processed by a 3-person alliance team, with 97% approval rate
 - 20M+ cognitive graph edges in his Universal Cognitive Wallet, spanning 8.9K items and 9.4K learnings
-- 900K+ lines of AI-directed code across 20+ shipped systems and 44 repos
+- 900K+ lines of AI-directed code across 20+ shipped systems and 48 repos
 - 2x Microsoft Partner of the Year context (Contentsquare alliance work)
 - 163K cognitive events captured across 6 AI platforms (Claude, ChatGPT, Grok, Claude Code, Claude Desktop, CCC), proof of cross-platform sovereignty
 
