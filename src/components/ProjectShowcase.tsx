@@ -85,7 +85,7 @@ const projects: Project[] = [
     tagline: "Sovereign Career Intelligence",
     description: "AI-driven career operating system: eligibility-gate-first job matching, warm-line outreach, ATS-aware tailoring, and parallel-session coordination. Reclaims agency in an algorithmic hiring world.",
     metrics: [
-      { label: "Tests", value: "2,959 passing" },
+      { label: "Tests", value: "3,227 passing" },
       { label: "Stack", value: "Next.js 16" },
       { label: "Tier", value: "$9 Single-Shot" },
       { label: "Surface", value: "Live" }
