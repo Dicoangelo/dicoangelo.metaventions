@@ -36,6 +36,21 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
 
   const events: TimelineEvent[] = [
     {
+      date: "Jun 2026 - Present",
+      title: "Technology Revenue Manager",
+      company: "Ezra",
+      location: "Toronto, ON / Remote",
+      type: "work",
+      description: "Revenue management for a technology company: owning forecast discipline, sales-velocity mechanics, and SaaS revenue health. Bringing a partner and cloud-marketplace revenue lens from prior cloud-alliance operations into the core revenue motion.",
+      highlights: [
+        "Own revenue forecasting and pipeline discipline against a sales-velocity operating model",
+        "Apply hyperscaler co-sell and cloud-marketplace experience (AWS, Microsoft, Google Cloud) to the revenue motion",
+        "Translate RevOps reps from a $0 to $30M+ cloud-alliance program into forecast and ecosystem-revenue practice",
+        "Partner across sales, finance, and operations to wire revenue reporting into decision velocity",
+      ],
+      metrics: ["Revenue Forecasting", "RevOps", "Current Role"],
+    },
+    {
       date: "Jan - Apr 2026",
       title: "Volunteer Mentor",
       company: "Mass Fintech Hub",

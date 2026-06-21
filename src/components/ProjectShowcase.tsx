@@ -41,6 +41,26 @@ const projects: Project[] = [
     loc: "Concept"
   },
   {
+    name: "SBC-AutoOps / SBC Inspector",
+    tagline: "Pre-Deploy Validation for Session Border Controllers",
+    description: "Reads any SBC vendor's config before deploy and tells you, in plain English, exactly what will break. Local-first and air-gapped: raw configs never leave your environment. Ships an 11-tool SBC Inspector MCP that puts the same deterministic checks on an agent surface.",
+    metrics: [
+      { label: "Vendor Parsers", value: "5" },
+      { label: "Validation Domains", value: "8" },
+      { label: "Tests", value: "282" },
+      { label: "MCP Tools", value: "11" }
+    ],
+    techStack: ["AI-Directed Build", "MCP Protocol", "Deterministic Validation", "Air-Gapped"],
+    papers: [
+      "Deterministic pre-deployment config validation",
+      "Multi-vendor SBC normalization",
+      "Agent-surfaced infrastructure inspection (MCP)"
+    ],
+    github: "https://github.com/Dicoangelo/sbc-validator",
+    demo: "https://sbcvalidator.metaventionsai.com",
+    loc: "v0.20.0"
+  },
+  {
     name: "Frontier Alpha",
     tagline: "Cognitive Factor Intelligence Platform",
     description: "AI-powered portfolio optimization with 80+ factors, episodic learning via CVRF, and explainable recommendations. Brings sovereign cognitive infrastructure into quantitative investment workflows.",
@@ -58,7 +78,7 @@ const projects: Project[] = [
     ],
     github: "https://github.com/Dicoangelo/frontier-alpha",
     demo: "https://frontier-alpha.metaventionsai.com",
-    loc: "v1.1"
+    loc: "v1.13"
   },
   {
     name: "CareerCoach Antigravity",
@@ -78,7 +98,7 @@ const projects: Project[] = [
     ],
     github: "https://github.com/Dicoangelo/CareerCoachAntigravity",
     demo: "https://careers.metaventionsai.com",
-    loc: "v2.5"
+    loc: "v2.6"
   },
   {
     name: "FriendlyFace",
@@ -196,6 +216,25 @@ const projects: Project[] = [
     ],
     github: "https://github.com/Dicoangelo/ResearchGravity",
     loc: "35K+ LOC"
+  },
+  {
+    name: "Burstiness Engine",
+    tagline: "In-Generation Rhythm Control for Language Models",
+    description: "Research collaboration with Vittoria Lanzo on controlling burstiness, the rhythm of sentence-length variation, during generation rather than as a post-edit. Framing, formal definition, ablation, and a documented negative result are complete; a working controller is the open frontier.",
+    metrics: [
+      { label: "Stage", value: "Active Research" },
+      { label: "Corpus", value: "43 papers" },
+      { label: "Research Passes", value: "4" },
+      { label: "Output", value: "Paper draft" }
+    ],
+    techStack: ["AI-Directed Build", "Research Synthesis", "Controlled Generation", "Ablation Studies"],
+    papers: [
+      "In-generation burstiness control vs prompt-level baselines",
+      "Formal definition of rhythm and burstiness in generated text",
+      "Negative-result methodology"
+    ],
+    github: "https://github.com/Dicoangelo/burstiness-engine",
+    loc: "Research"
   }
 ];
 
