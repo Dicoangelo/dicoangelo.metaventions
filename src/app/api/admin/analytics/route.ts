@@ -1,36 +1,6 @@
-import { cookies } from "next/headers";
 import { getSupabase } from "@/lib/supabase-server";
 
-const SESSION_COOKIE_NAME = "jd_admin_session";
-
-async function verifyAdmin(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const sessionToken = cookieStore.get(SESSION_COOKIE_NAME);
-
-  if (!sessionToken) return false;
-
-  try {
-    const decoded = Buffer.from(sessionToken.value, "base64").toString();
-    const [prefix, timestamp] = decoded.split(":");
-
-    if (prefix !== "admin") return false;
-
-    const sessionAge = Date.now() - parseInt(timestamp, 10);
-    if (sessionAge > 24 * 60 * 60 * 1000) return false;
-
-    return true;
-  } catch {
-    return false;
-  }
-}
-
 export async function GET() {
-  if (!(await verifyAdmin())) {
-    return new Response(
-      JSON.stringify({ error: "Unauthorized" }),
-      { status: 401, headers: { "Content-Type": "application/json" } }
-    );
-  }
 
   // Get skill gap analytics
   const { data: skillGaps, error: gapsError } = await getSupabase()
