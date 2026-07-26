@@ -98,6 +98,14 @@ export default function Footer({ isLight }: FooterProps) {
             <p className={`text-[13.5px] leading-relaxed mb-5 max-w-md ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
               Operations leader and AI systems builder. Enterprise-scale execution + hands-on technical depth in AI and automation.
             </p>
+            <a
+              href="mailto:dicoangelo@metaventionsai.com"
+              className={`inline-block text-[13.5px] mb-5 transition-colors ${
+                isLight ? "text-gray-600 hover:text-[#6366f1]" : "text-[#a3a3a3] hover:text-white"
+              }`}
+            >
+              dicoangelo@metaventionsai.com
+            </a>
             <div className="flex gap-2">
               {socialLinks.map((link) => (
                 <a

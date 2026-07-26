@@ -136,7 +136,7 @@ export default function CommandPalette({ className = "" }: CommandPaletteProps) 
       id: "linkedin",
       label: "Open LinkedIn",
       icon: <LinkedInIcon />,
-      action: () => window.open("https://linkedin.com/in/dicoangelo", "_blank"),
+      action: () => window.open("https://www.linkedin.com/in/dico-angelo/", "_blank"),
       category: "external",
       keywords: ["professional", "network", "connect"],
     },

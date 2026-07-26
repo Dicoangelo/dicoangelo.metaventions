@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     company: "Contentsquare",
     source: "Suger.io Case Study",
     sourceUrl: "https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits",
-    linkedIn: "https://linkedin.com/in/dicoangelo",
+    linkedIn: "https://www.linkedin.com/in/dico-angelo/",
     avatar: "/headshot.jpg",
   },
   {
