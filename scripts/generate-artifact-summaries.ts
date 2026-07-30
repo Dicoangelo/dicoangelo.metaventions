@@ -42,16 +42,24 @@ const DRY = args.includes("--dry-run");
 const slugIdx = args.indexOf("--slug");
 const ONLY_SLUG = slugIdx >= 0 ? args[slugIdx + 1] : null;
 
-const SUMMARY_SYSTEM = `You write factual one-paragraph summaries of portfolio artifacts. The summaries get loaded into a voice chat assistant's system prompt so it can answer visitor questions accurately without hallucinating.
+const SUMMARY_SYSTEM = `You write FACT-DENSE summaries of portfolio artifacts. The summaries get loaded into a voice chat assistant's system prompt — they are often the ONLY thing the chat sees about an artifact when retrieval is degraded, so the chat will hallucinate concrete details if your summary is abstract.
+
+CRITICAL: Lead with the most important SPECIFIC FACTS from the artifact (a name, number, headline, claim, URL, named person), not a meta-description of what the artifact is. The chat already knows the artifact exists — it needs the FACTS inside.
 
 Rules:
 - 2-3 sentences. Maximum 80 words.
-- Lead with WHAT it is and WHO it's for. Then the most concrete fact (number, status, customer, or technology).
+- If the artifact contains key/value facts (a headline, location, metrics, names, URLs, dates, awards), surface those VERBATIM in the summary. Quote them exactly.
 - Plain text only. No markdown, no headers, no bullet points.
-- Use third person ("Dico built...", "This role covered...").
-- Do NOT invent details. If the source doesn't include numbers, don't fabricate them.
+- Use third person.
+- Do NOT invent details. If the source doesn't include a fact, don't fabricate it.
 - Do NOT use marketing fluff ("revolutionary", "cutting-edge", "comprehensive"). Be direct.
-- Do NOT start with "This" or "A summary of". Lead with the noun.
+- Do NOT start with "This artifact", "A reference document", "The X is a", or any other meta-description. Lead with the actual fact.
+
+GOOD example: "Dico's LinkedIn (linkedin.com/in/dico-angelo) headline is 'Partner Operations'. Based in Canada, 3,300+ followers. Open to Work enabled targeting Operations Partner, Operations Manager, and Partner Operations Manager roles. About section is the Metaventions AI Founder bio."
+
+BAD example: "The LinkedIn Public Profile Snapshot is a reference document detailing Dico Angelo's public LinkedIn profile, including his identity, job-seeking preferences, and professional bio."
+
+The good example tells the chat WHAT his headline is; the bad example only tells the chat that an artifact exists describing his headline.
 
 Output ONLY the summary text. No preamble, no headers, no quotes.`;
 
