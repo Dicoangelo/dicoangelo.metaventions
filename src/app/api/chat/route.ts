@@ -6,6 +6,7 @@ import { chatRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/li
 import { chatMessageSchema, validateRequest } from "@/lib/schemas";
 import { getArtifactIndex } from "@/lib/artifact-index";
 import { resolveRerank, type RerankVariant, type RerankMode } from "@/lib/rerank-control";
+import { detectArchetype } from "@/lib/query-archetype";
 
 // DeepSeek V4 via the Anthropic-compatible Messages API (same SDK, different baseURL).
 // V4 Pro: $0.43/$0.87 per 1M tokens during 75% promo through 2026-05-31.
@@ -227,10 +228,17 @@ export async function POST(request: Request) {
     // Inject skill gap coaching notes (top 3 gaps seen 5+ times)
     const gapNotes = await getSkillGapCoachingNotes();
 
+    // Detect query archetype (recruiter / partner / peer-engineer / investor / general
+    // + role-cuts) so the artifact index can prioritize the right artifacts for
+    // who's asking. Pure pattern match, zero LLM latency. Imperfect classification
+    // is fine — the index still shows ALL artifacts; archetype only biases ordering
+    // and adds a ★ PRIORITY marker on the top-3 best matches per category.
+    const archetype = detectArchetype(query);
+
     // Layer 1 of three-layer retrieval: always-loaded artifact title index.
-    // Cached 5 min in-memory + lives inside the static prefix of the prompt
-    // so DeepSeek's KV cache makes it ~free per request after the first.
-    const artifactIndex = await getArtifactIndex();
+    // Cached 5 min in-memory per archetype-key. Artifacts tagged sens:private are
+    // ALWAYS gated out (permanent filter, not configurable per request).
+    const artifactIndex = await getArtifactIndex(archetype);
 
     // Build the full system prompt:
     //   STATIC (cache-friendly): SYSTEM_PROMPT + artifact title index
@@ -346,6 +354,9 @@ export async function POST(request: Request) {
         "X-RAG-Source": ragSource,
         "X-Retrieval-Time-Ms": retrievalTimeMs.toString(),
         "X-Chat-Model": modelUsed,
+        "X-Query-Archetype-Audience": archetype.audience,
+        "X-Query-Archetype-Roles": archetype.role_cuts.join(","),
+        "X-Query-Archetype-Signals": archetype.matched_signals.slice(0, 10).join(","),
       },
     });
   } catch (error) {
