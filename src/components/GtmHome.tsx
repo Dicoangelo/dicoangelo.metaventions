@@ -98,17 +98,31 @@ export default function GtmHome() {
     // Restore deep links once streamed page content is mounted. The browser
     // may process a fragment before the target section has arrived.
     let frame = 0;
+    let observer: ResizeObserver | undefined;
     const scrollToFragment = () => {
       cancelAnimationFrame(frame);
+      observer?.disconnect();
       frame = requestAnimationFrame(() => {
         const fragment = window.location.hash.slice(1);
-        if (fragment) document.getElementById(fragment)?.scrollIntoView({ behavior: "instant", block: "start" });
+        const target = fragment ? document.getElementById(fragment) : null;
+        if (!target) return;
+        const alignVisibleSection = () => {
+          // Streamed content can mount inside a hidden Suspense container.
+          // Wait for layout before aligning the requested section.
+          if (!target.getBoundingClientRect().height) return;
+          target.scrollIntoView({ behavior: "instant", block: "start" });
+          observer?.disconnect();
+        };
+        observer = new ResizeObserver(alignVisibleSection);
+        observer.observe(target);
+        alignVisibleSection();
       });
     };
     scrollToFragment();
     window.addEventListener("hashchange", scrollToFragment);
     return () => {
       cancelAnimationFrame(frame);
+      observer?.disconnect();
       window.removeEventListener("hashchange", scrollToFragment);
     };
   }, []);
