@@ -45,9 +45,9 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
   }, []);
 
   const heroMetrics = [
-    { value: "428K+", label: "Autonomous Decisions", note: "Real-time quality scoring" },
-    { value: "94%", label: "Error Auto-Resolution", note: "700+ patterns recognized" },
-    { value: "24/7", label: "Production Uptime", note: "Since November 2025" },
+    { value: "Routing", label: "Model Selection", note: "Internal heuristics guide requests" },
+    { value: "Recovery", label: "Error Handling", note: "Recorded patterns support diagnosis" },
+    { value: "Monitoring", label: "Operational Visibility", note: "Dashboards expose system activity" },
   ];
 
   return (
@@ -68,14 +68,14 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
           {/* Header */}
           <div className="text-center mb-14">
             <span className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"}`}>
-              Production AI Infrastructure
+              AI Infrastructure
             </span>
             <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-              Self-improving systems.
+              Connected AI systems.
             </h2>
             {showSummary && (
               <p className={`mt-5 max-w-3xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>
-                Autonomous engineering infrastructure that learns from every interaction, self-heals errors, and optimizes performance — cutting development cycles in half while holding enterprise-grade reliability.
+                An implementation of model routing, error handling, memory, and monitoring. The architecture connects these capabilities so activity can be inspected and workflows revised.
               </p>
             )}
 
@@ -138,8 +138,8 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
             <div className="grid md:grid-cols-2 gap-4 md:gap-5 mt-12">
               <ValueCard
                 isLight={isLight}
-                title="Built for scale"
-                body="Autonomous systems optimize resource allocation, predict failures before they occur, and continuously improve performance from historical patterns — same playbook that scaled Contentsquare's marketplace operations from days to minutes."
+                title="Connected workflows"
+                body="Routing, context management, and error handling share information across the application. This makes the steps of an AI-assisted workflow easier to inspect and coordinate."
                 icon={
                   <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -148,8 +148,8 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
               />
               <ValueCard
                 isLight={isLight}
-                title="Data-driven innovation"
-                body="Every system decision is measured, analyzed, and optimized. Real-time analytics track quality scores, error patterns, and efficiency metrics — surfacing actionable insights that drive continuous improvement."
+                title="Reviewable activity"
+                body="Dashboards surface recorded events, internal routing signals, and error patterns. These help guide investigation and review; they do not establish independently measured accuracy or reliability."
                 icon={
                   <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 3v18h18" />
@@ -177,10 +177,10 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
                   Why this matters
                 </p>
                 <h3 className={`text-[20px] md:text-[22px] font-bold tracking-tight mb-4 ${isLight ? "text-gray-900" : "text-white"}`}>
-                  Systems that compound, not tools that decay.
+                  Make the workflow visible.
                 </h3>
                 <p className={`text-[14px] leading-relaxed ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>
-                  These aren&apos;t scripts — they&apos;re a systematic approach to building intelligent, self-optimizing infrastructure. The same principles applied at Contentsquare to transform marketplace operations (enabling 81% ACV growth) are now embedded in autonomous systems that scale engineering productivity while holding enterprise reliability.
+                  The practical focus is connecting tools, retaining useful context, and making outputs available for review. This diagram shows the implementation approach; it is not a benchmark of productivity or service reliability.
                 </p>
               </div>
             </div>

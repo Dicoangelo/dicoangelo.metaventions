@@ -16,15 +16,15 @@ interface SystemNode {
 }
 
 const SYSTEMS: SystemNode[] = [
-    { id: "cog", name: "Cognitive OS", description: "Intelligent task scheduling based on performance patterns", metric: "Optimizes timing", position: [0, 2, 0], connections: ["dq", "mac", "obs"] },
+    { id: "cog", name: "Cognitive OS", description: "Task scheduling using recorded activity patterns", metric: "Task scheduling", position: [0, 2, 0], connections: ["dq", "mac", "obs"] },
     { id: "dq", name: "Quality Engine", description: "Internal heuristic signals for model routing and review", metric: "Heuristic scoring", position: [-2, 0.5, 0], connections: ["rec", "ace"] },
-    { id: "rec", name: "Recovery System", description: "Self-healing architecture prevents downtime", metric: "70% auto-fix", position: [-2, -1.5, 0], connections: ["obs"] },
-    { id: "mem", name: "Memory Layer", description: "Pattern recognition across all operations", metric: "700+ scenarios", position: [2, 0.5, 0], connections: ["lh", "ctx"] },
-    { id: "mac", name: "Multi-Agent", description: "Parallel processing for 3x faster delivery", metric: "Concurrent ops", position: [0, 0, 0], connections: ["dq", "mem", "ace"] },
-    { id: "ace", name: "Consensus Engine", description: "Collaborative decision-making framework", metric: "50% faster", position: [0, -2, 0], connections: ["mac"] },
+    { id: "rec", name: "Recovery System", description: "Error detection and recovery workflows", metric: "Error handling", position: [-2, -1.5, 0], connections: ["obs"] },
+    { id: "mem", name: "Memory Layer", description: "Stores and retrieves prior context", metric: "Context retrieval", position: [2, 0.5, 0], connections: ["lh", "ctx"] },
+    { id: "mac", name: "Multi-Agent", description: "Coordinates parallel agent tasks", metric: "Concurrent tasks", position: [0, 0, 0], connections: ["dq", "mem", "ace"] },
+    { id: "ace", name: "Consensus Engine", description: "Combines agent outputs through voting", metric: "Agent voting", position: [0, -2, 0], connections: ["mac"] },
     { id: "obs", name: "Analytics Hub", description: "Real-time performance monitoring & insights", metric: "Live dashboards", position: [-3, 1.5, 1], connections: [] },
-    { id: "ctx", name: "Smart Context", description: "Intelligent resource allocation & caching", metric: "85% efficiency", position: [3, 1.5, 1], connections: ["mac"] },
-    { id: "lh", name: "Learning Core", description: "Continuous improvement & adaptation", metric: "Always learning", position: [2, -1.5, 0], connections: [] },
+    { id: "ctx", name: "Smart Context", description: "Context selection and caching", metric: "Context caching", position: [3, 1.5, 1], connections: ["mac"] },
+    { id: "lh", name: "Learning Core", description: "Retains feedback for later review", metric: "Feedback records", position: [2, -1.5, 0], connections: [] },
 ];
 
 function Node({ data, hoveredNode, setHoveredNode }: { data: SystemNode; hoveredNode: string | null; setHoveredNode: (id: string | null) => void }) {

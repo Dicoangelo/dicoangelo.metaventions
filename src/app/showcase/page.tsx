@@ -9,9 +9,7 @@ import ShowcaseGallery from "./ShowcaseGallery";
 import Lightbox from "./Lightbox";
 import PresentationMode from "./PresentationMode";
 import { TechStackRibbon } from "./TechStackRibbon";
-import { AnomalyStats } from "./AnomalyStats";
 import { LiveSites } from "./LiveSites";
-import { GitHubRepos } from "./GitHubRepos";
 import { Certifications } from "./Certifications";
 import { DockerEvidence } from "./DockerEvidence";
 
@@ -61,7 +59,7 @@ export default function ShowcasePage() {
                 : "bg-[#4f8fff]/15 text-[#4f8fff] border border-[#4f8fff]/30"
             }`}
           >
-            PRODUCTION AI SYSTEMS
+            INDEPENDENT AI SYSTEMS
           </div>
           <h1
             className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-4"
@@ -74,15 +72,15 @@ export default function ShowcasePage() {
               animation: "gradientShift 6s ease infinite",
             }}
           >
-            Production AI Showcase
+            Selected AI Systems
           </h1>
           <p
             className={`text-lg sm:text-xl max-w-2xl mx-auto mb-10 ${
               isLight ? "text-gray-600" : "text-[#a3a3a3]"
             }`}
           >
-            20 architecture screenshots across 5 production AI systems.
-            Built, deployed, and measured.
+            Architecture and workflow snapshots from independent projects.
+            Systems specified, built with AI assistance, reviewed, and tested.
           </p>
 
           {/* Quick Stats Row */}
@@ -90,9 +88,6 @@ export default function ShowcasePage() {
             {[
               { value: "20", label: "Screenshots" },
               { value: "5", label: "Systems" },
-              { value: "174K+", label: "Events Captured" },
-              { value: "178", label: "MCP Tools" },
-              { value: "93.1%", label: "Routing Accuracy" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div
@@ -141,24 +136,10 @@ export default function ShowcasePage() {
         </div>
       </section>
 
-      {/* Anomaly Stats */}
-      <section id="stats" className="relative z-10 px-6 pb-16">
-        <div className="max-w-6xl mx-auto">
-          <AnomalyStats isLight={isLight} />
-        </div>
-      </section>
-
       {/* Live Sites */}
       <section id="sites" className="relative z-10 px-6 pb-16">
         <div className="max-w-6xl mx-auto">
           <LiveSites isLight={isLight} />
-        </div>
-      </section>
-
-      {/* GitHub Repos */}
-      <section id="repos" className="relative z-10 px-6 pb-16">
-        <div className="max-w-6xl mx-auto">
-          <GitHubRepos isLight={isLight} />
         </div>
       </section>
 

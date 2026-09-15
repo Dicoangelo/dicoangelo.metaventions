@@ -653,7 +653,7 @@ export const githubRepos: GithubRepo[] = [
   // ─── Public Repos (22) ───
   {
     name: "antigravity-coordinator",
-    description: "Multi-agent orchestration framework: parallel research, consensus voting (ACE), 212 tests, 93.1% routing",
+    description: "Multi-agent orchestration framework with parallel research, consensus voting, and configurable model routing",
     match: "RAG + AGENTS",
     matchLevel: "strong",
     visibility: "public",
