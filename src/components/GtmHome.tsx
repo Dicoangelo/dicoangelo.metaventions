@@ -121,10 +121,14 @@ export default function GtmHome() {
     };
     scrollToFragment();
     window.addEventListener("hashchange", scrollToFragment);
+    window.addEventListener("load", scrollToFragment);
+    window.addEventListener("pageshow", scrollToFragment);
     return () => {
       cancelAnimationFrame(frame);
       observer?.disconnect();
       window.removeEventListener("hashchange", scrollToFragment);
+      window.removeEventListener("load", scrollToFragment);
+      window.removeEventListener("pageshow", scrollToFragment);
     };
   }, []);
 
