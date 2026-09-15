@@ -1,7 +1,11 @@
-"use client";
-
+import type { Metadata } from "next";
 import { ReactNode } from "react";
 import { ThemeToggle } from "@/components/ThemeProvider";
+
+export const metadata: Metadata = {
+  title: "Site administration | Dico Angelo",
+  robots: { index: false, follow: false },
+};
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -40,4 +44,3 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     </div>
   );
 }
-

@@ -117,7 +117,7 @@ export default function FitScoreGauge({
             {displayScore}
           </span>
           <span className={`text-sm ${theme === "light" ? "text-gray-500" : "text-gray-400"}`}>
-            out of 100
+            AI estimate / 100
           </span>
         </div>
       </div>

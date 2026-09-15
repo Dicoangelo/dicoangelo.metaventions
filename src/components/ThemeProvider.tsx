@@ -21,12 +21,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored) {
-      setTheme(stored);
-    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-      setTheme("light");
+    let preferredTheme: Theme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    try {
+      const stored = localStorage.getItem("theme");
+      if (stored === "light" || stored === "dark") preferredTheme = stored;
+    } catch {
+      // Browser storage can be unavailable; the preference still works in memory.
     }
+    setTheme(preferredTheme);
 
     // Check for reduced motion preference
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -41,7 +43,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (mounted) {
       document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
+      try {
+        localStorage.setItem("theme", theme);
+      } catch {
+        // Persisting a preference is optional.
+      }
     }
   }, [theme, mounted]);
 
@@ -76,10 +82,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       setIsTransitioning(false);
     }, prefersReducedMotion ? 0 : 600);
   }, [prefersReducedMotion]);
-
-  if (!mounted) {
-    return <>{children}</>;
-  }
 
   const nextTheme = theme === "dark" ? "light" : "dark";
 

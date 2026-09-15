@@ -14,9 +14,9 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
 
   const capabilities = [
     {
-      human: "Strategic Vision",
-      ai: "Pattern Recognition",
-      outcome: "Systems that anticipate needs",
+      human: "Workflow requirements",
+      ai: "Draft implementation",
+      outcome: "A concrete workflow to review",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -25,9 +25,9 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
       ),
     },
     {
-      human: "Quality Judgment",
-      ai: "Rapid Iteration",
-      outcome: "Refined solutions at scale",
+      human: "Acceptance criteria",
+      ai: "Code and test assistance",
+      outcome: "Changes checked against requirements",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -35,9 +35,9 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
       ),
     },
     {
-      human: "Domain Expertise",
-      ai: "Cross-Domain Synthesis",
-      outcome: "Novel approaches from diverse fields",
+      human: "Source selection",
+      ai: "Search and synthesis",
+      outcome: "Research summaries with source context",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -45,9 +45,9 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
       ),
     },
     {
-      human: "Ethical Oversight",
-      ai: "Efficiency Optimization",
-      outcome: "Responsible automation",
+      human: "Review boundaries",
+      ai: "Workflow automation",
+      outcome: "Clear points for human approval and review",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -57,10 +57,10 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
   ];
 
   const systems = [
-    { name: "9-System AI Architecture", desc: "Self-improving cognitive infrastructure" },
-    { name: "Autonomous Research Agents", desc: "Multi-modal knowledge synthesis" },
-    { name: "Adaptive Routing Engine", desc: "Intelligent model orchestration" },
-    { name: "Cognitive State Management", desc: "Energy-aware task optimization" },
+    { name: "ResearchGravity", desc: "Research sessions, source tracking, and retrieval", href: "/showcase" },
+    { name: "Universal Cognitive Wallet", desc: "Stored AI interactions and searchable context", href: "/showcase" },
+    { name: "CareerCoach Antigravity", desc: "Career research and preparation workflows", href: "https://careers.metaventionsai.com" },
+    { name: "Portfolio assistant", desc: "Answers informed by a professional profile and retrieved material", href: "/#ask" },
   ];
 
   return (
@@ -103,7 +103,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Human Judgment × AI Capability
+            Specify, review, test, deploy
           </h2>
           <p
             className={`
@@ -111,8 +111,9 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
               ${isLight ? "text-gray-600" : "text-gray-400"}
             `}
           >
-            I don&apos;t just use AI tools—I architect systems where human expertise
-            and artificial intelligence amplify each other.
+            I define the workflow and architecture, direct AI coding tools, and review,
+            test, and deploy their output. My operations experience helps connect the
+            implementation to the people and processes it needs to support.
           </p>
         </div>
 
@@ -150,7 +151,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
             </div>
             <h3 className="font-bold text-lg mb-2">Human</h3>
             <p className={`text-sm ${isLight ? "text-gray-600" : "text-gray-400"}`}>
-              Vision, judgment, context, ethics, creativity
+              Requirements, context, review, and release decisions
             </p>
           </div>
 
@@ -201,7 +202,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
             </div>
             <h3 className="font-bold text-lg mb-2">AI</h3>
             <p className={`text-sm ${isLight ? "text-gray-600" : "text-gray-400"}`}>
-              Speed, scale, pattern matching, synthesis
+              Drafting, coding assistance, search, and synthesis
             </p>
           </div>
         </div>
@@ -219,7 +220,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
               ${isLight ? "text-gray-700" : "text-gray-300"}
             `}
           >
-            The Augmentation Effect
+            Where human review fits
           </h3>
 
           <div className="grid md:grid-cols-2 gap-3 md:gap-4">
@@ -246,7 +247,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
                     {cap.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-2 text-sm">
+                    <div className="flex flex-wrap items-center gap-2 mb-2 text-sm">
                       <span className={`font-medium ${isLight ? "text-blue-600" : "text-blue-400"}`}>
                         {cap.human}
                       </span>
@@ -277,15 +278,17 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
           `}
         >
           <h3 className="text-center font-bold text-lg mb-6">
-            Systems I&apos;ve Orchestrated
+            Selected implementation examples
           </h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {systems.map((system, index) => (
-              <div
+              <a
                 key={system.name}
+                href={system.href}
                 className={`
                   p-4 rounded-xl text-center transition-all duration-300
+                  focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-500
                   ${isLight
                     ? "bg-white hover:shadow-md"
                     : "bg-white/5 hover:bg-white/10"
@@ -297,23 +300,21 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
                 <p className={`text-xs ${isLight ? "text-gray-500" : "text-gray-400"}`}>
                   {system.desc}
                 </p>
-              </div>
+              </a>
             ))}
           </div>
 
           {/* Philosophy Quote */}
           <div className="mt-8 text-center">
-            <blockquote
+            <p
               className={`
                 text-lg italic
                 ${isLight ? "text-gray-600" : "text-gray-400"}
               `}
             >
-              &ldquo;The future belongs to those who can orchestrate AI systems with
-              <span className="text-indigo-500 font-medium"> vision</span>,
-              <span className="text-purple-500 font-medium"> judgment</span>, and
-              <span className="text-pink-500 font-medium"> integrity</span>.&rdquo;
-            </blockquote>
+              These examples demonstrate an AI-assisted implementation approach.
+              Project scope and historical screenshots are described in the showcase.
+            </p>
           </div>
         </div>
       </div>

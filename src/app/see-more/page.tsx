@@ -50,7 +50,7 @@ export default function SeeMorePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Interactive Code Examples</h2>
             <p className={`text-lg max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-              Live demonstrations of multi-agent orchestration, quality scoring, and autonomous systems.
+              Illustrative code patterns with interactive local examples.
             </p>
           </div>
           <InteractiveCodeDemo isLight={isLight} />

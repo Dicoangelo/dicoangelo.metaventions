@@ -94,6 +94,25 @@ function ToolDisclosure({ id, title, description, children }: {
 }
 
 export default function GtmHome() {
+  useEffect(() => {
+    // Restore deep links once streamed page content is mounted. The browser
+    // may process a fragment before the target section has arrived.
+    let frame = 0;
+    const scrollToFragment = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const fragment = window.location.hash.slice(1);
+        if (fragment) document.getElementById(fragment)?.scrollIntoView({ behavior: "instant", block: "start" });
+      });
+    };
+    scrollToFragment();
+    window.addEventListener("hashchange", scrollToFragment);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", scrollToFragment);
+    };
+  }, []);
+
   return (
     <div className={styles.page}>
       <a href="#main-content" className={styles.skipLink}>Skip to content</a>
@@ -107,7 +126,7 @@ export default function GtmHome() {
         </nav>
       </header>
 
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1}>
         <section id="top" className={styles.hero} aria-labelledby="hero-title">
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>Revenue technology &amp; GTM operations</p>

@@ -13,7 +13,7 @@ export default function Footer({ isLight }: FooterProps) {
     { label: "Resume", href: "/#resume" },
 
     { label: "Timeline", href: "/#timeline" },
-    { label: "Projects", href: "/#projects" },
+    { label: "Selected work", href: "/#systems" },
     { label: "Contact", href: "/#contact" },
   ];
 
@@ -38,7 +38,7 @@ export default function Footer({ isLight }: FooterProps) {
     },
     {
       label: "Metaventions AI",
-      href: "https://www.metaventionsai.com",
+      href: "https://metaventionsai.com",
       icon: (
         <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -129,8 +129,8 @@ export default function Footer({ isLight }: FooterProps) {
           {/* Quick Links */}
           <div className="md:col-span-3">
             <p
-              className={`text-[10.5px] font-semibold uppercase tracking-[0.16em] mb-4 ${
-                isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"
+              className={`text-xs font-semibold uppercase tracking-[0.16em] mb-4 ${
+                isLight ? "text-[#4f46e5]" : "text-[#a5b4fc]"
               }`}
             >
               Navigate
@@ -154,8 +154,8 @@ export default function Footer({ isLight }: FooterProps) {
           {/* Quick Stats */}
           <div className="md:col-span-3">
             <p
-              className={`text-[10.5px] font-semibold uppercase tracking-[0.16em] mb-4 ${
-                isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"
+              className={`text-xs font-semibold uppercase tracking-[0.16em] mb-4 ${
+                isLight ? "text-[#4f46e5]" : "text-[#a5b4fc]"
               }`}
             >
               At a glance
@@ -185,7 +185,7 @@ export default function Footer({ isLight }: FooterProps) {
         {/* Bottom Bar */}
         <div
           className={`pt-6 border-t flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[12px] ${
-            isLight ? "border-gray-200/80 text-gray-500" : "border-white/[0.06] text-[#737373]"
+            isLight ? "border-gray-200/80 text-gray-500" : "border-white/[0.06] text-[#a3a3a3]"
           }`}
         >
           <div className="flex flex-col md:flex-row gap-2 md:gap-3 md:items-center">
@@ -201,15 +201,6 @@ export default function Footer({ isLight }: FooterProps) {
               ·
             </span>
             <span>Built with AI-assisted development</span>
-            <span
-              className={`px-2 py-1 rounded-md text-[10.5px] font-semibold tracking-tight backdrop-blur-sm ${
-                isLight
-                  ? "bg-[#6366f1]/10 text-[#6366f1] border border-[#6366f1]/20"
-                  : "bg-[#6366f1]/15 text-[#818cf8] border border-[#6366f1]/25"
-              }`}
-            >
-
-            </span>
           </div>
         </div>
       </div>

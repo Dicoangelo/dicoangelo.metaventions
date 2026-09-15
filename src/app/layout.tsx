@@ -5,9 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { ReadingDepthProvider } from "@/components/ReadingDepthProvider";
 import { CURRENT_ROLE } from "@/lib/current-role";
 import { PROFILE_TITLE, PROFILE_DESCRIPTION } from "@/lib/professional-profile";
-
-// Site URL configuration - can be overridden via NEXT_PUBLIC_SITE_URL env var
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dicoangelo.metaventionsai.com";
+import { SITE_URL } from "@/lib/site-url";
 
 // Viewport configuration for optimal mobile experience
 export const viewport: Viewport = {
@@ -39,7 +37,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: PROFILE_TITLE,
     description: PROFILE_DESCRIPTION,
-    creator: "@dicoangelo",
   },
   robots: { index: true, follow: true },
 };
@@ -55,9 +52,7 @@ const personSchema = {
   nationality: "Canadian",
   sameAs: [
     "https://github.com/Dicoangelo",
-    "https://www.linkedin.com/in/dico-angelo/",
-    "https://twitter.com/dicoangelo",
-    "https://www.npmjs.com/org/metaventionsai"
+    "https://www.linkedin.com/in/dico-angelo/"
   ],
   knowsAbout: [
     "Multi-Agent Systems",
@@ -90,15 +85,8 @@ const personSchema = {
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
-      credentialCategory: "certificate",
+      credentialCategory: "accreditation",
       name: "AWS Partner: Business Accreditation",
-      dateCreated: "2024"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      credentialCategory: "certificate",
-      name: "AWS Partner: Generative AI on AWS Essentials",
-      dateCreated: "2023"
     }
   ]
 };
@@ -114,15 +102,6 @@ const websiteSchema = {
     name: "Dico Angelo"
   },
   inLanguage: "en-US"
-};
-
-const professionalServiceSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Dico Angelo - AI & Operations Consulting",
-  description: "Operations infrastructure and AI systems engineering services",
-  areaServed: ["US", "CA"],
-  availableLanguage: "English"
 };
 
 export default function RootLayout({
@@ -190,11 +169,6 @@ export default function RootLayout({
           id="structured-data-website"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <Script
-          id="structured-data-service"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
         />
       </head>
       <body className="antialiased">

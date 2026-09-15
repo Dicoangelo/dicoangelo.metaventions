@@ -20,17 +20,25 @@ export function ReadingDepthProvider({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem(STORAGE_KEY) as ReadingDepth | null;
-    if (stored === "skim" || stored === "standard" || stored === "deep") {
-      setDepthState(stored);
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === "skim" || stored === "standard" || stored === "deep") {
+        setDepthState(stored);
+      }
+    } catch {
+      // Reading controls remain usable when browser storage is unavailable.
     }
   }, []);
 
   const setDepth = useCallback((d: ReadingDepth) => {
     setDepthState(d);
     if (typeof window !== "undefined") {
-      localStorage.setItem(STORAGE_KEY, d);
       document.documentElement.setAttribute("data-reading-depth", d);
+      try {
+        localStorage.setItem(STORAGE_KEY, d);
+      } catch {
+        // Persisting a preference is optional.
+      }
     }
   }, []);
 
