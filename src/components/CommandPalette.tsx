@@ -116,7 +116,7 @@ export default function CommandPalette({ className = "" }: CommandPaletteProps) 
       shortcut: "E",
       icon: <CopyIcon />,
       action: async () => {
-        await navigator.clipboard.writeText("hello@dicoangelo.com");
+        await navigator.clipboard.writeText("dico.angelo97@gmail.com");
         // Could trigger a toast here
       },
       category: "action",

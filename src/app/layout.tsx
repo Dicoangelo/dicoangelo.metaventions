@@ -4,9 +4,10 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ReadingDepthProvider } from "@/components/ReadingDepthProvider";
 import { CURRENT_ROLE } from "@/lib/current-role";
+import { PROFILE_TITLE, PROFILE_DESCRIPTION } from "@/lib/professional-profile";
 
 // Site URL configuration - can be overridden via NEXT_PUBLIC_SITE_URL env var
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dicoangelo.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dicoangelo.metaventionsai.com";
 
 // Viewport configuration for optimal mobile experience
 export const viewport: Viewport = {
@@ -20,69 +21,27 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Dico Angelo, Operations Leader and AI Systems Builder",
-  description: "Operated cloud ops on the 3-person alliance team at Contentsquare. The program reached $0 to $30M+ marketplace revenue in 30 months across AWS and Microsoft, $800M+ TCV registered, 2x Microsoft Partner of the Year. I owned the operational layer (CRM, automation, dashboards). Now shipping 900K+ lines of production AI systems across 20+ deployed systems.",
-  keywords: [
-    "Cloud Alliance Manager",
-    "Partner Operations",
-    "RevOps",
-    "GTM Systems",
-    "Cloud Marketplace Operations",
-    "AI-Hybrid Program Manager",
-    "Multi-Agent Orchestration",
-    "Agentic Infrastructure",
-    "Prompt Engineering",
-    "AI-Assisted Development",
-    "Claude Code",
-    "Codex",
-    "Gemini CLI",
-    "MCP Model Context Protocol",
-    "RAG",
-    "LLM Evaluation",
-    "arXiv Implementation",
-    "Anthropic",
-    "OpenAI",
-    "DeepMind"
-  ],
+  metadataBase: new URL(SITE_URL),
+  title: PROFILE_TITLE,
+  description: PROFILE_DESCRIPTION,
+  keywords: ["Revenue Technology", "GTM Operations", "RevOps", "Platform Adoption", "Workflow Automation", "AI Enablement", "Cloud Marketplace Operations"],
   authors: [{ name: "Dico Angelo", url: SITE_URL }],
   creator: "Dico Angelo",
   openGraph: {
-    title: "Dico Angelo, Operations Leader and AI Systems Builder",
-    description: "Cloud ops on the 3-person alliance team. Program reached $0 to $30M+ marketplace revenue in 30 months. I owned the operational layer (CRM, automation, dashboards). $800M+ TCV. 2x Microsoft Partner of the Year. 900K+ lines of production AI systems shipped.",
+    title: PROFILE_TITLE,
+    description: PROFILE_DESCRIPTION,
     type: "website",
     url: SITE_URL,
-    siteName: "Dico Angelo Portfolio",
-    locale: "en_US",
-    images: [
-      {
-        url: "/headshot.jpg",
-        width: 400,
-        height: 400,
-        alt: "Dico Angelo",
-      },
-    ],
+    siteName: "Dico Angelo",
+    locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dico Angelo, Operations Leader and AI Systems Builder",
-    description: "Cloud ops on 3-person alliance team. Program reached $0 to $30M+ marketplace revenue. I owned the operational layer. $800M+ TCV. 2x Microsoft POTY. 900K+ LOC across 20+ AI systems.",
+    title: PROFILE_TITLE,
+    description: PROFILE_DESCRIPTION,
     creator: "@dicoangelo",
-    images: ["/headshot.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: "your-google-verification-code", // Add when available
-  },
+  robots: { index: true, follow: true },
 };
 
 const personSchema = {
@@ -90,9 +49,9 @@ const personSchema = {
   "@type": "Person",
   name: "Dico Angelo",
   jobTitle: CURRENT_ROLE.title,
-  description: "Operated cloud ops on the 3-person alliance team at Contentsquare. Program reached $0 to $30M+ marketplace revenue across AWS and Microsoft ($800M+ TCV). I owned the operational layer (CRM, automation, dashboards) while shipping 900K+ lines of production AI systems",
+  description: PROFILE_DESCRIPTION,
   url: SITE_URL,
-  email: "hello@dicoangelo.com",
+  email: "dico.angelo97@gmail.com",
   nationality: "Canadian",
   sameAs: [
     "https://github.com/Dicoangelo",
@@ -149,7 +108,7 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "Dico Angelo - Portfolio",
   url: SITE_URL,
-  description: "Professional portfolio of Dico Angelo, Operations Leader and AI Systems Builder",
+  description: PROFILE_DESCRIPTION,
   author: {
     "@type": "Person",
     name: "Dico Angelo"

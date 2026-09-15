@@ -38,7 +38,7 @@ const dimensions = [
       "Maintaining an accurate current mental model of HOW agents fail — not just that they fail. Differentiated failure taxonomy per task type.",
     evidence: [
       "Recovery Engine: 94% coverage, 70% auto-fix rate, 8 tracked error patterns — failure taxonomy in production",
-      "DQ Scorer: validity (40%) + specificity (30%) + correctness (30%) — three-axis failure model",
+      "Internal DQ routing heuristic uses weighted validity, specificity, and correctness signals; these are not independently validated quality measurements",
       "Coherence detection: semantic echo (cosine similarity), synchronicity (temporal alignment), signature matching",
     ],
   },
@@ -49,7 +49,7 @@ const dimensions = [
     definition:
       "Ability to forecast where the AI boundary will move next — tracking model releases and adjusting workflows before the seam shifts.",
     evidence: [
-      "arXiv weekly sync auto-updates model baselines in meta-vengine; arXiv:2511.15755 (DQ Scoring) referenced 599 times across the ecosystem",
+      "Research monitoring informed implementation experiments; the DQ source study arXiv:2511.15755 and its results were withdrawn Aug 31, 2026",
       "meta-vengine co-evolution: system reads own patterns and modifies own instructions — designed for capability drift",
       "Migrated entire coordinator to Opus 4.6 on release day; Cognitive OS energy-aware routing adapts to new model capabilities",
     ],
@@ -160,10 +160,10 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
             Frontier Operations Framework
           </span>
           <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-            Frontier Operations Score.
+            Frontier Operations Self-Reflection.
           </h2>
           <p className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-            Scored against Ethan Mollick&apos;s Frontier Operations framework — the skill of working at the surface of the AI capability bubble.
+            A personal reflection on working with AI agents. The categories, weights, and ratings are informal and have not been independently assessed.
           </p>
 
           {/* Overall score chip */}
@@ -189,7 +189,7 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
             </span>
             <span className={`text-[12px] tabular-nums ${isLight ? "text-emerald-700/70" : "text-emerald-400/80"}`}>/ 100</span>
             <span className={`text-[13px] font-semibold ${isLight ? "text-emerald-800" : "text-emerald-300"}`}>
-              Deep Frontier Operator
+              Personal self-rating
             </span>
           </div>
         </div>
@@ -239,8 +239,9 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
         >
           <p className={`max-w-3xl mx-auto text-[13.5px] leading-relaxed mb-6 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
             <span className={`font-semibold ${isLight ? "text-gray-700" : "text-gray-300"}`}>Frontier Operations</span>{" "}
-            is the skill of working at the surface of the AI capability bubble — sensing where agents succeed, designing clean handoffs, maintaining failure models, and calibrating human attention as capabilities shift quarterly. Scores are evidence-based, derived from production systems operated across multi-model substrates (Claude, Grok, Gemini, NotebookLM) and 270K+ interactions captured via UCW.
+            describes practices for checking AI outputs, designing handoffs, and deciding where human review is needed. The ratings here are subjective reflections, not a validated assessment, professional ranking, or external endorsement. DQ references describe historical implementation work; the source study and its findings were withdrawn on August 31, 2026.
           </p>
+          <a href="https://arxiv.org/abs/2511.15755" target="_blank" rel="noopener noreferrer" className="inline-block mb-6 text-sm underline">Read the DQ study withdrawal notice</a>
 
           {/* Score Yourself CTA */}
           <Link

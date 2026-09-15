@@ -24,16 +24,10 @@ export default function Nav() {
   const isHomePage = pathname === "/";
 
   const navLinks = [
-    { href: "#ask", label: "Ask AI", id: "ask" },
+    { href: "#timeline", label: "Experience", id: "timeline" },
+    { href: "#projects", label: "Selected work", id: "projects" },
     { href: "#resume", label: "Resume", id: "resume" },
-    { href: "#timeline", label: "Timeline", id: "timeline" },
-    { href: "#skills", label: "Skills", id: "skills" },
-    { href: "#systems", label: "Systems", id: "systems" },
-    { href: "#clients", label: "Clients", id: "clients" },
-    { href: "#projects", label: "Projects", id: "projects" },
-    { href: "#analyze", label: "Analyze", id: "analyze" },
     { href: "#contact", label: "Contact", id: "contact" },
-    { href: "/showcase", label: "Showcase", id: "showcase" },
   ];
 
   // Handle scroll behavior

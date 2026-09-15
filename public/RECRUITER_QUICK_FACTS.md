@@ -1,181 +1,54 @@
-# RECRUITER QUICK FACTS - DICO ANGELO
+# Dico Angelo
 
-## 🎯 ONE-SENTENCE PITCH
-Builder-operator hybrid who implemented 8+ arXiv papers into 297K LOC of production AI systems while building operational infrastructure that processed $800M+ in cloud marketplace deal registrations.
+## Revenue technology and GTM operations
 
-## 📊 KEY METRICS (Verified)
+Updated September 2026.
 
-### Technical
-- **297,480+ LOC** across ecosystem
-- **2 npm packages** published (@metaventionsai/cpb-core, voice-nexus)
-- **8+ arXiv papers** implemented in production
-- **95% test coverage** (Vitest)
-- **152,503 LOC** in OS-App alone
-- **21 GitHub repositories**
+Revenue Technology Manager at EZRA (Adecco Group), since June 15, 2026. Dico manages revenue platforms, integrations, AI-enabled workflows, onboarding, enablement and tool-adoption reporting. His work connects go-to-market teams with RevOps, Marketing Ops, IT and vendors.
 
-### Business
-- **$800M+ TCV** registered/processed through cloud marketplace infrastructure at Contentsquare
-- **2,500+ deal registrations** with 97% approval rate (operations on 3-person alliance team)
-- **Operations on 3-person alliance team**: program reached $30M+ ACV growth (Head of Cloud Alliances led strategy; I ran the operational layer)
-- **40%** cloud attachment rate on enterprise deals
-- **$222,750** annual cost savings at Rocket Mortgage
-- **2x Microsoft Partner of the Year** awards
-- **Catalyst 2026 Speaker**: Partner ecosystem conference testimonial
-- **1159.ai Innovation Workshop**: Rapid prototyping & iterative design testimonial
-- **Suger.io Case Study**: Featured as Sr. Partner Systems and Operations Specialist in vendor case study
+## Experience
 
-### 2024 Highlights (Contentsquare)
-- **$30M+ ACV growth** (AWS + Microsoft partnerships)
-- **$19M marketplace milestone** achieved
-- **3,000+ co-sell registrations** processed
-- **300+ partners** enabled with tiered frameworks
-- **60% reduction** in manual effort (automation)
-- **50+ dynamic reports** powering partner insights
+### EZRA (Adecco Group)
+Revenue Technology Manager | June 2026 to present
 
-### Systems & Platform Ownership
-- Led **6 iteration workstreams**: AWS CRM, SCA PM, Product Innovation, Cloud Intelligence, Reveal, R&D
-- Built **Cloud Intelligence Layer**: propensity models, pipeline scoring, executive dashboards
-- **Platform Admin**: Reveal, Suger, PartnerStack, Salesforce, AWS ACE, Crossbeam, Skilljar
-- Designed **3-tier ecosystem** and **PLG/SLG commission models** for 3,000+ partners
+- Revenue technology administration, integrations and workflow improvements.
+- AI tool deployment and practical automation initiatives.
+- User onboarding, enablement, adoption reporting and technology-stack evaluation.
 
-### Systems Built
-- **ACE** (Adaptive Consensus Engine) - 1,462 LOC
-- **ARCHON** (Meta-Orchestrator) - 1,280 LOC
-- **META-VENGINE** (Self-improving infrastructure) - 51K LOC
-- **ResearchGravity** (Research orchestration) - 17K+ LOC
+### Contentsquare
+Senior Partner Systems & Operations Lead | May 2023 to November 2025
+Title of record: Sr. Partner Systems and Operations Specialist.
 
-## 🔬 RESEARCH → PRODUCTION
+- Partner-systems administration and cloud marketplace deal-registration workflows on a three-person alliance team.
+- More than 2,500 registrations at a 97% approval rate, representing over $800M in shared pipeline total contract value co-registered with AWS and Microsoft. This is registered pipeline, not closed revenue.
+- Contributed operations work to a marketplace program that reached $30M+ in revenue over 30 months. This is a program result, not personal sales production.
+- Systems coordination across Salesforce, AWS ACE, Microsoft Partner Center, Suger, PartnerStack, Crossbeam and Reveal; reporting and enablement through regional teams.
 
-| arXiv Paper | Implementation | Result |
-|-------------|---------------|--------|
-| 2511.15755 | adaptiveConsensus.ts | 100% actionability |
-| 2511.13193 | agentAuction.ts | 300x token reduction |
-| 2508.17536 | ACE voting | Voting > debate |
-| 2601.09742 | archon/index.ts | Meta-cognition |
-| 2506.12508 | ARCHON subsystems | TEA protocol |
+### Rocket Mortgage Canada formerly Edison Financial
+Product Operations Specialist | June 2020 to May 2023
 
-## 💼 EXPERIENCE SNAPSHOT
+Salesforce administration, reporting, rollout coordination, document quality and evaluation workflows supporting a 45-agent operation. This was one continuous period of employment through the rebrand; it did not involve managing 45 direct reports.
 
-**Metaventions AI** (Nov 2025 - Present)
-- Founder & Systems Architect
-- Built 297K+ LOC in 3 months
-- Published 2 npm packages
+### Independent work
+Founder, Metaventions AI | November 2025 to present, concurrent with EZRA.
 
-**Contentsquare** (Jan 2022 - Nov 2025)
-- Sr. Partner Systems and Operations Specialist, infrastructure, automation, marketplace operations
-- Registered/processed $800M+ TCV through AWS and Microsoft marketplace systems
-- Operations on 3-person alliance team; program reached $30M+ ACV growth in 2024 (I ran the operational layer)
-- Built operational infrastructure: 50+ dynamic reports, 6 platform integrations, 90% automation improvement
-- 2,500+ deal registrations with 97% approval rate, 600+ deals/quarter capacity
-- Led PartnerStack ↔ Salesforce UAT: 10+ test cases, identified sync gaps, enabled 3K+ partner ecosystem
-- Platform admin: Salesforce, AWS ACE, Microsoft Partner Center, PartnerStack, Reveal, Suger
-- 2x Microsoft Partner of the Year
+AI-assisted development of knowledge-retrieval and workflow tools, including ResearchGravity. Dico specifies systems, directs AI coding tools, tests workflows and deploys the output. Research referenced in these projects is work by other authors that he studied or implemented.
 
-**Rocket Mortgage Canada** (Jun 2020 - May 2023)
-- Product Operations Specialist (entry-level, technical right-hand to the CRO at a small Canadian subsidiary)
-- Built quality-control + eval frameworks supporting a 45-agent operation, $222K savings
-- System Administrator for multiple platforms (Finmo, Lendesk, Floify, DocuSign)
-- Product owner, user stories, agile methodology
+### Community leadership
+Founding Director, Up2Youth | March 2019 to March 2022. Founded and ran a youth-development program supported by a $255,000 grant over 36 months from Ontario's Youth Opportunities Fund.
 
-**Edison Financial** (Jul 2021 - Apr 2022)
-- Document Review Specialist (concurrent with Rocket)
-- Process optimization, reduced documents needed while maintaining pipeline quality
+Volunteer mentor, Mass Fintech Hub | January to April 2026. Mentored three students.
 
-**Bridge Training Services - Up2Youth** (Mar 2019 - Present)
-- Director & Project Administrator
-- Partnerships: Ontario Trillium Foundation, United Way
-- Youth mentorship through sports and personal development
+## Education and development
 
-## 🎓 CREDENTIALS
+Bachelor of Business Administration, Marketing, University of Windsor, Odette School of Business.
+AWS Partner Business and Technical accreditations.
 
-**Education:**
-- BBA Marketing, University of Windsor (2019)
-- SpaceX Hyperloop 2019 Competition Finalist, Engineering Business Marketing Lead
+## Contact and downloads
 
-**University Leadership (2015-2019):**
-- UWindsor Hyperloop, Engineering Business Marketing Lead
-- Odette High School Leadership Initiative, VP of Marketing
-- Enactus Windsor, Lead Mentor
-- AIESEC Windsor, Lead
-
-**Certifications:**
-- AWS Partner: Business Accreditation
-- AWS Partner: Generative AI on AWS Essentials
-- Microsoft Copilot for Security Sales Training
-- Azure Development Learning Certifications
-- Artificial Intelligence Strategies for Business
-- Project Management Professional Development
-
-## 🔗 PORTFOLIO
-
-**Live Demos:**
-- https://app.metaventionsai.com (OS-App)
-- https://dicoangelo.vercel.app (Portfolio)
-
-**Code:**
-- https://github.com/Dicoangelo
-- https://www.npmjs.com/org/metaventionsai
-
-**Contact:**
-- dico.angelo97@gmail.com
-- 519-999-6099
-- LinkedIn: /in/dicoangelo
-
-## 🎯 TARGET ROLES
-
-**Top Fit:**
-1. Research Engineer (Agentic, Safety, Multi-Agent)
-2. Technical Program Manager (AI/ML Products)
-3. Applied AI Engineer
-4. Software Engineer, AI Products
-
-**Dream Companies:**
-- Google DeepMind
-- Anthropic
-- OpenAI
-- NVIDIA
-- SpaceX
-
-## 🇨🇦 VISA STATUS
-Canadian Citizen - TN Visa Eligible (No sponsorship needed)
-
-## ⚡ UNIQUE VALUE
-
-**Most candidates either:**
-- Read papers OR write code
-- Manage deals OR build products
-- Academic OR industry
-
-**Dico does BOTH:**
-- ✅ Research → Production (8+ papers)
-- ✅ GTM + Technical ($800M + 297K LOC)
-- ✅ Theory + Practice (shipping at scale)
-
-## 🚀 WHY HIRE DICO?
-
-1. **Ships Fast:** 152K LOC in 3 months
-2. **Research-Backed:** 8+ arXiv papers in production
-3. **Business-Savvy:** $800M deals managed
-4. **Self-Taught:** Learns fast, doesn't need hand-holding
-5. **Production-Ready:** 95% test coverage, live demos
-
-## 📋 TECHNICAL STACK
-
-**Languages:** (79K LOC), (31K LOC)
-**Frameworks:** React 19, Next.js 14, FastAPI
-**AI/ML:** Gemini, Claude, GPT-4, Grok, Vector Search
-**Infrastructure:** Vercel, Supabase, SQLite, Qdrant
-**Testing:** Vitest (95% coverage)
-
-## 🔍 DUE DILIGENCE
-
-**Want to verify?**
-1. Check the code: github.com/Dicoangelo
-2. Try the demo: app.metaventionsai.com
-3. Read the papers: arXiv:2511.15755, 2511.13193
-4. View the packages: npmjs.com/org/metaventionsai
-5. Ask specific questions (this AI knows everything)
-
----
-
-**For full technical details, see TECHNICAL_DOSSIER.md**
+- Email: dico.angelo97@gmail.com
+- Phone: 519-999-6099
+- LinkedIn: https://www.linkedin.com/in/dico-angelo/
+- Portfolio: https://dicoangelo.metaventionsai.com
+- Resume PDF: https://dicoangelo.metaventionsai.com/Dico_Angelo_Resume.pdf
+- Resume DOCX: https://dicoangelo.metaventionsai.com/Dico_Angelo_Resume.docx

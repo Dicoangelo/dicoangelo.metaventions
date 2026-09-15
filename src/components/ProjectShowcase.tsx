@@ -123,16 +123,16 @@ const projects: Project[] = [
   {
     name: "ACE",
     tagline: "Adaptive Consensus Engine",
-    description: "Multi-agent voting system achieving consensus through adaptive thresholds, DQ-weighted voting, and auction-based agent selection.",
+    description: "Multi-agent voting implementation with adaptive thresholds, heuristic DQ weights, and auction-based agent selection. The DQ study that inspired this work was withdrawn on August 31, 2026; its actionability findings are not evidence of this implementation's performance.",
     metrics: [
-      { label: "Actionability", value: "100% vs 1.7% baseline" },
+      { label: "Voting", value: "Adaptive thresholds" },
       { label: "Token Reduction", value: "300x" },
       { label: "Consensus Rounds", value: "50% faster" },
       { label: "Test Coverage", value: "95%" }
     ],
     techStack: ["AI-Directed Build", "Multi-Agent Systems", "DQ-Weighted Voting", "Vitest"],
     papers: [
-      "arXiv:2511.15755 - DQ Scoring Framework",
+      "arXiv:2511.15755 - historical inspiration; study and DQ results withdrawn Aug 31, 2026",
       "arXiv:2511.13193 - Agent Auctions (DALA)",
       "arXiv:2508.17536 - Voting vs Debate"
     ],
@@ -167,7 +167,7 @@ const projects: Project[] = [
     metrics: [
       { label: "Auto-Fix Rate", value: "70%" },
       { label: "Error Patterns", value: "700+" },
-      { label: "DQ Score Avg", value: "0.889" },
+      { label: "Routing", value: "Internal heuristic" },
       { label: "Systems", value: "9 integrated" }
     ],
     techStack: ["AI-Directed Build", "Pattern Recognition", "Self-Healing Systems", "SQLite"],

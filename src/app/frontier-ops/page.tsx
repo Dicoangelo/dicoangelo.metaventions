@@ -6,14 +6,6 @@ import { useTheme } from "@/components/ThemeProvider";
 
 // ─── Dimension definitions ────────────────────────────────────────────────────
 
-const DICO_SCORES: Record<string, number> = {
-  "boundary-sensing": 96,
-  "seam-design": 98,
-  "failure-model": 94,
-  "capability-forecasting": 89,
-  "attention-calibration": 92,
-};
-
 type AnswerValue = "yes" | "partial" | "no" | null;
 
 interface Question {
@@ -176,34 +168,34 @@ function scoreTier(total: number): { label: string; description: string; color: 
     return {
       label: "Deep Frontier Operator",
       description:
-        "You're in the top 0.1% of professionals operating at the AI frontier. You don't just use AI — you architect the seam between human and machine cognition.",
+        "Your answers describe consistent habits across this checklist. Pick one example and review whether the outcome supports your self-assessment.",
       color: "emerald",
     };
   if (total >= 75)
     return {
       label: "Active Frontier Practitioner",
       description:
-        "You're ahead of 95% of professionals. Your AI practice is systematic — you're building the habits that will compound into deep frontier ops.",
+        "Your answers describe several established practices. Use the lower-scoring areas to choose a useful next experiment.",
       color: "indigo",
     };
   if (total >= 55)
     return {
       label: "Frontier Aware",
       description:
-        "You understand the concepts but aren't systematically practicing. The gap between knowing and operating is where leverage lives.",
+        "Your answers suggest a mix of established and developing habits. Choose a task where you can make verification or handoffs more explicit.",
       color: "violet",
     };
   if (total >= 35)
     return {
       label: "AI User",
       description:
-        "You use AI regularly but don't yet operate at the frontier. You're leaving 80% of the leverage on the table.",
+        "Your answers identify practices you could explore. Start with one repeatable task and a clear check of the output.",
       color: "amber",
     };
   return {
     label: "Pre-Frontier",
     description:
-      "Significant opportunity ahead. The professionals who build frontier ops skills now will have a 5-year head start by 2028.",
+      "Use this checklist as a starting point. Try one practice, keep a record of what happened, and revisit your answers later.",
     color: "orange",
   };
 }
@@ -277,21 +269,18 @@ function AnswerButton({
   );
 }
 
-function CompareBar({
+function DimensionBar({
   label,
   userScore,
-  dicoScore,
   max,
   isLight,
 }: {
   label: string;
   userScore: number;
-  dicoScore: number;
   max: number;
   isLight: boolean;
 }) {
   const userPct = (userScore / max) * 100;
-  const dicoPct = (dicoScore / max) * 100;
 
   return (
     <div className="space-y-1.5">
@@ -306,11 +295,6 @@ function CompareBar({
               {userScore}/{max}
             </span>
           </span>
-          <span className={isLight ? "text-gray-400" : "text-gray-600"}>|</span>
-          <span className="text-emerald-500">
-            Dico:{" "}
-            <span className="font-bold">{dicoScore}/{max}</span>
-          </span>
         </div>
       </div>
       {/* User bar */}
@@ -318,13 +302,6 @@ function CompareBar({
         <div
           className={`h-full rounded-full transition-all duration-700 ease-out ${barColor(userScore, max)}`}
           style={{ width: `${userPct}%` }}
-        />
-      </div>
-      {/* Dico bar */}
-      <div className={`relative h-1.5 rounded-full overflow-hidden ${isLight ? "bg-gray-100" : "bg-white/10"}`}>
-        <div
-          className="h-full rounded-full transition-all duration-700 ease-out bg-emerald-500/50"
-          style={{ width: `${dicoPct}%` }}
         />
       </div>
     </div>
@@ -349,7 +326,6 @@ export default function FrontierOpsAssessment() {
   const dimScores = dimensions.map((dim) => ({
     ...dim,
     userScore: getDimScore(dim, answers),
-    dicoScore: DICO_SCORES[dim.id],
   }));
 
   const totalUserScore = dimScores.reduce((acc, d) => acc + d.userScore, 0);
@@ -425,10 +401,10 @@ export default function FrontierOpsAssessment() {
           </h1>
 
           <p className={`max-w-2xl mx-auto text-lg mb-3 ${isLight ? "text-gray-600" : "text-gray-400"}`}>
-            Score yourself against the 5 frontier ops skills. No AI required — honest self-assessment only.
+            Reflect on five habits for working with AI. Your answers produce an informal checklist score to help you choose what to practice next.
           </p>
           <p className={`text-sm ${isLight ? "text-gray-400" : "text-gray-600"}`}>
-            Framework by Ethan Mollick. Infrastructure by Dico Angelo.
+            Questions and weights by Dico Angelo. This is not a validated assessment, a professional ranking, or an endorsement by an external researcher.
           </p>
         </div>
 
@@ -559,19 +535,6 @@ export default function FrontierOpsAssessment() {
                 <span className="text-base font-semibold">— {tier.label}</span>
               </div>
 
-              {/* Dico comparison */}
-              <div
-                className={`inline-flex items-center gap-3 px-5 py-3 rounded-2xl border font-medium text-sm ${
-                  isLight
-                    ? "border-emerald-200 bg-emerald-50/50 text-emerald-800"
-                    : "border-emerald-500/20 bg-emerald-500/5 text-emerald-400"
-                }`}
-              >
-                <span className="text-emerald-500 text-2xl font-extrabold tabular-nums">94</span>
-                <span className={`text-xs ${isLight ? "text-emerald-700" : "text-emerald-500"}`}>
-                  Dico&apos;s score
-                </span>
-              </div>
             </div>
 
             {/* Tier description */}
@@ -579,17 +542,16 @@ export default function FrontierOpsAssessment() {
               {tier.description}
             </p>
 
-            {/* Per-dimension comparison */}
+            {/* Per-dimension checklist results */}
             <div className="space-y-5 mb-8">
               <h3 className={`text-sm font-semibold uppercase tracking-wider ${isLight ? "text-gray-500" : "text-gray-500"}`}>
-                Score by dimension (thick = you, thin = Dico)
+                Your checklist score by dimension
               </h3>
               {dimScores.map((d) => (
-                <CompareBar
+                <DimensionBar
                   key={d.id}
                   label={d.name}
                   userScore={d.userScore}
-                  dicoScore={d.dicoScore}
                   max={d.max}
                   isLight={isLight}
                 />
@@ -616,14 +578,14 @@ export default function FrontierOpsAssessment() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/#frontier-ops"
+                href="/showcase"
                 className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all hover:scale-105 border ${
                   isLight
                     ? "border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-100"
                     : "border-emerald-500/30 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20"
                 }`}
               >
-                <span>See how Dico scored 94/100 →</span>
+                <span>Explore implementation examples →</span>
               </Link>
               <p className={`self-center text-sm ${isLight ? "text-gray-500" : "text-gray-500"}`}>
                 Want to develop these skills? Start by giving your AI agent a task that surprises you.

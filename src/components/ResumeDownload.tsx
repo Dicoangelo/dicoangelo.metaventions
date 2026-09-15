@@ -70,12 +70,12 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
             </h2>
             {showSummary && (
               <p className={`text-[14px] leading-relaxed mb-2 ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-                Operations Leader · AI Systems Builder
+                Revenue Technology · GTM Operations
               </p>
             )}
             {showDeep && (
               <p className={`text-[12px] ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
-                Updated February 2026 · TN Visa eligible
+                Updated September 2026 · Two-page résumé
               </p>
             )}
           </div>
@@ -88,15 +88,15 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
             }`}>
               <p className="text-2xl font-bold text-[#6366f1] mb-1">$800M+</p>
               <p className={`text-xs ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-                TCV Processed
+                Shared Pipeline Registered
               </p>
             </div>
             <div className={`p-4 rounded-lg text-center ${
               isLight ? 'bg-gray-50' : 'bg-[#1a1a1a]'
             }`}>
-              <p className="text-2xl font-bold text-[#6366f1] mb-1">900K+</p>
+              <p className="text-2xl font-bold text-[#6366f1] mb-1">GTM</p>
               <p className={`text-xs ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-                Lines of Code
+                Systems & Adoption
               </p>
             </div>
             <div className={`p-4 rounded-lg text-center ${

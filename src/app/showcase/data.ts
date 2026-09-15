@@ -139,7 +139,7 @@ export const showcaseItems: ShowcaseItem[] = [
     title: "DQ-Scored Model Routing",
     subtitle: "Multi-Service AI Orchestration",
     description:
-      "Decision Quality scoring across Opus/Sonnet/Haiku. 158 decisions, 0.890 avg DQ, 89.9% Opus accuracy. Histogram distribution, per-model accuracy bars, recent decisions table.",
+      "Historical model-routing dashboard across Opus/Sonnet/Haiku. Displays internal DQ heuristics, a score distribution, and recent decisions. Numbers shown in the screenshot are internal telemetry, not independently validated accuracy or scientific results.",
     category: "orchestration",
     tags: [
       { cls: "tag-orchestration", label: "ORCHESTRATION" },
@@ -147,9 +147,9 @@ export const showcaseItems: ShowcaseItem[] = [
       { cls: "tag-data", label: "DQ SCORING" },
     ],
     talkingPoints: [
-      "This is my Decision Quality scoring system, it routes queries to the optimal AI model based on complexity, domain, and cost.",
-      "158 routing decisions with 0.890 average DQ score and 89.9% accuracy on Opus. This is the kind of intelligent orchestration layer needed for enterprise AI systems.",
-      "The histogram shows DQ distribution, most decisions cluster above 0.85, meaning the routing heuristic is well-calibrated.",
+      "This implementation uses internal heuristics to route queries based on complexity, domain, and cost.",
+      "The screenshot preserves a historical dashboard. Its DQ values and accuracy labels should not be interpreted as validated outcome measurements.",
+      "The source study, Philip Drammeh's arXiv:2511.15755, was withdrawn on August 31, 2026, including its DQ results. The implementation remains a software example; see https://arxiv.org/abs/2511.15755 for the withdrawal notice.",
     ],
   },
   {
@@ -628,9 +628,9 @@ export const liveSites: LiveSite[] = [
   },
   // ─── Vercel-Only Sites ───
   {
-    name: "DQ Scoring Collaboration",
+    name: "DQ Implementation Notes (Historical)",
     tech: "HTML / RESEARCH PRESENTATION",
-    description: "Philip Drammeh x D'Angelo, DQ scoring production validation (arXiv:2511.15755)",
+    description: "Historical notes on Dico's implementation of ideas from Philip Drammeh's arXiv:2511.15755. The author withdrew the study and its DQ results on Aug 31, 2026. These notes do not establish scientific validation or co-authorship.",
     url: "https://dqscoring.vercel.app",
   },
   {

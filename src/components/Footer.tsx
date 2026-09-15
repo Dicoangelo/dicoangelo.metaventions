@@ -11,7 +11,7 @@ export default function Footer({ isLight }: FooterProps) {
 
   const quickLinks = [
     { label: "Resume", href: "/#resume" },
-    { label: "Skills", href: "/#skills" },
+
     { label: "Timeline", href: "/#timeline" },
     { label: "Projects", href: "/#projects" },
     { label: "Contact", href: "/#contact" },
@@ -57,9 +57,9 @@ export default function Footer({ isLight }: FooterProps) {
   ];
 
   const stats = [
-    { value: "$800M+", label: "TCV Processed" },
-    { value: "900K+", label: "Lines of Code" },
-    { value: "8+", label: "Research Papers" },
+    { value: "GTM", label: "Systems and operations" },
+    { value: "AI", label: "Practical implementation" },
+    { value: "People", label: "Adoption and enablement" },
   ];
 
   return (
@@ -96,15 +96,15 @@ export default function Footer({ isLight }: FooterProps) {
               </p>
             </div>
             <p className={`text-[13.5px] leading-relaxed mb-5 max-w-md ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-              Operations leader and AI systems builder. Enterprise-scale execution + hands-on technical depth in AI and automation.
+              Revenue technology and GTM operations. Connecting systems, improving workflows, and helping teams use AI.
             </p>
             <a
-              href="mailto:dicoangelo@metaventionsai.com"
+              href="mailto:dico.angelo97@gmail.com"
               className={`inline-block text-[13.5px] mb-5 transition-colors ${
                 isLight ? "text-gray-600 hover:text-[#6366f1]" : "text-[#a3a3a3] hover:text-white"
               }`}
             >
-              dicoangelo@metaventionsai.com
+              dico.angelo97@gmail.com
             </a>
             <div className="flex gap-2">
               {socialLinks.map((link) => (
@@ -193,14 +193,14 @@ export default function Footer({ isLight }: FooterProps) {
             <span aria-hidden="true" className={`hidden md:inline ${isLight ? "text-gray-300" : "text-[#404040]"}`}>
               ·
             </span>
-            <span>Canadian Citizen · TN Visa Eligible</span>
+            <span>Canadian citizen</span>
           </div>
           <div className="flex items-center gap-3 flex-wrap">
             <ReducedMotionToggle isLight={isLight} />
             <span aria-hidden="true" className={`hidden md:inline ${isLight ? "text-gray-300" : "text-[#404040]"}`}>
               ·
             </span>
-            <span>Built with AI orchestration</span>
+            <span>Built with AI-assisted development</span>
             <span
               className={`px-2 py-1 rounded-md text-[10.5px] font-semibold tracking-tight backdrop-blur-sm ${
                 isLight
@@ -208,7 +208,7 @@ export default function Footer({ isLight }: FooterProps) {
                   : "bg-[#6366f1]/15 text-[#818cf8] border border-[#6366f1]/25"
               }`}
             >
-              0 lines manually written
+
             </span>
           </div>
         </div>

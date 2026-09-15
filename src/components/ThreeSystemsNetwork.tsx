@@ -17,7 +17,7 @@ interface SystemNode {
 
 const SYSTEMS: SystemNode[] = [
     { id: "cog", name: "Cognitive OS", description: "Intelligent task scheduling based on performance patterns", metric: "Optimizes timing", position: [0, 2, 0], connections: ["dq", "mac", "obs"] },
-    { id: "dq", name: "Quality Engine", description: "Automated quality control & decision validation", metric: "89% accuracy", position: [-2, 0.5, 0], connections: ["rec", "ace"] },
+    { id: "dq", name: "Quality Engine", description: "Internal heuristic signals for model routing and review", metric: "Heuristic scoring", position: [-2, 0.5, 0], connections: ["rec", "ace"] },
     { id: "rec", name: "Recovery System", description: "Self-healing architecture prevents downtime", metric: "70% auto-fix", position: [-2, -1.5, 0], connections: ["obs"] },
     { id: "mem", name: "Memory Layer", description: "Pattern recognition across all operations", metric: "700+ scenarios", position: [2, 0.5, 0], connections: ["lh", "ctx"] },
     { id: "mac", name: "Multi-Agent", description: "Parallel processing for 3x faster delivery", metric: "Concurrent ops", position: [0, 0, 0], connections: ["dq", "mem", "ace"] },

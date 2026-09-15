@@ -199,9 +199,9 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
                 subdomain: "friendlyface.",
               },
               {
-                name: "DQ Scoring",
+                name: "DQ Implementation Notes (Historical)",
                 url: "https://dqscoring.vercel.app",
-                description: "Drammeh x D'Angelo — DQ scoring research (arXiv:2511.15755)",
+                description: "Dico's implementation notes on Philip Drammeh's arXiv:2511.15755. The author withdrew the study and its DQ results on Aug 31, 2026; this is not research co-authorship or scientific validation.",
                 subdomain: "dqscoring.",
               },
               {
