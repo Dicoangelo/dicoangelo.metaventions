@@ -109,7 +109,8 @@ export default function GtmHome() {
         const alignVisibleSection = () => {
           // Streamed content can mount inside a hidden Suspense container.
           // Wait for layout before aligning the requested section.
-          if (!target.getBoundingClientRect().height) return;
+          const bounds = target.getBoundingClientRect();
+          if (!bounds.width && !bounds.height) return;
           target.scrollIntoView({ behavior: "instant", block: "start" });
           observer?.disconnect();
         };
