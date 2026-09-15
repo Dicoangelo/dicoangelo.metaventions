@@ -11,7 +11,7 @@ export const CURRENT_ROLE = {
     "Partner on AI tool deployments and agent workflows that connect sales and marketing systems",
     "Build scalable tech-stack enablement, onboarding, and self-service resources for sellers",
     "Establish tool-adoption reporting, license hygiene, and an operating cadence with GTM Ops, Marketing Ops, Finance, and IT",
-    "Audit the technology stack for gaps, overlap, and AI integration opportunities across Marketing, Sales, and Client Experience & Operations",
+    "Audit the technology stack for gaps, overlap, and AI integration opportunities across sales, marketing, and customer-facing teams",
   ],
   metrics: ["Revenue Technology", "AI & Automation", "GTM Enablement"],
 };
