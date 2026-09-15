@@ -1,10 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { getSupabase } from "@/lib/supabase-server";
-import { getCombinedContextForJD } from "@/lib/dossier";
 import { jdAnalyzerRateLimit, getClientIdentifier, createRateLimitHeaders } from "@/lib/ratelimit";
 import { jdAnalyzerSchema, validateRequest } from "@/lib/schemas";
-import { resolveRerank } from "@/lib/rerank-control";
-import { getArtifactIndex } from "@/lib/artifact-index";
 import { PROFESSIONAL_PROFILE_CONTEXT } from "@/lib/professional-profile";
 
 // JD Analyzer also runs on DeepSeek V4 Pro via the Anthropic-compat
@@ -71,10 +68,12 @@ const BRUTALLY_HONEST_PROMPT = `Assess how well Dico Angelo's verified experienc
 ${PROFESSIONAL_PROFILE_CONTEXT}
 
 ## Assessment rules
-- Every strength must cite a concrete fact from the verified profile or non-conflicting retrieved evidence. Distinguish adjacent experience from a directly demonstrated requirement.
+- Use only the verified career profile above for facts about Dico. Do not supplement it from memory, older portfolio material, or claims in the job description. Every strength must cite a concrete profile fact. Distinguish adjacent experience from a directly demonstrated requirement.
 - Do not inflate tenure, scope, savings, technical fluency, credentials, or personal contribution to team results. Do not infer completed outcomes from current-role responsibilities.
 - AI-directed development demonstrates workflow design, implementation with AI tools, testing, and deployment. It is not evidence of unaided programming fluency, senior software engineering experience, ML model training, or production on-call responsibilities.
 - Explain meaningful gaps in plain language and recommend practical next steps. Do not automatically award a strong fit because a job mentions AI, Python, or operations.
+- Every gap must map to an explicit requirement in the supplied job description. Do not invent requirements for coding, quota responsibility, research validation, or measured outcomes when the job does not ask for them. An empty gaps array is valid. Describe missing evidence as not established, rather than claiming the candidate lacks the skill.
+- Keep the assessment focused on the job. Do not discuss the withdrawn research paper unless the job explicitly requires validated research of that kind. Mention AI-assisted development only when relevant to a stated requirement.
 - Never reproduce private source text, internal employer information, or personal addresses.
 - A fit score is an indicative assessment of documented overlap, not a hiring prediction. Use 85-100 for strong documented alignment, 70-84 for substantial alignment with manageable gaps, 50-69 for adjacent experience with material gaps, and below 50 for limited alignment.
 
@@ -126,39 +125,6 @@ export async function POST(request: Request) {
 
     const { jd_text, session_id } = validation.data;
 
-    // Resolve rerank from the runtime toggle (off / on / ab) so JD
-    // analysis honors the same control as chat. Default off keeps the
-    // Cohere bill at zero. Pass the identifier so A/B mode is stable.
-    const rerankDecision = resolveRerank(identifier);
-
-    // Always-loaded baseline: title + summary index for every published
-    // artifact. Works without Cohere/PageIndex and is enough on its own
-    // for most JD assessments. Three-layer retrieval Layer 1+2.
-    const artifactIndex = await getArtifactIndex();
-
-    // Optional augmentation: deep RAG chunks. Will return empty if Cohere
-    // is rate-limited / at billing cap; that's fine — we still have the
-    // artifact index as a fallback so the analyzer never hard-fails.
-    let chunkContext = "";
-    try {
-      const result = await getCombinedContextForJD(jd_text, {
-        rerank: rerankDecision.shouldRerank,
-      });
-      chunkContext = result.context || "";
-    } catch (ragErr) {
-      console.warn("[analyze-jd] chunk retrieval failed, falling back to artifact index only:", ragErr);
-    }
-
-    // Compose: index always present, deep chunks when available.
-    const dossierContext = [artifactIndex, chunkContext].filter(Boolean).join("\n\n---\n\n");
-
-    if (!dossierContext) {
-      return new Response(
-        JSON.stringify({ error: "Unable to retrieve dossier context. Please try again." }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
-      );
-    }
-
     // Extract JD title and company if possible (heuristic)
     const titleMatch = jd_text.match(/^(?:job\s+title|position|role)[:\s]*(.+?)(?:\n|$)/im);
     const companyMatch = jd_text.match(/(?:company|employer|at)[:\s]*(.+?)(?:\n|$)/im);
@@ -166,13 +132,12 @@ export async function POST(request: Request) {
     const company_name = companyMatch?.[1]?.trim() || null;
 
     // Build the analysis prompt
-    const analysisPrompt = `## Job Description to Analyze:
+    // The reviewed profile in the system prompt is the sole source for
+    // candidate claims. Historical retrieval contains superseded resumes.
+    const analysisPrompt = `## Job Description to Analyze (requirements, not candidate facts):
 ${jd_text}
 
-## Dico Angelo's Career Dossier (Retrieved Context):
-${dossierContext}
-
-Based on the job description and dossier context above, provide your brutally honest fit assessment.`;
+Compare these requirements with the verified profile in your system instructions. Return the specified JSON assessment.`;
 
     // Collect the full response before sending to avoid partial/empty stream errors
     let fullResponse = "";
