@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ReadingDepthProvider } from "@/components/ReadingDepthProvider";
+import { CURRENT_ROLE } from "@/lib/current-role";
 
 // Site URL configuration - can be overridden via NEXT_PUBLIC_SITE_URL env var
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dicoangelo.vercel.app";
@@ -88,7 +89,7 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Dico Angelo",
-  jobTitle: "Operations Leader & AI Systems Builder",
+  jobTitle: CURRENT_ROLE.title,
   description: "Operated cloud ops on the 3-person alliance team at Contentsquare. Program reached $0 to $30M+ marketplace revenue across AWS and Microsoft ($800M+ TCV). I owned the operational layer (CRM, automation, dashboards) while shipping 900K+ lines of production AI systems",
   url: SITE_URL,
   email: "hello@dicoangelo.com",
@@ -125,8 +126,7 @@ const personSchema = {
   },
   worksFor: {
     "@type": "Organization",
-    name: "Metaventions AI",
-    url: SITE_URL
+    name: CURRENT_ROLE.company,
   },
   hasCredential: [
     {

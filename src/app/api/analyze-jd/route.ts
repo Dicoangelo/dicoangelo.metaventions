@@ -5,6 +5,7 @@ import { jdAnalyzerRateLimit, getClientIdentifier, createRateLimitHeaders } from
 import { jdAnalyzerSchema, validateRequest } from "@/lib/schemas";
 import { resolveRerank } from "@/lib/rerank-control";
 import { getArtifactIndex } from "@/lib/artifact-index";
+import { CURRENT_ROLE_CONTEXT } from "@/lib/current-role";
 
 // JD Analyzer also runs on DeepSeek V4 Pro via the Anthropic-compat
 // endpoint, same as the chat route. Falls back to V4 Flash on errors.
@@ -66,6 +67,8 @@ function cleanJsonResponse(response: string): string {
 }
 
 const BRUTALLY_HONEST_PROMPT = `You are a BRUTALLY HONEST career fit analyzer. Your job is to assess how well Dico Angelo matches a job description.
+
+${CURRENT_ROLE_CONTEXT}
 
 ## Rules - FOLLOW EXACTLY:
 1. **NO FLATTERY** - If there's a gap, say it directly. No sugarcoating.
