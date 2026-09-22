@@ -41,7 +41,7 @@ export default function CommandPalette({ className = "" }: CommandPaletteProps) 
       id: "about",
       label: "Go to About",
       icon: <UserIcon />,
-      action: () => scrollToSection("approach"),
+      action: () => scrollToSection("bridge"),
       category: "navigation",
       keywords: ["ai", "augmented", "operator"],
     },

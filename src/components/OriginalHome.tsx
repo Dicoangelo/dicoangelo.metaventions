@@ -89,7 +89,7 @@ export default function OriginalHome() {
       observer?.disconnect();
       frame = requestAnimationFrame(() => {
         const fragment = window.location.hash.slice(1);
-        const id = fragment === "systems" ? "ucw-insights" : fragment === "top" ? "hero" : fragment;
+        const id = fragment === "ucw-insights" ? "systems" : fragment === "top" ? "hero" : fragment;
         const target = id ? document.getElementById(id) : null;
         if (!target) return;
         const align = () => {

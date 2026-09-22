@@ -78,7 +78,7 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
     : "bg-[#0a0a0a]/70 border border-white/[0.07] backdrop-blur-sm";
 
   return (
-    <section id="ucw-insights" className="relative py-24 px-6">
+    <section id="systems" className="relative py-24 px-6">
       {/* Ambient brand wash */}
       <div
         aria-hidden="true"

@@ -11,7 +11,7 @@ const navLinks = [
     { href: "#resume", label: "Resume", id: "resume" },
     { href: "#timeline", label: "Timeline", id: "timeline" },
     { href: "#skills", label: "Skills", id: "skills" },
-    { href: "#ucw-insights", label: "Systems", id: "ucw-insights" },
+    { href: "#systems", label: "Systems", id: "systems" },
     { href: "#clients", label: "Clients", id: "clients" },
     { href: "#projects", label: "Projects", id: "projects" },
     { href: "#analyze", label: "Analyze", id: "analyze" },
