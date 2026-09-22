@@ -8,8 +8,6 @@ interface CodeExample {
   description: string;
   language: string;
   code: string;
-  previewLabel: string;
-  previewDescription: string;
   demo?: React.ReactNode;
 }
 
@@ -26,9 +24,7 @@ export default function InteractiveCodeDemo({ isLight }: InteractiveCodeDemoProp
     {
       id: "react-hooks",
       title: "Specified: Stateful Counter",
-      description: "Illustrative React state pattern",
-      previewLabel: "Interactive counter",
-      previewDescription: "Click the button to update local state. This example makes no network request.",
+      description: "Prompt → AI-generated React hook pattern",
       language: "typescript",
       code: `const [count, setCount] = useState(0);
 
@@ -38,7 +34,7 @@ return (
   </button>
 );`,
       demo: (
-        <div className="p-6 rounded-lg border border-[#262626] bg-[#141414]">
+        <div className="p-6 rounded-lg border border-[#262626] bg-gradient-to-br from-[#6366f1]/5 to-[#8b5cf6]/5">
           <button
             onClick={() => setCount(count + 1)}
             className="px-6 py-3 bg-[#6366f1] text-white rounded-lg hover:bg-[#4f46e5] transition-all hover:scale-105 active:scale-95"
@@ -46,7 +42,7 @@ return (
             Clicked {count} times
           </button>
           <p className="mt-4 text-sm text-[#a3a3a3]">
-            Local React state example
+            Interactive local state example
           </p>
         </div>
       ),
@@ -54,17 +50,21 @@ return (
     {
       id: "typescript",
       title: "Specified: Typed User Interface",
-      description: "Illustrative TypeScript contract",
-      previewLabel: "Static type illustration",
-      previewDescription: "A visual explanation of a data contract. No user record is fetched or created.",
+      description: "Prompt → AI-generated typed contract",
       language: "typescript",
       code: `interface User {
   id: string;
   name: string;
   role: 'admin' | 'user';
+  metadata?: Record<string, any>;
+}
+
+function getUser(id: string): Promise<User> {
+  return fetch(\`/api/users/\${id}\`)
+    .then(res => res.json());
 }`,
       demo: (
-        <div className="p-6 rounded-lg border border-[#262626] bg-[#141414]">
+        <div className="p-6 rounded-lg border border-[#262626] bg-gradient-to-br from-[#6366f1]/5 to-[#8b5cf6]/5">
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="text-[#6366f1] font-mono text-sm">interface</span>
@@ -82,9 +82,7 @@ return (
     {
       id: "async-await",
       title: "Specified: Async Error-Handled Pipeline",
-      description: "Illustrative pipeline pseudocode",
-      previewLabel: "Static workflow illustration",
-      previewDescription: "These steps explain the pseudocode. No fetching, validation, or transformation runs here.",
+      description: "Prompt → AI-generated try/catch flow",
       language: "typescript",
       code: `async function processData() {
   try {
@@ -98,23 +96,23 @@ return (
   }
 }`,
       demo: (
-        <div className="p-6 rounded-lg border border-[#262626] bg-[#141414]">
+        <div className="p-6 rounded-lg border border-[#262626] bg-gradient-to-br from-[#6366f1]/5 to-[#8b5cf6]/5">
           <div className="space-y-2 text-sm font-mono">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full" />
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="text-[#a3a3a3]">1. Fetch data</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-yellow-500 rounded-full" />
-              <span className="text-[#a3a3a3]">2. Validate input</span>
+              <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse" />
+              <span className="text-[#a3a3a3]">2. Validate inputs</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-blue-500 rounded-full" />
-              <span className="text-[#a3a3a3]">3. Transform validated data</span>
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+              <span className="text-[#a3a3a3]">3. Transform data</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full" />
-              <span className="text-white">4. Return a result or report an error</span>
+              <span className="text-white">4. Return result</span>
             </div>
           </div>
         </div>
@@ -122,29 +120,23 @@ return (
     },
     {
       id: "tailwind",
-      title: "Specified: Controlled Text Input",
-      description: "Illustrative input and state pattern",
-      previewLabel: "Interactive text input",
-      previewDescription: "Type a value to see local state update. The text stays in this example and is not submitted.",
+      title: "Specified: Gradient Button Component",
+      description: "Prompt → AI-generated utility-class markup",
       language: "tsx",
-      code: `const [text, setText] = useState("");
-
-return (
-  <div>
-    <label htmlFor="demo-text">Example text</label>
-    <input
-      id="demo-text"
-      value={text}
-      onChange={(event) => setText(event.target.value)}
-    />
-    {text && <p>You typed: {text}</p>}
-  </div>
-);`,
+      code: `<div className="
+  flex items-center gap-4
+  px-6 py-4 rounded-lg
+  bg-gradient-to-r from-blue-500 to-purple-500
+  hover:scale-105 transition-transform
+  shadow-lg hover:shadow-xl
+">
+  <span className="text-white font-bold">
+    Beautiful Components
+  </span>
+</div>`,
       demo: (
-        <div className="p-6 rounded-lg border border-[#262626] bg-[#141414]">
-          <label htmlFor="demo-text" className="block mb-2 text-sm text-white">Example text</label>
+        <div className="p-6 rounded-lg border border-[#262626] bg-gradient-to-br from-[#6366f1]/5 to-[#8b5cf6]/5">
           <input
-            id="demo-text"
             type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -174,9 +166,9 @@ return (
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Small implementation examples</h2>
+          <h2 className="text-3xl font-bold mb-4">Specified in English. Built by AI Agents.</h2>
           <p className={`text-sm max-w-2xl mx-auto ${isLight ? "text-gray-600" : "text-[#737373]"}`}>
-            These simplified examples illustrate patterns Dico can specify and review while directing AI coding tools. The counter and text input run locally; the type and pipeline panels explain concepts. They are not demonstrations of the production systems above.
+            Dico specifies patterns like these in English, directs Claude Code / Codex / Gemini to implement them, then reviews and ships. No claim of hand-fluency in TypeScript, JavaScript, Python, SQL, or Bash — the AI agents close that gap.
           </p>
         </div>
 
@@ -184,12 +176,11 @@ return (
           {/* Code Editor */}
           <div>
             {/* Tab selector */}
-            <div className="flex gap-2 mb-4 overflow-x-auto scrollbar-hide" role="group" aria-label="Choose an implementation example">
+            <div className="flex gap-2 mb-4 overflow-x-auto scrollbar-hide">
               {examples.map((example, index) => (
                 <button
                   key={example.id}
                   onClick={() => setSelectedExample(index)}
-                  aria-pressed={selectedExample === index}
                   className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
                     selectedExample === index
                       ? isLight
@@ -243,12 +234,12 @@ return (
             </div>
           </div>
 
-          {/* Interactive or illustrative preview */}
+          {/* Live Demo */}
           <div>
             <div className="mb-4">
-              <h3 className="text-xl font-bold mb-2">{currentExample.previewLabel}</h3>
+              <h3 className="text-xl font-bold mb-2">Example Preview</h3>
               <p className={`text-sm ${isLight ? "text-gray-600" : "text-[#737373]"}`}>
-                {currentExample.previewDescription}
+                The counter and input are interactive; type and pipeline examples are illustrations.
               </p>
             </div>
             {currentExample.demo || (

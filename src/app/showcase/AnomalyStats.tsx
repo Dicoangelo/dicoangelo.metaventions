@@ -97,7 +97,7 @@ export function AnomalyStats({ isLight }: AnomalyStatsProps) {
             }`}
           >
             <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-[#4f8fff] to-[#06b6d4] bg-clip-text text-transparent">
-              The Anomaly Stats
+              Capabilities &amp; Career Context
             </h3>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))" }}>

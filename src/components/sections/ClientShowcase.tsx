@@ -23,13 +23,13 @@ const clientProjects: ClientProject[] = [
     client: "Cooper Swanson Ventures",
     role: "Strategy & Activation",
     description:
-      "Luxury event marketing website for an invitation-only networking gathering of 40 curated professionals at a private Miami penthouse. Delivered end-to-end in under 2 weeks — from client meeting to live deployment.",
+      "A published event website for a Miami networking gathering. The work covers event information, a visual showcase and a post-event recap.",
     deliverables: [
-      "Full marketing site with video showcase + 57-photo gallery",
-      "Sponsor tier system (title, premium, beverage, production)",
-      "Post-event recap mode with next-event funnel",
-      "Print flyer generators + QR code tools",
-      "Vercel Analytics with custom CTA tracking",
+      "Marketing site with video and photo gallery",
+      "Sponsor information and tier presentation",
+      "Post-event recap and next-event information",
+      "Print flyer and QR code tools",
+      "CTA tracking configuration",
     ],
     tech: ["Next.js 16", "React 19", "Tailwind 4", "Framer Motion", "Vercel Blob"],
     url: "https://thesignatureevent.metaventionsai.com",
@@ -39,14 +39,14 @@ const clientProjects: ClientProject[] = [
     client: "Bxlence Hospitality (Co-Founded)",
     role: "Co-Founder & Technology Lead",
     description:
-      "Complete digital platform for a luxury hospitality brand — hotels, dining, nightlife, yacht charters, private aviation, and membership experiences. Flagship Miami with multi-city expansion framework.",
+      "A hospitality website presenting destinations, experiences and membership information. Includes booking and lead-capture workflows; no membership sales or revenue outcome is claimed.",
     deliverables: [
-      "15+ page platform with server components + dynamic routing",
-      "3-tier membership system ($2.5K / $10K / invitation-only) via Stripe",
-      "Event packages ($15K–$35K+) with booking pipeline",
-      "30+ custom animation components from scratch",
-      "Supabase-backed lead pipeline + Resend email notifications",
-      "Multi-city expansion framework with waitlist system",
+      "Page templates and dynamic routing",
+      "Membership tier presentation and checkout workflow",
+      "Event packages and booking workflow",
+      "Custom animation and interaction components",
+      "Lead capture and email-notification workflow",
+      "Destination and waitlist page templates",
     ],
     tech: ["Next.js 16", "React 19", "Supabase", "Stripe", "Resend", "Framer Motion", "Lenis"],
     url: "https://bxl.metaventionsai.com",
@@ -54,15 +54,15 @@ const clientProjects: ClientProject[] = [
   {
     name: "FriendlyFace",
     client: "Mohammed Safiia (U of Windsor)",
-    role: "Engineering & Productization",
+    role: "AI-Assisted Prototype Development",
     description:
-      "Forensic-friendly facial recognition platform productizing Mohammed's ICDF2C 2024 schema — chain-of-custody evidence sealing (ForensicSeal), AI compliance proxy, and Layer-3 blockchain anchoring. Took the academic framework from paper to deployable product, deployed across 3 Fly.io regions with LiteFS replication.",
+      "A collaborative prototype exploring evidence records and traceability for AI systems, informed by forensic facial-recognition research. It demonstrates a technical workflow, not certified compliance or legal admissibility.",
     deliverables: [
-      "ForensicSeal evidence-sealing primitive (the core invention)",
-      "AI compliance proxy as Trojan-horse business model",
-      "Multi-region Fly.io deployment with LiteFS replication",
-      "Demo-ready UI with live forensic chain-of-custody trace",
-      "ICDF2C 2024 schema implementation w/ SOTA 2026 components",
+      "Evidence-sealing workflow prototype",
+      "AI-system traceability interface",
+      "Container and deployment configuration",
+      "Demo interface for evidence-record review",
+      "Implementation informed by ICDF2C 2024 research",
     ],
     tech: ["FastAPI", "Computer Vision", "Blockchain", "Fly.io", "LiteFS", "Docker"],
     url: "https://friendlyface.metaventionsai.com",
@@ -94,14 +94,14 @@ export function ClientShowcase({ isLight }: ClientShowcaseProps) {
               isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
             }`}
           >
-            Client Work
+            Client &amp; Collaborative Work
           </span>
           <h2
             className={`text-4xl md:text-5xl font-bold tracking-tight ${
               isLight ? "text-gray-900" : "text-white"
             }`}
           >
-            Shipped for clients.
+            Websites and prototypes.
           </h2>
           {showSummary && (
             <p
@@ -109,7 +109,7 @@ export function ClientShowcase({ isLight }: ClientShowcaseProps) {
                 isLight ? "text-gray-600" : "text-[#a3a3a3]"
               }`}
             >
-              End-to-end delivery — from first conversation to production traffic.
+              Public websites and collaborative prototypes, from requirements through reviewed implementation.
             </p>
           )}
         </div>
@@ -169,7 +169,7 @@ export function ClientShowcase({ isLight }: ClientShowcaseProps) {
                     background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
                   }}
                 >
-                  View live site
+                  View project
                   <svg
                     aria-hidden="true"
                     width="11"

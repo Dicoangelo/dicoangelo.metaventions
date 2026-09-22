@@ -4,7 +4,6 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 import VoiceOrb from "./VoiceOrb";
-import { CURRENT_ROLE } from "@/lib/current-role";
 
 interface Message {
   role: "user" | "assistant";
@@ -12,10 +11,33 @@ interface Message {
 }
 
 const SUGGESTED_QUESTIONS: { tag: string; question: string }[] = [
-  { tag: "Current role", question: "What does Dico do at EZRA?" },
-  { tag: "GTM operations", question: "What systems work did Dico do at Contentsquare?" },
-  { tag: "Practical AI", question: "How does Dico use AI to improve workflows?" },
-  { tag: "Tool adoption", question: "What is his experience with enablement and platform adoption?" },
+  { tag: "Current role · EZRA", question: "What does Dico do as Revenue Technology Manager at EZRA?" },
+  { tag: "Partner Ops · Contentsquare", question: "What partner systems did he wire at Contentsquare?" },
+  { tag: "Cloud operations · Shared pipeline", question: "How do the $800M shared pipeline and $30M program revenue figures differ?" },
+  { tag: "OneCRM", question: "What was his contribution to the cloud alliance side of OneCRM?" },
+  { tag: "AI-assisted development", question: "How does Dico build and validate systems with AI tools?" },
+  { tag: "UCW · Sovereign AI", question: "What is the Universal Cognitive Wallet?" },
+];
+
+const PROFILE_METRICS: { value: string; label: string }[] = [
+  { value: "GTM", label: "Revenue technology" },
+  { value: "CRM", label: "Partner systems" },
+  { value: "AI", label: "Assisted development" },
+  { value: "Tools", label: "Adoption & enablement" },
+];
+
+const PROFILE_LINKS: { label: string; href: string }[] = [
+  { label: "GitHub", href: "https://github.com/Dicoangelo" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/dico-angelo" },
+  { label: "Email", href: "mailto:dico.angelo97@gmail.com" },
+];
+
+const CAREER_STAGES: { label: string; detail: string; state: "done" | "active" }[] = [
+  { label: "Founding Director", detail: "Up2Youth · Youth program operations", state: "done" },
+  { label: "Product Operations Specialist", detail: "Rocket Mortgage Canada · Jun 2020–May 2023", state: "done" },
+  { label: "Sr. Partner Systems & Ops", detail: "Contentsquare · May 2023–Nov 2025", state: "done" },
+  { label: "Founder", detail: "Metaventions AI · Concurrent independent work", state: "active" },
+  { label: "Revenue Technology Manager", detail: "EZRA · Jun 2026–present", state: "active" },
 ];
 
 const STORAGE_KEY = "dicoangelo-chat-history-v1";
@@ -278,20 +300,210 @@ export default function Chat() {
               isLight ? "border-gray-200/70" : "border-white/[0.06]"
             }`}
           >
-            <div className="flex items-center gap-4">
-              <div className="relative w-14 h-14 shrink-0 rounded-full overflow-hidden">
-                <Image src="/headshot.jpg" alt="Dico Angelo" fill sizes="56px" className="object-cover" />
+            {/* Photo + name */}
+            <div className="flex items-start gap-4">
+              <div className="relative shrink-0">
+                <div className="relative w-16 h-16 rounded-2xl overflow-hidden ring-1 ring-[#6366f1]/40 shadow-[0_4px_14px_-4px_rgba(99,102,241,0.4)]">
+                  <Image src="/headshot-ama.jpg" alt="Dico Angelo" fill sizes="64px" className="object-cover" />
+                </div>
+                <span
+                  aria-hidden="true"
+                  className={`absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full ring-2 ${
+                    isLight ? "ring-white" : "ring-[#0a0a0a]"
+                  } bg-emerald-400`}
+                >
+                  <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-60" />
+                </span>
               </div>
-              <div>
-                <h3 className={`text-lg font-semibold ${isLight ? "text-gray-900" : "text-white"}`}>Dico Angelo</h3>
-                <p className={`mt-1 text-sm ${isLight ? "text-gray-600" : "text-gray-300"}`}>{CURRENT_ROLE.title}</p>
-                <p className={`text-sm ${isLight ? "text-gray-600" : "text-gray-300"}`}>{CURRENT_ROLE.company}</p>
+              <div className="flex-1 min-w-0 pt-0.5">
+                <h2
+                  className={`font-bold text-[18px] leading-tight tracking-tight ${
+                    isLight ? "text-gray-900" : "text-white"
+                  }`}
+                >
+                  Dico Angelo
+                </h2>
+                <p
+                  className={`text-[12.5px] mt-1 leading-snug ${
+                    isLight ? "text-gray-600" : "text-[#a3a3a3]"
+                  }`}
+                >
+                  Revenue Technology Manager, EZRA
+                </p>
+                <p
+                  className={`text-[11.5px] mt-0.5 leading-snug ${
+                    isLight ? "text-gray-500" : "text-[#737373]"
+                  }`}
+                >
+                  GTM Systems · AI-Assisted Workflows
+                </p>
               </div>
             </div>
-            <p className={`text-sm leading-relaxed ${isLight ? "text-gray-600" : "text-gray-300"}`}>
-              Ask about revenue systems, platform adoption, operations, and practical AI work. Answers draw on Dico&apos;s career records and project material.
-            </p>
-            <a href="/Dico_Angelo_Resume.pdf" className={`text-sm underline underline-offset-4 ${isLight ? "text-gray-800" : "text-gray-200"}`}>Read the résumé</a>
+
+            {/* Status badge — gold gradient, the "FOUNDER OPEN TO OPPORTUNITIES" pill */}
+            <div className="relative">
+              <span
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10.5px] font-semibold uppercase tracking-[0.14em] text-[#1a1208] shadow-[0_2px_10px_-2px_rgba(215,178,109,0.5)]"
+                style={{
+                  background: "linear-gradient(135deg, #F9D976 0%, #D7B26D 50%, #B38728 100%)",
+                }}
+              >
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inset-0 rounded-full bg-emerald-600 animate-ping opacity-75" />
+                  <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-700" />
+                </span>
+                EZRA · Concurrent founder work
+              </span>
+            </div>
+
+            {/* Metrics 2x2 grid */}
+            <div className="grid grid-cols-2 gap-3">
+              {PROFILE_METRICS.map((m) => (
+                <div
+                  key={m.label}
+                  className={`px-3 py-2.5 rounded-xl border ${
+                    isLight
+                      ? "bg-white/60 border-gray-200/80"
+                      : "bg-white/[0.025] border-white/[0.07]"
+                  }`}
+                >
+                  <div
+                    className={`text-[18px] font-bold leading-none tracking-tight ${
+                      isLight ? "text-gray-900" : "text-white"
+                    }`}
+                    style={{ fontFamily: "var(--font-jetbrains-mono, 'JetBrains Mono', ui-monospace, monospace)" }}
+                  >
+                    {m.value}
+                  </div>
+                  <div
+                    className={`text-[10px] mt-1.5 leading-tight uppercase tracking-[0.06em] ${
+                      isLight ? "text-gray-500" : "text-[#737373]"
+                    }`}
+                  >
+                    {m.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Career XP meter — replaces redundant pills/links (footer has them) */}
+            <div
+              className={`relative overflow-hidden p-4 rounded-2xl border ${
+                isLight ? "bg-white/60 border-gray-200/80" : "bg-white/[0.025] border-white/[0.07]"
+              }`}
+            >
+              {/* Top hairline */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-4 -top-px h-px"
+                style={{ background: "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.7) 50%, transparent 100%)" }}
+              />
+
+              {/* Header: level + xp */}
+              <div className="flex items-baseline justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <span className={`text-[9.5px] font-semibold uppercase tracking-[0.16em] ${isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"}`}>
+                    Career
+                  </span>
+                  <span
+                    className="text-[15px] font-bold leading-none tabular-nums"
+                    style={{
+                      fontFamily: "var(--font-jetbrains-mono, 'JetBrains Mono', ui-monospace, monospace)",
+                      background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    5 roles
+                  </span>
+                </div>
+                <span
+                  className="inline-flex items-center gap-1 text-[9.5px] font-semibold uppercase tracking-[0.12em] px-2 py-0.5 rounded-md"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(16,185,129,0.18) 0%, rgba(16,185,129,0.08) 100%)",
+                    color: isLight ? "#047857" : "#34d399",
+                    border: `1px solid ${isLight ? "rgba(16,185,129,0.3)" : "rgba(16,185,129,0.35)"}`,
+                  }}
+                >
+                  <span className="relative flex h-1 w-1">
+                    <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-70" />
+                    <span className="relative h-1 w-1 rounded-full bg-emerald-500" />
+                  </span>
+                  Active
+                </span>
+              </div>
+
+              {/* XP bar */}
+              <div className={`relative h-1.5 rounded-full overflow-hidden mb-4 ${isLight ? "bg-gray-200/60" : "bg-white/[0.06]"}`}>
+                <div
+                  className="absolute inset-y-0 left-0 rounded-full"
+                  style={{
+                    width: "100%",
+                    background: "linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%)",
+                    boxShadow: "0 0 12px rgba(99,102,241,0.45)",
+                  }}
+                />
+              </div>
+
+              {/* Stage list */}
+              <ul className="space-y-2.5">
+                {CAREER_STAGES.map((s, i) => {
+                  const isActive = s.state === "active";
+                  return (
+                    <li key={s.label} className="flex items-start gap-2.5">
+                      <span className="relative flex shrink-0 items-center justify-center w-3.5 h-3.5 mt-[3px]">
+                        {isActive ? (
+                          <>
+                            <span
+                              className="absolute inset-0 rounded-full opacity-50 animate-ping"
+                              style={{ background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)" }}
+                            />
+                            <span
+                              className="relative w-2 h-2 rounded-full"
+                              style={{
+                                background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                                boxShadow: "0 0 8px rgba(99,102,241,0.7)",
+                              }}
+                            />
+                          </>
+                        ) : (
+                          <span
+                            className="relative w-2.5 h-2.5 rounded-full flex items-center justify-center"
+                            style={{
+                              background: isLight ? "rgba(16,185,129,0.18)" : "rgba(16,185,129,0.22)",
+                              border: `1px solid ${isLight ? "rgba(16,185,129,0.4)" : "rgba(16,185,129,0.45)"}`,
+                            }}
+                          >
+                            <svg width="6" height="6" viewBox="0 0 12 12" fill="none" stroke={isLight ? "#047857" : "#34d399"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M2.5 6.5l2.5 2.5 4.5-5.5" />
+                            </svg>
+                          </span>
+                        )}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-baseline gap-1.5">
+                          <span
+                            className={`text-[10px] font-semibold tabular-nums ${
+                              isActive ? (isLight ? "text-[#6366f1]" : "text-[#818cf8]") : isLight ? "text-gray-400" : "text-[#525252]"
+                            }`}
+                            style={{ fontFamily: "var(--font-jetbrains-mono, 'JetBrains Mono', ui-monospace, monospace)" }}
+                          >
+                            0{i + 1}
+                          </span>
+                          <span className={`text-[12px] font-semibold leading-tight ${isLight ? "text-gray-900" : "text-white"}`}>
+                            {s.label}
+                          </span>
+                        </div>
+                        <div className={`text-[10.5px] leading-snug mt-0.5 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
+                          {s.detail}
+                        </div>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </aside>
 
           {/* ─────────── Chat column ─────────── */}

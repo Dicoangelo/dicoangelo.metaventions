@@ -6,6 +6,7 @@ import { useReadingDepth } from "./ReadingDepthProvider";
 
 interface Testimonial {
   quote: string;
+  isQuote?: boolean;
   highlightPhrase?: string;
   author: string;
   role: string;
@@ -22,8 +23,9 @@ interface TestimonialsProps {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "Catalyst gave us the opportunity to connect meaningfully with partner leaders through deep, topic-driven discussions. It was an incredible experience.",
-    highlightPhrase: "connect meaningfully",
+    quote: "Participated in Catalyst summits in NYC and Toronto, joining discussions on partner operations, AI and enterprise adoption.",
+    isQuote: false,
+    highlightPhrase: "Catalyst summits in NYC and Toronto",
     author: "Dico Angelo",
     role: "Participant",
     company: "Partnership Leaders Catalyst 2026",
@@ -32,18 +34,19 @@ const testimonials: Testimonial[] = [
     avatar: "/headshot.jpg",
   },
   {
-    quote: "Suger has been a game-changer for us, their platform has not only streamlined our marketplace management but also allowed us to grow our cloud partnerships with AWS and Azure in ways we never thought possible. It's more than just a tool—it's become an extension of our team.",
-    highlightPhrase: "game-changer",
+    quote: "Contributed partner-systems operations to Contentsquare’s cloud marketplace program, whose use of Suger is documented in the company case study.",
+    isQuote: false,
+    highlightPhrase: "partner-systems operations",
     author: "Dico Angelo",
-    role: "Cloud Alliance Operations Lead",
+    role: "Sr. Partner Systems and Operations Specialist",
     company: "Contentsquare",
     source: "Suger.io Case Study",
-    sourceUrl: "https://www.suger.io/blog/how-suger-help-contentsquare-grow-partnerships-without-limits",
+    sourceUrl: "https://www.suger.io/resources/blog/how-suger-help-contentsquare-grow-partnerships-without-limits/",
     linkedIn: "https://www.linkedin.com/in/dico-angelo/",
     avatar: "/headshot.jpg",
   },
   {
-    quote: "This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment... The iterative process we followed enabled us to test and refine our ideas rapidly, collaboratively engaging with previous iterations to find the best solution.",
+    quote: "This workshop highlighted the importance of rapid prototyping and the benefits of working in a creative environment.",
     highlightPhrase: "rapid prototyping",
     author: "Dico Angelo",
     role: "Participant",
@@ -53,7 +56,7 @@ const testimonials: Testimonial[] = [
     avatar: "/headshot.jpg",
   },
   {
-    quote: "While most companies think about marketplace ops last, Contentsquare invested in marketplace operations from early on in the journey. Their operations lead, Dico Angelo, transformed processes that took days into minutes.",
+    quote: "Their operations lead, Dico Angelo, transformed processes that took days into minutes.",
     highlightPhrase: "transformed processes that took days into minutes",
     author: "Partner Insight Newsletter",
     role: "Feature Article",
@@ -187,7 +190,7 @@ function TestimonialCard({
           ${isLight ? "text-gray-700" : "text-gray-300"}
         `}
       >
-        &ldquo;{renderQuote()}&rdquo;
+        {testimonial.isQuote !== false && "“"}{renderQuote()}{testimonial.isQuote !== false && "”"}
       </blockquote>
 
       {/* Author */}
@@ -342,7 +345,7 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
               isLight ? "text-gray-900" : "text-white"
             }`}
           >
-            Featured & cited.
+            Mentions & participation.
           </h2>
           {showFullShowcase && (
             <p
@@ -350,7 +353,7 @@ export default function Testimonials({ isLight }: TestimonialsProps) {
                 isLight ? "text-gray-600" : "text-[#a3a3a3]"
               }`}
             >
-              Featured in industry case studies and partner ecosystem conferences.
+              Industry case studies, a workshop testimonial and participation in the partner community.
             </p>
           )}
         </div>

@@ -23,9 +23,9 @@ const projects: Project[] = [
   {
     name: "Partnership Graph (Concept Demo)",
     tagline: "Hypothetical partner-intelligence layer, custom-built concept demo",
-    description: "A custom-built concept demo (not a launched product): an MCP-native partner-intelligence layer with 13 tools, AI scoring, and a React 19 dashboard on the UCW substrate. Designed to complement partner-tech like Crossbeam, Reveal, and PartnerStack, not replace them. All partner data shown is illustrative sample data; the listed partners are unaffiliated.",
+    description: "A concept demo for partner intelligence: an MCP interface and dashboard for exploring partner health, co-sell workflows and attribution. Partner data is illustrative; named platforms and partners are unaffiliated. No commercial deployment or live CRM integration is claimed.",
     metrics: [
-      { label: "MCP Tools", value: "13" },
+      { label: "Interface", value: "MCP" },
       { label: "Surface", value: "Dashboard + MCP" },
       { label: "Substrate", value: "UCW" },
       { label: "Stack", value: "React 19" }
@@ -36,39 +36,39 @@ const projects: Project[] = [
       "MCP-native B2B tooling patterns",
       "Cognitive equity for relationship graphs"
     ],
-    github: "https://github.com/Dicoangelo/partnership-ai-orchestration",
+    github: "https://github.com/Dicoangelo",
     demo: "https://partnerships.metaventionsai.com",
     loc: "Concept"
   },
   {
     name: "SBC-AutoOps / SBC Inspector",
     tagline: "Pre-Deploy Validation for Session Border Controllers",
-    description: "Reads any SBC vendor's config before deploy and tells you, in plain English, exactly what will break. Local-first and air-gapped: raw configs never leave your environment. Ships an 11-tool SBC Inspector MCP that puts the same deterministic checks on an agent surface.",
+    description: "A configuration-validation prototype for supported session border controller formats. Combines deterministic checks with plain-English explanations and an MCP interface for inspection. Findings support human review before deployment; they do not guarantee a safe configuration.",
     metrics: [
-      { label: "Vendor Parsers", value: "5" },
-      { label: "Validation Domains", value: "8" },
-      { label: "Tests", value: "282" },
-      { label: "MCP Tools", value: "11" }
+      { label: "Input", value: "SBC configs" },
+      { label: "Checks", value: "Validation" },
+      { label: "Output", value: "Review notes" },
+      { label: "Interface", value: "MCP" }
     ],
-    techStack: ["AI-Directed Build", "MCP Protocol", "Deterministic Validation", "Air-Gapped"],
+    techStack: ["AI-Directed Build", "MCP Protocol", "Deterministic Validation", "Config Parsing"],
     papers: [
       "Deterministic pre-deployment config validation",
       "Multi-vendor SBC normalization",
       "Agent-surfaced infrastructure inspection (MCP)"
     ],
-    github: "https://github.com/Dicoangelo/sbc-validator",
+    github: "https://github.com/Dicoangelo",
     demo: "https://sbcvalidator.metaventionsai.com",
-    loc: "v0.20.0"
+    loc: "Prototype"
   },
   {
     name: "Frontier Alpha",
-    tagline: "Cognitive Factor Intelligence Platform",
-    description: "AI-powered portfolio optimization with 80+ factors, episodic learning via CVRF, and explainable recommendations. Brings sovereign cognitive infrastructure into quantitative investment workflows.",
+    tagline: "Investment Research Prototype",
+    description: "An experimental interface for exploring factor exposure, portfolio scenarios and AI-assisted investment research. The demo illustrates a workflow; no investment performance or validated forecasting accuracy is claimed.",
     metrics: [
-      { label: "Factors", value: "80+" },
-      { label: "Learning", value: "Episodic (CVRF)" },
-      { label: "Output", value: "Explainable" },
-      { label: "Domain", value: "Portfolio Opt" }
+      { label: "Research", value: "Factors" },
+      { label: "Workflow", value: "Scenarios" },
+      { label: "Output", value: "Explanations" },
+      { label: "Stage", value: "Prototype" }
     ],
     techStack: ["AI-Directed Build", "Factor Models", "Episodic Memory", "CVRF"],
     papers: [
@@ -76,19 +76,19 @@ const projects: Project[] = [
       "Multi-factor portfolio construction",
       "Explainable AI for investment decisions"
     ],
-    github: "https://github.com/Dicoangelo/frontier-alpha",
+    github: "https://github.com/Dicoangelo",
     demo: "https://frontier-alpha.metaventionsai.com",
-    loc: "v1.13"
+    loc: "Prototype"
   },
   {
     name: "CareerCoach Antigravity",
-    tagline: "Sovereign Career Intelligence",
-    description: "AI-driven career operating system: eligibility-gate-first job matching, warm-line outreach, ATS-aware tailoring, and parallel-session coordination. Reclaims agency in an algorithmic hiring world.",
+    tagline: "AI-Assisted Career Workflows",
+    description: "An AI-assisted career application for résumé review, role comparison and tailored feedback. Dico specifies the workflows, directs AI coding tools, and reviews, tests and deploys the implementation. Hiring-panel personas are simulations, not employer decisions.",
     metrics: [
-      { label: "Tests", value: "3,227 passing" },
-      { label: "Stack", value: "Next.js 16" },
-      { label: "Tier", value: "$9 Single-Shot" },
-      { label: "Surface", value: "Live" }
+      { label: "Workflow", value: "Résumé review" },
+      { label: "Stack", value: "Next.js" },
+      { label: "Feedback", value: "AI-assisted" },
+      { label: "Surface", value: "Web app" }
     ],
     techStack: ["Next.js 16", "React 19", "Tailwind 4", "TypeScript", "Stripe", "Prompt Engineering"],
     papers: [
@@ -96,59 +96,59 @@ const projects: Project[] = [
       "Warm-line conversion vs cold apply",
       "ATS keyword fidelity in resume tailoring"
     ],
-    github: "https://github.com/Dicoangelo/CareerCoachAntigravity",
+    github: "https://github.com/Dicoangelo",
     demo: "https://careers.metaventionsai.com",
-    loc: "v2.6"
+    loc: "Application"
   },
   {
     name: "FriendlyFace",
-    tagline: "Forensic Evidence Generation Platform",
-    description: "Forensic-friendly facial recognition with on-chain evidence sealing. Implements Mohammed's ICDF2C 2024 schema with SOTA 2026 components. ForensicSeal is the core invention, compliance proxy the business model.",
+    tagline: "AI Evidence Prototype",
+    description: "A collaborative prototype exploring traceability and evidence sealing for AI systems. Draws on forensic facial-recognition research by other authors. Demonstrates implementation ideas rather than certified compliance, legal admissibility or validated recognition performance.",
     metrics: [
-      { label: "Architecture", value: "Layer 3: Blockchain" },
-      { label: "Schema", value: "ICDF2C 2024" },
-      { label: "Mode", value: "Demo-ready" },
-      { label: "Core", value: "ForensicSeal" }
+      { label: "Architecture", value: "Evidence records" },
+      { label: "Research", value: "Forensic AI" },
+      { label: "Mode", value: "Prototype" },
+      { label: "Workflow", value: "Traceability" }
     ],
     techStack: ["Prompt Engineering", "Blockchain", "Computer Vision", "ForensicSeal"],
     papers: [
-      "Mohammed et al. ICDF2C 2024: Forensic FR schema",
-      "On-chain evidence sealing patterns",
-      "Compliance-by-proxy business model"
+      "Forensic facial-recognition research (ICDF2C 2024)",
+      "Evidence-sealing implementation patterns",
+      "Traceability and review workflows"
     ],
-    github: "https://github.com/Dicoangelo/FriendlyFace",
+    github: "https://github.com/Dicoangelo",
     demo: "https://friendlyface.metaventionsai.com",
-    loc: "Demo-ready"
+    loc: "Prototype"
   },
   {
     name: "ACE",
     tagline: "Adaptive Consensus Engine",
-    description: "Multi-agent voting implementation with adaptive thresholds, heuristic DQ weights, and auction-based agent selection. The DQ study that inspired this work was withdrawn on August 31, 2026; its actionability findings are not evidence of this implementation's performance.",
+    description: "An experimental multi-agent voting implementation with configurable thresholds, heuristic weights and agent selection. The DQ source study (arXiv:2511.15755, Philip Drammeh) was withdrawn on August 31, 2026; its actionability and DQ results are not evidence of this implementation’s efficacy.",
     metrics: [
-      { label: "Voting", value: "Adaptive thresholds" },
-      { label: "Token Reduction", value: "300x" },
-      { label: "Consensus Rounds", value: "50% faster" },
-      { label: "Test Coverage", value: "95%" }
+      { label: "Method", value: "Agent voting" },
+      { label: "Weights", value: "Heuristic" },
+      { label: "Thresholds", value: "Configurable" },
+      { label: "Status", value: "Experimental" }
     ],
     techStack: ["AI-Directed Build", "Multi-Agent Systems", "DQ-Weighted Voting", "Vitest"],
     papers: [
-      "arXiv:2511.15755 - historical inspiration; study and DQ results withdrawn Aug 31, 2026",
-      "arXiv:2511.13193 - Agent Auctions (DALA)",
-      "arXiv:2508.17536 - Voting vs Debate"
+      "arXiv:2511.15755 — Drammeh; withdrawn Aug 31, 2026",
+      "arXiv:2511.13193 — Agent Auctions (DALA)",
+      "arXiv:2508.17536 — Voting vs Debate"
     ],
-    github: "https://github.com/Dicoangelo/OS-App/blob/main/services/adaptiveConsensus.ts",
+    github: "https://github.com/Dicoangelo",
     demo: "https://app.metaventionsai.com",
-    loc: "1,462 LOC"
+    loc: "Prototype"
   },
   {
     name: "ARCHON",
     tagline: "Meta-Orchestrator",
-    description: "Autonomous AI coordinator that manages 7 subsystems to achieve user goals with minimal human intervention. Complexity-adaptive routing across 4 LLM providers.",
+    description: "An experimental coordinator for delegating tasks across agents and model providers. Explores complexity-based routing, token budgets and review checkpoints; it does not establish a measured speed improvement or autonomous reliability.",
     metrics: [
-      { label: "Subsystems", value: "7 integrated" },
-      { label: "Time-to-Solution", value: "40% faster" },
-      { label: "Providers", value: "4 LLMs" },
-      { label: "Budget Management", value: "Token-aware" }
+      { label: "Workflow", value: "Coordination" },
+      { label: "Routing", value: "Configurable" },
+      { label: "Providers", value: "Multi-model" },
+      { label: "Budgets", value: "Token-aware" }
     ],
     techStack: ["Prompt Engineering", "Multi-Provider Routing", "Multi-Agent Orchestration"],
     papers: [
@@ -156,19 +156,19 @@ const projects: Project[] = [
       "arXiv:2506.12508 - AgentOrchestra",
       "arXiv:2508.07407 - Self-Evolving Agents"
     ],
-    github: "https://github.com/Dicoangelo/OS-App/blob/main/services/archon/index.ts",
+    github: "https://github.com/Dicoangelo",
     demo: "https://app.metaventionsai.com",
-    loc: "1,280 LOC"
+    loc: "Prototype"
   },
   {
     name: "META-VENGINE",
-    tagline: "Self-Improving AI Infrastructure",
-    description: "9-system bidirectional co-evolution framework. The infrastructure that improves itself through feedback loops and pattern recognition.",
+    tagline: "AI Workflow Infrastructure",
+    description: "Connected routing, error handling, memory and monitoring components for AI-assisted work. Uses recorded feedback to propose changes that can be reviewed; performance and reliability are not independently validated.",
     metrics: [
-      { label: "Auto-Fix Rate", value: "70%" },
-      { label: "Error Patterns", value: "700+" },
-      { label: "Routing", value: "Internal heuristic" },
-      { label: "Systems", value: "9 integrated" }
+      { label: "Recovery", value: "Error handling" },
+      { label: "Memory", value: "Pattern records" },
+      { label: "Routing", value: "Heuristic" },
+      { label: "Design", value: "Connected" }
     ],
     techStack: ["AI-Directed Build", "Pattern Recognition", "Self-Healing Systems", "SQLite"],
     papers: [
@@ -177,17 +177,17 @@ const projects: Project[] = [
       "Cognitive pattern learning"
     ],
     github: "https://github.com/Dicoangelo",
-    loc: "51K+ LOC"
+    loc: "Internal tools"
   },
   {
     name: "UCW",
     tagline: "Universal Cognitive Wallet",
-    description: "Sovereign cross-platform cognitive capture system. Processes 163K+ events from 5 AI platforms into PostgreSQL with pgvector. 12.15M knowledge graph edges, 7.1K memory items, 270K+ interactions.",
+    description: "A cross-platform research capture and retrieval project. Normalizes captured AI session records, stores searchable context and explores relationships between records. Coverage depends on configured integrations; semantic similarity is not proof of independent discovery or cognition.",
     metrics: [
-      { label: "Graph Edges", value: "12.15M" },
-      { label: "Memory Items", value: "7,130" },
-      { label: "Platforms", value: "5 integrated" },
-      { label: "Interactions", value: "270K+" }
+      { label: "Capture", value: "Session records" },
+      { label: "Retrieval", value: "Semantic search" },
+      { label: "Access", value: "MCP tools" },
+      { label: "Context", value: "Cross-platform" }
     ],
     techStack: ["AI-Directed Build", "PostgreSQL", "pgvector", "MCP Protocol"],
     papers: [
@@ -195,18 +195,18 @@ const projects: Project[] = [
       "Cross-platform capture architecture",
       "Vector similarity search at scale"
     ],
-    github: "https://github.com/Dicoangelo/ucw",
-    loc: "900K+ LOC"
+    github: "https://github.com/Dicoangelo",
+    loc: "Research tools"
   },
   {
     name: "ResearchGravity",
     tagline: "Research Orchestration MCP Server",
-    description: "Temporal knowledge graph with ReACT synthesis agent. FastAPI backend with Qdrant vector search, 114+ archived research sessions, and meta-learning engine with 87% error prevention accuracy.",
+    description: "Research capture and retrieval tools with a FastAPI backend, vector search and an MCP interface. Organizes session notes, source URLs and findings so prior work can be retrieved and reviewed. No error-prevention accuracy is claimed.",
     metrics: [
-      { label: "Sessions", value: "114+" },
-      { label: "Embeddings", value: "2,530" },
-      { label: "URLs Tracked", value: "8,935" },
-      { label: "Error Prevention", value: "87%" }
+      { label: "Capture", value: "Research notes" },
+      { label: "Search", value: "Vectors" },
+      { label: "Sources", value: "URL records" },
+      { label: "Interface", value: "MCP" }
     ],
     techStack: ["AI-Directed Build", "FastAPI", "Qdrant", "Vector Search"],
     papers: [
@@ -214,18 +214,18 @@ const projects: Project[] = [
       "ReACT synthesis agents",
       "Meta-learning error prevention"
     ],
-    github: "https://github.com/Dicoangelo/ResearchGravity",
-    loc: "35K+ LOC"
+    github: "https://github.com/Dicoangelo",
+    loc: "Research tools"
   },
   {
     name: "Burstiness Engine",
     tagline: "In-Generation Rhythm Control for Language Models",
-    description: "Research collaboration with Vittoria Lanzo on controlling burstiness, the rhythm of sentence-length variation, during generation rather than as a post-edit. Framing, formal definition, ablation, and a documented negative result are complete; a working controller is the open frontier.",
+    description: "An exploratory research project on sentence-length variation during language-model generation. Includes research notes and proposed evaluation work. A working controller and validated improvement remain open questions; this is not a published research result.",
     metrics: [
-      { label: "Stage", value: "Active Research" },
-      { label: "Corpus", value: "43 papers" },
-      { label: "Research Passes", value: "4" },
-      { label: "Output", value: "Paper draft" }
+      { label: "Stage", value: "Exploration" },
+      { label: "Material", value: "Research notes" },
+      { label: "Method", value: "Evaluation" },
+      { label: "Output", value: "Draft ideas" }
     ],
     techStack: ["AI-Directed Build", "Research Synthesis", "Controlled Generation", "Ablation Studies"],
     papers: [
@@ -233,7 +233,7 @@ const projects: Project[] = [
       "Formal definition of rhythm and burstiness in generated text",
       "Negative-result methodology"
     ],
-    github: "https://github.com/Dicoangelo/burstiness-engine",
+    github: "https://github.com/Dicoangelo",
     loc: "Research"
   }
 ];
@@ -267,7 +267,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
               isLight ? "text-gray-600" : "text-[#a3a3a3]"
             }`}
           >
-            Directed Claude Code, Codex, and Gemini to ship 20+ production systems. arXiv research → live infrastructure.
+            Projects specified in English, implemented with AI coding tools, then reviewed and tested. Includes applications, internal tools and prototypes; research references are work by other authors.
           </p>
         </div>
 
@@ -301,7 +301,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
                           : 'border-[#262626] hover:bg-[#1a1a1a]'
                       }`}
                     >
-                      GitHub →
+                      GitHub profile →
                     </a>
                     {project.demo && (
                       <a
@@ -310,7 +310,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
                         rel="noopener noreferrer"
                         className="px-4 py-2 rounded-lg bg-[#6366f1] hover:bg-[#5558e3] text-white text-sm font-medium transition-colors"
                       >
-                        Live Demo →
+                        View demo →
                       </a>
                     )}
                   </div>
@@ -370,7 +370,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
                   </div>
                   <div>
                     <p className={`text-sm font-semibold mb-2 ${isLight ? 'text-gray-700' : 'text-[#a3a3a3]'}`}>
-                      Research Implemented:
+                      Research &amp; implementation notes:
                     </p>
                     <ul className="space-y-1">
                       {project.papers.map((paper, idx) => (
@@ -422,7 +422,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
         {/* CTA */}
         <div className="mt-12 text-center">
           <p className={`mb-4 ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-            All projects are open source on GitHub
+            Project source access varies. Explore the public GitHub profile.
           </p>
           <a
             href="https://github.com/Dicoangelo"

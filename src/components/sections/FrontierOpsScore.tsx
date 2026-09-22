@@ -11,11 +11,11 @@ const dimensions = [
     name: "Boundary Sensing",
     score: 96,
     definition:
-      "Maintaining accurate, up-to-date operational intuition about where the human-agent boundary sits. Updates with every model release — not static knowledge.",
+      "Assessing which parts of a workflow can benefit from AI, and where business context and human review are needed.",
     evidence: [
-      "meta-vengine DQ scorer routes per model (Haiku/Sonnet/Opus) with data-driven boundary model across 3 models",
-      "Upgraded JD analyzer mid-session when API changed (Sonnet 4 → Sonnet 4.5-20251001) — noticed capability shift immediately",
-      "UCW captures 163K+ cognitive events across 6 AI platforms — empirical boundary dataset",
+      "Compare AI output with the requirements of the specific task",
+      "Use ResearchGravity and UCW to organize useful context",
+      "Keep required human review explicit in an AI-assisted workflow",
     ],
   },
   {
@@ -23,11 +23,11 @@ const dimensions = [
     name: "Seam Design",
     score: 98,
     definition:
-      "Structuring work so transitions between human and agent phases are clean, verifiable, and recoverable. Knowing WHICH phases are agent-executable vs human-in-the-loop vs irreducibly human.",
+      "Defining inputs, outputs and responsibilities so work can move clearly between people and AI tools.",
     evidence: [
-      "SUPERMAX: 5 councils, 21 agents, 9 explicit cross-agent handoff wires (sovereignty↔token, qa→platform, ux→product+protocol)",
-      "GoMotion: 4 agents + 13 sub-agents with explicit MEDDPICC scoring seam between qualification and routing",
-      "ACE (Adaptive Consensus Engine): 6-agent voting at output seam with DQ numerical validation at every transition",
+      "Specify system requirements in plain English and direct AI coding tools",
+      "Review, test and deploy the resulting implementation",
+      "Explore partner-data workflows through the Partnership Graph concept demo",
     ],
   },
   {
@@ -35,11 +35,11 @@ const dimensions = [
     name: "Failure Model Maintenance",
     score: 94,
     definition:
-      "Maintaining an accurate current mental model of HOW agents fail — not just that they fail. Differentiated failure taxonomy per task type.",
+      "Checking AI-assisted work for the failure modes that matter to the task, then revising the workflow when problems appear.",
     evidence: [
-      "Recovery Engine: 94% coverage, 70% auto-fix rate, 8 tracked error patterns — failure taxonomy in production",
-      "Internal DQ routing heuristic uses weighted validity, specificity, and correctness signals; these are not independently validated quality measurements",
-      "Coherence detection: semantic echo (cosine similarity), synchronicity (temporal alignment), signature matching",
+      "Treat generated output as work to review and test",
+      "Apply configuration checks in the independent SBC Inspector project",
+      "Tie validation to the intended behavior and operational requirements",
     ],
   },
   {
@@ -47,11 +47,11 @@ const dimensions = [
     name: "Capability Forecasting",
     score: 89,
     definition:
-      "Ability to forecast where the AI boundary will move next — tracking model releases and adjusting workflows before the seam shifts.",
+      "Following changes in AI tools and considering how they may affect existing workflows and future implementation choices.",
     evidence: [
-      "Research monitoring informed implementation experiments; the DQ source study arXiv:2511.15755 and its results were withdrawn Aug 31, 2026",
-      "meta-vengine co-evolution: system reads own patterns and modifies own instructions — designed for capability drift",
-      "Migrated entire coordinator to Opus 4.6 on release day; Cognitive OS energy-aware routing adapts to new model capabilities",
+      "Organize research sources and findings through ResearchGravity",
+      "Evaluate opportunities for AI integration across the GTM stack",
+      "Revisit tool choices as capabilities and team needs change",
     ],
   },
   {
@@ -59,11 +59,11 @@ const dimensions = [
     name: "Attention Calibration",
     score: 92,
     definition:
-      "Knowing where human attention creates most value at the current boundary — managing attention across agent-assisted work.",
+      "Keeping business judgment, review and adoption central while using automation for repeatable operational work.",
     evidence: [
-      "Cognitive OS: energy-aware routing by time of day (morning/peak/dip/evening/deep_night) with flow state detection (0–1 score)",
-      "Session optimizer: budget/window management, strategically reserves Opus tasks for high-cognition moments",
-      "Activity tracker: real-time telemetry on tool usage and context budget — prevents attention blowout",
+      "Keep business decisions and required approvals with people",
+      "Use automation to support repeatable operational workflows",
+      "Support adoption through onboarding, documentation and practical enablement",
     ],
   },
 ];
@@ -116,7 +116,7 @@ function ProgressBar({ score, colorClass, animate, isLight }: ProgressBarProps &
   }, [animate, score]);
 
   return (
-    <div className={`relative h-1.5 rounded-full overflow-hidden ${isLight ? "bg-gray-200/60" : "bg-white/[0.06]"}`}>
+    <div aria-hidden="true" className={`relative h-1.5 rounded-full overflow-hidden ${isLight ? "bg-gray-200/60" : "bg-white/[0.06]"}`}>
       <div
         className={`h-full rounded-full ${colorClass} transition-all duration-700 ease-out`}
         style={{ width: `${width}%`, boxShadow: "0 0 12px currentColor" }}
@@ -157,13 +157,13 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
               isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
             }`}
           >
-            Frontier Operations Framework
+            Personal practice review
           </span>
           <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-            Frontier Operations Self-Reflection.
+            Frontier Operations Practice.
           </h2>
           <p className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-            A personal reflection on working with AI agents. The categories, weights, and ratings are informal and have not been independently assessed.
+            An informal self-assessment of my AI-assisted working practices. The bars indicate illustrative emphasis; the examples explain the work behind each area.
           </p>
 
           {/* Overall score chip */}
@@ -185,11 +185,11 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
                 filter: "drop-shadow(0 2px 12px rgba(16,185,129,0.35))",
               }}
             >
-              94
+              SELF
             </span>
-            <span className={`text-[12px] tabular-nums ${isLight ? "text-emerald-700/70" : "text-emerald-400/80"}`}>/ 100</span>
+            <span className={`text-[12px] tabular-nums ${isLight ? "text-emerald-700/70" : "text-emerald-400/80"}`}>/ review</span>
             <span className={`text-[13px] font-semibold ${isLight ? "text-emerald-800" : "text-emerald-300"}`}>
-              Personal self-rating
+              Informal Self-Assessment
             </span>
           </div>
         </div>
@@ -239,9 +239,8 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
         >
           <p className={`max-w-3xl mx-auto text-[13.5px] leading-relaxed mb-6 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
             <span className={`font-semibold ${isLight ? "text-gray-700" : "text-gray-300"}`}>Frontier Operations</span>{" "}
-            describes practices for checking AI outputs, designing handoffs, and deciding where human review is needed. The ratings here are subjective reflections, not a validated assessment, professional ranking, or external endorsement. DQ references describe historical implementation work; the source study and its findings were withdrawn on August 31, 2026.
+            is how I think about AI-assisted work: understanding capabilities, designing handoffs, checking failures and keeping human judgment involved. This is a personal reflection with no independent scoring or certification. The examples combine current role responsibilities and concurrent independent projects.
           </p>
-          <a href="https://arxiv.org/abs/2511.15755" target="_blank" rel="noopener noreferrer" className="inline-block mb-6 text-sm underline">Read the DQ study withdrawal notice</a>
 
           {/* Score Yourself CTA */}
           <Link
@@ -249,7 +248,7 @@ export function FrontierOpsScore({ isLight }: { isLight: boolean }) {
             className="group inline-flex items-center gap-2 px-5 py-3 rounded-xl text-[13px] font-medium text-white transition-all duration-200 active:scale-[0.98] hover:shadow-[0_8px_20px_-8px_rgba(99,102,241,0.5)]"
             style={{ background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)" }}
           >
-            Score yourself
+            Explore the framework
             <svg
               aria-hidden="true"
               width="11"
@@ -324,8 +323,8 @@ function DimensionCard({
             fontFamily: "var(--font-jetbrains-mono, 'JetBrains Mono', ui-monospace, monospace)",
           }}
         >
-          {dim.score}
-          <span className="text-[11px] font-normal opacity-60 ml-0.5">/100</span>
+          Self
+          <span className="text-[11px] font-normal opacity-60 ml-0.5">review</span>
         </span>
       </div>
 
@@ -364,7 +363,7 @@ function DimensionCard({
             isLight ? "text-gray-500 hover:text-[#6366f1]" : "text-[#737373] hover:text-[#818cf8]"
           }`}
         >
-          {expanded ? "Hide evidence" : "Show evidence"}
+          {expanded ? "Hide examples" : "Show examples"}
           <span className={`transition-transform ${expanded ? "rotate-180" : ""}`}>▾</span>
         </button>
       )}

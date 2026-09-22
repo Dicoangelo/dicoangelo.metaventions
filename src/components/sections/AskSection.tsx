@@ -19,13 +19,13 @@ export function AskSection({ isLight }: AskSectionProps) {
 
   return (
     <AnimatedSection id="ask" className="py-20 px-6">
-      <div id="main-content" className="sr-only" aria-hidden="true"></div>
+
       <div className="max-w-6xl mx-auto">
         <div className={`text-center ${showSummary ? "mb-12" : "mb-6"}`}>
           <h2 className="text-3xl font-bold mb-4">Ask Me Anything</h2>
           {showSummary && (
             <p className={isLight ? 'text-gray-600' : 'text-[#737373]'}>
-              AI-powered chat grounded in my full portfolio. Ask anything — voice or text.
+              Ask about my current role, experience, or independent projects — by voice or text.
             </p>
           )}
         </div>

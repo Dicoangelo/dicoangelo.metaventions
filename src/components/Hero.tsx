@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { CURRENT_ROLE } from "@/lib/current-role";
 import dynamic from "next/dynamic";
 import { useTypingAnimation } from "@/hooks/useTypingAnimation";
 import { useParallax } from "@/hooks/useParallax";
@@ -17,10 +18,10 @@ const ThreeBackground = dynamic(() => import("./ThreeHeroBackground"), {
 });
 
 const roles = [
-  "Frontier Operations Builder",
-  "Partner Ecosystem Strategist",
-  "AI Infrastructure Architect",
-  "Cloud Alliance Strategist",
+  CURRENT_ROLE.title,
+  "GTM Operations",
+  "AI-Enabled Workflows",
+  "Platform Adoption",
 ];
 
 export default function Hero() {
@@ -76,7 +77,7 @@ export default function Hero() {
           <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-[#6366f1] glow shadow-2xl">
             <Image
               src="/headshot.jpg"
-              alt="Dico Angelo - Partner Ecosystem Builder & AI Infrastructure Architect"
+              alt="Dico Angelo — Revenue Technology Manager at EZRA"
               fill
               className="object-cover"
               priority
@@ -107,17 +108,17 @@ export default function Hero() {
           >
             <span
               className="w-2 h-2 rounded-full bg-green-500 animate-pulse"
-              aria-label="Available for work"
+              aria-label="Current employer"
             />
             <span className={isLight ? 'text-gray-700 font-medium' : 'text-[#a3a3a3] font-medium'}>
-              Canadian Citizen · TN Visa Eligible
+              EZRA (Adecco Group) · Toronto
             </span>
           </div>
         )}
 
         {/* Main Heading with Typing Animation */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in animate-delay-200">
-          <span className="block mb-2">Partner-Builder</span>
+          <span className="block mb-2">Dico Angelo</span>
           <span className="gradient-text block min-h-[1.2em]">
             {typedRole}
             <span className="animate-pulse">|</span>
@@ -131,8 +132,8 @@ export default function Hero() {
               isLight ? "text-gray-700" : "text-[#a3a3a3]"
             }`}
           >
-            Most people are either an operator or a builder.{" "}
-            <span className="text-[#6366f1] font-semibold">I&rsquo;m both, at the frontier.</span>
+            I connect platforms, improve workflows and support adoption.{" "}
+            <span className="text-[#6366f1] font-semibold">Revenue technology for the people using it.</span>
           </p>
         )}
 
@@ -192,7 +193,7 @@ export default function Hero() {
             className={`text-sm italic animate-fade-in animate-delay-500 ${isLight ? 'text-gray-500' : 'text-[#525252]'
               }`}
           >
-            &quot;I don&rsquo;t study the frontier. I&rsquo;m building infrastructure on it, while running enterprise deals.&quot;
+            &quot;I connect revenue technology, practical AI workflows and the teams that use them.&quot;
           </p>
         )}
       </div>

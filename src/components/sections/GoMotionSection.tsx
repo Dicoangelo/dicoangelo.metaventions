@@ -2,7 +2,7 @@
 
 import { useReadingDepth } from "@/components/ReadingDepthProvider";
 
-const SPECS = ["4 core AI agents", "13 sub-agents", "MCP server", "MEDDPICC scoring", "Crossbeam · SF · HubSpot · Slack"];
+const SPECS = ["Proposed agent roles", "Task delegation", "MCP interface design", "MEDDPICC checklist", "Proposed CRM connectors"];
 const DELIVERED = ["Technical specification", "Onboarding playbooks", "MEDDPICC instruction set", "Orchestration quickstart"];
 
 export function GoMotionSection({ isLight }: { isLight: boolean }) {
@@ -55,25 +55,25 @@ export function GoMotionSection({ isLight }: { isLight: boolean }) {
                   isLight ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                 }`}
               >
-                Built live · 1 session
+                Design case study
               </span>
             </div>
 
             {/* Title */}
             <h3 className={`text-[24px] md:text-[28px] font-bold tracking-tight leading-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-              GoMotion: Partner Sales Orchestration Platform
+              GoMotion: Partner Sales Workflow Design
             </h3>
 
             {showSummary && (
               <p className={`mt-2 text-[14.5px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-                Architected live in a single Claude session with a partner manager. This is the Partner SA motion.
+                A partner-sales workflow specification developed with AI assistance. Covers proposed agent roles, qualification and handoffs; this is a design artifact, not a deployed platform or verified integration.
               </p>
             )}
 
             {showSummary && (
               <>
                 <p className={`mt-7 text-[10.5px] font-semibold uppercase tracking-[0.16em] mb-3 ${isLight ? "text-gray-400" : "text-[#525252]"}`}>
-                  System spec
+                  Proposed system spec
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
                   {SPECS.map((spec) => (
@@ -95,7 +95,7 @@ export function GoMotionSection({ isLight }: { isLight: boolean }) {
             {showDeep && (
               <>
                 <p className={`mt-7 text-[10.5px] font-semibold uppercase tracking-[0.16em] mb-3 ${isLight ? "text-gray-400" : "text-[#525252]"}`}>
-                  Delivered live
+                  Design artifacts
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {DELIVERED.map((d) => (

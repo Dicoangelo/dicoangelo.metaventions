@@ -13,30 +13,30 @@ interface Tile {
 
 const tiles: Tile[] = [
   {
-    value: "$30M+",
-    label: "Cloud Alliance Revenue",
-    sub: "AWS + Microsoft, 30 months",
+    value: "EZRA",
+    label: "Revenue Technology Manager",
+    sub: "Adecco Group · since June 2026",
     accent: "#10b981",
     glow: "rgba(16,185,129,0.18)",
   },
   {
     value: "$800M+",
-    label: "Partner TCV Processed",
-    sub: "3-person team, 97% approval",
+    label: "Shared Pipeline Registered",
+    sub: "Contentsquare · 3-person team",
     accent: "#6366f1",
     glow: "rgba(99,102,241,0.22)",
   },
   {
-    value: "20M+",
-    label: "Cognitive Graph Edges",
-    sub: "UCW · 8.9K items, 9.4K learnings",
+    value: "GTM",
+    label: "Platform Adoption",
+    sub: "Enablement, onboarding & support",
     accent: "#8b5cf6",
     glow: "rgba(139,92,246,0.20)",
   },
   {
-    value: "900K+",
-    label: "Lines AI-Directed Code",
-    sub: "20+ shipped systems · 48 repos",
+    value: "AI",
+    label: "Workflow Implementation",
+    sub: "Independent Metaventions AI builds",
     accent: "#ec4899",
     glow: "rgba(236,72,153,0.18)",
   },
@@ -49,7 +49,7 @@ export default function HeroProofBar() {
   const showSub = depth !== "skim";
 
   return (
-    <section aria-label="Key metrics" className="px-6 -mt-4 md:-mt-8 relative z-10">
+    <section aria-label="Experience at a glance" className="px-6 -mt-4 md:-mt-8 relative z-10">
       <div className="max-w-6xl mx-auto">
         <div
           className={`relative grid grid-cols-2 md:grid-cols-4 rounded-2xl overflow-hidden border backdrop-blur-xl ${

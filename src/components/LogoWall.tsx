@@ -18,17 +18,17 @@ interface LogoWallProps {
 }
 
 const logos: Logo[] = [
-  { name: "AWS", description: "Cloud Alliance · Co-sell motion", src: "/logos/aws.svg", color: "#FF9900" },
-  { name: "Microsoft", description: "Cloud Partner · Azure marketplace", src: "/logos/microsoft.svg", color: "#00A4EF" },
-  { name: "Google Cloud", description: "GCP Marketplace partnership", src: "/logos/googlecloud.svg", color: "#4285F4" },
+  { name: "AWS", description: "Contentsquare co-sell operations · ACE", src: "/logos/aws.svg", color: "#FF9900" },
+  { name: "Microsoft", description: "Contentsquare operations · Partner Center", src: "/logos/microsoft.svg", color: "#00A4EF" },
+  { name: "Google Cloud", description: "Cloud and AI tools explored in independent work", src: "/logos/googlecloud.svg", color: "#4285F4" },
   { name: "Anthropic", description: "Claude API · agent substrate", src: "/logos/anthropic.svg", color: "#D4A574" },
   { name: "OpenAI", description: "GPT integration · multi-platform", src: "/logos/openai.svg", color: "#10a37f" },
   { name: "xAI", description: "Grok · Custom Voices TTS", src: "/logos/xai.svg", color: "#ffffff" },
   { name: "Deepgram", description: "nova-3 streaming STT", src: "/logos/deepgram.svg", color: "#13EF93" },
-  { name: "ElevenLabs", description: "Voice cloning · production TTS", src: "/logos/elevenlabs.svg", color: "#ffffff" },
+  { name: "ElevenLabs", description: "Voice tooling · text-to-speech", src: "/logos/elevenlabs.svg", color: "#ffffff" },
   { name: "Vercel", description: "Production deployment infra", src: "/logos/vercel.svg", color: "#ffffff" },
   { name: "Suger", description: "Marketplace operations platform", src: "/logos/suger.svg", color: "#ec4899" },
-  { name: "Contentsquare", description: "Sr. Partner Systems & Operations · OneCRM, 6 platforms", src: "/logos/contentsquare.svg", color: "#6366f1" },
+  { name: "Contentsquare", description: "Previous employer · Partner systems and operations", src: "/logos/contentsquare.svg", color: "#6366f1" },
 ];
 
 const duplicatedLogos = [...logos, ...logos];
@@ -70,10 +70,10 @@ export default function LogoWall({ className = "", animated = true }: LogoWallPr
             The stack
           </span>
           <h3 className={`text-2xl md:text-[28px] font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-            Trusted by &amp; built with.
+            Experience &amp; tools.
           </h3>
           <p className={`mt-3 text-[14px] max-w-xl mx-auto ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-            Enterprise alliances, AI infrastructure, and the tools that ship the work.
+            Previous employment, partner platforms and tools used in AI-assisted work. Logos identify that context, not endorsements.
           </p>
         </div>
       </div>

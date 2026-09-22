@@ -7,11 +7,17 @@ import { ThemeToggle, useTheme } from "./ThemeProvider";
 import ReadingDepthToggle, { ReadingDepthToggleMobile } from "./ReadingDepthToggle";
 
 const navLinks = [
-  { href: "#timeline", label: "Experience", id: "timeline" },
-  { href: "#systems", label: "Selected work", id: "systems" },
-  { href: "#resume", label: "Resume", id: "resume" },
-  { href: "#contact", label: "Contact", id: "contact" },
-];
+    { href: "#ask", label: "Ask AI", id: "ask" },
+    { href: "#resume", label: "Resume", id: "resume" },
+    { href: "#timeline", label: "Timeline", id: "timeline" },
+    { href: "#skills", label: "Skills", id: "skills" },
+    { href: "#ucw-insights", label: "Systems", id: "ucw-insights" },
+    { href: "#clients", label: "Clients", id: "clients" },
+    { href: "#projects", label: "Projects", id: "projects" },
+    { href: "#analyze", label: "Analyze", id: "analyze" },
+    { href: "#contact", label: "Contact", id: "contact" },
+    { href: "/showcase", label: "Showcase", id: "showcase" },
+  ];
 
 function scrollBehavior(): ScrollBehavior {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -134,7 +140,7 @@ export default function Nav() {
     if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     setIsMobileMenuOpen(false);
 
-    // Native cross-page anchors preserve the destination fragment and browser scrolling.
+    // Preserve native cross-page fragment navigation and modified clicks.
     if (!isHomePage || href.startsWith("/")) return;
 
     e.preventDefault();

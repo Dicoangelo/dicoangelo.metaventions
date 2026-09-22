@@ -45,9 +45,9 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
   }, []);
 
   const heroMetrics = [
-    { value: "Routing", label: "Model Selection", note: "Internal heuristics guide requests" },
-    { value: "Recovery", label: "Error Handling", note: "Recorded patterns support diagnosis" },
-    { value: "Monitoring", label: "Operational Visibility", note: "Dashboards expose system activity" },
+    { value: "Routing", label: "Model Selection", note: "Configurable internal heuristics" },
+    { value: "Recovery", label: "Error Handling", note: "Recorded patterns and review" },
+    { value: "Monitor", label: "Operational Visibility", note: "Session and tool dashboards" },
   ];
 
   return (
@@ -68,14 +68,14 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
           {/* Header */}
           <div className="text-center mb-14">
             <span className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"}`}>
-              AI Infrastructure
+              AI Workflow Infrastructure
             </span>
             <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
               Connected AI systems.
             </h2>
             {showSummary && (
               <p className={`mt-5 max-w-3xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>
-                An implementation of model routing, error handling, memory, and monitoring. The architecture connects these capabilities so activity can be inspected and workflows revised.
+                A connected set of internal tools and prototypes for model routing, context retrieval, error handling and monitoring. I specify the workflows, direct AI implementation, and review and test the results.
               </p>
             )}
 
@@ -138,8 +138,8 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
             <div className="grid md:grid-cols-2 gap-4 md:gap-5 mt-12">
               <ValueCard
                 isLight={isLight}
-                title="Connected workflows"
-                body="Routing, context management, and error handling share information across the application. This makes the steps of an AI-assisted workflow easier to inspect and coordinate."
+                title="Designed for review"
+                body="Routing, context and recovery components make AI-assisted workflows easier to inspect. Review checkpoints keep people responsible for decisions and deployment."
                 icon={
                   <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -148,8 +148,8 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
               />
               <ValueCard
                 isLight={isLight}
-                title="Reviewable activity"
-                body="Dashboards surface recorded events, internal routing signals, and error patterns. These help guide investigation and review; they do not establish independently measured accuracy or reliability."
+                title="Visible feedback"
+                body="Session records and dashboards support investigation of tool use, errors and proposed changes. Internal scores help organize review; they are not independently validated measures of accuracy."
                 icon={
                   <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 3v18h18" />
@@ -177,10 +177,10 @@ export function SystemsSection({ isLight }: SystemsSectionProps) {
                   Why this matters
                 </p>
                 <h3 className={`text-[20px] md:text-[22px] font-bold tracking-tight mb-4 ${isLight ? "text-gray-900" : "text-white"}`}>
-                  Make the workflow visible.
+                  Connect the workflow. Keep it reviewable.
                 </h3>
                 <p className={`text-[14px] leading-relaxed ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>
-                  The practical focus is connecting tools, retaining useful context, and making outputs available for review. This diagram shows the implementation approach; it is not a benchmark of productivity or service reliability.
+                  My revenue-technology work and independent projects share a practical focus: clear requirements, connected tools, reliable records and human review. These prototypes demonstrate implementation approaches; they do not claim measured productivity gains or enterprise service guarantees.
                 </p>
               </div>
             </div>

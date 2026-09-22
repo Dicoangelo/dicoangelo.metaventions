@@ -47,16 +47,16 @@ export function MidCTA({ isLight }: MidCTAProps) {
                 isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
               }`}
             >
-              Hire signal
+              Let’s talk
             </span>
 
             <h2 className={`text-[28px] md:text-[36px] font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-              Want this on your team?
+              Building better GTM workflows?
             </h2>
 
             {showSub && (
               <p className={`mt-4 text-[15px] md:text-[16px] leading-relaxed max-w-xl mx-auto ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-                20-minute intro call. Bring whichever questions matter — happy to walk through partner ops, AI infrastructure, or anything in between.
+                20-minute intro call. Bring whichever questions matter — happy to walk through revenue technology, partner operations, or practical AI.
               </p>
             )}
 
@@ -82,7 +82,7 @@ export function MidCTA({ isLight }: MidCTAProps) {
                   <line x1="8" y1="2" x2="8" y2="6" />
                   <line x1="3" y1="10" x2="21" y2="10" />
                 </svg>
-                Book a 20-min intro
+                Discuss a 20-min intro
               </button>
               <button
                 type="button"

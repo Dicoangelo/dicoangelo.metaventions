@@ -46,13 +46,13 @@ export default function TLDRBanner() {
               TLDR
             </span>
             <p className={`text-[15.5px] md:text-[16px] leading-relaxed ${isLight ? "text-gray-900" : "text-white"}`}>
-              Operator who scales partner programs. Builder who ships AI infrastructure.{" "}
+              Revenue Technology Manager at EZRA. Independent builder at Metaventions AI.{" "}
               <span className={isLight ? "text-gray-600" : "text-[#a3a3a3]"}>
-                Partner SA is the seat where those two things collide.
+                GTM systems, practical AI workflows and adoption are the focus.
               </span>
             </p>
             <p className={`text-[13px] md:text-[13.5px] leading-relaxed mt-2.5 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-              The numbers are above, the chat is below — happy to walk you through either.
+              Explore my experience, independent projects and the AI guide below.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function TLDRBanner() {
               className="group inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-[13px] font-medium text-white transition-all duration-200 active:scale-[0.98] hover:shadow-[0_10px_24px_-8px_rgba(99,102,241,0.55)]"
               style={{ background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)" }}
             >
-              Schedule call
+              Get in touch
               <svg
                 aria-hidden="true"
                 width="11"
@@ -80,7 +80,7 @@ export default function TLDRBanner() {
               </svg>
             </a>
             <p className={`text-[11px] text-center ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-              ~30 min technical conversation
+              Revenue technology &amp; GTM operations
             </p>
           </div>
         </div>

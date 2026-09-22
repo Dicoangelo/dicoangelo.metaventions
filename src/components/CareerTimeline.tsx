@@ -73,19 +73,18 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
     },
     {
       date: "2026",
-      title: "Research-Informed AI Implementation",
-      company: "Independent Projects",
+      title: "Applied AI Research & Prototyping",
+      company: "Independent Learning",
       location: "Remote",
       type: "achievement",
-      description: "Studied third-party research and implemented ideas in multi-agent voting, model routing, and context management. This work is software implementation, not authorship of the cited papers.",
+      description: "Study published research and explore its ideas in AI-assisted prototypes for retrieval, model routing and multi-agent workflows.",
       highlights: [
-        "Historical DQ implementation inspired by arXiv:2511.15755; the author withdrew the study and its DQ results on Aug 31, 2026",
-        "arXiv:2508.17536 - Voting mechanisms in multi-agent systems",
-        "arXiv:2512.05470 - Agentic File System (AFS)",
-        "Weekly arXiv monitoring and synthesis",
+        "Review research by other authors and connect it to practical workflow questions",
+        "Explore coordination and voting patterns in multi-agent prototypes",
+        "Experiment with retrieval and context-management approaches",
+        "Capture sources and findings in ResearchGravity for later review",
       ],
-      metrics: ["Research Synthesis", "Software Implementation"],
-      sources: [{ label: "DQ study withdrawal notice", url: "https://arxiv.org/abs/2511.15755" }],
+      metrics: ["Research Synthesis", "AI-Assisted Prototypes"],
     },
     {
       date: "2026",
@@ -104,50 +103,50 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
     },
     {
       date: "Nov 2025 - Present",
-      title: "Founder & AI Systems Architect",
+      title: "Founder",
       company: "Metaventions AI",
       location: "Remote",
       type: "work",
-      description: "Design and ship AI-assisted software, including Structura, CareerCoach, ResearchGravity, and developer tooling. Specify the architecture, direct coding agents, and review, test, and deploy the resulting systems.",
+      description: "Run an independent build practice alongside the EZRA role. Specify systems, direct AI coding tools, and review, test and deploy their output for knowledge retrieval and operational workflows.",
       highlights: [
-        "Built Structura: 85,500+ line voice-native OS with multi-agent orchestration",
-        "Created CareerCoach: 26,600+ line career intelligence platform",
-        "Developed ResearchGravity: 35,200+ line research-to-production pipeline",
-        "Built Claude Infrastructure: 262,400+ lines of custom developer tooling",
+        "ResearchGravity: capture research sources, sessions and findings for retrieval",
+        "Universal Cognitive Wallet: connect context across AI tools and workflows",
+        "CareerCoach: explore AI-assisted career and role-comparison workflows",
+        "SBC Inspector: configuration validation through AI-assisted implementation",
       ],
-      metrics: ["AI-Assisted Development", "Independent Founder"],
+      metrics: ["AI-Assisted Builds", "Knowledge Systems", "Concurrent Practice"],
     },
     {
-      date: "2022 - 2025",
-      title: "Cloud Alliance Operations & Partner Systems",
+      date: "May 2023 - Nov 2025",
+      title: "Senior Partner Systems & Operations Lead",
       company: "Contentsquare",
       location: "Paris / Remote",
       type: "work",
-      description: "Operated cloud ops on the 3-person alliance team at Contentsquare. Program grew $0 to $30M+ in 30 months. I ran the operational layer (CRM, automation, dashboards, enablement) that turned strategy into velocity. Managed the operational layer of vendor relationships with AWS & Microsoft.",
+      description: "Title of record: Sr. Partner Systems and Operations Specialist. Ran systems administration, deal registration, reporting and enablement on a three-person alliance team. Contributed operations work to the marketplace program that reached $30M+ in revenue over 30 months.",
       highlights: [
-        "Operational lead on the 3-person alliance team; program scaled $0 → $30M+ in 30 months",
-        "Managed $800M+ TCV with 40% cloud attachment rate",
-        "Automated 90% of deal registrations, reducing manual inputs by 60%",
-        "Contributed to 2x Microsoft Partner of the Year (2024, 2025)",
-        "14x AWS YoY growth, 81% larger ACV, 26-day shorter sales cycles",
+        "Processed 2,500+ deal registrations at a 97% approval rate",
+        "$800M+ in shared pipeline TCV co-registered with AWS and Microsoft, not personally generated revenue",
+        "Integrated partner-program workflows into the cloud-alliance side of OneCRM",
+        "Administered CRM access for up to 400 enabled sellers; created materials cascaded by sales and partner leaders",
+        "Built Salesforce reports and led renewal planning for three partner systems, coordinating with procurement and legal",
       ],
-      metrics: ["$30M+ Revenue", "$800M+ TCV", "2x MSFT POTY"],
+      metrics: ["$800M+ Shared TCV", "97% Reg. Approval", "Partner Systems"],
     },
     {
-      date: "2020 - 2023",
+      date: "Jun 2020 - May 2023",
       title: "Product Operations Specialist",
       company: "Rocket Mortgage Canada",
       location: "Windsor, ON",
       type: "work",
-      description: "Entry-level product operations specialist and technical right-hand to the CRO at a small Canadian subsidiary. Built quality-control and evaluation frameworks supporting a 45-agent operations team, and handled day-to-day Salesforce data and revenue reporting in a regulated mortgage environment.",
+      description: "Supported sales, product and operations through Salesforce administration, reporting, product rollouts and quality workflows for a 45-agent operation. This was one continuous tenure through Edison Financial's rebrand to Rocket Mortgage Canada.",
       highlights: [
-        "Technical right-hand to the CRO: day-to-day Salesforce admin, data, and revenue reporting",
-        "Built quality-control and evaluation frameworks supporting a 45-agent operations team (90% satisfaction score)",
-        "Evaluation frameworks delivered $222,750 annual cost savings and 7,425 hours/year",
-        "Automated onboarding pipeline steps, improving process efficiency by 91.67%",
-        "Supported product improvements contributing to a 20% increase in customer satisfaction",
+        "Supported the CRO with Salesforce data and sales reporting",
+        "Built quality-control and evaluation workflows supporting a 45-agent operation",
+        "Produced funnel and escalation analysis and maintained deal-quality reporting",
+        "Coordinated Salesforce-to-Outlook rollout, permission sets and team onboarding",
+        "Communicated production changes and worked across sales, product and operations",
       ],
-      metrics: ["$222K Savings", "Eval Frameworks", "91% Efficiency"],
+      metrics: ["Salesforce", "Quality Workflows", "Product Rollouts"],
     },
     {
       date: "Mar 2019 - Mar 2022",
@@ -157,8 +156,8 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       type: "work",
       description: "Founded a youth-development program from idea stage, awarded $255,000 over 36 months by the Government of Ontario's Youth Opportunities Fund (Youth Innovations stream) administered via United Way/Centraide Windsor-Essex County. Served Black youth ages 15 to 19 across Essex, Kent, and Lambton counties through weekly mentoring, individualized tutoring, wellness checks, and post-secondary access pathways.",
       highlights: [
-        "Founded the program from concept stage; closed the 36-month grant cycle in good standing with the funder",
-        "End-to-end ownership: program design, operations, grant compliance and impact reporting, partner cultivation, community recruitment, mentor-team management",
+        "Founded the program from concept stage with a grant awarded over 36 months",
+        "Led program design, operations, grant compliance and impact reporting, partner cultivation, community recruitment and mentor-team coordination",
         "Served Black youth ages 15 to 19 across Essex, Kent, and Lambton counties (3-county catchment)",
         "$255,000 Government of Ontario Youth Opportunities Fund grant, Youth Innovations stream",
         "Public grant record at otf.ca/grants-awarded/5551, verifiable on the Ontario Trillium Foundation's grant database",
@@ -229,7 +228,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
               isLight ? "text-gray-900" : "text-white"
             }`}
           >
-            From operations to autonomous systems.
+            Revenue systems. Practical AI.
           </h2>
           {showSummary && (
             <p
@@ -237,7 +236,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
                 isLight ? "text-gray-600" : "text-[#a3a3a3]"
               }`}
             >
-              A working journey through building at scale.
+              Experience across revenue technology, partner systems, product operations and independent AI-assisted builds.
             </p>
           )}
         </div>

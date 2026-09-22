@@ -41,41 +41,41 @@ const ChipIcon = () => (
 
 const columns: BridgeColumn[] = [
   {
-    title: "Partner Side",
-    kicker: "Co-sell motion",
+    title: "GTM Operations",
+    kicker: "Current & past roles",
     Icon: HandshakeIcon,
     items: [
-      "$800M+ deal registration engine",
-      "Co-sell motion with AWS & Microsoft",
-      "6 CRM platform integrations",
-      "GSI and cloud partner operations",
-      "2x Microsoft Partner of the Year",
+      "Revenue platforms and integrations at EZRA",
+      "Partner systems and cloud marketplace operations at Contentsquare",
+      "Tool adoption, onboarding and enablement",
+      "Reporting and connected operational workflows",
+      "Coordination across GTM Ops, Marketing Ops, Finance and IT",
     ],
     accent: false,
   },
   {
     title: "The Bridge",
-    kicker: "Where it compounds",
+    kicker: "Business to systems",
     Icon: BridgeIcon,
     items: [
-      "Partnership Graph (concept demo): partner ops as queryable intelligence",
-      "GenAI enablement materials for partner teams",
-      "Business case development from partner pain",
-      "Technical ↔ business translation",
-      "From co-sell friction to AI-native motion",
+      "Translate operational needs into practical workflows",
+      "Support train-the-trainer enablement",
+      "Create documentation and self-service resources",
+      "Connect technical choices to team needs",
+      "Apply AI where review and ownership are clear",
     ],
     accent: true,
   },
   {
-    title: "AI Side",
-    kicker: "What I shipped",
+    title: "AI Implementation",
+    kicker: "Independent founder work",
     Icon: ChipIcon,
     items: [
-      "58 MCP tools across Claude, Grok, Gemini, NotebookLM",
-      "Multi-agent orchestration framework",
-      "UCW substrate: 270K+ multi-model interactions",
-      "20+ deployed AI systems, 900K+ LOC",
-      "Partnership Graph (concept) + Frontier Alpha + UCW",
+      "ResearchGravity and UCW: research capture and retrieval",
+      "CareerCoach: career-focused workflows",
+      "SBC Inspector: configuration validation",
+      "AI-directed implementation, review, testing and deployment",
+      "Partnership Graph: concept demo with illustrative data",
     ],
     accent: false,
   },
@@ -87,7 +87,7 @@ export function BridgeSection({ isLight }: { isLight: boolean }) {
   const showItems = depth !== "skim";
 
   return (
-    <section className="relative py-20 px-6">
+    <section id="bridge" className="relative py-20 px-6">
       {/* Ambient brand wash — sets the section apart without using a card */}
       <div
         aria-hidden="true"
@@ -113,7 +113,7 @@ export function BridgeSection({ isLight }: { isLight: boolean }) {
           </h2>
           {showSubtitle && (
             <p className={`mt-5 max-w-2xl mx-auto text-[16px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-              Most people live on one side. Partner ops people understand business but not the AI stack. AI builders understand the tech but not the co-sell motion. I&apos;ve operated both.
+              My work connects revenue operations with technology: managing platforms and adoption at EZRA, with concurrent independent AI implementation through Metaventions AI.
             </p>
           )}
         </div>

@@ -23,15 +23,15 @@ export default function AIAugmentedPage() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            <span className="text-xs font-semibold uppercase tracking-wider">Working method</span>
+            <span className="text-xs font-semibold uppercase tracking-wider">Positioning</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            How I build with AI
+            AI-Augmented Operator
           </h1>
 
           <p className={`text-lg max-w-2xl mx-auto ${isLight ? 'text-gray-600' : 'text-[#a3a3a3]'}`}>
-            From an operational problem to a clear specification, reviewed implementation, and usable workflow.
+            How human judgment and AI capability amplify each other in the systems I build.
           </p>
         </div>
       </section>

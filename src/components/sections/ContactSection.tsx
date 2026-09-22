@@ -67,11 +67,11 @@ export function ContactSection({ isLight }: ContactSectionProps) {
           Get in touch
         </span>
         <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-          Deployment ready.
+          Let’s connect.
         </h2>
         <p className={`mt-5 max-w-2xl mx-auto text-[16px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-          Open to roles at the intersection of <strong className={isLight ? "text-gray-900" : "text-white"}>AI systems</strong> and{" "}
-          <strong className={isLight ? "text-gray-900" : "text-white"}>operations leadership</strong>.
+          For conversations at the intersection of <strong className={isLight ? "text-gray-900" : "text-white"}>revenue technology</strong> and{" "}
+          <strong className={isLight ? "text-gray-900" : "text-white"}>GTM operations</strong>.
         </p>
 
         {/* Status pills */}
@@ -84,21 +84,21 @@ export function ContactSection({ isLight }: ContactSectionProps) {
               <span className="absolute inset-0 rounded-full bg-emerald-600 animate-ping opacity-75" />
               <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-700" />
             </span>
-            Open to opportunities
+            Open to conversations
           </span>
           <span
             className={`inline-flex items-center px-3 py-1.5 rounded-full text-[11px] font-medium ${
               isLight ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
             }`}
           >
-            TN visa eligible
+            Toronto, Canada
           </span>
           <span
             className={`inline-flex items-center px-3 py-1.5 rounded-full text-[11px] font-medium ${
               isLight ? "bg-[#6366f1]/10 text-[#6366f1] border border-[#6366f1]/30" : "bg-[#6366f1]/15 text-[#818cf8] border border-[#6366f1]/30"
             }`}
           >
-            Remote · SF · NYC · Austin
+            Systems · AI · Enablement
           </span>
         </div>
 

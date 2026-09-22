@@ -66,7 +66,7 @@ export function MetricCard({ value, label, context, proof, isLight }: MetricCard
     };
   }, []);
 
-  const displayValue = isVisible ? `${prefix}${formatNumber(animatedValue)}${suffix}` : value;
+  const displayValue = isVisible && /^[$€£]?\d/.test(value) ? `${prefix}${formatNumber(animatedValue)}${suffix}` : value;
 
   return (
     <div

@@ -71,7 +71,6 @@ export default function StrengthCard({
             ${getScoreBg(matchScore)} ${getScoreColor(matchScore)}
           `}
         >
-          <span className="block text-[10px] font-medium">AI estimate</span>
           {matchScore}/100
         </div>
       </div>

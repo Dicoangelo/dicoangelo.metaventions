@@ -16,15 +16,15 @@ interface SystemNode {
 }
 
 const SYSTEMS: SystemNode[] = [
-    { id: "cog", name: "Cognitive OS", description: "Task scheduling using recorded activity patterns", metric: "Task scheduling", position: [0, 2, 0], connections: ["dq", "mac", "obs"] },
-    { id: "dq", name: "Quality Engine", description: "Internal heuristic signals for model routing and review", metric: "Heuristic scoring", position: [-2, 0.5, 0], connections: ["rec", "ace"] },
-    { id: "rec", name: "Recovery System", description: "Error detection and recovery workflows", metric: "Error handling", position: [-2, -1.5, 0], connections: ["obs"] },
-    { id: "mem", name: "Memory Layer", description: "Stores and retrieves prior context", metric: "Context retrieval", position: [2, 0.5, 0], connections: ["lh", "ctx"] },
-    { id: "mac", name: "Multi-Agent", description: "Coordinates parallel agent tasks", metric: "Concurrent tasks", position: [0, 0, 0], connections: ["dq", "mem", "ace"] },
-    { id: "ace", name: "Consensus Engine", description: "Combines agent outputs through voting", metric: "Agent voting", position: [0, -2, 0], connections: ["mac"] },
-    { id: "obs", name: "Analytics Hub", description: "Real-time performance monitoring & insights", metric: "Live dashboards", position: [-3, 1.5, 1], connections: [] },
-    { id: "ctx", name: "Smart Context", description: "Context selection and caching", metric: "Context caching", position: [3, 1.5, 1], connections: ["mac"] },
-    { id: "lh", name: "Learning Core", description: "Retains feedback for later review", metric: "Feedback records", position: [2, -1.5, 0], connections: [] },
+    { id: "cog", name: "Cognitive OS", description: "Task scheduling experiments using session patterns", metric: "Scheduling", position: [0, 2, 0], connections: ["dq", "mac", "obs"] },
+    { id: "dq", name: "Quality Engine", description: "Internal model-routing heuristics, not validated accuracy", metric: "Heuristic routing", position: [-2, 0.5, 0], connections: ["rec", "ace"] },
+    { id: "rec", name: "Recovery System", description: "Recorded error patterns and configurable recovery actions", metric: "Error handling", position: [-2, -1.5, 0], connections: ["obs"] },
+    { id: "mem", name: "Memory Layer", description: "Retrieval of stored context and patterns", metric: "Context retrieval", position: [2, 0.5, 0], connections: ["lh", "ctx"] },
+    { id: "mac", name: "Multi-Agent", description: "Task delegation across concurrent AI agents", metric: "Concurrent tasks", position: [0, 0, 0], connections: ["dq", "mem", "ace"] },
+    { id: "ace", name: "Consensus Engine", description: "Experimental agent voting with configurable thresholds", metric: "Agent voting", position: [0, -2, 0], connections: ["mac"] },
+    { id: "obs", name: "Analytics Hub", description: "Session, tool and error monitoring", metric: "Dashboards", position: [-3, 1.5, 1], connections: [] },
+    { id: "ctx", name: "Smart Context", description: "Context selection and caching for AI workflows", metric: "Context caching", position: [3, 1.5, 1], connections: ["mac"] },
+    { id: "lh", name: "Learning Core", description: "Feedback records for reviewing proposed changes", metric: "Feedback records", position: [2, -1.5, 0], connections: [] },
 ];
 
 function Node({ data, hoveredNode, setHoveredNode }: { data: SystemNode; hoveredNode: string | null; setHoveredNode: (id: string | null) => void }) {

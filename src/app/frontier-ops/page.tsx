@@ -6,6 +6,14 @@ import { useTheme } from "@/components/ThemeProvider";
 
 // ─── Dimension definitions ────────────────────────────────────────────────────
 
+const DICO_SCORES: Record<string, number> = {
+  "boundary-sensing": 19.2,
+  "seam-design": 19.6,
+  "failure-model": 18.8,
+  "capability-forecasting": 17.8,
+  "attention-calibration": 18.4,
+};
+
 type AnswerValue = "yes" | "partial" | "no" | null;
 
 interface Question {
@@ -168,34 +176,34 @@ function scoreTier(total: number): { label: string; description: string; color: 
     return {
       label: "Deep Frontier Operator",
       description:
-        "Your answers describe consistent habits across this checklist. Pick one example and review whether the outcome supports your self-assessment.",
+        "Your answers describe consistent habits across this informal checklist. Review them against examples from your work; this score is not a professional ranking.",
       color: "emerald",
     };
   if (total >= 75)
     return {
       label: "Active Frontier Practitioner",
       description:
-        "Your answers describe several established practices. Use the lower-scoring areas to choose a useful next experiment.",
+        "Your answers describe several established AI-workflow habits. Lower-scoring areas can guide your next experiments.",
       color: "indigo",
     };
   if (total >= 55)
     return {
       label: "Frontier Aware",
       description:
-        "Your answers suggest a mix of established and developing habits. Choose a task where you can make verification or handoffs more explicit.",
+        "Your answers describe a mix of established and developing habits. Choose one repeatable workflow to document and review.",
       color: "violet",
     };
   if (total >= 35)
     return {
       label: "AI User",
       description:
-        "Your answers identify practices you could explore. Start with one repeatable task and a clear check of the output.",
+        "Your answers suggest opportunities to make AI use more repeatable. Start with a clear task, a review checkpoint and a record of the outcome.",
       color: "amber",
     };
   return {
     label: "Pre-Frontier",
     description:
-      "Use this checklist as a starting point. Try one practice, keep a record of what happened, and revisit your answers later.",
+      "Significant opportunity ahead. Use this checklist as a starting point for experimenting with delegation and review.",
     color: "orange",
   };
 }
@@ -269,18 +277,21 @@ function AnswerButton({
   );
 }
 
-function DimensionBar({
+function CompareBar({
   label,
   userScore,
+  dicoScore,
   max,
   isLight,
 }: {
   label: string;
   userScore: number;
+  dicoScore: number;
   max: number;
   isLight: boolean;
 }) {
   const userPct = (userScore / max) * 100;
+  const dicoPct = (dicoScore / max) * 100;
 
   return (
     <div className="space-y-1.5">
@@ -295,6 +306,11 @@ function DimensionBar({
               {userScore}/{max}
             </span>
           </span>
+          <span className={isLight ? "text-gray-400" : "text-gray-600"}>|</span>
+          <span className="text-emerald-500">
+            Dico’s self-rating:{" "}
+            <span className="font-bold">{dicoScore}/{max}</span>
+          </span>
         </div>
       </div>
       {/* User bar */}
@@ -302,6 +318,13 @@ function DimensionBar({
         <div
           className={`h-full rounded-full transition-all duration-700 ease-out ${barColor(userScore, max)}`}
           style={{ width: `${userPct}%` }}
+        />
+      </div>
+      {/* Dico bar */}
+      <div className={`relative h-1.5 rounded-full overflow-hidden ${isLight ? "bg-gray-100" : "bg-white/10"}`}>
+        <div
+          className="h-full rounded-full transition-all duration-700 ease-out bg-emerald-500/50"
+          style={{ width: `${dicoPct}%` }}
         />
       </div>
     </div>
@@ -326,6 +349,7 @@ export default function FrontierOpsAssessment() {
   const dimScores = dimensions.map((dim) => ({
     ...dim,
     userScore: getDimScore(dim, answers),
+    dicoScore: DICO_SCORES[dim.id],
   }));
 
   const totalUserScore = dimScores.reduce((acc, d) => acc + d.userScore, 0);
@@ -401,10 +425,10 @@ export default function FrontierOpsAssessment() {
           </h1>
 
           <p className={`max-w-2xl mx-auto text-lg mb-3 ${isLight ? "text-gray-600" : "text-gray-400"}`}>
-            Reflect on five habits for working with AI. Your answers produce an informal checklist score to help you choose what to practice next.
+            Reflect on five AI-workflow habits. This informal self-assessment is not a validated test or comparison with other professionals.
           </p>
           <p className={`text-sm ${isLight ? "text-gray-400" : "text-gray-600"}`}>
-            Questions and weights by Dico Angelo. This is not a validated assessment, a professional ranking, or an endorsement by an external researcher.
+            Personal checklist by Dico Angelo. Scores reflect self-reported answers, not external certification.
           </p>
         </div>
 
@@ -535,6 +559,19 @@ export default function FrontierOpsAssessment() {
                 <span className="text-base font-semibold">— {tier.label}</span>
               </div>
 
+              {/* Dico comparison */}
+              <div
+                className={`inline-flex items-center gap-3 px-5 py-3 rounded-2xl border font-medium text-sm ${
+                  isLight
+                    ? "border-emerald-200 bg-emerald-50/50 text-emerald-800"
+                    : "border-emerald-500/20 bg-emerald-500/5 text-emerald-400"
+                }`}
+              >
+                <span className="text-emerald-500 text-2xl font-extrabold tabular-nums">94</span>
+                <span className={`text-xs ${isLight ? "text-emerald-700" : "text-emerald-500"}`}>
+                  Dico&apos;s self-rating
+                </span>
+              </div>
             </div>
 
             {/* Tier description */}
@@ -542,16 +579,17 @@ export default function FrontierOpsAssessment() {
               {tier.description}
             </p>
 
-            {/* Per-dimension checklist results */}
+            {/* Per-dimension comparison */}
             <div className="space-y-5 mb-8">
               <h3 className={`text-sm font-semibold uppercase tracking-wider ${isLight ? "text-gray-500" : "text-gray-500"}`}>
-                Your checklist score by dimension
+                Self-ratings by dimension (thick = you, thin = Dico)
               </h3>
               {dimScores.map((d) => (
-                <DimensionBar
+                <CompareBar
                   key={d.id}
                   label={d.name}
                   userScore={d.userScore}
+                  dicoScore={d.dicoScore}
                   max={d.max}
                   isLight={isLight}
                 />
@@ -578,14 +616,14 @@ export default function FrontierOpsAssessment() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/showcase"
+                href="/#frontier-ops"
                 className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all hover:scale-105 border ${
                   isLight
                     ? "border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-100"
                     : "border-emerald-500/30 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20"
                 }`}
               >
-                <span>Explore implementation examples →</span>
+                <span>Read Dico’s self-assessment →</span>
               </Link>
               <p className={`self-center text-sm ${isLight ? "text-gray-500" : "text-gray-500"}`}>
                 Want to develop these skills? Start by giving your AI agent a task that surprises you.
@@ -605,7 +643,7 @@ export default function FrontierOpsAssessment() {
       {/* Footer */}
       <div className={`border-t mt-16 py-8 text-center ${isLight ? "border-gray-200" : "border-white/10"}`}>
         <p className={`text-sm ${isLight ? "text-gray-400" : "text-gray-600"}`}>
-          Framework by Ethan Mollick. Assessment built by{" "}
+          Informal self-assessment built by{" "}
           <Link href="/" className={`font-medium ${isLight ? "text-indigo-600 hover:text-indigo-500" : "text-indigo-400 hover:text-indigo-300"}`}>
             Dico Angelo
           </Link>

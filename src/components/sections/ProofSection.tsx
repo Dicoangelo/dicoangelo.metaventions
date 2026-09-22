@@ -42,38 +42,38 @@ export function ProofSection({ isLight }: ProofSectionProps) {
                 isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
               }`}
             >
-              Receipts
+              Experience in practice
             </span>
             <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-              Verifiable proof.
+              Work, with context.
             </h2>
             {showSummary && (
               <p className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-                Every metric below is documented. Hover for context, switch to Deep mode for the full trail.
+                Current responsibilities, previous team outcomes and independent builds. Switch to Deep mode for attribution and scope.
               </p>
             )}
           </div>
         </RevealOnScroll>
 
         <StaggeredGrid className="grid grid-cols-2 md:grid-cols-3 gap-2.5 md:gap-3 mb-10">
-          <MetricCard value="$800M+" label="TCV Processed" context="Registered through cloud marketplace infrastructure" proof="Operations on 3-person alliance team, 97% approval rate" isLight={isLight} />
-          <MetricCard value="2,500+" label="Deal Registrations" context="600+ deals/quarter capacity" proof="97% approval rate, AWS ACE & Microsoft Partner Center" isLight={isLight} />
-          <MetricCard value="90%" label="Automation Improvement" context="Registration time: 8 min → 30 sec" proof="Process automation at Contentsquare" isLight={isLight} />
-          <MetricCard value="$30M+" label="Cloud Alliance Revenue" context="Operations on 3-person alliance team; ran the operational layer (CRM, automation, dashboards)" proof="AWS + Microsoft, $0 → $30M+ in 30 months" isLight={isLight} />
-          <MetricCard value="40%" label="Cloud Attachment" context="Enterprise deals with cloud platforms" proof="Quarterly reports, 2x Microsoft POY" isLight={isLight} />
-          <MetricCard value="50+" label="Dynamic Reports" context="6 platform integrations built" proof="Salesforce, AWS ACE, PartnerStack, Reveal, Suger, Crossbeam" isLight={isLight} />
-          <MetricCard value="$222,750" label="Annual Savings" context="Rocket Mortgage Canada" proof="Process optimization documentation" isLight={isLight} />
-          <MetricCard value="45" label="Agent Ops Supported" context="Quality-control + eval frameworks built" proof="Process optimization documentation" isLight={isLight} />
-          <MetricCard value="98%" label="Accuracy Rate" context="Quality control metrics" proof="Quality-control documentation" isLight={isLight} />
-          <MetricCard value="900K+" label="Lines of AI-Directed Code" context="Across 20+ shipped systems, 48 repos" proof="Structura (85.5K), CareerCoach (26.6K), ResearchGravity (35.2K), Claude Infra (262.4K), plus 16+ production systems" isLight={isLight} />
-          <MetricCard value="Applied" label="Research-Informed Software" context="Implementation of ideas from third-party papers" proof="Multi-agent voting, orchestration, and context management; implementation does not establish the papers' findings" isLight={isLight} />
-          <MetricCard value="2" label="npm Packages" context="Published & maintained" proof="npmjs.com/@metaventionsai" isLight={isLight} />
+          <MetricCard value="$800M+" label="Shared Pipeline TCV" context="Registered pipeline at Contentsquare, not closed sales" proof="Across a three-person cloud alliance team, May 2023–Nov 2025" isLight={isLight} />
+          <MetricCard value="2,500+" label="Deal Registrations" context="Shared cloud alliance team activity at Contentsquare" proof="AWS ACE and Microsoft Partner Center; 97% approval rate across the team" isLight={isLight} />
+          <MetricCard value="GTM" label="Workflow Automation" context="Partner systems and deal-registration workflows" proof="Dico contributed systems administration, connected workflows and enablement" isLight={isLight} />
+          <MetricCard value="$30M+" label="Marketplace Program Revenue" context="Contentsquare program outcome over 30 months" proof="Dico contributed the operations work on a three-person alliance team" isLight={isLight} />
+          <MetricCard value="CRM" label="Connected Workflows" context="Partner platforms, data and process handoffs" proof="Salesforce, AWS ACE, Microsoft Partner Center, Suger, PartnerStack, Crossbeam and Reveal" isLight={isLight} />
+          <MetricCard value="Data" label="Partner Reporting" context="Reporting and enablement for regional teams" proof="Previous Contentsquare role: Sr. Partner Systems and Operations Specialist" isLight={isLight} />
+          <MetricCard value="Ops" label="Product Operations" context="Rocket Mortgage Canada, formerly Edison Financial" proof="Supported Salesforce data, reporting, document quality and onboarding" isLight={isLight} />
+          <MetricCard value="45" label="Agent Operation Supported" context="Operational support, not 45 direct reports" proof="Quality-control and evaluation workflows at Rocket Mortgage Canada" isLight={isLight} />
+          <MetricCard value="QA" label="Quality Workflows" context="Document quality and operational evaluation" proof="Product Operations Specialist, June 2020–May 2023" isLight={isLight} />
+          <MetricCard value="AI" label="AI-Assisted Builds" context="Concurrent independent work at Metaventions AI" proof="Specify systems, direct AI coding tools, then review, test and deploy the output" isLight={isLight} />
+          <MetricCard value="R&D" label="Applied Research" context="Research capture, retrieval and implementation" proof="ResearchGravity and UCW; research papers are by other authors" isLight={isLight} />
+          <MetricCard value="MCP" label="Tool Integrations" context="Connecting AI tools with useful application workflows" proof="Independent implementation work; selected projects and public links below" isLight={isLight} />
         </StaggeredGrid>
 
         {showDeep && (
           <div className="text-center">
             <p className={`text-[11.5px] uppercase tracking-[0.18em] font-semibold mb-4 ${isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"}`}>
-              Verify the trail
+              Explore public work
             </p>
             <div className="flex gap-2.5 justify-center flex-wrap">
               {VERIFY_LINKS.map((link) => (

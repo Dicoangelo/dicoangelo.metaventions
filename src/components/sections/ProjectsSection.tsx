@@ -15,7 +15,7 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">AI-Directed Projects</h2>
           <p className={isLight ? "text-gray-600" : "text-[#737373]"}>
-            Specified in English. Built by directing Claude Code / Codex / Gemini. Live demos, open repos.
+            Specified in English, built with AI coding tools, reviewed and tested. Applications, internal tools and prototypes.
           </p>
         </div>
 
@@ -23,10 +23,10 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
           <ProjectCard
             name="OS-App"
             tagline="Sovereign AI Operating System"
-            description="Voice-native interface with Gemini 2.0 Live, ElevenLabs TTS, biometric stress detection. Adaptive Consensus Engine (ACE) reducing consensus rounds by 50%. Recursive Language Model (RLM) for 100x context extension."
+            description="A prototype interface for voice, multi-model routing and agent workflows. Includes experimental consensus and context tools; no validated stress detection or speed improvement is claimed."
             tech={["Prompt Engineering", "Multi-Agent Orchestration", "Gemini API", "ElevenLabs"]}
-            stats={{ loc: "33K+", components: 71, services: 62, coverage: "95%" }}
-            github="https://github.com/Dicoangelo/OS-App"
+            stats={{ stage: "Prototype", interface: "Voice", workflow: "Agents", review: "Human" }}
+            github="https://github.com/Dicoangelo"
             demo="https://app.metaventionsai.com"
             isLight={isLight}
           />
@@ -34,13 +34,13 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
           <ProjectCard
             name="ResearchGravity"
             tagline="Research Orchestration Platform"
-            description="FastAPI backend with Qdrant vector search (2,530 embeddings). Meta-Learning Engine with 87% error prevention accuracy. Cognitive Precision Bridge with 5-agent ensemble and complexity-based routing."
+            description="Research capture and retrieval tools with a FastAPI backend, Qdrant vector search and an MCP interface. Organizes source URLs and session notes for later review. Routing scores are internal heuristics."
             tech={["AI-Directed Build", "FastAPI", "Qdrant", "Vector Search"]}
             stats={{
-              sessions: 114,
-              findings: "2,530",
-              urls: "8,935",
-              accuracy: "87%",
+              capture: "Notes",
+              search: "Vectors",
+              sources: "URLs",
+              interface: "MCP",
             }}
             github="https://github.com/Dicoangelo/ResearchGravity"
             isLight={isLight}
@@ -51,8 +51,8 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
             tagline="AI Career Governance System"
             description="Multi-agent hiring panel simulation. Generates role-specific feedback from AI personas representing different interview perspectives."
             tech={["Prompt Engineering", "Multi-Agent Orchestration", "Claude API", "MCP Protocol"]}
-            stats={{ loc: "15K+", agents: 5, panels: "N/A" }}
-            github="https://github.com/Dicoangelo/CareerCoachAntigravity"
+            stats={{ workflow: "Career", feedback: "AI-assisted", panel: "Simulated" }}
+            github="https://github.com/Dicoangelo"
             demo="https://careers.metaventionsai.com"
             isLight={isLight}
           />
@@ -73,7 +73,7 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
                 </div>
               </div>
               <p className={`text-sm mb-4 ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-                Cognitive Precision Bridge — AI orchestration with precision-aware routing. Multi-provider LLM support, DQ scoring, adaptive model selection.
+                Cognitive Precision Bridge — multi-provider orchestration and configurable model routing. DQ scores are internal heuristics, not independently validated measures of decision quality.
               </p>
               <code
                 className={`text-sm px-3 py-2 rounded block ${
@@ -97,7 +97,7 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
                 </div>
               </div>
               <p className={`text-sm mb-4 ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-                Universal multi-provider voice architecture. STT, reasoning, TTS pipeline. Echo elimination, sovereignty personality injection.
+                Multi-provider voice workflow connecting speech recognition, reasoning and speech synthesis, with configurable voice and conversation behavior.
               </p>
               <code
                 className={`text-sm px-3 py-2 rounded block ${
@@ -116,14 +116,14 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
         <div className="mt-12">
           <h3 className="text-xl font-bold mb-2 text-center">Metaventions AI Ecosystem</h3>
           <p className={`text-sm text-center mb-6 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-            Live products across the metaventionsai.com platform
+            Public demos and project references; historical work links to the current overview.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
             {[
               {
                 name: "Metaventions AI",
                 url: "https://metaventionsai.com",
-                description: "Main platform — sovereign AI infrastructure",
+                description: "Independent AI projects and research tools",
                 subdomain: "metaventionsai.com",
               },
               {
@@ -135,13 +135,13 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
               {
                 name: "OS-App",
                 url: "https://app.metaventionsai.com",
-                description: "Sovereign AI OS — voice, multi-agent, biometric",
+                description: "Application prototype — voice and agent workflows",
                 subdomain: "app.",
               },
               {
                 name: "Frontier Alpha",
                 url: "https://frontier-alpha.metaventionsai.com",
-                description: "Cognitive Factor Intelligence — 80+ factor portfolio optimization",
+                description: "Experimental investment-research interface",
                 subdomain: "frontier-alpha.",
               },
               {
@@ -152,68 +152,68 @@ export function ProjectsSection({ isLight }: ProjectsSectionProps) {
               },
               {
                 name: "Enterprise Deck",
-                url: "https://deck.metaventionsai.com",
-                description: "Enterprise pitch — UCW protocol substrate, 94% margin",
-                subdomain: "deck.",
+                url: "https://dicoangelo.metaventionsai.com/showcase",
+                description: "Historical enterprise concept — current project overview",
+                subdomain: "Project overview",
               },
               {
                 name: "Sovereign Deck",
-                url: "https://sovereign.metaventionsai.com",
-                description: "Sovereign AI architecture investor presentation",
-                subdomain: "sovereign.",
+                url: "https://dicoangelo.metaventionsai.com/showcase",
+                description: "Historical architecture concept — current project overview",
+                subdomain: "Project overview",
               },
               {
                 name: "Paper to Production",
-                url: "https://paper-to-production.metaventionsai.com",
-                description: "arXiv papers → deployed systems architecture reports",
-                subdomain: "paper-to-production.",
+                url: "https://dicoangelo.metaventionsai.com/TECHNICAL_DOSSIER.md",
+                description: "Implementations informed by other authors’ research",
+                subdomain: "Technical overview",
               },
               {
                 name: "Antigravity Demo",
-                url: "https://anti-gravity.metaventionsai.com",
-                description: "Interactive demo of the Antigravity ecosystem",
-                subdomain: "anti-gravity.",
+                url: "https://dicoangelo.metaventionsai.com/showcase",
+                description: "Archived implementation walkthrough in the showcase",
+                subdomain: "Showcase archive",
               },
               {
                 name: "Mass Fintech Hub",
-                url: "https://mfth.metaventionsai.com",
-                description: "Fintech bootcamp mentoring — playbooks & coaching",
-                subdomain: "mfth.",
+                url: "https://dicoangelo.metaventionsai.com",
+                description: "Mentoring context and verified professional profile",
+                subdomain: "Professional profile",
               },
               {
                 name: "Signature Event",
                 url: "https://thesignatureevent.metaventionsai.com",
-                description: "Client project — event marketing & RSVP platform",
+                description: "Published event website and recap",
                 subdomain: "thesignatureevent.",
               },
               {
                 name: "BXL Hospitality",
                 url: "https://bxl.metaventionsai.com",
-                description: "Client project — luxury hospitality membership platform",
+                description: "Hospitality website and membership information",
                 subdomain: "bxl.",
               },
               {
                 name: "FriendlyFace",
                 url: "https://friendlyface.metaventionsai.com",
-                description: "Client / collaboration — AI compliance proxy & forensic evidence (ForensicSeal, Mohammed Safiia ICDF2C 2024)",
+                description: "Collaborative prototype — AI evidence records and traceability",
                 subdomain: "friendlyface.",
               },
               {
-                name: "DQ Implementation Notes (Historical)",
-                url: "https://dqscoring.vercel.app",
-                description: "Dico's implementation notes on Philip Drammeh's arXiv:2511.15755. The author withdrew the study and its DQ results on Aug 31, 2026; this is not research co-authorship or scientific validation.",
-                subdomain: "dqscoring.",
+                name: "DQ Scoring",
+                url: "https://arxiv.org/abs/2511.15755",
+                description: "Philip Drammeh’s study withdrawn Aug 31, 2026; see source notice",
+                subdomain: "Withdrawal notice",
               },
               {
-                name: "Muchen Roadmap",
-                url: "https://muchen-roadmap.vercel.app",
-                description: "Strategic career roadmap & positioning document",
-                subdomain: "muchen-roadmap.",
+                name: "Career Workflow Notes",
+                url: "https://dicoangelo.metaventionsai.com/showcase",
+                description: "Career workflow context in the public project overview",
+                subdomain: "Project overview",
               },
               {
                 name: "The Partnership Graph",
                 url: "https://partnerships.metaventionsai.com",
-                description: "Bloomberg Terminal for partnerships — live demo. Multi-CRM, AI scoring, attribution.",
+                description: "Concept demo with illustrative partner data; no commercial deployment or affiliation",
                 subdomain: "partnerships.",
               },
             ].map((item) => (

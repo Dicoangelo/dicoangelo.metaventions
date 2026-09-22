@@ -36,9 +36,9 @@ const TOP_TOPICS = [
 ];
 
 const COHERENCE_TYPES = [
-  { type: "Semantic Echo", count: 41, confidence: 0.839, description: "Same idea surfacing independently on different platforms" },
-  { type: "Synchronicity", count: 29, confidence: 0.834, description: "Temporal alignment of thought across systems" },
-  { type: "Signature Match", count: 2, confidence: 0.95, description: "Exact cognitive fingerprint on different platforms" },
+  { type: "Semantic Echo", count: 41, confidence: 0.839, description: "Illustrative semantic matches between stored records" },
+  { type: "Synchronicity", count: 29, confidence: 0.834, description: "Illustrative records grouped by time and topic" },
+  { type: "Signature Match", count: 2, confidence: 0.95, description: "Illustrative metadata matches between records" },
 ];
 
 const PEAK_HOURS = [
@@ -50,17 +50,17 @@ const PEAK_HOURS = [
 ];
 
 const STATS = [
-  { value: "163K+", label: "Cognitive Events", sub: "Across 6 platforms", glow: "rgba(99,102,241,0.20)" },
-  { value: "150K+", label: "Embeddings", sub: "Semantic vectors", glow: "rgba(139,92,246,0.20)" },
-  { value: "11K+", label: "Sessions", sub: "Tracked interactions", glow: "rgba(167,139,250,0.20)" },
-  { value: "72", label: "Coherence Moments", sub: "Cross-platform alignment", glow: "rgba(99,102,241,0.20)" },
-  { value: "7", label: "Active Arcs", sub: "Persistent thought threads", glow: "rgba(139,92,246,0.20)" },
-  { value: "6", label: "Platforms", sub: "Claude · ChatGPT · Grok+", glow: "rgba(167,139,250,0.20)" },
+  { value: "Capture", label: "Session Records", sub: "Configured integrations", glow: "rgba(99,102,241,0.20)" },
+  { value: "Search", label: "Embeddings", sub: "Semantic retrieval", glow: "rgba(139,92,246,0.20)" },
+  { value: "Review", label: "Sessions", sub: "Stored activity context", glow: "rgba(167,139,250,0.20)" },
+  { value: "Compare", label: "Similarity Signals", sub: "Heuristic matching", glow: "rgba(99,102,241,0.20)" },
+  { value: "Link", label: "Research Threads", sub: "Related records", glow: "rgba(139,92,246,0.20)" },
+  { value: "Connect", label: "Platforms", sub: "Cross-platform context", glow: "rgba(167,139,250,0.20)" },
 ];
 
 const TABS = [
-  { id: "overview", label: "Scale" },
-  { id: "cognition", label: "How I Think" },
+  { id: "overview", label: "Overview" },
+  { id: "cognition", label: "Activity Patterns" },
   { id: "coherence", label: "Cross-Platform" },
 ] as const;
 
@@ -101,11 +101,11 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
             Universal Cognitive Wallet
           </span>
           <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-            What 163K AI interactions reveal.
+            UCW: an illustrative dashboard.
           </h2>
           {showSummary && (
             <p className={`mt-5 max-w-2xl mx-auto text-[16px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-              Real data from the UCW — a system that captures every AI interaction across 6 platforms, generates semantic embeddings, and detects cross-platform coherence.
+              A demonstration of research capture, retrieval and similarity views. Chart values are fixed illustrative data, not current totals or validated measurements of cognition, productivity or accuracy.
             </p>
           )}
         </div>
@@ -177,7 +177,7 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
             {/* Topic distribution */}
             <div className={`p-6 rounded-2xl ${cardClass}`}>
               <h3 className={`text-[14px] font-semibold mb-5 tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-                What I think about most
+                Illustrative topic distribution
               </h3>
               <div className="space-y-2.5">
                 {TOP_TOPICS.map((t) => (
@@ -208,10 +208,10 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
         {activeTab === "cognition" && (
           <div className="space-y-6">
             <div className="grid md:grid-cols-2 gap-4">
-              {/* Cognitive modes */}
+              {/* Illustrative activity categories */}
               <div className={`p-6 rounded-2xl ${cardClass}`}>
                 <h3 className={`text-[14px] font-semibold mb-5 tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-                  Cognitive modes
+                  Illustrative activity categories
                 </h3>
                 <div className="space-y-4">
                   {COGNITIVE_MODES.map((mode) => (
@@ -235,15 +235,15 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
                 </div>
                 {showSummary && (
                   <p className={`text-[11.5px] mt-5 leading-relaxed ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-                    51.3% deep work means over half of all AI interactions are focused, production-oriented building sessions.
+                    These example categories demonstrate a dashboard view. They do not establish focus, productivity or the quality of completed work.
                   </p>
                 )}
               </div>
 
-              {/* Intent profile */}
+              {/* Illustrative intent categories */}
               <div className={`p-6 rounded-2xl ${cardClass}`}>
                 <h3 className={`text-[14px] font-semibold mb-5 tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-                  Intent profile
+                  Illustrative intent categories
                 </h3>
                 <div className="space-y-3">
                   {INTENT_PROFILE.map((item) => (
@@ -267,7 +267,7 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
                 </div>
                 {showSummary && (
                   <p className={`text-[11.5px] mt-5 italic ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-                    Cognitive fingerprint: Create &gt; Explore &gt; Search &gt; Analyze
+                    Example categories: Create · Explore · Search · Analyze
                   </p>
                 )}
               </div>
@@ -276,7 +276,7 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
             {/* Peak hours */}
             <div className={`p-6 rounded-2xl ${cardClass}`}>
               <h3 className={`text-[14px] font-semibold mb-5 tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-                When I work
+                Illustrative activity by hour
               </h3>
               <div className="flex items-end gap-3 md:gap-5 justify-center h-44">
                 {PEAK_HOURS.map((h) => {
@@ -318,7 +318,7 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
               </div>
               {showSummary && (
                 <p className={`text-center text-[11.5px] mt-5 ${isLight ? "text-gray-500" : "text-[#737373]"}`}>
-                  3 AM is peak output — 4.4x any other hour. 33.4% of all work happens between 2-5 AM.
+                  Fixed sample counts show the chart format, not current working hours or measured output.
                 </p>
               )}
             </div>
@@ -342,7 +342,7 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
                   style={{ background: "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.7) 50%, transparent 100%)" }}
                 />
                 <p className={`text-[13.5px] leading-relaxed ${isLight ? "text-gray-800" : "text-[#ededed]"}`}>
-                  <strong className={isLight ? "text-[#6366f1]" : "text-[#818cf8]"}>Cross-platform coherence</strong> is when the same insight emerges independently on different AI platforms without being copied. The UCW detects these by comparing semantic embeddings across 150K+ vectors from Claude, ChatGPT, and Grok. <span className={isLight ? "text-gray-900 font-semibold" : "text-white font-semibold"}>72 such moments</span> have been detected so far.
+                  <strong className={isLight ? "text-[#6366f1]" : "text-[#818cf8]"}>Cross-platform similarity</strong> compares stored records using embeddings and metadata. It can surface related material for review, but cannot prove independent discovery or shared cognition. <span className={isLight ? "text-gray-900 font-semibold" : "text-white font-semibold"}>The examples below</span> illustrate the interface, not validated research results.
                 </p>
               </div>
             )}
@@ -372,7 +372,7 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
                     }`}
                   >
                     <span className={`text-[10.5px] uppercase tracking-[0.12em] ${isLight ? "text-gray-400" : "text-[#525252]"}`}>
-                      Avg confidence
+                      Sample heuristic
                     </span>
                     <span className="text-[11.5px] font-bold text-[#6366f1] tabular-nums" style={{ fontFamily: monoFont }}>
                       {(ct.confidence * 100).toFixed(1)}%
@@ -382,16 +382,16 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
               ))}
             </div>
 
-            {/* Innovation signals */}
+            {/* Review workflows */}
             <div className={`p-6 rounded-2xl ${cardClass}`}>
               <h3 className={`text-[14px] font-semibold mb-5 tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-                Innovation signals
+                Review workflows
               </h3>
               <div className="grid grid-cols-3 gap-4 text-center">
                 {[
-                  { value: "11K", label: "Breakthrough potential events (6.7%)" },
-                  { value: "15K", label: "Excellent quality events (0.8+ score)" },
-                  { value: "7", label: "Active coherence arcs spanning weeks" },
+                  { value: "Find", label: "Retrieve related source material" },
+                  { value: "Review", label: "Inspect records and context" },
+                  { value: "Link", label: "Connect research threads" },
                 ].map((s) => (
                   <div key={s.label}>
                     <p
@@ -425,24 +425,24 @@ export function UCWInsightsSection({ isLight }: UCWInsightsSectionProps) {
                   style={{ background: "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.7) 50%, transparent 100%)" }}
                 />
                 <h3 className={`text-[14px] font-semibold mb-4 tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-                  What this proves
+                  What this demonstrates
                 </h3>
                 <ul className={`space-y-3 text-[13.5px] leading-relaxed ${isLight ? "text-gray-700" : "text-[#ededed]"}`}>
                   {[
                     {
                       n: "01",
-                      bold: "Distributed cognition is real.",
-                      rest: "The same innovations emerge across platforms independently — verified by semantic similarity.",
+                      bold: "Similarity supports retrieval.",
+                      rest: "Embedding matches can suggest related records; they do not verify innovation, independent discovery or truth.",
                     },
                     {
                       n: "02",
-                      bold: "AI usage can be sovereign.",
-                      rest: "Every interaction is captured, owned, and analyzed by the user — not the platform.",
+                      bold: "Context can be organized.",
+                      rest: "Configured capture integrations bring selected records into a searchable store for user review.",
                     },
                     {
                       n: "03",
-                      bold: "Cognitive data has structure.",
-                      rest: "163K events with 3-layer semantic enrichment (Data + Light + Instinct) create a queryable cognitive graph.",
+                      bold: "Records can carry structure.",
+                      rest: "Source references, metadata and links make captured sessions easier to retrieve and inspect.",
                     },
                   ].map((p) => (
                     <li key={p.n} className="flex items-start gap-3">

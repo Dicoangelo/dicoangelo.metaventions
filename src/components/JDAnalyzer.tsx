@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback } from "react";
 import { useTheme } from "./ThemeProvider";
 import FitScoreGauge from "./FitScoreGauge";
 import StrengthCard from "./StrengthCard";
@@ -32,17 +32,9 @@ export default function JDAnalyzer() {
   const [assessment, setAssessment] = useState<Assessment | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const focusAfterReset = useRef(false);
   const { theme } = useTheme();
 
   const canSubmit = jdText.trim().length >= 50;
-
-  useEffect(() => {
-    if (state === "idle" && focusAfterReset.current) {
-      textareaRef.current?.focus();
-      focusAfterReset.current = false;
-    }
-  }, [state]);
 
   const analyzeJD = useCallback(async () => {
     if (jdText.trim().length < 50) {
@@ -91,7 +83,7 @@ export default function JDAnalyzer() {
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       // Cmd/Ctrl + Enter to submit
-      if ((e.metaKey || e.ctrlKey) && e.key === "Enter" && canSubmit && (state === "idle" || state === "error")) {
+      if ((e.metaKey || e.ctrlKey) && e.key === "Enter" && canSubmit && state === "idle") {
         e.preventDefault();
         analyzeJD();
       }
@@ -100,19 +92,15 @@ export default function JDAnalyzer() {
   );
 
   const reset = () => {
-    focusAfterReset.current = true;
     setJdText("");
     setState("idle");
     setAssessment(null);
     setErrorMessage("");
+    textareaRef.current?.focus();
   };
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <p className={`mb-5 text-sm leading-relaxed ${theme === "light" ? "text-gray-600" : "text-gray-400"}`}>
-        Compare a role with Dico&apos;s verified professional profile.
-        Scores are AI estimates of documented overlap. Use the evidence and areas to discuss as a starting point for a conversation.
-      </p>
       {/* Input Section */}
       {state === "idle" || state === "error" ? (
         <div className="space-y-4">
@@ -146,13 +134,13 @@ export default function JDAnalyzer() {
               `}
             />
             <p id="jd-hint" className={`text-xs mt-1 ${theme === "light" ? "text-gray-500" : "text-gray-500"}`}>
-              {jdText.length.toLocaleString()} / 20,000 characters {jdText.trim().length < 50 && jdText.length > 0 && "(minimum 50)"}
-              {canSubmit && <span className="ml-2">Press Cmd/Ctrl+Enter to analyze</span>}
+              {jdText.length} characters {jdText.length < 50 && jdText.length > 0 && "(minimum 50)"}
+              {canSubmit && <span className="ml-2">Press Cmd+Enter to analyze</span>}
             </p>
           </div>
 
           {errorMessage && (
-            <div role="alert" className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-500 text-sm">
+            <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-500 text-sm">
               {errorMessage}
             </div>
           )}
@@ -185,7 +173,7 @@ export default function JDAnalyzer() {
               Analyzing Fit
             </p>
             <p className={`text-sm ${theme === "light" ? "text-gray-500" : "text-gray-400"}`}>
-              Comparing the role with Dico&apos;s verified professional profile...
+              Comparing requirements with the verified career profile...
             </p>
             <div className="flex justify-center gap-6 mt-6">
               {["Scanning JD", "Matching skills", "Scoring fit"].map((step, i) => (
@@ -222,7 +210,7 @@ export default function JDAnalyzer() {
               />
               <div className="flex-1 text-center md:text-left">
                 <h2 className={`text-2xl font-bold mb-3 ${theme === "light" ? "text-gray-900" : "text-white"}`}>
-                  AI-assisted role comparison
+                  AI-assisted Fit Assessment
                 </h2>
                 <p className={`leading-relaxed ${theme === "light" ? "text-gray-600" : "text-gray-400"}`}>
                   {assessment.summary}
@@ -256,7 +244,7 @@ export default function JDAnalyzer() {
             <div>
               <h3 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${theme === "light" ? "text-gray-900" : "text-white"}`}>
                 <span className="w-2 h-2 bg-red-500 rounded-full" />
-                Areas to discuss
+                Areas to Discuss
               </h3>
               <div className="grid gap-3">
                 {assessment.gaps.map((gap, i) => (

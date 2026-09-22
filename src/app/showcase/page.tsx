@@ -9,7 +9,9 @@ import ShowcaseGallery from "./ShowcaseGallery";
 import Lightbox from "./Lightbox";
 import PresentationMode from "./PresentationMode";
 import { TechStackRibbon } from "./TechStackRibbon";
+import { AnomalyStats } from "./AnomalyStats";
 import { LiveSites } from "./LiveSites";
+import { GitHubRepos } from "./GitHubRepos";
 import { Certifications } from "./Certifications";
 import { DockerEvidence } from "./DockerEvidence";
 
@@ -59,7 +61,7 @@ export default function ShowcasePage() {
                 : "bg-[#4f8fff]/15 text-[#4f8fff] border border-[#4f8fff]/30"
             }`}
           >
-            INDEPENDENT AI SYSTEMS
+            AI PROJECT WALKTHROUGH
           </div>
           <h1
             className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-4"
@@ -72,22 +74,24 @@ export default function ShowcasePage() {
               animation: "gradientShift 6s ease infinite",
             }}
           >
-            Selected AI Systems
+            AI Project Showcase
           </h1>
           <p
             className={`text-lg sm:text-xl max-w-2xl mx-auto mb-10 ${
               isLight ? "text-gray-600" : "text-[#a3a3a3]"
             }`}
           >
-            Architecture and workflow snapshots from independent projects.
-            Systems specified, built with AI assistance, reviewed, and tested.
+            20 archived views across 5 project areas: applications, internal tools and prototypes. Screenshot metrics are historical and do not establish current scale, accuracy or production reliability.
           </p>
 
           {/* Quick Stats Row */}
           <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
             {[
               { value: "20", label: "Screenshots" },
-              { value: "5", label: "Systems" },
+              { value: "5", label: "Project Areas" },
+              { value: "Capture", label: "Research Records" },
+              { value: "MCP", label: "Tool Interfaces" },
+              { value: "Routing", label: "Internal Heuristics" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div
@@ -136,10 +140,24 @@ export default function ShowcasePage() {
         </div>
       </section>
 
+      {/* Anomaly Stats */}
+      <section id="stats" className="relative z-10 px-6 pb-16">
+        <div className="max-w-6xl mx-auto">
+          <AnomalyStats isLight={isLight} />
+        </div>
+      </section>
+
       {/* Live Sites */}
       <section id="sites" className="relative z-10 px-6 pb-16">
         <div className="max-w-6xl mx-auto">
           <LiveSites isLight={isLight} />
+        </div>
+      </section>
+
+      {/* GitHub Repos */}
+      <section id="repos" className="relative z-10 px-6 pb-16">
+        <div className="max-w-6xl mx-auto">
+          <GitHubRepos isLight={isLight} />
         </div>
       </section>
 

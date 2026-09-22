@@ -5,8 +5,8 @@ import { useReadingDepth } from "./ReadingDepthProvider";
 
 interface Skill {
   name: string;
-  level: number; // 0-100
-  years?: string;
+  level: number; // Self-assessed familiarity, 0-100
+  context?: string;
 }
 
 interface SkillCategory {
@@ -32,67 +32,67 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
       category: "AI & Agentic Systems",
       icon: "🤖",
       skills: [
-        { name: "Prompt Engineering", level: 95, years: "5+ years" },
-        { name: "Multi-Agent Orchestration", level: 85, years: "<1 year" },
-        { name: "Agentic Architectures", level: 85, years: "<1 year" },
-        { name: "LLM Integration & Routing", level: 82, years: "<1 year" },
-        { name: "RAG Systems (pgvector)", level: 78, years: "<1 year" },
+        { name: "Prompt Engineering", level: 95, context: "Applied AI work" },
+        { name: "Multi-Agent Orchestration", level: 85, context: "Independent builds" },
+        { name: "Agentic Architectures", level: 85, context: "Independent builds" },
+        { name: "LLM Integration & Routing", level: 82, context: "Independent builds" },
+        { name: "RAG Systems (pgvector)", level: 78, context: "Independent builds" },
       ],
     },
     {
       category: "Operations & Infrastructure",
       icon: "⚙️",
       skills: [
-        { name: "Cloud Marketplace Operations", level: 95, years: "3 years" },
-        { name: "GTM Automation & Workflow Design", level: 90, years: "3 years" },
-        { name: "Process Optimization", level: 92, years: "5+ years" },
-        { name: "Technical Program Management", level: 88, years: "5+ years" },
-        { name: "Data Operations & Reporting", level: 85, years: "5+ years" },
+        { name: "Cloud Marketplace Operations", level: 95, context: "Partner operations" },
+        { name: "GTM Automation & Workflow Design", level: 90, context: "Revenue technology" },
+        { name: "Process Optimization", level: 92, context: "Operations practice" },
+        { name: "Technical Program Management", level: 88, context: "Cross-team delivery" },
+        { name: "Data Operations & Reporting", level: 85, context: "Operations reporting" },
       ],
     },
     {
       category: "AI-Assisted Development (Code in English)",
       icon: "💬",
       skills: [
-        { name: "Claude Code / Codex / Gemini CLI", level: 92, years: "<1 year" },
-        { name: "Prompt Engineering for Code Generation", level: 90, years: "<1 year" },
-        { name: "MCP (Model Context Protocol)", level: 85, years: "<1 year" },
-        { name: "LLM Evaluation Frameworks", level: 82, years: "<1 year" },
-        { name: "Agentic Workflow Automation", level: 85, years: "<1 year" },
+        { name: "Claude Code / Codex / Gemini CLI", level: 92, context: "Independent builds" },
+        { name: "Prompt Engineering for Code Generation", level: 90, context: "AI-assisted builds" },
+        { name: "MCP (Model Context Protocol)", level: 85, context: "Tool integrations" },
+        { name: "LLM Evaluation Frameworks", level: 82, context: "Prototype testing" },
+        { name: "Agentic Workflow Automation", level: 85, context: "AI-assisted builds" },
       ],
     },
     {
       category: "Enterprise Tools",
       icon: "🏢",
       skills: [
-        { name: "Google Workspace", level: 95, years: "10+ years" },
-        { name: "Microsoft 365 / Office Suite", level: 95, years: "10+ years" },
-        { name: "AWS Cloud Marketplace", level: 95, years: "3 years" },
-        { name: "Salesforce Administration", level: 88, years: "3 years" },
-        { name: "PRM (PartnerStack, Crossbeam, Reveal)", level: 85, years: "3 years" },
-        { name: "Tableau, Miro", level: 82, years: "3 years" },
+        { name: "Google Workspace", level: 95, context: "Workplace tools" },
+        { name: "Microsoft 365 / Office Suite", level: 95, context: "Workplace tools" },
+        { name: "AWS Cloud Marketplace", level: 95, context: "Partner operations" },
+        { name: "Salesforce Administration", level: 88, context: "Operations support" },
+        { name: "PRM (PartnerStack, Crossbeam, Reveal)", level: 85, context: "Partner systems" },
+        { name: "Reporting (Salesforce, Looker Studio)", level: 82, context: "Operations reporting" },
       ],
     },
     {
       category: "Research & Knowledge Systems",
       icon: "🔬",
       skills: [
-        { name: "Research Synthesis & Methodology", level: 95, years: "5+ years" },
-        { name: "Self-Directed Learning & Meta-Learning", level: 95, years: "5+ years" },
-        { name: "Technical Writing & Documentation", level: 90, years: "3+ years" },
-        { name: "Rapid Prototyping & Iterative Shipping", level: 88, years: "<1 year" },
-        { name: "Open Source Publishing", level: 82, years: "<1 year" },
+        { name: "Research Review & Synthesis", level: 95, context: "Independent study" },
+        { name: "Self-Directed Learning & Meta-Learning", level: 95, context: "Ongoing practice" },
+        { name: "Technical Writing & Documentation", level: 90, context: "Operations & builds" },
+        { name: "Rapid Prototyping & Iterative Shipping", level: 88, context: "AI-assisted builds" },
+        { name: "Open Source Publishing", level: 82, context: "Independent projects" },
       ],
     },
     {
       category: "Leadership & Community",
       icon: "🌐",
       skills: [
-        { name: "Community Building & Networking", level: 92, years: "7+ years" },
-        { name: "Youth & Professional Mentorship", level: 90, years: "7+ years" },
-        { name: "Cross-Functional Coordination", level: 90, years: "3 years" },
-        { name: "Systems Thinking & Architecture", level: 92, years: "5+ years" },
-        { name: "Thought Leadership & Public Speaking", level: 85, years: "3+ years" },
+        { name: "Community Building & Networking", level: 92, context: "Community programs" },
+        { name: "Youth & Professional Mentorship", level: 90, context: "Youth & professionals" },
+        { name: "Cross-Functional Coordination", level: 90, context: "Operations practice" },
+        { name: "Systems Thinking & Architecture", level: 92, context: "Systems design" },
+        { name: "Workshops & Professional Discussions", level: 85, context: "Community events" },
       ],
     },
   ];
@@ -150,7 +150,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
                 isLight ? "text-gray-600" : "text-[#a3a3a3]"
               }`}
             >
-              Where operational excellence meets technical implementation.
+              Areas of practice across operations and AI-assisted work. Bars show self-assessed familiarity.
             </p>
           )}
         </div>
@@ -183,7 +183,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
                         {skill.name}
                       </span>
                       <span className={`text-xs ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
-                        {skill.years}
+                        {skill.context}
                       </span>
                     </div>
                     <div className={`h-2 rounded-full overflow-hidden ${isLight ? 'bg-gray-200' : 'bg-[#1a1a1a]'}`}>
@@ -207,7 +207,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
         {showExtras && (
         <div className="mt-12 text-center">
           <h3 className={`text-lg font-semibold mb-4 ${isLight ? 'text-gray-700' : 'text-[#ededed]'}`}>
-            Certifications
+            Training & Accreditations
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
@@ -249,13 +249,13 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">🏆 2x Microsoft Partner of the Year (2024, 2025)</span>
+              <span className="text-sm">🏆 Microsoft Partner Awards (2024, 2025) · Team Contributor</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
               <span className="text-sm">🤝 Catalyst 2026 Participant</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">📰 Suger.io Case Study Feature</span>
+              <span className="text-sm">📰 Contentsquare / Suger Case Study</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
               <span className="text-sm">🧠 NeurIPS 2025 Attendee</span>
@@ -264,10 +264,10 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
               <span className="text-sm">🚀 SpaceX Hyperloop 2019 Finalist</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">📦 2 Published npm Packages</span>
+              <span className="text-sm">📦 Open-Source Tools</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
-              <span className="text-sm">📚 8+ arXiv Papers Implemented</span>
+              <span className="text-sm">📚 Research-Informed Prototypes</span>
             </div>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
               <span className="text-sm">🎓 BBA Marketing, University of Windsor</span>

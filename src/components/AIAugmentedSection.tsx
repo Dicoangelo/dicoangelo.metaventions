@@ -14,9 +14,9 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
 
   const capabilities = [
     {
-      human: "Workflow requirements",
-      ai: "Draft implementation",
-      outcome: "A concrete workflow to review",
+      human: "Workflow Requirements",
+      ai: "Draft Implementation",
+      outcome: "Concrete workflows to review",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -25,8 +25,8 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
       ),
     },
     {
-      human: "Acceptance criteria",
-      ai: "Code and test assistance",
+      human: "Acceptance Criteria",
+      ai: "Code and Test Assistance",
       outcome: "Changes checked against requirements",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,8 +35,8 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
       ),
     },
     {
-      human: "Source selection",
-      ai: "Search and synthesis",
+      human: "Source Selection",
+      ai: "Search and Synthesis",
       outcome: "Research summaries with source context",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,9 +45,9 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
       ),
     },
     {
-      human: "Review boundaries",
-      ai: "Workflow automation",
-      outcome: "Clear points for human approval and review",
+      human: "Review Boundaries",
+      ai: "Workflow Automation",
+      outcome: "Clear points for human review",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -57,10 +57,10 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
   ];
 
   const systems = [
-    { name: "ResearchGravity", desc: "Research sessions, source tracking, and retrieval", href: "/showcase" },
-    { name: "Universal Cognitive Wallet", desc: "Stored AI interactions and searchable context", href: "/showcase" },
-    { name: "CareerCoach Antigravity", desc: "Career research and preparation workflows", href: "https://careers.metaventionsai.com" },
-    { name: "Portfolio assistant", desc: "Answers informed by a professional profile and retrieved material", href: "/#ask" },
+    { name: "ResearchGravity", desc: "Research capture and source tracking" },
+    { name: "Universal Cognitive Wallet", desc: "Connected context and knowledge retrieval" },
+    { name: "CareerCoach Antigravity", desc: "Career research and preparation workflows" },
+    { name: "SBC Inspector", desc: "Configuration validation workflows" },
   ];
 
   return (
@@ -103,7 +103,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Specify, review, test, deploy
+            Human Judgment × AI Capability
           </h2>
           <p
             className={`
@@ -111,9 +111,8 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
               ${isLight ? "text-gray-600" : "text-gray-400"}
             `}
           >
-            I define the workflow and architecture, direct AI coding tools, and review,
-            test, and deploy their output. My operations experience helps connect the
-            implementation to the people and processes it needs to support.
+            I define workflows and requirements, direct AI coding tools, and review,
+            test, and deploy their output. Operations experience connects the work to real team needs.
           </p>
         </div>
 
@@ -151,7 +150,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
             </div>
             <h3 className="font-bold text-lg mb-2">Human</h3>
             <p className={`text-sm ${isLight ? "text-gray-600" : "text-gray-400"}`}>
-              Requirements, context, review, and release decisions
+              Vision, judgment, context, ethics, creativity
             </p>
           </div>
 
@@ -202,7 +201,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
             </div>
             <h3 className="font-bold text-lg mb-2">AI</h3>
             <p className={`text-sm ${isLight ? "text-gray-600" : "text-gray-400"}`}>
-              Drafting, coding assistance, search, and synthesis
+              Speed, scale, pattern matching, synthesis
             </p>
           </div>
         </div>
@@ -220,7 +219,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
               ${isLight ? "text-gray-700" : "text-gray-300"}
             `}
           >
-            Where human review fits
+            The Augmentation Effect
           </h3>
 
           <div className="grid md:grid-cols-2 gap-3 md:gap-4">
@@ -247,7 +246,7 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
                     {cap.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-center gap-2 mb-2 text-sm">
+                    <div className="flex items-center gap-2 mb-2 text-sm">
                       <span className={`font-medium ${isLight ? "text-blue-600" : "text-blue-400"}`}>
                         {cap.human}
                       </span>
@@ -278,17 +277,15 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
           `}
         >
           <h3 className="text-center font-bold text-lg mb-6">
-            Selected implementation examples
+            Systems I&apos;ve Orchestrated
           </h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {systems.map((system, index) => (
-              <a
+              <div
                 key={system.name}
-                href={system.href}
                 className={`
                   p-4 rounded-xl text-center transition-all duration-300
-                  focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-500
                   ${isLight
                     ? "bg-white hover:shadow-md"
                     : "bg-white/5 hover:bg-white/10"
@@ -300,21 +297,23 @@ export default function AIAugmentedSection({ className = "" }: AIAugmentedSectio
                 <p className={`text-xs ${isLight ? "text-gray-500" : "text-gray-400"}`}>
                   {system.desc}
                 </p>
-              </a>
+              </div>
             ))}
           </div>
 
           {/* Philosophy Quote */}
           <div className="mt-8 text-center">
-            <p
+            <blockquote
               className={`
                 text-lg italic
                 ${isLight ? "text-gray-600" : "text-gray-400"}
               `}
             >
-              These examples demonstrate an AI-assisted implementation approach.
-              Project scope and historical screenshots are described in the showcase.
-            </p>
+              &ldquo;The future belongs to those who can orchestrate AI systems with
+              <span className="text-indigo-500 font-medium"> vision</span>,
+              <span className="text-purple-500 font-medium"> judgment</span>, and
+              <span className="text-pink-500 font-medium"> integrity</span>.&rdquo;
+            </blockquote>
           </div>
         </div>
       </div>
