@@ -24,7 +24,9 @@ except ImportError:
     from pageindex import PageIndexClient
 
 # Configuration
-API_KEY = os.getenv("PAGEINDEX_API_KEY", "pi_4zcWlfZWdTXThTRhyRag3M")
+API_KEY = os.getenv("PAGEINDEX_API_KEY")
+if not API_KEY:
+    sys.exit("Set PAGEINDEX_API_KEY (see .env.local)")
 DOSSIER_PATH = os.path.join(os.path.dirname(__file__), "..", "public", "TECHNICAL_DOSSIER.md")
 
 def main():
