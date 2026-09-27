@@ -35,10 +35,10 @@ Direct, evidence-backed answers to the questions recruiters and hiring managers 
 - 8+ arXiv papers implemented with production code
 - 900,000+ lines of code across ecosystem
 - 2 published npm packages
-- 95% test coverage (Vitest)
+- Vitest test suites (~54% statement coverage (Vitest, 2026-09-26))
 - Live demos at https://app.metaventionsai.com
 
-**Example:** arXiv:2511.15755 (DQ Scoring) → implemented in `adaptiveConsensus.ts` → achieved 100% actionability vs 1.7% single-agent baseline.
+**Example:** arXiv:2511.15755 (DQ Scoring, since withdrawn by its author) → V+S+C formula adapted in `adaptiveConsensus.ts` and the META-VENGINE router.
 
 Most people are one or the other. I'm both. I understand the theory AND ship production code.
 
@@ -149,7 +149,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 1. **OS-App** (152,503 LOC)
    - Voice-native AI interface with Gemini 2.0 & ElevenLabs
    - 75 UI components, 156 services, 20 custom hooks
-   - 95% test coverage (Vitest)
+   - Vitest test suites (~54% statement coverage (Vitest, 2026-09-26))
    - Live demo: https://app.metaventionsai.com
    - Deployed on Vercel with real users
 
@@ -174,7 +174,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **Production metrics:**
 - 3,000+ commits across ecosystem
 - 38 GitHub repositories (17 public, 19 private)
-- 95% test coverage (OS-App)
+- OS-App: ~54% statement coverage (Vitest, 2026-09-26)
 - Live demos with real users
 - Published packages on npm
 
@@ -190,10 +190,10 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 **Multi-agent systems:**
 - **ACE (Adaptive Consensus Engine):** 1,462 LOC implementing 3 arXiv papers
-  - arXiv:2511.15755 (DQ Scoring) → 100% actionability
+  - arXiv:2511.15755 (DQ Scoring, since withdrawn) → V+S+C formula adapted
   - arXiv:2511.13193 (Dynamic Auction) → 300x token reduction
   - arXiv:2508.17536 (Voting vs Debate) → voting captures most gains
-  - Production-ready with 95% test coverage
+  - Shipped with Vitest test suites
 
 - **ARCHON (Meta-Orchestrator):** 1,280 LOC
   - Autonomously coordinates 7 AI subsystems
@@ -203,7 +203,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 **Research-to-production pipeline:**
 1. Read arXiv papers (32+ tracked in ResearchGravity)
 2. Specify core algorithms in English, prompt Claude Code / Codex / Gemini to implement them, then review + validate the output
-3. Direct the agents to write comprehensive tests (95% coverage)
+3. Direct the agents to write comprehensive tests
 4. Deploy to production (Vercel, live demos)
 5. Measure results (DQ scores, performance metrics)
 
@@ -228,7 +228,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - **Total LOC shipped:** 900,000+ across ecosystem
 - **Largest single project:** 152,503 LOC (OS-App)
 - **Published packages:** 2 on npm (public, versioned, documented)
-- **Test coverage:** 95% (Vitest)
+- **Test coverage:** ~54% statements (OS-App, Vitest, 2026-09-26)
 - **Commits:** 3,000+ across 38 repositories
 - **Stack surface covered by prompts I wrote:** web apps, Python services, shell automation, build tooling, CI, all generated under my direction, not hand-typed
 
@@ -239,7 +239,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - **CareerCoach:** 76,704 LOC with multi-agent hiring panel, resume builder, skill graphs
 
 **Code quality:**
-- 95% test coverage (not just thrown together)
+- Tested with Vitest (not just thrown together)
 - Production error handling and graceful degradation
 - Deployed to Vercel with CI/CD pipelines
 - Live demos with real users (not just localhost)
@@ -455,7 +455,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
    - Designed 7-layer semantic context selection (Context Packs V2)
 
 2. **Production systems engineering:**
-   - 95% test coverage (not just "it works on my machine")
+   - Test suites (not just "it works on my machine")
    - Error handling and graceful degradation
    - CI/CD pipelines (Vercel deployments)
    - Monitoring and observability (Observatory system with 26K+ tool calls tracked)
@@ -493,7 +493,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 ### "Your background is in marketing and operations. Why should we trust you as a builder?"
 
-**Because I've shipped 900K+ LOC of production code with 95% test coverage, published 2 npm packages, and operationalized 8+ arXiv papers, all through prompt engineering, not hand-coding.**
+**Because I've shipped 900K+ LOC of production code, published 2 npm packages, and operationalized 8+ arXiv papers, all through prompt engineering, not hand-coding.**
 
 **The transition story:**
 
@@ -699,7 +699,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 - Implemented process changes based on agent feedback
 
 **In technical work:**
-- 95% test coverage, I write tests to catch my own mistakes
+- I direct tests to catch my own mistakes
 - Published npm packages, public code review by anyone who uses it
 - Attended 150+ events (AI research, builder communities), learned from world-class engineers
 
@@ -956,7 +956,7 @@ Most people are one or the other. I'm both. I understand the theory AND ship pro
 
 1. **Research-to-production capability**
    - I read arXiv papers and implement them (8+ in production)
-   - 900K+ LOC, 2 npm packages, 95% test coverage
+   - 900K+ LOC, 2 npm packages
    - Live demos at https://app.metaventionsai.com
 
 2. **Enterprise operations experience**

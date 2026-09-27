@@ -206,7 +206,7 @@ dicoangelo.com/
 5. **Systems Section** (`src/components/sections/SystemsSection.tsx`)
    - Business-focused messaging
    - 3D interactive network
-   - Key metrics (428K decisions, 94% auto-fix, 24/7 uptime)
+   - Key metrics (94% auto-fix, 24/7 uptime)
    - "Why This Matters" section
 
 6. **Projects Section** (`src/components/sections/ProjectsSection.tsx`)

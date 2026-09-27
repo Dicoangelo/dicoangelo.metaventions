@@ -17,7 +17,7 @@ ARCHON is a dual-layer meta-orchestration system in the Antigravity ecosystem th
 | Lock Timeout | 10 min | Auto-cleanup of stale locks |
 | **Application Layer** | | |
 | Max Retries | 5 | Aggressive autonomy mode |
-| DQ Target | 0.7 | Quality threshold (100% actionable) |
+| DQ Target | 0.7 | Quality threshold |
 | Token Budget | 1M | Per session allocation |
 | Escalation Threshold | 5 attempts | Before human intervention |
 | Phase Transition Delay | 400ms | Minimum UI animation time |
@@ -247,7 +247,7 @@ const enrichedContext = `${goal.metadata?.context}\n\n${codebaseContext}`;
 
 **Application Layer:**
 - **5-attempt autonomy:** Reduces human interruptions by 80% (vs single-attempt systems)
-- **70% DQ threshold:** Ensures 100% actionable outputs (arXiv:2511.15755)
+- **70% DQ threshold:** Quality gate using the V+S+C formula adapted from arXiv:2511.15755 (since withdrawn by its author)
 - **Multi-modal routing:** Optimal model selection saves ~25% token cost
 - **Graceful degradation:** 75% DQ fallback when API unavailable (no hard failures)
 
@@ -371,7 +371,7 @@ async function triggerParallelResearch(topic: string) {
 **Application Layer:**
 - arXiv:2601.09742 - Adaptive Orchestration, Meta-Cognition Engine
 - arXiv:2506.12508 - AgentOrchestra, TEA Protocol
-- arXiv:2511.15755 - DQ Scoring, 100% actionability
+- arXiv:2511.15755 - V+S+C DQ formula adapted (since withdrawn by its author)
 - arXiv:2508.07407 - Self-Evolving Agents
 - arXiv:2504.07079 - SkillWeaver (Agentic Organism Framework)
 - arXiv:2512.23880 - CASCADE (single vs multi-agent tradeoffs)
@@ -385,7 +385,7 @@ async function triggerParallelResearch(topic: string) {
 - **Cognitive OS** - Energy-aware task routing that informs ARCHON's retry strategies
 - **Supermemory** - Long-term memory layer for ARCHON's pattern learning
 - **ResearchGravity** - Context pack system for enriching ARCHON goals
-- **DQ Scoring** - Quality assessment framework (0.7 threshold for 100% actionability)
+- **DQ Scoring** - Quality assessment framework (0.7 threshold)
 
 ---
 

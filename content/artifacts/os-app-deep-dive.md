@@ -180,9 +180,7 @@
 | HRPO | Hierarchical Response Pattern Optimization |
 | Pattern Learning | IndexedDB-based threshold optimization |
 
-**Research Foundation:** arXiv:2511.15755 (DQ Scoring), arXiv:2508.17536 (Voting vs Debate)
-
-**Key Insight:** Multi-agent with DQ scoring achieves 100% actionability vs 1.7% single-agent.
+**Research Foundation:** V+S+C DQ formula adapted from arXiv:2511.15755 (since withdrawn by its author), arXiv:2508.17536 (Voting vs Debate)
 
 ### 4. Recursive Language Model (RLM)
 
@@ -336,7 +334,7 @@ Query → Path Router → [direct|rlm|ace|hybrid|cascade]
 ### Problems Solved
 
 1. **Context Limitations** - RLM enables infinite context processing via recursive decomposition
-2. **Decision Quality** - ACE with DQ scoring achieves 100% actionability vs 1.7% single-agent baseline
+2. **Decision Quality** - ACE scores candidate outputs with the adapted V+S+C DQ formula
 3. **Cost Optimization** - Precision Bridge Framework achieves Opus-quality through Haiku-budget compute
 4. **Voice Latency** - Multi-tier routing balances speed (500ms) vs quality (3-4s) based on complexity
 5. **Knowledge Fragmentation** - 351 research sessions integrated via semantic search (Agent Core SDK)
@@ -350,7 +348,7 @@ Query → Path Router → [direct|rlm|ace|hybrid|cascade]
 | **Voice Nexus** | Production | Multi-provider routing beats single-provider by 40% quality |
 | **Meta-Learning** | Production | Predicts session outcomes from 666+ historical sessions |
 | **Knowledge Injection** | Production | Enriches responses with 351 research sessions automatically |
-| **ACE Consensus** | Production | 100% actionability vs 1.7% single-agent baseline |
+| **ACE Consensus** | Production | Multi-agent consensus wired into Bicameral, VoiceManager and Archon |
 | **RLM Processing** | Production | Infinite context via recursive decomposition |
 | **Hot-Swap Agents** | Production | Seamless voice session transfer between agents |
 | **Biometric Sensing** | Production | Face detection, stress sensing, gaze tracking |
@@ -457,7 +455,7 @@ OS-App implements cutting-edge research from peer-reviewed papers:
 
 | Paper | arXiv | Contribution to OS-App |
 |-------|-------|------------------------|
-| **DQ Scoring** | [2511.15755](https://arxiv.org/abs/2511.15755) | Decision quality measurement framework |
+| **DQ Scoring** | [2511.15755](https://arxiv.org/abs/2511.15755) (since withdrawn by its author) | V+S+C formula adapted for decision quality scoring |
 | **RLM** | [2512.24601](https://arxiv.org/abs/2512.24601) | Recursive context processing for infinite contexts |
 | **Voting vs Debate** | [2508.17536](https://arxiv.org/abs/2508.17536) | Consensus optimization (voting > debate) |
 | **Tesla Patent** | US20260017019A1 | Precision Bridge architecture pattern |

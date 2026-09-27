@@ -20,7 +20,7 @@ November 2025 - Present (5 months)
 | **npm Packages** | 2 published | @metaventionsai/cpb-core, @metaventionsai/voice-nexus |
 | **arXiv Papers** | 8+ implemented | Research to production in weeks |
 | **Active Projects** | 20+ systems | OS-App, ACE, ARCHON, ResearchGravity, META-VENGINE, CareerCoach, UCW, FriendlyFace, PageIndex, Frontier Alpha, and more |
-| **Test Coverage** | 95% | Vitest/Jest across TypeScript projects |
+| **Test Coverage** | ~54% statements (OS-App, Vitest, 2026-09-26) | Vitest/Jest across TypeScript projects |
 | **GitHub Repos** | 38 total | 17 public, 19 private |
 | **Live Deployments** | 8+ production | Vercel hosting with CI/CD |
 | **Research Sessions** | 114 archived | Systematic paper tracking and synthesis |
@@ -43,7 +43,7 @@ November 2025 - Present (5 months)
 A sophisticated multi-agent voting system that achieves consensus through DQ-weighted voting and auction-based agent selection. ACE transforms unreliable single-model outputs into trustworthy decisions.
 
 **Research Implemented:**
-- arXiv:2511.15755 (MyAntFarm.ai) - DQ Scoring: 100% actionability vs 1.7% baseline
+- arXiv:2511.15755 (MyAntFarm.ai) - V+S+C DQ formula adapted (since withdrawn by its author)
 - arXiv:2511.13193 (DALA) - Dynamic auction coordination: 300x token reduction
 - arXiv:2508.17536 - Voting analysis: Voting captures most gains vs debate
 - arXiv:1805.00899 - AI Safety via Debate (safety-aware consensus)
@@ -55,7 +55,7 @@ A sophisticated multi-agent voting system that achieves consensus through DQ-wei
 - DQ scoring: Validity (40%) + Specificity (30%) + Correctness (30%)
 - Hop grouping for expert tasks
 - Convergence memory (learns optimal thresholds)
-- 95% test coverage (Vitest)
+- Vitest test suites (~54% statement coverage (Vitest, 2026-09-26))
 
 **Business Impact:**
 - 50% reduction in consensus rounds
@@ -121,7 +121,7 @@ A production-grade voice-first AI interface with agentic workflows, biometric se
 - Components: 75 UI components
 - Services: 156 TypeScript files
 - Custom Hooks: 20
-- Test Coverage: 95%
+- Test Coverage: ~54% statements (Vitest, 2026-09-26)
 
 **Key Features:**
 
@@ -227,8 +227,6 @@ A bidirectional co-evolution engine, a self-improving AI productivity system con
 **2. DQ Routing System**
 - Auto-routes to Haiku/Sonnet/Opus based on complexity
 - DQ Score = Validity (40%) + Specificity (30%) + Correctness (30%)
-- 428 routing decisions tracked
-- 0.889 average DQ score
 - 93% cache efficiency
 
 **3. Recovery Engine**
@@ -394,7 +392,7 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 - **CI/CD:** GitHub Actions + Vercel auto-deploy (configs specified, generated, reviewed)
 - **Databases:** SQLite (persistence), Qdrant (vector search)
 - **State Management:** Zustand (TypeScript), JSON files (Python)
-- **Testing:** Vitest (TypeScript - 95% coverage), pytest (Python), specs written in English, implementation AI-generated
+- **Testing:** Vitest (TypeScript - OS-App ~54% statement coverage (Vitest, 2026-09-26)), pytest (Python), specs written in English, implementation AI-generated
 - **Build Tools:** Vite (React), tsup (npm packages), esbuild
 - **Version Control:** Git (1,500+ commits across ecosystem)
 
@@ -409,7 +407,7 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 - **face-api.js:** Facial recognition and emotion detection
 
 ### Development Practices
-- **Test-Directed:** 95% coverage on critical systems (tests specified in English, generated, and validated)
+- **Test-Directed:** Vitest suites on critical systems (tests specified in English, generated, and validated)
 - **Type-Safe Specification:** Strict TypeScript contracts specified in prompts, verified in review
 - **Documentation:** Inline comments citing arXiv papers
 - **Modular:** 156 service files in OS-App alone
@@ -424,7 +422,7 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 
 | arXiv Paper | Title/Topic | Implementation | Result |
 |-------------|-------------|----------------|--------|
-| **2511.15755** | MyAntFarm.ai DQ Scoring | `adaptiveConsensus.ts`, `dqScoring.ts` | 100% actionability achieved |
+| **2511.15755** | MyAntFarm.ai DQ Scoring (paper since withdrawn) | `adaptiveConsensus.ts`, `dqScoring.ts` | V+S+C formula adapted |
 | **2511.13193** | DALA (Dynamic Auction) | `agentAuction.ts` | 300x token reduction |
 | **2508.17536** | Voting vs. Debate | ACE voting mechanism | Voting captures most gains |
 | **2601.09742** | Adaptive Orchestration | `archon/index.ts` | Meta-cognition engine |
@@ -491,7 +489,7 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 - **AI Orchestration:** LLM integration direction, prompt engineering, vector search specification, embeddings
 - **System Architecture:** Microservices, event-driven, state machines, caching strategies
 - **Deployment Direction:** CI/CD configuration, Vercel hosting, monitoring specs, error tracking, automation
-- **Test-Directed Development:** 95% coverage, unit/integration tests specified in English, generated and validated
+- **Test-Directed Development:** unit/integration tests specified in English, generated and validated
 - **API Design:** REST, streaming responses, WebSocket, multi-provider abstraction
 - **Research Translation:** arXiv → production in 2-4 weeks
 
@@ -515,7 +513,7 @@ An AI-powered career intelligence platform with multi-agent hiring panel simulat
 - **Error Recovery:** 700+ error patterns, 70% auto-fix rate
 - **Complexity Management:** 900K+ LOC, 9 interconnected systems, zero data loss
 - **Performance:** 93% cache efficiency, 2-3x parallel speedup
-- **Quality Assurance:** 95% test coverage, DQ scoring for reliability
+- **Quality Assurance:** Vitest suites, DQ scoring for routing
 
 ---
 
@@ -527,7 +525,7 @@ This experience demonstrates I can:
 
 1. **Translate Research to Production**
    - 8+ arXiv papers implemented with measurable results
-   - Not just prototypes, 95% test coverage, production deployments
+   - Not just prototypes, tested code, production deployments
    - Evidence-based development: benchmark vs paper baselines
 
 2. **Build at Scale**
@@ -559,7 +557,7 @@ This experience demonstrates I can:
 
 **I do both:**
 - Research → Production (8+ papers)
-- Prototype → Scale (900K+ LOC, 95% coverage)
+- Prototype → Scale (900K+ LOC)
 - Theory → Practice (live demos, published packages)
 
 ### What Sets This Apart
@@ -575,7 +573,7 @@ This experience demonstrates I can:
    - Verifiable via URLs
 
 3. **Comprehensive Testing**
-   - 95% coverage shows production mindset
+   - Test suites show production mindset
    - Not just "works on my machine"
    - Enterprise-grade reliability
 
@@ -598,7 +596,7 @@ While this is a startup venture (not yet revenue), the work demonstrates capabil
 - **900K+ LOC** shows I can execute large technical projects
 - **8+ papers** shows I stay at cutting edge
 - **2 npm packages** shows I can ship reusable artifacts
-- **95% coverage** shows I understand quality gates
+- **Test suites and CI** show I understand quality gates
 
 **For hiring managers:** I can direct AI products from research → production at the pace of a 10-person team, with the quality bar of a senior operator, and the research depth of a PhD candidate, without the PhD, and without claiming hand-coder credentials. I specify in English, review AI output, run tests, and ship.
 

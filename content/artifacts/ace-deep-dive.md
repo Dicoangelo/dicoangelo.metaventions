@@ -85,7 +85,7 @@ ACE draws from recent multi-agent research:
 
 - **arXiv:2508.17536** - Voting alone captures most gains in multi-agent systems
 - **arXiv:2512.05470** - Agentic File System patterns for state management
-- **arXiv:2511.15755** - DQ scoring methodology from MyAntFarm.ai
+- **arXiv:2511.15755** - V+S+C DQ formula adapted from MyAntFarm.ai (since withdrawn by its author)
 
 The bicameral approach specifically addresses the "echo chamber" problem where homogeneous agents reinforce errors rather than catching them.
 

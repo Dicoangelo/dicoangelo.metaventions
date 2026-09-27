@@ -83,7 +83,7 @@
     "slug": "archon-autonomous-recursive-coordination-hierarchical-orchestration-network",
     "title": "ARCHON: Autonomous Recursive Coordination & Hierarchical Orchestration Network",
     "category": "project",
-    "summary": "ARCHON is a dual-layer meta-orchestration system achieving 100% actionable outputs via DQ (Decision Quality) scoring with a target of 0.7. At the CLI layer, it delivers 2-3x parallel speedup with 100% conflict prevention through file locking, while the application layer uses a 1M token budget per session and escalates to humans after 5 attempts. The system routes goals through specialized AI subsystems with allocated budget ratios of 30% to ACE, 25% to CPB, 15% to Evolution, and 10% to Dream Protocol.",
+    "summary": "ARCHON is a dual-layer meta-orchestration system that gates outputs with DQ (Decision Quality) scoring at a 0.7 threshold. At the CLI layer, it delivers 2-3x parallel speedup with 100% conflict prevention through file locking, while the application layer uses a 1M token budget per session and escalates to humans after 5 attempts. The system routes goals through specialized AI subsystems with allocated budget ratios of 30% to ACE, 25% to CPB, 15% to Evolution, and 10% to Dream Protocol.",
     "content_chars": 14979,
     "labels": {
       "audience": [
@@ -360,10 +360,10 @@
   },
   {
     "slug": "collaboration-drammeh-dq-scoring",
-    "title": "Research Collaboration: Philip Drammeh \u2014 DQ Scoring in Production",
+    "title": "DQ Scoring: Formula Adapted from arXiv:2511.15755 (Since Withdrawn)",
     "category": "experience",
-    "summary": "Philip Drammeh\u2019s paper arXiv:2511.15755, the most referenced paper in the Antigravity ecosystem with 599 citations, proposed multi-agent LLM orchestration using a DQ scoring framework (validity 40% + specificity 30% + correctness 30%). Dico Angelo implemented this framework into a production routing engine, validating it with 4,687+ routing decisions from Jan 16 to Mar 6, 2026, where DQ scores improved from 0.575 to 0.870 and multi-agent consensus achieved a 95.4% variance reduction. A co-authored paper titled \"DQ Scoring in Production\" has been proposed targeting NeurIPS, ICML, or AAAI.",
-    "content_chars": 4027,
+    "summary": "Dico Angelo adapted the V+S+C Decision Quality formula (validity 40% + specificity 30% + correctness 30%) from arXiv:2511.15755 by Philip Drammeh into the META-VENGINE router; he did not replicate the paper and did not co-author it. The author withdrew the paper on 2026-08-31 after a code audit. Dico met Drammeh in March 2026. An internal 100-query SUPERMAX comparison did not hold up on audit (the arms were scored with different weights). Corrected 2026-09-26.",
+    "content_chars": 3527,
     "labels": {
       "audience": [
         "peer-engineer",
@@ -385,11 +385,11 @@
       ]
     },
     "topical_tags": [
-      "research-collaboration",
+      "formula-adaptation",
       "dq-scoring",
       "arxiv",
       "multi-agent",
-      "production-validation"
+      "correction-2026-09-26"
     ],
     "source": {
       "kind": "manual-curation"
@@ -1156,7 +1156,7 @@
     "slug": "project-meta-vengine",
     "title": "META-VENGINE: Self-Improving AI Infrastructure",
     "category": "project",
-    "summary": "META-VENGINE is a self-improving AI routing framework at github.com/Dicoangelo/meta-vengine. It has scored 4,687+ DQ decisions with an average score of 0.889, achieves 94% error coverage (655/700 historical errors) with a 70% auto-fix rate, and uses Thompson Sampling across 19 learnable parameters. The system routes queries across Ollama, Gemini 2.0, Claude Opus, and OpenAI GPT-4, and a 100-query benchmark showed a +12.4% DQ improvement using SUPERMAX multi-agent consensus.",
+    "summary": "META-VENGINE is a self-improving AI routing framework at github.com/Dicoangelo/meta-vengine. It routes real claude -p decisions with a V+S+C DQ scorer whose formula was adapted from arXiv:2511.15755 (since withdrawn), achieves 94% error coverage (655/700 historical errors) with a 70% auto-fix rate, and uses Thompson Sampling across 19 learnable parameters. The system routes queries across Ollama, Gemini 2.0, Claude Opus, and OpenAI GPT-4. In a 2026-09-17 test against an Opus 5 reference (n=17), keyword DQ agreed 29% and Haiku typed questions 88-94%.",
     "content_chars": 3635,
     "labels": {
       "audience": [
@@ -1277,7 +1277,7 @@
     "slug": "project-paper-to-production",
     "title": "Paper to Production: arXiv Implementation Reports",
     "category": "project",
-    "summary": "Paper to Production (paper-to-production.vercel.app) is a series of technical architecture reports documenting the translation of research papers into deployed production systems. The flagship report, \"The 28-Wire Nervous System\" published March 11, 2026, documents how 28 wires installed across 5 functional layers produced a +32% improvement in Decision Quality (from 0.704 to 0.952) in a single session. The system created 6 closed feedback loops and 3 self-learning mechanisms, with 83% of decisions becoming pattern-enhanced and SUPERMAX consensus providing a +12.4% DQ lift.",
+    "summary": "Paper to Production is a series of technical architecture reports about translating research papers into working systems. The flagship report, \"The 28-Wire Nervous System\" (March 11, 2026), is an architecture exercise that diagnosed 17 isolated components and designed 28 wires across 5 functional layers. Corrected 2026-09-26: the wires were never committed and were reset on 2026-07-21, and the report's DQ improvement and SUPERMAX lift figures have been withdrawn.",
     "content_chars": 3111,
     "labels": {
       "audience": [
@@ -1398,7 +1398,7 @@
     "slug": "project-supermax",
     "title": "SUPERMAX: Multi-Agent Team Coordination",
     "category": "project",
-    "summary": "SUPERMAX is a 21-agent team coordination system achieving +12.4% DQ improvement and -95.4% variance reduction versus single-model on a 100-query benchmark (arXiv:2511.15755), passing 8/8 tests. It uses council-based architecture with technical, strategic, UCW, and design councils, weighted consensus voting, and automatic escalation from single-agent to multi-agent review when DQ confidence drops. Deployed in CareerCoachAntigravity, META-VENGINE Wire 23, and Paper to Production.",
+    "summary": "SUPERMAX is a 21-agent team coordination system with a council-based architecture (technical, strategic, UCW, and design councils) and weighted consensus voting. SUPERMAX v2 code (2026-03-14) adds adaptive agent count, Free-MAD debate and disagreement escalation. Automatic escalation from the META-VENGINE router (Wire 23) was designed but never fired, and an internal 100-query comparison against single-model scoring did not hold up on audit. Used in CareerCoachAntigravity's 3-agent review council.",
     "content_chars": 3910,
     "labels": {
       "audience": [
@@ -1631,8 +1631,8 @@
     "slug": "stories-and-specifics-named-people-and-anecdotes",
     "title": "Stories & Specifics: Named People, Quotes, Conferences, Anecdotes",
     "category": "deep-dive",
-    "summary": "Philip Drammeh, Global Technical Program Executive and author of arXiv:2511.15755 (Multi-Agent LLM Orchestration / DQ Scoring), called Dico's production implementation \"phenomenal.\" The paper is the #1 most-referenced across Dico's ecosystem with 599 references. Dico met Drammeh on 2026-03-06, and a co-authored paper proposal is in flight.",
-    "content_chars": 70099,
+    "summary": "A deep bench of varied evidence about Dico: named people, third-party press and case studies (Partner Insight, AWS, Microsoft, Suger), conference appearances, specific arXiv papers he has drawn on, and project anecdotes. Notes that Dico met Philip Drammeh, author of the since-withdrawn arXiv:2511.15755, in March 2026; there is no co-authored paper.",
+    "content_chars": 70272,
     "labels": {
       "audience": [
         "recruiter",
@@ -1672,7 +1672,7 @@
     },
     "ingested_at": "2026-05-02T21:34:57.442Z",
     "ingested_by": "scripts/classify-and-catalog-existing.ts",
-    "artifact_id": "e0e71ca0-12bc-4ece-85c0-3d586d913284"
+    "artifact_id": "7ebcc98f-7f17-4b48-8a5e-c086b0722dae"
   },
   {
     "slug": "supermemory-long-term-memory-layer",

@@ -2,7 +2,7 @@
 
 ## Overview
 
-SUPERMAX is a 21-agent team coordination system that operates as a framework within Claude Code for complex multi-part tasks. It uses council-based architecture with specialized councils (technical, strategic, UCW, design), seam classification to identify integration points, attention routing for optimal agent assignment, and a failure taxonomy for structured error recovery. SUPERMAX enables autonomous escalation from single-model routing to multi-agent consensus when task complexity exceeds individual agent capacity.
+SUPERMAX is a 21-agent team coordination system that operates as a framework within Claude Code for complex multi-part tasks. It uses council-based architecture with specialized councils (technical, strategic, UCW, design), seam classification to identify integration points, attention routing for optimal agent assignment, and a failure taxonomy for structured error recovery. SUPERMAX v2 code (2026-03-14) supports adaptive agent count, Free-MAD debate and disagreement-based escalation. Automatic escalation from single-model routing to consensus was designed but has never fired in production.
 
 ## Repository
 
@@ -13,8 +13,7 @@ No separate repository, SUPERMAX is a skill and coordination framework embedded 
 - **Agents:** 21 specialized agents with distinct personas and capability profiles
 - **Council System:** Multi-council architecture (technical, strategic, UCW, design) with weighted consensus
 - **Routing:** Attention-based routing that matches task profiles to agent capabilities
-- **Escalation:** Automatic escalation from single-agent to multi-agent consensus when DQ confidence drops
-- **Integration:** Embedded in META-VENGINE DQ scoring pipeline, Wire 23 triggers auto-escalation
+- **Escalation:** Disagreement-based escalation in SUPERMAX v2 code; automatic escalation from the META-VENGINE router (Wire 23) was designed, never fired
 
 ## Council Architecture
 
@@ -40,21 +39,18 @@ No separate repository, SUPERMAX is a skill and coordination framework embedded 
 | Metric | Value |
 |--------|-------|
 | **Total Agents** | 21 |
-| **DQ Improvement** | +12.4% vs single-model |
-| **Variance Reduction** | -95.4% vs single-model |
-| **Benchmark Result** | 8/8 passed (100-query benchmark, arXiv:2511.15755) |
+| **Benchmark status** | An internal 100-query comparison against single-model scoring did not hold up on audit (the arms were scored with different weights); its figures were withdrawn (corrected 2026-09-26) |
 
 ## Deployments
 
 SUPERMAX council implementations are active in:
 - **CareerCoachAntigravity**: 3-agent review council (Principal Engineer, Product Strategist, QA Lead) with append-only JSONL review logging
-- **META-VENGINE**: Wire 23 auto-escalation triggers SUPERMAX consensus when single-model DQ drops below threshold
-- **Paper to Production**: DQ benchmark validation using SUPERMAX consensus scoring
+- **META-VENGINE**: Wire 23 auto-escalation to SUPERMAX consensus was designed, never fired
 
 ## Transferable Skills Demonstrated
 
 - **Multi-Agent Orchestration:** 21-agent coordination with council-based consensus, weighted voting, and conflict resolution
 - **Intelligent Task Routing:** Capability-weighted agent selection with trust scoring and automatic escalation
-- **System Reliability:** Failure taxonomy with structured recovery paths, -95.4% variance reduction through consensus
+- **System Reliability:** Failure taxonomy with structured recovery paths
 - **Framework Design:** Reusable council architecture deployed across multiple projects without code duplication
-- **Autonomous Operations:** Self-escalating system that detects when single-agent capacity is insufficient and assembles appropriate council
+- **Escalation Design:** Designed disagreement-based escalation to assemble a council when a single agent is insufficient

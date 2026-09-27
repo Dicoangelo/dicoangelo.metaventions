@@ -37,8 +37,6 @@ https://github.com/Dicoangelo/meta-vengine
 
 | Metric | Value |
 |--------|-------|
-| **DQ Decisions Scored** | 4,687+ |
-| **DQ Average Score** | 0.889 |
 | **Error Coverage** | 94% (655/700 historical errors) |
 | **Auto-Fix Rate** | 70% without human intervention |
 | **Session Types Detected** | 8 |
@@ -46,9 +44,9 @@ https://github.com/Dicoangelo/meta-vengine
 | **Lines of Code** | 51,000+ |
 | **Data Authenticity** | 100% real (zero simulated data) |
 
-## DQ Benchmark Results
+## DQ Scoring (corrected 2026-09-26)
 
-100-query benchmark (arXiv:2511.15755). 8/8 passed. SUPERMAX multi-agent consensus produced +12.4% DQ improvement and -95.4% variance compared to single-model routing.
+The router uses a V+S+C Decision Quality formula adapted from arXiv:2511.15755 (since withdrawn by its author). An internal 100-query comparison of single-model routing against SUPERMAX consensus did not hold up on audit (the arms were scored with different weights), so its figures were withdrawn. Most of the DQ log (about 91%) is backfilled session records rather than routing decisions. In a 2026-09-17 System One test against an Opus 5 reference (n=17 live decisions), keyword DQ agreed 29%, Haiku typed questions 88-94%, and Jev 75-80% at about $0.02 per 1k calls and 0.18s.
 
 ## Transferable Skills Demonstrated
 

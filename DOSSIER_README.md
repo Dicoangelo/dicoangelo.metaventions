@@ -193,8 +193,8 @@ Recruiter: "Tell me about ACE"
 
 AI: "ACE (Adaptive Consensus Engine) is a production multi-agent
 voting system with 1,462 LOC (839 core + 623 tests). It implements
-arXiv:2511.15755 (MyAntFarm.ai's DQ Scoring framework) achieving
-100% actionability vs 1.7% for single-agent systems.
+the V+S+C formula adapted from arXiv:2511.15755 (MyAntFarm.ai's DQ Scoring
+framework, since withdrawn by its author on 2026-08-31).
 
 Key features:
 • Multi-agent voting with gap-based convergence

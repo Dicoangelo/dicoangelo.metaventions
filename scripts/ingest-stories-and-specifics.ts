@@ -34,7 +34,27 @@ const DRY = process.argv.includes("--dry-run");
 
 function read(path: string): string | null {
   if (!existsSync(path)) return null;
-  return readFileSync(path, "utf8").trim();
+  return scrub(readFileSync(path, "utf8").trim());
+}
+
+/**
+ * Drop retracted DQ / arXiv:2511.15755 material from private memory sources before it
+ * reaches the public corpus. The hand-written section above states the corrected facts.
+ * Removes "CORRECTION" blockquotes and any line mentioning Drammeh or 2511.15755.
+ */
+function scrub(body: string): string {
+  const out: string[] = [];
+  let inCorrection = false;
+  for (const line of body.split("\n")) {
+    if (/^>\s*\**CORRECTION/i.test(line)) { inCorrection = true; continue; }
+    if (inCorrection) {
+      if (line.startsWith(">")) continue;
+      inCorrection = false;
+    }
+    if (/Drammeh|2511\.15755/i.test(line)) continue;
+    out.push(line);
+  }
+  return out.join("\n");
 }
 
 function query<T extends Record<string, unknown>>(sql: string): T[] {
@@ -59,7 +79,8 @@ async function summarize(title: string, content: string): Promise<string> {
 
 const SOURCES = [
   // Memory files with named people, specific anecdotes, quotes
-  `${HOME}/.claude/memory/project_drammeh_collaboration.md`,
+  // project_drammeh_collaboration.md removed 2026-09-26: it carried retracted DQ claims
+  // (arXiv:2511.15755 was withdrawn by its author on 2026-08-31; no co-authored paper).
   `${HOME}/.claude/memory/project_amazon_matt_rivron.md`,
   `${HOME}/.claude/memory/project_mohammed_contact.md`,
   `${HOME}/.claude/memory/project_friendlyface_core_insight.md`,
@@ -88,7 +109,7 @@ Each section below is a self-contained story or fact pocket. Pull from a differe
 
 ## Named research collaborators
 
-- **Philip Drammeh** — Global Technical Program Executive, Cloud Communications & Telco Innovation. Author of arXiv:2511.15755 (Multi-Agent LLM Orchestration / DQ Scoring), the #1 most-referenced paper across Dico's ecosystem (599 references). Met 2026-03-06. Drammeh personally said the production implementation was "phenomenal." Co-authored paper proposal in flight.
+- **Philip Drammeh** — Global Technical Program Executive, Cloud Communications & Telco Innovation. Author of arXiv:2511.15755 (Multi-Agent LLM Orchestration / DQ Scoring), which he withdrew on 2026-08-31 after a code audit. Dico adapted the paper's V+S+C formula (validity, specificity, correctness) into his router; he did not replicate the paper. They met on 2026-03-06 (March 2026) and later discussed a separate business venture. Dico did not co-author the paper and there is no co-authored paper.
 
 - **Matt Rivron** — AWS Account Manager who co-built the AWS Strategic Collaboration Agreement with Dico day-to-day at Contentsquare. Internal referral for Amazon roles.
 
@@ -108,15 +129,15 @@ Each section below is a self-contained story or fact pocket. Pull from a differe
 - **Catalyst Summit Toronto 2026** — speaker. Dico spoke at the partner ops industry gathering.
 - **Bentley Bootcamp / Mass Fintech Hub (April 2026)** — speaker / mentor on AI applied to fintech and cloud GTM. Mentored 3 mentees through full battle-station prep.
 
-## Specific arXiv papers Dico has implemented into production
+## Specific arXiv papers Dico has drawn on
 
-- **arXiv:2511.15755** (Drammeh et al, Multi-Agent LLM Orchestration / DQ Scoring) — implemented in META-VENGINE routing engine, 4,687+ decisions over 50 days, DQ scores improved from 0.575 to 0.870, 95.4% variance reduction.
+- **arXiv:2511.15755** (Drammeh, Multi-Agent LLM Orchestration / DQ Scoring; since withdrawn by its author) — V+S+C formula adapted into the META-VENGINE router. The paper's results were withdrawn, and Dico's internal 100-query SUPERMAX comparison did not hold up on audit (the arms were scored with different weights), so no DQ lift or variance numbers are claimed.
 - **arXiv:2408.15620** (CAPER — Ternary User-Position-Company relationships for career graphs)
 - **arXiv:2509.19677** (CareerScape — Graph-based resume validation)
 - **arXiv:2508.17536** (Multi-agent voting captures most gains)
 - **arXiv:2512.05470** (Agentic File System / AFS concept)
 
-That's 5 named papers as of this snapshot, plus 3+ more across the broader portfolio. When asked "which papers has he implemented," cite specific arXiv IDs and what each one became in production.
+That's 5 named papers as of this snapshot, plus 3+ more across the broader portfolio. When asked "which papers has he implemented," cite specific arXiv IDs and what each one became, and note that arXiv:2511.15755 was withdrawn by its author.
 
 ## Project-specific anecdotes
 

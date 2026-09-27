@@ -114,7 +114,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 
 | Paper ID | Topic | Implementation | Outcome | Evidence |
 |----------|-------|----------------|---------|----------|
-| **2511.15755** | DQ Scoring (MyAntFarm.ai) | `adaptiveConsensus.ts`, `dqScoring.ts` | 100% actionability vs 1.7% baseline | 839 LOC + 623 tests |
+| **2511.15755** | DQ Scoring (MyAntFarm.ai), paper since withdrawn by its author | `adaptiveConsensus.ts`, `dqScoring.ts` | V+S+C formula adapted, not replicated | 839 LOC + 623 tests |
 | **2511.13193** | DALA Auction (Dynamic Coordination) | `agentAuction.ts` | 300x token usage reduction | Auction mechanism |
 | **2508.17536** | Voting vs. Debate | ACE voting mechanism | Voting captures most gains with lower overhead | 1,462 LOC |
 | **2601.09742** | Adaptive Orchestration | `archon/index.ts` | Meta-cognition engine | 1,280 LOC |
@@ -126,7 +126,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 **Total:** 8+ primary implementations, 32+ additional papers tracked in research sessions
 
 **Why This Matters More Than a Degree:**
-- **Production-Ready:** All implementations have 95% test coverage
+- **Tested:** Implementations ship with Vitest suites (OS-App: ~54% statement coverage (Vitest, 2026-09-26))
 - **Live Demos:** Code is deployed and publicly accessible
 - **Research Rigor:** Can explain theoretical foundations AND practical tradeoffs
 - **Speed of Learning:** 8 papers implemented in 5 months (Nov 2025 - Mar 2026)
@@ -149,7 +149,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 - Web apps: React 19, Next.js 14 (App Router, server components), Vite
 - Python services: FastAPI, data pipelines
 - Shell automation: build tooling, CI glue
-- Testing: Vitest (95% coverage enforced via prompt specs)
+- Testing: Vitest (OS-App: ~54% statement coverage (Vitest, 2026-09-26))
 - ~900K+ LOC generated, reviewed, and integrated by me, not hand-typed
 
 **AI/ML & Agentic Systems:**
@@ -182,7 +182,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 - OS-App: 152,503 LOC in 5 months (Nov 2025 - Mar 2026)
 - Published 2 npm packages in same period
 - Implemented 8+ papers concurrently
-- Maintained 95% test coverage throughout
+- Maintained Vitest test suites throughout
 
 ---
 
@@ -268,7 +268,6 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 **Learning Metrics Tracked:**
 - **Cost Efficiency:** $6,040.55 across 285 sessions
 - **Productivity:** 9,821 LOC generated, 441.4 LOC/day
-- **Routing Quality:** 158 decisions, 0.889 avg DQ score
 - **Session Quality:** 120 sessions with quality ratings
 - **Tool Success:** 26,000+ tool calls analyzed
 
@@ -294,7 +293,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 
 **Peak Hours (9am-12pm, 2-6pm):**
 - Implementation: Translate research into code
-- Testing: 95% coverage requirement
+- Testing: Vitest suites
 - Integration: Add to production codebase
 
 **Evening (8pm-12am):**
@@ -338,14 +337,14 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 **1. Production Code as Credential**
 - **900,000+ LOC** across ecosystem (vs typical CS grad: ~50K LOC)
 - **2 published npm packages** (vs typical grad: 0 packages)
-- **95% test coverage** (vs industry average: 20-40%)
+- **Vitest test suites** (OS-App: ~54% statement coverage (Vitest, 2026-09-26))
 - **Live demos** publicly accessible (vs typical: private repos)
 
 **2. Research Implementation as Credential**
 - **8+ arXiv papers** implemented (vs typical: 0 papers)
 - **Production-grade implementations** (not just notebooks)
 - **Test coverage** on research code (vs typical: no tests)
-- **Measurable outcomes** (100% actionability, 300x token reduction)
+- **Measurable outcomes** (e.g. 300x token reduction)
 
 **3. Business Impact as Credential**
 - **$800M+ TCV** registered/processed (vs typical grad: no business experience)
@@ -391,7 +390,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 | **Production Experience** | Internships, entry-level | $800M+ operational systems |
 | **Business Acumen** | Limited | Formal BBA + GTM experience |
 | **Research Ability** | Read papers in class | Implemented 8+ papers in production |
-| **Testing Rigor** | Variable (often low) | 95% coverage (industry-leading) |
+| **Testing Rigor** | Variable (often low) | Vitest suites (OS-App: ~54% statement coverage (Vitest, 2026-09-26)) |
 | **Publications** | Academic papers | 2 npm packages (public) |
 | **Speed of Learning** | Semester-based | 152K LOC in 5 months |
 | **Unique Value** | Technical depth | Technical + Business hybrid |
@@ -407,7 +406,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 **1. Output > Credentials**
 - 900K+ LOC speaks louder than a diploma
 - 2 published npm packages prove shipping ability
-- 95% test coverage proves engineering rigor
+- Test suites written alongside the code
 
 **2. Research Implementation > Coursework**
 - Implemented 8+ arXiv papers (vs reading them in class)
@@ -442,7 +441,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 ### Case Study: DQ Scoring Implementation
 
 **Research Phase:**
-1. **Read Paper:** arXiv:2511.15755 (MyAntFarm.ai - Decision Quality Scoring)
+1. **Read Paper:** arXiv:2511.15755 (MyAntFarm.ai - Decision Quality Scoring, since withdrawn by its author on 2026-08-31)
 2. **Log to ResearchGravity:** Tier 1, category: multi-agent, relevance: ★★★
 3. **Synthesis:**
    - **Thesis:** DQ = Validity (40%) + Specificity (30%) + Correctness (30%)
@@ -451,9 +450,9 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 
 **Implementation Phase:**
 1. **Prototype:** `dqScoring.ts` (standalone module)
-2. **Test:** 95% coverage, edge cases
+2. **Test:** Vitest unit tests, edge cases
 3. **Integrate:** `adaptiveConsensus.ts` (ACE engine)
-4. **Validate:** 100% actionability achieved (vs 1.7% baseline)
+4. **Adapt:** V+S+C formula adapted for model routing (the paper's actionability results were withdrawn by its author)
 
 **Production Phase:**
 1. **Deploy:** Live in OS-App
@@ -464,14 +463,14 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 **Outcome:**
 - **Research → Production:** 2 weeks
 - **LOC:** 839 core + 623 tests = 1,462 total
-- **Impact:** 100% actionability (paper validation)
+- **Impact:** V+S+C scorer in use; the paper's own results were withdrawn by its author on 2026-08-31
 - **Lineage:** Traceable in `projects.json`
 
 **What This Demonstrates:**
 - Can read academic papers and extract key concepts
 - Can implement theoretical algorithms in production
 - Can validate research claims with measurable outcomes
-- Can maintain code quality (95% test coverage)
+- Can maintain code quality (tests written alongside code)
 - Can document for future maintainers
 
 ---

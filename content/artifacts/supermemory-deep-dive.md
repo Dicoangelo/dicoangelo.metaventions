@@ -68,7 +68,7 @@ Source: knowledge.json patterns array, learnings.md
 **Decision rationale and architectural choices.**
 
 Examples:
-- "Adopted DQ scoring from MyAntFarm.ai research (arXiv:2511.15755)"
+- "Adapted the V+S+C DQ formula from MyAntFarm.ai research (arXiv:2511.15755, since withdrawn)"
 - "Multi-agent ACE consensus chosen over single-agent analysis"
 - "JSONL format for all event/activity logging"
 - "Hooks system for session lifecycle automation"
@@ -634,7 +634,7 @@ Projected Month 3:
 
 **Multi-Agent Learning:**
 - arXiv:2508.17536 - Multi-agent voting for consensus (ACE integration)
-- arXiv:2511.15755 - MyAntFarm DQ scoring (quality assessment)
+- arXiv:2511.15755 - MyAntFarm V+S+C DQ formula adapted (since withdrawn by its author)
 
 **Memory Systems:**
 - arXiv:2512.05470 - Agentic File System (contextual memory)

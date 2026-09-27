@@ -78,7 +78,7 @@ I do not write code by hand. I direct Claude Code, Codex, and Gemini CLI through
 | **Grok / Dust** | Alternative providers, hiring panel simulation, long-context research | CareerCoach hiring panel |
 | **MCP (Model Context Protocol)** | Standardized tool-using agent communication across providers | 9-system META-VENGINE |
 | **Multi-Agent Orchestration** | Parallel agent coordination, file-locked concurrent builds | `coord` CLI, ARCHON |
-| **LLM Evaluation Frameworks** | DQ scoring, ACE consensus, regression suites | 0.889 avg DQ, 95% test coverage on critical paths |
+| **LLM Evaluation Frameworks** | DQ scoring, ACE consensus, regression suites | V+S+C DQ scorer; n=17 System One agreement test (2026-09-17) |
 | **Agentic Workflow Automation** | Background research, predictive prefetch, recovery loops | Cognitive OS, recovery engine |
 
 ### What "Generated" Means in Practice
@@ -165,7 +165,7 @@ Active subscriber and builder across the Google Cloud and AI ecosystem:
 | Capability | Implementation | Evidence | Business Impact |
 |------------|----------------|----------|-----------------|
 | **Consensus Mechanisms** | ACE (Adaptive Consensus Engine) | 839 LOC + 623 test LOC | +23% accuracy vs single-agent |
-| **DQ Scoring** | Validity 40% + Specificity 30% + Correctness 30% | 0.889 avg score across 428 decisions | 100% actionability (MyAntFarm.ai paper) |
+| **DQ Scoring** | Validity 40% + Specificity 30% + Correctness 30% | Routes real `claude -p` decisions | Formula adapted from arXiv:2511.15755 (since withdrawn) |
 | **Agent Auction** | Dynamic bid-based selection | DALA implementation | 300x token reduction |
 | **Bicameral Voting** | Two-chamber validation | 6 specialized agents | 50% reduction in consensus rounds |
 | **Meta-Orchestration** | ARCHON system | 1,280 LOC, 7 subsystems | 40% faster time-to-solution |
@@ -173,9 +173,9 @@ Active subscriber and builder across the Google Cloud and AI ecosystem:
 
 **Research Papers Implemented**:
 
-1. **arXiv:2511.15755** - MyAntFarm.ai DQ Scoring
+1. **arXiv:2511.15755** - MyAntFarm.ai DQ Scoring (since withdrawn by its author)
    - **File**: `OS-App/services/dqScoring.ts`
-   - **Result**: 100% actionability achieved (baseline: 1.7% single-agent)
+   - **Result**: V+S+C formula adapted for model routing; the paper's DQ results were withdrawn by its author on 2026-08-31
 
 2. **arXiv:2511.13193** - DALA (Dynamic Auction-based Learning Agent)
    - **File**: `OS-App/services/agentAuction.ts`
@@ -246,7 +246,7 @@ Query → Embedding (Cohere) → Vector Search (Qdrant) → Reranking (7 layers)
 | Provider | Integration Type | Use Case | Evidence |
 |----------|------------------|----------|----------|
 | **Gemini 2.0** | Primary reasoning engine | OS-App voice interface, Gemini Live | Production deployment |
-| **Claude (Anthropic)** | Multi-model routing (Opus/Sonnet/Haiku) | Complexity-adaptive task routing | 428 routing decisions tracked |
+| **Claude (Anthropic)** | Multi-model routing (Opus/Sonnet/Haiku) | Complexity-adaptive task routing | Routes real `claude -p` decisions |
 | **OpenAI GPT-4** | Fallback provider | Multi-provider redundancy | CPB-core package |
 | **Grok (xAI)** | Alternative reasoning | Hiring panel simulation | CareerCoach integration |
 | **Cohere** | Embeddings | Semantic search | ResearchGravity |
@@ -272,7 +272,6 @@ Primary: Gemini → Fallback: Claude → Fallback: GPT-4 → Fallback: Grok
 **Cost Optimization Achieved**:
 - **93% cache efficiency** (prompt caching)
 - **20%+ cost reduction** vs random routing
-- **0.889 average DQ score** (quality maintained while optimizing cost)
 
 **Evidence**:
 - `~/.claude/kernel/dq-scores.jsonl` (routing decisions)
@@ -356,7 +355,7 @@ CREATE VIRTUAL TABLE patterns_fts USING fts5(
 ```
 git push → GitHub → Vercel Build → Preview Deploy → Production (on merge to main)
          ↓
-      Vitest (95% coverage)
+      Vitest (~54% statement coverage)
          ↓
       TypeScript check
          ↓
@@ -435,7 +434,7 @@ User Speech → Browser STT / Deepgram → Gemini 2.0 Reasoning → ElevenLabs T
 
 | Paper | arXiv ID | Implementation | LOC | Outcome |
 |-------|----------|----------------|-----|---------|
-| **MyAntFarm.ai DQ Scoring** | 2511.15755 | `adaptiveConsensus.ts`, `dqScoring.ts` | 839 | 100% actionability |
+| **MyAntFarm.ai DQ Scoring** | 2511.15755 | `adaptiveConsensus.ts`, `dqScoring.ts` | 839 | V+S+C formula adapted (paper since withdrawn) |
 | **DALA (Dynamic Auction)** | 2511.13193 | `agentAuction.ts` | 215 | 300x token reduction |
 | **Voting vs. Debate** | 2508.17536 | ACE voting mechanism | 623 (tests) | Voting captures most gains |
 | **Adaptive Orchestration** | 2601.09742 | `archon/index.ts` | 1,280 | Meta-cognition engine |
@@ -477,7 +476,7 @@ User Speech → Browser STT / Deepgram → Gemini 2.0 Reasoning → ElevenLabs T
 
 4. **Implementation & Testing** (Production Code, AI-Generated Under Prompt Direction)
    - Type-safe output specified via prompts, reviewed and validated by me
-   - 95% test coverage target
+   - Vitest test suites
    - Progressive enhancement
    - Error handling and graceful degradation
 
@@ -489,7 +488,7 @@ User Speech → Browser STT / Deepgram → Gemini 2.0 Reasoning → ElevenLabs T
 
 **Example Lineage**:
 ```
-arXiv:2511.15755 (Decision Quality Paper)
+arXiv:2511.15755 (Decision Quality Paper, since withdrawn)
     ↓
 backfill-multi-agent-orchestr-20260113 (Research Session)
     ↓
@@ -818,7 +817,7 @@ I do **not** claim language fluency in TypeScript, JavaScript, Python, AI-assist
 **Proof Points**:
 - **Published npm packages** - Anyone can use my code
 - **Live demos** - See it working in production
-- **95% test coverage** - Production-quality engineering
+- **Test suites** - Production-quality engineering
 - **$800M+ TCV, $222K savings** - Quantified business impact
 - **Research citations in code** - arXiv IDs in comments
 
@@ -830,7 +829,7 @@ I do **not** claim language fluency in TypeScript, JavaScript, Python, AI-assist
 - 900K+ lines of code across 20+ projects
 - 2 published npm packages
 - 8+ arXiv papers implemented
-- 95% test coverage (production quality)
+- Vitest test suites
 
 **Operator Side**:
 - $800M+ TCV in deal registrations
@@ -860,7 +859,7 @@ I do **not** claim language fluency in TypeScript, JavaScript, Python, AI-assist
 - https://dicoangelo.vercel.app (portfolio)
 
 **Research Understanding**:
-- Ask me to explain arXiv:2511.15755 (DQ scoring) - I can describe the paper AND the implementation tradeoffs
+- Ask me about the V+S+C DQ formula adapted from arXiv:2511.15755 (since withdrawn), and why keyword DQ agreed only 29% with a strong reference model
 - Give me a new paper - I can design the implementation architecture
 
 **Challenge Me**:
@@ -899,7 +898,7 @@ I do **not** claim language fluency in TypeScript, JavaScript, Python, AI-assist
 
 **Implementation Rigor**:
 - 8+ papers with production code
-- 95% test coverage on critical systems
+- Test suites on critical systems
 - Error handling and graceful degradation
 - Performance benchmarks vs paper claims
 
@@ -951,8 +950,8 @@ I do **not** claim language fluency in TypeScript, JavaScript, Python, AI-assist
 | **IDE Host** | VS Code, Cursor (as Claude Code/Codex host) | Advanced | Daily driver |
 | **Version Control** | Git, GitHub | Expert | 3,000+ commits, 38 repos |
 | **Build & Deploy Toolchains** | Vercel, Fly.io, Google Cloud Run | Advanced | Production deploys via CI/CD |
-| **Test Harnesses** | Vitest, Jest (directed via prompts) | Advanced | 95% coverage achieved on OS-App |
-| **LLM Evaluation** | DQ scoring, ACE consensus, custom eval harnesses | Expert | 428 decisions scored, 0.889 avg |
+| **Test Harnesses** | Vitest, Jest (directed via prompts) | Advanced | OS-App ~54% statement coverage (Vitest, 2026-09-26) |
+| **LLM Evaluation** | DQ scoring, ACE consensus, custom eval harnesses | Expert | n=17 reference-agreement test (keyword DQ 29%, Haiku 88-94%, Jev 75-80%) |
 
 I do not claim hand-fluency in TypeScript, JavaScript, Python, AI-assisted SQL via Claude Code, or Bash. The code these tools produce is generated under my direction, I own architecture, prompt specs, review, evaluation, and deployment.
 
