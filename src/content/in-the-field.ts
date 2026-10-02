@@ -6,9 +6,10 @@ export type FieldPhoto = {
   location?: string;
   year?: string;
   aspect?: "landscape" | "portrait" | "square";
+  unoptimized?: boolean;
 };
 
-// Photos display in marquee order. Numeric order, feature first.
+// Photos display in marquee order, with additions interspersed and the feature first.
 // Theme: social proof, partnership presence, conversation energy.
 // Captions are optional; only add when the event/location is confirmed.
 export const fieldPhotos: FieldPhoto[] = [
@@ -28,6 +29,14 @@ export const fieldPhotos: FieldPhoto[] = [
     aspect: "portrait",
   },
   {
+    id: "p20",
+    src: "/gallery/photo-20.webp",
+    alt: "Dico beside the Snowflake mascot at Snowflake World Tour",
+    caption: "Snowflake World Tour",
+    aspect: "portrait",
+    unoptimized: true,
+  },
+  {
     id: "p02",
     src: "/gallery/photo-02.webp",
     alt: "Dico in conversation at an evening reception",
@@ -39,6 +48,13 @@ export const fieldPhotos: FieldPhoto[] = [
     alt: "Dico with a partner at a Cloud Marketplaces summit holding the Clazar guide",
     caption: "Cloud Marketplaces summit",
     aspect: "portrait",
+  },
+  {
+    id: "p22",
+    src: "/gallery/photo-22.webp",
+    alt: "Dico with another attendee at a conference",
+    aspect: "portrait",
+    unoptimized: true,
   },
   {
     id: "p04",
@@ -55,6 +71,14 @@ export const fieldPhotos: FieldPhoto[] = [
     location: "JoinUPX",
     year: "2024",
     aspect: "square",
+  },
+  {
+    id: "p23",
+    src: "/gallery/photo-23.webp",
+    alt: "Dico in front of an AWS Summit backdrop",
+    caption: "AWS Summit",
+    aspect: "portrait",
+    unoptimized: true,
   },
   {
     id: "p06",
@@ -74,6 +98,14 @@ export const fieldPhotos: FieldPhoto[] = [
     aspect: "landscape",
   },
   {
+    id: "p24",
+    src: "/gallery/photo-24.webp",
+    alt: "Dico with another attendee at a fintech boot camp",
+    caption: "Fintech boot camp",
+    aspect: "portrait",
+    unoptimized: true,
+  },
+  {
     id: "p08",
     src: "/gallery/photo-08.webp",
     alt: "Dico in front of Catalyst step-and-repeat with Seattle skyline backdrop",
@@ -87,6 +119,16 @@ export const fieldPhotos: FieldPhoto[] = [
     src: "/gallery/photo-09.webp",
     alt: "Dico in conversation at a private rooftop reception",
     aspect: "landscape",
+  },
+  {
+    id: "p25",
+    src: "/gallery/photo-25.webp",
+    alt: "Dico at the Cayman–Canada Summit in Toronto on July 21, 2026",
+    caption: "Cayman–Canada Summit",
+    location: "Toronto",
+    year: "2026",
+    aspect: "portrait",
+    unoptimized: true,
   },
   {
     id: "p10",
@@ -103,6 +145,15 @@ export const fieldPhotos: FieldPhoto[] = [
     aspect: "portrait",
   },
   {
+    id: "p27",
+    src: "/gallery/photo-27.webp",
+    alt: "Dico on the Toronto waterfront wearing a Blockchain Futurist Conference badge",
+    caption: "Blockchain Futurist Conference",
+    location: "Toronto",
+    aspect: "portrait",
+    unoptimized: true,
+  },
+  {
     id: "p12",
     src: "/gallery/photo-12.webp",
     alt: "Dico with two partners at an event",
@@ -113,6 +164,14 @@ export const fieldPhotos: FieldPhoto[] = [
     src: "/gallery/photo-13.webp",
     alt: "Dico with a partner at a tech event",
     aspect: "portrait",
+  },
+  {
+    id: "p28",
+    src: "/gallery/photo-28.webp",
+    alt: "Dico beside a Blockchain North banner at a networking event",
+    caption: "Blockchain North",
+    aspect: "landscape",
+    unoptimized: true,
   },
   {
     id: "p14",
@@ -127,6 +186,13 @@ export const fieldPhotos: FieldPhoto[] = [
     caption: "Catalyst Chicago",
     location: "Chicago",
     aspect: "portrait",
+  },
+  {
+    id: "p29",
+    src: "/gallery/photo-29.webp",
+    alt: "Dico in conversation with another attendee at a networking reception",
+    aspect: "landscape",
+    unoptimized: true,
   },
   {
     id: "p16",

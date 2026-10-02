@@ -170,6 +170,7 @@ function PhotoCard({ photo, isLight, ariaHidden, priority }: PhotoCardProps) {
         alt={ariaHidden ? "" : photo.alt}
         fill
         priority={priority}
+        unoptimized={photo.unoptimized}
         sizes={photo.aspect === "portrait" ? "224px" : photo.aspect === "square" ? "288px" : "448px"}
         className="object-cover transition-transform duration-700 group-hover/card:scale-[1.04]"
       />
