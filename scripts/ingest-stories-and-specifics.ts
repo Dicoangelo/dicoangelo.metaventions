@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import "./lib/retired-public-ingestion";
 /**
  * Build a Stories & Specifics artifact: named people, specific arXiv
  * papers, conference appearances, third-party press / case studies,

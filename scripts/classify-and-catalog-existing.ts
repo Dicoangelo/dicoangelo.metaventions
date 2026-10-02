@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import "./lib/retired-public-ingestion";
 /**
  * Backfill: run the 5-dimension classifier on every published artifact
  * and append namespaced label tags to its tags[] column. Also build the

@@ -1,3 +1,4 @@
+import { isAdminRequest, adminUnauthorizedResponse } from "@/lib/admin-auth";
 import { getSupabase } from "@/lib/supabase-server";
 
 interface RouteContext {
@@ -5,6 +6,7 @@ interface RouteContext {
 }
 
 export async function GET(request: Request, context: RouteContext) {
+  if (!(await isAdminRequest(request))) return adminUnauthorizedResponse();
 
   const { id } = await context.params;
 
@@ -17,17 +19,18 @@ export async function GET(request: Request, context: RouteContext) {
   if (error || !data) {
     return new Response(
       JSON.stringify({ error: "Analysis not found" }),
-      { status: 404, headers: { "Content-Type": "application/json" } }
+      { status: 404, headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" } }
     );
   }
 
   return new Response(JSON.stringify(data), {
     status: 200,
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" },
   });
 }
 
 export async function PATCH(request: Request, context: RouteContext) {
+  if (!(await isAdminRequest(request))) return adminUnauthorizedResponse();
 
   const { id } = await context.params;
 
@@ -47,7 +50,7 @@ export async function PATCH(request: Request, context: RouteContext) {
     if (Object.keys(sanitizedUpdates).length === 0) {
       return new Response(
         JSON.stringify({ error: "No valid fields to update" }),
-        { status: 400, headers: { "Content-Type": "application/json" } }
+        { status: 400, headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" } }
       );
     }
 
@@ -62,24 +65,25 @@ export async function PATCH(request: Request, context: RouteContext) {
       console.error("Update error:", error);
       return new Response(
         JSON.stringify({ error: "Failed to update analysis" }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
+        { status: 500, headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" } }
       );
     }
 
     return new Response(JSON.stringify(data), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" },
     });
   } catch (error) {
     console.error("PATCH error:", error);
     return new Response(
       JSON.stringify({ error: "Invalid request body" }),
-      { status: 400, headers: { "Content-Type": "application/json" } }
+      { status: 400, headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" } }
     );
   }
 }
 
 export async function DELETE(request: Request, context: RouteContext) {
+  if (!(await isAdminRequest(request))) return adminUnauthorizedResponse();
 
   const { id } = await context.params;
 
@@ -88,12 +92,12 @@ export async function DELETE(request: Request, context: RouteContext) {
   if (error) {
     return new Response(
       JSON.stringify({ error: "Failed to delete analysis" }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      { status: 500, headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" } }
     );
   }
 
   return new Response(JSON.stringify({ success: true }), {
     status: 200,
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" },
   });
 }

@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import "./lib/retired-public-ingestion";
 /**
  * Pull the homepage of dicoangelo.metaventionsai.com and ingest the
  * canonical headline facts as a published artifact. Ensures every chat

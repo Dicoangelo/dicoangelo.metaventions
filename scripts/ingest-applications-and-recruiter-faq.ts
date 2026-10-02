@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import "./lib/retired-public-ingestion";
 /**
  * Two more artifacts to round out the data engine:
  *

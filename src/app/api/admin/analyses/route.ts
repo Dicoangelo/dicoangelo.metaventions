@@ -1,6 +1,8 @@
+import { isAdminRequest, adminUnauthorizedResponse } from "@/lib/admin-auth";
 import { getSupabase } from "@/lib/supabase-server";
 
 export async function GET(request: Request) {
+  if (!(await isAdminRequest(request))) return adminUnauthorizedResponse();
 
   const { searchParams } = new URL(request.url);
   const page = parseInt(searchParams.get("page") || "1", 10);
@@ -30,7 +32,7 @@ export async function GET(request: Request) {
     console.error("Failed to fetch analyses:", error);
     return new Response(
       JSON.stringify({ error: "Failed to fetch analyses" }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      { status: 500, headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" } }
     );
   }
 
@@ -44,6 +46,6 @@ export async function GET(request: Request) {
         totalPages: Math.ceil((count || 0) / limit),
       },
     }),
-    { status: 200, headers: { "Content-Type": "application/json" } }
+    { status: 200, headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" } }
   );
 }

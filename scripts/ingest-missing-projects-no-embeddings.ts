@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import "./lib/retired-public-ingestion";
 /**
  * Ingest the 6 missing project artifacts that the chat was previously
  * hallucinating about. Uses service-role direct insert, NO chunk

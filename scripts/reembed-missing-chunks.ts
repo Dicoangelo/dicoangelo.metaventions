@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import "./lib/retired-public-ingestion";
 /**
  * Rebuild chunks + Cohere embeddings for published artifacts that have content but no chunks.
  *

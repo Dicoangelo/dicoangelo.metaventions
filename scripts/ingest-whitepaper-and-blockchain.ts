@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import "./lib/retired-public-ingestion";
 /**
  * Ingest the Metaventions whitepaper as TWO purpose-cut artifacts:
  *

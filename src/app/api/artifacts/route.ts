@@ -1,7 +1,9 @@
+import { isAdminRequest, adminUnauthorizedResponse } from "@/lib/admin-auth";
 import { NextResponse } from "next/server";
 import { listArtifacts, createArtifact, CreateArtifactInput } from "@/lib/artifacts";
 import { z } from "zod";
 import { validateRequest } from "@/lib/schemas";
+import { getPublicKnowledgeEntries } from "@/lib/dossier";
 
 // ================================================================
 // SCHEMAS
@@ -21,22 +23,8 @@ const createArtifactSchema = z.object({
   related_artifacts: z.array(z.string().uuid()).optional(),
   external_links: z.record(z.string(), z.string()).optional(),
   metrics: z.record(z.string(), z.any()).optional(),
-  status: z.enum(["draft", "published", "archived"]).optional(),
+  status: z.enum(["draft", "archived"]).optional(),
 });
-
-// ================================================================
-// HELPERS
-// ================================================================
-
-/**
- * Check if request has valid admin authorization
- */
-function isAdmin(request: Request): boolean {
-  const auth = request.headers.get("Authorization");
-  if (!auth) return false;
-  const token = auth.replace("Bearer ", "");
-  return token === process.env.ADMIN_PASSWORD;
-}
 
 // ================================================================
 // ROUTES
@@ -47,7 +35,7 @@ function isAdmin(request: Request): boolean {
  * List artifacts with optional filtering
  * Query params: status, category
  */
-export async function GET(request: Request, context: unknown) {
+export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const status = searchParams.get("status") as "draft" | "published" | "archived" | null;
@@ -59,12 +47,24 @@ export async function GET(request: Request, context: unknown) {
       | "deep-dive"
       | null;
 
-    const artifacts = await listArtifacts({
-      status: status || undefined,
-      category: category || undefined,
-    });
+    const admin = await isAdminRequest(request);
+    const artifacts = admin
+      ? await listArtifacts({ status: status || undefined, category: category || undefined })
+      : status && status !== "published"
+        ? []
+        : (await getPublicKnowledgeEntries())
+          .filter(entry => !category || entry.category === category)
+          .map(entry => ({
+            id: entry.id,
+            slug: entry.slug,
+            title: entry.title,
+            category: entry.category,
+            content: entry.content,
+            summary: entry.summary,
+            status: "published",
+          }));
 
-    return NextResponse.json({ artifacts });
+    return NextResponse.json({ artifacts }, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) {
     console.error("GET /api/artifacts error:", error);
     return NextResponse.json(
@@ -79,15 +79,10 @@ export async function GET(request: Request, context: unknown) {
  * Create a new artifact
  * Requires admin authentication
  */
-export async function POST(request: Request, context: unknown) {
+export async function POST(request: Request) {
   try {
     // Check admin authentication
-    if (!isAdmin(request)) {
-      return NextResponse.json(
-        { error: "Unauthorized" },
-        { status: 401 }
-      );
-    }
+    if (!(await isAdminRequest(request))) return adminUnauthorizedResponse();
 
     const body = await request.json();
 

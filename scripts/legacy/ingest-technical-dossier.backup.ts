@@ -1,3 +1,4 @@
+import "../lib/retired-public-ingestion";
 /**
  * Ingest Technical Dossier into Supabase pgvector
  *

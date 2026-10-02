@@ -1,6 +1,8 @@
+import { isAdminRequest, adminUnauthorizedResponse } from "@/lib/admin-auth";
 import { getSupabase } from "@/lib/supabase-server";
 
-export async function GET() {
+export async function GET(request: Request) {
+  if (!(await isAdminRequest(request))) return adminUnauthorizedResponse();
 
   // Get skill gap analytics
   const { data: skillGaps, error: gapsError } = await getSupabase()
@@ -66,6 +68,6 @@ export async function GET() {
       },
       analysesOverTime: analysesOverTime || {},
     }),
-    { status: 200, headers: { "Content-Type": "application/json" } }
+    { status: 200, headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" } }
   );
 }

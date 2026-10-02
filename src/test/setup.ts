@@ -1,6 +1,9 @@
 import '@testing-library/jest-dom';
 import { cleanup } from '@testing-library/react';
-import { afterEach } from 'vitest';
+import { afterEach, vi } from 'vitest';
+
+// Next enforces this module boundary at build time; unit tests run outside Next.
+vi.mock('server-only', () => ({}));
 
 // Cleanup after each test
 afterEach(() => {

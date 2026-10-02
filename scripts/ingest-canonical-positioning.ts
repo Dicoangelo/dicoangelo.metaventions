@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import "./lib/retired-public-ingestion";
 /**
  * Ingest Dico's canonical applied positioning into the artifacts table.
  *

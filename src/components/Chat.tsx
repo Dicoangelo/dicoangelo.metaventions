@@ -4,10 +4,12 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 import VoiceOrb from "./VoiceOrb";
+import { parseChatSources, type ChatSource } from "@/lib/chat-sources";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
+  sources?: ChatSource[];
 }
 
 const SUGGESTED_QUESTIONS: { tag: string; question: string }[] = [
@@ -191,7 +193,10 @@ export default function Chat() {
         setTextMessages([...newTextMessages, { role: "assistant", content: assistantContent }]);
       }
 
-      setConversationHistory([...newHistory, { role: "assistant", content: assistantContent }]);
+      const sources = parseChatSources(response.headers.get("X-Knowledge-Sources"));
+      const assistantMessage: Message = { role: "assistant", content: assistantContent, sources };
+      setTextMessages([...newTextMessages, assistantMessage]);
+      setConversationHistory([...newHistory, assistantMessage]);
     } catch (error) {
       console.error("Chat error:", error);
       const errorMsg: Message = { role: "assistant", content: "Sorry, I encountered an error. Please try again." };
@@ -576,6 +581,7 @@ export default function Chat() {
                   const isStreamingNow = isLastAssistant && isTextLoading;
                   const showActions = message.role === "assistant" && message.content.length > 0 && !isStreamingNow;
                   const isUser = message.role === "user";
+                  const sources = isUser ? [] : parseChatSources(message.sources);
 
                   return (
                     <div
@@ -616,6 +622,21 @@ export default function Chat() {
                             </div>
                           )}
                         </div>
+
+                        {sources.length > 0 && !isStreamingNow && (
+                          <details className={`px-1 text-xs ${isLight ? "text-gray-600" : "text-gray-400"}`}>
+                            <summary className="cursor-pointer hover:text-[#6366f1]">Reviewed references</summary>
+                            <ul className="mt-2 space-y-1.5">
+                              {sources.map((source) => (
+                                <li key={source.slug}>
+                                  <a href={source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-[#6366f1]">
+                                    {source.title}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </details>
+                        )}
 
                         {showActions && (
                           <div className={`flex gap-3 px-1 text-[10.5px] font-medium ${isLight ? "text-gray-400" : "text-[#525252]"}`}>

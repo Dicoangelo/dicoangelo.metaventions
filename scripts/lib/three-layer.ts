@@ -1,3 +1,4 @@
+import "./retired-public-ingestion";
 /**
  * Three-Layer Ingestion Framework.
  *

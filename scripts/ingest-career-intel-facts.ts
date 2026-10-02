@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import "./lib/retired-public-ingestion";
 /**
  * Pull structured career facts out of ~/projects/career/resume-hub/career_intel.db
  * and ingest them as three new published artifacts so the chat + JD

@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+import "./lib/retired-public-ingestion";
 /**
  * Generate per-artifact summaries for Layer 2 of three-layer retrieval.
  *

@@ -1,3 +1,4 @@
+import { isAdminRequest, adminUnauthorizedResponse } from "@/lib/admin-auth";
 import { NextResponse } from "next/server";
 import {
   getArtifact,
@@ -7,6 +8,7 @@ import {
 } from "@/lib/artifacts";
 import { z } from "zod";
 import { validateRequest } from "@/lib/schemas";
+import { getPublicKnowledgeEntries } from "@/lib/dossier";
 
 // ================================================================
 // SCHEMAS
@@ -27,22 +29,8 @@ const updateArtifactSchema = z.object({
   related_artifacts: z.array(z.string().uuid()).optional(),
   external_links: z.record(z.string(), z.string()).optional(),
   metrics: z.record(z.string(), z.any()).optional(),
-  status: z.enum(["draft", "published", "archived"]).optional(),
+  status: z.enum(["draft", "archived"]).optional(),
 });
-
-// ================================================================
-// HELPERS
-// ================================================================
-
-/**
- * Check if request has valid admin authorization
- */
-function isAdmin(request: Request): boolean {
-  const auth = request.headers.get("Authorization");
-  if (!auth) return false;
-  const token = auth.replace("Bearer ", "");
-  return token === process.env.ADMIN_PASSWORD;
-}
 
 // ================================================================
 // ROUTES
@@ -58,15 +46,21 @@ export async function GET(
 ) {
   try {
     const { id } = await context.params;
-
-    // Validate UUID format
     const uuidRegex =
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-    if (!uuidRegex.test(id)) {
-      return NextResponse.json(
-        { error: "Invalid artifact ID format" },
-        { status: 400 }
-      );
+    // Public IDs are curated slugs; historical UUIDs never enter this collection.
+    if (!(await isAdminRequest(request)) || !uuidRegex.test(id)) {
+      const entry = (await getPublicKnowledgeEntries()).find(entry => entry.id === id);
+      if (!entry) return NextResponse.json({ error: "Artifact not found" }, { status: 404 });
+      return NextResponse.json({ artifact: {
+        id: entry.id,
+        slug: entry.slug,
+        title: entry.title,
+        category: entry.category,
+        content: entry.content,
+        summary: entry.summary,
+        status: "published",
+      } }, { headers: { "Cache-Control": "private, no-store" } });
     }
 
     const artifact = await getArtifact(id);
@@ -78,7 +72,7 @@ export async function GET(
       );
     }
 
-    return NextResponse.json({ artifact });
+    return NextResponse.json({ artifact }, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) {
     const params = await context.params;
     console.error(`GET /api/artifacts/${params.id} error:`, error);
@@ -100,12 +94,7 @@ export async function PUT(
 ) {
   try {
     // Check admin authentication
-    if (!isAdmin(request)) {
-      return NextResponse.json(
-        { error: "Unauthorized" },
-        { status: 401 }
-      );
-    }
+    if (!(await isAdminRequest(request))) return adminUnauthorizedResponse();
 
     const { id } = await context.params;
 
@@ -172,12 +161,7 @@ export async function DELETE(
 ) {
   try {
     // Check admin authentication
-    if (!isAdmin(request)) {
-      return NextResponse.json(
-        { error: "Unauthorized" },
-        { status: 401 }
-      );
-    }
+    if (!(await isAdminRequest(request))) return adminUnauthorizedResponse();
 
     const { id } = await context.params;
 
