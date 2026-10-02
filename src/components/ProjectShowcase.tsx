@@ -11,6 +11,7 @@ interface Project {
   techStack: string[];
   papers: string[];
   github: string;
+  source?: { label: string; url: string };
   demo?: string;
   loc: string;
 }
@@ -219,22 +220,23 @@ const projects: Project[] = [
   },
   {
     name: "Burstiness Engine",
-    tagline: "In-Generation Rhythm Control for Language Models",
-    description: "An exploratory research project on sentence-length variation during language-model generation. Includes research notes and proposed evaluation work. A working controller and validated improvement remain open questions; this is not a published research result.",
+    tagline: "Accepted Poster · NeurIPS 2026 LP4FM Workshop",
+    description: "Burstiness Was Measured Wrong, and Prompting Cannot Aim It. Co-authored with Vittoria Lanzo and accepted as a poster at the NeurIPS 2026 LP4FM workshop on September 29, 2026. Studies sentence-length rhythm in generated language; Dico contributed research tooling, experiment infrastructure, data workflows and reproducibility checks.",
     metrics: [
-      { label: "Stage", value: "Exploration" },
-      { label: "Material", value: "Research notes" },
-      { label: "Method", value: "Evaluation" },
-      { label: "Output", value: "Draft ideas" }
+      { label: "Role", value: "Co-author" },
+      { label: "Workshop", value: "LP4FM 2026" },
+      { label: "Decision", value: "Accepted" },
+      { label: "Format", value: "Poster" }
     ],
-    techStack: ["AI-Directed Build", "Research Synthesis", "Controlled Generation", "Ablation Studies"],
+    techStack: ["Research Tooling", "Experiment Infrastructure", "Text Measurement", "Reproducibility"],
     papers: [
-      "In-generation burstiness control vs prompt-level baselines",
-      "Formal definition of rhythm and burstiness in generated text",
-      "Negative-result methodology"
+      "Co-authored with Vittoria Lanzo",
+      "Accepted title: Burstiness Was Measured Wrong, and Prompting Cannot Aim It",
+      "NeurIPS 2026 LP4FM workshop · Accept (Poster) · Submission #114"
     ],
     github: "https://github.com/Dicoangelo",
-    loc: "Research"
+    source: { label: "OpenReview paper", url: "https://openreview.net/forum?id=1E20ig92Zi" },
+    loc: "Accepted workshop poster"
   }
 ];
 
@@ -267,7 +269,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
               isLight ? "text-gray-600" : "text-[#a3a3a3]"
             }`}
           >
-            Projects specified in English, implemented with AI coding tools, then reviewed and tested. Includes applications, internal tools and prototypes; research references are work by other authors.
+            Projects specified in English, implemented with AI coding tools, then reviewed and tested. Includes applications, internal tools, prototypes and co-authored research. Burstiness research with Vittoria Lanzo was accepted as a poster at the NeurIPS 2026 LP4FM workshop; other research references are credited to their authors.
           </p>
         </div>
 
@@ -292,7 +294,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
                   </div>
                   <div className="flex gap-3 mt-4 md:mt-0">
                     <a
-                      href={project.github}
+                      href={project.source?.url ?? project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`px-4 py-2 rounded-lg border text-sm font-medium transition-colors ${
@@ -301,7 +303,7 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
                           : 'border-[#262626] hover:bg-[#1a1a1a]'
                       }`}
                     >
-                      GitHub profile →
+                      {project.source?.label ?? "GitHub profile"} →
                     </a>
                     {project.demo && (
                       <a

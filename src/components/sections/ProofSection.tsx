@@ -66,7 +66,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
           <MetricCard value="45" label="Agent Operation Supported" context="Operational support, not 45 direct reports" proof="Quality-control and evaluation workflows at Rocket Mortgage Canada" isLight={isLight} />
           <MetricCard value="QA" label="Quality Workflows" context="Document quality and operational evaluation" proof="Product Operations Specialist, June 2020–May 2023" isLight={isLight} />
           <MetricCard value="AI" label="AI-Assisted Builds" context="Concurrent independent work at Metaventions AI" proof="Specify systems, direct AI coding tools, then review, test and deploy the output" isLight={isLight} />
-          <MetricCard value="R&D" label="Applied Research" context="Research capture, retrieval and implementation" proof="ResearchGravity and UCW; research papers are by other authors" isLight={isLight} />
+          <MetricCard value="R&D" label="Accepted Workshop Poster" context="NeurIPS 2026 · LP4FM · Co-author" proof="Burstiness Was Measured Wrong, and Prompting Cannot Aim It; co-authored with Vittoria Lanzo. Accept (Poster), Sep 29, 2026." isLight={isLight} />
           <MetricCard value="MCP" label="Tool Integrations" context="Connecting AI tools with useful application workflows" proof="Independent implementation work; selected projects and public links below" isLight={isLight} />
         </StaggeredGrid>
 

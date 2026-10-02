@@ -75,7 +75,7 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
             )}
             {showDeep && (
               <p className={`text-[12px] ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
-                Updated September 2026 · PDF and Word formats
+                Updated October 2026 · PDF and Word formats
               </p>
             )}
           </div>
@@ -83,26 +83,26 @@ export default function ResumeDownload({ isLight }: ResumeDownloadProps) {
           {/* Key Highlights */}
           {showSummary && (
           <div className="grid grid-cols-3 gap-2 md:gap-4 mb-8">
-            <div className={`p-4 rounded-lg text-center ${
+            <div className={`px-2 py-4 sm:p-4 rounded-lg text-center ${
               isLight ? 'bg-gray-50' : 'bg-[#1a1a1a]'
             }`}>
-              <p className="text-2xl font-bold text-[#6366f1] mb-1">$800M+</p>
+              <p className="text-lg sm:text-2xl font-bold text-[#6366f1] mb-1">$800M+</p>
               <p className={`text-xs ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
                 Shared pipeline TCV co-registered at Contentsquare
               </p>
             </div>
-            <div className={`p-4 rounded-lg text-center ${
+            <div className={`px-2 py-4 sm:p-4 rounded-lg text-center ${
               isLight ? 'bg-gray-50' : 'bg-[#1a1a1a]'
             }`}>
-              <p className="text-2xl font-bold text-[#6366f1] mb-1">AI</p>
+              <p className="text-lg sm:text-2xl font-bold text-[#6366f1] mb-1">2026</p>
               <p className={`text-xs ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
-                Assisted Development
+                NeurIPS LP4FM workshop · Accepted poster co-author
               </p>
             </div>
-            <div className={`p-4 rounded-lg text-center ${
+            <div className={`px-2 py-4 sm:p-4 rounded-lg text-center ${
               isLight ? 'bg-gray-50' : 'bg-[#1a1a1a]'
             }`}>
-              <p className="text-2xl font-bold text-[#6366f1] mb-1">97%</p>
+              <p className="text-lg sm:text-2xl font-bold text-[#6366f1] mb-1">97%</p>
               <p className={`text-xs ${isLight ? 'text-gray-600' : 'text-[#737373]'}`}>
                 Deal-Registration Approval at Contentsquare
               </p>

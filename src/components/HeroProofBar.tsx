@@ -34,9 +34,9 @@ const tiles: Tile[] = [
     glow: "rgba(139,92,246,0.20)",
   },
   {
-    value: "AI",
-    label: "Workflow Implementation",
-    sub: "Independent Metaventions AI builds",
+    value: "2026",
+    label: "NeurIPS · LP4FM Workshop",
+    sub: "Accepted poster · Co-author",
     accent: "#ec4899",
     glow: "rgba(236,72,153,0.18)",
   },

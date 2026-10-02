@@ -2,7 +2,7 @@
 
 ## Revenue technology and GTM operations
 
-Updated September 2026.
+Updated October 1, 2026.
 
 Revenue Technology Manager at EZRA (Adecco Group), since June 15, 2026. Dico manages revenue platforms, integrations, AI-enabled workflows, onboarding, enablement and tool-adoption reporting. His work connects go-to-market teams with RevOps, Marketing Ops, IT and vendors.
 
@@ -32,7 +32,9 @@ Salesforce administration, reporting, rollout coordination, document quality and
 ### Independent work
 Founder, Metaventions AI | November 2025 to present, concurrent with EZRA.
 
-AI-assisted development of knowledge-retrieval and workflow tools, including ResearchGravity. Dico specifies systems, directs AI coding tools, tests workflows and deploys the output. Research referenced in these projects is work by other authors that he studied or implemented.
+AI-assisted development of knowledge-retrieval and workflow tools, including ResearchGravity. Dico specifies systems, directs AI coding tools, tests workflows and deploys the output. Third-party research implemented in these projects remains work by its named authors.
+
+Research: Dico coauthored [*Burstiness Was Measured Wrong, and Prompting Cannot Aim It*](https://openreview.net/forum?id=1E20ig92Zi) with Vittoria Lanzo. Accepted as a poster at the NeurIPS 2026 Workshop LP4FM; decision dated September 29, 2026.
 
 ### Community leadership
 Founding Director, Up2Youth | March 2019 to March 2022. Founded and ran a youth-development program supported by a $255,000 grant over 36 months from Ontario's Youth Opportunities Fund.

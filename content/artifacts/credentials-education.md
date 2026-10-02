@@ -95,12 +95,18 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 
 ## Self-Directed Learning
 
+### Coauthored Workshop Paper
+
+Dico coauthored [*Burstiness Was Measured Wrong, and Prompting Cannot Aim It*](https://openreview.net/forum?id=1E20ig92Zi) with Vittoria Lanzo.
+
+Accepted as a poster at the NeurIPS 2026 Workshop LP4FM. Submission #114 received an **Accept (Poster)** decision dated September 29, 2026. The research developed from the Burstiness Engine project and is distinct from Dico's implementation work based on papers by other authors.
+
 ### The Alternative Path: Research → Implementation
 
 **Philosophy:** Instead of pursuing a traditional CS degree or PhD, Dico chose to **implement cutting-edge research into production systems**: learning by building, with code as the credential.
 
-**Core Principle:**
-> "While others were writing papers, I was implementing them into production systems. The proof is in production, not publications."
+**Research and Implementation:**
+Dico's work includes workshop-paper coauthorship and AI-assisted implementation of ideas from third-party research. Implementing another author's paper does not establish authorship or validate its results.
 
 ---
 
@@ -391,7 +397,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 | **Business Acumen** | Limited | Formal BBA + GTM experience |
 | **Research Ability** | Read papers in class | Implemented 8+ papers in production |
 | **Testing Rigor** | Variable (often low) | Vitest suites (OS-App: ~54% statement coverage (Vitest, 2026-09-26)) |
-| **Publications** | Academic papers | 2 npm packages (public) |
+| **Workshop Paper** | Academic papers | Coauthored paper accepted as a poster at NeurIPS 2026 Workshop LP4FM |
 | **Speed of Learning** | Semester-based | 152K LOC in 5 months |
 | **Unique Value** | Technical depth | Technical + Business hybrid |
 
@@ -605,7 +611,7 @@ The question is "Why would a CS degree make this better?"
 **Education:** BBA Marketing, University of Windsor (2019)
 **Notable:** SpaceX Hyperloop 2019 Finalist (Engineering Business Marketing Lead)
 **Self-Taught:** Prompt engineering, AI coding agent orchestration, MCP, RAG, LLM evaluation, multi-agent systems
-**Research:** 8+ arXiv papers implemented in production
+**Research:** Coauthored paper accepted as a poster at NeurIPS 2026 Workshop LP4FM; implementation of ideas from third-party research
 **Certifications:** AWS (3), Microsoft (1), AI/Cloud (3), PM (1)
 **Code Output:** 900,000+ LOC
 **Packages:** 2 published npm packages
@@ -620,4 +626,4 @@ Formal business education + intensive self-directed technical learning + product
 
 *This document is part of the Metaventions AI portfolio. For technical deep-dive, see TECHNICAL_DOSSIER.md. For quick facts, see RECRUITER_QUICK_FACTS.md.*
 
-*Last Updated: January 2026*
+*Last Updated: October 1, 2026*

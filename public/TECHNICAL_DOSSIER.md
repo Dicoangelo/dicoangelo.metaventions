@@ -1,6 +1,6 @@
 # Dico Angelo — Technical Overview
 
-Updated September 15, 2026
+Updated October 1, 2026
 
 ## Practical AI implementation
 
@@ -38,7 +38,9 @@ This is a practical example of retrieval-augmented generation: the assistant sea
 
 ## Research notes and project status
 
-Dico studies and implements ideas from papers written by other researchers. Those papers are not his publications, and implementing an idea does not replicate or validate the source study.
+Dico coauthored [*Burstiness Was Measured Wrong, and Prompting Cannot Aim It*](https://openreview.net/forum?id=1E20ig92Zi) with Vittoria Lanzo. The paper was accepted as a poster at the NeurIPS 2026 workshop Linguistic Principles for Foundation Models (LP4FM). Submission #114 received its acceptance decision on September 29, 2026. The research developed from the Burstiness Engine project.
+
+Dico also studies and implements ideas from papers written by other researchers. Those third-party papers remain work by their named authors; implementing an idea does not establish authorship or replicate or validate the source study.
 
 Philip Drammeh's [arXiv:2511.15755](https://arxiv.org/abs/2511.15755) was withdrawn on August 31, 2026. The author's notice withdrew the Decision Quality results and related actionability and zero-variance claims after a code audit. Historical DQ implementations are retained as examples of internal routing heuristics; their scores do not establish scientific efficacy or validated accuracy.
 
