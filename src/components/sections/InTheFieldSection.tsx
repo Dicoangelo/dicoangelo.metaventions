@@ -17,31 +17,32 @@ export function InTheFieldSection({ isLight }: InTheFieldSectionProps) {
 
   return (
     <section
+      id="in-the-field"
       aria-label="In the field"
-      className={`py-20 overflow-hidden ${
+      className={`pt-28 pb-12 md:pb-16 overflow-hidden ${
         isLight
           ? "bg-gradient-to-b from-white via-gray-50 to-white"
           : "bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505]"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 mb-12">
+      <div className="max-w-6xl mx-auto px-6 mb-6 md:mb-8">
         <div className="text-center">
           <span
-            className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
+            className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-3 ${
               isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
             }`}
           >
             In the Field
           </span>
           <h2
-            className={`text-4xl md:text-5xl font-bold tracking-tight ${
+            className={`text-3xl md:text-5xl font-bold tracking-tight ${
               isLight ? "text-gray-900" : "text-white"
             }`}
           >
             On stage. At the table. In the room.
           </h2>
           <p
-            className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${
+            className={`mt-3 max-w-2xl mx-auto text-[15px] leading-relaxed ${
               isLight ? "text-gray-600" : "text-[#a3a3a3]"
             }`}
           >
@@ -70,9 +71,9 @@ export function InTheFieldSection({ isLight }: InTheFieldSectionProps) {
           }`}
         />
 
-        <MarqueeRow photos={rowA} isLight={isLight} direction="left" duration={70} />
+        <MarqueeRow photos={rowA} isLight={isLight} direction="left" duration={70} priorityCount={2} />
         <div className="h-4" />
-        <MarqueeRow photos={rowB} isLight={isLight} direction="right" duration={60} />
+        <MarqueeRow photos={rowB} isLight={isLight} direction="right" duration={60} priorityCount={1} />
       </div>
 
       <style jsx global>{`
@@ -107,9 +108,10 @@ interface MarqueeRowProps {
   isLight: boolean;
   direction: "left" | "right";
   duration: number;
+  priorityCount: number;
 }
 
-function MarqueeRow({ photos, isLight, direction, duration }: MarqueeRowProps) {
+function MarqueeRow({ photos, isLight, direction, duration, priorityCount }: MarqueeRowProps) {
   // Duplicate the photos so the marquee loops seamlessly
   const doubled = [...photos, ...photos];
   const animationName = direction === "left" ? "marquee-left" : "marquee-right";
@@ -129,6 +131,7 @@ function MarqueeRow({ photos, isLight, direction, duration }: MarqueeRowProps) {
             photo={photo}
             isLight={isLight}
             ariaHidden={idx >= photos.length}
+            priority={idx % photos.length < priorityCount}
           />
         ))}
       </div>
@@ -140,9 +143,10 @@ interface PhotoCardProps {
   photo: FieldPhoto;
   isLight: boolean;
   ariaHidden: boolean;
+  priority: boolean;
 }
 
-function PhotoCard({ photo, isLight, ariaHidden }: PhotoCardProps) {
+function PhotoCard({ photo, isLight, ariaHidden, priority }: PhotoCardProps) {
   // Fixed height; width derived from aspect for visual rhythm
   // h-72 = 18rem = 288px
   const widthClass =
@@ -165,7 +169,8 @@ function PhotoCard({ photo, isLight, ariaHidden }: PhotoCardProps) {
         src={photo.src}
         alt={ariaHidden ? "" : photo.alt}
         fill
-        sizes="(max-width: 640px) 60vw, 30vw"
+        priority={priority}
+        sizes={photo.aspect === "portrait" ? "224px" : photo.aspect === "square" ? "288px" : "448px"}
         className="object-cover transition-transform duration-700 group-hover/card:scale-[1.04]"
       />
 

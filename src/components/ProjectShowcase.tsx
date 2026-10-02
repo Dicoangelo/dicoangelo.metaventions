@@ -22,6 +22,26 @@ interface ProjectShowcaseProps {
 
 const projects: Project[] = [
   {
+    name: "Career Board",
+    tagline: "AI-Assisted Career Workflows",
+    description: "A career-workflow app for résumé review and role comparison, with a no-signup demo using sample inputs. Built through AI-assisted development, review and testing. Hiring-panel personas are simulations, not employer decisions.",
+    metrics: [
+      { label: "Workflow", value: "Résumé review" },
+      { label: "Stack", value: "Next.js" },
+      { label: "Feedback", value: "AI-assisted" },
+      { label: "Surface", value: "Web app" }
+    ],
+    techStack: ["Next.js 16", "React 19", "Tailwind 4", "TypeScript", "Stripe", "Prompt Engineering"],
+    papers: [
+      "Eligibility-gate-first hiring funnels",
+      "Warm-line conversion vs cold apply",
+      "ATS keyword fidelity in resume tailoring"
+    ],
+    github: "https://github.com/Dicoangelo",
+    demo: "https://careers.metaventionsai.com/try",
+    loc: "Application"
+  },
+  {
     name: "Partnership Graph (Concept Demo)",
     tagline: "Hypothetical partner-intelligence layer, custom-built concept demo",
     description: "A concept demo for partner intelligence: an MCP interface and dashboard for exploring partner health, co-sell workflows and attribution. Partner data is illustrative; named platforms and partners are unaffiliated. No commercial deployment or live CRM integration is claimed.",
@@ -58,7 +78,6 @@ const projects: Project[] = [
       "Agent-surfaced infrastructure inspection (MCP)"
     ],
     github: "https://github.com/Dicoangelo",
-    demo: "https://sbcvalidator.metaventionsai.com",
     loc: "Prototype"
   },
   {
@@ -80,26 +99,6 @@ const projects: Project[] = [
     github: "https://github.com/Dicoangelo",
     demo: "https://frontier-alpha.metaventionsai.com",
     loc: "Prototype"
-  },
-  {
-    name: "CareerCoach Antigravity",
-    tagline: "AI-Assisted Career Workflows",
-    description: "An AI-assisted career application for résumé review, role comparison and tailored feedback. Dico specifies the workflows, directs AI coding tools, and reviews, tests and deploys the implementation. Hiring-panel personas are simulations, not employer decisions.",
-    metrics: [
-      { label: "Workflow", value: "Résumé review" },
-      { label: "Stack", value: "Next.js" },
-      { label: "Feedback", value: "AI-assisted" },
-      { label: "Surface", value: "Web app" }
-    ],
-    techStack: ["Next.js 16", "React 19", "Tailwind 4", "TypeScript", "Stripe", "Prompt Engineering"],
-    papers: [
-      "Eligibility-gate-first hiring funnels",
-      "Warm-line conversion vs cold apply",
-      "ATS keyword fidelity in resume tailoring"
-    ],
-    github: "https://github.com/Dicoangelo",
-    demo: "https://careers.metaventionsai.com",
-    loc: "Application"
   },
   {
     name: "FriendlyFace",

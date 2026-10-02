@@ -89,7 +89,7 @@ export default function OriginalHome() {
       observer?.disconnect();
       frame = requestAnimationFrame(() => {
         const fragment = window.location.hash.slice(1);
-        const id = fragment === "ucw-insights" ? "systems" : fragment === "top" ? "hero" : fragment;
+        const id = fragment === "ucw-insights" ? "systems" : fragment === "top" ? "in-the-field" : fragment;
         const target = id ? document.getElementById(id) : null;
         if (!target) return;
         const align = () => {
@@ -146,6 +146,9 @@ export default function OriginalHome() {
       {/* Navigation */}
       <Nav />
 
+      {/* People and community first */}
+      <InTheFieldSection isLight={isLight} />
+
       {/* Hero */}
       <Hero />
 
@@ -196,8 +199,7 @@ export default function OriginalHome() {
       {/* Interactive Career Timeline */}
       <CareerTimeline isLight={isLight} />
 
-      {/* In the Field + In the Arena — paired physical-presence block */}
-      <InTheFieldSection isLight={isLight} />
+      {/* In the Arena */}
       <ArenaSection isLight={isLight} />
 
       {/* Skills Visualization */}

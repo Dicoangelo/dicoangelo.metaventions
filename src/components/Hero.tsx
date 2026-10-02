@@ -140,16 +140,16 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex gap-3 md:gap-4 justify-center mb-8 flex-wrap animate-fade-in animate-delay-400">
           <a
-            href="https://app.metaventionsai.com"
+            href="https://careers.metaventionsai.com/try"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary btn-lg group"
-            aria-label="View live demo of OS-App"
+            aria-label="Try Career Board without signing up"
           >
             <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-            <span>Live Demo: OS-App</span>
+            <span>Try Career Board</span>
           </a>
           <a
             href="https://partnerships.metaventionsai.com"
