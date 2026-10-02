@@ -365,7 +365,7 @@ const { prediction, isLoading } = useSessionPrediction({
 | Specificity | 30% | Concrete identifiers, versions, commands |
 | Correctness | 30% | Task alignment, problem resolution |
 
-**Key Insight**: Multi-agent with DQ scoring achieves 100% actionability vs 1.7% single-agent.
+**Key Insight**: (retracted 2026-09-26: the 100% vs 1.7% actionability result came from arXiv:2511.15755, withdrawn by its author)
 
 ---
 
@@ -748,7 +748,7 @@ flowchart TB
 `JavaScript` `Routing` `Scoring`
 
 <br/>
-<img src="https://img.shields.io/badge/DQ_Avg-0.889-00d9ff?style=for-the-badge&labelColor=0d1117"/>
+
 </td>
 </tr>
 </table>
@@ -854,7 +854,7 @@ flowchart TB
 
 **After (v1.1.1)**
 - ✅ 0% simulated data
-- ✅ Real DQ score (0.889 from 158 decisions)
+- DQ score logged (self-rated heuristic; not a validated quality measure)
 - ✅ 0% missing data (all files created/backfilled)
 - ✅ Observatory fully operational
 
@@ -887,7 +887,7 @@ flowchart TB
 │   📊 Cost Tracking:      285 sessions, $6,040.55 total         │
 │   📝 Productivity:       9,821 LOC, 441.4 LOC/day velocity     │
 │   🔧 Git Activity:       216 commits backfilled                │
-│   🎯 DQ Score:           0.889 avg (158 routing decisions)     │
+│   🎯 DQ Score:           self-rated heuristic (not validated)  │
 │   📈 Cache Efficiency:   99.88% (maintained)                   │
 │   💰 ROI:                68x subscription value                │
 │                                                                 │
@@ -1086,7 +1086,7 @@ recovery-engine.py recover --error "error text"  # Manual recovery trigger
 | **Sessions** | 120 | Total sessions tracked |
 | **Messages** | 33,085 | Total messages processed |
 | **Cache Efficiency** | 99.88% | Context reuse rate |
-| **DQ Average** | 0.889 | Decision quality score (158 samples) |
+| **DQ Average** | n/a | Self-rated heuristic, retracted as a metric 2026-09-26 |
 | **Patterns** | 8 | Session types detected |
 | **Cost Tracked** | $6,040.55 | Total API costs (285 sessions) |
 | **LOC Velocity** | 441.4/day | Productivity rate |
