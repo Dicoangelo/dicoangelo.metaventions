@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import ReducedMotionToggle from "./ReducedMotionToggle";
 
 interface FooterProps {
@@ -99,6 +100,14 @@ export default function Footer({ isLight }: FooterProps) {
               Revenue technology and GTM operations. Connecting systems, improving workflows and helping teams use AI.
             </p>
             <a
+              href="mailto:dicoangelo@metaventionsai.com"
+              className={`block w-fit text-[13.5px] mb-2 transition-colors ${
+                isLight ? "text-gray-600 hover:text-[#6366f1]" : "text-[#a3a3a3] hover:text-white"
+              }`}
+            >
+              dicoangelo@metaventionsai.com
+            </a>
+            <a
               href="mailto:dico.angelo97@gmail.com"
               className={`inline-block text-[13.5px] mb-5 transition-colors ${
                 isLight ? "text-gray-600 hover:text-[#6366f1]" : "text-[#a3a3a3] hover:text-white"
@@ -180,6 +189,24 @@ export default function Footer({ isLight }: FooterProps) {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="flex justify-center mb-8">
+          <a
+            href="https://metaventionsai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Metaventions AI"
+            className="flex h-44 w-64 items-center justify-center overflow-hidden rounded-2xl bg-[#0a0a0a] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#818cf8]"
+          >
+            <Image
+              src="/logos/metaventions-ai.png"
+              alt="METAVENTIONS AI"
+              width={512}
+              height={512}
+              className="h-auto w-64"
+            />
+          </a>
         </div>
 
         {/* Bottom Bar */}

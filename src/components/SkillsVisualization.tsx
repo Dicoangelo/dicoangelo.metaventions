@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
+import { usePrefersReducedMotion } from "@/hooks/useReducedMotion";
 import { useReadingDepth } from "./ReadingDepthProvider";
 
 interface Skill {
@@ -19,15 +20,7 @@ interface SkillsVisualizationProps {
   isLight: boolean;
 }
 
-export default function SkillsVisualization({ isLight }: SkillsVisualizationProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { depth } = useReadingDepth();
-  const showBars = depth !== "skim";
-  const showExtras = depth === "deep";
-  const isSkim = depth === "skim";
-
-  const skillCategories: SkillCategory[] = [
+const skillCategories: SkillCategory[] = [
     {
       category: "AI & Agentic Systems",
       icon: "🤖",
@@ -97,36 +90,79 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
     },
   ];
 
-  // Intersection observer for animation trigger
+function subscribeToDesktop(callback: () => void) {
+  const media = window.matchMedia("(min-width: 768px)");
+  media.addEventListener("change", callback);
+  return () => media.removeEventListener("change", callback);
+}
+
+const getDesktopSnapshot = () => window.matchMedia("(min-width: 768px)").matches;
+const getServerDesktopSnapshot = () => false;
+
+export default function SkillsVisualization({ isLight }: SkillsVisualizationProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [hasFocus, setHasFocus] = useState(false);
+  const [isPageVisible, setIsPageVisible] = useState(true);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isDesktop = useSyncExternalStore(subscribeToDesktop, getDesktopSnapshot, getServerDesktopSnapshot);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const { depth } = useReadingDepth();
+  const showBars = depth !== "skim";
+  const showExtras = depth === "deep";
+  const isSkim = depth === "skim";
+  const cardsPerView = isDesktop ? 2 : 1;
+  const firstVisibleIndex = Math.floor(activeIndex / cardsPerView) * cardsPerView;
+  const pageCount = Math.ceil(skillCategories.length / cardsPerView);
+  const currentPage = Math.floor(firstVisibleIndex / cardsPerView);
+  const isRotating = isInView && isPageVisible && !isPaused && !isHovered && !hasFocus && !prefersReducedMotion;
+  const controlClass = `inline-flex h-11 min-w-11 items-center justify-center rounded-full border transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6366f1] ${
+    isLight
+      ? "border-gray-200 bg-white text-gray-700 hover:border-[#6366f1]"
+      : "border-[#6366f1]/20 bg-[#0f0f1f] text-[#ededed] hover:border-[#6366f1]"
+  }`;
+
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => setIsInView(entry.isIntersecting),
       { threshold: 0.1 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    const section = sectionRef.current;
+    if (section) observer.observe(section);
+    return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const updateVisibility = () => setIsPageVisible(document.visibilityState === "visible");
+    updateVisibility();
+    document.addEventListener("visibilitychange", updateVisibility);
+    return () => document.removeEventListener("visibilitychange", updateVisibility);
+  }, []);
+
+  useEffect(() => {
+    if (!isRotating) return;
+    const timer = window.setInterval(() => {
+      setActiveIndex((index) => (Math.floor(index / cardsPerView) * cardsPerView + cardsPerView) % skillCategories.length);
+    }, 10000);
+    return () => window.clearInterval(timer);
+  }, [cardsPerView, isRotating]);
+
+  const showPage = (page: number) => {
+    const wrappedPage = (page + pageCount) % pageCount;
+    setActiveIndex(wrappedPage * cardsPerView);
+    setIsPaused(true);
+  };
 
   return (
     <section
       ref={sectionRef}
       id="skills"
-      className={`${isSkim ? 'py-10' : 'py-20'} px-6 ${isLight ? 'bg-gradient-to-br from-gray-50 to-blue-50' : 'bg-gradient-to-br from-[#0a0a0a] to-[#0f0a1a]'}`}
+      className={`${isSkim ? 'py-10' : 'py-16'} px-6 ${isLight ? 'bg-gradient-to-br from-gray-50 to-blue-50' : 'bg-gradient-to-br from-[#0a0a0a] to-[#0f0a1a]'}`}
     >
       <div className="max-w-6xl mx-auto">
-        <div className={`text-center ${isSkim ? 'mb-4' : 'mb-12'}`}>
+        <div className={`text-center ${isSkim ? 'mb-4' : 'mb-8'}`}>
           {!isSkim && (
             <span
               className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
@@ -155,52 +191,110 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
           )}
         </div>
 
-        <div className={`grid md:grid-cols-2 ${isSkim ? 'gap-2' : 'gap-4 md:gap-8'}`}>
-          {skillCategories.map((category, catIndex) => (
-            <div
-              key={category.category}
-              className={`${isSkim ? 'p-3' : 'p-6'} rounded-xl border-2 transition-opacity duration-600 ${
-                isLight
-                  ? 'bg-white border-gray-200 shadow-lg'
-                  : 'bg-[#0f0f1f] border-[#6366f1]/20 shadow-2xl'
-              } ${isVisible ? 'opacity-100' : 'opacity-0'}`}
-              style={{
-                animationDelay: isVisible ? `${catIndex * 0.1}s` : '0s',
-                animation: isVisible ? 'fadeInUp 0.6s ease-out forwards' : 'none',
-              }}
-            >
-              <div className={`flex items-center gap-3 ${showBars ? "mb-6" : ""}`}>
-                <span className={isSkim ? "text-xl" : "text-3xl"}>{category.icon}</span>
-                <h3 className={`${isSkim ? 'text-base' : 'text-xl'} font-bold`}>{category.category}</h3>
-              </div>
-
-              {showBars && (
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between items-baseline mb-2">
-                      <span className={`text-sm font-medium ${isLight ? 'text-gray-700' : 'text-[#ededed]'}`}>
-                        {skill.name}
-                      </span>
-                      <span className={`text-xs ${isLight ? 'text-gray-500' : 'text-[#737373]'}`}>
-                        {skill.context}
-                      </span>
-                    </div>
-                    <div className={`h-2 rounded-full overflow-hidden ${isLight ? 'bg-gray-200' : 'bg-[#1a1a1a]'}`}>
-                      <div
-                        className="h-full bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] rounded-full transition-all duration-1000 ease-out"
-                        style={{
-                          width: isVisible ? `${skill.level}%` : '0%',
-                          transitionDelay: `${(catIndex * 0.1) + (skillIndex * 0.05)}s`,
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+        <div
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Areas of practice"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onFocusCapture={() => setHasFocus(true)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setHasFocus(false);
+          }}
+        >
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <p className={`text-sm ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
+              <span className="font-medium tabular-nums">
+                {firstVisibleIndex + 1}{cardsPerView > 1 ? `–${firstVisibleIndex + cardsPerView}` : ""}
+              </span> of {skillCategories.length} practice areas
+            </p>
+            <div className="flex items-center gap-2">
+              {!prefersReducedMotion && (
+                <button
+                  type="button"
+                  onClick={() => setIsPaused((paused) => !paused)}
+                  className={`${controlClass} gap-2 px-4 text-xs font-medium`}
+                  aria-label={isPaused ? "Resume practice area rotation" : "Pause practice area rotation"}
+                >
+                  <span aria-hidden="true">{isPaused ? "▶" : "Ⅱ"}</span>
+                  {isPaused ? "Resume" : "Pause"}
+                </button>
               )}
+              <button type="button" className={controlClass} onClick={() => showPage(currentPage - 1)} aria-label="Previous practice areas">
+                <span aria-hidden="true">←</span>
+              </button>
+              <button type="button" className={controlClass} onClick={() => showPage(currentPage + 1)} aria-label="Next practice areas">
+                <span aria-hidden="true">→</span>
+              </button>
             </div>
-          ))}
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2" aria-live={isRotating ? "off" : "polite"} aria-atomic="false">
+            {skillCategories.map((category, catIndex) => {
+              const isActive = catIndex >= firstVisibleIndex && catIndex < firstVisibleIndex + cardsPerView;
+              return (
+                <article
+                  key={category.category}
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label={`${category.category}, ${catIndex + 1} of ${skillCategories.length}`}
+                  aria-hidden={!isActive}
+                  inert={!isActive}
+                  className={`${isSkim ? "p-4" : "p-5 md:p-6"} min-w-0 rounded-xl border-2 ${prefersReducedMotion ? "" : "transition-opacity duration-500"} ${
+                    isLight ? "bg-white border-gray-200 shadow-lg" : "bg-[#0f0f1f] border-[#6366f1]/20 shadow-2xl"
+                  } ${isActive ? "visible opacity-100" : "invisible pointer-events-none opacity-0"}`}
+                  style={{ gridRow: 1, gridColumn: (catIndex % cardsPerView) + 1 }}
+                >
+                  <div className={`flex items-center gap-3 ${showBars ? "mb-5 min-h-12" : ""}`}>
+                    <span className={isSkim ? "text-xl" : "text-2xl"} aria-hidden="true">{category.icon}</span>
+                    <h3 className={`${isSkim ? "text-base" : "text-lg"} font-bold leading-snug ${isLight ? "text-gray-900" : "text-white"}`}>
+                      {category.category}
+                    </h3>
+                  </div>
+                  {showBars && (
+                    <div className="space-y-3">
+                      {category.skills.map((skill) => (
+                        <div key={skill.name}>
+                          <div className="mb-1.5 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+                            <span className={`text-sm font-medium ${isLight ? "text-gray-700" : "text-[#ededed]"}`}>{skill.name}</span>
+                            <span className={`text-xs ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>{skill.context}</span>
+                          </div>
+                          <div
+                            role="progressbar"
+                            aria-label={`${skill.name}: self-assessed familiarity`}
+                            aria-valuenow={skill.level}
+                            aria-valuemin={0}
+                            aria-valuemax={100}
+                            className={`h-1.5 overflow-hidden rounded-full ${isLight ? "bg-gray-200" : "bg-[#1a1a1a]"}`}
+                          >
+                            <div className="h-full rounded-full bg-gradient-to-r from-[#6366f1] to-[#8b5cf6]" style={{ width: `${skill.level}%` }} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 flex justify-center sm:gap-1" role="group" aria-label="Choose practice areas">
+            {Array.from({ length: pageCount }, (_, page) => {
+              const names = skillCategories.slice(page * cardsPerView, (page + 1) * cardsPerView).map((category) => category.category).join(" and ");
+              return (
+                <button
+                  key={page}
+                  type="button"
+                  onClick={() => showPage(page)}
+                  aria-label={`Show ${names}`}
+                  aria-current={page === currentPage ? "true" : undefined}
+                  className="flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6366f1]"
+                >
+                  <span className={`h-2 rounded-full ${prefersReducedMotion ? "" : "transition-all duration-300"} ${page === currentPage ? "w-6 bg-[#6366f1]" : `w-2 ${isLight ? "bg-gray-600" : "bg-[#a3a3a3]"}`}`} />
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Certifications */}
@@ -248,6 +342,15 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
             Achievements & Recognition
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href="https://openreview.net/forum?id=1E20ig92Zi"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Burstiness Was Measured Wrong, and Prompting Cannot Aim It — coauthored with Vittoria Lanzo"
+              className={`px-4 py-2 rounded-lg border text-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6366f1] ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}
+            >
+              🧠 NeurIPS 2026 · LP4FM Workshop · Accepted Poster · Co-author
+            </a>
             <div className={`px-4 py-2 rounded-lg border ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}>
               <span className="text-sm">🏆 Microsoft Partner Awards (2024, 2025) · Team Contributor</span>
             </div>

@@ -65,6 +65,7 @@ export const chatRateLimit = createRateLimiter(10, 60 * 1000, 'chat'); // 10 req
 export const jdAnalyzerRateLimit = createRateLimiter(5, 60 * 1000, 'jd-analyzer'); // 5 req/min
 export const ttsRateLimit = createRateLimiter(10, 60 * 1000, 'tts'); // 10 req/min
 export const adminAuthRateLimit = createRateLimiter(3, 60 * 1000, 'admin-auth'); // 3 req/min
+export const contactRateLimit = createRateLimiter(3, 60 * 1000, 'contact'); // 3 messages/min
 
 /**
  * Helper function to get client identifier (IP or fallback to 'anonymous')

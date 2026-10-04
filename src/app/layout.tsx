@@ -48,7 +48,7 @@ const personSchema = {
   jobTitle: CURRENT_ROLE.title,
   description: PROFILE_DESCRIPTION,
   url: SITE_URL,
-  email: "dico.angelo97@gmail.com",
+  email: ["dicoangelo@metaventionsai.com", "dico.angelo97@gmail.com"],
   nationality: "Canadian",
   sameAs: [
     "https://github.com/Dicoangelo",

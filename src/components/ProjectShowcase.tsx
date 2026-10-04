@@ -22,6 +22,85 @@ interface ProjectShowcaseProps {
 
 const projects: Project[] = [
   {
+    name: "SBC-AutoOps / SBC Inspector",
+    tagline: "Pre-Deploy Validation for Session Border Controllers",
+    description: "A configuration-validation prototype for supported session border controller formats. Combines deterministic checks with plain-English explanations and an MCP interface for inspection. Findings support human review before deployment; they do not guarantee a safe configuration.",
+    metrics: [
+      { label: "Input", value: "SBC configs" },
+      { label: "Checks", value: "Validation" },
+      { label: "Output", value: "Review notes" },
+      { label: "Interface", value: "MCP" }
+    ],
+    techStack: ["AI-Directed Build", "MCP Protocol", "Deterministic Validation", "Config Parsing"],
+    papers: [
+      "Deterministic pre-deployment config validation",
+      "Multi-vendor SBC normalization",
+      "Agent-surfaced infrastructure inspection (MCP)"
+    ],
+    github: "https://github.com/Dicoangelo",
+    loc: "Prototype"
+  },
+  {
+    name: "Burstiness Engine",
+    tagline: "Accepted Poster · NeurIPS 2026 LP4FM Workshop",
+    description: "Burstiness Was Measured Wrong, and Prompting Cannot Aim It. Co-authored with Vittoria Lanzo and accepted as a poster at the NeurIPS 2026 LP4FM workshop on September 29, 2026. Studies sentence-length rhythm in generated language; Dico contributed research tooling, experiment infrastructure, data workflows and reproducibility checks.",
+    metrics: [
+      { label: "Role", value: "Co-author" },
+      { label: "Workshop", value: "LP4FM 2026" },
+      { label: "Decision", value: "Accepted" },
+      { label: "Format", value: "Poster" }
+    ],
+    techStack: ["Research Tooling", "Experiment Infrastructure", "Text Measurement", "Reproducibility"],
+    papers: [
+      "Co-authored with Vittoria Lanzo",
+      "Accepted title: Burstiness Was Measured Wrong, and Prompting Cannot Aim It",
+      "NeurIPS 2026 LP4FM workshop · Accept (Poster) · Submission #114"
+    ],
+    github: "https://github.com/Dicoangelo",
+    source: { label: "OpenReview paper", url: "https://openreview.net/forum?id=1E20ig92Zi" },
+    loc: "Accepted workshop poster"
+  },
+  {
+    name: "FriendlyFace",
+    tagline: "AI Evidence Prototype",
+    description: "A collaborative prototype exploring traceability and evidence sealing for AI systems. Draws on forensic facial-recognition research by other authors. Demonstrates implementation ideas rather than certified compliance, legal admissibility or validated recognition performance.",
+    metrics: [
+      { label: "Architecture", value: "Evidence records" },
+      { label: "Research", value: "Forensic AI" },
+      { label: "Mode", value: "Prototype" },
+      { label: "Workflow", value: "Traceability" }
+    ],
+    techStack: ["Prompt Engineering", "Blockchain", "Computer Vision", "ForensicSeal"],
+    papers: [
+      "Forensic facial-recognition research (ICDF2C 2024)",
+      "Evidence-sealing implementation patterns",
+      "Traceability and review workflows"
+    ],
+    github: "https://github.com/Dicoangelo",
+    demo: "https://friendlyface.metaventionsai.com",
+    loc: "Prototype"
+  },
+  {
+    name: "Frontier Alpha",
+    tagline: "Investment Research Prototype",
+    description: "An experimental interface for exploring factor exposure, portfolio scenarios and AI-assisted investment research. The demo illustrates a workflow; no investment performance or validated forecasting accuracy is claimed.",
+    metrics: [
+      { label: "Research", value: "Factors" },
+      { label: "Workflow", value: "Scenarios" },
+      { label: "Output", value: "Explanations" },
+      { label: "Stage", value: "Prototype" }
+    ],
+    techStack: ["AI-Directed Build", "Factor Models", "Episodic Memory", "CVRF"],
+    papers: [
+      "CVRF episodic learning",
+      "Multi-factor portfolio construction",
+      "Explainable AI for investment decisions"
+    ],
+    github: "https://github.com/Dicoangelo",
+    demo: "https://frontier-alpha.metaventionsai.com",
+    loc: "Prototype"
+  },
+  {
     name: "Career Board",
     tagline: "AI-Assisted Career Workflows",
     description: "A career-workflow app for résumé review and role comparison, with a no-signup demo using sample inputs. Built through AI-assisted development, review and testing. Hiring-panel personas are simulations, not employer decisions.",
@@ -60,65 +139,6 @@ const projects: Project[] = [
     github: "https://github.com/Dicoangelo",
     demo: "https://partnerships.metaventionsai.com",
     loc: "Concept"
-  },
-  {
-    name: "SBC-AutoOps / SBC Inspector",
-    tagline: "Pre-Deploy Validation for Session Border Controllers",
-    description: "A configuration-validation prototype for supported session border controller formats. Combines deterministic checks with plain-English explanations and an MCP interface for inspection. Findings support human review before deployment; they do not guarantee a safe configuration.",
-    metrics: [
-      { label: "Input", value: "SBC configs" },
-      { label: "Checks", value: "Validation" },
-      { label: "Output", value: "Review notes" },
-      { label: "Interface", value: "MCP" }
-    ],
-    techStack: ["AI-Directed Build", "MCP Protocol", "Deterministic Validation", "Config Parsing"],
-    papers: [
-      "Deterministic pre-deployment config validation",
-      "Multi-vendor SBC normalization",
-      "Agent-surfaced infrastructure inspection (MCP)"
-    ],
-    github: "https://github.com/Dicoangelo",
-    loc: "Prototype"
-  },
-  {
-    name: "Frontier Alpha",
-    tagline: "Investment Research Prototype",
-    description: "An experimental interface for exploring factor exposure, portfolio scenarios and AI-assisted investment research. The demo illustrates a workflow; no investment performance or validated forecasting accuracy is claimed.",
-    metrics: [
-      { label: "Research", value: "Factors" },
-      { label: "Workflow", value: "Scenarios" },
-      { label: "Output", value: "Explanations" },
-      { label: "Stage", value: "Prototype" }
-    ],
-    techStack: ["AI-Directed Build", "Factor Models", "Episodic Memory", "CVRF"],
-    papers: [
-      "CVRF episodic learning",
-      "Multi-factor portfolio construction",
-      "Explainable AI for investment decisions"
-    ],
-    github: "https://github.com/Dicoangelo",
-    demo: "https://frontier-alpha.metaventionsai.com",
-    loc: "Prototype"
-  },
-  {
-    name: "FriendlyFace",
-    tagline: "AI Evidence Prototype",
-    description: "A collaborative prototype exploring traceability and evidence sealing for AI systems. Draws on forensic facial-recognition research by other authors. Demonstrates implementation ideas rather than certified compliance, legal admissibility or validated recognition performance.",
-    metrics: [
-      { label: "Architecture", value: "Evidence records" },
-      { label: "Research", value: "Forensic AI" },
-      { label: "Mode", value: "Prototype" },
-      { label: "Workflow", value: "Traceability" }
-    ],
-    techStack: ["Prompt Engineering", "Blockchain", "Computer Vision", "ForensicSeal"],
-    papers: [
-      "Forensic facial-recognition research (ICDF2C 2024)",
-      "Evidence-sealing implementation patterns",
-      "Traceability and review workflows"
-    ],
-    github: "https://github.com/Dicoangelo",
-    demo: "https://friendlyface.metaventionsai.com",
-    loc: "Prototype"
   },
   {
     name: "ACE",
@@ -216,32 +236,12 @@ const projects: Project[] = [
     ],
     github: "https://github.com/Dicoangelo",
     loc: "Research tools"
-  },
-  {
-    name: "Burstiness Engine",
-    tagline: "Accepted Poster · NeurIPS 2026 LP4FM Workshop",
-    description: "Burstiness Was Measured Wrong, and Prompting Cannot Aim It. Co-authored with Vittoria Lanzo and accepted as a poster at the NeurIPS 2026 LP4FM workshop on September 29, 2026. Studies sentence-length rhythm in generated language; Dico contributed research tooling, experiment infrastructure, data workflows and reproducibility checks.",
-    metrics: [
-      { label: "Role", value: "Co-author" },
-      { label: "Workshop", value: "LP4FM 2026" },
-      { label: "Decision", value: "Accepted" },
-      { label: "Format", value: "Poster" }
-    ],
-    techStack: ["Research Tooling", "Experiment Infrastructure", "Text Measurement", "Reproducibility"],
-    papers: [
-      "Co-authored with Vittoria Lanzo",
-      "Accepted title: Burstiness Was Measured Wrong, and Prompting Cannot Aim It",
-      "NeurIPS 2026 LP4FM workshop · Accept (Poster) · Submission #114"
-    ],
-    github: "https://github.com/Dicoangelo",
-    source: { label: "OpenReview paper", url: "https://openreview.net/forum?id=1E20ig92Zi" },
-    loc: "Accepted workshop poster"
   }
 ];
 
 export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
   const [expanded, setExpanded] = useState(false);
-  const previewCount = 4;
+  const previewCount = 3;
   const visibleProjects = expanded ? projects : projects.slice(0, previewCount);
   const hiddenCount = projects.length - previewCount;
 
@@ -273,9 +273,9 @@ export default function ProjectShowcase({ isLight }: ProjectShowcaseProps) {
         </div>
 
         <div className="space-y-6 md:space-y-12">
-          {visibleProjects.map((project, index) => (
+          {visibleProjects.map((project) => (
             <DepthSection
-              key={index}
+              key={project.name}
               className={`p-5 md:p-8 rounded-2xl border ${
                 isLight
                   ? 'bg-gradient-to-br from-white to-gray-50 border-gray-200'

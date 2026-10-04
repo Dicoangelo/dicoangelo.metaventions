@@ -17,6 +17,7 @@ const SOCIAL_LINKS = [
 export function ContactSection({ isLight }: ContactSectionProps) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const canSubmit = form.name.trim() && form.email.trim() && form.message.trim().length >= 10;
 
@@ -24,6 +25,7 @@ export function ContactSection({ isLight }: ContactSectionProps) {
     e.preventDefault();
     if (!canSubmit || status === "sending") return;
 
+    setErrorMessage("");
     setStatus("sending");
     try {
       const res = await fetch("/api/contact", {
@@ -31,18 +33,24 @@ export function ContactSection({ isLight }: ContactSectionProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error();
+      const result = await res.json().catch(() => null);
+      if (!res.ok || result?.success !== true) {
+        setErrorMessage(typeof result?.error === "string" ? result.error : "Failed to send. Please try again or email directly.");
+        setStatus("error");
+        return;
+      }
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
     } catch {
+      setErrorMessage("Failed to send. Please try again or email directly.");
       setStatus("error");
     }
   };
 
-  const fieldBase = `w-full px-4 py-3 rounded-xl text-[14px] outline-none transition-all duration-200 focus:ring-2 focus:ring-[#6366f1]/35 focus:border-[#6366f1]/40 ${
+  const fieldBase = `w-full px-4 py-3 rounded-xl text-base sm:text-[14px] outline-none transition-all duration-200 focus:ring-2 focus:ring-[#6366f1]/35 focus:border-[#6366f1]/40 ${
     isLight
       ? "bg-white/80 border border-gray-200 text-gray-900 placeholder-gray-400 backdrop-blur-sm"
-      : "bg-white/[0.035] border border-white/[0.08] text-white placeholder-[#525252] backdrop-blur-sm"
+      : "bg-white/[0.035] border border-white/[0.08] text-white placeholder-[#a3a3a3] backdrop-blur-sm"
   }`;
 
   return (
@@ -103,15 +111,25 @@ export function ContactSection({ isLight }: ContactSectionProps) {
         </div>
 
         {/* Direct contact buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+        <div className="mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center">
           <a
-            href="mailto:dico.angelo97@gmail.com"
+            href="mailto:dicoangelo@metaventionsai.com"
             className="group inline-flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-br from-[#6366f1] to-[#5558e3] hover:from-[#5558e3] hover:to-[#4548c7] rounded-xl text-[14px] font-semibold text-white shadow-[0_8px_24px_-8px_rgba(99,102,241,0.55)] hover:shadow-[0_10px_28px_-8px_rgba(99,102,241,0.7)] transition-all duration-200 active:scale-[0.98]"
           >
             <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="m22 7-10 5L2 7" />
             </svg>
+            dicoangelo@metaventionsai.com
+          </a>
+          <a
+            href="mailto:dico.angelo97@gmail.com"
+            className={`inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-[14px] font-semibold transition-all duration-200 active:scale-[0.98] ${
+              isLight
+                ? "bg-white/80 hover:bg-white border border-gray-200 text-gray-800 backdrop-blur-sm"
+                : "bg-white/[0.04] hover:bg-white/[0.07] border border-white/[0.08] text-white backdrop-blur-sm"
+            }`}
+          >
             dico.angelo97@gmail.com
           </a>
           <a
@@ -143,6 +161,7 @@ export function ContactSection({ isLight }: ContactSectionProps) {
 
           {status === "sent" ? (
             <div
+              role="status"
               className={`p-6 rounded-xl border text-center ${
                 isLight ? "bg-emerald-50 border-emerald-200" : "bg-emerald-500/10 border-emerald-500/20"
               }`}
@@ -158,7 +177,12 @@ export function ContactSection({ isLight }: ContactSectionProps) {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-3 text-left">
+              <label htmlFor="contact-name" className={`block text-[13px] font-medium ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>Name</label>
               <input
+                id="contact-name"
+                name="name"
+                autoComplete="name"
+                maxLength={100}
                 type="text"
                 placeholder="Name"
                 value={form.name}
@@ -166,7 +190,12 @@ export function ContactSection({ isLight }: ContactSectionProps) {
                 className={fieldBase}
                 required
               />
+              <label htmlFor="contact-email" className={`block text-[13px] font-medium ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>Email</label>
               <input
+                id="contact-email"
+                name="email"
+                autoComplete="email"
+                maxLength={254}
                 type="email"
                 placeholder="Email"
                 value={form.email}
@@ -174,7 +203,12 @@ export function ContactSection({ isLight }: ContactSectionProps) {
                 className={fieldBase}
                 required
               />
+              <label htmlFor="contact-message" className={`block text-[13px] font-medium ${isLight ? "text-gray-700" : "text-[#a3a3a3]"}`}>Message</label>
               <textarea
+                id="contact-message"
+                name="message"
+                minLength={10}
+                maxLength={5000}
                 placeholder="Your message..."
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -183,7 +217,7 @@ export function ContactSection({ isLight }: ContactSectionProps) {
                 required
               />
               {status === "error" && (
-                <p className="text-red-500 text-[13px]">Failed to send. Please try again or email directly.</p>
+                <p role="alert" className={`text-[13px] ${isLight ? "text-red-700" : "text-red-400"}`}>{errorMessage}</p>
               )}
               <button
                 type="submit"

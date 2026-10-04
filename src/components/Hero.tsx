@@ -137,37 +137,52 @@ export default function Hero() {
           </p>
         )}
 
-        {/* CTA Buttons */}
-        <div className="flex gap-3 md:gap-4 justify-center mb-8 flex-wrap animate-fade-in animate-delay-400">
+        {/* Featured projects */}
+        <div className="grid gap-3 sm:grid-cols-3 max-w-3xl mx-auto mb-4 animate-fade-in animate-delay-400">
+          <a
+            href="https://frontier-alpha.metaventionsai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary group"
+            aria-label="Explore Frontier Alpha investment research prototype"
+          >
+            <span>
+              <span className="block">Frontier Alpha</span>
+              <span className="block text-xs font-medium mt-1">Research prototype →</span>
+            </span>
+          </a>
           <a
             href="https://careers.metaventionsai.com/try"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary btn-lg group"
+            className="btn-primary group"
             aria-label="Try Career Board without signing up"
           >
-            <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-            <span>Try Career Board</span>
+            <span>
+              <span className="block">Career Board</span>
+              <span className="block text-xs font-medium mt-1">Try without signing up →</span>
+            </span>
           </a>
           <a
             href="https://partnerships.metaventionsai.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary btn-lg group"
+            className="btn-primary group"
             aria-label="View Partnership Graph concept demo"
           >
-            <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-            <span>Concept Demo: Partnership Graph</span>
+            <span>
+              <span className="block">Partnership Graph</span>
+              <span className="block text-xs font-medium mt-1">Concept demo →</span>
+            </span>
           </a>
+        </div>
+
+        <div className="flex gap-3 justify-center mb-8 flex-wrap animate-fade-in animate-delay-400">
           <a
             href="https://github.com/Dicoangelo"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-secondary btn-lg group"
+            className="btn-secondary group"
             aria-label="GitHub profile"
           >
             <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -177,7 +192,7 @@ export default function Hero() {
           </a>
           <a
             href="#resume"
-            className="btn-secondary btn-lg group"
+            className="btn-secondary group"
             aria-label="Download resume"
           >
             <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
