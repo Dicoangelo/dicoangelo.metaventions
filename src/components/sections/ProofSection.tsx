@@ -1,9 +1,6 @@
 "use client";
 
-import { AnimatedSection } from "@/components/AnimatedSection";
-import { StaggeredGrid } from "@/components/StaggeredGrid";
 import { MetricCard } from "@/components/MetricCard";
-import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { useReadingDepth } from "@/components/ReadingDepthProvider";
 
 interface ProofSectionProps {
@@ -22,7 +19,7 @@ export function ProofSection({ isLight }: ProofSectionProps) {
   const showDeep = depth === "deep";
 
   return (
-    <AnimatedSection id="proof" className="relative py-20 px-6">
+    <section id="proof" aria-labelledby="proof-heading" className="relative py-14 md:py-16 px-6">
       {/* Ambient brand wash */}
       <div
         aria-hidden="true"
@@ -35,27 +32,26 @@ export function ProofSection({ isLight }: ProofSectionProps) {
       />
 
       <div className="relative max-w-6xl mx-auto">
-        <RevealOnScroll direction="up" threshold={0.2}>
-          <div className="text-center mb-10">
-            <span
-              className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
-                isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
-              }`}
-            >
-              Experience in practice
-            </span>
-            <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
-              Work, with context.
-            </h2>
-            {showSummary && (
-              <p className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
-                Current responsibilities, previous team outcomes and independent builds. Switch to Deep mode for attribution and scope.
-              </p>
-            )}
-          </div>
-        </RevealOnScroll>
+        <div className="text-center mb-8">
+          <span
+            className={`inline-block text-[11px] font-semibold uppercase tracking-[0.2em] mb-4 ${
+              isLight ? "text-[#6366f1]/80" : "text-[#818cf8]"
+            }`}
+          >
+            Experience in practice
+          </span>
+          <h2 id="proof-heading" className={`text-4xl md:text-5xl font-bold tracking-tight ${isLight ? "text-gray-900" : "text-white"}`}>
+            Work, with context.
+          </h2>
+          {showSummary && (
+            <p className={`mt-5 max-w-2xl mx-auto text-[15px] leading-relaxed ${isLight ? "text-gray-600" : "text-[#a3a3a3]"}`}>
+              Current responsibilities, previous team outcomes and independent builds. Switch to Deep mode for attribution and scope.
+            </p>
+          )}
+        </div>
 
-        <StaggeredGrid className="grid grid-cols-2 md:grid-cols-3 gap-2.5 md:gap-3 mb-10">
+        {/* Keep proof readable even if scroll-animation setup is delayed or interrupted. */}
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2.5 md:gap-3">
           <MetricCard value="$800M+" label="Shared Pipeline TCV" context="Registered pipeline at Contentsquare, not closed sales" proof="Across a three-person cloud alliance team, May 2023–Nov 2025" isLight={isLight} />
           <MetricCard value="2,500+" label="Deal Registrations" context="Shared cloud alliance team activity at Contentsquare" proof="AWS ACE and Microsoft Partner Center; 97% approval rate across the team" isLight={isLight} />
           <MetricCard value="GTM" label="Workflow Automation" context="Partner systems and deal-registration workflows" proof="Dico contributed systems administration, connected workflows and enablement" isLight={isLight} />
@@ -68,10 +64,10 @@ export function ProofSection({ isLight }: ProofSectionProps) {
           <MetricCard value="AI" label="AI-Assisted Builds" context="Concurrent independent work at Metaventions AI" proof="Specify systems, direct AI coding tools, then review, test and deploy the output" isLight={isLight} />
           <MetricCard value="R&D" label="Accepted Workshop Poster" context="NeurIPS 2026 · LP4FM · Co-author" proof="Burstiness Was Measured Wrong, and Prompting Cannot Aim It; co-authored with Vittoria Lanzo. Accept (Poster), Sep 29, 2026." isLight={isLight} />
           <MetricCard value="MCP" label="Tool Integrations" context="Connecting AI tools with useful application workflows" proof="Independent implementation work; selected projects and public links below" isLight={isLight} />
-        </StaggeredGrid>
+        </div>
 
         {showDeep && (
-          <div className="text-center">
+          <div className="mt-8 text-center">
             <p className={`text-[11.5px] uppercase tracking-[0.18em] font-semibold mb-4 ${isLight ? "text-[#6366f1]/70" : "text-[#818cf8]/80"}`}>
               Explore public work
             </p>
@@ -109,6 +105,6 @@ export function ProofSection({ isLight }: ProofSectionProps) {
           </div>
         )}
       </div>
-    </AnimatedSection>
+    </section>
   );
 }

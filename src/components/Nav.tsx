@@ -192,42 +192,41 @@ export default function Nav() {
 
       {/* Content */}
       <div
-        className={`relative max-w-6xl mx-auto px-6 transition-all duration-300 ${
+        className={`relative max-w-6xl mx-auto px-4 sm:px-6 transition-all duration-300 ${
           isCompact ? "py-2.5" : "py-4"
         }`}
       >
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-2">
           {/* Logo */}
           <Link
             href="/"
             aria-label="Dico Angelo, home"
             onClick={handleLogoClick}
-            className={`group inline-flex items-center gap-2 font-bold tracking-tight transition-all duration-300 hover:opacity-90 ${
-              isCompact ? "text-[15px]" : "text-[16px]"
+            className={`group inline-flex shrink-0 items-center gap-2 whitespace-nowrap font-bold tracking-tight transition-all duration-300 hover:opacity-90 ${
+              isCompact ? "text-[15px]" : "text-[15px] sm:text-[16px]"
             }`}
           >
             <span
               aria-hidden="true"
-              className="inline-block w-2 h-2 rounded-full transition-transform duration-300 group-hover:scale-110"
+              className="inline-block w-2 h-2 shrink-0 rounded-full transition-transform duration-300 group-hover:scale-110"
               style={{
                 background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
                 boxShadow: "0 0 12px rgba(99,102,241,0.6)",
               }}
             />
-            <span className="hidden sm:inline">Dico Angelo</span>
-            <span className="sm:hidden">DA</span>
+            <span>Dico Angelo</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div
-            className={`hidden md:flex items-center gap-1 text-sm ${
+            className={`hidden xl:flex shrink-0 items-center gap-0.5 text-sm ${
               theme === "light" ? "text-gray-600" : "text-[#a3a3a3]"
             }`}
           >
             {navLinks.map((link) => {
               const isRoute = link.href.startsWith("/");
               const isActive = currentSection === link.id;
-              const className = `relative px-3 py-1.5 rounded-lg transition-all duration-200 ${
+              const className = `relative shrink-0 whitespace-nowrap px-2 py-1.5 rounded-lg transition-all duration-200 ${
                 isActive
                   ? theme === "light"
                     ? "text-[var(--accent)] bg-[var(--accent)]/10"
@@ -258,15 +257,18 @@ export default function Nav() {
                 </a>
               );
             })}
-            <div className="ml-2 pl-2 border-l border-[var(--border)] flex items-center gap-2">
+            <div className="ml-2 pl-2 border-l border-[var(--border)] flex shrink-0 items-center gap-2">
               <ReadingDepthToggle />
               <ThemeToggle />
             </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex shrink-0 items-center gap-1 sm:gap-2 xl:hidden">
             <ReadingDepthToggleMobile />
+            <div className="hidden md:block">
+              <ReadingDepthToggle />
+            </div>
             <ThemeToggle />
             <button
               ref={menuButtonRef}
@@ -308,8 +310,8 @@ export default function Nav() {
           id="mobile-navigation-links"
           inert={!isMobileMenuOpen}
           aria-hidden={!isMobileMenuOpen}
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
-            isMobileMenuOpen ? "max-h-[400px] opacity-100 mt-3 pt-3" : "max-h-0 opacity-0"
+          className={`xl:hidden overflow-x-hidden transition-all duration-300 ease-out ${
+            isMobileMenuOpen ? "max-h-[calc(100dvh-5rem)] overflow-y-auto opacity-100 mt-3 pt-3" : "max-h-0 overflow-y-hidden opacity-0"
           } ${theme === "light" ? "border-gray-200" : "border-[#262626]"} ${
             isMobileMenuOpen ? "border-t" : ""
           }`}
@@ -318,7 +320,7 @@ export default function Nav() {
             {navLinks.map((link, index) => {
               const isRoute = link.href.startsWith("/");
               const isActive = currentSection === link.id;
-              const className = `px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
+              const className = `whitespace-nowrap px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
                 isActive
                   ? theme === "light"
                     ? "bg-[var(--accent)]/10 text-[var(--accent)] font-medium"
