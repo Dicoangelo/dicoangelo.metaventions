@@ -87,6 +87,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       metrics: ["Co-author", "Accepted Poster", "LP4FM Workshop"],
       sources: [
         { label: "OpenReview submission", url: "https://openreview.net/forum?id=1E20ig92Zi" },
+        { label: "LP4FM workshop context", url: "https://lp4fm.github.io/" },
       ],
     },
     {
