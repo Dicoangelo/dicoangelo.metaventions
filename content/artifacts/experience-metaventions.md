@@ -627,7 +627,6 @@ For deeper technical dives, see:
 **Professional:**
 - LinkedIn: https://linkedin.com/in/dicoangelo
 - Email: dico.angelo97@gmail.com
-- Phone: 519-999-6099
 
 ---
 
@@ -636,7 +635,7 @@ For deeper technical dives, see:
 **Dico Angelo**
 Founder & Systems Architect, Metaventions AI
 
-dico.angelo97@gmail.com | 519-999-6099
+dico.angelo97@gmail.com
 Windsor, ON, Canada (TN Visa Eligible - no sponsorship required)
 
 ---
