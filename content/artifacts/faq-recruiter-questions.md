@@ -1005,7 +1005,6 @@ I do **both**. I'm a builder who understands business. An operator who ships cod
 **Dico Angelo**
 
 - **Email:** dico.angelo97@gmail.com
-- **Phone:** 519-999-6099
 - **GitHub:** https://github.com/Dicoangelo
 - **LinkedIn:** https://linkedin.com/in/dicoangelo
 - **Portfolio:** https://dicoangelo.vercel.app
@@ -1013,7 +1012,7 @@ I do **both**. I'm a builder who understands business. An operator who ships cod
 
 **Response time:** Within 24 hours (usually within 4 hours during business hours)
 
-**Best way to reach me:** Email for detailed discussions, phone for urgent/time-sensitive matters.
+**Best way to reach me:** Email.
 
 **References available upon request** from:
 - Contentsquare leadership (Cloud Alliance, Partnerships)

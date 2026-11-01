@@ -935,7 +935,6 @@ I do **not** claim language fluency in TypeScript, JavaScript, Python, AI-assist
 - LinkedIn: https://linkedin.com/in/dicoangelo
 - Twitter: https://x.com/dicoangelo
 - Email: dico.angelo97@gmail.com
-- Phone: 519-999-6099
 
 ---
 

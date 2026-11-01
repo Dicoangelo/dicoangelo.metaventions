@@ -49,7 +49,6 @@ AWS Partner Business and Technical accreditations.
 ## Contact and downloads
 
 - Email: dico.angelo97@gmail.com
-- Phone: 519-999-6099
 - LinkedIn: https://www.linkedin.com/in/dico-angelo/
 - Portfolio: https://dicoangelo.metaventionsai.com
 - Resume PDF: https://dicoangelo.metaventionsai.com/Dico_Angelo_Resume.pdf
