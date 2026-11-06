@@ -97,7 +97,7 @@ This was the **first signal** of the builder-operator hybrid pattern. Most marke
 
 ### Coauthored Workshop Paper
 
-Dico coauthored [*Burstiness Was Measured Wrong, and Prompting Cannot Aim It*](https://openreview.net/forum?id=1E20ig92Zi) with Vittoria Lanzo.
+Dico coauthored [*Can Prompting Reliably Close the Sentence-Length Dispersion Gap?*](https://openreview.net/forum?id=1E20ig92Zi) with Vittoria Lanzo.
 
 Accepted as a poster at the NeurIPS 2026 Workshop LP4FM. Submission #114 received an **Accept (Poster)** decision dated September 29, 2026. The research developed from the Burstiness Engine project and is distinct from Dico's implementation work based on papers by other authors.
 

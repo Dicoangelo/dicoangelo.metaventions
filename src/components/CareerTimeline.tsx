@@ -77,7 +77,7 @@ export default function CareerTimeline({ isLight }: CareerTimelineProps) {
       company: "NeurIPS 2026 · LP4FM Workshop",
       location: "Submission #114",
       type: "achievement",
-      description: "Burstiness Was Measured Wrong, and Prompting Cannot Aim It. Co-authored with Vittoria Lanzo and accepted as a poster at the NeurIPS 2026 LP4FM workshop.",
+      description: "Can Prompting Reliably Close the Sentence-Length Dispersion Gap? Co-authored with Vittoria Lanzo and accepted as a poster at the NeurIPS 2026 LP4FM workshop.",
       highlights: [
         "Decision: Accept (Poster), received September 29, 2026",
         "Co-authored with Vittoria Lanzo",

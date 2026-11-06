@@ -34,7 +34,7 @@ Founder, Metaventions AI | November 2025 to present, concurrent with EZRA.
 
 AI-assisted development of knowledge-retrieval and workflow tools, including ResearchGravity. Dico specifies systems, directs AI coding tools, tests workflows and deploys the output. Third-party research implemented in these projects remains work by its named authors.
 
-Research: Dico coauthored [*Burstiness Was Measured Wrong, and Prompting Cannot Aim It*](https://openreview.net/forum?id=1E20ig92Zi) with Vittoria Lanzo. Accepted as a poster at the NeurIPS 2026 Workshop LP4FM; decision dated September 29, 2026.
+Research: Dico coauthored [*Can Prompting Reliably Close the Sentence-Length Dispersion Gap?*](https://openreview.net/forum?id=1E20ig92Zi) with Vittoria Lanzo. Accepted as a poster at the NeurIPS 2026 Workshop LP4FM; decision dated September 29, 2026.
 
 ### Community leadership
 Founding Director, Up2Youth | March 2019 to March 2022. Founded and ran a youth-development program supported by a $255,000 grant over 36 months from Ontario's Youth Opportunities Fund.
