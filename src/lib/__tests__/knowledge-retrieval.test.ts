@@ -63,7 +63,7 @@ describe("reviewed knowledge for visitor questions", () => {
       slug: "research-burstiness-lp4fm-2026",
       url: "https://openreview.net/forum?id=1E20ig92Zi",
     });
-    expect(result.context).toContain("Burstiness Was Measured Wrong, and Prompting Cannot Aim It");
+    expect(result.context).toContain("Can Prompting Reliably Close the Sentence-Length Dispersion Gap?");
     expect(result.context).toContain("Accept (Poster)");
     expect(result.context).toContain("Vittoria Lanzo");
     expect(result.context).toContain("not a NeurIPS main-track paper or oral presentation");

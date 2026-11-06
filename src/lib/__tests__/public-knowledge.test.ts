@@ -42,7 +42,7 @@ describe("reviewed public knowledge", () => {
   it("returns public citations and explicit no-match for unsupported topics", async () => {
     await local();
     const result = await getPublicKnowledgeContext("LP4FM accepted paper");
-    expect(result.context).toContain("Burstiness Was Measured Wrong");
+    expect(result.context).toContain("Sentence-Length Dispersion Gap");
     expect(result.sources[0].url).toBe("https://openreview.net/forum?id=1E20ig92Zi");
     expect(await getPublicKnowledgeContext("zygomorphic quasar propulsion")).toEqual({ context: "", sources: [], status: "no_match" });
   });

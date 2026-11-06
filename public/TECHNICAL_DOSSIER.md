@@ -38,7 +38,7 @@ This is a practical example of retrieval-augmented generation: the assistant sea
 
 ## Research notes and project status
 
-Dico coauthored [*Burstiness Was Measured Wrong, and Prompting Cannot Aim It*](https://openreview.net/forum?id=1E20ig92Zi) with Vittoria Lanzo. The paper was accepted as a poster at the NeurIPS 2026 workshop Linguistic Principles for Foundation Models (LP4FM). Submission #114 received its acceptance decision on September 29, 2026. The research developed from the Burstiness Engine project.
+Dico coauthored [*Can Prompting Reliably Close the Sentence-Length Dispersion Gap?*](https://openreview.net/forum?id=1E20ig92Zi) with Vittoria Lanzo. The paper was accepted as a poster at the NeurIPS 2026 workshop Linguistic Principles for Foundation Models (LP4FM). Submission #114 received its acceptance decision on September 29, 2026. The research developed from the Burstiness Engine project.
 
 Dico also studies and implements ideas from papers written by other researchers. Those third-party papers remain work by their named authors; implementing an idea does not establish authorship or replicate or validate the source study.
 

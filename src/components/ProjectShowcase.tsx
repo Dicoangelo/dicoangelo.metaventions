@@ -43,7 +43,7 @@ const projects: Project[] = [
   {
     name: "Burstiness Engine",
     tagline: "Accepted Poster · NeurIPS 2026 LP4FM Workshop",
-    description: "Burstiness Was Measured Wrong, and Prompting Cannot Aim It. Co-authored with Vittoria Lanzo and accepted as a poster at the NeurIPS 2026 LP4FM workshop on September 29, 2026. Studies sentence-length rhythm in generated language; Dico contributed research tooling, experiment infrastructure, data workflows and reproducibility checks.",
+    description: "Can Prompting Reliably Close the Sentence-Length Dispersion Gap? Co-authored with Vittoria Lanzo and accepted as a poster at the NeurIPS 2026 LP4FM workshop on September 29, 2026. Studies sentence-length rhythm in generated language; Dico contributed research tooling, experiment infrastructure, data workflows and reproducibility checks.",
     metrics: [
       { label: "Role", value: "Co-author" },
       { label: "Workshop", value: "LP4FM 2026" },
@@ -53,7 +53,7 @@ const projects: Project[] = [
     techStack: ["Research Tooling", "Experiment Infrastructure", "Text Measurement", "Reproducibility"],
     papers: [
       "Co-authored with Vittoria Lanzo",
-      "Accepted title: Burstiness Was Measured Wrong, and Prompting Cannot Aim It",
+      "Accepted title: Can Prompting Reliably Close the Sentence-Length Dispersion Gap?",
       "NeurIPS 2026 LP4FM workshop · Accept (Poster) · Submission #114"
     ],
     github: "https://github.com/Dicoangelo",

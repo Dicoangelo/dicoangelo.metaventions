@@ -93,7 +93,7 @@ def audit(db):
     patterns = {
         "private_application_profile": r"APPLICATION AUTOFILL PROFILE|\"eeo\"|\"legal_name|\bEEO defaults\b",
         "withdrawn_career_metrics": r"900[Kk]|900,000|50\+\s*(?:reports|dashboards)|30%\s*(?:faster|onboard)|222,750|7,425",
-        "accepted_paper": r"Burstiness Was Measured Wrong|LP4FM|1E20ig92Zi",
+        "accepted_paper": r"Sentence-Length Dispersion Gap|LP4FM|1E20ig92Zi",
         "current_role": r"Revenue Technology Manager|EZRA",
     }
     entries = []

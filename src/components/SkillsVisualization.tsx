@@ -346,7 +346,7 @@ export default function SkillsVisualization({ isLight }: SkillsVisualizationProp
               href="https://openreview.net/forum?id=1E20ig92Zi"
               target="_blank"
               rel="noopener noreferrer"
-              title="Burstiness Was Measured Wrong, and Prompting Cannot Aim It — coauthored with Vittoria Lanzo"
+              title="Can Prompting Reliably Close the Sentence-Length Dispersion Gap? — coauthored with Vittoria Lanzo"
               className={`px-4 py-2 rounded-lg border text-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6366f1] ${isLight ? 'bg-white border-gray-200' : 'bg-[#141414] border-[#262626]'}`}
             >
               🧠 NeurIPS 2026 · LP4FM Workshop · Accepted Poster · Co-author
